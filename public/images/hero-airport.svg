@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skya" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1917"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#skya)"/>
+  <ellipse cx="500" cy="280" rx="460" ry="220" fill="#f5b820" opacity="0.16"/>
+  <!-- plane silhouette -->
+  <g fill="#0a0a0a">
+    <path d="M250 360 L1050 470 L1080 500 L1060 520 L300 480 Z"/>
+    <path d="M620 470 L760 300 L800 300 L720 480 Z"/>
+    <path d="M650 480 L760 620 L800 620 L720 490 Z"/>
+    <path d="M980 478 L1040 410 L1060 412 L1020 482 Z"/>
+  </g>
+  <!-- windows -->
+  <g fill="#f5b820" opacity="0.8">
+    <circle cx="500" cy="430" r="5"/>
+    <circle cx="540" cy="434" r="5"/>
+    <circle cx="580" cy="438" r="5"/>
+    <circle cx="620" cy="442" r="5"/>
+  </g>
+  <!-- runway lights -->
+  <g fill="#f5b820">
+    <rect x="200" y="780" width="40" height="8"/>
+    <rect x="320" y="790" width="40" height="8"/>
+    <rect x="460" y="800" width="40" height="8"/>
+    <rect x="620" y="810" width="40" height="8"/>
+    <rect x="800" y="820" width="40" height="8"/>
+  </g>
+  <!-- control tower -->
+  <g fill="#0a0a0a">
+    <rect x="1300" y="420" width="40" height="480"/>
+    <path d="M1290 420 h60 l-12 60 h-36 z"/>
+    <rect x="1284" y="400" width="72" height="26" rx="6"/>
+  </g>
+</svg>

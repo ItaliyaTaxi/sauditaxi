@@ -1,0 +1,13 @@
+import { TriangleAlert } from "lucide-react";
+
+export function AdminNotice({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="flex gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+      <TriangleAlert className="size-5 shrink-0 text-amber-600" />
+      <div>
+        <p className="font-semibold">{title}</p>
+        <div className="mt-1 text-amber-800">{children}</div>
+      </div>
+    </div>
+  );
+}

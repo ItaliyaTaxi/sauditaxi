@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skym" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1917"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#skym)"/>
+  <ellipse cx="800" cy="300" rx="520" ry="240" fill="#f5b820" opacity="0.16"/>
+  <circle cx="1240" cy="220" r="70" fill="#f5b820" opacity="0.5"/>
+  <!-- mosque silhouette -->
+  <g fill="#0a0a0a">
+    <!-- main dome -->
+    <path d="M700 520 a100 110 0 0 1 200 0 z"/>
+    <rect x="700" y="520" width="200" height="380"/>
+    <!-- finial -->
+    <rect x="795" y="380" width="10" height="40"/>
+    <circle cx="800" cy="372" r="12"/>
+    <!-- minarets -->
+    <rect x="560" y="430" width="34" height="470"/>
+    <path d="M560 430 h34 l-6 -50 h-22 z"/>
+    <circle cx="577" cy="372" r="10"/>
+    <rect x="1010" y="430" width="34" height="470"/>
+    <path d="M1010 430 h34 l-6 -50 h-22 z"/>
+    <circle cx="1027" cy="372" r="10"/>
+    <!-- side domes -->
+    <path d="M620 600 a60 64 0 0 1 120 0 z"/>
+    <rect x="620" y="600" width="120" height="300"/>
+    <path d="M860 600 a60 64 0 0 1 120 0 z"/>
+    <rect x="860" y="600" width="120" height="300"/>
+  </g>
+  <!-- arch lights -->
+  <g fill="#f5b820" opacity="0.8">
+    <rect x="770" y="700" width="60" height="120" rx="30"/>
+  </g>
+</svg>

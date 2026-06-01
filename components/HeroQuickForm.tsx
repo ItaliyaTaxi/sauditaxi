@@ -1,0 +1,73 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select";
+
+const passengerOptions = ["1", "2", "3", "4", "5", "6", "7+"];
+
+/**
+ * Compact quote form for the homepage hero. Collects only the essentials, then
+ * hands off to /get-quote with the values as query params so the full form can
+ * pre-fill and the user completes the remaining fields there.
+ */
+export function HeroQuickForm() {
+  const router = useRouter();
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const params = new URLSearchParams();
+    for (const key of ["pickup", "dropoff", "date", "time", "passengers"]) {
+      const value = (data.get(key) as string | null)?.trim();
+      if (value) params.set(key, value);
+    }
+    router.push(`/get-quote?${params.toString()}`);
+  }
+
+  return (
+    <div className="rounded-2xl border border-black/5 bg-white p-5 text-left shadow-2xl sm:p-6">
+      <h2 className="text-xl font-bold text-navy">Book Your Ride</h2>
+      <p className="mt-1 text-sm text-muted-foreground">
+        Enter your trip and continue to get a fast quote.
+      </p>
+
+      <form onSubmit={handleSubmit} className="mt-4 space-y-3.5" aria-label="Quick quote form">
+        <div>
+          <Label htmlFor="hq-pickup">Pickup location</Label>
+          <Input id="hq-pickup" name="pickup" placeholder="Airport, hotel, address" required />
+        </div>
+        <div>
+          <Label htmlFor="hq-dropoff">Drop-off location</Label>
+          <Input id="hq-dropoff" name="dropoff" placeholder="Destination" required />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <Label htmlFor="hq-date">Date</Label>
+            <Input id="hq-date" name="date" type="date" required />
+          </div>
+          <div>
+            <Label htmlFor="hq-time">Time</Label>
+            <Input id="hq-time" name="time" type="time" required />
+          </div>
+        </div>
+        <div>
+          <Label htmlFor="hq-passengers">Passengers</Label>
+          <Select id="hq-passengers" name="passengers" defaultValue="2">
+            {passengerOptions.map((p) => (
+              <option key={p} value={p}>{p}</option>
+            ))}
+          </Select>
+        </div>
+
+        <Button type="submit" variant="gold" size="lg" className="w-full">
+          Continue
+          <ArrowRight className="size-5" />
+        </Button>
+      </form>
+    </div>
+  );
+}

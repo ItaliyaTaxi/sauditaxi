@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" fill="none">
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#f5b820"/>
+  <path d="M16 44l3-12a4 4 0 0 1 4-3h18a4 4 0 0 1 4 3l3 12M14 44h36M20 44v5M44 44v5" stroke="#0b1220" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="22" cy="38" r="2.5" fill="#0b1220"/>
+  <circle cx="42" cy="38" r="2.5" fill="#0b1220"/>
+  <text x="80" y="41" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#0b1220">Saudi Taxi</text>
+</svg>

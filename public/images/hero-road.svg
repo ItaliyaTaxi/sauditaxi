@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1917"/>
+      <stop offset="0.6" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5b820" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f5b820" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="800" cy="430" rx="520" ry="220" fill="url(#glow)"/>
+  <!-- horizon city silhouette -->
+  <g fill="#000000" opacity="0.85">
+    <rect x="120" y="360" width="60" height="90"/>
+    <rect x="200" y="320" width="70" height="130"/>
+    <rect x="300" y="380" width="50" height="70"/>
+    <rect x="1180" y="340" width="70" height="110"/>
+    <rect x="1270" y="300" width="60" height="150"/>
+    <rect x="1350" y="360" width="80" height="90"/>
+  </g>
+  <!-- road -->
+  <polygon points="700,450 900,450 1250,900 350,900" fill="#1c1917"/>
+  <polygon points="780,450 820,450 880,900 720,900" fill="#0a0a0a"/>
+  <!-- dashes -->
+  <g fill="#f5b820">
+    <polygon points="795,470 805,470 806,500 794,500"/>
+    <polygon points="792,540 808,540 810,585 790,585"/>
+    <polygon points="788,640 812,640 816,710 784,710"/>
+    <polygon points="782,780 818,780 824,890 776,890"/>
+  </g>
+  <!-- tail lights -->
+  <circle cx="900" cy="560" r="7" fill="#f5b820"/>
+  <circle cx="940" cy="560" r="7" fill="#f5b820"/>
+</svg>
