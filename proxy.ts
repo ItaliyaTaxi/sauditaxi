@@ -5,8 +5,11 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
  * Protects the admin CRM. Unauthenticated visitors to /admin/* are redirected
  * to the login page; unauthenticated calls to /api/admin/* get a 401.
  * /admin/login and the login API stay public.
+ *
+ * Uses the `proxy` file convention (Next.js 16+), which defaults to the Node.js
+ * runtime — required here because `@/lib/auth` (jose) is not bundled for Edge.
  */
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Public auth endpoints
