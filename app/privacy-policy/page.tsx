@@ -84,7 +84,7 @@ const sections: LegalSection[] = [
   {
     heading: "Contact Information",
     paragraphs: [
-      `If you have any questions about this Privacy Policy or your data, contact us by WhatsApp or phone at ${siteConfig.phoneDisplay}, or by email at ${siteConfig.email}.`,
+      `If you have any questions about this Privacy Policy or your data, contact us by email at ${siteConfig.email} or through our booking form.`,
     ],
   },
 ];

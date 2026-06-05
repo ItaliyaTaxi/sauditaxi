@@ -32,7 +32,7 @@ const sections: LegalSection[] = [
   {
     heading: "Booking Requests",
     paragraphs: [
-      "Submitting the quote form or contacting us by WhatsApp, phone, or email is a request for a quote, not a confirmed booking. A booking is only confirmed once we reply and you accept the quoted price and trip details.",
+      "Submitting the quote form or contacting us by email is a request for a quote, not a confirmed booking. A booking is only confirmed once we reply and you accept the quoted price and trip details.",
       "You are responsible for providing accurate pickup, drop-off, date, time, passenger, and luggage details so we can quote and arrange your transfer correctly.",
     ],
   },
@@ -53,7 +53,7 @@ const sections: LegalSection[] = [
   {
     heading: "Cancellations",
     paragraphs: [
-      "If you need to cancel or change a confirmed booking, please notify us as early as possible via WhatsApp or phone.",
+      "If you need to cancel or change a confirmed booking, please notify us as early as possible by email or through our booking form.",
       "Cancellation conditions may vary by route, vehicle type, and how close the cancellation is to the pickup time. Any applicable cancellation terms will be shared at the time of booking.",
     ],
   },
@@ -103,7 +103,7 @@ const sections: LegalSection[] = [
   {
     heading: "Contact Information",
     paragraphs: [
-      `For any questions about these terms, contact us by WhatsApp or phone at ${siteConfig.phoneDisplay}, or by email at ${siteConfig.email}.`,
+      `For any questions about these terms, contact us by email at ${siteConfig.email} or through our booking form.`,
     ],
   },
 ];

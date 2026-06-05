@@ -6,7 +6,8 @@ const defaultMessage =
 
 /**
  * Floating, always-visible WhatsApp button. Rendered once in the root layout so
- * every page has the sticky lead-capture CTA.
+ * every page has the sticky chat CTA. Opens a WhatsApp chat with the business
+ * number — the number itself is never displayed (it only lives in the wa.me link).
  */
 export function StickyWhatsApp() {
   return (

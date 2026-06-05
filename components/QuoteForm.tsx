@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { MessageCircle } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { vehicles } from "@/data/vehicles";
-import { siteConfig, whatsappLink } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export interface QuoteFormProps {
@@ -21,7 +21,7 @@ export interface QuoteFormProps {
   defaultDate?: string;
   defaultTime?: string;
   defaultPassengers?: string;
-  /** Lead-tracking context — included in the WhatsApp message + hidden fields. */
+  /** Lead-tracking context — saved with the lead and sent in the emails. */
   serviceType?: string;
   city?: string;
   route?: string;
@@ -32,6 +32,8 @@ export interface QuoteFormProps {
 
 const passengerOptions = ["1", "2", "3", "4", "5", "6", "7+"];
 const luggageOptions = ["0", "1", "2", "3", "4", "5+"];
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export function QuoteForm({
   defaultPickup = "",
@@ -46,42 +48,15 @@ export function QuoteForm({
   twoColumn = true,
 }: QuoteFormProps) {
   const pathname = usePathname();
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     const get = (k: string) => (data.get(k) as string | null)?.trim() ?? "";
 
-    const lines = [
-      `*New Taxi Booking Request — ${siteConfig.name}*`,
-      "",
-      `👤 Name: ${get("name") || "-"}`,
-      `📱 WhatsApp: ${get("phone") || "-"}`,
-      `📍 Pickup: ${get("pickup") || "-"}`,
-      `🏁 Drop-off: ${get("dropoff") || "-"}`,
-      `📅 Date: ${get("date") || "-"}`,
-      `⏰ Time: ${get("time") || "-"}`,
-      `👥 Passengers: ${get("passengers") || "-"}`,
-      `🧳 Luggage: ${get("luggage") || "-"}`,
-      `🚗 Vehicle: ${get("vehicle") || "-"}`,
-    ];
-    if (get("flight")) lines.push(`✈️ Flight no: ${get("flight")}`);
-    if (get("message")) lines.push(`📝 Message: ${get("message")}`);
-    lines.push(
-      "",
-      `— Service: ${serviceType}`,
-      route ? `— Route: ${route}` : city ? `— City: ${city}` : "",
-      `— Page: ${siteConfig.url}${pathname}`
-    );
-
-    const message = lines.filter(Boolean).join("\n");
-    // Open WhatsApp first so it stays inside the user gesture (no popup block).
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
-    setSubmitted(true);
-
-    // Then save the lead + trigger emails (best-effort, non-blocking).
     const payload = {
       fullName: get("name") || undefined,
       email: get("email") || undefined,
@@ -102,16 +77,64 @@ export function QuoteForm({
           : serviceType,
       sourcePage: `${siteConfig.url}${pathname}`,
     };
-    fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    }).catch(() => {
-      /* lead capture is best-effort; the WhatsApp message already went out */
-    });
 
-    form.reset();
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => null);
+      if (res.ok && json?.ok) {
+        form.reset();
+        setStatus("success");
+      } else {
+        setStatus("error");
+        setErrorMsg(
+          json?.error ?? "Something went wrong. Please try again in a moment."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg(
+        "We couldn't send your request. Please check your connection and try again."
+      );
+    }
   }
+
+  if (status === "success") {
+    return (
+      <div
+        className={cn(
+          "rounded-2xl border border-green-200 bg-green-50 p-8 text-center",
+          className
+        )}
+        role="status"
+        aria-live="polite"
+      >
+        <CheckCircle2 className="mx-auto size-12 text-green-600" />
+        <h3 className="mt-4 text-xl font-bold text-navy">Request received</h3>
+        <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+          Thank you — we&apos;ve received your trip details. Our team will review
+          your journey and get back to you shortly with availability and a fixed
+          price.
+        </p>
+        <Button
+          type="button"
+          variant="outline"
+          size="lg"
+          className="mt-6"
+          onClick={() => setStatus("idle")}
+        >
+          Send another request
+        </Button>
+      </div>
+    );
+  }
+
+  const submitting = status === "submitting";
 
   return (
     <form
@@ -119,19 +142,13 @@ export function QuoteForm({
       className={cn("space-y-4", className)}
       aria-label="Taxi quote request form"
     >
-      {/* Hidden lead-tracking fields */}
-      <input type="hidden" name="source_page" value={pathname} />
-      <input type="hidden" name="service_type" value={serviceType} />
-      <input type="hidden" name="city" value={city} />
-      <input type="hidden" name="route" value={route} />
-
       <div className={cn(twoColumn && "grid gap-4 sm:grid-cols-2")}>
         <div>
           <Label htmlFor="qf-name">Full name</Label>
           <Input id="qf-name" name="name" autoComplete="name" placeholder="Your name" required />
         </div>
         <div>
-          <Label htmlFor="qf-phone">WhatsApp number</Label>
+          <Label htmlFor="qf-phone">Phone / WhatsApp number</Label>
           <Input
             id="qf-phone"
             name="phone"
@@ -217,15 +234,21 @@ export function QuoteForm({
         <Textarea id="qf-message" name="message" placeholder="Any special requirements (child seat, extra stops, group size)…" />
       </div>
 
-      <Button type="submit" variant="whatsapp" size="lg" className="w-full">
-        <MessageCircle className="size-5" />
-        Send Booking on WhatsApp
+      <Button type="submit" variant="gold" size="lg" className="w-full" disabled={submitting}>
+        <Send className="size-5" />
+        {submitting ? "Sending…" : "Send Request"}
       </Button>
 
-      <p className="text-center text-xs text-muted-foreground" aria-live="polite">
-        {submitted
-          ? "Opening WhatsApp… if nothing happened, please check your pop-up settings."
-          : "Your details open a prefilled WhatsApp chat — no payment needed to get a quote."}
+      <p
+        className={cn(
+          "text-center text-xs",
+          status === "error" ? "text-red-600" : "text-muted-foreground"
+        )}
+        aria-live="polite"
+      >
+        {status === "error"
+          ? errorMsg
+          : "We'll reply with a fixed price for your journey — no payment needed to get a quote."}
       </p>
     </form>
   );

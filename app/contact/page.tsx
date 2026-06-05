@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { MessageCircle, Phone, Mail, Clock, MapPin } from "lucide-react";
+import { MessageCircle, Mail, Clock, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { QuoteForm } from "@/components/QuoteForm";
-import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/sections/CTASection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
@@ -18,7 +17,7 @@ const crumbs = [
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us | Book Your Saudi Arabia Taxi",
   description:
-    "Contact our Saudi Arabia taxi service by WhatsApp, phone, or email. Fast quotes for airport transfers, city rides, intercity routes, borders, Umrah, and Hajj.",
+    "Contact our Saudi Arabia taxi service by email or our quick online booking form. Fast quotes for airport transfers, city rides, intercity routes, borders, Umrah, and Hajj.",
   path: "/contact",
 });
 
@@ -26,23 +25,20 @@ const channels = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: siteConfig.phoneDisplay,
+    // Number intentionally hidden — only a label is shown; the actual number
+    // lives in the wa.me link.
+    value: "Tap to start a chat",
     href: whatsappLink("Hello! I'd like a taxi quote in Saudi Arabia."),
     note: "Fastest response — usually within minutes",
-  },
-  {
-    icon: Phone,
-    title: "Call us",
-    value: siteConfig.phoneDisplay,
-    href: `tel:${siteConfig.phoneHref}`,
-    note: "Available 24/7 for bookings",
+    external: true,
   },
   {
     icon: Mail,
     title: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-    note: "For group and corporate enquiries",
+    note: "For quotes, group, and corporate enquiries",
+    external: false,
   },
 ];
 
@@ -52,7 +48,7 @@ export default function ContactPage() {
       <SchemaScript schema={breadcrumbSchema(crumbs)} />
       <PageHeader
         title="Contact Our Taxi Service"
-        subtitle="Reach us any time on WhatsApp, by phone, or by email. We reply quickly with a fixed quote for your journey."
+        subtitle="Reach us on WhatsApp, through the booking form, or by email — we'll reply quickly with a fixed quote for your journey."
         crumbs={crumbs}
         backgroundImage={heroImages.city}
         showCtas={false}
@@ -74,8 +70,8 @@ export default function ContactPage() {
                   <a
                     key={c.title}
                     href={c.href}
-                    target={c.title === "WhatsApp" ? "_blank" : undefined}
-                    rel={c.title === "WhatsApp" ? "noopener noreferrer" : undefined}
+                    target={c.external ? "_blank" : undefined}
+                    rel={c.external ? "noopener noreferrer" : undefined}
                     className="flex items-start gap-4 rounded-xl border border-border bg-white p-5 transition-all hover:border-gold hover:shadow-sm"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-navy text-gold">
@@ -100,22 +96,12 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <Button asChild variant="whatsapp" size="lg" className="mt-8">
-              <a
-                href={whatsappLink("Hello! I'd like a taxi quote in Saudi Arabia.")}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="size-5" />
-                Message us on WhatsApp
-              </a>
-            </Button>
           </div>
 
           <div className="rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
             <h2 className="text-xl font-bold text-navy">Send a Booking Request</h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Fill in your trip and we&apos;ll reply on WhatsApp with a fixed price.
+              Fill in your trip details and we&apos;ll email you a fixed price.
             </p>
             <div className="mt-5">
               <QuoteForm serviceType="Contact page enquiry" twoColumn={false} />

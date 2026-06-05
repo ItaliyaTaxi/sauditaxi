@@ -10,11 +10,14 @@ export const siteConfig = {
     "Book private taxi service in Saudi Arabia for airports, cities, hotels, Umrah, Hajj, borders, and intercity transfers. Fast WhatsApp quotes available.",
   // Update to the live domain before deploying.
   url: "https://www.sauditaxitransfers.com",
-  // International format, digits only, used to build WhatsApp wa.me links.
-  whatsappNumber: "966500000000",
-  // Human-readable phone with tel: friendly value.
-  phoneDisplay: "+966 50 000 0000",
-  phoneHref: "+966500000000",
+  // Business WhatsApp number, international format (digits only). Kept here for
+  // backend use and structured data only — it is intentionally NOT displayed
+  // anywhere on the public site.
+  whatsappNumber: "923148932631",
+  // Same number in human/tel form. Used only by JSON-LD structured data
+  // (not rendered visibly anywhere on the site).
+  phoneDisplay: "+92 314 8932631",
+  phoneHref: "+923148932631",
   email: "bookings@sauditaxitransfers.com",
   locale: "en_US",
   ogImage: "/og-image.svg",

@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { whatsappLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 interface CtaButtonsProps {
-  /** Prefilled WhatsApp message for the primary CTA. */
+  /** Retained for backward compatibility — no longer used (no WhatsApp CTA). */
   whatsappMessage?: string;
-  /** Label for the primary WhatsApp button. */
+  /** Label for the primary "get a quote" button. */
   whatsappLabel?: string;
-  /** Show a secondary "Get Quote" link to the form page. */
+  /** Show a secondary "Contact Us" link. */
   showQuoteLink?: boolean;
   className?: string;
   /** Use light styling for dark backgrounds. */
@@ -17,23 +16,27 @@ interface CtaButtonsProps {
 }
 
 export function CtaButtons({
-  whatsappMessage = "Hello! I'd like to request a taxi quote in Saudi Arabia.",
-  whatsappLabel = "Get Quote on WhatsApp",
+  whatsappLabel = "Get a Quote",
   showQuoteLink = true,
   className,
   onDark = false,
 }: CtaButtonsProps) {
   return (
     <div className={cn("flex flex-wrap gap-3", className)}>
-      <Button asChild variant="whatsapp" size="lg">
-        <a href={whatsappLink(whatsappMessage)} target="_blank" rel="noopener noreferrer">
-          <MessageCircle className="size-5" />
+      <Button asChild variant="gold" size="lg">
+        <Link href="/get-quote">
+          <Send className="size-5" />
           {whatsappLabel}
-        </a>
+        </Link>
       </Button>
       {showQuoteLink && (
-        <Button asChild variant={onDark ? "outline" : "outline"} size="lg" className={onDark ? "border-white/40 text-white hover:bg-white hover:text-navy" : ""}>
-          <Link href="/get-quote">Request Price</Link>
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className={onDark ? "border-white/40 text-white hover:bg-white hover:text-navy" : ""}
+        >
+          <Link href="/contact">Contact Us</Link>
         </Button>
       )}
     </div>

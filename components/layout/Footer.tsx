@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Car, Phone, Mail, MapPin } from "lucide-react";
+import { Car, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
@@ -30,12 +30,6 @@ export function Footer() {
               quotes, fixed prices, professional drivers.
             </p>
             <div className="mt-5 space-y-2 text-sm">
-              <a
-                href={`tel:${siteConfig.phoneHref}`}
-                className="flex items-center gap-2 hover:text-gold"
-              >
-                <Phone className="size-4 text-gold" /> {siteConfig.phoneDisplay}
-              </a>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-2 hover:text-gold"
