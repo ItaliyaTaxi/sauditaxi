@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     url: siteConfig.url,
   },
   twitter: { card: "summary_large_image", site: siteConfig.twitterHandle },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b1220",
 };
 
 export default function RootLayout({
