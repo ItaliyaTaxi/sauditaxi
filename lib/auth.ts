@@ -15,7 +15,11 @@ export interface AdminSession {
   email: string;
 }
 
-/** Validate submitted credentials against the configured admin account. */
+/**
+ * Validate credentials against the env-based admin account. This is the
+ * bootstrap / master fallback — database-backed admins (see lib/admins.ts) are
+ * the primary source, checked first in the login route.
+ */
 export function validateCredentials(email: string, password: string): boolean {
   const adminEmail = process.env.ADMIN_LOGIN_EMAIL || process.env.ADMIN_EMAIL;
   const adminPassword = process.env.ADMIN_PASSWORD;

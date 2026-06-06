@@ -56,6 +56,67 @@ create table if not exists public.email_logs (
 
 create index if not exists email_logs_lead_id_idx on public.email_logs (lead_id);
 
+-- Admins --------------------------------------------------------------------
+-- Admin CRM accounts. Passwords are stored as bcrypt hashes (via pgcrypto);
+-- the plaintext password is never stored or returned.
+create table if not exists public.admins (
+  id            uuid primary key default gen_random_uuid(),
+  email         text not null unique,
+  password_hash text not null,
+  name          text,
+  created_at    timestamptz not null default now(),
+  updated_at    timestamptz not null default now()
+);
+
+drop trigger if exists admins_set_updated_at on public.admins;
+create trigger admins_set_updated_at
+  before update on public.admins
+  for each row execute function public.set_updated_at();
+
+-- Create or update an admin. Password is hashed with bcrypt (gen_salt('bf')).
+create or replace function public.upsert_admin(
+  p_email text, p_password text, p_name text default null
+)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_id uuid;
+begin
+  insert into public.admins (email, password_hash, name)
+  values (lower(trim(p_email)), crypt(p_password, gen_salt('bf', 12)), p_name)
+  on conflict (email) do update
+    set password_hash = excluded.password_hash,
+        name          = coalesce(excluded.name, public.admins.name),
+        updated_at    = now()
+  returning id into v_id;
+  return v_id;
+end;
+$$;
+
+-- Verify credentials. Returns the admin email when valid, otherwise null.
+create or replace function public.verify_admin(p_email text, p_password text)
+returns text
+language sql
+security definer
+set search_path = public
+as $$
+  select email from public.admins
+  where email = lower(trim(p_email))
+    and password_hash = crypt(p_password, password_hash)
+  limit 1;
+$$;
+
+-- These functions must only ever run server-side with the service role —
+-- never expose them to the anon/authenticated (public API) roles.
+revoke all on function public.upsert_admin(text, text, text) from public, anon, authenticated;
+revoke all on function public.verify_admin(text, text)        from public, anon, authenticated;
+grant execute on function public.upsert_admin(text, text, text) to service_role;
+grant execute on function public.verify_admin(text, text)        to service_role;
+
 -- Lock everything down to the service role only -----------------------------
 alter table public.leads      enable row level security;
 alter table public.email_logs enable row level security;
+alter table public.admins     enable row level security;
