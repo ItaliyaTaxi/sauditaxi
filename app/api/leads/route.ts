@@ -99,7 +99,8 @@ export async function POST(request: Request) {
     }
     if (lead.email) {
       const { subject, html } = clientLeadEmail(lead);
-      await sendEmail({ to: lead.email, subject, html });
+      // Reply-to the admin inbox so client replies reach the team directly.
+      await sendEmail({ to: lead.email, subject, html, replyTo: adminTo ?? undefined });
     }
   } catch (err) {
     console.error("[leads] email send failed:", err);
