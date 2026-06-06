@@ -22,7 +22,18 @@ export async function sendEmail({ to, subject, html, replyTo }: SendArgs) {
     console.warn("[email] Resend not configured — skipping send to", to);
     return { skipped: true as const };
   }
+
+  console.log("[email] sendEmail called", { to, subject, hasReplyTo: Boolean(replyTo) });
+  console.log("[email] env status", {
+    resendApiKeyPresent: Boolean(process.env.RESEND_API_KEY),
+    fromEmailPresent: Boolean(process.env.FROM_EMAIL),
+    adminEmailPresent: Boolean(process.env.ADMIN_EMAIL),
+  });
+
   const resend = new Resend(process.env.RESEND_API_KEY);
+
+  // Resend's SDK does NOT throw on API errors — it returns { data, error }.
+  // We must inspect `error` explicitly, otherwise failures pass silently.
   const { data, error } = await resend.emails.send({
     from: process.env.FROM_EMAIL!,
     to,
@@ -30,8 +41,14 @@ export async function sendEmail({ to, subject, html, replyTo }: SendArgs) {
     html,
     replyTo,
   });
-  if (error) throw new Error(error.message);
-  return { id: data?.id, skipped: false as const };
+
+  if (error) {
+    console.error("[email] send failed", { to, subject, error });
+    throw new Error(error.message ?? "Resend send failed");
+  }
+
+  console.log("[email] send success", { to, id: data?.id });
+  return { id: data?.id ?? null, skipped: false as const };
 }
 
 const ESC: Record<string, string> = {
