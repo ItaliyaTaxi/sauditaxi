@@ -117,6 +117,37 @@ export function breadcrumbSchema(
   };
 }
 
+/** BlogPosting / Article schema for a blog post. */
+export function articleSchema(input: {
+  title: string;
+  description: string;
+  path: string;
+  image: string;
+  author: string;
+  datePublished: string | null;
+  dateModified: string | null;
+  keywords?: string[];
+  section?: string;
+}): JsonLd {
+  const url = absoluteUrl(input.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: input.title,
+    description: input.description,
+    image: input.image.startsWith("http") ? input.image : absoluteUrl(input.image),
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    author: { "@type": "Organization", name: input.author, url: siteConfig.url },
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    ...(input.datePublished ? { datePublished: input.datePublished } : {}),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+    ...(input.keywords && input.keywords.length ? { keywords: input.keywords.join(", ") } : {}),
+    ...(input.section ? { articleSection: input.section } : {}),
+  };
+}
+
 export function faqSchema(faqs: Faq[]): JsonLd {
   return {
     "@context": "https://schema.org",

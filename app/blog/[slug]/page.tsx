@@ -1,0 +1,218 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Clock, CalendarDays, User, Tag, ListTree } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BlogContent } from "@/components/blog/BlogContent";
+import { BlogCard } from "@/components/blog/BlogCard";
+import { ShareButtons } from "@/components/blog/ShareButtons";
+import { CTASection } from "@/components/sections/CTASection";
+import { SchemaScript } from "@/components/seo/SchemaScript";
+import { buildMetadata } from "@/lib/seo";
+import { absoluteUrl, siteConfig } from "@/lib/site";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { formatBlogDate } from "@/lib/format";
+import {
+  getPublishedBlogBySlug,
+  getRelatedBlogs,
+  extractToc,
+} from "@/lib/blogs";
+
+export const revalidate = 300;
+
+type Params = { slug: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getPublishedBlogBySlug(slug);
+  if (!blog) {
+    return buildMetadata({
+      title: "Article not found",
+      description: "This article could not be found.",
+      path: `/blog/${slug}`,
+      index: false,
+    });
+  }
+
+  const title = blog.metaTitle || blog.title;
+  const description = blog.metaDescription || blog.excerpt || siteConfig.description;
+  const image = blog.featuredImage || siteConfig.ogImage;
+
+  const meta = buildMetadata({
+    title,
+    description,
+    path: `/blog/${blog.slug}`,
+    image,
+  });
+
+  // Upgrade Open Graph to an article with publish/update times + keywords.
+  meta.openGraph = {
+    ...meta.openGraph,
+    type: "article",
+    publishedTime: blog.publishedAt ?? undefined,
+    modifiedTime: blog.updatedAt,
+    authors: [blog.author],
+    section: blog.category,
+    tags: blog.tags,
+  };
+  if (blog.focusKeyword || blog.secondaryKeywords.length) {
+    meta.keywords = [blog.focusKeyword, ...blog.secondaryKeywords].filter(Boolean) as string[];
+  }
+  return meta;
+}
+
+export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const blog = await getPublishedBlogBySlug(slug);
+  if (!blog) notFound();
+
+  const related = await getRelatedBlogs(blog, 3);
+  const toc = extractToc(blog.content);
+  const url = absoluteUrl(`/blog/${blog.slug}`);
+
+  const crumbs = [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: blog.title, path: `/blog/${blog.slug}` },
+  ];
+
+  const schemas = [
+    breadcrumbSchema(crumbs),
+    articleSchema({
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || blog.excerpt || siteConfig.description,
+      path: `/blog/${blog.slug}`,
+      image: blog.featuredImage || siteConfig.ogImage,
+      author: blog.author,
+      datePublished: blog.publishedAt,
+      dateModified: blog.updatedAt,
+      keywords: [blog.focusKeyword, ...blog.secondaryKeywords].filter(Boolean) as string[],
+      section: blog.category,
+    }),
+    ...(blog.faqs.length ? [faqSchema(blog.faqs)] : []),
+    ...(blog.schemaJson ? [blog.schemaJson] : []),
+  ];
+
+  return (
+    <>
+      <SchemaScript schema={schemas} />
+
+      {/* Hero */}
+      <section className="border-b border-border bg-navy text-white">
+        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
+          <Breadcrumbs items={crumbs} onDark />
+          <Link
+            href={`/blog?category=${encodeURIComponent(blog.category)}`}
+            className="mt-6 inline-block rounded-full bg-gold px-3 py-1 text-xs font-semibold text-navy"
+          >
+            {blog.category}
+          </Link>
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">{blog.title}</h1>
+          {blog.excerpt && <p className="mt-4 text-lg text-white/85">{blog.excerpt}</p>}
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
+            <span className="inline-flex items-center gap-1.5">
+              <User className="size-4" /> {blog.author}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <CalendarDays className="size-4" /> {formatBlogDate(blog.publishedAt ?? blog.createdAt)}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="size-4" /> {blog.readingTime} min read
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <article className="bg-white py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          {/* Featured image */}
+          {blog.featuredImage && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={blog.featuredImage}
+              alt={blog.featuredImageAlt ?? blog.title}
+              className="mb-10 aspect-[16/9] w-full rounded-2xl object-cover"
+            />
+          )}
+
+          {/* Table of contents */}
+          {toc.length > 1 && (
+            <nav className="mb-10 rounded-2xl border border-border bg-muted/40 p-5" aria-label="Table of contents">
+              <p className="flex items-center gap-2 text-sm font-bold text-navy">
+                <ListTree className="size-4 text-gold" /> In this guide
+              </p>
+              <ol className="mt-3 space-y-1.5 text-sm">
+                {toc.map((h) => (
+                  <li key={h.id}>
+                    <a href={`#${h.id}`} className="text-navy/80 hover:text-gold">
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
+          {/* Body */}
+          <BlogContent html={blog.content} />
+
+          {/* FAQ */}
+          {blog.faqs.length > 0 && (
+            <section className="mt-14" aria-labelledby="faq-heading">
+              <h2 id="faq-heading" className="text-2xl font-bold text-navy">
+                Frequently Asked Questions
+              </h2>
+              <div className="mt-6 divide-y divide-border rounded-2xl border border-border">
+                {blog.faqs.map((f, i) => (
+                  <details key={i} className="group p-5" {...(i === 0 ? { open: true } : {})}>
+                    <summary className="cursor-pointer list-none font-semibold text-navy marker:hidden">
+                      {f.question}
+                    </summary>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Tags */}
+          {blog.tags.length > 0 && (
+            <div className="mt-10 flex flex-wrap items-center gap-2">
+              <Tag className="size-4 text-muted-foreground" />
+              {blog.tags.map((t) => (
+                <span key={t} className="rounded-full bg-muted px-3 py-1 text-xs text-navy">
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Share */}
+          <div className="mt-8 border-t border-border pt-6">
+            <ShareButtons url={url} title={blog.title} />
+          </div>
+        </div>
+      </article>
+
+      {/* Related */}
+      {related.length > 0 && (
+        <section className="bg-muted/40 py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-navy">Related guides</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((b) => (
+                <BlogCard key={b.id} blog={b} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <CTASection />
+    </>
+  );
+}

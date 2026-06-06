@@ -5,8 +5,9 @@ import { airports } from "@/data/airports";
 import { routes } from "@/data/routes";
 import { borders } from "@/data/borders";
 import { services } from "@/data/services";
+import { listPublishedBlogs } from "@/lib/blogs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticPaths: {
@@ -19,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.5, changeFrequency: "yearly" },
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" },
     { path: "/get-quote", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
     { path: "/intercity-transfers", priority: 0.8, changeFrequency: "monthly" },
     { path: "/terms-and-conditions", priority: 0.3, changeFrequency: "yearly" },
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
@@ -54,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
-  return [
+  const base = [
     ...staticPaths,
     ...servicePaths,
     ...cityPaths,
@@ -67,4 +69,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));
+
+  // Published blog posts (pulled live from the database).
+  const blogs = await listPublishedBlogs();
+  const blogEntries: MetadataRoute.Sitemap = blogs.map((b) => ({
+    url: absoluteUrl(`/blog/${b.slug}`),
+    lastModified: new Date(b.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...base, ...blogEntries];
 }

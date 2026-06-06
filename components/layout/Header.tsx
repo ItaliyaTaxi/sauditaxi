@@ -48,6 +48,7 @@ const navLinks: NavItem[] = [
     })),
   },
   { label: "Umrah Taxi", href: "/umrah-taxi-service" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

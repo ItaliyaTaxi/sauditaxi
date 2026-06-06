@@ -116,7 +116,44 @@ revoke all on function public.verify_admin(text, text)        from public, anon,
 grant execute on function public.upsert_admin(text, text, text) to service_role;
 grant execute on function public.verify_admin(text, text)        to service_role;
 
+-- Blogs ---------------------------------------------------------------------
+-- SEO blog/CMS content. Authored in the admin CRM, rendered on /blog.
+create table if not exists public.blogs (
+  id                  uuid primary key default gen_random_uuid(),
+  title               text not null,
+  slug                text not null unique,
+  excerpt             text,
+  content             text not null default '',
+  meta_title          text,
+  meta_description    text,
+  focus_keyword       text,
+  secondary_keywords  text[] not null default '{}',
+  featured_image      text,
+  featured_image_alt  text,
+  author              text not null default 'Saudi Taxi Transfers',
+  category            text not null default 'Travel Guides',
+  tags                text[] not null default '{}',
+  faqs                jsonb not null default '[]'::jsonb,
+  schema_json         jsonb,
+  reading_time        integer not null default 1,
+  status              text not null default 'draft',
+  published_at        timestamptz,
+  created_at          timestamptz not null default now(),
+  updated_at          timestamptz not null default now()
+);
+
+create index if not exists blogs_slug_idx         on public.blogs (slug);
+create index if not exists blogs_status_idx       on public.blogs (status);
+create index if not exists blogs_published_at_idx on public.blogs (published_at desc);
+create index if not exists blogs_category_idx     on public.blogs (category);
+
+drop trigger if exists blogs_set_updated_at on public.blogs;
+create trigger blogs_set_updated_at
+  before update on public.blogs
+  for each row execute function public.set_updated_at();
+
 -- Lock everything down to the service role only -----------------------------
 alter table public.leads      enable row level security;
 alter table public.email_logs enable row level security;
 alter table public.admins     enable row level security;
+alter table public.blogs      enable row level security;

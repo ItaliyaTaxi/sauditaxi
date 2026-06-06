@@ -24,6 +24,7 @@ function rateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
+  console.log("[leads] POST /api/leads called");
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     request.headers.get("x-real-ip") ||
@@ -93,17 +94,20 @@ export async function POST(request: Request) {
   // 2) Notify admin + client (non-fatal — never block a saved lead on email).
   try {
     const adminTo = process.env.ADMIN_EMAIL;
+    console.log("[leads] preparing to send emails", { adminEmailPresent: Boolean(adminTo), clientEmailPresent: Boolean(lead.email) });
     if (adminTo) {
       const { subject, html } = adminLeadEmail(lead);
+      console.log("[leads] sending admin email to", adminTo);
       await sendEmail({ to: adminTo, subject, html, replyTo: lead.email ?? undefined });
     }
     if (lead.email) {
       const { subject, html } = clientLeadEmail(lead);
+      console.log("[leads] sending client email to", lead.email);
       // Reply-to the admin inbox so client replies reach the team directly.
       await sendEmail({ to: lead.email, subject, html, replyTo: adminTo ?? undefined });
     }
   } catch (err) {
-    console.error("[leads] email send failed:", err);
+    console.error("[leads] email send failed:", err instanceof Error ? err.stack : err);
   }
 
   return NextResponse.json({ ok: true, id: lead.id });
