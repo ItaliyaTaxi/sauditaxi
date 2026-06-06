@@ -80,7 +80,7 @@ create or replace function public.upsert_admin(
 returns uuid
 language plpgsql
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
 declare
   v_id uuid;
@@ -101,7 +101,7 @@ create or replace function public.verify_admin(p_email text, p_password text)
 returns text
 language sql
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
   select email from public.admins
   where email = lower(trim(p_email))
