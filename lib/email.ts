@@ -62,7 +62,7 @@ function esc(value: unknown): string {
   return String(value ?? "").replace(/[&<>"']/g, (c) => ESC[c]);
 }
 
-function detailRows(lead: Lead): string {
+function detailRows(lead: Lead, { includeSource = true }: { includeSource?: boolean } = {}): string {
   const rows: [string, string | null][] = [
     ["Name", lead.fullName],
     ["Phone / WhatsApp", lead.phone],
@@ -77,7 +77,8 @@ function detailRows(lead: Lead): string {
     ["Flight number", lead.flightNumber],
     ["Message", lead.message],
     ["Service", lead.serviceType],
-    ["Source page", lead.sourcePage],
+    // Source page is internal — admin only, never shown to the client.
+    ...(includeSource ? ([["Source page", lead.sourcePage]] as [string, string | null][]) : []),
   ];
   return rows
     .filter(([, v]) => v)
@@ -126,7 +127,7 @@ export function clientLeadEmail(lead: Lead): { subject: string; html: string } {
     "We Received Your Taxi Quote Request",
     `<p style="color:#444;margin:0 0 16px">Thank you for contacting us. We have received your taxi/transfer request. Our team will review your trip details and contact you shortly with availability and pricing.</p>
      <p style="color:#444;margin:0 0 8px;font-weight:600">Your trip details:</p>
-     <table style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead)}</table>
+     <table style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead, { includeSource: false })}</table>
      <p style="color:#444;margin:16px 0 0">For the fastest response you can also message us on WhatsApp.</p>`
   );
   return { subject: "We Received Your Taxi Quote Request", html };
