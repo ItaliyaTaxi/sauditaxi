@@ -24,7 +24,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | Taxi Service in Saudi Arabia`,
-    template: `%s | ${siteConfig.name}`,
+    // Page titles are already complete and keyword-rich, so we don't append the
+    // brand here — doing so pushed every title past the ~60-char SEO limit.
+    template: `%s`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,

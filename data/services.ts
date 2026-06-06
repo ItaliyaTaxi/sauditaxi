@@ -149,7 +149,7 @@ export const services: Service[] = [
           "Yes. On longer journeys such as Riyadh to Jeddah or Riyadh to AlUla, the driver will stop for rest and refreshments as needed.",
       },
     ],
-    metaTitle: "Intercity Taxi Saudi Arabia | Private Long-Distance Transfers",
+    metaTitle: "Intercity Taxi Saudi Arabia | Long-Distance Transfers",
     metaDescription:
       "Private intercity taxi service across Saudi Arabia including Riyadh, Jeddah, Makkah, Madinah, Dammam, AlUla, Taif, and more.",
     featured: true,
@@ -228,7 +228,7 @@ export const services: Service[] = [
           "Yes. This is our most requested Umrah transfer. We meet you at the airport and drive directly to your Makkah hotel near the Haram.",
       },
     ],
-    metaTitle: "Umrah Taxi Service Saudi Arabia | Makkah & Madinah Transfers",
+    metaTitle: "Umrah Taxi Saudi Arabia | Makkah & Madinah Transfers",
     metaDescription:
       "Book private Umrah taxi service for Jeddah airport to Makkah, Makkah to Madinah, Ziyarat, and hotel transfers.",
     featured: true,
@@ -265,7 +265,7 @@ export const services: Service[] = [
           "Yes. We arrange meet-and-greet for groups at Jeddah and Madinah airports and transfer everyone together to Makkah or Madinah.",
       },
     ],
-    metaTitle: "Hajj Transport Service Saudi Arabia | Group Pilgrim Transfers",
+    metaTitle: "Hajj Transport Saudi Arabia | Group Pilgrim Transfers",
     metaDescription:
       "Private and group Hajj transport for airport arrivals, hotel transfers, and travel between Makkah, Mina, Arafat, and Madinah.",
     featured: true,
