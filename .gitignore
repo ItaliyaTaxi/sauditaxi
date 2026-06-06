@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local-only scripts (never commit — e.g. Bing URL submission)
+/scripts/local/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
