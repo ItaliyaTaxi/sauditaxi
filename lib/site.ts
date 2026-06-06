@@ -8,8 +8,9 @@ export const siteConfig = {
   legalName: "Saudi Taxi Transfers",
   description:
     "Book private taxi service in Saudi Arabia for airports, cities, hotels, Umrah, Hajj, borders, and intercity transfers. Fast WhatsApp quotes available.",
-  // Update to the live domain before deploying.
-  url: "https://www.sauditaxitransfers.com",
+  // Live canonical domain (no trailing slash). Used for canonicals, sitemap,
+  // robots, OG tags, and JSON-LD — must match the host serving the site.
+  url: "https://saudiprivatetransfers.com",
   // Business WhatsApp number, international format (digits only). Kept here for
   // backend use and structured data only — it is intentionally NOT displayed
   // anywhere on the public site.
