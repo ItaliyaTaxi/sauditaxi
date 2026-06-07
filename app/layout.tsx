@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyWhatsApp } from "@/components/StickyWhatsApp";
+import { StickyMobileQuote } from "@/components/StickyMobileQuote";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import {
@@ -60,7 +61,12 @@ export default function RootLayout({
         <SiteShell
           header={<Header />}
           footer={<Footer />}
-          whatsapp={<StickyWhatsApp />}
+          whatsapp={
+            <>
+              <StickyWhatsApp />
+              <StickyMobileQuote />
+            </>
+          }
           schema={
             // Site-wide JSON-LD: shows on every public page for crawlers.
             <SchemaScript
