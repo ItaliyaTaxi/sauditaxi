@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Car, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { services } from "@/data/services";
@@ -54,6 +56,7 @@ const navLinks: NavItem[] = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
 
@@ -62,36 +65,74 @@ export function Header() {
     setOpenSub(null);
   };
 
-  return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy text-white">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label={`${siteConfig.name} home`}>
-          <span className="flex size-9 items-center justify-center rounded-lg bg-gold text-navy">
-            <Car className="size-5" />
-          </span>
-          <span className="text-lg font-bold tracking-tight">
-            {siteConfig.shortName}
-            <span className="text-gold">.</span>
-          </span>
-        </Link>
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-          {navLinks.map((link) =>
-            link.children ? (
+  return (
+    <header className="sticky top-0 z-50 bg-navy text-white shadow-lg shadow-black/20">
+      {/* Top bar: logo + language + quote + (mobile) menu toggle */}
+      <div className="border-b border-white/10">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            aria-label={`${siteConfig.name} home`}
+            className="flex items-center transition-transform hover:scale-[1.02]"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo.png"
+              alt={`${siteConfig.name} logo`}
+              className="h-14 w-auto sm:h-16"
+            />
+          </Link>
+
+          <div className="flex items-center gap-2 sm:gap-4">
+            <LanguageSwitcher />
+            <Button
+              asChild
+              variant="gold"
+              size="sm"
+              className="hidden shadow-md shadow-gold/20 sm:inline-flex"
+            >
+              <Link href="/get-quote">Get Quote</Link>
+            </Button>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-md p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="size-6" /> : <Menu className="size-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop nav row (below the top bar) */}
+      <nav className="hidden lg:block" aria-label="Primary">
+        <div className="mx-auto flex h-12 max-w-7xl items-center justify-center gap-1 px-4 sm:px-6 lg:px-8">
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return link.children ? (
               <div key={link.href} className="group relative">
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:text-gold group-hover:text-gold"
+                  className={cn(
+                    "flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                    active
+                      ? "bg-white/10 text-gold"
+                      : "text-white/80 hover:bg-white/5 hover:text-gold group-hover:text-gold"
+                  )}
                 >
                   {link.label}
                   <ChevronDown className="size-4 transition-transform group-hover:rotate-180" />
                 </Link>
                 {/* Dropdown panel (hover + keyboard focus) */}
-                <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div
                     className={cn(
-                      "max-h-[70vh] overflow-auto rounded-xl border border-border bg-white p-2 text-navy shadow-2xl",
+                      "max-h-[70vh] overflow-auto rounded-2xl border border-border bg-white p-2 text-navy shadow-2xl ring-1 ring-black/5",
                       link.wide ? "w-[30rem]" : "w-64"
                     )}
                   >
@@ -100,7 +141,7 @@ export function Header() {
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="block rounded-md px-3 py-2 text-sm text-navy/80 transition-colors hover:bg-muted hover:text-navy"
+                            className="block rounded-lg px-3 py-2 text-sm text-navy/80 transition-colors hover:bg-gold/10 hover:text-navy"
                           >
                             {child.label}
                           </Link>
@@ -114,47 +155,43 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:text-gold"
+                className={cn(
+                  "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                  active
+                    ? "bg-white/10 text-gold"
+                    : "text-white/80 hover:bg-white/5 hover:text-gold"
+                )}
               >
                 {link.label}
               </Link>
-            )
-          )}
-        </nav>
-
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button asChild variant="gold" size="sm">
-            <Link href="/get-quote">Get Quote</Link>
-          </Button>
+            );
+          })}
         </div>
+      </nav>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-white lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
-      </div>
+      {/* Premium gold accent line */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
 
-      {/* Mobile nav */}
+      {/* Mobile nav (collapsible) */}
       <div
         className={cn(
-          "lg:hidden overflow-y-auto border-t border-white/10 transition-[max-height] duration-300",
+          "lg:hidden overflow-y-auto bg-navy transition-[max-height] duration-300",
           open ? "max-h-[85vh]" : "max-h-0"
         )}
       >
         <nav className="flex flex-col gap-1 px-4 py-3" aria-label="Mobile">
-          {navLinks.map((link) =>
-            link.children ? (
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return link.children ? (
               <div key={link.href}>
                 <div className="flex items-center">
                   <Link
                     href={link.href}
                     onClick={closeAll}
-                    className="flex-1 rounded-md px-3 py-2 text-sm font-medium text-white/85 hover:bg-white/5 hover:text-gold"
+                    className={cn(
+                      "flex-1 rounded-md px-3 py-2 text-sm font-medium",
+                      active ? "bg-white/10 text-gold" : "text-white/85 hover:bg-white/5 hover:text-gold"
+                    )}
                   >
                     {link.label}
                   </Link>
@@ -162,9 +199,7 @@ export function Header() {
                     type="button"
                     aria-label={`Toggle ${link.label} submenu`}
                     aria-expanded={openSub === link.href}
-                    onClick={() =>
-                      setOpenSub((cur) => (cur === link.href ? null : link.href))
-                    }
+                    onClick={() => setOpenSub((cur) => (cur === link.href ? null : link.href))}
                     className="rounded-md p-2 text-white/70 hover:text-gold"
                   >
                     <ChevronDown
@@ -196,14 +231,17 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
-                className="rounded-md px-3 py-2 text-sm font-medium text-white/85 hover:bg-white/5 hover:text-gold"
+                className={cn(
+                  "rounded-md px-3 py-2 text-sm font-medium",
+                  active ? "bg-white/10 text-gold" : "text-white/85 hover:bg-white/5 hover:text-gold"
+                )}
               >
                 {link.label}
               </Link>
-            )
-          )}
+            );
+          })}
           <div className="mt-2 px-1">
-            <Button asChild variant="gold" className="w-full">
+            <Button asChild variant="gold" className="w-full shadow-md shadow-gold/20">
               <Link href="/get-quote" onClick={closeAll}>
                 Get Quote
               </Link>

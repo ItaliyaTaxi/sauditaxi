@@ -162,3 +162,16 @@ body {
 }
 .blog-prose tbody tr:nth-child(even) { background: #faf9f7; }
 .blog-prose h2 + p { margin-top: 0.5rem; }
+
+/* Hide the Google Website Translate chrome — we drive it via our own EN/AR
+   switcher. Keeps the page clean while still translating content. */
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-gadget-icon { display: none !important; }
+.skiptranslate { display: none !important; }
+body { top: 0 !important; }
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

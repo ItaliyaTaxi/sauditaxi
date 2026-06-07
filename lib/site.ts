@@ -3,9 +3,9 @@
  * here — every page, schema block, and WhatsApp link reads from this file.
  */
 export const siteConfig = {
-  name: "Saudi Taxi Transfers",
-  shortName: "Saudi Taxi",
-  legalName: "Saudi Taxi Transfers",
+  name: "Saudi Private Transfers",
+  shortName: "Saudi Private Transfers",
+  legalName: "Saudi Private Transfers",
   description:
     "Book private taxi service in Saudi Arabia for airports, cities, hotels, Umrah, Hajj, borders, and intercity transfers. Fast WhatsApp quotes available.",
   // Live canonical domain (no trailing slash). Used for canonicals, sitemap,

@@ -56,7 +56,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} h-full`}>
+    <html lang="en" dir="ltr" className={`${geist.variable} h-full`} suppressHydrationWarning>
       <body className="flex min-h-full flex-col font-sans">
         <SiteShell
           header={<Header />}

@@ -50,7 +50,7 @@ export function LoginForm() {
             <Car className="size-5" />
           </span>
           <span className="text-lg font-bold text-white">
-            Saudi Taxi <span className="text-gold">CRM</span>
+            Saudi Private Transfers <span className="text-gold">CRM</span>
           </span>
         </div>
         <h1 className="mt-6 text-xl font-bold text-white">Admin sign in</h1>

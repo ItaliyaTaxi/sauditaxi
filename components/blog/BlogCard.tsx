@@ -27,7 +27,7 @@ export function BlogCard({ blog, featured = false }: { blog: Blog; featured?: bo
           />
         ) : (
           <div className="flex size-full items-center justify-center bg-navy text-gold">
-            <span className="text-sm font-semibold">Saudi Taxi</span>
+            <span className="text-sm font-semibold">Saudi Private Transfers</span>
           </div>
         )}
         <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-navy">

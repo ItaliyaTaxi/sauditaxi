@@ -11,7 +11,7 @@ const crumbs = [
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
   description:
-    "How Saudi Taxi Transfers collects, uses, and protects your personal information when you request a taxi or transfer quote in Saudi Arabia.",
+    "How Saudi Private Transfers collects, uses, and protects your personal information when you request a taxi or transfer quote in Saudi Arabia.",
   path: "/privacy-policy",
 });
 

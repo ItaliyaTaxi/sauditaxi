@@ -88,7 +88,7 @@ export function AdminShell({
           <Car className="size-5" />
         </span>
         <span className="text-base font-bold text-white">
-          Saudi Taxi <span className="text-gold">CRM</span>
+          Saudi Private Transfers <span className="text-gold">CRM</span>
         </span>
       </div>
 
@@ -149,7 +149,7 @@ export function AdminShell({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3 lg:hidden">
           <span className="font-bold text-neutral-900">
-            Saudi Taxi <span className="text-gold">CRM</span>
+            Saudi Private Transfers <span className="text-gold">CRM</span>
           </span>
           <button
             type="button"
