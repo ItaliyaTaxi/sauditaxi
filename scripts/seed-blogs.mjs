@@ -1039,6 +1039,981 @@ ${CTA("Makkah")}
 ${CTA("Bahrain")}
 `,
   },
+
+  {
+    title: "How to Perform Umrah: Step-by-Step Guide for Beginners",
+    slug: "how-to-perform-umrah-step-by-step-guide",
+    category: "Umrah Guides",
+    author: "Saudi Private Transfers",
+    featuredImage: "/images/hero-mosque.svg",
+    featuredImageAlt: "Pilgrims performing Tawaf around the Kaaba during Umrah in Makkah",
+    focusKeyword: "how to perform umrah",
+    secondaryKeywords: [
+      "umrah steps",
+      "umrah step by step",
+      "how to do umrah",
+      "umrah guide for beginners",
+    ],
+    tags: ["Umrah", "Pilgrimage", "Makkah", "Guide"],
+    metaTitle: "How to Perform Umrah: Step-by-Step Guide (2026)",
+    metaDescription:
+      "Learn how to perform Umrah step by step — ihram, tawaf, sa'i, and tahallul — in a clear beginner's guide covering each ritual, etiquette, and practical tips.",
+    excerpt:
+      "A clear, beginner-friendly walkthrough of how to perform Umrah — from entering ihram at the miqat to tawaf, sa'i, and trimming your hair — with practical tips.",
+    faqs: [
+      {
+        question: "How long does it take to perform Umrah?",
+        answer:
+          "The rituals themselves usually take three to six hours depending on the crowd. Tawaf and sa'i take the most time, especially during busy seasons like Ramadan. Many pilgrims set aside half a day for a relaxed pace.",
+      },
+      {
+        question: "Can I perform Umrah at any time of year?",
+        answer:
+          "Yes. Unlike Hajj, which has fixed dates, Umrah can be performed at almost any time of the year. Ramadan is the most popular and crowded period, while the cooler months outside Ramadan are quieter.",
+      },
+      {
+        question: "What is the correct order of the Umrah rituals?",
+        answer:
+          "The order is: enter ihram and make the intention at the miqat, perform tawaf (seven circuits around the Kaaba), pray two rak'ahs near Maqam Ibrahim, perform sa'i (seven trips between Safa and Marwah), then shave or trim the hair to exit ihram.",
+      },
+      {
+        question: "Do women shave their hair after Umrah?",
+        answer:
+          "No. Women trim a small amount — about a fingertip's length — from the ends of their hair. Men may either shave the head completely (halq) or trim it (taqsir), with shaving being more rewarded.",
+      },
+      {
+        question: "Should I learn the rituals before I travel?",
+        answer:
+          "Yes. Reviewing the steps and key supplications in advance makes the experience far calmer. This guide is an overview — for rulings specific to your situation, consult a qualified scholar or your Umrah group's guide.",
+      },
+    ],
+    content: `
+<p>For millions of Muslims, performing Umrah is a deeply awaited spiritual journey. If it is your first time, understanding exactly <strong>how to perform Umrah</strong> before you arrive removes a great deal of anxiety and lets you focus on worship rather than logistics. This step-by-step guide walks you through each ritual in order — entering ihram, tawaf, sa'i, and trimming the hair — along with the etiquette and practical tips that make the experience smooth and meaningful.</p>
+<p>Umrah is sometimes called the "lesser pilgrimage," but there is nothing minor about its significance. Unlike Hajj, it can be performed at almost any time of year and completed in a few hours. Below, we explain everything a beginner needs to know, written in plain language so you can approach your pilgrimage with confidence.</p>
+<p><em>Note: this article is a general overview of the widely-followed steps of Umrah. For rulings specific to your circumstances, always consult a qualified scholar or your group's religious guide.</em></p>
+
+<h2 id="what-is-umrah">What Is Umrah?</h2>
+<p>Umrah is a sacred visit to the Masjid al-Haram in Makkah to perform a set of rituals centred on the Kaaba. It consists of four essential acts performed in sequence. While Hajj is obligatory once in a lifetime for those who are able and occurs on fixed days, Umrah is a recommended act of worship that can be undertaken throughout the year.</p>
+
+<h2 id="at-a-glance">The Steps of Umrah at a Glance</h2>
+<table>
+  <thead>
+    <tr><th>Step</th><th>Ritual</th><th>Where</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Enter ihram &amp; make intention</td><td>At the miqat</td></tr>
+    <tr><td>2</td><td>Tawaf — 7 circuits of the Kaaba</td><td>Masjid al-Haram</td></tr>
+    <tr><td>3</td><td>Two rak'ahs &amp; Zamzam water</td><td>Near Maqam Ibrahim</td></tr>
+    <tr><td>4</td><td>Sa'i — 7 trips Safa to Marwah</td><td>Inside the Haram</td></tr>
+    <tr><td>5</td><td>Shave or trim hair (tahallul)</td><td>Makkah</td></tr>
+  </tbody>
+</table>
+
+<h2 id="step-1-ihram">Step 1: Enter the State of Ihram</h2>
+<p>Ihram is both a physical state and a spiritual intention. Before reaching the boundary point known as the <strong>miqat</strong>, pilgrims perform ghusl (a full ritual wash), wear the ihram garments, and make the intention (niyyah) to perform Umrah.</p>
+<h3>Ihram clothing</h3>
+<p>Men wear two unstitched white sheets — one wrapped around the waist and one over the shoulder. Women wear ordinary modest clothing that covers the body, without covering the face or hands. The simplicity of ihram reminds every pilgrim that all stand equal before God.</p>
+<h3>The intention and Talbiyah</h3>
+<p>After making the intention, pilgrims begin reciting the Talbiyah: "Labbayk Allahumma labbayk…" ("Here I am, O Allah, here I am"). This is repeated frequently until tawaf begins.</p>
+<h3>Ihram restrictions</h3>
+<p>While in ihram, certain actions are prohibited, including using scented products, cutting hair or nails, arguing, and engaging in marital relations. Many first-time pilgrims arrive at Jeddah already in ihram, which is why a smooth <a href="/airport-transfer/jeddah-airport">Jeddah airport transfer</a> straight to Makkah is so valued — you can travel directly without changing vehicles.</p>
+
+<h2 id="step-2-tawaf">Step 2: Perform Tawaf Around the Kaaba</h2>
+<p>On reaching the Masjid al-Haram, pilgrims perform <strong>tawaf</strong> — circling the Kaaba seven times in an anticlockwise direction, beginning and ending at the corner of the Black Stone (Hajar al-Aswad). If possible, pilgrims gesture toward or kiss the Black Stone at the start of each circuit, but pushing or harming others to reach it should always be avoided.</p>
+<h3>During tawaf</h3>
+<ul>
+  <li>Men perform <em>idtiba</em> (uncovering the right shoulder) during tawaf only.</li>
+  <li>There are no fixed obligatory supplications — pilgrims may make personal du'a or recite the Qur'an.</li>
+  <li>Maintain wudu (ablution) throughout, as tawaf requires it.</li>
+</ul>
+
+<h2 id="step-3-maqam-zamzam">Step 3: Pray at Maqam Ibrahim and Drink Zamzam</h2>
+<p>After completing the seven circuits, pilgrims offer two short rak'ahs of prayer, ideally near Maqam Ibrahim (though anywhere in the mosque is acceptable when it is crowded). Afterwards, they drink the blessed Zamzam water, which is freely available throughout the Haram.</p>
+
+<h2 id="step-4-sai">Step 4: Perform Sa'i Between Safa and Marwah</h2>
+<p>Sa'i commemorates Hajar's search for water for her son Isma'il. Pilgrims walk seven times between the two small hills of <strong>Safa and Marwah</strong>, now enclosed within the mosque. The journey starts at Safa and ends at Marwah, with each one-way trip counting as one of the seven.</p>
+<h3>During sa'i</h3>
+<ul>
+  <li>Men jog lightly between the clearly marked green lights; women walk normally.</li>
+  <li>Wudu is recommended but not strictly required for sa'i.</li>
+  <li>Make personal supplications — this is a moment of reflection and gratitude.</li>
+</ul>
+
+<h2 id="step-5-tahallul">Step 5: Shave or Trim Your Hair (Tahallul)</h2>
+<p>The final act is <strong>tahallul</strong> — exiting the state of ihram by cutting the hair. Men either shave the head completely (halq), which carries greater reward, or trim it evenly (taqsir). Women trim about a fingertip's length from the ends of their hair. With this, the Umrah is complete and the ihram restrictions are lifted.</p>
+
+<h2 id="after-umrah">After Completing Umrah</h2>
+<p>Many pilgrims continue their journey to Madinah to visit the Prophet's Mosque and the historic sites of the city. The <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> journey is a comfortable few hours by private car. If you plan ziyarat, see our guide to the <a href="/blog/madinah-ziyarat-historic-sites-guide">historic sites of Madinah</a> to make the most of your visit.</p>
+
+<h2 id="practical-tips">Practical Tips for a Smooth Umrah</h2>
+<ul>
+  <li><strong>Learn the steps beforehand</strong> — a calm mind worships better.</li>
+  <li><strong>Stay hydrated</strong> and pace yourself, especially in summer.</li>
+  <li><strong>Wear comfortable sandals</strong> you can remove easily.</li>
+  <li><strong>Avoid peak prayer times</strong> for tawaf if you want more space.</li>
+  <li><strong>Plan your transport</strong> in advance so arrival and travel between the holy cities are stress-free — explore our <a href="/umrah-taxi-service">Umrah taxi service</a> and our <a href="/blog/umrah-transport-makkah-madinah-guide">Umrah transport guide</a>.</li>
+  <li><strong>Read about common pitfalls</strong> in our guide to <a href="/blog/common-mistakes-to-avoid-during-umrah">mistakes to avoid during Umrah</a>.</li>
+</ul>
+
+<h2 id="miqat-boundaries">Understanding the Miqat Boundaries</h2>
+<p>The <strong>miqat</strong> is the designated boundary at which pilgrims must enter ihram before proceeding toward Makkah. There are five fixed miqat points, each serving pilgrims arriving from a particular direction. Knowing yours prevents the most common error of all — crossing the boundary without ihram.</p>
+<table>
+  <thead>
+    <tr><th>Miqat</th><th>Serves pilgrims from</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dhul Hulayfah (Abyar Ali)</td><td>Madinah and beyond</td></tr>
+    <tr><td>Al-Juhfah (Rabigh)</td><td>Syria, Egypt, North Africa</td></tr>
+    <tr><td>Qarn al-Manazil (As-Sayl)</td><td>Najd and Taif</td></tr>
+    <tr><td>Yalamlam</td><td>Yemen and the south</td></tr>
+    <tr><td>Dhat Irq</td><td>Iraq and the east</td></tr>
+  </tbody>
+</table>
+<p>Pilgrims flying into Jeddah typically enter ihram before landing, as the aircraft crosses a miqat in the air. The captain usually announces the approach. If you are travelling onward from Madinah after visiting first, your miqat is Dhul Hulayfah, just outside the city.</p>
+
+<h2 id="virtues">The Virtues of Umrah</h2>
+<p>Umrah carries immense reward. The Prophet ﷺ taught that performing one Umrah to the next is an expiation for the sins committed in between, and that Umrah performed during Ramadan is especially virtuous. Understanding this spiritual weight helps pilgrims approach each step with sincerity rather than treating it as a checklist. Every circuit of tawaf, every walk of sa'i, and every supplication is an opportunity to draw closer to God and seek forgiveness.</p>
+
+<h2 id="umrah-for-women">Umrah for Women: Key Differences</h2>
+<p>The rituals of Umrah are the same for women, with a few important distinctions:</p>
+<ul>
+  <li><strong>Ihram dress</strong> — women do not wear the two white sheets; they wear ordinary modest clothing, leaving the face and hands uncovered while in ihram.</li>
+  <li><strong>Talbiyah</strong> — women recite it softly rather than aloud.</li>
+  <li><strong>Hair-cutting</strong> — women trim about a fingertip's length from the ends of their hair rather than shaving.</li>
+  <li><strong>Menstruation</strong> — a woman who is menstruating delays tawaf until she is able, as tawaf requires purity; other matters may differ, so a scholar should be consulted.</li>
+</ul>
+<p>Travel arrangements such as a mahram may apply depending on circumstances and current regulations — always check the latest rules before booking.</p>
+
+<h2 id="family-pilgrims">Performing Umrah with Children and Elderly Family</h2>
+<p>Umrah is a journey families often make together, including young children and elderly relatives. A little planning keeps it comfortable for everyone:</p>
+<ul>
+  <li><strong>Wheelchairs and electric carts</strong> are available within the Haram for those who cannot walk the full tawaf and sa'i.</li>
+  <li><strong>Pace the day</strong> — break the rituals with rest, and avoid the most crowded prayer times.</li>
+  <li><strong>Keep the group together</strong> and agree a meeting point in case anyone is separated in the crowd.</li>
+  <li><strong>Door-to-door transport</strong> spares elderly pilgrims the strain of long walks between the hotel, Haram, and airport — one reason families value a private <a href="/umrah-taxi-service">Umrah taxi service</a>.</li>
+</ul>
+
+<h2 id="presence-of-heart">Worship with Presence of Heart</h2>
+<p>Perhaps the most important "step" of all is one not found in any checklist: performing Umrah with sincerity and presence of heart. The rituals are a means, not an end. Many pilgrims, focused on getting the mechanics right, forget to pour out personal supplication during tawaf and sa'i — yet these are among the most blessed moments to ask God for what matters most to you. Slow down, reflect, and let the experience move you. A calm, well-prepared pilgrim who has arranged logistics in advance is far more able to worship with this kind of presence.</p>
+
+<h2 id="ihram-prohibitions">What to Avoid While in Ihram</h2>
+<p>Once in ihram, a pilgrim observes a set of restrictions that last until tahallul. Knowing them in advance prevents accidental slips:</p>
+<ul>
+  <li><strong>No perfume or scented products</strong> on the body or clothing.</li>
+  <li><strong>No cutting hair or trimming nails.</strong></li>
+  <li><strong>No hunting</strong> or harming animals.</li>
+  <li><strong>No marital relations</strong> or related intimacy.</li>
+  <li><strong>No arguing, foul speech, or sinful behaviour.</strong></li>
+  <li><strong>Men:</strong> no stitched clothing and no covering the head; <strong>women:</strong> no face veil or gloves while in ihram.</li>
+</ul>
+<p>If a restriction is broken — whether by mistake or necessity, such as needing medication — there may be an expiation (fidyah) in some cases, while genuine forgetfulness is often excused. Because the rulings vary, ask a scholar about your specific situation rather than worrying alone.</p>
+
+<h2 id="umrah-for-others">Performing Umrah on Behalf of Another</h2>
+<p>It is permissible to perform Umrah on behalf of someone who has passed away or who is permanently unable to travel due to age or illness. The general condition is that the person performing it has already completed their own Umrah first. The intention is made on the other person's behalf at the miqat. As with all such matters, confirm the details with a knowledgeable scholar.</p>
+
+<h2 id="common-questions">Points First-Timers Often Ask</h2>
+<ul>
+  <li><strong>Can I perform Umrah more than once on the same trip?</strong> Yes — many pilgrims do, re-entering ihram from a nearby boundary such as Tan'im or Ji'ranah.</li>
+  <li><strong>Can I use my phone during tawaf?</strong> It's best kept away to preserve focus, though brief use to follow a du'a or count circuits is common.</li>
+  <li><strong>What if I lose count during tawaf or sa'i?</strong> Build on the lower number you are certain of, and use a counter to avoid the problem.</li>
+  <li><strong>Is photography allowed?</strong> Be considerate — prioritise worship over photos, and respect others' privacy and the sanctity of the place.</li>
+</ul>
+
+<h2 id="conclusion">Final Thoughts</h2>
+<p>Knowing <strong>how to perform Umrah</strong> in advance transforms the experience from overwhelming to deeply peaceful. The four essential steps — ihram, tawaf, sa'i, and tahallul — are simple to follow once you understand them, and millions complete them every year. Prepare your knowledge, prepare your heart, and arrange reliable transport so the practical side never distracts from the spiritual. May your pilgrimage be accepted.</p>
+${CTA("Makkah")}
+`,
+  },
+
+  {
+    title: "Common Mistakes to Avoid During Umrah",
+    slug: "common-mistakes-to-avoid-during-umrah",
+    category: "Umrah Guides",
+    author: "Saudi Private Transfers",
+    featuredImage: "/images/hero-mosque.svg",
+    featuredImageAlt: "Crowd of pilgrims at the Masjid al-Haram during Umrah season",
+    focusKeyword: "common umrah mistakes",
+    secondaryKeywords: [
+      "mistakes during umrah",
+      "umrah mistakes to avoid",
+      "what not to do in umrah",
+      "umrah common errors",
+    ],
+    tags: ["Umrah", "Pilgrimage", "Tips", "Guide"],
+    metaTitle: "Common Mistakes to Avoid During Umrah (2026)",
+    metaDescription:
+      "Avoid the most common Umrah mistakes — from ihram and miqat errors to tawaf and sa'i slip-ups. A practical guide to performing your pilgrimage correctly.",
+    excerpt:
+      "The most common mistakes pilgrims make during Umrah — ihram timing, tawaf errors, etiquette slip-ups — and simple ways to avoid each one.",
+    faqs: [
+      {
+        question: "What is the most common mistake during Umrah?",
+        answer:
+          "One of the most frequent is crossing the miqat boundary without having entered ihram and made the intention. Pilgrims arriving by air should enter ihram before or at the miqat, which is why preparing on the flight is important.",
+      },
+      {
+        question: "Is it a mistake to keep the right shoulder uncovered the whole time?",
+        answer:
+          "Yes, for men. Uncovering the right shoulder (idtiba) applies only during tawaf. It should be covered again during prayer and the rest of the time.",
+      },
+      {
+        question: "Do I have to kiss the Black Stone?",
+        answer:
+          "No. Kissing the Black Stone is a recommended act, not a requirement. Pushing, shoving, or harming others to reach it is a mistake — a simple gesture toward it from a distance is perfectly acceptable.",
+      },
+      {
+        question: "Can I break wudu during tawaf?",
+        answer:
+          "Tawaf requires wudu, so if it breaks you should renew it and resume. Many pilgrims overlook this, so make ablution before starting and be mindful during the circuits.",
+      },
+      {
+        question: "Where can I confirm the correct rulings?",
+        answer:
+          "This guide highlights commonly discussed mistakes, but rulings can depend on your situation. Always confirm specifics with a qualified scholar or your Umrah group's guide.",
+      },
+    ],
+    content: `
+<p>Umrah is a profound act of worship, and most pilgrims want to perform it as correctly as possible. Yet because the rituals are unfamiliar and the holy sites are crowded, first-timers often repeat the same avoidable errors. Knowing the <strong>common Umrah mistakes</strong> in advance helps you perform each step with confidence and presence of mind. This guide walks through the slip-ups pilgrims make most often — and the simple way to avoid each one.</p>
+<p>None of these points are meant to cause worry. Umrah is a mercy, and minor errors are part of being human. The goal here is simply to help you prepare so that small, preventable mistakes don't distract from your devotion.</p>
+<p><em>Note: this is a general overview of commonly discussed mistakes. For rulings specific to your situation, consult a qualified scholar.</em></p>
+
+<h2 id="ihram-mistakes">1. Ihram and Miqat Mistakes</h2>
+<p>The single most common error is <strong>crossing the miqat without entering ihram</strong>. Pilgrims arriving by air sometimes assume they can enter ihram after landing, but the intention and garments should be ready before crossing the miqat boundary, which is often reached while still in the air.</p>
+<h3>How to avoid it</h3>
+<ul>
+  <li>Prepare ihram garments and make ghusl before or at the airport of departure.</li>
+  <li>Listen for the captain's announcement about approaching the miqat.</li>
+  <li>Make your intention and begin the Talbiyah in good time.</li>
+</ul>
+<p>Other ihram errors include using scented soap or perfume after entering ihram, and men accidentally wearing stitched clothing.</p>
+
+<h2 id="tawaf-mistakes">2. Tawaf Mistakes</h2>
+<p>Tawaf has several details that are easy to get wrong:</p>
+<ul>
+  <li><strong>Starting from the wrong point</strong> — each circuit must begin and end at the line of the Black Stone.</li>
+  <li><strong>Keeping the right shoulder uncovered after tawaf</strong> — idtiba is for tawaf only; cover it during prayer.</li>
+  <li><strong>Fighting to kiss the Black Stone</strong> — a gesture from afar is enough; harming others is never acceptable.</li>
+  <li><strong>Losing wudu and continuing anyway</strong> — tawaf requires ablution.</li>
+  <li><strong>Miscounting circuits</strong> — use a counter or app to track the seven.</li>
+</ul>
+
+<h2 id="sai-mistakes">3. Sa'i Mistakes</h2>
+<p>During sa'i between Safa and Marwah, common errors include miscounting the seven trips (remember the journey starts at Safa and ends at Marwah), and men forgetting to jog lightly between the green markers. Sa'i does not strictly require wudu, but many pilgrims prefer to maintain it.</p>
+
+<h2 id="etiquette-mistakes">4. Etiquette and Behaviour Mistakes</h2>
+<p>The Haram is sacred and crowded, so behaviour matters as much as ritual:</p>
+<ul>
+  <li><strong>Pushing and impatience</strong> — harming fellow pilgrims contradicts the spirit of Umrah.</li>
+  <li><strong>Praying directly behind Maqam Ibrahim in dense crowds</strong>, blocking the tawaf path.</li>
+  <li><strong>Loud talking or phone use</strong> that disturbs others' worship.</li>
+  <li><strong>Treating the trip as tourism first</strong> — sightseeing is fine, but keep worship central.</li>
+</ul>
+
+<h2 id="tahallul-mistakes">5. Tahallul (Hair-Cutting) Mistakes</h2>
+<p>Some pilgrims trim only a few strands of hair when men are encouraged to shave or trim the whole head evenly, and women should trim a fingertip's length from all the ends. Cutting the hair before completing sa'i is another error — tahallul comes last.</p>
+
+<h2 id="practical-mistakes">6. Practical and Travel Mistakes</h2>
+<p>Beyond the rituals, logistics trip up many first-timers:</p>
+<ul>
+  <li><strong>Not arranging transport in advance</strong>, then negotiating rides while in ihram and exhausted.</li>
+  <li><strong>Underestimating distances</strong> between hotels, the Haram, and the airport.</li>
+  <li><strong>Overpacking</strong> or forgetting essentials — see our <a href="/blog/what-to-pack-for-umrah-checklist">Umrah packing checklist</a>.</li>
+  <li><strong>Skipping preparation</strong> — review the steps first in our <a href="/blog/how-to-perform-umrah-step-by-step-guide">how to perform Umrah</a> guide.</li>
+</ul>
+<p>Booking a reliable <a href="/umrah-taxi-service">Umrah taxi service</a> ahead of time removes the stress of airport pickup and travel between the holy cities, so you arrive calm and ready to worship.</p>
+
+<h2 id="women-notes">7. Points Pilgrims Often Overlook</h2>
+<p>Women on their menstrual cycle should delay tawaf until they are able, while other rites may differ — a scholar can advise. Pilgrims also often forget to make personal du'a during sa'i and tawaf, missing a precious opportunity. Finally, many rush the experience; slowing down and being present is itself a way to avoid the biggest "mistake" of all — performing the rituals without reflection.</p>
+
+<h2 id="women-specific-mistakes">8. Mistakes Specific to Women</h2>
+<p>Women pilgrims encounter a few errors worth highlighting. Some attempt tawaf while menstruating, when it should be delayed until purity returns. Others believe they must wear a specific colour or a face veil in ihram — in fact, ordinary modest clothing is worn, and the face and hands are left uncovered while in ihram. A third is reciting the Talbiyah loudly, whereas women recite it softly. When any ruling is unclear, a knowledgeable guide should be consulted rather than guessing.</p>
+
+<h2 id="intention-mistakes">9. Errors in Intention and Supplication</h2>
+<p>The intention (niyyah) is the heart of every act of worship, yet some pilgrims rush past it or voice it incorrectly. Two related mistakes are common:</p>
+<ul>
+  <li><strong>Reciting fixed "compulsory" du'as for each circuit</strong> — there is no obligatory set supplication for each round of tawaf. Pilgrims are free to make personal du'a or recite Qur'an.</li>
+  <li><strong>Forgetting to supplicate at all</strong> — many pilgrims complete the rituals mechanically and miss the precious chance to ask God for their needs at the Kaaba and during sa'i.</li>
+</ul>
+<p>Reviewing the steps and a few authentic supplications beforehand — see our <a href="/blog/how-to-perform-umrah-step-by-step-guide">how to perform Umrah</a> guide — keeps both the intention and the heart in the right place.</p>
+
+<h2 id="health-mistakes">10. Health and Crowd-Safety Mistakes</h2>
+<p>The Haram draws enormous crowds, and neglecting your wellbeing is a mistake that can derail the whole trip:</p>
+<ul>
+  <li><strong>Dehydration</strong> — pilgrims forget to drink enough water, especially in summer. Zamzam is freely available; use it.</li>
+  <li><strong>Pushing into dense crowds</strong> near the Black Stone or Maqam Ibrahim, risking injury to oneself and others.</li>
+  <li><strong>Ignoring fatigue</strong> — attempting everything in one go rather than resting between rituals.</li>
+  <li><strong>Poor footwear</strong> — losing sandals or wearing unsuitable shoes for long walking.</li>
+</ul>
+<p>Patience in crowds is not just practical; it is part of the worship and good character that Umrah is meant to cultivate.</p>
+
+<h2 id="recovering">11. What to Do If You Make a Mistake</h2>
+<p>First, do not panic. Islam is a religion of ease, and many errors are minor or can be put right. Some mistakes require nothing; others may call for a small expiation, and some require repeating part of a ritual. Because the rulings depend on exactly what happened, the correct response is to ask a qualified scholar or your group's religious guide rather than assume the worst. Approaching Umrah with humility — accepting that you may not do everything perfectly — is itself part of the spirit of the pilgrimage.</p>
+
+<h2 id="pre-travel-mistakes">12. Mistakes Made Before You Travel</h2>
+<p>Many problems begin long before a pilgrim reaches Makkah:</p>
+<ul>
+  <li><strong>Not learning the rituals</strong> in advance, then feeling lost on arrival.</li>
+  <li><strong>Leaving documents to the last minute</strong> — an expired passport or missing vaccination certificate can derail the whole trip.</li>
+  <li><strong>Choosing the cheapest package blindly</strong> without checking hotel distance from the Haram or what transport is included.</li>
+  <li><strong>Not arranging airport pickup</strong>, then negotiating a ride while exhausted and in ihram.</li>
+</ul>
+<p>A little planning — reviewing the steps, checking paperwork early, and booking a reliable <a href="/airport-transfer/jeddah-airport">Jeddah airport transfer</a> — prevents all of these.</p>
+
+<h2 id="haram-etiquette-mistakes">13. Etiquette Mistakes Inside the Haram</h2>
+<p>The Haram is shared by people from every nation, and thoughtless behaviour causes real difficulty for others:</p>
+<ul>
+  <li><strong>Stopping in walkways for photos</strong>, blocking the flow of pilgrims.</li>
+  <li><strong>Reserving prayer spots</strong> with belongings and leaving for long periods.</li>
+  <li><strong>Loud phone calls or videos</strong> that disturb worship.</li>
+  <li><strong>Ignoring crowd-control directions</strong> from staff, which exist for everyone's safety.</li>
+</ul>
+
+<h2 id="financial-mistakes">14. Money and Service Mistakes</h2>
+<p>Pilgrims can be vulnerable to overcharging and unreliable services:</p>
+<ul>
+  <li><strong>Using unlicensed transport</strong> and overpaying, instead of a fixed-price provider.</li>
+  <li><strong>Not agreeing a price in advance</strong> for any service.</li>
+  <li><strong>Carrying too much cash</strong> rather than a mix of cash and card.</li>
+</ul>
+<p>Booking a fixed-price <a href="/umrah-taxi-service">Umrah taxi service</a> ahead of time removes the uncertainty and the haggling.</p>
+
+<h2 id="after-umrah-mistakes">15. After-Umrah Mistakes</h2>
+<p>Finally, some pilgrims undermine the experience at the very end — rushing to leave without a moment of reflection, failing to plan their <a href="/routes/makkah-to-madinah">visit to Madinah</a>, or returning home and quickly abandoning the spiritual renewal the journey brought. The real fruit of Umrah is a lasting change in how you live, so carry the calm and sincerity of the Haram back with you.</p>
+
+<h2 id="time-energy-mistakes">16. Mismanaging Time and Energy</h2>
+<p>Umrah is physically demanding, and poor pacing is a frequent error. Some pilgrims try to do everything in the first few hours after a long flight, then burn out. Others spend so long shopping or sightseeing that they tire before worship. Plan a rhythm: rest after arrival, perform the rituals at a steady pace, and balance the Haram with adequate sleep. Treating the trip as a marathon rather than a sprint keeps both body and spirit strong throughout.</p>
+
+<h2 id="purpose-mistakes">17. Misunderstanding the Purpose of Umrah</h2>
+<p>The subtlest mistake of all is losing sight of why you came. Umrah is an act of devotion, repentance, and renewal — not a holiday with rituals attached. Sightseeing and shopping are permissible, but when they crowd out reflection and worship, the journey loses its heart. Keep your intention pure, make abundant du'a, and let the experience change you. That single shift in mindset prevents the biggest "mistake" a pilgrim can make.</p>
+
+<h2 id="pre-umrah-checklist">A Quick Pre-Umrah Checklist</h2>
+<ul>
+  <li>Have I learned the four steps and the order of the rituals?</li>
+  <li>Are my passport, visa, and vaccination documents ready?</li>
+  <li>Have I packed unscented toiletries and my ihram?</li>
+  <li>Have I arranged airport pickup and transport between the cities?</li>
+  <li>Do I know my miqat and when to enter ihram?</li>
+  <li>Have I set my intention and prepared my heart?</li>
+</ul>
+
+<h2 id="dua-goals">18. Travelling Without Personal Du'a Goals</h2>
+<p>Standing before the Kaaba and walking sa'i are among the most blessed moments to ask God for what truly matters to you — yet many pilgrims arrive without having thought about what they want to pray for. Before you travel, write a personal list of supplications: for yourself, your family, the ummah, and your hereafter. Carrying these goals turns each ritual into a heartfelt conversation with your Lord rather than a sequence of motions, and ensures you return home knowing you used those precious moments fully.</p>
+
+<h2 id="closing-advice">A Final Word on Avoiding Mistakes</h2>
+<p>If there is one principle that prevents nearly every error, it is this: prepare, then be present. Prepare your knowledge, your documents, and your transport in advance, and then let go of anxiety and immerse yourself in worship. Mistakes made out of ignorance are reduced by learning; mistakes made out of stress are reduced by planning. Do both, and your Umrah becomes the serene, transformative experience it is meant to be.</p>
+
+<h2 id="conclusion">Final Thoughts</h2>
+<p>Avoiding these <strong>common Umrah mistakes</strong> comes down to two things: learning the steps before you arrive, and approaching the journey with patience and humility. Prepare your knowledge, arrange your transport in advance, and treat every fellow pilgrim with kindness. Do that, and the small errors that trouble first-timers simply won't arise — leaving you free to focus on the worship that brought you there.</p>
+${CTA("Makkah")}
+`,
+  },
+
+  {
+    title: "Main Rituals of Hajj Explained for First-Time Pilgrims",
+    slug: "main-rituals-of-hajj-explained",
+    category: "Hajj Guides",
+    author: "Saudi Private Transfers",
+    featuredImage: "/images/hero-mosque.svg",
+    featuredImageAlt: "Pilgrims gathered on the plain of Arafah during Hajj",
+    focusKeyword: "hajj rituals",
+    secondaryKeywords: [
+      "rituals of hajj",
+      "steps of hajj",
+      "hajj rituals explained",
+      "days of hajj",
+    ],
+    tags: ["Hajj", "Pilgrimage", "Makkah", "Guide"],
+    metaTitle: "Main Rituals of Hajj Explained for Beginners",
+    metaDescription:
+      "A clear guide to the main rituals of Hajj — ihram, Arafah, Muzdalifah, stoning the Jamarat, sacrifice, tawaf, and sa'i — explained day by day for beginners.",
+    excerpt:
+      "The main rituals of Hajj explained day by day — from ihram and the standing at Arafah to Muzdalifah, the Jamarat, sacrifice, and tawaf — for first-time pilgrims.",
+    faqs: [
+      {
+        question: "How many days does Hajj take?",
+        answer:
+          "The core rituals of Hajj take place over five days, from the 8th to the 12th of Dhul Hijjah, with some pilgrims staying until the 13th. The standing at Arafah on the 9th is the most essential day.",
+      },
+      {
+        question: "What is the most important ritual of Hajj?",
+        answer:
+          "Standing at Arafah on the 9th of Dhul Hijjah is the essence of Hajj — the Prophet ﷺ said 'Hajj is Arafah.' A pilgrim who misses Arafah has missed Hajj that year.",
+      },
+      {
+        question: "What is the difference between Hajj and Umrah?",
+        answer:
+          "Umrah can be performed any time of year and involves tawaf and sa'i. Hajj occurs only on fixed days of Dhul Hijjah and adds major rituals such as Arafah, Muzdalifah, and the stoning of the Jamarat. Hajj is obligatory once for those who are able; Umrah is recommended.",
+      },
+      {
+        question: "What are the three types of Hajj?",
+        answer:
+          "Tamattu (Umrah then Hajj with a break, the most common), Qiran (Umrah and Hajj together without exiting ihram), and Ifrad (Hajj alone). Each differs in details such as the sacrifice.",
+      },
+      {
+        question: "Where can I confirm the exact rulings?",
+        answer:
+          "This is a simplified overview. Hajj has detailed rules, so follow your official Hajj group's scholars and the guidance of the Saudi authorities for your specific situation.",
+      },
+    ],
+    content: `
+<p>Hajj is the fifth pillar of Islam and one of the largest annual gatherings of humanity on earth. For those preparing for the journey of a lifetime, understanding the <strong>rituals of Hajj</strong> in advance is essential — the rites unfold over several days across different sacred sites, and knowing what happens when brings calm to an intense and emotional experience. This beginner's guide explains the main rituals of Hajj, day by day, in clear language.</p>
+<p>Unlike Umrah, which can be performed at any time, Hajj takes place only during specific days of the Islamic month of Dhul Hijjah. It is obligatory once in a lifetime for every Muslim who is physically and financially able. Below we walk through each major ritual so first-time pilgrims know what to expect.</p>
+<p><em>Note: this is a simplified overview. Hajj has detailed rulings — always follow your official Hajj group's scholars and the guidance of the Saudi authorities.</em></p>
+
+<h2 id="types-of-hajj">The Three Types of Hajj</h2>
+<p>Before the rites begin, pilgrims choose one of three forms:</p>
+<ul>
+  <li><strong>Tamattu</strong> — perform Umrah, exit ihram, then enter ihram again for Hajj. The most common form.</li>
+  <li><strong>Qiran</strong> — combine Umrah and Hajj in a single ihram without exiting in between.</li>
+  <li><strong>Ifrad</strong> — perform Hajj alone, without an accompanying Umrah.</li>
+</ul>
+
+<h2 id="day-8">Day 1 (8th Dhul Hijjah): Ihram and Mina</h2>
+<p>The Hajj begins on the 8th, known as the <strong>Day of Tarwiyah</strong>. Pilgrims enter ihram with the intention for Hajj and travel to the tent city of <strong>Mina</strong>, where they spend the day and night in prayer and rest, offering the five daily prayers.</p>
+
+<h2 id="day-9">Day 2 (9th Dhul Hijjah): The Standing at Arafah</h2>
+<p>This is the most important day of Hajj. Pilgrims travel to the plain of <strong>Arafah</strong>, where they spend the afternoon in earnest supplication, seeking forgiveness. The Prophet ﷺ said, "Hajj is Arafah" — a pilgrim who misses this standing has missed Hajj for that year.</p>
+<h3>Muzdalifah</h3>
+<p>After sunset, pilgrims move to <strong>Muzdalifah</strong>, where they pray and spend the night under the open sky, gathering small pebbles for the next day's ritual.</p>
+
+<h2 id="day-10">Day 3 (10th Dhul Hijjah): Eid al-Adha</h2>
+<p>The tenth is the Day of Sacrifice (Eid al-Adha), filled with several rites:</p>
+<ul>
+  <li><strong>Stoning the Jamarat al-Aqabah</strong> — casting seven pebbles at the largest pillar.</li>
+  <li><strong>Sacrifice (qurbani / hadi)</strong> — an animal is sacrificed, often arranged through official channels.</li>
+  <li><strong>Shaving or trimming the hair</strong> — men shave or trim; women trim a small amount.</li>
+  <li><strong>Tawaf al-Ifadah and sa'i</strong> — pilgrims return to Makkah for this essential tawaf and the sa'i.</li>
+</ul>
+
+<h2 id="days-11-13">Days 4–5 (11th–13th Dhul Hijjah): Days of Tashreeq</h2>
+<p>Pilgrims return to Mina for the <strong>Days of Tashreeq</strong>, stoning all three Jamarat (small, medium, and large) each day with seven pebbles each. Pilgrims may leave after the 12th or stay until the 13th, continuing remembrance and worship throughout.</p>
+
+<h2 id="tawaf-wida">Farewell Tawaf (Tawaf al-Wida)</h2>
+<p>Before departing Makkah, pilgrims perform the <strong>farewell tawaf</strong> — a final seven circuits of the Kaaba — completing the Hajj and bidding farewell to the House of God.</p>
+
+<h2 id="hajj-vs-umrah">How Hajj Differs from Umrah</h2>
+<p>Many pilgrims perform Umrah first to become familiar with tawaf and sa'i. If you are new to the rituals, our <a href="/blog/how-to-perform-umrah-step-by-step-guide">step-by-step Umrah guide</a> is a helpful starting point, since several Hajj rites share the same actions. Hajj simply adds the major rituals of Arafah, Muzdalifah, and the Jamarat across fixed days.</p>
+
+<h2 id="transport">Transport During Hajj</h2>
+<p>Movement between Makkah, Mina, Arafah, and Muzdalifah is one of the biggest logistical challenges of Hajj, especially for elderly pilgrims and families. Reliable, comfortable transport makes a real difference. Learn more about our <a href="/hajj-transport-service">Hajj transport service</a> and broader <a href="/umrah-taxi-service">pilgrim transport options</a> across the holy cities.</p>
+
+<h2 id="preparation-tips">Preparation Tips for First-Time Pilgrims</h2>
+<ul>
+  <li><strong>Build your fitness</strong> — Hajj involves a lot of walking and standing.</li>
+  <li><strong>Learn the rites</strong> and the sequence of days in advance.</li>
+  <li><strong>Stay with your group</strong> and follow your guide's instructions.</li>
+  <li><strong>Protect against the heat</strong> — hydrate and use sun protection at Arafah.</li>
+  <li><strong>Be patient</strong> — crowds are immense; kindness and calm are part of the worship.</li>
+</ul>
+
+<h2 id="conditions">Conditions That Make Hajj Obligatory</h2>
+<p>Hajj becomes obligatory once in a lifetime when certain conditions are met. Understanding them helps pilgrims know when the duty applies:</p>
+<ul>
+  <li><strong>Islam</strong> — the pilgrim is a Muslim.</li>
+  <li><strong>Maturity and sanity</strong> — adults of sound mind (a child's Hajj is valid but does not discharge the obligation).</li>
+  <li><strong>Physical ability</strong> — health to endure the journey and rites.</li>
+  <li><strong>Financial ability</strong> — sufficient lawful means for the trip and for dependents left behind.</li>
+  <li><strong>Safe passage</strong> — the route and conditions allow travel.</li>
+</ul>
+<p>Those who cannot perform it themselves due to permanent inability may, in some cases, appoint someone to perform it on their behalf — a scholar can advise on the specifics.</p>
+
+<h2 id="pillars-vs-obligations">Pillars and Obligations of Hajj</h2>
+<p>Scholars distinguish between the <strong>pillars (arkan)</strong> of Hajj — without which the Hajj is invalid — and the <strong>obligations (wajibat)</strong>, whose omission may be compensated by a sacrifice. While the details are best learned from your group's scholars, a simplified overview helps beginners grasp the structure:</p>
+<ul>
+  <li><strong>Pillars</strong> typically include entering ihram, the standing at Arafah, Tawaf al-Ifadah, and sa'i.</li>
+  <li><strong>Obligations</strong> include entering ihram at the miqat, staying at Muzdalifah, stoning the Jamarat, and the farewell tawaf.</li>
+</ul>
+<p>This is why the standing at Arafah is so critical — as a pillar, missing it means missing Hajj entirely, whereas missing an obligation can often be remedied.</p>
+
+<h2 id="tawaf-ifadah">A Closer Look at Tawaf al-Ifadah</h2>
+<p>Performed after returning from Mina on the Day of Sacrifice, <strong>Tawaf al-Ifadah</strong> is one of the pillars of Hajj. It mirrors the tawaf of Umrah — seven circuits of the Kaaba — and is followed by sa'i for most pilgrims. Because the crowds on the 10th are immense, many groups schedule this tawaf carefully, sometimes delaying it within the permitted days to ease congestion.</p>
+
+<h2 id="sacrifice">The Sacrifice (Hady) and Shaving</h2>
+<p>On the Day of Sacrifice, pilgrims performing Tamattu and Qiran offer a sacrificial animal (hady), commemorating the willingness of Prophet Ibrahim. Today this is usually arranged efficiently through official channels and vouchers rather than in person. After the sacrifice, men shave or trim the hair and women trim a small amount, marking a partial release from ihram.</p>
+
+<h2 id="health-safety">Health and Safety During Hajj</h2>
+<p>With millions of pilgrims moving between sites, wellbeing is essential:</p>
+<ul>
+  <li><strong>Hydration and heat</strong> — Arafah in particular can be intensely hot; carry water and use sun protection.</li>
+  <li><strong>Comfortable footwear</strong> and a small bag for essentials.</li>
+  <li><strong>Stay with your group</strong> and keep identification and group contact details on you.</li>
+  <li><strong>Pace yourself</strong> — the days are long and physically demanding.</li>
+  <li><strong>Follow official guidance</strong> for movement between Mina, Arafah, and Muzdalifah.</li>
+</ul>
+<p>Reliable, organised transport between the sites reduces fatigue significantly — see our <a href="/hajj-transport-service">Hajj transport service</a> for how pilgrims and groups move comfortably during the days of Hajj.</p>
+
+<h2 id="spiritual-meaning">The Meaning Behind the Rites</h2>
+<p>Each ritual of Hajj carries deep symbolism that enriches the experience when understood:</p>
+<ul>
+  <li><strong>The standing at Arafah</strong> evokes the Day of Judgement, when all of humanity stands before God — a moment of humility, repentance, and hope.</li>
+  <li><strong>Stoning the Jamarat</strong> recalls Prophet Ibrahim rejecting temptation, symbolising the pilgrim's own rejection of evil.</li>
+  <li><strong>The sacrifice</strong> commemorates Ibrahim's willingness to submit completely to God's command.</li>
+  <li><strong>Tawaf</strong> places the Kaaba at the centre, expressing that God is the centre of the believer's life.</li>
+</ul>
+<p>Performing the rites with this awareness turns physical actions into profound worship.</p>
+
+<h2 id="preparing-early">Preparing for Hajj Months in Advance</h2>
+<p>Hajj rewards preparation more than almost any journey. In the months before, pilgrims are encouraged to:</p>
+<ul>
+  <li><strong>Build physical fitness</strong> — walking daily prepares the body for long distances and standing.</li>
+  <li><strong>Settle finances and debts</strong>, and ensure dependents are provided for.</li>
+  <li><strong>Learn the rituals</strong> thoroughly and attend Hajj seminars if available.</li>
+  <li><strong>Seek sincere repentance</strong> and resolve disputes with others.</li>
+  <li><strong>Arrange documents and an approved Hajj package</strong> early, as places are limited and regulated.</li>
+</ul>
+
+<h2 id="after-hajj">After Hajj: Returning Changed</h2>
+<p>A Hajj that is accepted (Hajj Mabrur) is said to have no reward less than Paradise. The true sign of acceptance is a lasting change for the better — maintaining good deeds, kindness, and devotion after returning home. The journey is not an end but a new beginning, and the pilgrim carries its lessons into everyday life.</p>
+
+<h2 id="hajj-faqs-section">Questions First-Time Pilgrims Ask</h2>
+<ul>
+  <li><strong>Can women perform Hajj?</strong> Yes; arrangements such as travelling with a group or mahram may apply depending on circumstances and current rules.</li>
+  <li><strong>What if I cannot stone the Jamarat myself?</strong> The weak, ill, or elderly may appoint someone to stone on their behalf.</li>
+  <li><strong>Can elderly pilgrims use transport between sites?</strong> Yes — organised, comfortable transport is widely used and strongly recommended for those who tire easily.</li>
+</ul>
+
+<h2 id="key-terms">Key Terms Every Hajj Pilgrim Should Know</h2>
+<p>Hajj has its own vocabulary, and recognising these terms makes guidance much easier to follow:</p>
+<ul>
+  <li><strong>Ihram</strong> — the sacred state and the garments worn in it.</li>
+  <li><strong>Talbiyah</strong> — the call recited by pilgrims ("Labbayk Allahumma labbayk").</li>
+  <li><strong>Arafah</strong> — the plain where pilgrims stand on the 9th, the essence of Hajj.</li>
+  <li><strong>Muzdalifah</strong> — where pilgrims spend the night and gather pebbles.</li>
+  <li><strong>Jamarat</strong> — the three pillars stoned during the days of Tashreeq.</li>
+  <li><strong>Hady</strong> — the sacrificial animal offered on Eid al-Adha.</li>
+  <li><strong>Tawaf al-Ifadah</strong> — the essential tawaf performed after Arafah.</li>
+  <li><strong>Tawaf al-Wida</strong> — the farewell tawaf before leaving Makkah.</li>
+</ul>
+
+<h2 id="choosing-package">Choosing a Hajj Package</h2>
+<p>Because Hajj numbers are strictly regulated, most pilgrims travel through an approved Hajj operator. When comparing packages, look beyond price: check the distance of your Mina and Makkah accommodation from the key sites, the standard of transport between Mina, Arafah, and Muzdalifah, the experience of the group's scholars and guides, and exactly what is included. A well-organised group with reliable transport and knowledgeable leaders makes an enormous difference to the comfort and focus of your Hajj.</p>
+
+<h2 id="day-by-day-summary">Hajj at a Glance: Day-by-Day Summary</h2>
+<p>For quick reference, here is the sequence of the main rituals across the days of Hajj:</p>
+<ul>
+  <li><strong>8th Dhul Hijjah:</strong> enter ihram, travel to Mina, pray and rest.</li>
+  <li><strong>9th (Arafah):</strong> stand at Arafah in supplication, then move to Muzdalifah overnight and gather pebbles.</li>
+  <li><strong>10th (Eid):</strong> stone Jamarat al-Aqabah, offer the sacrifice, shave/trim hair, and perform Tawaf al-Ifadah with sa'i.</li>
+  <li><strong>11th–12th (Tashreeq):</strong> stone all three Jamarat each day in Mina.</li>
+  <li><strong>13th (optional):</strong> a further day of stoning for those who stay.</li>
+  <li><strong>Before leaving Makkah:</strong> perform the farewell tawaf (Tawaf al-Wida).</li>
+</ul>
+<p>Keeping this sequence in mind helps first-time pilgrims follow their group's schedule with confidence.</p>
+
+<h2 id="conclusion">Final Thoughts</h2>
+<p>Understanding the main <strong>rituals of Hajj</strong> before you travel turns an overwhelming experience into a deeply meaningful one. From the standing at Arafah to the stoning of the Jamarat and the farewell tawaf, each rite carries centuries of devotion. Prepare your knowledge, your body, and your heart — and arrange dependable transport so the journey between the sacred sites is as smooth as possible. May your Hajj be accepted and your sins forgiven.</p>
+${CTA("Makkah")}
+`,
+  },
+
+  {
+    title: "What to Pack for Umrah: Complete Checklist for Pilgrims",
+    slug: "what-to-pack-for-umrah-checklist",
+    category: "Pilgrim Travel Tips",
+    author: "Saudi Private Transfers",
+    featuredImage: "/images/hero-mosque.svg",
+    featuredImageAlt: "Packed bag with ihram garments and essentials for an Umrah journey",
+    focusKeyword: "umrah packing list",
+    secondaryKeywords: [
+      "what to pack for umrah",
+      "umrah packing checklist",
+      "umrah essentials",
+      "umrah travel items",
+    ],
+    tags: ["Umrah", "Pilgrim Tips", "Checklist", "Travel"],
+    metaTitle: "What to Pack for Umrah: Complete Checklist 2026",
+    metaDescription:
+      "A complete Umrah packing checklist — ihram, documents, unscented toiletries, clothing, health items, and practical essentials so you travel light and prepared.",
+    excerpt:
+      "A complete, practical Umrah packing checklist — ihram, documents, unscented toiletries, clothing, and health essentials — so you arrive prepared and travel light.",
+    faqs: [
+      {
+        question: "What is the most important thing to pack for Umrah?",
+        answer:
+          "Your travel documents — passport, Umrah visa, and vaccination certificates — followed by your ihram garments. Without these you cannot travel or perform the pilgrimage, so pack them first and keep them in your carry-on.",
+      },
+      {
+        question: "Why do toiletries for Umrah need to be unscented?",
+        answer:
+          "While in ihram, using perfumed products is not allowed. Pack unscented soap, shampoo, and deodorant so you can stay fresh without breaking the rules of ihram.",
+      },
+      {
+        question: "Should I pack light or bring a large suitcase?",
+        answer:
+          "Pack light. You'll move between the airport, hotel, and the holy cities, often through crowds. A medium case plus a small day bag for the Haram is ideal, and it leaves room for Zamzam and gifts on the way back.",
+      },
+      {
+        question: "Do I need special footwear for Umrah?",
+        answer:
+          "Comfortable, easy-to-remove sandals are best, since you'll walk a lot and remove shoes at the mosque. A small drawstring bag to carry your sandals inside the Haram is very useful.",
+      },
+      {
+        question: "Can I buy items in Makkah if I forget something?",
+        answer:
+          "Yes — Makkah and Madinah have plenty of shops near the holy sites selling ihram, toiletries, and essentials. Still, packing the basics avoids stress and wasted time on arrival.",
+      },
+    ],
+    content: `
+<p>Packing for a pilgrimage is different from packing for an ordinary trip. You'll be moving between cities, spending long hours at the holy mosques, and observing the rules of ihram — so what you bring (and what you leave behind) genuinely affects your comfort and focus. This complete <strong>Umrah packing list</strong> covers everything a pilgrim needs, organised by category, so you arrive prepared, travel light, and avoid last-minute stress.</p>
+<p>The golden rule is simple: pack light, pack smart, and keep essentials in your carry-on. Below is a practical checklist drawn from what experienced pilgrims wish they'd known on their first journey.</p>
+
+<h2 id="documents">Travel Documents (Pack These First)</h2>
+<p>Nothing matters more than your paperwork. Keep these in your hand luggage, never in checked bags:</p>
+<ul>
+  <li>Passport (valid for at least six months) and a few photocopies</li>
+  <li>Umrah visa and any entry documents</li>
+  <li>Vaccination certificates required for entry</li>
+  <li>Flight tickets and hotel confirmations</li>
+  <li>Passport-size photographs</li>
+  <li>Some local currency plus a travel card</li>
+</ul>
+
+<h2 id="ihram">Ihram and Clothing</h2>
+<h3>For men</h3>
+<ul>
+  <li>Two sets of ihram garments (one to wear, one spare)</li>
+  <li>An ihram belt with pockets for documents and money</li>
+  <li>Modest everyday clothing for after tahallul</li>
+</ul>
+<h3>For women</h3>
+<ul>
+  <li>Loose, modest clothing that covers the body</li>
+  <li>Comfortable headscarves</li>
+  <li>A spare abaya or two</li>
+</ul>
+<p>For everyone, pack <strong>comfortable, easy-to-remove sandals</strong> and a small drawstring bag to carry them inside the Haram.</p>
+
+<h2 id="toiletries">Unscented Toiletries</h2>
+<p>Because perfumed products are not allowed in ihram, pack unscented versions:</p>
+<ul>
+  <li>Unscented soap, shampoo, and deodorant</li>
+  <li>Unscented wet wipes and tissues</li>
+  <li>Toothbrush, toothpaste, and a miswak</li>
+  <li>A small towel and nail clippers (for use after ihram)</li>
+</ul>
+
+<h2 id="health">Health and First-Aid Items</h2>
+<p>The holy cities are busy and the climate can be hot, so look after yourself:</p>
+<ul>
+  <li>Any personal prescription medication, with a doctor's note</li>
+  <li>Pain relief, plasters, and rehydration sachets</li>
+  <li>Sunscreen and lip balm (unscented while in ihram)</li>
+  <li>A reusable water bottle</li>
+  <li>Hand sanitiser and a few face masks</li>
+</ul>
+
+<h2 id="worship">Worship Essentials</h2>
+<ul>
+  <li>A small Qur'an or a Qur'an app on your phone</li>
+  <li>A du'a booklet with key supplications</li>
+  <li>A lightweight prayer mat</li>
+  <li>A tasbih (prayer beads) or digital counter for tawaf and sa'i</li>
+</ul>
+<p>If you're still learning the rites, review our <a href="/blog/how-to-perform-umrah-step-by-step-guide">step-by-step Umrah guide</a> before you travel, and skim the <a href="/blog/common-mistakes-to-avoid-during-umrah">common mistakes to avoid</a>.</p>
+
+<h2 id="electronics">Electronics and Practical Items</h2>
+<ul>
+  <li>Phone, charger, and a power bank</li>
+  <li>A universal travel adaptor (Saudi Arabia uses UK-style plugs)</li>
+  <li>A small day bag for the Haram</li>
+  <li>An umbrella for sun and shade</li>
+  <li>Snacks for the journey and zip-lock bags</li>
+</ul>
+
+<h2 id="packing-tips">Smart Packing Tips</h2>
+<ul>
+  <li><strong>Leave room for the return</strong> — Zamzam water and gifts add weight.</li>
+  <li><strong>Label your bags</strong> clearly in case they're misplaced in crowds.</li>
+  <li><strong>Split essentials</strong> across carry-on and checked luggage.</li>
+  <li><strong>Don't over-pack</strong> — shops near the Haram sell anything you forget.</li>
+</ul>
+
+<h2 id="arrival">Plan Your Arrival and Transport</h2>
+<p>Even the best-packed bag is a burden if you land and have to negotiate a ride while tired and in ihram. Arrange your <a href="/airport-transfer/jeddah-airport">Jeddah airport transfer</a> in advance so a driver is waiting to take you straight to Makkah, and consider booking your <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> transfer too. Our full <a href="/umrah-taxi-service">Umrah taxi service</a> covers every leg of the journey.</p>
+
+<h2 id="clothing-by-season">Clothing: Plan for the Season</h2>
+<p>Saudi Arabia's climate varies, so check the forecast for your travel dates:</p>
+<ul>
+  <li><strong>Summer (very hot)</strong> — lightweight, breathable, light-coloured fabrics; extra ihram sets, as you may need to change more often.</li>
+  <li><strong>Winter (cool, especially at night and in Madinah)</strong> — a light jacket or shawl for early-morning and late-night prayers; warmer layers for men once out of ihram.</li>
+  <li><strong>All year</strong> — a compact umbrella doubles as sun and rain protection.</li>
+</ul>
+
+<h2 id="for-women">Packing Notes for Women</h2>
+<ul>
+  <li>Two or three loose abayas plus comfortable headscarves.</li>
+  <li>Safety pins and an under-scarf cap for a secure, fuss-free fit.</li>
+  <li>Modest, comfortable clothing for travel and rest at the hotel.</li>
+  <li>Personal hygiene items, including unscented options for use during ihram.</li>
+</ul>
+
+<h2 id="for-elderly">Packing for Elderly Pilgrims</h2>
+<p>Older travellers benefit from a little extra preparation:</p>
+<ul>
+  <li>A clearly labelled medication organiser with a doctor's note and prescriptions.</li>
+  <li>A folding cane or lightweight stool for resting in queues.</li>
+  <li>Copies of medical information and emergency contacts.</li>
+  <li>Comfortable, well-broken-in footwear to prevent blisters during long walks.</li>
+</ul>
+<p>For those with limited mobility, arranging door-to-door <a href="/umrah-taxi-service">Umrah transport</a> and using the Haram's wheelchair services makes the journey far gentler.</p>
+
+<h2 id="money-connectivity">Money and Connectivity</h2>
+<ul>
+  <li>A mix of cash (Saudi riyals) and a travel card; notify your bank of travel dates.</li>
+  <li>A local SIM or eSIM for data, maps, and the official apps used for Rawdah and services.</li>
+  <li>A small money pouch worn under clothing for documents and cash.</li>
+</ul>
+
+<h2 id="what-not-to-pack">What NOT to Pack</h2>
+<ul>
+  <li><strong>Scented products</strong> for use during ihram — perfumes, scented soaps, and lotions.</li>
+  <li><strong>Excess clothing</strong> — you'll wash and re-wear; over-packing only slows you down in crowds.</li>
+  <li><strong>Valuables you don't need</strong> — leave expensive jewellery and non-essential electronics at home.</li>
+  <li><strong>Prohibited items</strong> — check airline and Saudi customs rules before you travel.</li>
+</ul>
+
+<h2 id="return-packing">Packing for the Return Journey</h2>
+<p>Many pilgrims bring home Zamzam water and gifts such as dates, prayer mats, and perfume (for use after ihram). Zamzam is typically provided in a sealed allowance through approved channels and checked in separately, so leave luggage capacity and check your airline's current rules. A collapsible spare bag is invaluable for the extra items you'll inevitably acquire near the Haram.</p>
+
+<h2 id="day-bag">Your Haram Day-Bag</h2>
+<p>Inside the holy mosque you only need a few items, carried in a small, easy-to-manage bag:</p>
+<ul>
+  <li>A drawstring bag for your sandals (shoe racks fill quickly).</li>
+  <li>A small Qur'an or phone with a Qur'an app, and a du'a booklet.</li>
+  <li>A foldable prayer mat and a tasbih or counter.</li>
+  <li>A refillable bottle for Zamzam and some tissues.</li>
+  <li>A photocopy of your ID and hotel address in case you get separated.</li>
+</ul>
+
+<h2 id="tech">Tech and Gadgets Worth Bringing</h2>
+<ul>
+  <li><strong>Power bank</strong> — long days away from the hotel drain phone batteries.</li>
+  <li><strong>eSIM or local SIM</strong> for maps and the official apps (Nusuk for the Rawdah, etc.).</li>
+  <li><strong>Earphones</strong> for lectures, Qur'an, or guidance on the go.</li>
+  <li><strong>A small handheld fan</strong> for hot days in queues.</li>
+</ul>
+
+<h2 id="first-timer-extras">Extra Tips for First-Time Pilgrims</h2>
+<ul>
+  <li><strong>Photograph all your documents</strong> and email them to yourself as a backup.</li>
+  <li><strong>Learn a few Arabic phrases</strong> — greetings and directions go a long way.</li>
+  <li><strong>Note your hotel's name in Arabic</strong> and its distance from the Haram.</li>
+  <li><strong>Arrive rested</strong> — consider a day to settle before beginning the rituals.</li>
+  <li><strong>Review the rites</strong> one more time with our <a href="/blog/how-to-perform-umrah-step-by-step-guide">step-by-step Umrah guide</a>.</li>
+</ul>
+
+<h2 id="packing-strategy">A Simple Bag-by-Bag Strategy</h2>
+<p>Split your belongings deliberately. Keep documents, medication, one ihram set, a phone charger, and valuables in your <strong>carry-on</strong>, so that even if checked luggage is delayed you can still travel to Makkah and begin Umrah. Pack spare clothing, toiletries, and bulkier items in your <strong>checked bag</strong>, and leave space — or a folded spare bag — for Zamzam and gifts on the return. This way a single mishap never disrupts your pilgrimage.</p>
+
+<h2 id="documents-detail">Documents: A Closer Look</h2>
+<p>Document problems are the number-one cause of travel stress, so handle them with care. Keep your passport, Umrah visa, and vaccination certificates together in a dedicated folder or pouch, with photocopies stored separately and digital scans saved to your phone and email. Carry a few passport-size photographs, your flight and hotel confirmations, and the contact details of your travel agent or group leader. If you take prescription medication, bring the prescription and a doctor's letter, as this can be requested at customs. Organised paperwork means you breeze through every checkpoint instead of holding up the queue.</p>
+
+<h2 id="toiletries-detail">Personal Care in Detail</h2>
+<p>Beyond unscented basics, think about the small comforts that matter over a busy week: a quick-dry towel, a comb, lip balm, moisturiser for dry skin, blister plasters for tired feet, and any feminine hygiene items needed. Travel-size containers keep your day-bag light, and a few zip-lock bags keep everything organised and leak-free. Remember that anything used during ihram must be unscented, so check labels before you pack.</p>
+
+<h2 id="food-items">Snacks and Food Items</h2>
+<p>While food is widely available near the holy sites, packing a few familiar snacks — dates, nuts, energy bars, and rehydration sachets — keeps your energy up during long days and late nights at the Haram. A reusable water bottle is invaluable, since you can refill it with Zamzam throughout your visit.</p>
+
+<h2 id="quick-checklist">A Quick Printable Checklist</h2>
+<p>Use this condensed list as a final check before you zip your bags:</p>
+<ul>
+  <li><strong>Documents:</strong> passport, visa, vaccination certificate, photos, copies, confirmations.</li>
+  <li><strong>Ihram &amp; clothing:</strong> ihram sets, belt, modest clothing, sandals, sandal bag.</li>
+  <li><strong>Toiletries:</strong> unscented soap, shampoo, deodorant, toothbrush, towel, wipes.</li>
+  <li><strong>Health:</strong> medication + note, pain relief, plasters, sunscreen, sanitiser, masks.</li>
+  <li><strong>Worship:</strong> Qur'an/app, du'a booklet, prayer mat, tasbih.</li>
+  <li><strong>Tech:</strong> phone, charger, power bank, adaptor, SIM/eSIM.</li>
+  <li><strong>Money:</strong> riyals, travel card, money pouch.</li>
+</ul>
+
+<h2 id="trip-length">Adjusting for Trip Length</h2>
+<p>How much you pack depends on how long you'll stay. For a short five-to-seven-day Umrah, a single medium suitcase plus a day-bag is ample, since hotels offer laundry and shops are everywhere. For longer trips that combine Makkah and Madinah, or that fall during Ramadan, pack a little more clothing and any specialist items you rely on, but resist the urge to over-pack — you'll move between cities and crowds, and a lighter load is always easier to manage. Whatever the length, the essentials remain the same: documents, ihram, unscented toiletries, medication, and worship items.</p>
+
+<h2 id="pre-departure">Your Final Pre-Departure Routine</h2>
+<p>The night before you fly, run through a simple routine. Lay out your ihram and travel clothes, place all documents in your carry-on, charge your phone and power bank, and confirm your airport pickup so a driver is waiting on arrival. Perform ghusl and set your intention as your departure approaches. A calm, organised departure sets the tone for the whole pilgrimage — you leave home focused on worship rather than scrambling for forgotten items. Arranging your <a href="/umrah-taxi-service">Umrah transport</a> in advance is the final piece that lets everything flow smoothly from the moment you land.</p>
+
+<h2 id="insurance-emergencies">Travel Insurance and Emergency Preparedness</h2>
+<p>One item pilgrims often overlook is proper travel and medical insurance. With long flights, large crowds, and a demanding schedule, having cover for illness or emergencies brings real peace of mind. Keep a small card listing your blood type, allergies, key medications, and an emergency contact, and save your group leader's number in your phone. Know the location of the medical centres around the Haram, and never hesitate to seek help if you feel unwell — looking after your health is part of being able to complete your pilgrimage with strength.</p>
+
+<h2 id="conclusion">Final Thoughts</h2>
+<p>A thoughtful <strong>Umrah packing list</strong> is about travelling light while having exactly what you need — documents first, ihram and unscented toiletries close behind, and a few health and worship essentials to keep you comfortable and focused. Pack smart, arrange your transport ahead of time, and you'll spend your energy on worship rather than logistics. Safe travels and an accepted Umrah.</p>
+${CTA("Makkah")}
+`,
+  },
+
+  {
+    title: "Madinah Ziyarat: Historic Sites Every Pilgrim Should Visit",
+    slug: "madinah-ziyarat-historic-sites-guide",
+    category: "Madinah Travel Information",
+    author: "Saudi Private Transfers",
+    featuredImage: "/images/hero-mosque.svg",
+    featuredImageAlt: "The Prophet's Mosque (Masjid an-Nabawi) in Madinah at dusk",
+    focusKeyword: "madinah ziyarat places",
+    secondaryKeywords: [
+      "places to visit in madinah",
+      "madinah ziyarat guide",
+      "historic sites in madinah",
+      "madinah holy sites",
+    ],
+    tags: ["Madinah", "Ziyarat", "Islamic Sites", "Pilgrimage"],
+    metaTitle: "Madinah Ziyarat: Historic Sites Pilgrims Should Visit",
+    metaDescription:
+      "A pilgrim's guide to Madinah ziyarat places — Masjid an-Nabawi, Quba Mosque, Mount Uhud, Masjid al-Qiblatain, and more — with etiquette and travel tips.",
+    excerpt:
+      "A pilgrim's guide to the historic ziyarat sites of Madinah — the Prophet's Mosque, Quba, Mount Uhud, Qiblatain and more — with etiquette and practical travel tips.",
+    faqs: [
+      {
+        question: "What are the main ziyarat places in Madinah?",
+        answer:
+          "The most visited are Masjid an-Nabawi (the Prophet's Mosque), Quba Mosque, Masjid al-Qiblatain, Mount Uhud and the graves of the martyrs, and the Baqi cemetery. Many pilgrims also visit the Seven Mosques area.",
+      },
+      {
+        question: "Is ziyarat in Madinah part of Umrah or Hajj?",
+        answer:
+          "Visiting Madinah is not a ritual of Umrah or Hajj, but it is a cherished and recommended visit. Most pilgrims travel to Madinah before or after their pilgrimage to pray in the Prophet's Mosque.",
+      },
+      {
+        question: "How long should I spend in Madinah?",
+        answer:
+          "Many pilgrims spend two to four days, which allows time to pray multiple prayers in the Prophet's Mosque and visit the main historic sites at a relaxed pace.",
+      },
+      {
+        question: "What is the Rawdah and can everyone visit it?",
+        answer:
+          "The Rawdah is a blessed area inside the Prophet's Mosque. Access is organised through a timed permit system to manage crowds, with separate arrangements for men and women. Book your slot through the official app in advance.",
+      },
+      {
+        question: "What is the best way to visit Madinah's sites?",
+        answer:
+          "A private car with a driver lets you visit the scattered historic sites comfortably and at your own pace, which is ideal for families and elderly pilgrims. See our ziyarat and Madinah taxi services for details.",
+      },
+    ],
+    content: `
+<p>After the intensity of Umrah or Hajj in Makkah, a visit to Madinah offers a calmer, deeply moving experience. The city of the Prophet ﷺ is home to some of the most significant sites in Islamic history, and most pilgrims set aside a few days to pray in the Prophet's Mosque and perform ziyarat. This guide covers the essential <strong>Madinah ziyarat places</strong>, the etiquette of visiting them, and practical tips for getting around comfortably.</p>
+<p>Visiting Madinah is not an obligatory ritual of Umrah or Hajj, but it is a cherished and recommended journey. Praying in the Prophet's Mosque carries immense reward, and walking the same ground as the early Muslim community is a profound reminder of Islamic history. Here's what to see and how to make the most of your time.</p>
+
+<h2 id="masjid-an-nabawi">1. Masjid an-Nabawi (The Prophet's Mosque)</h2>
+<p>The heart of any visit to Madinah is the <strong>Prophet's Mosque</strong>, the second holiest mosque in Islam. Pilgrims come to offer prayers, send salutations upon the Prophet ﷺ, and experience the tranquillity of this magnificent place.</p>
+<h3>The Rawdah</h3>
+<p>Within the mosque lies the <strong>Rawdah</strong>, a blessed area described by the Prophet ﷺ as "a garden from the gardens of Paradise." Access is managed through a timed permit system via the official app to handle the crowds, with separate timings for men and women — book your slot in advance.</p>
+
+<h2 id="quba">2. Quba Mosque</h2>
+<p><strong>Masjid Quba</strong> is the first mosque built in Islam. The Prophet ﷺ encouraged visiting it and praying two rak'ahs there, noting the reward it carries. It sits a short drive from the city centre and is a peaceful, less crowded site well worth the visit.</p>
+
+<h2 id="qiblatain">3. Masjid al-Qiblatain</h2>
+<p>The "Mosque of the Two Qiblas" is where the command came to change the direction of prayer from Jerusalem to the Kaaba in Makkah. It holds a unique place in Islamic history and remains a moving site for pilgrims to visit and reflect.</p>
+
+<h2 id="uhud">4. Mount Uhud and the Martyrs' Graves</h2>
+<p><strong>Mount Uhud</strong> was the site of the famous Battle of Uhud. Nearby lie the graves of the martyrs, including the Prophet's beloved uncle Hamza (may Allah be pleased with him). Visiting reminds pilgrims of the sacrifices made by the early Muslims and is a place for du'a and reflection.</p>
+
+<h2 id="baqi">5. Jannat al-Baqi Cemetery</h2>
+<p>Beside the Prophet's Mosque lies <strong>Jannat al-Baqi</strong>, the resting place of many companions and members of the Prophet's family. Pilgrims visit to make du'a for the deceased, observing the proper etiquette of visiting graves.</p>
+
+<h2 id="seven-mosques">6. The Seven Mosques (Area of the Trench)</h2>
+<p>This historic area marks the location of the Battle of the Trench (Khandaq). A cluster of small mosques and a modern complex commemorate the event, offering another window into the early history of the Muslim community.</p>
+
+<h2 id="other-sites">Other Worthwhile Visits</h2>
+<ul>
+  <li><strong>Date markets and farms</strong> — Madinah is famous for its dates, especially Ajwa.</li>
+  <li><strong>Wadi al-Jinn</strong> — a curious natural site outside the city popular with visitors.</li>
+  <li><strong>The Hijaz Railway Museum</strong> — for those interested in the region's modern history.</li>
+</ul>
+
+<h2 id="etiquette">Etiquette for Ziyarat in Madinah</h2>
+<ul>
+  <li>Approach every site with calm, respect, and presence of heart.</li>
+  <li>Send salutations upon the Prophet ﷺ with humility and good manners.</li>
+  <li>Follow the official crowd-management rules, especially for the Rawdah.</li>
+  <li>Avoid practices not established in authentic teachings — when unsure, ask a knowledgeable guide.</li>
+  <li>Dress and behave modestly throughout.</li>
+</ul>
+
+<h2 id="getting-around">Getting Around Madinah</h2>
+<p>Madinah's historic sites are spread across the city, so a private car makes ziyarat far more comfortable — especially for families and elderly pilgrims who want to visit several places in a day without the strain of public transport. Our <a href="/ziyarat-taxi-service">ziyarat taxi service</a> and <a href="/taxi-service/madinah">Madinah taxi service</a> are designed exactly for this, and you can arrive from Makkah easily with a <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> transfer. If you're still planning the wider trip, our <a href="/blog/umrah-transport-makkah-madinah-guide">Umrah transport guide</a> ties it all together.</p>
+
+<h2 id="rawdah-howto">How to Visit the Rawdah</h2>
+<p>Because demand for the blessed Rawdah is so high, access is now organised through a timed permit system to keep visitors safe and the flow orderly. To visit:</p>
+<ul>
+  <li>Book a time slot in advance through the official Nusuk app.</li>
+  <li>Men and women have separate visiting times and entrances.</li>
+  <li>Arrive at your allotted time and follow the guidance of the organisers.</li>
+  <li>Use the moment for prayer and salutations upon the Prophet ﷺ, then move on considerately so others may benefit.</li>
+</ul>
+<p>Planning your Rawdah visit early in your stay means you can try again on another day if needed.</p>
+
+<h2 id="best-times">Best Times to Visit Madinah's Sites</h2>
+<p>Madinah is calmer than Makkah, but timing still helps. Early mornings after Fajr are peaceful for ziyarat to Quba and Uhud, while the hours between prayers are best for travelling between sites. Fridays and Ramadan are busier around the Prophet's Mosque. The cooler winter months are the most comfortable for outdoor sites such as Mount Uhud.</p>
+
+<h2 id="itinerary">A Suggested Two-to-Three Day Itinerary</h2>
+<ul>
+  <li><strong>Day 1</strong> — settle in, pray in the Prophet's Mosque, and book your Rawdah slot.</li>
+  <li><strong>Day 2</strong> — morning ziyarat to Quba Mosque and Masjid al-Qiblatain; afternoon rest; evening prayers at the Haram.</li>
+  <li><strong>Day 3</strong> — visit Mount Uhud and the martyrs' graves, then the date markets; final prayers before departure.</li>
+</ul>
+<p>A private car makes this itinerary effortless, letting you move between scattered sites on your own schedule — our <a href="/ziyarat-taxi-service">ziyarat taxi service</a> is built for exactly this kind of day.</p>
+
+<h2 id="avoid">Practices to Approach with Care</h2>
+<p>Scholars caution against certain practices that some visitors fall into out of enthusiasm — such as seeking blessings from walls or objects, raising the voice inappropriately, or performing acts not established in authentic teachings. Ziyarat is about sincere remembrance, salutations upon the Prophet ﷺ, and du'a for the deceased, all performed with humility and good manners. When unsure whether something is established practice, ask a knowledgeable, trustworthy guide.</p>
+
+<h2 id="practical-info">Practical Information for Visitors</h2>
+<ul>
+  <li><strong>Distances</strong> — Quba is around 5 km from the Prophet's Mosque; Uhud roughly 5–6 km, both short drives.</li>
+  <li><strong>Dress and conduct</strong> — modest dress and calm behaviour are expected at every site.</li>
+  <li><strong>Facilities</strong> — the area around the Prophet's Mosque has ample shops, dining, and accommodation.</li>
+  <li><strong>Getting there</strong> — arrive comfortably from Makkah with a <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> transfer, or locally with our <a href="/taxi-service/madinah">Madinah taxi service</a>.</li>
+</ul>
+
+<h2 id="more-sites">More Sites Worth Visiting</h2>
+<p>Beyond the major landmarks, several smaller sites enrich a Madinah visit:</p>
+<ul>
+  <li><strong>Masjid al-Ghamamah</strong> — near the Prophet's Mosque, traditionally associated with the Eid prayer.</li>
+  <li><strong>Masjid Abu Bakr and Masjid Ali</strong> — historic mosques in the city centre.</li>
+  <li><strong>Dar al-Madinah Museum</strong> — beautifully presents the history and heritage of the city.</li>
+  <li><strong>The Exhibition of the Prophet's Biography</strong> — modern, informative displays on the Seerah.</li>
+  <li><strong>Date farms and the central date market</strong> — sample and buy the famous Ajwa dates.</li>
+</ul>
+
+<h2 id="mosque-etiquette">Etiquette Inside the Prophet's Mosque</h2>
+<ul>
+  <li>Enter with the right foot and a supplication, in a state of calm and reverence.</li>
+  <li>Send abundant salutations upon the Prophet ﷺ.</li>
+  <li>Lower your voice and avoid disturbing those in prayer or reflection.</li>
+  <li>Do not block walkways, and follow the organisers' guidance, especially near the Rawdah.</li>
+  <li>Dress modestly and keep the space clean and dignified.</li>
+</ul>
+
+<h2 id="dates-shopping">Madinah Dates and Shopping</h2>
+<p>Madinah is famous worldwide for its dates, above all the prized Ajwa variety, which carries special mention in the Prophetic tradition. The central date market near the Prophet's Mosque is the place to taste and buy dates, prayer items, perfumes (for use after ihram), and gifts to bring home. It's a pleasant, characterful experience and a chance to share the blessings of your journey with family.</p>
+
+<h2 id="brief-history">A Brief History of Madinah</h2>
+<p>Madinah holds a unique place in Islamic history as the city that welcomed the Prophet ﷺ after the Hijrah (migration) from Makkah, becoming the first capital of the Muslim community and the place where much of Islam took shape. Walking its streets and visiting its sites connects pilgrims directly to the earliest days of Islam — which is why ziyarat here is so deeply moving and why so many pilgrims describe Madinah as the most peaceful part of their journey.</p>
+
+<h2 id="where-to-stay">Where to Stay in Madinah</h2>
+<p>The closer your hotel is to the Prophet's Mosque, the easier it is to attend prayers and make the most of your visit. The central area around the mosque offers accommodation for every budget, from luxury towers to simple guesthouses, all within walking distance of the Haram. Staying nearby is especially valuable for elderly pilgrims and families, who can return to rest between prayers without long journeys. Book early for Ramadan and the Hajj season, when the city is at its busiest.</p>
+
+<h2 id="getting-to-madinah">Getting to Madinah</h2>
+<p>Most pilgrims reach Madinah either by flying into Prince Mohammad Bin Abdulaziz Airport or by travelling overland from Makkah after completing Umrah. The <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> journey is a comfortable few hours by private car, door to door, with your luggage handled — far easier than carrying bags through a station. Within the city, a private <a href="/taxi-service/madinah">Madinah taxi service</a> keeps you moving comfortably between your hotel, the Haram, and the historic sites.</p>
+
+<h2 id="meaningful-ziyarat">Tips for a Meaningful Ziyarat</h2>
+<ul>
+  <li><strong>Learn the history</strong> of each site beforehand so your visit carries deeper meaning.</li>
+  <li><strong>Go early</strong> to quieter sites like Quba and Uhud for a peaceful experience.</li>
+  <li><strong>Make sincere du'a</strong> rather than rushing from place to place.</li>
+  <li><strong>Respect the etiquette</strong> of each location and follow official guidance.</li>
+  <li><strong>Travel with a knowledgeable driver or guide</strong> who can share authentic context.</li>
+</ul>
+
+<h2 id="climate">Madinah's Climate and What to Wear</h2>
+<p>Madinah sits inland and experiences hot summers and pleasantly cool winters, with chilly evenings from late autumn to early spring. Dress modestly year-round, but pack a light jacket or shawl if you visit in the cooler months, especially for early-morning and late-night prayers at the Haram. In summer, light, breathable fabrics and sun protection make outdoor ziyarat to Uhud and Quba far more comfortable. Checking the forecast for your travel dates ensures you pack appropriately.</p>
+
+<h2 id="combining-pilgrimage">Combining Madinah with Your Pilgrimage</h2>
+<p>Most pilgrims pair their Madinah visit with Umrah or Hajj, travelling either before or after their rites in Makkah. There is no obligation to perform a specific ritual in Madinah — the visit is about prayer in the Prophet's Mosque, ziyarat, and reflection. Many find that ending their journey in Madinah's tranquillity is the perfect, peaceful conclusion to an intense pilgrimage. Plan your <a href="/routes/makkah-to-madinah">Makkah to Madinah</a> transfer and accommodation together so the transition between the two holy cities is seamless, and review our <a href="/blog/umrah-transport-makkah-madinah-guide">Umrah transport guide</a> to coordinate every leg.</p>
+
+<h2 id="conclusion">Final Thoughts</h2>
+<p>A visit to the <strong>ziyarat places of Madinah</strong> is one of the most spiritually rewarding parts of any pilgrimage. From praying in the Prophet's Mosque and the blessed Rawdah to reflecting at Quba, Uhud, and Baqi, the city brings Islamic history to life. Plan a few unhurried days, observe the etiquette of each site, and arrange comfortable transport so you can focus on worship and reflection. May your visit be blessed and accepted.</p>
+${CTA("Madinah")}
+`,
+  },
 ];
 
 // ── Seed ─────────────────────────────────────────────────────────────────────
