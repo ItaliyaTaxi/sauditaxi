@@ -6,6 +6,8 @@ import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
+import { borderHero } from "@/lib/hero";
 import { BorderGrid } from "@/components/sections/BorderGrid";
 import { CityGrid } from "@/components/sections/CityGrid";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -97,6 +99,8 @@ export default async function BorderPage({
         title={`Saudi Arabia to ${border.country} Border Taxi`}
         subtitle={border.intro}
         crumbs={crumbs}
+        backgroundImage={border.heroImage ?? borderHero(border.country).src}
+        backgroundAlt={border.heroAlt ?? borderHero(border.country).alt}
         whatsappMessage={`Hello! I'd like a border transfer from Saudi Arabia to ${border.country} (${border.crossing}).`}
       />
 
@@ -182,6 +186,7 @@ export default async function BorderPage({
         subheading="We cover all the main land borders out of Saudi Arabia."
       />
       <FAQSection faqs={faqs} background="muted" />
+      <LatestGuides background="muted" />
       <CTASection
         title={`Book Your ${border.country} Border Transfer`}
         whatsappMessage={`Hello! I'd like to book a border transfer to ${border.country}.`}

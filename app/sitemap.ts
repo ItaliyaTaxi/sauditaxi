@@ -7,6 +7,10 @@ import { borders } from "@/data/borders";
 import { services } from "@/data/services";
 import { listPublishedBlogs } from "@/lib/blogs";
 
+// Regenerate hourly so newly published blogs/pages enter the sitemap without a
+// full redeploy (the sitemap pulls published posts live from the database).
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 

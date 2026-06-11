@@ -12,9 +12,13 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { generalFaqs } from "@/data/faqs";
 import { faqSchema } from "@/lib/schema";
+
+// Refresh hourly so the "Latest guides" block surfaces new posts (freshness signal).
+export const revalidate = 3600;
 
 export default function HomePage() {
   return (
@@ -32,7 +36,8 @@ export default function HomePage() {
           "Cross-border transfers to Bahrain & Qatar",
         ]}
         whatsappMessage="Hello! I'd like a taxi quote in Saudi Arabia. My trip details are:"
-        backgroundImage={heroImages.road}
+        backgroundImage={heroImages.default}
+        backgroundAlt="Premium private taxi and airport transfer service in Saudi Arabia"
         formCard={<HeroQuickForm />}
       />
 
@@ -78,6 +83,8 @@ export default function HomePage() {
       <TestimonialSection />
 
       <FAQSection faqs={generalFaqs} background="muted" />
+
+      <LatestGuides />
 
       <CTASection />
     </>

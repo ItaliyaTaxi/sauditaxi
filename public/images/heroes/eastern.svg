@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#143042"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="60%" cy="60%" r="55%">
+      <stop offset="0" stop-color="#f5b820" stop-opacity="0.2"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <!-- coastal corniche skyline -->
+  <g fill="#0c1422">
+    <rect x="300" y="430" width="70" height="220"/><rect x="390" y="380" width="54" height="270"/>
+    <rect x="470" y="450" width="80" height="200"/><rect x="900" y="400" width="60" height="250"/>
+    <rect x="980" y="350" width="46" height="300"/><rect x="1050" y="440" width="90" height="210"/>
+    <!-- water tower landmark -->
+    <rect x="690" y="300" width="20" height="350"/><circle cx="700" cy="290" r="48"/>
+  </g>
+  <!-- sea -->
+  <rect x="0" y="650" width="1600" height="250" fill="#0d2433"/>
+  <g fill="#f5b820" opacity="0.25"><rect x="200" y="690" width="1200" height="4"/><rect x="300" y="740" width="1000" height="4"/></g>
+  <rect x="0" y="650" width="1600" height="250" fill="#070b14" opacity="0.4"/>
+</svg>

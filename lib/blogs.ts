@@ -237,6 +237,17 @@ export async function getRelatedBlogs(
   return related.slice(0, limit);
 }
 
+/** Previous (older) and next (newer) published posts relative to a slug. */
+export async function getAdjacentBlogs(
+  slug: string
+): Promise<{ prev: Blog | null; next: Blog | null }> {
+  const all = await listPublishedBlogs();
+  const i = all.findIndex((b) => b.slug === slug);
+  if (i === -1) return { prev: null, next: null };
+  // listPublishedBlogs is newest-first, so i-1 is newer (next), i+1 is older (prev).
+  return { next: all[i - 1] ?? null, prev: all[i + 1] ?? null };
+}
+
 /** Distinct categories that have at least one published post, with counts. */
 export async function listPublishedCategories(): Promise<{ name: string; count: number }[]> {
   const all = await listPublishedBlogs();

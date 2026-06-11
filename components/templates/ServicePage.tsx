@@ -4,10 +4,11 @@ import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
-import { serviceHeroImage } from "@/lib/hero";
+import { serviceHero } from "@/lib/hero";
 import type { Service } from "@/data/services";
 
 /**
@@ -27,6 +28,7 @@ export function ServicePage({
     { name: "Services", path: "/services" },
     { name: service.name, path: service.href },
   ];
+  const hero = serviceHero(service.slug, service.name);
 
   return (
     <>
@@ -47,7 +49,8 @@ export function ServicePage({
         title={service.heading}
         subtitle={service.intro}
         crumbs={crumbs}
-        backgroundImage={serviceHeroImage(service.slug)}
+        backgroundImage={service.heroImage ?? hero.src}
+        backgroundAlt={service.heroAlt ?? hero.alt}
         whatsappMessage={`Hello! I'm interested in your ${service.name} in Saudi Arabia.`}
       />
 
@@ -92,6 +95,7 @@ export function ServicePage({
       <VehicleOptions background="muted" />
       <HowItWorks background="white" />
       <FAQSection faqs={service.faqs} background="muted" />
+      <LatestGuides />
       <CTASection
         whatsappMessage={`Hello! I'd like to book your ${service.name}.`}
       />

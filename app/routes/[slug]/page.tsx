@@ -6,6 +6,8 @@ import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
+import { routeHero } from "@/lib/hero";
 import { RouteGrid } from "@/components/sections/RouteGrid";
 import { CityGrid } from "@/components/sections/CityGrid";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -119,6 +121,8 @@ export default async function RoutePage({
         title={`${route.from} to ${route.to} Taxi Service`}
         subtitle={route.intro}
         crumbs={crumbs}
+        backgroundImage={route.heroImage ?? routeHero(route.from, route.to).src}
+        backgroundAlt={route.heroAlt ?? routeHero(route.from, route.to).alt}
         whatsappMessage={`Hello! I'd like a quote for a ${route.from} to ${route.to} taxi.`}
       />
 
@@ -232,6 +236,7 @@ export default async function RoutePage({
       )}
 
       <FAQSection faqs={faqs} background="muted" />
+      <LatestGuides background="muted" />
       <CTASection
         title={`Book Your ${route.from} to ${route.to} Taxi`}
         whatsappMessage={`Hello! I'd like to book a ${route.from} to ${route.to} taxi.`}

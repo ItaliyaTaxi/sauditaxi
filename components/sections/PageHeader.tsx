@@ -9,8 +9,10 @@ interface PageHeaderProps {
   crumbs: Crumb[];
   whatsappMessage?: string;
   showCtas?: boolean;
-  /** Background image path. Defaults to the road scene. */
+  /** Background image path. Defaults to the home scene. */
   backgroundImage?: string;
+  /** Accessible description of the hero image (exposed via aria-label). */
+  backgroundAlt?: string;
 }
 
 export function PageHeader({
@@ -20,13 +22,16 @@ export function PageHeader({
   whatsappMessage,
   showCtas = true,
   backgroundImage = heroImages.default,
+  backgroundAlt,
 }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
-        aria-hidden="true"
+        role={backgroundAlt ? "img" : undefined}
+        aria-label={backgroundAlt}
+        aria-hidden={backgroundAlt ? undefined : true}
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/65"

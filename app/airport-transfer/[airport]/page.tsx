@@ -7,12 +7,13 @@ import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
 import { AirportGrid } from "@/components/sections/AirportGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { airports, getAirport } from "@/data/airports";
 import { getCity } from "@/data/cities";
-import { heroImages } from "@/lib/hero";
+import { airportHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import {
@@ -107,7 +108,8 @@ export default async function AirportPage({
         title={`${airport.city} Airport Transfer (${airport.code})`}
         subtitle={airport.intro}
         crumbs={crumbs}
-        backgroundImage={heroImages.airport}
+        backgroundImage={airport.heroImage ?? airportHero(airport.city).src}
+        backgroundAlt={airport.heroAlt ?? airportHero(airport.city).alt}
         whatsappMessage={`Hello! I'd like an airport transfer from ${airport.name} (${airport.code}).`}
       />
 
@@ -213,6 +215,7 @@ export default async function AirportPage({
         subheading="We cover meet-and-greet pickups at every major airport in the Kingdom."
       />
       <FAQSection faqs={faqs} background="white" />
+      <LatestGuides background="muted" />
       <CTASection
         title={`Book Your ${airport.city} Airport Taxi`}
         whatsappMessage={`Hello! I'd like to book an airport transfer from ${airport.city} airport.`}

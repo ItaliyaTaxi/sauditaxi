@@ -35,6 +35,9 @@ export interface Service {
   metaDescription: string;
   /** Whether to show this card in the main services grid. */
   featured: boolean;
+  /** Optional hero image override + alt; falls back to a themed scene. */
+  heroImage?: string;
+  heroAlt?: string;
 }
 
 export const services: Service[] = [

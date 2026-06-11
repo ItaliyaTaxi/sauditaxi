@@ -11,8 +11,10 @@ interface HeroSectionProps {
   /** Quick selling points shown as a checklist. */
   points?: string[];
   whatsappMessage?: string;
-  /** Background image path. Defaults to the road scene. */
+  /** Background image path. Defaults to the home scene. */
   backgroundImage?: string;
+  /** Accessible description of the hero image (exposed via aria-label). */
+  backgroundAlt?: string;
   /** Optional form card (e.g. the compact quick-quote form) shown beside copy. */
   formCard?: React.ReactNode;
 }
@@ -24,6 +26,7 @@ export function HeroSection({
   points,
   whatsappMessage,
   backgroundImage = heroImages.default,
+  backgroundAlt,
   formCard,
 }: HeroSectionProps) {
   return (
@@ -32,7 +35,9 @@ export function HeroSection({
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
-        aria-hidden="true"
+        role={backgroundAlt ? "img" : undefined}
+        aria-label={backgroundAlt}
+        aria-hidden={backgroundAlt ? undefined : true}
       />
       {/* Dark overlay for text readability */}
       <div

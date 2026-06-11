@@ -17,6 +17,9 @@ export interface City {
   /** Optional SEO overrides; generated automatically when omitted. */
   metaTitle?: string;
   metaDescription?: string;
+  /** Optional hero image override + alt; falls back to a themed scene. */
+  heroImage?: string;
+  heroAlt?: string;
 }
 
 export const cities: City[] = [

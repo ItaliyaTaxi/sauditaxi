@@ -18,6 +18,9 @@ export interface Route {
   relatedCitySlugs: string[];
   metaTitle?: string;
   metaDescription?: string;
+  /** Optional hero image override + alt; falls back to a themed scene. */
+  heroImage?: string;
+  heroAlt?: string;
 }
 
 export const routes: Route[] = [

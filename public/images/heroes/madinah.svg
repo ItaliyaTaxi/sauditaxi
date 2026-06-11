@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#13283a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="58%" r="55%">
+      <stop offset="0" stop-color="#1f8a5b" stop-opacity="0.28"/><stop offset="1" stop-color="#1f8a5b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <!-- Prophet's Mosque: green dome + minarets -->
+  <g fill="#0c1422">
+    <rect x="360" y="520" width="880" height="220"/>
+    <rect x="420" y="240" width="34" height="280"/><rect x="600" y="240" width="34" height="280"/>
+    <rect x="966" y="240" width="34" height="280"/><rect x="1146" y="240" width="34" height="280"/>
+  </g>
+  <!-- green dome -->
+  <path d="M740 520 q60 -150 120 0 Z" fill="#1f8a5b"/>
+  <rect x="794" y="360" width="12" height="40" fill="#1f8a5b"/>
+  <g fill="#1f8a5b" opacity="0.85"><circle cx="437" cy="238" r="11"/><circle cx="617" cy="238" r="11"/><circle cx="983" cy="238" r="11"/><circle cx="1163" cy="238" r="11"/></g>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.6"/>
+</svg>

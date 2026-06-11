@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#22324f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="55%" r="55%">
+      <stop offset="0" stop-color="#f5b820" stop-opacity="0.22"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <!-- border gantry / gate -->
+  <g fill="#0c1422">
+    <rect x="360" y="300" width="40" height="380"/><rect x="1200" y="300" width="40" height="380"/>
+    <rect x="360" y="300" width="880" height="46" rx="6"/>
+    <rect x="740" y="346" width="120" height="60" rx="6"/>
+  </g>
+  <rect x="772" y="360" width="56" height="32" rx="4" fill="#f5b820" opacity="0.85"/>
+  <!-- road -->
+  <path d="M700 680 L900 680 L1020 900 L580 900 Z" fill="#0a0f1a"/>
+  <g fill="#f5b820"><rect x="792" y="700" width="16" height="34" rx="4"/><rect x="788" y="760" width="24" height="44" rx="5"/><rect x="783" y="830" width="34" height="60" rx="6"/></g>
+  <rect x="0" y="680" width="1600" height="220" fill="#070b14" opacity="0.55"/>
+</svg>

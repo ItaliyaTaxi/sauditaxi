@@ -7,12 +7,13 @@ import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
 import { CityGrid } from "@/components/sections/CityGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { cities, getCity } from "@/data/cities";
 import { getAirport } from "@/data/airports";
-import { heroImages } from "@/lib/hero";
+import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import {
@@ -110,7 +111,8 @@ export default async function CityPage({
         title={`Taxi Service in ${city.name}`}
         subtitle={city.intro}
         crumbs={crumbs}
-        backgroundImage={heroImages.city}
+        backgroundImage={city.heroImage ?? cityHero(city.slug, city.name).src}
+        backgroundAlt={city.heroAlt ?? cityHero(city.slug, city.name).alt}
         whatsappMessage={`Hello! I'd like a taxi quote in ${city.name}, Saudi Arabia.`}
       />
 
@@ -224,6 +226,7 @@ export default async function CityPage({
       )}
 
       <FAQSection faqs={faqs} background="white" />
+      <LatestGuides background="muted" />
       <CTASection
         title={`Book Your ${city.name} Taxi Today`}
         whatsappMessage={`Hello! I'd like to book a taxi in ${city.name}.`}
