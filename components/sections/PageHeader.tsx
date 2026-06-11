@@ -25,7 +25,7 @@ export function PageHeader({
   backgroundAlt,
 }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-black text-white">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
@@ -34,14 +34,14 @@ export function PageHeader({
         aria-hidden={backgroundAlt ? undefined : true}
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/65"
+        className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20"
         aria-hidden="true"
       />
       <div
         className="pointer-events-none absolute -top-20 right-0 size-72 rounded-full bg-gold/15 blur-3xl"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
         <Breadcrumbs items={crumbs} onDark />
         <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight drop-shadow-sm sm:text-5xl">
           {title}

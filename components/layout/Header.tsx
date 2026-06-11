@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -59,6 +59,16 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Solid bar once scrolled, or while the mobile menu is open.
+  const solid = scrolled || open;
 
   const closeAll = () => {
     setOpen(false);
@@ -69,9 +79,16 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy text-white shadow-lg shadow-black/20">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 text-white transition-colors duration-300",
+        solid
+          ? "bg-black/95 shadow-lg shadow-black/30 backdrop-blur"
+          : "bg-gradient-to-b from-black/60 via-black/25 to-transparent"
+      )}
+    >
       {/* Top bar: logo + language + quote + (mobile) menu toggle */}
-      <div className="border-b border-white/10">
+      <div className={cn(solid ? "border-b border-white/10" : "border-b border-transparent")}>
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
@@ -169,13 +186,13 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Premium gold accent line */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
+      {/* Premium gold accent line (only on the solid bar) */}
+      {solid && <div className="h-[3px] w-full bg-gradient-to-r from-gold/0 via-gold to-gold/0" />}
 
       {/* Mobile nav (collapsible) */}
       <div
         className={cn(
-          "lg:hidden overflow-y-auto bg-navy transition-[max-height] duration-300",
+          "lg:hidden overflow-y-auto bg-black transition-[max-height] duration-300",
           open ? "max-h-[85vh]" : "max-h-0"
         )}
       >

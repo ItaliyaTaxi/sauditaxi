@@ -30,7 +30,7 @@ export function HeroSection({
   formCard,
 }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-black text-white">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -41,7 +41,7 @@ export function HeroSection({
       />
       {/* Dark overlay for text readability */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/60"
+        className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25"
         aria-hidden="true"
       />
       <div
@@ -49,7 +49,7 @@ export function HeroSection({
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6 lg:px-8 lg:pb-28 lg:pt-36">
         <div className={formCard ? "grid items-center gap-10 lg:grid-cols-2" : "max-w-3xl"}>
           <div className="animate-float-up">
             {badge && <Badge className="bg-gold/20 text-gold">{badge}</Badge>}

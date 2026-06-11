@@ -107,8 +107,8 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       <SchemaScript schema={schemas} />
 
       {/* Hero */}
-      <section className="border-b border-border bg-navy text-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <section className="border-b border-border bg-black text-white">
+        <div className="mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 lg:px-8 lg:pb-16 lg:pt-36">
           <Breadcrumbs items={crumbs} onDark />
           <Link
             href={`/blog?category=${encodeURIComponent(blog.category)}`}
