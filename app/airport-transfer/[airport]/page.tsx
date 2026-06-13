@@ -18,7 +18,6 @@ import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import {
   breadcrumbSchema,
-  faqSchema,
   serviceSchema,
   taxiServiceSchema,
 } from "@/lib/schema";
@@ -100,7 +99,6 @@ export default async function AirportPage({
             serviceType: "Airport Transfer",
             areaServed: `${airport.city}, Saudi Arabia`,
           }),
-          faqSchema(faqs),
         ]}
       />
 

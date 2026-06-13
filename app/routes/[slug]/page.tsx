@@ -15,7 +15,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes, getRoute } from "@/data/routes";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 type Params = { slug: string };
 
@@ -113,7 +113,6 @@ export default async function RoutePage({
             path,
             serviceType: "Intercity Transfer",
           }),
-          faqSchema(faqs),
         ]}
       />
 

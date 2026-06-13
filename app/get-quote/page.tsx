@@ -6,7 +6,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { generalFaqs } from "@/data/faqs";
 
 const crumbs = [
@@ -45,9 +45,7 @@ export default async function GetQuotePage({
   const sp = await searchParams;
   return (
     <>
-      <SchemaScript
-        schema={[breadcrumbSchema(crumbs), faqSchema(generalFaqs)]}
-      />
+      <SchemaScript schema={breadcrumbSchema(crumbs)} />
       <PageHeader
         title="Get Your Taxi Quote"
         subtitle="Tell us about your trip and receive a fixed-price quote on WhatsApp — fast, simple, and with no obligation."

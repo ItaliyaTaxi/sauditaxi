@@ -7,7 +7,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { serviceHero } from "@/lib/hero";
 import type { Service } from "@/data/services";
 
@@ -41,7 +41,6 @@ export function ServicePage({
             path: service.href,
             serviceType: service.name,
           }),
-          faqSchema(service.faqs),
         ]}
       />
 

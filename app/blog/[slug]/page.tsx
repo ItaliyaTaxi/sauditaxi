@@ -13,7 +13,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl, siteConfig } from "@/lib/site";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { formatBlogDate } from "@/lib/format";
 import {
   getPublishedBlogBySlug,
@@ -98,7 +98,6 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       keywords: [blog.focusKeyword, ...blog.secondaryKeywords].filter(Boolean) as string[],
       section: blog.category,
     }),
-    ...(blog.faqs.length ? [faqSchema(blog.faqs)] : []),
     ...(blog.schemaJson ? [blog.schemaJson] : []),
   ];
 

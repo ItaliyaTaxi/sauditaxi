@@ -15,7 +15,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { borders, getBorder } from "@/data/borders";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 type Params = { border: string };
 
@@ -91,7 +91,6 @@ export default async function BorderPage({
             path,
             serviceType: "Border Transfer",
           }),
-          faqSchema(faqs),
         ]}
       />
 

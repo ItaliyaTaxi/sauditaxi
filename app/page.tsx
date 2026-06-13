@@ -13,9 +13,7 @@ import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
-import { SchemaScript } from "@/components/seo/SchemaScript";
 import { generalFaqs } from "@/data/faqs";
-import { faqSchema } from "@/lib/schema";
 
 // Refresh hourly so the "Latest guides" block surfaces new posts (freshness signal).
 export const revalidate = 3600;
@@ -23,7 +21,6 @@ export const revalidate = 3600;
 export default function HomePage() {
   return (
     <>
-      <SchemaScript schema={faqSchema(generalFaqs)} />
 
       <HeroSection
         badge="Taxi Service in Saudi Arabia"
