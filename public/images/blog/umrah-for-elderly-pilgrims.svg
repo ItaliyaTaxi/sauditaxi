@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#2a2238"/></linearGradient>
+    <radialGradient id="g" cx="38%" cy="62%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.32"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="#0c1422"><rect x="300" y="520" width="700" height="200"/><rect x="360" y="320" width="28" height="200"/><rect x="560" y="320" width="28" height="200"/><rect x="760" y="320" width="28" height="200"/><circle cx="650" cy="520" r="90"/></g>
+  <g fill="#f5b820" opacity="0.6"><circle cx="374" cy="320" r="10"/><circle cx="574" cy="320" r="10"/><circle cx="774" cy="320" r="10"/></g>
+  <!-- accessibility badge -->
+  <circle cx="1240" cy="430" r="120" fill="none" stroke="#f5b820" stroke-width="10" opacity="0.85"/>
+  <circle cx="1240" cy="360" r="22" fill="#f5b820"/><path d="M1240 386 v70 h60 M1240 420 h-46 l-30 70" stroke="#f5b820" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.55"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#21304d"/></linearGradient>
+    <radialGradient id="g" cx="65%" cy="35%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.22"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- plane + terminal -->
+  <g fill="#0c1422" transform="translate(1040 220) rotate(-8)"><path d="M0 40 L300 22 q38 -2 38 18 q0 20 -38 18 L0 78 Z"/><path d="M110 50 L56 -36 L90 -36 L188 46 Z"/></g>
+  <g fill="#0c1422"><rect x="240" y="360" width="44" height="300"/><rect x="220" y="330" width="84" height="50" rx="8"/><rect x="0" y="560" width="1600" height="120"/></g>
+  <!-- warning triangle -->
+  <g transform="translate(700 380)"><path d="M120 0 L240 210 H0 Z" fill="#f5b820"/><rect x="112" y="70" width="16" height="80" rx="6" fill="#0a0f1a"/><circle cx="120" cy="178" r="11" fill="#0a0f1a"/></g>
+  <rect x="0" y="660" width="1600" height="240" fill="#070b14" opacity="0.5"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#16314a"/></linearGradient>
+    <radialGradient id="g" cx="50%" cy="55%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.22"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- divider -->
+  <rect x="796" y="180" width="8" height="540" rx="4" fill="#f5b820" opacity="0.5"/>
+  <!-- train (left) -->
+  <g fill="#0c1422"><rect x="180" y="420" width="420" height="170" rx="26"/><path d="M180 446 q0-26 26-26 h60 v60 h-86 Z"/></g>
+  <g fill="#f5b820" opacity="0.8"><rect x="250" y="450" width="80" height="60" rx="8"/><rect x="360" y="450" width="80" height="60" rx="8"/><rect x="470" y="450" width="80" height="60" rx="8"/></g>
+  <circle cx="300" cy="610" r="28" fill="#0a0f1a"/><circle cx="480" cy="610" r="28" fill="#0a0f1a"/>
+  <!-- taxi (right) -->
+  <g fill="#0c1422"><rect x="1000" y="470" width="420" height="120" rx="24"/><path d="M1070 470 l40-70 h180 l50 70 Z"/><rect x="1190" y="406" width="60" height="26" rx="4"/></g>
+  <g fill="#f5b820" opacity="0.85"><rect x="1110" y="486" width="90" height="14" rx="3"/></g>
+  <circle cx="1100" cy="600" r="30" fill="#0a0f1a"/><circle cx="1320" cy="600" r="30" fill="#0a0f1a"/>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.5"/>
+</svg>
