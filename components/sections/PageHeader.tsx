@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Breadcrumbs, type Crumb } from "@/components/Breadcrumbs";
 import { CtaButtons } from "@/components/CtaButtons";
 import { heroImages } from "@/lib/hero";
@@ -26,12 +27,14 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden bg-black text-white">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
-        role={backgroundAlt ? "img" : undefined}
-        aria-label={backgroundAlt}
-        aria-hidden={backgroundAlt ? undefined : true}
+      <Image
+        src={backgroundImage}
+        alt={backgroundAlt ?? ""}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        unoptimized={backgroundImage.endsWith(".svg")}
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20"

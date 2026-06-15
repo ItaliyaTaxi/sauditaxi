@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -95,10 +96,12 @@ export function Header() {
             aria-label={`${siteConfig.name} home`}
             className="flex items-center transition-transform hover:scale-[1.02]"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo.png"
+            <Image
+              src="/images/logo.webp"
               alt={`${siteConfig.name} logo`}
+              width={256}
+              height={256}
+              priority
               className="h-14 w-auto sm:h-16"
             />
           </Link>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
@@ -5,10 +6,11 @@ import { siteConfig } from "@/lib/site";
 export function AuthorBox({ author }: { author: string }) {
   return (
     <div className="mt-12 flex items-start gap-4 rounded-2xl border border-border bg-muted/40 p-5">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/logo.png"
+      <Image
+        src="/images/logo.webp"
         alt={`${siteConfig.name} logo`}
+        width={112}
+        height={112}
         className="size-14 shrink-0 rounded-full bg-navy object-contain p-1"
       />
       <div>

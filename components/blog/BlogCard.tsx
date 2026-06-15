@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import type { Blog } from "@/lib/blogs";
@@ -18,12 +19,13 @@ export function BlogCard({ blog, featured = false }: { blog: Blog; featured?: bo
         aria-label={blog.title}
       >
         {blog.featuredImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={blog.featuredImage}
             alt={blog.featuredImageAlt ?? blog.title}
-            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            unoptimized={blog.featuredImage.endsWith(".svg")}
           />
         ) : (
           <div className="flex size-full items-center justify-center bg-navy text-gold">

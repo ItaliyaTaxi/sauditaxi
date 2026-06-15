@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Clock, CalendarDays, User, Tag, ListTree, ArrowLeft, ArrowRight } from "lucide-react";
@@ -143,12 +144,17 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             <article className="min-w-0">
               {/* Featured image */}
               {blog.featuredImage && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={blog.featuredImage}
-                  alt={blog.featuredImageAlt ?? blog.title}
-                  className="mb-8 aspect-[16/9] w-full rounded-2xl object-cover"
-                />
+                <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-muted">
+                  <Image
+                    src={blog.featuredImage}
+                    alt={blog.featuredImageAlt ?? blog.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 720px"
+                    className="object-cover"
+                    unoptimized={blog.featuredImage.endsWith(".svg")}
+                  />
+                </div>
               )}
 
               {/* Table of contents */}

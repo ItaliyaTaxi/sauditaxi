@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CircleCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { CtaButtons } from "@/components/CtaButtons";
@@ -32,12 +33,14 @@ export function HeroSection({
   return (
     <section className="relative overflow-hidden bg-black text-white">
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
-        role={backgroundAlt ? "img" : undefined}
-        aria-label={backgroundAlt}
-        aria-hidden={backgroundAlt ? undefined : true}
+      <Image
+        src={backgroundImage}
+        alt={backgroundAlt ?? ""}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        unoptimized={backgroundImage.endsWith(".svg")}
       />
       {/* Dark overlay for text readability */}
       <div
