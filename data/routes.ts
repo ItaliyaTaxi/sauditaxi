@@ -271,6 +271,28 @@ export const routes: Route[] = [
     ],
     relatedCitySlugs: ["riyadh"],
   },
+  {
+    slug: "dammam-airport-to-khobar",
+    from: "Dammam Airport",
+    to: "Al Khobar",
+    category: "airport",
+    distance: "35 km",
+    duration: "30 min",
+    intro:
+      "The Dammam Airport to Al Khobar taxi is a quick private transfer from King Fahd International Airport to the city's waterfront hotels and the Bahrain Causeway.",
+    about:
+      "King Fahd International Airport (DMM) sits north of the Dammam–Khobar metro area, and a private transfer is the fastest, most comfortable way into Al Khobar. We meet you in the arrivals hall, help with your luggage, and drive directly to your hotel along the Corniche, a business address, or the King Fahd Causeway for onward travel to Bahrain — at a fixed price agreed before you land.",
+    notes: [
+      "Meet-and-greet pickup at King Fahd Airport (DMM)",
+      "Direct drop-off at Al Khobar hotels and the Corniche",
+      "Onward connections to the Bahrain Causeway",
+      "Flight-tracked pickup with free wait time",
+    ],
+    relatedCitySlugs: ["khobar", "dammam"],
+    metaTitle: "Dammam Airport to Al Khobar Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Dammam Airport (DMM) to Al Khobar taxi — a quick 30-minute transfer with meet-and-greet pickup, fixed prices, and comfortable family vehicles.",
+  },
 ];
 
 export const routeMap: Record<string, Route> = Object.fromEntries(

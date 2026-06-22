@@ -1,5 +1,6 @@
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import type { Faq } from "@/data/faqs";
+import { testimonials, aggregateRating } from "@/data/testimonials";
 
 /** A single JSON-LD node. Loosely typed on purpose. */
 export type JsonLd = Record<string, unknown>;
@@ -59,6 +60,22 @@ export function localBusinessSchema(): JsonLd {
       addressCountry: siteConfig.address.addressCountry,
     },
     areaServed: { "@type": "Country", name: "Saudi Arabia" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: aggregateRating.ratingValue,
+      reviewCount: aggregateRating.reviewCount,
+      bestRating: aggregateRating.bestRating,
+    },
+    review: testimonials.map((t) => ({
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: t.rating,
+        bestRating: 5,
+      },
+      author: { "@type": "Person", name: t.name },
+      reviewBody: t.text,
+    })),
   };
 }
 

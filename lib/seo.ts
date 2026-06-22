@@ -24,6 +24,15 @@ export function buildMetadata({
   index = true,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
+  // Social networks (Facebook, LinkedIn, WhatsApp, X) cannot render SVG share
+  // images. Fall back to the raster default whenever an SVG is supplied so the
+  // OG/Twitter preview always uses a PNG/JPG.
+  const ogImg = image.endsWith(".svg") ? siteConfig.ogImage : image;
+  const imageType = ogImg.endsWith(".png")
+    ? "image/png"
+    : ogImg.endsWith(".webp")
+      ? "image/webp"
+      : "image/jpeg";
   return {
     title,
     description,
@@ -42,13 +51,13 @@ export function buildMetadata({
       url,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImg, width: 1200, height: 630, alt: title, type: imageType }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [ogImg],
       site: siteConfig.twitterHandle,
     },
   };

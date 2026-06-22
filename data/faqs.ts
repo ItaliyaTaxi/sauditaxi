@@ -40,4 +40,54 @@ export const generalFaqs: Faq[] = [
     answer:
       "Absolutely. WhatsApp is the fastest way to get a quote. Tap any WhatsApp button on the site and your trip details are prefilled for you.",
   },
+  {
+    question: "How do airport transfers work?",
+    answer:
+      "Share your flight number and pickup time when you book. We track the flight, your driver waits in the arrivals hall with a name board, helps with your luggage, and drives you directly to your hotel or destination — all for the price agreed in advance.",
+  },
+  {
+    question: "Can I pre-book my transfer in advance?",
+    answer:
+      "Yes, and we recommend it. Pre-booking guarantees a vehicle and a fixed price, and is especially important during Umrah, Hajj, and Ramadan when demand is high. You can book days or weeks ahead with no prepayment required.",
+  },
+  {
+    question: "What happens if my flight is delayed?",
+    answer:
+      "Nothing — we monitor your flight in real time and adjust the pickup automatically. Free wait time is included for airport pickups, so a delayed or early arrival never costs you the ride or an extra fee.",
+  },
+  {
+    question: "Are child seats available?",
+    answer:
+      "Yes. Child and booster seats can be added to any booking at no surprise cost — just tell us the number and ages of children travelling when you request your quote and we will arrange the right vehicle.",
+  },
+  {
+    question: "Do your drivers speak English?",
+    answer:
+      "Yes. Our drivers speak English and Arabic, and many are experienced with international travellers and pilgrims. If you need a driver with another language, let us know and we will do our best to arrange it.",
+  },
+  {
+    question: "How do I pay for my transfer?",
+    answer:
+      "Payment is simple and flexible — most customers pay the driver directly in cash (SAR) or by card on the day. The price is fixed when you book, with no meter, no surge pricing, and no hidden fees.",
+  },
+  {
+    question: "Is Umrah and Hajj transportation available?",
+    answer:
+      "Yes. We specialise in pilgrim transport: Jeddah and Madinah airport pickups, hotel transfers near the Haram, Makkah to Madinah rides, miqat stops for ihram, Ziyarat tours, and group vehicles for Hajj parties.",
+  },
+  {
+    question: "Is there a cancellation policy?",
+    answer:
+      "Yes. Because there is no prepayment, you can cancel or change a booking free of charge with reasonable notice. Just message us on WhatsApp and we will update or cancel your transfer.",
+  },
+  {
+    question: "Can I book transport for a large group?",
+    answer:
+      "Yes. Alongside sedans and SUVs we operate vans and minibuses for families and large groups, so everyone travels together with their luggage. For Hajj and big pilgrim groups we recommend booking early in the season.",
+  },
+  {
+    question: "Are your vehicles licensed and insured?",
+    answer:
+      "Yes. We use licensed, well-maintained vehicles driven by professional, vetted drivers, so your transfer is safe, legal, and comfortable from pickup to drop-off.",
+  },
 ];

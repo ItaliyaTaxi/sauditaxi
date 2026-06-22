@@ -8,11 +8,14 @@ import { RouteGrid } from "@/components/sections/RouteGrid";
 import { CityGrid } from "@/components/sections/CityGrid";
 import { AirportGrid } from "@/components/sections/AirportGrid";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { TrustSection } from "@/components/sections/TrustSection";
 import { TestimonialSection } from "@/components/sections/TestimonialSection";
+import { HomeSeoContent } from "@/components/sections/HomeSeoContent";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
+import { SchemaScript } from "@/components/seo/SchemaScript";
+import { faqSchema } from "@/lib/schema";
 import { generalFaqs } from "@/data/faqs";
 
 // Refresh hourly so the "Latest guides" block surfaces new posts (freshness signal).
@@ -21,6 +24,10 @@ export const revalidate = 3600;
 export default function HomePage() {
   return (
     <>
+      {/* Homepage FAQ structured data (FAQPage). LocalBusiness, TaxiService,
+          Organization, WebSite, and Review/AggregateRating schema render
+          site-wide from the root layout. */}
+      <SchemaScript schema={[faqSchema(generalFaqs.slice(0, 6))]} />
 
       <HeroSection
         badge="Taxi Service in Saudi Arabia"
@@ -75,11 +82,13 @@ export default function HomePage() {
 
       <VehicleOptions background="white" />
 
-      <WhyChooseUs background="muted" />
+      <TrustSection background="muted" />
 
       <TestimonialSection />
 
-      <FAQSection faqs={generalFaqs} background="muted" />
+      <HomeSeoContent />
+
+      <FAQSection faqs={generalFaqs.slice(0, 6)} background="muted" />
 
       <LatestGuides />
 

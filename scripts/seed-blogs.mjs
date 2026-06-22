@@ -1631,7 +1631,7 @@ ${CTA("Makkah")}
     tags: ["Umrah", "Pilgrim Tips", "Checklist", "Travel"],
     metaTitle: "What to Pack for Umrah: Complete Checklist 2026",
     metaDescription:
-      "A complete Umrah packing checklist — ihram, documents, unscented toiletries, clothing, health items, and practical essentials so you travel light and prepared.",
+      "A complete Umrah packing checklist — ihram, documents, unscented toiletries, clothing, health items, and essentials so you travel light and prepared.",
     excerpt:
       "A complete, practical Umrah packing checklist — ihram, documents, unscented toiletries, clothing, and health essentials — so you arrive prepared and travel light.",
     faqs: [
@@ -2519,7 +2519,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["jeddah airport umrah", "king abdulaziz airport arrival", "jeddah airport for pilgrims", "arriving at jeddah airport"],
     tags: ["Jeddah", "Airport", "Umrah", "Arrival"],
     metaTitle: "Jeddah Airport Arrival Guide for Umrah Pilgrims",
-    metaDescription: "A step-by-step Jeddah airport arrival guide for Umrah pilgrims — immigration, baggage, SIM cards, ihram, and reaching Makkah smoothly from King Abdulaziz Airport.",
+    metaDescription: "A step-by-step Jeddah airport arrival guide for Umrah pilgrims — immigration, baggage, SIM cards, ihram, and reaching Makkah from King Abdulaziz Airport.",
     excerpt: "Landing at Jeddah for Umrah? A step-by-step arrival guide — immigration, baggage, SIM, ihram, and the smoothest way to reach Makkah from the airport.",
     faqs: [],
     content: `
@@ -2945,7 +2945,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["masjid al haram guide", "grand mosque makkah", "haram makkah facilities", "kaaba masjid al haram"],
     tags: ["Makkah", "Masjid al-Haram", "Islamic Sites", "Guide"],
     metaTitle: "Complete Guide to Masjid al-Haram for Visitors",
-    metaDescription: "A complete guide to the Masjid al-Haram in Makkah — the Kaaba, gates, floors, Zamzam, Maqam Ibrahim, Safa and Marwah, facilities, and etiquette for first-time visitors.",
+    metaDescription: "A complete guide to the Masjid al-Haram in Makkah — the Kaaba, gates, floors, Zamzam, Maqam Ibrahim, Safa and Marwah, and etiquette for first-time visitors.",
     excerpt: "A first-time visitor's guide to the Masjid al-Haram — the Kaaba, gates, floors, Zamzam, Safa and Marwah, facilities, and the etiquette of the Grand Mosque.",
     faqs: [],
     content: `
@@ -3051,7 +3051,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["umrah for elderly", "umrah for senior pilgrims", "elderly umrah mobility", "wheelchair umrah"],
     tags: ["Umrah", "Elderly", "Mobility", "Pilgrim Travel Tips"],
     metaTitle: "Umrah for Elderly Pilgrims: Travel & Mobility Guide",
-    metaDescription: "A complete guide to Umrah for elderly pilgrims — health preparation, wheelchair and cart access at the Haram, comfortable transport, accommodation, and care tips.",
+    metaDescription: "A complete guide to Umrah for elderly pilgrims — health prep, wheelchair and cart access at the Haram, comfortable transport, accommodation, and care tips.",
     excerpt: "How elderly pilgrims can perform Umrah comfortably and safely — health prep, wheelchair and electric-cart access, door-to-door transport, accommodation, and care tips.",
     faqs: [],
     content: `
@@ -3173,7 +3173,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["haramain train vs taxi", "makkah madinah transport comparison", "best way makkah to madinah", "haramain high speed train"],
     tags: ["Makkah", "Madinah", "Transport", "Comparison"],
     metaTitle: "Makkah to Madinah: Train vs Taxi — Which Is Better?",
-    metaDescription: "Train vs taxi between Makkah and Madinah for pilgrims — compare cost, travel time, comfort, and suitability for families and elderly travellers to choose the best option.",
+    metaDescription: "Train vs taxi between Makkah and Madinah — compare cost, travel time, comfort, and suitability for families and elderly travellers to find the best option.",
     excerpt: "Should pilgrims take the Haramain train or a private taxi between Makkah and Madinah? A clear comparison of cost, time, comfort, and family/elderly suitability.",
     faqs: [],
     content: `
@@ -3433,7 +3433,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["miqat for umrah", "where to enter ihram", "mawaqit umrah", "miqat points saudi arabia"],
     tags: ["Umrah", "Ihram", "Miqat", "Umrah Guides"],
     metaTitle: "Complete Guide to Miqat Locations for Umrah",
-    metaDescription: "A complete guide to the Miqat locations for Umrah — all five mawaqit, who uses each, when to enter ihram, air-travel rules, and the most common miqat mistakes.",
+    metaDescription: "A complete guide to the Miqat locations for Umrah — all five mawaqit, who uses each, when to enter ihram, air-travel rules, and common miqat mistakes.",
     excerpt: "Everything pilgrims need about the Miqat for Umrah — the five locations, who uses each, exactly when to enter ihram (including by air), and common mistakes to avoid.",
     faqs: [],
     content: `
@@ -3584,7 +3584,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["umrah transport mistakes", "pilgrim taxi mistakes", "saudi arabia transport tips", "umrah travel planning"],
     tags: ["Transport", "Umrah", "Tips", "Pilgrim Travel Tips"],
     metaTitle: "Transportation Mistakes Pilgrims Make in Saudi Arabia",
-    metaDescription: "Avoid the most common transportation mistakes pilgrims make in Saudi Arabia — airport transfer, taxi booking, and group travel errors — with practical planning tips.",
+    metaDescription: "Avoid the common transport mistakes pilgrims make in Saudi Arabia — airport transfer, taxi booking, and group travel errors — with practical planning tips.",
     excerpt: "The transportation mistakes that cost pilgrims time, money, and stress in Saudi Arabia — airport, taxi, and group-travel errors — and how to plan transport the smart way.",
     faqs: [],
     content: `
@@ -3841,7 +3841,7 @@ ${GENERAL_CTA}
     secondaryKeywords: ["king salman international airport", "riyadh new airport", "KSIA transfers", "riyadh airport transport 2026"],
     tags: ["Riyadh", "Airport", "2026", "Travel Guide"],
     metaTitle: "King Salman International Airport: Transfer Guide",
-    metaDescription: "What travelers need to know about King Salman International Airport in Riyadh — location, what's changing, ground transport, and the easiest way to arrange transfers.",
+    metaDescription: "What to know about King Salman International Airport in Riyadh — location, what's changing, ground transport, and the easiest way to arrange transfers.",
     excerpt: "Riyadh's mega King Salman International Airport is reshaping how travelers arrive. Here's what to know about its location, transport, and arranging smooth transfers.",
     faqs: [],
     content: `
@@ -3933,7 +3933,7 @@ ${GENERAL_CTA}
     secondaryKeywords: ["new umrah visa rules", "saudi umrah visa 2026", "umrah visa changes", "umrah evisa 2026"],
     tags: ["Umrah", "Visa", "2026", "Pilgrim Travel Tips"],
     metaTitle: "New Saudi Umrah Visa Rules 2026: What Changed",
-    metaDescription: "A clear guide to Saudi Umrah visa rules in 2026 — visa options, validity, who can apply, the Nusuk platform, and how the latest changes affect your travel and transport.",
+    metaDescription: "A clear guide to Saudi Umrah visa rules in 2026 — visa options, validity, who can apply, the Nusuk platform, and how the latest changes affect your travel.",
     excerpt: "What's new with Saudi Umrah visas in 2026 — visa options, validity, eligibility, the Nusuk platform, and how the latest rule changes affect your travel and transport plans.",
     faqs: [],
     content: `
@@ -4057,7 +4057,7 @@ ${PILGRIM_CTA}
 <p>A private VIP transfer means just you and your party — no sharing, no strangers, no stops to pick up others. For families, women travelers, and those who value discretion, this privacy is significant. You can talk, rest, pray, or prepare for ihram in peace, in a clean and dignified setting that respects the spiritual significance of the journey.</p>
 
 <h2 id="space">Space and Luggage</h2>
-<p>Pilgrims often travel with substantial luggage, and families need room to spread out. A premium sedan offers ample space for a couple with bags, while a luxury van (like a Mercedes V-Class) comfortably carries a family with several suitcases. No squeezing, no compromise — everyone and everything fits with ease. Our <a href="/airport-transfer/jeddah">Jeddah Airport transfer service</a> offers vehicle options to match your group size.</p>
+<p>Pilgrims often travel with substantial luggage, and families need room to spread out. A premium sedan offers ample space for a couple with bags, while a luxury van (like a Mercedes V-Class) comfortably carries a family with several suitcases. No squeezing, no compromise — everyone and everything fits with ease. Our <a href="/airport-transfer/jeddah-airport">Jeddah Airport transfer service</a> offers vehicle options to match your group size.</p>
 
 <h2 id="who-benefits">Who Benefits Most</h2>
 <ul>
@@ -4287,7 +4287,7 @@ ${GENERAL_CTA}
 <p>Planning airport and intercity transfers around these windows makes a real difference.</p>
 
 <h2 id="airport-transfers">Airport Transfers During Ramadan</h2>
-<p>Jeddah Airport is exceptionally busy during Ramadan, with huge numbers of pilgrims arriving for Umrah. A pre-booked private transfer is the smoothest way to get from the airport to Makkah without queues or waiting after a long flight — your driver meets you and takes you straight to your hotel. Book well in advance, as demand peaks. See our <a href="/airport-transfer/jeddah">Jeddah Airport transfer</a> and <a href="/blog/jeddah-airport-to-makkah-taxi-service-guide">Jeddah to Makkah guide</a>.</p>
+<p>Jeddah Airport is exceptionally busy during Ramadan, with huge numbers of pilgrims arriving for Umrah. A pre-booked private transfer is the smoothest way to get from the airport to Makkah without queues or waiting after a long flight — your driver meets you and takes you straight to your hotel. Book well in advance, as demand peaks. See our <a href="/airport-transfer/jeddah-airport">Jeddah Airport transfer</a> and <a href="/blog/jeddah-airport-to-makkah-taxi-service-guide">Jeddah to Makkah guide</a>.</p>
 
 <h2 id="getting-around">Getting Around Makkah</h2>
 <p>Within Makkah during Ramadan, road closures and pedestrian zones around the Grand Mosque are common to manage the crowds, and traffic is heavy. Staying within walking distance of the Haram, if possible, reduces your reliance on vehicles at the busiest times. For trips that do need a car — arrivals, departures, and excursions — a private transfer with a driver familiar with Ramadan conditions is invaluable.</p>
@@ -4366,7 +4366,7 @@ ${PILGRIM_CTA}
     secondaryKeywords: ["women travelling alone for umrah", "solo female umrah", "female pilgrim transport saudi", "women umrah travel guide"],
     tags: ["Women Travelers", "Umrah", "Safety", "2026"],
     metaTitle: "Solo Female Pilgrim Travel in Saudi Arabia (2026)",
-    metaDescription: "A practical 2026 guide for women travelling alone for Umrah in Saudi Arabia — current rules, safety, transport, accommodation, and tips for a smooth pilgrimage.",
+    metaDescription: "A practical 2026 guide for women travelling alone for Umrah in Saudi Arabia — rules, safety, transport, accommodation, and tips for a smooth pilgrimage.",
     excerpt: "Women can now travel for Umrah more independently than ever. A practical 2026 guide to rules, safety, transport, and tips for solo female pilgrims in Saudi Arabia.",
     faqs: [],
     content: `
@@ -4460,13 +4460,13 @@ ${PILGRIM_CTA}
     slug: "alula-travel-guide-2026",
     category: "Saudi Travel Guides",
     author: "Saudi Private Transfers",
-    featuredImage: "/images/blog/desert.svg",
+    featuredImage: "/images/heroes/desert.svg",
     featuredImageAlt: "Dramatic desert rock formations and ancient heritage at AlUla, Saudi Arabia",
     focusKeyword: "alula travel guide 2026",
     secondaryKeywords: ["how to visit alula", "alula saudi arabia", "alula hegra travel", "getting to alula"],
     tags: ["AlUla", "Tourism", "2026", "Travel Guide"],
-    metaTitle: "AlUla Travel Guide 2026: How to Visit",
-    metaDescription: "Plan a trip to AlUla in 2026 — how to get there, what to see at Hegra and the old town, the best time to visit, and how to arrange transport across the region.",
+    metaTitle: "AlUla Travel Guide 2026: How to Visit Hegra & Old Town",
+    metaDescription: "Plan a trip to AlUla in 2026 — how to get there, what to see at Hegra and the old town, the best time to visit, and how to arrange transport.",
     excerpt: "AlUla is Saudi Arabia's stunning open-air museum of ancient tombs and desert landscapes. Here's how to visit in 2026 — getting there, what to see, and transport.",
     faqs: [],
     content: `

@@ -21,7 +21,9 @@ export const siteConfig = {
   phoneHref: "+923148932631",
   email: "bookings@sauditaxitransfers.com",
   locale: "en_US",
-  ogImage: "/og-image.svg",
+  // Raster (PNG) OG image — Facebook, LinkedIn, WhatsApp, and X do not render
+  // SVG social previews, so the share image must be a PNG/JPG.
+  ogImage: "/og-image.png",
   twitterHandle: "@sauditaxi",
   address: {
     streetAddress: "King Fahd Road",
