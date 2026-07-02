@@ -13,6 +13,14 @@ export interface Airport {
   terminals: string[];
   /** Popular destinations served from this airport (display strings). */
   popularDestinations: string[];
+  /**
+   * Short slug used in hotel-transfer URLs, e.g. "king-abdulaziz-airport" for
+   * `/jeddah/king-abdulaziz-airport-to-jeddah-hilton`. Derived from the airport
+   * name when omitted (see lib/hotel-transfers.ts).
+   */
+  transferSlug?: string;
+  /** Short display name used in transfer content, e.g. "King Abdulaziz Airport". */
+  transferName?: string;
   metaTitle?: string;
   metaDescription?: string;
   /** Optional hero image override + alt; falls back to a themed scene. */

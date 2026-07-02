@@ -13,6 +13,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { airports, getAirport } from "@/data/airports";
 import { getCity } from "@/data/cities";
+import { hotelsForCity } from "@/data/hotels";
 import { airportHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -180,6 +181,15 @@ export default async function AirportPage({
                   View {city.name} taxi service
                   <ArrowRight className="size-4" />
                 </Link>
+                {hotelsForCity(city.slug).length > 0 && (
+                  <Link
+                    href={`/cities/${city.slug}`}
+                    className="mt-2 flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
+                  >
+                    Browse all {city.name} hotel transfers
+                    <ArrowRight className="size-4" />
+                  </Link>
+                )}
               </div>
             )}
           </div>

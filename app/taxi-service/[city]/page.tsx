@@ -13,6 +13,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { cities, getCity } from "@/data/cities";
 import { getAirport } from "@/data/airports";
+import { hotelsForCity } from "@/data/hotels";
 import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -78,6 +79,7 @@ export default async function CityPage({
   const airport = city.nearestAirportSlug
     ? getAirport(city.nearestAirportSlug)
     : undefined;
+  const hotelCount = hotelsForCity(city.slug).length;
   const faqs = cityFaqs(city.name);
   const path = `/taxi-service/${city.slug}`;
   const crumbs = [
@@ -170,6 +172,26 @@ export default async function CityPage({
                   className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
                 >
                   View {city.name} airport transfers
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            )}
+
+            {hotelCount > 0 && (
+              <div className="mt-10 rounded-xl border border-border bg-muted/40 p-5">
+                <h2 className="flex items-center gap-2 text-lg font-bold text-navy">
+                  <Plane className="size-5 text-gold" />
+                  Airport to hotel transfers in {city.name}
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Browse fixed-price private transfers between the airport and{" "}
+                  {hotelCount}+ hotels across {city.name}, in both directions.
+                </p>
+                <Link
+                  href={`/cities/${city.slug}`}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
+                >
+                  View all {city.name} hotel transfers
                   <ArrowRight className="size-4" />
                 </Link>
               </div>

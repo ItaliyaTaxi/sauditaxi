@@ -1,0 +1,437 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  ArrowRight,
+  Clock,
+  MapPin,
+  CircleCheck,
+  Plane,
+  Building2,
+  Repeat,
+  UserCheck,
+  RadioTower,
+  Timer,
+  Headphones,
+} from "lucide-react";
+import { PageHeader } from "@/components/sections/PageHeader";
+import { VehicleOptions } from "@/components/sections/VehicleOptions";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
+import { LatestGuides } from "@/components/sections/LatestGuides";
+import { RouteGrid } from "@/components/sections/RouteGrid";
+import { HotelTransferGrid } from "@/components/sections/HotelTransferGrid";
+import { QuoteForm } from "@/components/QuoteForm";
+import { SchemaScript } from "@/components/seo/SchemaScript";
+import { routes } from "@/data/routes";
+import type { Faq } from "@/data/faqs";
+import { cityHero } from "@/lib/hero";
+import { buildMetadata } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  serviceSchema,
+  localBusinessSchema,
+  faqSchema,
+} from "@/lib/schema";
+import {
+  hotelTransfers,
+  getHotelTransfer,
+  transfersForCity,
+  type HotelTransfer,
+} from "@/lib/hotel-transfers";
+
+type Params = { city: string; route: string };
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return hotelTransfers.map((t) => ({ city: t.citySlug, route: t.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { city, route } = await params;
+  const t = getHotelTransfer(city, route);
+  if (!t) return {};
+  return buildMetadata({
+    title: `${t.from} to ${t.to} Taxi | Private Transfer`,
+    description: `Book a private ${t.from} to ${t.to} taxi (${t.distance}, approx. ${t.duration}). Fixed price, meet & greet, flight tracking, and 24/7 booking.`,
+    path: t.path,
+  });
+}
+
+const features = [
+  {
+    icon: UserCheck,
+    title: "Meet & Greet",
+    text: "Your driver waits in the arrivals hall with a name board and helps with luggage.",
+  },
+  {
+    icon: RadioTower,
+    title: "Flight Monitoring",
+    text: "We track your flight number in real time and adjust pickup to your actual landing.",
+  },
+  {
+    icon: Timer,
+    title: "Free Waiting Time",
+    text: "Generous complimentary wait time is included, so delays never cost you the ride.",
+  },
+  {
+    icon: UserCheck,
+    title: "Professional Chauffeur",
+    text: "Licensed, English-speaking drivers who know the city and every hotel entrance.",
+  },
+  {
+    icon: Headphones,
+    title: "24/7 Service",
+    text: "Book any time of day or night — we operate around the clock, all year.",
+  },
+];
+
+function transferIntro(t: HotelTransfer): string {
+  if (t.direction === "airport-to-hotel") {
+    return `A private ${t.from} to ${t.to} taxi — a direct, fixed-price transfer from ${t.airport.name} (${t.airport.code}) arrivals straight to ${t.hotel.name} in ${t.hotel.area}.`;
+  }
+  return `A private ${t.from} to ${t.to} taxi — a punctual, fixed-price departure transfer from ${t.hotel.name} in ${t.hotel.area} to ${t.airport.name} (${t.airport.code}), timed to your flight.`;
+}
+
+function transferAbout(t: HotelTransfer): string {
+  const dist = `The drive covers about ${t.distance} and takes approximately ${t.duration}, depending on traffic.`;
+  if (t.direction === "airport-to-hotel") {
+    return `After you land at ${t.airport.name}, your chauffeur meets you in the arrivals hall, helps with your bags, and drives you directly to ${t.hotel.name} — no queues, no shared rides, and no surge pricing. ${dist} ${t.hotel.blurb}`;
+  }
+  return `We collect you from the lobby of ${t.hotel.name} at your chosen time and drive you directly to ${t.airport.name} for your departure, with plenty of buffer for check-in. ${dist} ${t.hotel.blurb}`;
+}
+
+function routeFaqs(t: HotelTransfer): Faq[] {
+  const common: Faq[] = [
+    {
+      question: `How do I book the ${t.from} to ${t.to} taxi?`,
+      answer: `Send your date, time${
+        t.direction === "airport-to-hotel" ? ", and flight number" : ""
+      } through WhatsApp or the quote form. We reply with a fixed price for the private ${t.from} to ${t.to} transfer.`,
+    },
+    {
+      question: `How long is the transfer and how far is it?`,
+      answer: `The ${t.from} to ${t.to} transfer is about ${t.distance} and takes approximately ${t.duration}, depending on traffic and time of day.`,
+    },
+  ];
+
+  const directional: Faq =
+    t.direction === "airport-to-hotel"
+      ? {
+          question: `Where will the driver meet me at ${t.airport.name}?`,
+          answer: `Your driver waits in the arrivals hall at ${t.airport.name} (${t.airport.code}) holding a name board, then helps with your luggage to the vehicle.`,
+        }
+      : {
+          question: `When should I be ready for pickup from ${t.hotel.name}?`,
+          answer: `We recommend leaving ${t.hotel.name} with enough time for check-in at ${t.airport.name}. Tell us your flight time and we'll advise the ideal pickup and confirm it with you.`,
+        };
+
+  return [
+    ...common,
+    directional,
+    {
+      question: `What if my flight is delayed?`,
+      answer: `We monitor your flight and adjust the schedule automatically, with free waiting time included, so a change in your arrival never costs you the transfer.`,
+    },
+    {
+      question: `Which vehicles are available for this transfer?`,
+      answer: `You can choose economy, comfort, business, SUV, van, or minibus depending on your group size and luggage — ideal for families and travellers with bags.`,
+    },
+    {
+      question: `Can I book the return trip too?`,
+      answer: `Yes. We also run the reverse ${t.to} to ${t.from} transfer — book both directions in one message and we'll confirm a fixed price for each.`,
+    },
+  ];
+}
+
+export default async function HotelTransferPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { city, route } = await params;
+  const t = getHotelTransfer(city, route);
+  if (!t) notFound();
+
+  const reverse = getHotelTransfer(t.citySlug, t.reverseSlug);
+  const hubPath = `/cities/${t.citySlug}`;
+  const crumbs = [
+    { name: "Home", path: "/" },
+    { name: `${t.cityName} Airport Transfers`, path: hubPath },
+    { name: `${t.from} → ${t.to}`, path: t.path },
+  ];
+
+  const faqs = routeFaqs(t).slice(0, 6);
+
+  const pickup =
+    t.fromType === "airport"
+      ? {
+          label: `${t.airport.name} (${t.airport.code})`,
+          detail: "Arrivals hall — meet & greet with a name board",
+        }
+      : {
+          label: t.hotel.name,
+          detail: `${t.hotel.area}, ${t.cityName} — lobby pickup`,
+        };
+  const dropoff =
+    t.toType === "airport"
+      ? {
+          label: `${t.airport.name} (${t.airport.code})`,
+          detail: "Departures — dropped at your terminal",
+        }
+      : {
+          label: t.hotel.name,
+          detail: `${t.hotel.area}, ${t.cityName} — door drop-off`,
+        };
+
+  // Same-direction transfers to other hotels, nearest / same-area first.
+  const sameDir = transfersForCity(t.citySlug).filter(
+    (x) => x.direction === t.direction && x.hotel.slug !== t.hotel.slug
+  );
+  const nearby = [...sameDir]
+    .sort((a, b) => {
+      const aSame = a.hotel.area === t.hotel.area ? 0 : 1;
+      const bSame = b.hotel.area === t.hotel.area ? 0 : 1;
+      if (aSame !== bSame) return aSame - bSame;
+      return (
+        Math.abs(a.hotel.distanceKm - t.hotel.distanceKm) -
+        Math.abs(b.hotel.distanceKm - t.hotel.distanceKm)
+      );
+    })
+    .slice(0, 6);
+  const nearbySlugs = new Set(nearby.map((x) => x.slug));
+  const related = sameDir.filter((x) => !nearbySlugs.has(x.slug)).slice(0, 6);
+
+  // Intercity / tourist destinations touching this city.
+  const cityRoutes = routes
+    .filter((r) => r.relatedCitySlugs.includes(t.citySlug))
+    .map((r) => r.slug);
+
+  return (
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          localBusinessSchema(),
+          serviceSchema({
+            name: `${t.from} to ${t.to} Taxi Transfer`,
+            description: transferIntro(t),
+            path: t.path,
+            serviceType: "Airport Transfer",
+            areaServed: `${t.cityName}, Saudi Arabia`,
+          }),
+          faqSchema(faqs),
+        ]}
+      />
+
+      <PageHeader
+        title={`${t.from} to ${t.to} Taxi`}
+        subtitle={transferIntro(t)}
+        crumbs={crumbs}
+        backgroundImage={cityHero(t.citySlug, t.cityName).src}
+        backgroundAlt={`Private taxi transfer from ${t.from} to ${t.to} in ${t.cityName}, Saudi Arabia`}
+        whatsappMessage={`Hello! I'd like a quote for a ${t.from} to ${t.to} taxi.`}
+      />
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
+          <div className="lg:col-span-3">
+            {/* Route overview */}
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
+                <Clock className="size-4 text-gold" /> Approx. {t.duration}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
+                <MapPin className="size-4 text-gold" /> {t.distance}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
+                {t.hotel.stars}★ {t.hotel.name}
+              </span>
+            </div>
+
+            <h2 className="mt-8 text-2xl font-bold text-navy">
+              Private transfer from {t.from} to {t.to}
+            </h2>
+            <p className="mt-3 text-muted-foreground">{transferAbout(t)}</p>
+
+            {/* Pickup & drop-off */}
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <div className="rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="flex items-center gap-2 font-semibold text-navy">
+                  {t.fromType === "airport" ? (
+                    <Plane className="size-4 text-gold" />
+                  ) : (
+                    <Building2 className="size-4 text-gold" />
+                  )}
+                  Pickup location
+                </h3>
+                <p className="mt-2 text-sm font-medium text-navy">{pickup.label}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{pickup.detail}</p>
+              </div>
+              <div className="rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="flex items-center gap-2 font-semibold text-navy">
+                  {t.toType === "airport" ? (
+                    <Plane className="size-4 text-gold" />
+                  ) : (
+                    <Building2 className="size-4 text-gold" />
+                  )}
+                  Drop-off location
+                </h3>
+                <p className="mt-2 text-sm font-medium text-navy">{dropoff.label}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{dropoff.detail}</p>
+              </div>
+            </div>
+
+            {/* Features */}
+            <h2 className="mt-10 text-xl font-bold text-navy">
+              What&apos;s included
+            </h2>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {features.map((f) => {
+                const Icon = f.icon;
+                return (
+                  <div
+                    key={f.title}
+                    className="flex items-start gap-3 rounded-xl border border-border bg-white p-4"
+                  >
+                    <Icon className="mt-0.5 size-5 shrink-0 text-gold" />
+                    <div>
+                      <p className="text-sm font-semibold text-navy">{f.title}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{f.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Nearby attractions */}
+            {t.hotel.nearby.length > 0 && (
+              <>
+                <h2 className="mt-10 text-xl font-bold text-navy">
+                  Nearby attractions
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {t.hotel.name} sits close to some of {t.cityName}&apos;s
+                  best-known landmarks:
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {t.hotel.nearby.map((a) => (
+                    <span
+                      key={a}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1.5 text-sm text-navy"
+                    >
+                      <MapPin className="size-3.5 text-gold" />
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* Reverse route */}
+            {reverse && (
+              <div className="mt-10 rounded-xl border border-border bg-muted/40 p-5">
+                <h2 className="flex items-center gap-2 text-lg font-bold text-navy">
+                  <Repeat className="size-5 text-gold" />
+                  Need the return trip?
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  We also run the reverse {reverse.from} to {reverse.to} transfer —
+                  book both directions together for a smooth round trip.
+                </p>
+                <Link
+                  href={reverse.path}
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
+                >
+                  View {reverse.from} → {reverse.to}
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Booking form */}
+          <div className="lg:col-span-2">
+            <div className="sticky top-20 rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
+              <h2 className="text-lg font-bold text-navy">
+                {t.from} → {t.to} Quote
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Fixed price for your private transfer on WhatsApp.
+              </p>
+              <div className="mt-4">
+                <QuoteForm
+                  serviceType={`${t.cityName} airport hotel transfer`}
+                  city={t.cityName}
+                  route={`${t.from} to ${t.to}`}
+                  defaultPickup={pickup.label}
+                  defaultDropoff={dropoff.label}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <VehicleOptions background="muted" />
+      <HowItWorks background="white" />
+
+      {nearby.length > 0 && (
+        <HotelTransferGrid
+          background="muted"
+          heading="Nearby Hotel Transfers"
+          subheading={`Other ${t.cityName} hotels close to ${t.hotel.area}.`}
+          transfers={nearby}
+        />
+      )}
+
+      {related.length > 0 && (
+        <HotelTransferGrid
+          background="white"
+          heading="Related Transfer Routes"
+          subheading={`More ${
+            t.direction === "airport-to-hotel"
+              ? "airport-to-hotel"
+              : "hotel-to-airport"
+          } transfers in ${t.cityName}.`}
+          transfers={related}
+        />
+      )}
+
+      {/* Link back to the city hub */}
+      <section className="bg-muted py-10">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Link
+            href={hubPath}
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
+          >
+            See all {t.cityName} airport transfers
+            <ArrowRight className="size-4 text-gold" />
+          </Link>
+        </div>
+      </section>
+
+      {cityRoutes.length > 0 && (
+        <RouteGrid
+          background="white"
+          heading={`Popular Destinations from ${t.cityName}`}
+          subheading="Private intercity and tourist transfers beyond the airport run."
+          only={cityRoutes}
+        />
+      )}
+
+      <FAQSection faqs={faqs} background="muted" />
+      <LatestGuides background="white" />
+      <CTASection
+        title={`Book Your ${t.from} to ${t.to} Taxi`}
+        whatsappMessage={`Hello! I'd like to book a ${t.from} to ${t.to} taxi.`}
+      />
+    </>
+  );
+}
