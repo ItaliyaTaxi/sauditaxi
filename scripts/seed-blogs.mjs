@@ -9,6 +9,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { extraPosts } from "./new-posts-2027.mjs";
+import { travelTipsPosts } from "./new-posts-travel-tips.mjs";
 import { extraPosts2026 } from "./new-posts-2026-tourism.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -4786,6 +4787,8 @@ ${PILGRIM_CTA}
 
 // Append the forward-looking 2026–2034 event & tourism posts.
 posts.push(...extraPosts);
+// Append the first-time tourist travel-guide posts.
+posts.push(...travelTipsPosts);
 posts.push(...extraPosts2026);
 
 // ── Seed ─────────────────────────────────────────────────────────────────────

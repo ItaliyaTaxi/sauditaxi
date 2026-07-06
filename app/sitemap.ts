@@ -6,6 +6,7 @@ import { routes } from "@/data/routes";
 import { borders } from "@/data/borders";
 import { services } from "@/data/services";
 import { hotelTransfers, hotelCities } from "@/lib/hotel-transfers";
+import { pointTransfers } from "@/lib/point-transfers";
 import { listPublishedBlogs } from "@/lib/blogs";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
@@ -75,6 +76,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
   }));
 
+  // Attraction / landmark transfer pages (point transfers).
+  const pointTransferPaths = pointTransfers.map((t) => ({
+    path: `/${t.citySlug}/${t.slug}`,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  }));
+
   const base = [
     ...staticPaths,
     ...servicePaths,
@@ -84,6 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...borderPaths,
     ...cityHubPaths,
     ...hotelTransferPaths,
+    ...pointTransferPaths,
   ].map((entry) => ({
     url: absoluteUrl(entry.path),
     lastModified: now,

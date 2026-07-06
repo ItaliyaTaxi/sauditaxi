@@ -293,6 +293,160 @@ export const routes: Route[] = [
     metaDescription:
       "Book a private Dammam Airport (DMM) to Al Khobar taxi — a quick 30-minute transfer with meet-and-greet pickup, fixed prices, and comfortable family vehicles.",
   },
+  {
+    slug: "makkah-to-jeddah",
+    from: "Makkah",
+    to: "Jeddah",
+    category: "religious",
+    distance: "85 km",
+    duration: "1 hour 15 min",
+    intro:
+      "The Makkah to Jeddah taxi is a direct private transfer from the holy city to Jeddah's hotels, Corniche, and King Abdulaziz International Airport.",
+    about:
+      "After completing Umrah, many pilgrims travel back to Jeddah to catch a flight home or continue their journey. Our private Makkah to Jeddah transfer collects you from your hotel near the Haram and drives you door-to-door to the airport or anywhere in Jeddah, timed to your flight with no shared waiting and no surge pricing.",
+    notes: [
+      "Hotel pickup near the Haram in Makkah",
+      "Direct drop-off at Jeddah airport, hotels, or the Corniche",
+      "Flight-timed departures with luggage assistance",
+      "Reverse Jeddah to Makkah transfers also available",
+    ],
+    relatedCitySlugs: ["makkah", "jeddah"],
+    metaTitle: "Makkah to Jeddah Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Makkah to Jeddah taxi (85 km, approx. 1 hr 15 min) to the airport, hotels, or Corniche. Fixed price, flight-timed pickup, and door-to-door comfort.",
+  },
+  {
+    slug: "madinah-to-jeddah",
+    from: "Madinah",
+    to: "Jeddah",
+    category: "religious",
+    distance: "420 km",
+    duration: "4 hours",
+    intro:
+      "The Madinah to Jeddah taxi is a comfortable long-distance private transfer for pilgrims and travellers heading from the Prophet's Mosque back to Jeddah.",
+    about:
+      "Pilgrims who finish their visit to Madinah often fly home from Jeddah or continue to Makkah. Our private Madinah to Jeddah transfer offers a relaxed, direct ride with rest-stop flexibility along the highway, hotel-to-airport timing, and comfortable vehicles for families travelling with luggage after a long stay.",
+    notes: [
+      "Pickup from Madinah hotels or the airport",
+      "Direct drop-off at Jeddah airport or city hotels",
+      "Rest stops on the 420 km journey",
+      "Comfortable vehicles for families and groups",
+    ],
+    relatedCitySlugs: ["madinah", "jeddah"],
+    metaTitle: "Madinah to Jeddah Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Madinah to Jeddah taxi (420 km, approx. 4 hours) with rest stops, fixed pricing, and door-to-door comfort to the airport or your Jeddah hotel.",
+  },
+  {
+    slug: "taif-to-jeddah",
+    from: "Taif",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "170 km",
+    duration: "2 hours",
+    intro:
+      "The Taif to Jeddah taxi is a scenic private transfer down from the cool mountain city to Jeddah's coast, hotels, and airport.",
+    about:
+      "After a summer escape in the highlands of Taif, our private Taif to Jeddah transfer brings you back down the Al Hada mountain road in comfort. We collect you from your Taif hotel or resort and drive door-to-door to Jeddah airport or the city, with a driver who knows the winding descent well.",
+    notes: [
+      "Pickup from Taif hotels, resorts, or the airport",
+      "Scenic descent via the Al Hada mountain road",
+      "Drop-off at Jeddah airport, hotels, or the Corniche",
+      "Comfortable vehicles for the mountain journey",
+    ],
+    relatedCitySlugs: ["taif", "jeddah"],
+    metaTitle: "Taif to Jeddah Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Taif to Jeddah taxi (170 km, approx. 2 hours) down the scenic Al Hada road. Fixed price, door-to-door pickup, and comfortable mountain-road vehicles.",
+  },
+  {
+    slug: "jeddah-to-yanbu",
+    from: "Jeddah",
+    to: "Yanbu",
+    category: "intercity",
+    distance: "330 km",
+    duration: "3 hours 30 min",
+    intro:
+      "The Jeddah to Yanbu taxi is a private coastal transfer along the Red Sea to the industrial and resort city of Yanbu.",
+    about:
+      "Our private Jeddah to Yanbu transfer follows the Red Sea coast north to Yanbu, popular with leisure travellers heading to the beaches and dive sites and with the petrochemical workforce. We pick you up from Jeddah airport or your hotel and drive door-to-door in a comfortable, air-conditioned vehicle with rest-stop flexibility.",
+    notes: [
+      "Pickup from Jeddah airport or city hotels",
+      "Scenic Red Sea coastal highway",
+      "Drop-off at Yanbu resorts, the industrial city, or hotels",
+      "Reverse Yanbu to Jeddah transfers available",
+    ],
+    relatedCitySlugs: ["jeddah", "yanbu"],
+    metaTitle: "Jeddah to Yanbu Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Jeddah to Yanbu taxi (330 km, approx. 3 hr 30 min) along the Red Sea coast. Fixed price, door-to-door pickup, and comfortable vehicles with rest stops.",
+  },
+  {
+    slug: "yanbu-to-jeddah",
+    from: "Yanbu",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "330 km",
+    duration: "3 hours 30 min",
+    intro:
+      "The Yanbu to Jeddah taxi is a private coastal transfer from the Red Sea city back to Jeddah's hotels and King Abdulaziz International Airport.",
+    about:
+      "Whether you have been diving on the Yanbu coast or working in the industrial city, our private Yanbu to Jeddah transfer takes you back along the Red Sea highway in comfort. We collect you from your Yanbu hotel or the airport and drive directly to Jeddah, timed to your onward flight with luggage help throughout.",
+    notes: [
+      "Pickup from Yanbu resorts, the airport, or hotels",
+      "Comfortable Red Sea coastal drive",
+      "Flight-timed drop-off at Jeddah airport or hotels",
+      "Fixed price agreed before you travel",
+    ],
+    relatedCitySlugs: ["yanbu", "jeddah"],
+    metaTitle: "Yanbu to Jeddah Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Yanbu to Jeddah taxi (330 km, approx. 3 hr 30 min) along the Red Sea coast, with fixed pricing, flight-timed drop-off, and comfortable vehicles.",
+  },
+  {
+    slug: "jeddah-to-kaec",
+    from: "Jeddah",
+    to: "King Abdullah Economic City",
+    category: "intercity",
+    distance: "125 km",
+    duration: "1 hour 20 min",
+    intro:
+      "The Jeddah to KAEC taxi is a direct private transfer up the coast to King Abdullah Economic City, its business district, and the Haramain train station.",
+    about:
+      "King Abdullah Economic City (KAEC) sits about 125 km north of Jeddah and is home to business parks, resorts, and a Haramain High Speed Railway station. Our private Jeddah to KAEC transfer meets you at the airport or your hotel and drives door-to-door in comfort, ideal for business travellers, resort guests, and rail connections.",
+    notes: [
+      "Pickup from Jeddah airport or city hotels",
+      "Drop-off at KAEC business parks, resorts, or the train station",
+      "Comfortable vehicles for the coastal drive",
+      "Reverse KAEC to Jeddah transfers available",
+    ],
+    relatedCitySlugs: ["jeddah"],
+    metaTitle: "Jeddah to KAEC Taxi | Private Transfer",
+    metaDescription:
+      "Book a private Jeddah to King Abdullah Economic City (KAEC) taxi (125 km, approx. 1 hr 20 min). Fixed price, door-to-door pickup for business, resorts, and the train.",
+  },
+  {
+    slug: "kaec-to-jeddah",
+    from: "King Abdullah Economic City",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "125 km",
+    duration: "1 hour 20 min",
+    intro:
+      "The KAEC to Jeddah taxi is a direct private transfer from King Abdullah Economic City back to Jeddah's hotels and King Abdulaziz International Airport.",
+    about:
+      "Heading back from a meeting, a resort stay, or the Haramain train at King Abdullah Economic City? Our private KAEC to Jeddah transfer collects you from your hotel, office, or the station and drives directly to Jeddah airport or the city, timed to your flight with a fixed price agreed in advance.",
+    notes: [
+      "Pickup from KAEC hotels, offices, or the train station",
+      "Flight-timed drop-off at Jeddah airport or hotels",
+      "Comfortable, air-conditioned coastal drive",
+      "Fixed price with no surge pricing",
+    ],
+    relatedCitySlugs: ["jeddah"],
+    metaTitle: "KAEC to Jeddah Taxi | Private Transfer",
+    metaDescription:
+      "Book a private King Abdullah Economic City (KAEC) to Jeddah taxi (125 km, approx. 1 hr 20 min) to the airport or hotels, with fixed pricing and door-to-door comfort.",
+  },
 ];
 
 export const routeMap: Record<string, Route> = Object.fromEntries(

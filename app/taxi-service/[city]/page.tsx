@@ -14,6 +14,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { cities, getCity } from "@/data/cities";
 import { getAirport } from "@/data/airports";
 import { hotelsForCity } from "@/data/hotels";
+import { pointTransfersForCity } from "@/lib/point-transfers";
 import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -80,6 +81,9 @@ export default async function CityPage({
     ? getAirport(city.nearestAirportSlug)
     : undefined;
   const hotelCount = hotelsForCity(city.slug).length;
+  const attractionTransfers = pointTransfersForCity(city.slug).filter(
+    (t) => t.category === "attraction"
+  );
   const faqs = cityFaqs(city.name);
   const path = `/taxi-service/${city.slug}`;
   const crumbs = [
@@ -232,6 +236,36 @@ export default async function CityPage({
           </div>
         </div>
       </section>
+
+      {attractionTransfers.length > 0 && (
+        <section className="bg-muted py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+                {city.name} Attraction &amp; Landmark Transfers
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Fixed-price private transfers to {city.name}&apos;s top sights — from the
+                airport or your hotel, door to door.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {attractionTransfers.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/${t.citySlug}/${t.slug}`}
+                  className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
+                >
+                  <span className="text-sm font-semibold text-navy">
+                    {t.from} → {t.to}
+                  </span>
+                  <ArrowRight className="size-4 shrink-0 text-gold" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <VehicleOptions background="muted" />
       <HowItWorks background="white" />

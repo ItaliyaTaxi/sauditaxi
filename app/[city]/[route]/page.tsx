@@ -31,7 +31,6 @@ import { buildMetadata } from "@/lib/seo";
 import {
   breadcrumbSchema,
   serviceSchema,
-  localBusinessSchema,
   faqSchema,
 } from "@/lib/schema";
 import {
@@ -40,13 +39,18 @@ import {
   transfersForCity,
   type HotelTransfer,
 } from "@/lib/hotel-transfers";
+import { pointTransfers, getPointTransfer } from "@/lib/point-transfers";
+import { PointTransferView } from "@/components/templates/PointTransferView";
 
 type Params = { city: string; route: string };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return hotelTransfers.map((t) => ({ city: t.citySlug, route: t.slug }));
+  return [
+    ...hotelTransfers.map((t) => ({ city: t.citySlug, route: t.slug })),
+    ...pointTransfers.map((t) => ({ city: t.citySlug, route: t.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -56,7 +60,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { city, route } = await params;
   const t = getHotelTransfer(city, route);
-  if (!t) return {};
+  if (!t) {
+    const pt = getPointTransfer(city, route);
+    if (pt)
+      return buildMetadata({
+        title: pt.metaTitle,
+        description: pt.metaDescription,
+        path: `/${pt.citySlug}/${pt.slug}`,
+      });
+    return {};
+  }
   return buildMetadata({
     title: `${t.from} to ${t.to} Taxi | Private Transfer`,
     description: `Book a private ${t.from} to ${t.to} taxi (${t.distance}, approx. ${t.duration}). Fixed price, meet & greet, flight tracking, and 24/7 booking.`,
@@ -157,7 +170,11 @@ export default async function HotelTransferPage({
 }) {
   const { city, route } = await params;
   const t = getHotelTransfer(city, route);
-  if (!t) notFound();
+  if (!t) {
+    const pt = getPointTransfer(city, route);
+    if (pt) return <PointTransferView transfer={pt} />;
+    notFound();
+  }
 
   const reverse = getHotelTransfer(t.citySlug, t.reverseSlug);
   const hubPath = `/cities/${t.citySlug}`;
@@ -218,7 +235,6 @@ export default async function HotelTransferPage({
       <SchemaScript
         schema={[
           breadcrumbSchema(crumbs),
-          localBusinessSchema(),
           serviceSchema({
             name: `${t.from} to ${t.to} Taxi Transfer`,
             description: transferIntro(t),
