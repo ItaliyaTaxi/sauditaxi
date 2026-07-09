@@ -15,7 +15,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes, getRoute } from "@/data/routes";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
 type Params = { slug: string };
 
@@ -85,7 +85,7 @@ export default async function RoutePage({
   const route = getRoute(slug);
   if (!route) notFound();
 
-  const faqs = routeFaqs(route.from, route.to);
+  const faqs = (route.faqs ?? routeFaqs(route.from, route.to)).slice(0, 6);
   const path = `/routes/${route.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -113,6 +113,7 @@ export default async function RoutePage({
             path,
             serviceType: "Intercity Transfer",
           }),
+          faqSchema(faqs),
         ]}
       />
 
@@ -190,6 +191,22 @@ export default async function RoutePage({
               locations, date and time, passenger and luggage count, your flight
               number if it&apos;s an airport pickup, and a contact number.
             </p>
+
+            {/* Rich long-form sections (international / cross-border routes) */}
+            {route.sections && route.sections.length > 0 && (
+              <div className="mt-10 space-y-8 [&_a]:font-medium [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-navy">
+                {route.sections.map((s) => (
+                  <div key={s.heading}>
+                    <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
+                    <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-2">
