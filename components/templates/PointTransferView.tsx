@@ -26,11 +26,17 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
   const city = getCity(t.citySlug);
   const cityName = city?.name ?? "Jeddah";
   const cityPath = `/taxi-service/${t.citySlug}`;
+  // Service/tour pages read as a named offering ("Executive Car Service"),
+  // whereas transfers read as an A → B route.
+  const isService = t.category === "service";
+  const label = isService ? t.to : `${t.from} → ${t.to}`;
+  const labelFor = (x: PointTransfer) =>
+    x.category === "service" ? x.to : `${x.from} → ${x.to}`;
 
   const crumbs = [
     { name: "Home", path: "/" },
     { name: `${cityName} Taxi Service`, path: cityPath },
-    { name: `${t.from} → ${t.to}`, path: `/${t.citySlug}/${t.slug}` },
+    { name: label, path: `/${t.citySlug}/${t.slug}` },
   ];
 
   const faqs = t.faqs.slice(0, 6);
@@ -49,7 +55,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
         schema={[
           breadcrumbSchema(crumbs),
           serviceSchema({
-            name: `${t.from} to ${t.to} Transfer`,
+            name: isService ? t.h1 : `${t.from} to ${t.to} Transfer`,
             description: t.intro,
             path: `/${t.citySlug}/${t.slug}`,
             serviceType: t.category === "service" ? "Chauffeur Service" : "Private Transfer",
@@ -64,8 +70,8 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
         subtitle={t.intro}
         crumbs={crumbs}
         backgroundImage={cityHero(t.citySlug, cityName).src}
-        backgroundAlt={`Private transfer from ${t.from} to ${t.to} in ${cityName}, Saudi Arabia`}
-        whatsappMessage={`Hello! I'd like a quote for a ${t.from} to ${t.to} transfer.`}
+        backgroundAlt={isService ? `${t.to} in ${cityName}, Saudi Arabia` : `Private transfer from ${t.from} to ${t.to} in ${cityName}, Saudi Arabia`}
+        whatsappMessage={isService ? `Hello! I'd like a quote for ${t.to} in ${cityName}.` : `Hello! I'd like a quote for a ${t.from} to ${t.to} transfer.`}
       />
 
       <section className="bg-white py-16 sm:py-20">
@@ -118,7 +124,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
           <div className="lg:col-span-2">
             <div className="sticky top-20 rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
               <h2 className="text-lg font-bold text-navy">
-                {t.from} → {t.to} Quote
+                {label} Quote
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Fixed price for your private transfer on WhatsApp.
@@ -127,7 +133,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
                 <QuoteForm
                   serviceType={`${cityName} ${t.category === "service" ? "chauffeur service" : "private transfer"}`}
                   city={cityName}
-                  route={`${t.from} to ${t.to}`}
+                  route={isService ? t.to : `${t.from} to ${t.to}`}
                   defaultPickup={t.from}
                   defaultDropoff={t.to}
                 />
@@ -152,7 +158,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
                   className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
                 >
                   <span className="text-sm font-semibold text-navy">
-                    {r.from} → {r.to}
+                    {labelFor(r)}
                   </span>
                   <ArrowRight className="size-4 shrink-0 text-gold" />
                 </Link>
@@ -194,8 +200,8 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
       <FAQSection faqs={faqs} background="white" />
       <LatestGuides background="muted" />
       <CTASection
-        title={`Book Your ${t.from} to ${t.to} Transfer`}
-        whatsappMessage={`Hello! I'd like to book a ${t.from} to ${t.to} transfer.`}
+        title={isService ? `Book Your ${t.to} in ${cityName}` : `Book Your ${t.from} to ${t.to} Transfer`}
+        whatsappMessage={isService ? `Hello! I'd like to book ${t.to} in ${cityName}.` : `Hello! I'd like to book a ${t.from} to ${t.to} transfer.`}
       />
     </>
   );

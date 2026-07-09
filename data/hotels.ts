@@ -278,6 +278,277 @@ export const hotels: Hotel[] = [
       "A long-standing waterfront hotel in Al-Balad, within walking distance of the historic quarter.",
     nearby: ["Al-Balad historic district", "Souq Al Alawi", "Jeddah Corniche"],
   },
+
+  // ── Riyadh — 5-star / luxury ───────────────────────────────────────────────
+  // Served by King Khalid International Airport (RUH), north of the city.
+  {
+    slug: "four-seasons-hotel-riyadh",
+    name: "Four Seasons Hotel Riyadh at Kingdom Centre",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya / Kingdom Centre",
+    distanceKm: 35,
+    durationMin: 36,
+    blurb:
+      "A landmark address occupying the upper floors of the Kingdom Tower, crowned by its floodlit Sky Bridge over Olaya.",
+    nearby: ["Kingdom Centre", "Al Faisaliah Tower", "Olaya Street"],
+  },
+  {
+    slug: "the-ritz-carlton-riyadh",
+    name: "The Ritz-Carlton, Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Diplomatic Quarter / Mekkah Road",
+    distanceKm: 37,
+    durationMin: 40,
+    blurb:
+      "A palatial hotel of grand halls and formal gardens beside the Diplomatic Quarter, long favoured for state and executive stays.",
+    nearby: ["Diplomatic Quarter", "King Fahd Library", "Salam Park"],
+  },
+  {
+    slug: "mandarin-oriental-al-faisaliah-riyadh",
+    name: "Mandarin Oriental Al Faisaliah, Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya / Al Faisaliah",
+    distanceKm: 35,
+    durationMin: 37,
+    blurb:
+      "A refined hotel set within the iconic golden-globe Al Faisaliah Tower, a byword for polished service in the heart of Olaya.",
+    nearby: ["Al Faisaliah Tower", "Kingdom Centre", "Olaya Street"],
+  },
+  {
+    slug: "burj-rafal-kempinski-riyadh",
+    name: "Burj Rafal Hotel Kempinski Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "King Fahd Road / Al Mohammadiyah",
+    distanceKm: 31,
+    durationMin: 33,
+    blurb:
+      "A soaring residential-style tower on King Fahd Road, blending Kempinski hospitality with sweeping city views.",
+    nearby: ["King Fahd Road", "Kingdom Centre", "Al Nakheel Mall"],
+  },
+  {
+    slug: "hyatt-regency-riyadh-olaya",
+    name: "Hyatt Regency Riyadh Olaya",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya",
+    distanceKm: 34,
+    durationMin: 35,
+    blurb:
+      "A contemporary Olaya tower steps from the shopping and dining of Olaya Street, popular with corporate travellers.",
+    nearby: ["Olaya Street", "Kingdom Centre", "Al Faisaliah Tower"],
+  },
+  {
+    slug: "the-st-regis-riyadh",
+    name: "The St. Regis Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Diplomatic Quarter / Um Al Hamam",
+    distanceKm: 37,
+    durationMin: 40,
+    blurb:
+      "A discreet, butler-serviced hotel on the green edge of the Diplomatic Quarter, near the trails of Wadi Hanifah.",
+    nearby: ["Diplomatic Quarter", "Wadi Hanifah", "King Fahd Library"],
+  },
+  {
+    slug: "fairmont-riyadh",
+    name: "Fairmont Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Northern Ring Road / Business Gate",
+    distanceKm: 23,
+    durationMin: 24,
+    blurb:
+      "A striking northern tower close to the business gateway and the King Abdullah Financial District, built for the corporate traveller.",
+    nearby: ["King Abdullah Financial District", "Riyadh Front", "Northern Ring Road"],
+  },
+  {
+    slug: "intercontinental-riyadh",
+    name: "InterContinental Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Diplomatic Quarter / Ma'athar Street",
+    distanceKm: 36,
+    durationMin: 39,
+    blurb:
+      "A long-established garden hotel near the ministries and embassies, known for its expansive grounds and event halls.",
+    nearby: ["Diplomatic Quarter", "King Fahd Library", "Salam Park"],
+  },
+  {
+    slug: "movenpick-hotel-riyadh",
+    name: "Mövenpick Hotel Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya",
+    distanceKm: 33,
+    durationMin: 35,
+    blurb:
+      "A dependable business hotel beside the Riyadh exhibition scene in Olaya, with easy access to the King Fahd Road corridor.",
+    nearby: ["Olaya Street", "Kingdom Centre", "Riyadh International Convention Centre"],
+  },
+  {
+    slug: "narcissus-hotel-spa-riyadh",
+    name: "Narcissus Hotel & Spa Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya / Tahlia Street",
+    distanceKm: 34,
+    durationMin: 36,
+    blurb:
+      "An opulent boutique hotel near Tahlia Street, all chandeliers and marble, a short hop from the Olaya towers.",
+    nearby: ["Tahlia Street", "Kingdom Centre", "Olaya Street"],
+  },
+  {
+    slug: "voco-riyadh",
+    name: "voco Riyadh",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Olaya / King Fahd Road",
+    distanceKm: 32,
+    durationMin: 34,
+    blurb:
+      "A stylish upscale hotel on the Olaya–King Fahd Road spine, well placed for both shopping and business districts.",
+    nearby: ["King Fahd Road", "Kingdom Centre", "Al Faisaliah Tower"],
+  },
+  {
+    slug: "hilton-riyadh-hotel-residences",
+    name: "Hilton Riyadh Hotel & Residences",
+    citySlug: "riyadh",
+    stars: 5,
+    area: "Eastern Ring Road",
+    distanceKm: 25,
+    durationMin: 28,
+    blurb:
+      "A vast convention and leisure complex on the Eastern Ring Road, with extensive pools, dining, and meeting space.",
+    nearby: ["Eastern Ring Road", "Granada Mall", "Riyadh Front"],
+  },
+
+  // ── Riyadh — 4-star / business ─────────────────────────────────────────────
+  {
+    slug: "riyadh-marriott-hotel",
+    name: "Riyadh Marriott Hotel",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "Airport Road",
+    distanceKm: 17,
+    durationMin: 20,
+    blurb:
+      "A well-placed business hotel on Airport Road with lush gardens, handy for both the airport and the exhibition centre.",
+    nearby: ["Airport Road", "Riyadh Front", "Eastern Ring Road"],
+  },
+  {
+    slug: "courtyard-by-marriott-riyadh-olaya",
+    name: "Courtyard by Marriott Riyadh Olaya",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "Olaya",
+    distanceKm: 33,
+    durationMin: 35,
+    blurb:
+      "A practical, modern hotel in the thick of Olaya, designed around the needs of the working traveller.",
+    nearby: ["Olaya Street", "Kingdom Centre", "Al Faisaliah Tower"],
+  },
+  {
+    slug: "crowne-plaza-riyadh-rdc",
+    name: "Crowne Plaza Riyadh RDC Hotel & Convention",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "RDC / Airport Road",
+    distanceKm: 14,
+    durationMin: 18,
+    blurb:
+      "A large conference hotel beside the Riyadh convention grounds, one of the closest full-service options to the airport.",
+    nearby: ["Riyadh Convention & Exhibition Center", "King Khalid International Airport", "Airport Road"],
+  },
+  {
+    slug: "radisson-blu-riyadh",
+    name: "Radisson Blu Hotel, Riyadh",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "Al Izdihar / Eastern Ring Road",
+    distanceKm: 24,
+    durationMin: 27,
+    blurb:
+      "A comfortable business hotel on the Eastern Ring Road, close to Granada shopping and the northern office parks.",
+    nearby: ["Eastern Ring Road", "Granada Mall", "Riyadh Front"],
+  },
+  {
+    slug: "holiday-inn-riyadh-izdihar",
+    name: "Holiday Inn Riyadh - Izdihar",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "Al Izdihar",
+    distanceKm: 26,
+    durationMin: 29,
+    blurb:
+      "A straightforward, family-friendly hotel in the Izdihar district, handy for the ring road and eastern malls.",
+    nearby: ["Granada Mall", "Eastern Ring Road", "Riyadh Front"],
+  },
+  {
+    slug: "novotel-riyadh-sahafah",
+    name: "Novotel Riyadh Sahafah",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "Al Sahafah",
+    distanceKm: 24,
+    durationMin: 26,
+    blurb:
+      "A crisp, contemporary hotel in the fast-growing northern Sahafah district, near the financial quarter.",
+    nearby: ["King Abdullah Financial District", "Northern Ring Road", "Riyadh Front"],
+  },
+  {
+    slug: "grand-millennium-al-wahda-riyadh",
+    name: "Grand Millennium Al Wahda Riyadh",
+    citySlug: "riyadh",
+    stars: 4,
+    area: "King Abdullah Road / Al Wahda",
+    distanceKm: 29,
+    durationMin: 32,
+    blurb:
+      "A polished business hotel on King Abdullah Road, central for meetings and the Al Wahda commercial area.",
+    nearby: ["King Abdullah Road", "Al Wahda district", "Kingdom Centre"],
+  },
+
+  // ── Riyadh — 3-star ────────────────────────────────────────────────────────
+  {
+    slug: "centro-olaya-riyadh",
+    name: "Centro Olaya Riyadh by Rotana",
+    citySlug: "riyadh",
+    stars: 3,
+    area: "Olaya",
+    distanceKm: 34,
+    durationMin: 36,
+    blurb:
+      "A smart, value-focused hotel in Olaya for travellers who want a central base without the five-star price.",
+    nearby: ["Olaya Street", "Kingdom Centre", "Tahlia Street"],
+  },
+  {
+    slug: "ibis-riyadh-olaya-street",
+    name: "ibis Riyadh Olaya Street",
+    citySlug: "riyadh",
+    stars: 3,
+    area: "Olaya Street",
+    distanceKm: 33,
+    durationMin: 35,
+    blurb:
+      "A reliable budget hotel right on Olaya Street, ideal for short business trips and easy city access.",
+    nearby: ["Olaya Street", "Al Faisaliah Tower", "Kingdom Centre"],
+  },
+  {
+    slug: "premier-inn-riyadh-olaya",
+    name: "Premier Inn Riyadh Olaya",
+    citySlug: "riyadh",
+    stars: 3,
+    area: "Olaya",
+    distanceKm: 33,
+    durationMin: 35,
+    blurb:
+      "A simple, consistent hotel in Olaya offering good-value rooms close to the district's towers and malls.",
+    nearby: ["Olaya Street", "Kingdom Centre", "Al Faisaliah Tower"],
+  },
 ];
 
 export const hotelMap: Record<string, Hotel> = Object.fromEntries(

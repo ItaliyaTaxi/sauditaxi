@@ -6,11 +6,15 @@
  */
 import type { PointTransfer } from "@/data/jeddah/types";
 import { jeddahAttractions } from "@/data/jeddah/attractions";
+import { jeddahPortRailway } from "@/data/jeddah/port-railway";
+import { jeddahServices } from "@/data/jeddah/services";
 
 export type { PointTransfer } from "@/data/jeddah/types";
 
 export const pointTransfers: PointTransfer[] = [
   ...jeddahAttractions,
+  ...jeddahPortRailway,
+  ...jeddahServices,
 ];
 
 const map: Record<string, PointTransfer> = Object.fromEntries(
