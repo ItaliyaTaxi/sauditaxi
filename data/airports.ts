@@ -1,3 +1,7 @@
+import type { Faq } from "@/data/faqs";
+import type { GalleryImage } from "@/components/sections/ImageGallery";
+import { airportGuides } from "@/data/airport-guides";
+
 export interface Airport {
   slug: string;
   name: string;
@@ -26,9 +30,19 @@ export interface Airport {
   /** Optional hero image override + alt; falls back to a themed scene. */
   heroImage?: string;
   heroAlt?: string;
+  /** Rich long-form guide sections (paragraphs may contain inline <a> links). */
+  sections?: { heading: string; paragraphs: string[] }[];
+  /** Airport-specific FAQs (overrides the generated defaults; capped at 6). */
+  faqs?: Faq[];
+  /** Target keywords for this page (documentation/reference only). */
+  keywords?: string[];
+  /** Nearby hotels for internal linking (display name + optional href). */
+  nearbyHotels?: { name: string; href?: string }[];
+  /** Optional gallery images (rendered only once files are added). */
+  images?: GalleryImage[];
 }
 
-export const airports: Airport[] = [
+const baseAirports: Airport[] = [
   {
     slug: "riyadh-airport",
     name: "King Khalid International Airport",
@@ -217,6 +231,12 @@ export const airports: Airport[] = [
       "Private Hail airport taxi from Hail Regional (HAS). Transfers to Hail city, rock-art sites, and onward to AlUla and Qassim.",
   },
 ];
+
+/** Base airport records enriched with long-form guide content by slug. */
+export const airports: Airport[] = baseAirports.map((a) => ({
+  ...a,
+  ...airportGuides[a.slug],
+}));
 
 export const airportMap: Record<string, Airport> = Object.fromEntries(
   airports.map((a) => [a.slug, a])

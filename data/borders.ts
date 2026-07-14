@@ -1,3 +1,7 @@
+import type { Faq } from "@/data/faqs";
+import type { GalleryImage } from "@/components/sections/ImageGallery";
+import { borderGuides } from "@/data/border-guides";
+
 export interface Border {
   slug: string;
   /** Display name of the crossing. */
@@ -19,9 +23,17 @@ export interface Border {
   /** Optional hero image override + alt; falls back to a themed scene. */
   heroImage?: string;
   heroAlt?: string;
+  /** Rich long-form guide sections (paragraphs may contain inline <a> links). */
+  sections?: { heading: string; paragraphs: string[] }[];
+  /** Border-specific FAQs (overrides the generated defaults; capped at 6). */
+  faqs?: Faq[];
+  /** Target keywords for this page (documentation/reference only). */
+  keywords?: string[];
+  /** Optional gallery images (rendered only once files are added). */
+  images?: GalleryImage[];
 }
 
-export const borders: Border[] = [
+const baseBorders: Border[] = [
   {
     slug: "bahrain-causeway",
     name: "Bahrain Causeway Transfer",
@@ -128,6 +140,12 @@ export const borders: Border[] = [
       "Private taxi to the Al Haditha border crossing between Saudi Arabia and Jordan from Tabuk, Hail, and northern Saudi Arabia.",
   },
 ];
+
+/** Base border records enriched with long-form guide content by slug. */
+export const borders: Border[] = baseBorders.map((b) => ({
+  ...b,
+  ...borderGuides[b.slug],
+}));
 
 export const borderMap: Record<string, Border> = Object.fromEntries(
   borders.map((b) => [b.slug, b])

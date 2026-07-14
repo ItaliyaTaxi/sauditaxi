@@ -7,6 +7,10 @@ import {
   Tag,
   Lock,
   CheckCircle2,
+  Award,
+  Car,
+  CalendarClock,
+  Wallet,
 } from "lucide-react";
 import { cities } from "@/data/cities";
 import { airports } from "@/data/airports";
@@ -26,8 +30,13 @@ const stats = [
 const pillars = [
   {
     icon: UserCheck,
-    title: "Professional drivers",
-    text: "Experienced, vetted chauffeurs who know the cities, routes, and holy sites.",
+    title: "Professional chauffeur service",
+    text: "Courteous, vetted chauffeurs who know the cities, routes, and holy sites.",
+  },
+  {
+    icon: Award,
+    title: "Experienced drivers",
+    text: "Local drivers familiar with terminals, hotels, and prayer-time routing.",
   },
   {
     icon: Plane,
@@ -45,24 +54,39 @@ const pillars = [
     text: "Your driver waits in arrivals with a name board and helps with luggage.",
   },
   {
+    icon: Car,
+    title: "Private transfers",
+    text: "Your vehicle is yours alone — no shared rides and no waiting for others.",
+  },
+  {
     icon: BadgeCheck,
-    title: "Licensed vehicles",
-    text: "Clean, modern, well-maintained cars, SUVs, vans, and minibuses.",
+    title: "Comfortable vehicles",
+    text: "Clean, modern, air-conditioned cars, SUVs, vans, and minibuses.",
   },
   {
     icon: Tag,
-    title: "Fixed pricing",
+    title: "Transparent pricing",
     text: "Your price is agreed before you travel — no meters, no surge, no surprises.",
   },
   {
     icon: Lock,
     title: "Secure booking",
-    text: "No prepayment and no account needed — confirm in minutes on WhatsApp.",
+    text: "Book directly with us — no prepayment, third-party apps, or account needed.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Flexible cancellation",
+    text: "Plans change — tell us early and we will do our best to rebook or cancel.",
+  },
+  {
+    icon: Wallet,
+    title: "Payment options",
+    text: "Pay by cash or card; ask about other options when you confirm your ride.",
   },
   {
     icon: CheckCircle2,
-    title: "Rated 4.9 / 5",
-    text: `Trusted by ${aggregateRating.reviewCount.toLocaleString()}+ travellers, pilgrims, and businesses.`,
+    title: "Customer satisfaction",
+    text: `Rated 4.9 / 5 by ${aggregateRating.reviewCount.toLocaleString()}+ travellers, pilgrims, and businesses.`,
   },
 ];
 

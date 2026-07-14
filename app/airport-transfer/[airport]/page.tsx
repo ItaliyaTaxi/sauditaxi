@@ -9,11 +9,14 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
 import { AirportGrid } from "@/components/sections/AirportGrid";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { ImageGallery } from "@/components/sections/ImageGallery";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { airports, getAirport } from "@/data/airports";
 import { getCity } from "@/data/cities";
 import { hotelsForCity } from "@/data/hotels";
+import { transfersForCity } from "@/lib/hotel-transfers";
 import { airportHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -21,6 +24,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   taxiServiceSchema,
+  faqSchema,
 } from "@/lib/schema";
 
 type Params = { airport: string };
@@ -79,7 +83,17 @@ export default async function AirportPage({
   if (!airport) notFound();
 
   const city = airport.citySlug ? getCity(airport.citySlug) : undefined;
-  const faqs = airportFaqs(airport);
+  const faqs = (airport.faqs ?? airportFaqs(airport)).slice(0, 6);
+  // Real Airport → Hotel deep links, derived from the hotel-transfer engine so
+  // they are always valid (empty for cities without hotels).
+  const hotelLinks =
+    airport.nearbyHotels ??
+    (city
+      ? transfersForCity(city.slug)
+          .filter((t) => t.direction === "airport-to-hotel")
+          .slice(0, 6)
+          .map((t) => ({ name: t.to, href: t.path }))
+      : []);
   const path = `/airport-transfer/${airport.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -100,6 +114,7 @@ export default async function AirportPage({
             serviceType: "Airport Transfer",
             areaServed: `${airport.city}, Saudi Arabia`,
           }),
+          faqSchema(faqs),
         ]}
       />
 
@@ -192,6 +207,51 @@ export default async function AirportPage({
                 )}
               </div>
             )}
+
+            {/* Rich long-form airport guide sections */}
+            {airport.sections && airport.sections.length > 0 && (
+              <div className="mt-10 space-y-8 [&_a]:font-medium [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-navy">
+                {airport.sections.map((s) => (
+                  <div key={s.heading}>
+                    <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
+                    <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Nearby hotels for internal linking */}
+            {hotelLinks.length > 0 && (
+              <div className="mt-10">
+                <h2 className="text-xl font-bold text-navy">
+                  Popular hotel transfers from {airport.city} airport
+                </h2>
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {hotelLinks.map((h) => (
+                    <li key={h.name}>
+                      {h.href ? (
+                        <Link
+                          href={h.href}
+                          className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy hover:border-gold hover:text-gold"
+                        >
+                          <ArrowRight className="size-4 text-gold" />
+                          {h.name}
+                        </Link>
+                      ) : (
+                        <span className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy">
+                          <ArrowRight className="size-4 text-gold" />
+                          {h.name}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-2">
@@ -214,16 +274,24 @@ export default async function AirportPage({
         </div>
       </section>
 
+      <ImageGallery
+        images={airport.images}
+        heading={`${airport.city} Airport in Pictures`}
+        subheading={`A look at ${airport.name} and the journey into ${airport.city}.`}
+        background="white"
+      />
+
       <VehicleOptions background="muted" />
-      <HowItWorks background="white" />
+      <TrustSection background="white" />
+      <HowItWorks background="muted" />
       <AirportGrid
-        background="muted"
+        background="white"
         exclude={airport.slug}
         heading="Other Saudi Airport Transfers"
         subheading="We cover meet-and-greet pickups at every major airport in the Kingdom."
       />
-      <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" />
+      <FAQSection faqs={faqs} background="muted" />
+      <LatestGuides background="white" />
       <CTASection
         title={`Book Your ${airport.city} Airport Taxi`}
         whatsappMessage={`Hello! I'd like to book an airport transfer from ${airport.city} airport.`}

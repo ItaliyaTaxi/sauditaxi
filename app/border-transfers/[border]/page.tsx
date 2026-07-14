@@ -7,6 +7,8 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { ImageGallery } from "@/components/sections/ImageGallery";
 import { borderHero } from "@/lib/hero";
 import { BorderGrid } from "@/components/sections/BorderGrid";
 import { CityGrid } from "@/components/sections/CityGrid";
@@ -15,7 +17,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { borders, getBorder } from "@/data/borders";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
 type Params = { border: string };
 
@@ -72,7 +74,7 @@ export default async function BorderPage({
   const border = getBorder(slug);
   if (!border) notFound();
 
-  const faqs = borderFaqs(border);
+  const faqs = (border.faqs ?? borderFaqs(border)).slice(0, 6);
   const path = `/border-transfers/${border.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -91,6 +93,7 @@ export default async function BorderPage({
             path,
             serviceType: "Border Transfer",
           }),
+          faqSchema(faqs),
         ]}
       />
 
@@ -144,6 +147,22 @@ export default async function BorderPage({
                 </li>
               ))}
             </ul>
+
+            {/* Rich long-form border crossing guide sections */}
+            {border.sections && border.sections.length > 0 && (
+              <div className="mt-10 space-y-8 [&_a]:font-medium [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-navy">
+                {border.sections.map((s) => (
+                  <div key={s.heading}>
+                    <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
+                    <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-2">
@@ -166,12 +185,20 @@ export default async function BorderPage({
         </div>
       </section>
 
+      <ImageGallery
+        images={border.images}
+        heading={`${border.country} Crossing in Pictures`}
+        subheading={`Views of the ${border.crossing} and the route across the border.`}
+        background="white"
+      />
+
       <VehicleOptions background="muted" />
-      <HowItWorks background="white" />
+      <TrustSection background="white" />
+      <HowItWorks background="muted" />
 
       {border.relatedCitySlugs.length > 0 && (
         <CityGrid
-          background="muted"
+          background="white"
           heading="Taxi Service in Pickup Cities"
           subheading="Local transfers in the cities served by this border crossing."
           only={border.relatedCitySlugs}
@@ -179,12 +206,12 @@ export default async function BorderPage({
       )}
 
       <BorderGrid
-        background="white"
+        background="muted"
         exclude={border.slug}
         heading="Other Border Crossings"
         subheading="We cover all the main land borders out of Saudi Arabia."
       />
-      <FAQSection faqs={faqs} background="muted" />
+      <FAQSection faqs={faqs} background="white" />
       <LatestGuides background="muted" />
       <CTASection
         title={`Book Your ${border.country} Border Transfer`}
