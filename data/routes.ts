@@ -1,3 +1,5 @@
+import { makkahRoutes } from "./makkah-routes";
+
 export type RouteCategory = "religious" | "intercity" | "border" | "airport";
 
 export interface Route {
@@ -34,7 +36,7 @@ export interface Route {
   keywords?: string[];
 }
 
-export const routes: Route[] = [
+const baseRoutes: Route[] = [
   {
     slug: "jeddah-to-makkah",
     from: "Jeddah",
@@ -3485,6 +3487,9 @@ export const routes: Route[] = [
     keywords: ["amman to madinah taxi", "amman to madinah by car", "jordan to madinah cross border car", "amman to madinah road trip", "amman to madinah private transfer"],
   },
 ];
+
+/** Base routes plus the merged Makkah intercity + departure routes. */
+export const routes: Route[] = [...baseRoutes, ...makkahRoutes];
 
 export const routeMap: Record<string, Route> = Object.fromEntries(
   routes.map((r) => [r.slug, r])

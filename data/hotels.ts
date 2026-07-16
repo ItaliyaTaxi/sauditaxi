@@ -549,6 +549,128 @@ export const hotels: Hotel[] = [
       "A simple, consistent hotel in Olaya offering good-value rooms close to the district's towers and malls.",
     nearby: ["Olaya Street", "Kingdom Centre", "Al Faisaliah Tower"],
   },
+
+  // ── Makkah — served by Jeddah (JED) airport, ~90 km / clustered by the Haram ─
+  {
+    slug: "fairmont-makkah-clock-royal-tower",
+    name: "Fairmont Makkah Clock Royal Tower",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Abraj Al-Bait (Clock Tower)",
+    distanceKm: 95,
+    durationMin: 85,
+    blurb:
+      "The landmark tower crowning the Abraj Al-Bait complex, its rooms and clock-facing suites overlooking the Masjid al-Haram just steps away.",
+    nearby: ["Masjid al-Haram", "Abraj Al-Bait Clock Tower", "King Abdulaziz Gate"],
+  },
+  {
+    slug: "swissotel-makkah",
+    name: "Swissôtel Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Abraj Al-Bait (Clock Tower)",
+    distanceKm: 95,
+    durationMin: 85,
+    blurb:
+      "A refined five-star tower within the Abraj Al-Bait complex, favoured by families for its direct, sheltered walkway toward the Haram.",
+    nearby: ["Masjid al-Haram", "Abraj Al-Bait Clock Tower", "Zamzam Well area"],
+  },
+  {
+    slug: "swissotel-al-maqam-makkah",
+    name: "Swissôtel Al Maqam Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Abraj Al-Bait (Clock Tower)",
+    distanceKm: 95,
+    durationMin: 85,
+    blurb:
+      "The Al Maqam tower of the Abraj Al-Bait, offering quiet, spacious family rooms moments from the King Abdulaziz Gate of the Haram.",
+    nearby: ["Masjid al-Haram", "King Abdulaziz Gate", "Abraj Al-Bait Clock Tower"],
+  },
+  {
+    slug: "hilton-suites-makkah",
+    name: "Hilton Suites Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Central Area (near Haram)",
+    distanceKm: 94,
+    durationMin: 85,
+    blurb:
+      "An all-suite hotel above the Hilton shopping mall, a short level walk from the Haram and popular with longer-staying pilgrim families.",
+    nearby: ["Masjid al-Haram", "Hilton Makkah Mall", "Ajyad district"],
+  },
+  {
+    slug: "pullman-zamzam-makkah",
+    name: "Pullman ZamZam Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Abraj Al-Bait (Clock Tower)",
+    distanceKm: 95,
+    durationMin: 85,
+    blurb:
+      "A large five-star hotel in the ZamZam tower of the Abraj Al-Bait, known for its wide buffet halls that suit big Umrah groups.",
+    nearby: ["Masjid al-Haram", "Abraj Al-Bait Clock Tower", "Safa and Marwah area"],
+  },
+  {
+    slug: "makkah-hotel",
+    name: "Makkah Hotel & Towers",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Central Area (near Haram)",
+    distanceKm: 94,
+    durationMin: 84,
+    blurb:
+      "A long-established hotel facing the Haram piazza, valued for its uninterrupted views of the mosque and its central location.",
+    nearby: ["Masjid al-Haram", "King Abdulaziz Gate", "Al-Masaa (Safa-Marwah)"],
+  },
+  {
+    slug: "conrad-makkah",
+    name: "Conrad Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Jabal Omar",
+    distanceKm: 94,
+    durationMin: 86,
+    blurb:
+      "A polished luxury tower in the Jabal Omar development, linked to the Haram by covered walkways and popular with business-class pilgrims.",
+    nearby: ["Masjid al-Haram", "Jabal Omar", "Abraj Al-Bait Clock Tower"],
+  },
+  {
+    slug: "address-jabal-omar-makkah",
+    name: "Address Jabal Omar Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Jabal Omar",
+    distanceKm: 94,
+    durationMin: 86,
+    blurb:
+      "A contemporary five-star Address property in Jabal Omar, offering elevated Haram views and a calm setting a short walk from the mosque.",
+    nearby: ["Masjid al-Haram", "Jabal Omar", "King Fahd Gate"],
+  },
+  {
+    slug: "jabal-omar-marriott-makkah",
+    name: "Jabal Omar Marriott Hotel Makkah",
+    citySlug: "makkah",
+    stars: 5,
+    area: "Jabal Omar",
+    distanceKm: 94,
+    durationMin: 86,
+    blurb:
+      "A Marriott tower in the Jabal Omar district with spacious rooms and easy pedestrian access to the Haram via the development's walkways.",
+    nearby: ["Masjid al-Haram", "Jabal Omar", "King Fahd Gate"],
+  },
+  {
+    slug: "doubletree-by-hilton-makkah",
+    name: "DoubleTree by Hilton Makkah Jabal Omar",
+    citySlug: "makkah",
+    stars: 4,
+    area: "Jabal Omar",
+    distanceKm: 94,
+    durationMin: 86,
+    blurb:
+      "A comfortable four-star option in Jabal Omar, giving good-value access to the Haram for families and independent pilgrims.",
+    nearby: ["Masjid al-Haram", "Jabal Omar", "King Fahd Gate"],
+  },
 ];
 
 export const hotelMap: Record<string, Hotel> = Object.fromEntries(

@@ -99,6 +99,7 @@ export const cities: City[] = [
       "Jabal Thawr",
     ],
     popularDestinations: ["Madinah", "Jeddah", "Taif", "Jeddah Airport"],
+    nearestAirportSlug: "jeddah-airport",
     metaTitle: "Makkah Taxi Service | Umrah & Ziyarat Transfers",
     metaDescription:
       "Book Makkah taxi service for Umrah, Ziyarat, hotel transfers, Jeddah airport pickup, and private rides to Madinah.",
