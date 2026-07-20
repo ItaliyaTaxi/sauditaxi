@@ -1,4 +1,5 @@
 import { makkahRoutes } from "./makkah-routes";
+import { dammamRoutes } from "./dammam-routes";
 
 export type RouteCategory = "religious" | "intercity" | "border" | "airport";
 
@@ -3489,7 +3490,7 @@ const baseRoutes: Route[] = [
 ];
 
 /** Base routes plus the merged Makkah intercity + departure routes. */
-export const routes: Route[] = [...baseRoutes, ...makkahRoutes];
+export const routes: Route[] = [...baseRoutes, ...makkahRoutes, ...dammamRoutes];
 
 export const routeMap: Record<string, Route> = Object.fromEntries(
   routes.map((r) => [r.slug, r])
