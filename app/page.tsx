@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { HeroQuickForm } from "@/components/HeroQuickForm";
 import { heroImages } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -25,8 +24,9 @@ import { generalFaqs } from "@/data/faqs";
 export const revalidate = 3600;
 
 export const metadata: Metadata = buildMetadata({
-  title: `${siteConfig.name} | Taxi Service in Saudi Arabia`,
-  description: siteConfig.description,
+  title: "Private Transfers in Saudi Arabia | Airport, City & Border Taxi",
+  description:
+    "Book private transfers across Saudi Arabia — airport pickups, city rides, intercity routes, and border crossings. Fixed prices, professional drivers, 24/7.",
   path: "/",
 });
 
