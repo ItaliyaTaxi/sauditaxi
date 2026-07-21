@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HeroQuickForm } from "@/components/HeroQuickForm";
 import { heroImages } from "@/lib/hero";
+import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -20,6 +23,12 @@ import { generalFaqs } from "@/data/faqs";
 
 // Refresh hourly so the "Latest guides" block surfaces new posts (freshness signal).
 export const revalidate = 3600;
+
+export const metadata: Metadata = buildMetadata({
+  title: `${siteConfig.name} | Taxi Service in Saudi Arabia`,
+  description: siteConfig.description,
+  path: "/",
+});
 
 export default function HomePage() {
   return (
