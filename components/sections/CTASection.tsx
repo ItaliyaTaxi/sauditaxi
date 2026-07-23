@@ -4,12 +4,19 @@ interface CTASectionProps {
   title?: string;
   subtitle?: string;
   whatsappMessage?: string;
+  /** Passed straight through to CtaButtons — Arabic callers supply Arabic strings/hrefs. */
+  whatsappLabel?: string;
+  contactLabel?: string;
+  contactHref?: string;
 }
 
 export function CTASection({
   title = "Ready to Book Your Saudi Arabia Taxi?",
   subtitle = "Send your pickup and drop-off details now and get a fast, fixed quote on WhatsApp.",
   whatsappMessage,
+  whatsappLabel,
+  contactLabel,
+  contactHref,
 }: CTASectionProps) {
   return (
     <section className="bg-navy">
@@ -19,7 +26,13 @@ export function CTASection({
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-white/80">{subtitle}</p>
         <div className="mt-8 flex justify-center">
-          <CtaButtons whatsappMessage={whatsappMessage} onDark />
+          <CtaButtons
+            whatsappMessage={whatsappMessage}
+            whatsappLabel={whatsappLabel}
+            contactLabel={contactLabel}
+            contactHref={contactHref}
+            onDark
+          />
         </div>
       </div>
     </section>

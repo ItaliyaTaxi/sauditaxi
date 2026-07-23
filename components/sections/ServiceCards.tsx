@@ -37,7 +37,7 @@ export function ServiceCards({
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-gold">
                     Learn more
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="size-4 rtl:rotate-180 transition-transform ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                   </span>
                 </Card>
               </Link>

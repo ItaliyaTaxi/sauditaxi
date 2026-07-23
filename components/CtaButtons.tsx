@@ -10,14 +10,25 @@ interface CtaButtonsProps {
   whatsappLabel?: string;
   /** Show a secondary "Contact Us" link. */
   showQuoteLink?: boolean;
+  /** Label + href for the secondary link — Arabic callers pass their own. */
+  contactLabel?: string;
+  contactHref?: string;
   className?: string;
   /** Use light styling for dark backgrounds. */
   onDark?: boolean;
 }
 
+/**
+ * Stays a Server Component — Arabic pages pass Arabic strings/hrefs directly
+ * (see data/translations/ar.ts callers) instead of this component detecting
+ * locale itself, so the ~360 English pages that render it never pay for
+ * client-side hydration they don't need.
+ */
 export function CtaButtons({
   whatsappLabel = "Get a Quote",
   showQuoteLink = true,
+  contactLabel = "Contact Us",
+  contactHref = "/contact",
   className,
   onDark = false,
 }: CtaButtonsProps) {
@@ -36,7 +47,7 @@ export function CtaButtons({
           size="lg"
           className={onDark ? "border-white/40 text-white hover:bg-white hover:text-navy" : ""}
         >
-          <Link href="/contact">Contact Us</Link>
+          <Link href={contactHref}>{contactLabel}</Link>
         </Button>
       )}
     </div>

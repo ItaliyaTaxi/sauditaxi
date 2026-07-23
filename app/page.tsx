@@ -28,6 +28,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Book private transfers across Saudi Arabia — airport pickups, city rides, intercity routes, and border crossings. Fixed prices, professional drivers, 24/7.",
   path: "/",
+  alternateLanguages: { en: "/", ar: "/ar" },
 });
 
 export default function HomePage() {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export interface Crumb {
   name: string;
@@ -44,7 +45,10 @@ export function Breadcrumbs({
                     {item.name}
                   </Link>
                   <ChevronRight
-                    className={onDark ? "size-3.5 text-white/40" : "size-3.5 text-muted-foreground"}
+                    className={cn(
+                      "size-3.5 rtl:rotate-180",
+                      onDark ? "text-white/40" : "text-muted-foreground"
+                    )}
                   />
                 </>
               )}

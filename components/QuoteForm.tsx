@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { vehicles } from "@/data/vehicles";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { getDictionary, localeFromPathname } from "@/lib/i18n";
 
 export interface QuoteFormProps {
   /** Prefill the pickup field (e.g. an airport or city). */
@@ -48,6 +49,8 @@ export function QuoteForm({
   twoColumn = true,
 }: QuoteFormProps) {
   const pathname = usePathname();
+  const dict = getDictionary(localeFromPathname(pathname));
+  const t = dict.quoteForm;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -92,15 +95,11 @@ export function QuoteForm({
         setStatus("success");
       } else {
         setStatus("error");
-        setErrorMsg(
-          json?.error ?? "Something went wrong. Please try again in a moment."
-        );
+        setErrorMsg(json?.error ?? t.genericError);
       }
     } catch {
       setStatus("error");
-      setErrorMsg(
-        "We couldn't send your request. Please check your connection and try again."
-      );
+      setErrorMsg(t.networkError);
     }
   }
 
@@ -115,11 +114,9 @@ export function QuoteForm({
         aria-live="polite"
       >
         <CheckCircle2 className="mx-auto size-12 text-green-600" />
-        <h3 className="mt-4 text-xl font-bold text-navy">Request received</h3>
+        <h3 className="mt-4 text-xl font-bold text-navy">{t.successTitle}</h3>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-          Thank you — we&apos;ve received your trip details. Our team will review
-          your journey and get back to you shortly with availability and a fixed
-          price.
+          {t.successBody}
         </p>
         <Button
           type="button"
@@ -128,7 +125,7 @@ export function QuoteForm({
           className="mt-6"
           onClick={() => setStatus("idle")}
         >
-          Send another request
+          {t.sendAnother}
         </Button>
       </div>
     );
@@ -140,15 +137,15 @@ export function QuoteForm({
     <form
       onSubmit={handleSubmit}
       className={cn("space-y-4", className)}
-      aria-label="Taxi quote request form"
+      aria-label={t.ariaLabel}
     >
       <div className={cn(twoColumn && "grid gap-4 sm:grid-cols-2")}>
         <div>
-          <Label htmlFor="qf-name">Full name</Label>
-          <Input id="qf-name" name="name" autoComplete="name" placeholder="Your name" required />
+          <Label htmlFor="qf-name">{t.fullName}</Label>
+          <Input id="qf-name" name="name" autoComplete="name" placeholder={t.fullNamePlaceholder} required />
         </div>
         <div>
-          <Label htmlFor="qf-phone">Phone / WhatsApp number</Label>
+          <Label htmlFor="qf-phone">{t.phone}</Label>
           <Input
             id="qf-phone"
             name="phone"
@@ -163,7 +160,7 @@ export function QuoteForm({
 
       <div>
         <Label htmlFor="qf-email">
-          Email <span className="font-normal text-muted-foreground">(optional)</span>
+          {t.email} <span className="font-normal text-muted-foreground">{t.optional}</span>
         </Label>
         <Input
           id="qf-email"
@@ -171,35 +168,35 @@ export function QuoteForm({
           type="email"
           inputMode="email"
           autoComplete="email"
-          placeholder="you@example.com — to receive a confirmation"
+          placeholder={t.emailPlaceholder}
         />
       </div>
 
       <div className={cn(twoColumn && "grid gap-4 sm:grid-cols-2")}>
         <div>
-          <Label htmlFor="qf-pickup">Pickup location</Label>
-          <Input id="qf-pickup" name="pickup" defaultValue={defaultPickup} placeholder="Airport, hotel, address" required />
+          <Label htmlFor="qf-pickup">{t.pickup}</Label>
+          <Input id="qf-pickup" name="pickup" defaultValue={defaultPickup} placeholder={t.pickupPlaceholder} required />
         </div>
         <div>
-          <Label htmlFor="qf-dropoff">Drop-off location</Label>
-          <Input id="qf-dropoff" name="dropoff" defaultValue={defaultDropoff} placeholder="Destination" required />
+          <Label htmlFor="qf-dropoff">{t.dropoff}</Label>
+          <Input id="qf-dropoff" name="dropoff" defaultValue={defaultDropoff} placeholder={t.dropoffPlaceholder} required />
         </div>
       </div>
 
       <div className={cn(twoColumn && "grid gap-4 sm:grid-cols-2")}>
         <div>
-          <Label htmlFor="qf-date">Date</Label>
+          <Label htmlFor="qf-date">{t.date}</Label>
           <Input id="qf-date" name="date" type="date" defaultValue={defaultDate} required />
         </div>
         <div>
-          <Label htmlFor="qf-time">Time</Label>
+          <Label htmlFor="qf-time">{t.time}</Label>
           <Input id="qf-time" name="time" type="time" defaultValue={defaultTime} required />
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <Label htmlFor="qf-passengers">Passengers</Label>
+          <Label htmlFor="qf-passengers">{t.passengers}</Label>
           <Select id="qf-passengers" name="passengers" defaultValue={defaultPassengers}>
             {passengerOptions.map((p) => (
               <option key={p} value={p}>{p}</option>
@@ -207,7 +204,7 @@ export function QuoteForm({
           </Select>
         </div>
         <div>
-          <Label htmlFor="qf-luggage">Luggage</Label>
+          <Label htmlFor="qf-luggage">{t.luggage}</Label>
           <Select id="qf-luggage" name="luggage" defaultValue="2">
             {luggageOptions.map((p) => (
               <option key={p} value={p}>{p}</option>
@@ -215,7 +212,7 @@ export function QuoteForm({
           </Select>
         </div>
         <div>
-          <Label htmlFor="qf-vehicle">Vehicle type</Label>
+          <Label htmlFor="qf-vehicle">{t.vehicleType}</Label>
           <Select id="qf-vehicle" name="vehicle" defaultValue="Comfort">
             {vehicles.map((v) => (
               <option key={v.id} value={v.name}>{v.name}</option>
@@ -225,18 +222,18 @@ export function QuoteForm({
       </div>
 
       <div>
-        <Label htmlFor="qf-flight">Flight number <span className="font-normal text-muted-foreground">(optional)</span></Label>
-        <Input id="qf-flight" name="flight" placeholder="e.g. SV1234" />
+        <Label htmlFor="qf-flight">{t.flightNumber} <span className="font-normal text-muted-foreground">{t.optional}</span></Label>
+        <Input id="qf-flight" name="flight" placeholder={t.flightNumberPlaceholder} />
       </div>
 
       <div>
-        <Label htmlFor="qf-message">Message <span className="font-normal text-muted-foreground">(optional)</span></Label>
-        <Textarea id="qf-message" name="message" placeholder="Any special requirements (child seat, extra stops, group size)…" />
+        <Label htmlFor="qf-message">{t.message} <span className="font-normal text-muted-foreground">{t.optional}</span></Label>
+        <Textarea id="qf-message" name="message" placeholder={t.messagePlaceholder} />
       </div>
 
       <Button type="submit" variant="gold" size="lg" className="w-full" disabled={submitting}>
         <Send className="size-5" />
-        {submitting ? "Sending…" : "Send Request"}
+        {submitting ? t.sending : t.sendRequest}
       </Button>
 
       <p
@@ -246,9 +243,7 @@ export function QuoteForm({
         )}
         aria-live="polite"
       >
-        {status === "error"
-          ? errorMsg
-          : "We'll reply with a fixed price for your journey — no payment needed to get a quote."}
+        {status === "error" ? errorMsg : t.disclaimer}
       </p>
     </form>
   );

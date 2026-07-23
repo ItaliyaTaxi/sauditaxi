@@ -19,6 +19,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Contact our Saudi Arabia taxi service by email or our quick online booking form. Fast quotes for airport transfers, city rides, intercity routes, borders, Umrah, and Hajj.",
   path: "/contact",
+  alternateLanguages: { en: "/contact", ar: "/ar/اتصل-بنا" },
 });
 
 const channels = [

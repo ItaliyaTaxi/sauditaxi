@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { services } from "@/data/services";
 import { airports } from "@/data/airports";
 import { cities } from "@/data/cities";
+import { getDictionary, localeFromPathname, interpolate } from "@/lib/i18n";
+import { arPages, arPath } from "@/data/translations/ar";
 
 interface NavChild {
   label: string;
@@ -25,7 +27,7 @@ interface NavItem {
   wide?: boolean;
 }
 
-const navLinks: NavItem[] = [
+const navLinksEn: NavItem[] = [
   { label: "Home", href: "/" },
   {
     label: "Services",
@@ -56,8 +58,49 @@ const navLinks: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+/**
+ * Arabic nav, built from whatever has actually been translated so far
+ * (`data/translations/ar.ts`). As more pages get an Arabic version, they
+ * appear here automatically — nothing hardcoded beyond the section labels,
+ * which come from the locale dictionary.
+ */
+function buildArNavLinks(): NavItem[] {
+  const dict = getDictionary("ar");
+  const services = arPages.filter((p) => p.type === "service");
+  const airports = arPages.filter((p) => p.type === "airport");
+
+  const children: NavItem[] = [];
+  if (services.length) {
+    children.push({
+      label: dict.nav.services,
+      href: "/ar",
+      wide: true,
+      children: services.map((s) => ({ label: s.h1, href: arPath(s) })),
+    });
+  }
+  if (airports.length) {
+    children.push({
+      label: dict.nav.airportTransfers,
+      href: "/ar",
+      wide: true,
+      children: airports.map((a) => ({ label: a.h1, href: arPath(a) })),
+    });
+  }
+
+  return [
+    { label: dict.nav.home, href: "/ar" },
+    ...children,
+    { label: dict.nav.blog, href: "/ar" },
+    { label: dict.nav.about, href: "/ar/من-نحن" },
+    { label: dict.nav.contact, href: "/ar/اتصل-بنا" },
+  ];
+}
+
 export function Header() {
   const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const dict = getDictionary(locale);
+  const navLinks = locale === "ar" ? buildArNavLinks() : navLinksEn;
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -92,7 +135,7 @@ export function Header() {
       <div className={cn(solid ? "border-b border-white/10" : "border-b border-transparent")}>
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
-            href="/"
+            href={locale === "ar" ? "/ar" : "/"}
             aria-label={`${siteConfig.name} home`}
             className="flex items-center transition-transform hover:scale-[1.02]"
           >
@@ -114,12 +157,12 @@ export function Header() {
               size="sm"
               className="hidden shadow-md shadow-gold/20 sm:inline-flex"
             >
-              <Link href="/get-quote">Get Quote</Link>
+              <Link href="/get-quote">{dict.nav.getQuote}</Link>
             </Button>
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
@@ -217,7 +260,7 @@ export function Header() {
                   </Link>
                   <button
                     type="button"
-                    aria-label={`Toggle ${link.label} submenu`}
+                    aria-label={interpolate(dict.nav.toggleSubmenu, { label: link.label })}
                     aria-expanded={openSub === link.href}
                     onClick={() => setOpenSub((cur) => (cur === link.href ? null : link.href))}
                     className="rounded-md p-2 text-white/70 hover:text-gold"
@@ -231,7 +274,7 @@ export function Header() {
                   </button>
                 </div>
                 {openSub === link.href && (
-                  <ul className="mb-1 ml-3 border-l border-white/10 pl-2">
+                  <ul className="mb-1 ms-3 border-s border-white/10 ps-2">
                     {link.children.map((child) => (
                       <li key={child.href}>
                         <Link
@@ -263,7 +306,7 @@ export function Header() {
           <div className="mt-2 px-1">
             <Button asChild variant="gold" className="w-full shadow-md shadow-gold/20">
               <Link href="/get-quote" onClick={closeAll}>
-                Get Quote
+                {dict.nav.getQuote}
               </Link>
             </Button>
           </div>

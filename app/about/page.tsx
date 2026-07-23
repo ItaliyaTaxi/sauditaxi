@@ -20,6 +20,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Learn about our private taxi and transfer service in Saudi Arabia — covering airports, cities, intercity routes, borders, Umrah, and Hajj with professional drivers and fixed prices.",
   path: "/about",
+  alternateLanguages: { en: "/about", ar: "/ar/من-نحن" },
 });
 
 const commitments = [

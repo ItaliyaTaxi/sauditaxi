@@ -1,11 +1,12 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
+import { getDictionary, localeFromPathname } from "@/lib/i18n";
 
 const passengerOptions = ["1", "2", "3", "4", "5", "6", "7+"];
 
@@ -16,6 +17,8 @@ const passengerOptions = ["1", "2", "3", "4", "5", "6", "7+"];
  */
 export function HeroQuickForm() {
   const router = useRouter();
+  const dict = getDictionary(localeFromPathname(usePathname()));
+  const t = dict.heroQuickForm;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,33 +32,31 @@ export function HeroQuickForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-black/5 bg-white p-5 text-left shadow-2xl sm:p-6">
-      <h2 className="text-xl font-bold text-navy">Book Your Ride</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Enter your trip and continue to get a fast quote.
-      </p>
+    <div className="rounded-2xl border border-black/5 bg-white p-5 text-start shadow-2xl sm:p-6">
+      <h2 className="text-xl font-bold text-navy">{t.heading}</h2>
+      <p className="mt-1 text-sm text-muted-foreground">{t.subheading}</p>
 
       <form onSubmit={handleSubmit} className="mt-4 space-y-3.5" aria-label="Quick quote form">
         <div>
-          <Label htmlFor="hq-pickup">Pickup location</Label>
-          <Input id="hq-pickup" name="pickup" placeholder="Airport, hotel, address" required />
+          <Label htmlFor="hq-pickup">{t.pickup}</Label>
+          <Input id="hq-pickup" name="pickup" placeholder={t.pickupPlaceholder} required />
         </div>
         <div>
-          <Label htmlFor="hq-dropoff">Drop-off location</Label>
-          <Input id="hq-dropoff" name="dropoff" placeholder="Destination" required />
+          <Label htmlFor="hq-dropoff">{t.dropoff}</Label>
+          <Input id="hq-dropoff" name="dropoff" placeholder={t.dropoffPlaceholder} required />
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <Label htmlFor="hq-date">Date</Label>
+            <Label htmlFor="hq-date">{t.date}</Label>
             <Input id="hq-date" name="date" type="date" required />
           </div>
           <div>
-            <Label htmlFor="hq-time">Time</Label>
+            <Label htmlFor="hq-time">{t.time}</Label>
             <Input id="hq-time" name="time" type="time" required />
           </div>
         </div>
         <div>
-          <Label htmlFor="hq-passengers">Passengers</Label>
+          <Label htmlFor="hq-passengers">{t.passengers}</Label>
           <Select id="hq-passengers" name="passengers" defaultValue="2">
             {passengerOptions.map((p) => (
               <option key={p} value={p}>{p}</option>
@@ -64,8 +65,8 @@ export function HeroQuickForm() {
         </div>
 
         <Button type="submit" variant="gold" size="lg" className="w-full">
-          Continue
-          <ArrowRight className="size-5" />
+          {t.continue}
+          <ArrowRight className="size-5 rtl:rotate-180" />
         </Button>
       </form>
     </div>

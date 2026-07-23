@@ -10,6 +10,12 @@ interface PageMetaInput {
   image?: string;
   /** Set false for utility pages you don't want indexed. */
   index?: boolean;
+  /**
+   * Cross-language alternates for hreflang, keyed by language code
+   * ("en", "ar", ...). Only pass this when a real translation exists —
+   * omit it entirely for pages that don't have one yet.
+   */
+  alternateLanguages?: Record<string, string>;
 }
 
 /**
@@ -22,6 +28,7 @@ export function buildMetadata({
   path,
   image = siteConfig.ogImage,
   index = true,
+  alternateLanguages,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
   // Social networks (Facebook, LinkedIn, WhatsApp, X) cannot render SVG share
@@ -33,10 +40,19 @@ export function buildMetadata({
     : ogImg.endsWith(".webp")
       ? "image/webp"
       : "image/jpeg";
+  const languages = alternateLanguages
+    ? Object.fromEntries(
+        Object.entries(alternateLanguages).map(([lang, altPath]) => [
+          lang,
+          absoluteUrl(altPath),
+        ])
+      )
+    : undefined;
+
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(languages ? { languages } : {}) },
     robots: index
       ? {
           index: true,

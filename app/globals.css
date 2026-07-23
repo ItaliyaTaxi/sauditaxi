@@ -56,6 +56,7 @@
   --color-ring: var(--ring);
 
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -197,17 +198,18 @@ body {
 }
 .blog-prose a:hover { color: #0b1220; }
 .blog-prose ul,
-.blog-prose ol { margin-top: 1.15rem; padding-left: 1.4rem; }
+.blog-prose ol { margin-top: 1.15rem; padding-inline-start: 1.4rem; }
 .blog-prose ul { list-style: disc; }
 .blog-prose ol { list-style: decimal; }
 .blog-prose li { margin-top: 0.4rem; }
 .blog-prose li::marker { color: #f5b820; }
 .blog-prose strong { color: #0b1220; font-weight: 700; }
 .blog-prose blockquote {
-  border-left: 4px solid #f5b820;
+  border-inline-start: 4px solid #f5b820;
   background: #faf7ef;
   padding: 0.75rem 1.1rem;
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
   color: #475569;
   font-style: italic;
 }
@@ -221,7 +223,7 @@ body {
 .blog-prose td {
   border: 1px solid #e7e5e4;
   padding: 0.6rem 0.8rem;
-  text-align: left;
+  text-align: start;
   vertical-align: top;
 }
 .blog-prose thead th {
@@ -232,15 +234,16 @@ body {
 .blog-prose tbody tr:nth-child(even) { background: #faf9f7; }
 .blog-prose h2 + p { margin-top: 0.5rem; }
 
-/* Hide the Google Website Translate chrome — we drive it via our own EN/AR
-   switcher. Keeps the page clean while still translating content. */
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-#goog-gt-tt,
-.goog-te-gadget-icon { display: none !important; }
-.skiptranslate { display: none !important; }
-body { top: 0 !important; }
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
+/* ── RTL (Arabic) support ────────────────────────────────────────────────
+   Native Arabic pages set dir="rtl" on <html> (see app/layout.tsx). Most of
+   the site already uses flexbox/grid + gap, which flips correctly for free
+   under RTL; the handful of components with true physical-direction styles
+   (icons, floating buttons, dropdown indents) carry their own rtl: overrides
+   inline. This block covers the couple of cases that are easier to handle
+   globally than per-component. */
+[dir="rtl"] .blog-prose {
+  text-align: right;
+}
+html[dir="rtl"] body {
+  font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
 }

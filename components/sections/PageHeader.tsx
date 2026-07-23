@@ -14,6 +14,10 @@ interface PageHeaderProps {
   backgroundImage?: string;
   /** Accessible description of the hero image (exposed via aria-label). */
   backgroundAlt?: string;
+  /** Passed straight through to CtaButtons — Arabic callers supply Arabic strings/hrefs. */
+  ctaLabel?: string;
+  contactLabel?: string;
+  contactHref?: string;
 }
 
 export function PageHeader({
@@ -24,6 +28,9 @@ export function PageHeader({
   showCtas = true,
   backgroundImage = heroImages.default,
   backgroundAlt,
+  ctaLabel,
+  contactLabel,
+  contactHref,
 }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden bg-black text-white">
@@ -53,7 +60,14 @@ export function PageHeader({
           <p className="mt-4 max-w-2xl text-lg text-white/85 sm:text-xl">{subtitle}</p>
         )}
         {showCtas && (
-          <CtaButtons className="mt-7" whatsappMessage={whatsappMessage} onDark />
+          <CtaButtons
+            className="mt-7"
+            whatsappMessage={whatsappMessage}
+            whatsappLabel={ctaLabel}
+            contactLabel={contactLabel}
+            contactHref={contactHref}
+            onDark
+          />
         )}
       </div>
     </section>

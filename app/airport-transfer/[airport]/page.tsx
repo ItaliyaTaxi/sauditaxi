@@ -20,6 +20,7 @@ import { transfersForCity } from "@/lib/hotel-transfers";
 import { airportHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import {
   breadcrumbSchema,
   serviceSchema,
@@ -41,6 +42,8 @@ export async function generateMetadata({
   const { airport: slug } = await params;
   const airport = getAirport(slug);
   if (!airport) return {};
+  const path = `/airport-transfer/${airport.slug}`;
+  const arPath = getArPathForEnPath(path);
   return buildMetadata({
     title:
       airport.metaTitle ??
@@ -48,7 +51,8 @@ export async function generateMetadata({
     description:
       airport.metaDescription ??
       `Private ${airport.city} airport taxi from ${airport.name} (${airport.code}). Meet-and-greet pickup with fixed quotes.`,
-    path: `/airport-transfer/${airport.slug}`,
+    path,
+    ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });
 }
 

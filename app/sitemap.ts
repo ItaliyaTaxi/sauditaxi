@@ -8,6 +8,7 @@ import { services } from "@/data/services";
 import { hotelTransfers, hotelCities } from "@/lib/hotel-transfers";
 import { pointTransfers } from "@/lib/point-transfers";
 import { listPublishedBlogs } from "@/lib/blogs";
+import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
 // full redeploy (the sitemap pulls published posts live from the database).
@@ -93,21 +94,50 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...cityHubPaths,
     ...hotelTransferPaths,
     ...pointTransferPaths,
-  ].map((entry) => ({
-    url: absoluteUrl(entry.path),
-    lastModified: now,
-    changeFrequency: entry.changeFrequency,
-    priority: entry.priority,
-  }));
+  ].map((entry) => {
+    // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.
+    const ar = getArPathForEnPath(entry.path);
+    return {
+      url: absoluteUrl(entry.path),
+      lastModified: now,
+      changeFrequency: entry.changeFrequency,
+      priority: entry.priority,
+      ...(ar
+        ? { alternates: { languages: { en: absoluteUrl(entry.path), ar: absoluteUrl(ar) } } }
+        : {}),
+    };
+  });
 
   // Published blog posts (pulled live from the database).
   const blogs = await listPublishedBlogs();
-  const blogEntries: MetadataRoute.Sitemap = blogs.map((b) => ({
-    url: absoluteUrl(`/blog/${b.slug}`),
-    lastModified: new Date(b.updatedAt),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const blogEntries: MetadataRoute.Sitemap = blogs.map((b) => {
+    const path = `/blog/${b.slug}`;
+    const ar = getArPathForEnPath(path);
+    return {
+      url: absoluteUrl(path),
+      lastModified: new Date(b.updatedAt),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      ...(ar ? { alternates: { languages: { en: absoluteUrl(path), ar: absoluteUrl(ar) } } } : {}),
+    };
+  });
 
-  return [...base, ...blogEntries];
+  // Native Arabic pages (/ar/{slug}) — each cross-links back to its English original.
+  const arEntries: MetadataRoute.Sitemap = arPages.map((p) => ({
+    url: absoluteUrl(arPath(p)),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: p.type === "about" || p.type === "contact" ? 0.5 : 0.7,
+    alternates: { languages: { en: absoluteUrl(p.enPath), ar: absoluteUrl(arPath(p)) } },
+  }));
+  // The Arabic homepage itself.
+  arEntries.push({
+    url: absoluteUrl("/ar"),
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 1,
+    alternates: { languages: { en: absoluteUrl("/"), ar: absoluteUrl("/ar") } },
+  });
+
+  return [...base, ...blogEntries, ...arEntries];
 }

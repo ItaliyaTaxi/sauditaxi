@@ -28,6 +28,7 @@ import { routes } from "@/data/routes";
 import type { Faq } from "@/data/faqs";
 import { cityHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import {
   breadcrumbSchema,
   serviceSchema,
@@ -62,18 +63,24 @@ export async function generateMetadata({
   const t = getHotelTransfer(city, route);
   if (!t) {
     const pt = getPointTransfer(city, route);
-    if (pt)
+    if (pt) {
+      const ptPath = `/${pt.citySlug}/${pt.slug}`;
+      const ptArPath = getArPathForEnPath(ptPath);
       return buildMetadata({
         title: pt.metaTitle,
         description: pt.metaDescription,
-        path: `/${pt.citySlug}/${pt.slug}`,
+        path: ptPath,
+        ...(ptArPath ? { alternateLanguages: { en: ptPath, ar: ptArPath } } : {}),
       });
+    }
     return {};
   }
+  const arPath = getArPathForEnPath(t.path);
   return buildMetadata({
     title: `${t.from} to ${t.to} Taxi | Private Transfer`,
     description: `Book a private ${t.from} to ${t.to} taxi (${t.distance}, approx. ${t.duration}). Fixed price, meet & greet, flight tracking, and 24/7 booking.`,
     path: t.path,
+    ...(arPath ? { alternateLanguages: { en: t.path, ar: arPath } } : {}),
   });
 }
 

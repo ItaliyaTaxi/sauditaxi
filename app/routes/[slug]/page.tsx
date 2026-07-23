@@ -15,6 +15,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes, getRoute } from "@/data/routes";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
 type Params = { slug: string };
@@ -48,6 +49,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const route = getRoute(slug);
   if (!route) return {};
+  const path = `/routes/${route.slug}`;
+  const arPath = getArPathForEnPath(path);
   return buildMetadata({
     title:
       route.metaTitle ??
@@ -55,7 +58,8 @@ export async function generateMetadata({
     description:
       route.metaDescription ??
       `Book a private ${route.from} to ${route.to} taxi (${route.distance}, approx. ${route.duration}). Fixed price, professional driver, easy WhatsApp booking.`,
-    path: `/routes/${route.slug}`,
+    path,
+    ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });
 }
 

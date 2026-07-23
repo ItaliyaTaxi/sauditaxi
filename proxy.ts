@@ -2,9 +2,13 @@ import { NextResponse, type NextRequest } from "next/server";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 
 /**
- * Protects the admin CRM. Unauthenticated visitors to /admin/* are redirected
- * to the login page; unauthenticated calls to /api/admin/* get a 401.
- * /admin/login and the login API stay public.
+ * 1. Protects the admin CRM. Unauthenticated visitors to /admin/* are
+ *    redirected to the login page; unauthenticated calls to /api/admin/* get
+ *    a 401. /admin/login and the login API stay public.
+ * 2. Stamps every request with an `x-pathname` header so the root layout
+ *    (a Server Component, which otherwise has no way to read the current
+ *    path) can tell whether it's rendering an /ar/* page and set
+ *    `<html lang dir>` accordingly with zero client-side flash.
  *
  * Uses the `proxy` file convention (Next.js 16+), which defaults to the Node.js
  * runtime — required here because `@/lib/auth` (jose) is not bundled for Edge.
@@ -12,15 +16,25 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const headers = new Headers(request.headers);
+  headers.set("x-pathname", pathname);
+  const passThrough = () => NextResponse.next({ request: { headers } });
+
+  // Only /admin and /api/admin need the auth check below; everything else
+  // (including /ar/*) just gets the pathname header and continues.
+  if (!pathname.startsWith("/admin") && !pathname.startsWith("/api/admin")) {
+    return passThrough();
+  }
+
   // Public auth endpoints
   if (pathname === "/admin/login" || pathname === "/api/admin/login") {
-    return NextResponse.next();
+    return passThrough();
   }
 
   const token = request.cookies.get(SESSION_COOKIE)?.value;
   const session = await verifySessionToken(token);
 
-  if (session) return NextResponse.next();
+  if (session) return passThrough();
 
   if (pathname.startsWith("/api/admin")) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
@@ -32,5 +46,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon\\.ico|apple-icon\\.png|icon\\.svg|images/|robots\\.txt|sitemap\\.xml|manifest\\.webmanifest).*)",
+  ],
 };

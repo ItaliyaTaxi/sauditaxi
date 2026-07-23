@@ -13,6 +13,7 @@ import { BlogInlineCta } from "@/components/blog/BlogInlineCta";
 import { CTASection } from "@/components/sections/CTASection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { formatBlogDate } from "@/lib/format";
@@ -47,11 +48,14 @@ export async function generateMetadata({
   const description = blog.metaDescription || blog.excerpt || siteConfig.description;
   const image = blog.featuredImage || siteConfig.ogImage;
 
+  const blogPath = `/blog/${blog.slug}`;
+  const blogArPath = getArPathForEnPath(blogPath);
   const meta = buildMetadata({
     title,
     description,
-    path: `/blog/${blog.slug}`,
+    path: blogPath,
     image,
+    ...(blogArPath ? { alternateLanguages: { en: blogPath, ar: blogArPath } } : {}),
   });
 
   // Upgrade Open Graph to an article with publish/update times + keywords.

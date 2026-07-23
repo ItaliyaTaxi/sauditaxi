@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Send } from "lucide-react";
+import { getDictionary, localeFromPathname } from "@/lib/i18n";
 
 /**
  * Mobile-only sticky "Get a Quote" bar pinned to the bottom of the viewport.
@@ -13,6 +14,7 @@ import { Send } from "lucide-react";
 export function StickyMobileQuote() {
   const pathname = usePathname();
   if (pathname === "/get-quote") return null;
+  const dict = getDictionary(localeFromPathname(pathname));
 
   return (
     <>
@@ -27,7 +29,7 @@ export function StickyMobileQuote() {
           className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gold text-base font-semibold text-navy shadow-sm transition-colors hover:bg-gold-soft"
         >
           <Send className="size-5" />
-          Get a Quote
+          {dict.stickyQuote.label}
         </Link>
       </div>
     </>

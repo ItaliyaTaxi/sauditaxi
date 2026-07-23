@@ -18,6 +18,7 @@ import { pointTransfersForCity } from "@/lib/point-transfers";
 import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import {
   breadcrumbSchema,
   serviceSchema,
@@ -38,12 +39,15 @@ export async function generateMetadata({
   const { city: slug } = await params;
   const city = getCity(slug);
   if (!city) return {};
+  const path = `/taxi-service/${city.slug}`;
+  const arPath = getArPathForEnPath(path);
   return buildMetadata({
     title: city.metaTitle ?? `${city.name} Taxi Service | Airport & City Transfers`,
     description:
       city.metaDescription ??
       `Book reliable ${city.name} taxi service for airport pickups, hotel transfers, and intercity rides across Saudi Arabia.`,
-    path: `/taxi-service/${city.slug}`,
+    path,
+    ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });
 }
 
