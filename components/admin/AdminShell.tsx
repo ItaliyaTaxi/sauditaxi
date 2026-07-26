@@ -17,12 +17,14 @@ import {
   Menu,
   X,
   Car,
+  Receipt,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mainLinks = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Leads", href: "/admin/leads", icon: Inbox },
+  { label: "Invoices", href: "/admin/invoices", icon: Receipt },
 ];
 
 const statusLinks = [
@@ -133,7 +135,7 @@ export function AdminShell({
   return (
     <div className="flex min-h-screen">
       {/* Desktop sidebar */}
-      <aside className="hidden w-64 shrink-0 bg-neutral-950 lg:block">
+      <aside className="print:hidden hidden w-64 shrink-0 bg-neutral-950 lg:block">
         <div className="sticky top-0 h-screen">{sidebar}</div>
       </aside>
 
@@ -147,7 +149,7 @@ export function AdminShell({
 
       {/* Main */}
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3 lg:hidden">
+        <header className="print:hidden flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3 lg:hidden">
           <span className="font-bold text-neutral-900">
             Saudi Private Transfers <span className="text-gold">CRM</span>
           </span>

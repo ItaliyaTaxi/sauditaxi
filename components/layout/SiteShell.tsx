@@ -4,8 +4,9 @@ import { usePathname } from "next/navigation";
 
 /**
  * Renders the public site chrome (header, footer, sticky WhatsApp, global
- * JSON-LD) around the page — except on /admin routes, which use their own
- * dashboard layout. The chrome nodes are passed in as props so they stay
+ * JSON-LD) around the page — except on /admin routes (their own dashboard
+ * layout) and /invoice routes (bare client-facing documents, styled for
+ * print). The chrome nodes are passed in as props so they stay
  * server-rendered.
  */
 export function SiteShell({
@@ -22,9 +23,10 @@ export function SiteShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isAdmin = pathname?.startsWith("/admin") ?? false;
+  const isBareRoute =
+    pathname?.startsWith("/admin") || pathname?.startsWith("/invoice") || false;
 
-  if (isAdmin) return <>{children}</>;
+  if (isBareRoute) return <>{children}</>;
 
   return (
     <>

@@ -235,15 +235,32 @@ body {
 .blog-prose h2 + p { margin-top: 0.5rem; }
 
 /* ── RTL (Arabic) support ────────────────────────────────────────────────
-   Native Arabic pages set dir="rtl" on <html> (see app/layout.tsx). Most of
-   the site already uses flexbox/grid + gap, which flips correctly for free
-   under RTL; the handful of components with true physical-direction styles
-   (icons, floating buttons, dropdown indents) carry their own rtl: overrides
-   inline. This block covers the couple of cases that are easier to handle
-   globally than per-component. */
+   Native Arabic pages set dir="rtl" on <html> (see app/ar/layout.tsx). Most
+   of the site already uses flexbox/grid + gap, which flips correctly for
+   free under RTL; the handful of components with true physical-direction
+   styles (icons, floating buttons, dropdown indents) carry their own rtl:
+   overrides inline. This block covers the couple of cases that are easier to
+   handle globally than per-component. */
 [dir="rtl"] .blog-prose {
   text-align: right;
 }
 html[dir="rtl"] body {
   font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Print (invoices) ────────────────────────────────────────────────────
+   The invoice's "PDF" is just the browser's print/save-as-PDF output, styled
+   here rather than pulling in a PDF-generation library. .invoice-print-page
+   is the InvoiceDocument's outer wrapper (components/invoice/InvoiceDocument.tsx);
+   print:hidden (Tailwind's built-in print variant) hides everything else —
+   admin sidebar, action buttons, public site header/footer. */
+@media print {
+  @page {
+    margin: 12mm;
+    size: A4;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+  }
 }

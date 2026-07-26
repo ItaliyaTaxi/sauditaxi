@@ -665,7 +665,6 @@ export const arPages: ArPage[] = [
     ],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "المدونة", path: "/ar/المدونة" },
       { name: "دليل جدة إلى مكة", path: "/ar/دليل-تاكسي-من-مطار-جدة-الى-مكة" },
     ],
   },

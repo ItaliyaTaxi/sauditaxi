@@ -1,34 +1,19 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Receipt } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/admin/StatusBadge";
 import { LeadStatusSelect } from "@/components/admin/LeadStatusSelect";
 import { DeleteLeadButton } from "@/components/admin/DeleteLeadButton";
 import { EmailClientForm } from "@/components/admin/EmailClientForm";
 import { WhatsAppLeadButtons } from "@/components/admin/WhatsAppLeadButtons";
 import { AdminNotice } from "@/components/admin/AdminNotice";
+import { Panel } from "@/components/admin/Panel";
+import { Field } from "@/components/admin/Field";
 import { isSupabaseConfigured } from "@/lib/supabase";
 import { getLead, type Lead } from "@/lib/leads";
 
 export const dynamic = "force-dynamic";
-
-function Field({ label, value }: { label: string; value: string | null }) {
-  return (
-    <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-neutral-400">{label}</dt>
-      <dd className="mt-0.5 text-sm text-neutral-900">{value || "—"}</dd>
-    </div>
-  );
-}
-
-function Panel({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-5">
-      <h2 className="text-sm font-semibold text-neutral-900">{title}</h2>
-      <div className="mt-4">{children}</div>
-    </div>
-  );
-}
 
 export default async function LeadDetailPage({
   params,
@@ -69,6 +54,11 @@ export default async function LeadDetailPage({
         <div className="flex items-center gap-3">
           <StatusBadge status={lead.status} />
           <LeadStatusSelect leadId={lead.id} status={lead.status} />
+          <Button asChild variant="gold" size="sm">
+            <Link href={`/admin/invoices/new?leadId=${lead.id}`}>
+              <Receipt className="size-4" /> Create Invoice
+            </Link>
+          </Button>
         </div>
       </div>
 

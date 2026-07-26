@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import type { Lead } from "@/lib/leads";
+import type { Invoice } from "@/lib/invoices";
 import { siteConfig } from "@/lib/site";
 
 export function isEmailConfigured(): boolean {
@@ -84,30 +85,63 @@ function detailRows(lead: Lead, { includeSource = true }: { includeSource?: bool
     .filter(([, v]) => v)
     .map(
       ([k, v]) =>
-        `<tr><td style="padding:6px 12px;color:#666;white-space:nowrap;vertical-align:top">${esc(
+        `<tr><td class="detail-label" style="padding:6px 12px;color:#666;vertical-align:top;width:38%">${esc(
           k
-        )}</td><td style="padding:6px 12px;color:#111;font-weight:600">${esc(v)}</td></tr>`
+        )}</td><td style="padding:6px 12px;color:#111;font-weight:600;word-break:break-word">${esc(v)}</td></tr>`
     )
     .join("");
 }
 
+// Full HTML document (not a fragment): mobile mail clients without a
+// viewport meta tag render emails at a desktop-width viewport (~980px) and
+// scale it down, forcing pinch-zoom. The fluid table + media query below
+// keep the layout — and the two-column detail table specifically — usable
+// down to narrow phone widths.
 function shell(title: string, bodyHtml: string): string {
-  return `<div style="font-family:Arial,Helvetica,sans-serif;background:#f5f5f4;padding:24px">
-    <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e5e4">
-      <div style="background:#0a0a0a;padding:20px 24px">
-        <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
-          siteConfig.shortName
-        )}<span style="color:#f5b820">.</span></span>
-      </div>
-      <div style="padding:24px">
-        <h1 style="margin:0 0 12px;font-size:20px;color:#0a0a0a">${esc(title)}</h1>
-        ${bodyHtml}
-      </div>
-      <div style="padding:16px 24px;background:#f5f5f4;color:#777;font-size:12px">
-        ${esc(siteConfig.name)} · Taxi &amp; transfer service across Saudi Arabia
-      </div>
-    </div>
-  </div>`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(title)}</title>
+<style>
+  @media only screen and (max-width: 600px) {
+    .email-container { width: 100% !important; border-radius: 0 !important; }
+    .email-padding { padding: 16px !important; }
+    .detail-table td { display: block !important; width: 100% !important; padding: 4px 12px !important; }
+    .detail-label { color: #999 !important; font-size: 12px !important; text-transform: uppercase; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#f5f5f4;font-family:Arial,Helvetica,sans-serif">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f4;padding:24px 0">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e5e4">
+          <tr>
+            <td style="background:#0a0a0a;padding:20px 24px">
+              <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
+                siteConfig.shortName
+              )}<span style="color:#f5b820">.</span></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="email-padding" style="padding:24px">
+              <h1 style="margin:0 0 12px;font-size:20px;color:#0a0a0a">${esc(title)}</h1>
+              ${bodyHtml}
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 24px;background:#f5f5f4;color:#777;font-size:12px">
+              ${esc(siteConfig.name)} · Taxi &amp; transfer service across Saudi Arabia
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
 }
 
 export function adminLeadEmail(lead: Lead): { subject: string; html: string } {
@@ -117,7 +151,7 @@ export function adminLeadEmail(lead: Lead): { subject: string; html: string } {
     `<p style="color:#444;margin:0 0 16px">A new quote request was submitted on ${esc(
       submitted
     )}.</p>
-     <table style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead)}</table>`
+     <table class="detail-table" style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead)}</table>`
   );
   return { subject: "New Taxi Lead Received", html };
 }
@@ -127,7 +161,7 @@ export function clientLeadEmail(lead: Lead): { subject: string; html: string } {
     "We Received Your Taxi Quote Request",
     `<p style="color:#444;margin:0 0 16px">Thank you for contacting us. We have received your taxi/transfer request. Our team will review your trip details and contact you shortly with availability and pricing.</p>
      <p style="color:#444;margin:0 0 8px;font-weight:600">Your trip details:</p>
-     <table style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead, { includeSource: false })}</table>
+     <table class="detail-table" style="width:100%;border-collapse:collapse;font-size:14px">${detailRows(lead, { includeSource: false })}</table>
      <p style="color:#444;margin:16px 0 0">For the fastest response you can also message us on WhatsApp.</p>`
   );
   return { subject: "We Received Your Taxi Quote Request", html };
@@ -137,4 +171,30 @@ export function clientLeadEmail(lead: Lead): { subject: string; html: string } {
 export function customClientEmail(subject: string, message: string): string {
   const body = esc(message).replace(/\n/g, "<br/>");
   return shell(subject, `<div style="color:#333;font-size:14px;line-height:1.6">${body}</div>`);
+}
+
+export function invoiceReadyEmail(
+  invoice: Invoice,
+  viewUrl: string
+): { subject: string; html: string } {
+  const subject = `Your Invoice ${invoice.invoiceNumber} — ${siteConfig.name}`;
+  const html = shell(
+    "Your Invoice Is Ready",
+    `<p style="color:#444;margin:0 0 16px">
+       Please find your invoice <strong>${esc(invoice.invoiceNumber)}</strong> for
+       ${esc(invoice.totalAmount.toFixed(2))} ${esc(invoice.currency)} below. Click the
+       button to view the full invoice online — no login required.
+     </p>
+     <div style="text-align:center;margin:24px 0">
+       <a href="${esc(viewUrl)}"
+          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;
+                 padding:12px 28px;border-radius:9999px;text-decoration:none">
+         View Invoice
+       </a>
+     </div>
+     <p style="color:#777;font-size:12px;margin:16px 0 0">
+       Or copy this link: ${esc(viewUrl)}
+     </p>`
+  );
+  return { subject, html };
 }

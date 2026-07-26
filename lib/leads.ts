@@ -173,14 +173,14 @@ export async function getLeadStats(): Promise<LeadStats> {
 }
 
 export async function logEmail(input: {
-  leadId: string;
+  leadId?: string;
   subject: string;
   message: string;
   sentTo: string;
 }): Promise<void> {
   const supabase = getSupabaseAdmin();
   const { error } = await supabase.from("email_logs").insert({
-    lead_id: input.leadId,
+    lead_id: input.leadId ?? null,
     subject: input.subject,
     message: input.message,
     sent_to: input.sentTo,

@@ -152,8 +152,60 @@ create trigger blogs_set_updated_at
   before update on public.blogs
   for each row execute function public.set_updated_at();
 
+-- Invoices ------------------------------------------------------------------
+-- Client-facing invoices. May originate from a lead (auto-filled) or be
+-- created standalone for phone/walk-in bookings. Delivered via a public,
+-- unguessable link (public_token) — never via the sequential `id`. Client and
+-- trip fields are snapshotted at creation time (not a live join to `leads`)
+-- so an invoice stays intact and accurate even if its source lead is later
+-- edited or deleted.
+create table if not exists public.invoices (
+  id                uuid primary key default gen_random_uuid(),
+  invoice_number    text not null unique,
+  public_token      text not null unique default encode(gen_random_bytes(16), 'hex'),
+
+  lead_id           uuid references public.leads(id) on delete set null,
+
+  client_name       text,
+  client_phone      text,
+  client_email      text,
+
+  service_type      text,
+  pickup_location   text,
+  dropoff_location  text,
+  date              text,
+  time              text,
+
+  -- [{ description, vehicleType, passengers, luggage, amount }]
+  line_items        jsonb not null default '[]'::jsonb,
+
+  currency          text not null default 'SAR',
+  -- Kept in sync with sum(line_items[].amount) by the app layer on every
+  -- create/update unless the admin explicitly overrides it (e.g. a discount
+  -- not modeled as its own line item) — not a generated column, on purpose.
+  total_amount      numeric(12,2) not null default 0,
+
+  payment_status    text not null default 'Unpaid',
+  notes             text,
+  invoice_date      date not null default current_date,
+
+  created_at        timestamptz not null default now(),
+  updated_at        timestamptz not null default now()
+);
+
+create index if not exists invoices_created_at_idx     on public.invoices (created_at desc);
+create index if not exists invoices_lead_id_idx        on public.invoices (lead_id);
+create index if not exists invoices_public_token_idx   on public.invoices (public_token);
+create index if not exists invoices_payment_status_idx on public.invoices (payment_status);
+
+drop trigger if exists invoices_set_updated_at on public.invoices;
+create trigger invoices_set_updated_at
+  before update on public.invoices
+  for each row execute function public.set_updated_at();
+
 -- Lock everything down to the service role only -----------------------------
 alter table public.leads      enable row level security;
 alter table public.email_logs enable row level security;
 alter table public.admins     enable row level security;
 alter table public.blogs      enable row level security;
+alter table public.invoices   enable row level security;
