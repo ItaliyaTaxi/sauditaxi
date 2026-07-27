@@ -85,7 +85,14 @@ const raw: Omit<PointTransfer, "citySlug">[] = [
       { question: "Can we pray during the tour?", answer: "Yes. We plan the itinerary around prayer times so you can pray at appropriate points, and the driver adjusts the order of stops to help you avoid the busiest periods." },
       { question: "Is the price fixed and does it include waiting time?", answer: "Yes. You agree a fixed, all-in price before the tour that includes the driver's waiting time at each stop, with no meter and no surge pricing." },
     ],
-    relatedTransferSlugs: ["makkah-to-cave-of-hira", "makkah-to-jabal-thawr", "makkah-historical-sites-tour"],
+    relatedTransferSlugs: [
+      "makkah-to-cave-of-hira",
+      "makkah-to-jabal-thawr",
+      "makkah-historical-sites-tour",
+      "makkah-to-mina",
+      "makkah-to-muzdalifah",
+      "makkah-to-arafat",
+    ],
     relatedRouteSlugs: ["makkah-to-madinah", "jeddah-to-makkah"],
     keywords: [
       "makkah ziyarat tour",
@@ -342,6 +349,207 @@ const raw: Omit<PointTransfer, "citySlug">[] = [
       "makkah museum tour",
       "hudaybiyyah visit makkah",
       "makkah landmarks private tour",
+    ],
+  },
+  {
+    slug: "makkah-to-mina",
+    category: "attraction",
+    from: "Makkah",
+    to: "Mina",
+    h1: "Makkah to Mina Transfer",
+    metaTitle: "Makkah to Mina Transfer | Private Car with Driver",
+    metaDescription:
+      "Private transfer from your Makkah hotel to Mina, about 6 km east of the Haram. Waiting driver, fixed pricing, and comfortable vehicles for Hajj-season visits.",
+    intro:
+      "A private transfer from your Makkah hotel to Mina, the valley of white tents a short drive east of the Haram, central to the rites of Hajj — with a driver who waits while you visit.",
+    distance: "approx. 6 km east of the Haram",
+    duration: "1–2 hours with waiting (longer during Hajj)",
+    highlights: [
+      "Direct ride to Mina from your Makkah hotel",
+      "Driver waits or returns at a time you choose",
+      "Comfortable, air-conditioned vehicle for the short trip",
+      "Fixed pricing, with allowance for Hajj-season traffic",
+    ],
+    sections: [
+      {
+        heading: "Mina and its place in the Hajj",
+        paragraphs: [
+          "Mina is a valley a short distance east of Masjid al-Haram, known for the vast tent city that houses pilgrims during the days of Hajj and for the Jamarat, where the symbolic stoning ritual takes place. Outside the Hajj season, the valley is far quieter, and many visitors come to see the site and its significance for themselves.",
+          "The distance from central Makkah is about 6 kilometres, ordinarily a short drive, though during the Hajj period road access and pedestrian movement are tightly managed by the authorities, and travel times can be considerably longer. Our <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a> also includes Mina as part of a wider itinerary if you would like to see several Hajj sites in one outing.",
+        ],
+      },
+      {
+        heading: "Visiting outside the Hajj season",
+        paragraphs: [
+          "For most of the year, Mina is accessible by private car with none of the crowd management in place during Hajj, and a visit is straightforward and unhurried. Your driver can wait while you look around or bring you back at an agreed time.",
+          "During Hajj itself, access is heavily restricted to pilgrims performing the rites under official arrangements, and general sightseeing transfers are not appropriate at that time — we advise checking with us on current access before booking a visit close to the Hajj dates.",
+        ],
+      },
+      {
+        heading: "Comfort and vehicles",
+        paragraphs: [
+          "The transfer runs in a clean, air-conditioned vehicle sized to your group, from a sedan to a van for larger families. Given Makkah's heat, the short ride is a welcome contrast to time spent outdoors at the site.",
+          "Child seats are available on request, and we can advise on realistic timing for your visit when you book.",
+        ],
+      },
+      {
+        heading: "Booking your Mina transfer",
+        paragraphs: [
+          "Tell us your hotel, preferred timing, and whether you would like the driver to wait, and we confirm a fixed price before you travel. Booking takes a few minutes over WhatsApp through our <a href='/get-quote'>get a quote</a> page.",
+          "Many visitors combine Mina with <a href='/makkah/makkah-to-muzdalifah'>Muzdalifah</a> and <a href='/makkah/makkah-to-arafat'>Arafat</a> on the same outing, or as part of our broader <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a>.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How far is Mina from Makkah hotels?", answer: "Mina is about 6 kilometres east of the Haram, ordinarily a short drive by private car outside the Hajj period." },
+      { question: "Can I visit Mina at any time of year?", answer: "Outside the Hajj season, yes — the valley is accessible and a visit is straightforward. During Hajj itself, access is restricted to pilgrims performing the rites, so general sightseeing is not appropriate then." },
+      { question: "Will the driver wait for me at Mina?", answer: "Yes, if you would like. Tell us your plans when booking and we will either wait or return at an agreed time." },
+      { question: "Is Mina included in the Makkah Ziyarat tour?", answer: "Yes. Our combined Makkah Ziyarat tour visits Mina alongside Arafat, Muzdalifah, and other historic sites in one itinerary, if you would prefer to see several places together." },
+      { question: "Is the transfer suitable for families?", answer: "Yes. We provide air-conditioned sedans, SUVs, and vans sized to your group, with child seats available on request." },
+      { question: "Is the price fixed?", answer: "Yes. The fare is agreed before you travel, with allowance made for any Hajj-season traffic restrictions, and does not change once confirmed." },
+    ],
+    relatedTransferSlugs: ["makkah-to-muzdalifah", "makkah-to-arafat", "makkah-ziyarat-tour"],
+    relatedRouteSlugs: ["jeddah-to-makkah"],
+    keywords: [
+      "makkah to mina taxi",
+      "mina transfer makkah",
+      "mina private car",
+      "mina hajj transport",
+      "makkah mina taxi service",
+    ],
+  },
+  {
+    slug: "makkah-to-muzdalifah",
+    category: "attraction",
+    from: "Makkah",
+    to: "Muzdalifah",
+    h1: "Makkah to Muzdalifah Transfer",
+    metaTitle: "Makkah to Muzdalifah Transfer | Private Car with Driver",
+    metaDescription:
+      "Private transfer from your Makkah hotel to Muzdalifah, the open plain between Mina and Arafat. Waiting driver, fixed pricing, comfortable vehicles.",
+    intro:
+      "A private transfer from your Makkah hotel to Muzdalifah, the open plain between Mina and Arafat where pilgrims gather overnight during Hajj — with a driver who waits while you visit.",
+    distance: "approx. 9 km east of the Haram",
+    duration: "1–2 hours with waiting (longer during Hajj)",
+    highlights: [
+      "Direct ride to Muzdalifah from your Makkah hotel",
+      "Driver waits or returns at a time you choose",
+      "Comfortable, air-conditioned vehicle for the short trip",
+      "Fixed pricing, with allowance for Hajj-season traffic",
+    ],
+    sections: [
+      {
+        heading: "Muzdalifah and its place in the Hajj",
+        paragraphs: [
+          "Muzdalifah is an open plain lying between Mina and Arafat, about 9 kilometres from the Haram. During Hajj, pilgrims travel here after the Day of Arafah to spend the night in the open, and it is where many gather pebbles for the stoning ritual carried out at Mina.",
+          "Outside the Hajj period, Muzdalifah is a quiet, largely open site, and a private transfer is a simple way to see the plain and understand its place in the wider Hajj journey. Our <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a> covers Muzdalifah alongside Mina and Arafat for visitors who want a fuller picture of the Hajj sites.",
+        ],
+      },
+      {
+        heading: "Visiting outside the Hajj season",
+        paragraphs: [
+          "For most of the year, Muzdalifah is easily reached by private car and a visit is unhurried, with your driver waiting or returning at a time that suits you. There is little formal infrastructure at the site itself, since its significance is tied specifically to the days of Hajj.",
+          "As with the other Hajj sites, access during Hajj itself is managed for pilgrims performing the rites, and general sightseeing transfers are not suitable during that period — ask us about current access if your visit falls close to the Hajj dates.",
+        ],
+      },
+      {
+        heading: "Comfort and vehicles",
+        paragraphs: [
+          "We provide a clean, air-conditioned vehicle matched to your group, from a sedan to a van for larger parties, so the short desert-plain drive stays comfortable regardless of the heat outside.",
+          "Child seats are available on request, and we can advise on realistic timing when you book.",
+        ],
+      },
+      {
+        heading: "Booking your Muzdalifah transfer",
+        paragraphs: [
+          "Share your hotel and preferred timing, and we confirm a fixed price before you travel. Booking is quick over WhatsApp through our <a href='/get-quote'>get a quote</a> page.",
+          "Muzdalifah pairs naturally with <a href='/makkah/makkah-to-mina'>Mina</a> and <a href='/makkah/makkah-to-arafat'>Arafat</a> on the same trip, or as part of our combined <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a>.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How far is Muzdalifah from Makkah?", answer: "Muzdalifah is about 9 kilometres from the Haram, lying between Mina and Arafat, and is a short drive by private car outside the Hajj period." },
+      { question: "What happens at Muzdalifah during Hajj?", answer: "Pilgrims travel there after the Day of Arafah to spend the night in the open and gather pebbles used in the stoning ritual at Mina. Outside Hajj, the site is quiet and open to visit." },
+      { question: "Can I visit Muzdalifah year-round?", answer: "Outside the Hajj period, yes. During Hajj itself, access is managed for pilgrims performing the rites, so we advise checking current access if your visit is close to the Hajj dates." },
+      { question: "Is Muzdalifah included in the Ziyarat tour?", answer: "Yes. Our Makkah Ziyarat tour includes Muzdalifah along with Mina, Arafat, and other historic sites for visitors who want to see several places together." },
+      { question: "Will the driver wait at the site?", answer: "Yes, if you would like. Tell us your plans when booking and we will wait or return at an agreed time." },
+      { question: "Is the price fixed?", answer: "Yes. The fare is agreed before travel and does not change, with allowance made for any Hajj-season access restrictions." },
+    ],
+    relatedTransferSlugs: ["makkah-to-mina", "makkah-to-arafat", "makkah-ziyarat-tour"],
+    relatedRouteSlugs: ["jeddah-to-makkah"],
+    keywords: [
+      "makkah to muzdalifah taxi",
+      "muzdalifah transfer",
+      "muzdalifah private car",
+      "muzdalifah hajj transport",
+      "makkah muzdalifah taxi service",
+    ],
+  },
+  {
+    slug: "makkah-to-arafat",
+    category: "attraction",
+    from: "Makkah",
+    to: "Arafat",
+    h1: "Makkah to Arafat (Jabal al-Rahmah) Transfer",
+    metaTitle: "Makkah to Arafat Transfer | Jabal al-Rahmah Private Car",
+    metaDescription:
+      "Private transfer from your Makkah hotel to Arafat and Jabal al-Rahmah, about 20 km southeast of the Haram. Waiting driver, fixed pricing, comfortable vehicles.",
+    intro:
+      "A private transfer from your Makkah hotel to the plain of Arafat and Jabal al-Rahmah, the Mount of Mercy, central to the Day of Arafah during Hajj — with a driver who waits while you visit.",
+    distance: "approx. 20 km southeast of the Haram",
+    duration: "2–3 hours with waiting (longer during Hajj)",
+    highlights: [
+      "Direct ride to Arafat and Jabal al-Rahmah",
+      "Driver waits or returns at a time you choose",
+      "Comfortable, air-conditioned vehicle for the longer drive",
+      "Fixed pricing, with allowance for Hajj-season traffic",
+    ],
+    sections: [
+      {
+        heading: "Arafat and Jabal al-Rahmah",
+        paragraphs: [
+          "The plain of Arafat lies about 20 kilometres southeast of the Haram, and standing here on the Day of Arafah is a central rite of the Hajj. The most recognised landmark on the plain is Jabal al-Rahmah, the Mount of Mercy, a modest hill that pilgrims and visitors climb for its view over the surrounding plain.",
+          "Outside the Hajj season, Arafat is quiet and straightforward to visit by private car, with the drive taking a little longer than the closer sites of Mina and Muzdalifah. Our <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a> includes Arafat alongside the other Hajj sites in one flexible itinerary.",
+        ],
+      },
+      {
+        heading: "Visiting outside the Hajj season",
+        paragraphs: [
+          "For most of the year, the plain and Jabal al-Rahmah are open and accessible, and a private transfer lets you take the time to walk the hill and take in the surroundings without the crowds of the Hajj period. Comfortable footwear is worth bringing if you plan to climb the mount, as the ground is uneven.",
+          "During Hajj itself, Arafat is reserved for pilgrims performing the standing rite, and general sightseeing is not appropriate then — we advise checking current access with us if your visit falls near the Hajj dates.",
+        ],
+      },
+      {
+        heading: "Comfort for the longer drive",
+        paragraphs: [
+          "At around 20 kilometres each way, this is one of the longer point-to-point Ziyarat transfers, so we use a comfortable, air-conditioned vehicle matched to your group size, from a sedan to a van for larger families.",
+          "Child seats are available on request, and if anyone in your group has mobility needs, let us know so we can plan accordingly around the uneven ground near Jabal al-Rahmah.",
+        ],
+      },
+      {
+        heading: "Booking your Arafat transfer",
+        paragraphs: [
+          "Share your hotel, group size, and preferred timing, and we confirm a fixed price with waiting time included. Booking takes a few minutes over WhatsApp through our <a href='/get-quote'>get a quote</a> page.",
+          "Arafat is often combined with <a href='/makkah/makkah-to-mina'>Mina</a> and <a href='/makkah/makkah-to-muzdalifah'>Muzdalifah</a> on the same outing, following the route of the Hajj, or arranged as part of our <a href='/makkah/makkah-ziyarat-tour'>Makkah Ziyarat tour</a>.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How far is Arafat from Makkah?", answer: "The plain of Arafat is about 20 kilometres southeast of the Haram, making it one of the longer Ziyarat transfers, at around two to three hours including time at the site." },
+      { question: "What is Jabal al-Rahmah?", answer: "Jabal al-Rahmah, the Mount of Mercy, is the best-known landmark on the plain of Arafat, a modest hill that pilgrims and visitors climb for its view, central to the Day of Arafah during Hajj." },
+      { question: "Can I visit Arafat outside the Hajj season?", answer: "Yes. Outside Hajj, the plain and Jabal al-Rahmah are open and quiet to visit. During Hajj itself, the site is reserved for pilgrims performing the standing rite." },
+      { question: "Do I need to climb Jabal al-Rahmah?", answer: "No, it is optional. The hill is modest in height but the ground is uneven, so comfortable footwear helps if you do climb." },
+      { question: "Can I combine Arafat with Mina and Muzdalifah?", answer: "Yes. Many visitors see all three sites in one outing, following the route of the Hajj, or through our combined Makkah Ziyarat tour." },
+      { question: "Is the price fixed?", answer: "Yes. The fare is agreed before travel and includes waiting time at the site, with allowance made for any Hajj-season access restrictions." },
+    ],
+    relatedTransferSlugs: ["makkah-to-mina", "makkah-to-muzdalifah", "makkah-ziyarat-tour"],
+    relatedRouteSlugs: ["jeddah-to-makkah"],
+    keywords: [
+      "makkah to arafat taxi",
+      "arafat transfer makkah",
+      "jabal al-rahmah taxi",
+      "mount of mercy transfer",
+      "arafat private car makkah",
     ],
   },
 ];

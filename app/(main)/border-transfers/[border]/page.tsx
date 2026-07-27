@@ -17,6 +17,7 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { borders, getBorder } from "@/data/borders";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
 type Params = { border: string };
@@ -33,6 +34,8 @@ export async function generateMetadata({
   const { border: slug } = await params;
   const border = getBorder(slug);
   if (!border) return {};
+  const path = `/border-transfers/${border.slug}`;
+  const arPath = getArPathForEnPath(path);
   return buildMetadata({
     title:
       border.metaTitle ??
@@ -40,7 +43,8 @@ export async function generateMetadata({
     description:
       border.metaDescription ??
       `Private taxi transfer from Saudi Arabia to the ${border.country} border via ${border.crossing}. Door-to-door cross-border rides with WhatsApp booking.`,
-    path: `/border-transfers/${border.slug}`,
+    path,
+    ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });
 }
 

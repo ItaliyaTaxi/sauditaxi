@@ -19,6 +19,7 @@ import { hotelsForCity } from "@/data/hotels";
 import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
+import { getArPathForEnPath } from "@/data/translations/ar";
 import {
   breadcrumbSchema,
   serviceSchema,
@@ -49,10 +50,13 @@ export async function generateMetadata({
   if (!city) return {};
   const airport = city.nearestAirportSlug ? getAirport(city.nearestAirportSlug) : undefined;
   const aName = airport ? airportTransferName(airport) : `${city.name} Airport`;
+  const path = `/cities/${city.slug}`;
+  const arPath = getArPathForEnPath(path);
   return buildMetadata({
     title: `${city.name} Airport Transfers | Hotel Taxi from ${aName}`,
     description: `Private ${city.name} airport transfers between ${aName} and every major 3, 4 & 5-star hotel. Fixed prices, meet & greet, flight tracking, and 24/7 booking.`,
-    path: `/cities/${city.slug}`,
+    path,
+    ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });
 }
 

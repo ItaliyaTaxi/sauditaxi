@@ -25,7 +25,6 @@ import { HotelTransferGrid } from "@/components/sections/HotelTransferGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes } from "@/data/routes";
-import type { Faq } from "@/data/faqs";
 import { cityHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
 import { getArPathForEnPath } from "@/data/translations/ar";
@@ -38,7 +37,9 @@ import {
   hotelTransfers,
   getHotelTransfer,
   transfersForCity,
-  type HotelTransfer,
+  transferIntro,
+  transferAbout,
+  routeFaqs,
 } from "@/lib/hotel-transfers";
 import { pointTransfers, getPointTransfer } from "@/lib/point-transfers";
 import { PointTransferView } from "@/components/templates/PointTransferView";
@@ -112,64 +113,6 @@ const features = [
   },
 ];
 
-function transferIntro(t: HotelTransfer): string {
-  if (t.direction === "airport-to-hotel") {
-    return `A private ${t.from} to ${t.to} taxi — a direct, fixed-price transfer from ${t.airport.name} (${t.airport.code}) arrivals straight to ${t.hotel.name} in ${t.hotel.area}.`;
-  }
-  return `A private ${t.from} to ${t.to} taxi — a punctual, fixed-price departure transfer from ${t.hotel.name} in ${t.hotel.area} to ${t.airport.name} (${t.airport.code}), timed to your flight.`;
-}
-
-function transferAbout(t: HotelTransfer): string {
-  const dist = `The drive covers about ${t.distance} and takes approximately ${t.duration}, depending on traffic.`;
-  if (t.direction === "airport-to-hotel") {
-    return `After you land at ${t.airport.name}, your chauffeur meets you in the arrivals hall, helps with your bags, and drives you directly to ${t.hotel.name} — no queues, no shared rides, and no surge pricing. ${dist} ${t.hotel.blurb}`;
-  }
-  return `We collect you from the lobby of ${t.hotel.name} at your chosen time and drive you directly to ${t.airport.name} for your departure, with plenty of buffer for check-in. ${dist} ${t.hotel.blurb}`;
-}
-
-function routeFaqs(t: HotelTransfer): Faq[] {
-  const common: Faq[] = [
-    {
-      question: `How do I book the ${t.from} to ${t.to} taxi?`,
-      answer: `Send your date, time${
-        t.direction === "airport-to-hotel" ? ", and flight number" : ""
-      } through WhatsApp or the quote form. We reply with a fixed price for the private ${t.from} to ${t.to} transfer.`,
-    },
-    {
-      question: `How long is the transfer and how far is it?`,
-      answer: `The ${t.from} to ${t.to} transfer is about ${t.distance} and takes approximately ${t.duration}, depending on traffic and time of day.`,
-    },
-  ];
-
-  const directional: Faq =
-    t.direction === "airport-to-hotel"
-      ? {
-          question: `Where will the driver meet me at ${t.airport.name}?`,
-          answer: `Your driver waits in the arrivals hall at ${t.airport.name} (${t.airport.code}) holding a name board, then helps with your luggage to the vehicle.`,
-        }
-      : {
-          question: `When should I be ready for pickup from ${t.hotel.name}?`,
-          answer: `We recommend leaving ${t.hotel.name} with enough time for check-in at ${t.airport.name}. Tell us your flight time and we'll advise the ideal pickup and confirm it with you.`,
-        };
-
-  return [
-    ...common,
-    directional,
-    {
-      question: `What if my flight is delayed?`,
-      answer: `We monitor your flight and adjust the schedule automatically, with free waiting time included, so a change in your arrival never costs you the transfer.`,
-    },
-    {
-      question: `Which vehicles are available for this transfer?`,
-      answer: `You can choose economy, comfort, business, SUV, van, or minibus depending on your group size and luggage — ideal for families and travellers with bags.`,
-    },
-    {
-      question: `Can I book the return trip too?`,
-      answer: `Yes. We also run the reverse ${t.to} to ${t.from} transfer — book both directions in one message and we'll confirm a fixed price for each.`,
-    },
-  ];
-}
-
 export default async function HotelTransferPage({
   params,
 }: {
@@ -191,7 +134,7 @@ export default async function HotelTransferPage({
     { name: `${t.from} → ${t.to}`, path: t.path },
   ];
 
-  const faqs = routeFaqs(t).slice(0, 6);
+  const faqs = routeFaqs(t);
 
   const pickup =
     t.fromType === "airport"
@@ -294,7 +237,16 @@ export default async function HotelTransferPage({
                   )}
                   Pickup location
                 </h3>
-                <p className="mt-2 text-sm font-medium text-navy">{pickup.label}</p>
+                {t.fromType === "airport" ? (
+                  <Link
+                    href={`/airport-transfer/${t.airport.slug}`}
+                    className="mt-2 inline-block text-sm font-medium text-navy underline decoration-dotted hover:text-gold"
+                  >
+                    {pickup.label}
+                  </Link>
+                ) : (
+                  <p className="mt-2 text-sm font-medium text-navy">{pickup.label}</p>
+                )}
                 <p className="mt-1 text-sm text-muted-foreground">{pickup.detail}</p>
               </div>
               <div className="rounded-xl border border-border bg-muted/40 p-5">
@@ -306,7 +258,16 @@ export default async function HotelTransferPage({
                   )}
                   Drop-off location
                 </h3>
-                <p className="mt-2 text-sm font-medium text-navy">{dropoff.label}</p>
+                {t.toType === "airport" ? (
+                  <Link
+                    href={`/airport-transfer/${t.airport.slug}`}
+                    className="mt-2 inline-block text-sm font-medium text-navy underline decoration-dotted hover:text-gold"
+                  >
+                    {dropoff.label}
+                  </Link>
+                ) : (
+                  <p className="mt-2 text-sm font-medium text-navy">{dropoff.label}</p>
+                )}
                 <p className="mt-1 text-sm text-muted-foreground">{dropoff.detail}</p>
               </div>
             </div>
@@ -427,9 +388,10 @@ export default async function HotelTransferPage({
         />
       )}
 
-      {/* Link back to the city hub */}
+      {/* Link back to the city hub, city taxi service, airport page, and — for
+          the two pilgrim cities — the Umrah/Ziyarat hubs. */}
       <section className="bg-muted py-10">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3 px-4 sm:px-6 lg:px-8">
           <Link
             href={hubPath}
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
@@ -437,6 +399,38 @@ export default async function HotelTransferPage({
             See all {t.cityName} airport transfers
             <ArrowRight className="size-4 text-gold" />
           </Link>
+          <Link
+            href={`/taxi-service/${t.citySlug}`}
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
+          >
+            {t.cityName} taxi service
+            <ArrowRight className="size-4 text-gold" />
+          </Link>
+          <Link
+            href={`/airport-transfer/${t.airport.slug}`}
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
+          >
+            {t.airport.name} overview
+            <ArrowRight className="size-4 text-gold" />
+          </Link>
+          {(t.citySlug === "makkah" || t.citySlug === "madinah") && (
+            <>
+              <Link
+                href="/umrah-taxi-service"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
+              >
+                Umrah taxi service
+                <ArrowRight className="size-4 text-gold" />
+              </Link>
+              <Link
+                href="/ziyarat-taxi-service"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-gold"
+              >
+                Ziyarat taxi service
+                <ArrowRight className="size-4 text-gold" />
+              </Link>
+            </>
+          )}
         </div>
       </section>
 

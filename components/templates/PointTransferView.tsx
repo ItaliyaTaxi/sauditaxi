@@ -190,6 +190,22 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
               >
                 {cityName} airport transfers <ArrowRight className="size-4 text-gold" />
               </Link>
+              {(t.citySlug === "makkah" || t.citySlug === "madinah") && (
+                <>
+                  <Link
+                    href="/umrah-taxi-service"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
+                  >
+                    Umrah taxi service <ArrowRight className="size-4 text-gold" />
+                  </Link>
+                  <Link
+                    href="/ziyarat-taxi-service"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
+                  >
+                    Ziyarat taxi service <ArrowRight className="size-4 text-gold" />
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </section>

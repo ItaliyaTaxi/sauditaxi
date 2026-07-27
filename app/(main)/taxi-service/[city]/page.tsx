@@ -21,6 +21,7 @@ import { buildMetadata } from "@/lib/seo";
 import { getArPathForEnPath } from "@/data/translations/ar";
 import {
   breadcrumbSchema,
+  faqSchema,
   serviceSchema,
   taxiServiceSchema,
 } from "@/lib/schema";
@@ -112,6 +113,7 @@ export default async function CityPage({
             serviceType: "City Taxi Service",
             areaServed: `${city.name}, Saudi Arabia`,
           }),
+          faqSchema(faqs),
         ]}
       />
 

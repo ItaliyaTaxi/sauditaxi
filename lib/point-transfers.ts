@@ -12,6 +12,7 @@ import { makkahAttractions } from "@/data/makkah/attractions";
 import { makkahServices } from "@/data/makkah/services";
 import { dammamAttractions } from "@/data/dammam/attractions";
 import { dammamPort } from "@/data/dammam/port";
+import { madinahAttractions } from "@/data/madinah/attractions";
 
 export type { PointTransfer } from "@/data/jeddah/types";
 
@@ -23,6 +24,7 @@ export const pointTransfers: PointTransfer[] = [
   ...makkahServices,
   ...dammamAttractions,
   ...dammamPort,
+  ...madinahAttractions,
 ];
 
 const map: Record<string, PointTransfer> = Object.fromEntries(

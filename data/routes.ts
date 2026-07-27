@@ -3487,6 +3487,128 @@ const baseRoutes: Route[] = [
     ],
     keywords: ["amman to madinah taxi", "amman to madinah by car", "jordan to madinah cross border car", "amman to madinah road trip", "amman to madinah private transfer"],
   },
+  {
+    slug: "jeddah-airport-to-madinah",
+    from: "Jeddah Airport",
+    to: "Madinah",
+    category: "airport",
+    distance: "~420 km",
+    duration: "4 hours",
+    intro:
+      "A private long-distance transfer from Jeddah Airport directly to Madinah, for pilgrims who begin their journey at the Prophet's Mosque before continuing to Makkah.",
+    about:
+      "Some pilgrims fly into Jeddah but travel to Madinah first. Our private Jeddah Airport to Madinah transfer meets you at arrivals and drives you directly to your Madinah hotel near the Haram, with rest-stop flexibility for the long highway journey.",
+    notes: [
+      "Meet-and-greet pickup at the Hajj Terminal or Terminal 1",
+      "Rest-stop flexibility on the 420 km journey",
+      "Direct drop-off at Madinah hotels near the Haram",
+      "Comfortable vehicles, fixed price, 24/7 availability",
+    ],
+    relatedCitySlugs: ["madinah", "jeddah"],
+    metaTitle: "Jeddah Airport to Madinah Taxi | Private Long-Distance Transfer",
+    metaDescription:
+      "Private Jeddah Airport (JED) to Madinah taxi (about 420 km). Meet and greet, rest stops, fixed prices, and door-to-door service to your Haram hotel, 24/7.",
+    sections: [
+      {
+        heading: "Jeddah Airport to Madinah: route overview",
+        paragraphs: [
+          "Some pilgrims choose to visit the Prophet's Mosque in Madinah before beginning Umrah in Makkah, which means the journey from Jeddah Airport is a longer one — around 420 kilometres, taking roughly four hours along the highway north. A private transfer is a comfortable way to cover this distance, with a driver who knows the route and can plan proper rest stops along the way.",
+          "We meet you at arrivals — the Hajj Terminal during pilgrimage season or Terminal 1 the rest of the year — help with your luggage, and set off directly for Madinah. Our <a href='/umrah-taxi-service'>Umrah taxi service</a> covers the wider pilgrim journey between the airport and both Holy Cities, and our <a href='/airport-transfer/jeddah-airport'>Jeddah airport transfers</a> page has more on arrivals at JED.",
+        ],
+      },
+      {
+        heading: "A comfortable long-distance drive",
+        paragraphs: [
+          "Four hours is a meaningful drive after a long flight, so we plan the journey with your comfort in mind — a well-maintained vehicle, air conditioning, and rest stops for prayer and refreshments as needed, particularly useful for families and elderly pilgrims. Because the fare is fixed before you travel, an extra stop or heavier traffic never changes what you pay.",
+          "For pilgrims who prefer to fly the shorter Jeddah to Madinah leg instead, or who arrive at Madinah's own airport, our <a href='/taxi-service/madinah'>Madinah taxi service</a> and <a href='/airport-transfer/madinah-airport'>Madinah airport transfers</a> page cover those alternatives.",
+        ],
+      },
+      {
+        heading: "Arriving at the Prophet's Mosque",
+        paragraphs: [
+          "We drop you directly at your Madinah hotel, with many properties only a short walk from Masjid an-Nabawi itself. From there, our <a href='/ziyarat-taxi-service'>Ziyarat taxi service</a> can arrange visits to Quba Mosque, Mount Uhud, and the other historic sites in and around Madinah once you have settled in.",
+          "When you are ready to continue to Makkah, our <a href='/routes/madinah-to-makkah'>Madinah to Makkah</a> transfer covers the onward journey, including a miqat stop for entering ihram if you have not already done so.",
+        ],
+      },
+      {
+        heading: "Booking your Jeddah Airport to Madinah transfer",
+        paragraphs: [
+          "Booking takes a few minutes: share your flight number, arrival terminal, and Madinah hotel name, and we confirm your vehicle and a fixed, all-in price before you travel. We track your flight and operate 24/7, so late-night and early-morning arrivals are no problem.",
+          "Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and we will confirm the details ahead of your trip. Whether you are travelling alone, as a family, or in a larger group, we make the long journey from Jeddah Airport to Madinah as comfortable as possible.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the Jeddah Airport to Madinah transfer take?", answer: "The drive is about 420 kilometres and usually takes around four hours, depending on traffic and rest stops. We plan the journey with your comfort in mind rather than rushing it." },
+      { question: "Will the driver meet me at the Hajj Terminal?", answer: "Yes. During pilgrimage season we meet you at the dedicated Hajj Terminal, and at Terminal 1 the rest of the year, with a name board and flight tracking so timing matches your actual landing." },
+      { question: "Are rest stops included on the way to Madinah?", answer: "Yes. Given the distance, we build in rest-stop flexibility for prayer and refreshments, particularly for families and elderly pilgrims, at no extra cost to the fixed price." },
+      { question: "Can you drop me close to the Prophet's Mosque?", answer: "Yes. We drive you directly to your Madinah hotel, and many of the hotels we serve are within easy walking distance of Masjid an-Nabawi." },
+      { question: "Can I continue to Makkah afterwards?", answer: "Yes. Our separate Madinah to Makkah transfer covers the onward journey, including a stop at the miqat for pilgrims who have not yet entered ihram." },
+      { question: "Is the price fixed for such a long journey?", answer: "Yes. The fare is agreed before you travel with no meter and no surge, so traffic or an extra rest stop never changes what you pay." },
+    ],
+    keywords: ["jeddah airport to madinah taxi", "jeddah airport to madinah transfer", "jed to madinah private car", "jeddah airport madinah umrah taxi", "hajj terminal to madinah taxi"],
+  },
+  {
+    slug: "madinah-to-jeddah-airport",
+    from: "Madinah",
+    to: "Jeddah Airport",
+    category: "airport",
+    distance: "~420 km",
+    duration: "4 hours",
+    intro:
+      "A private long-distance transfer from your Madinah hotel to Jeddah Airport, for pilgrims flying home after visiting the Prophet's Mosque.",
+    about:
+      "After visiting Masjid an-Nabawi, many pilgrims fly home from Jeddah rather than Madinah's own airport, especially when their return flight only departs from JED. We collect you from your Madinah hotel and drive you directly to the terminal, with rest-stop flexibility for the long journey.",
+    notes: [
+      "Hotel pickup anywhere in Madinah, including near the Haram",
+      "Rest-stop flexibility on the 420 km journey",
+      "Drop-off at the Hajj Terminal or Terminal 1, as needed",
+      "Comfortable vehicles, fixed price, 24/7 availability",
+    ],
+    relatedCitySlugs: ["madinah", "jeddah"],
+    metaTitle: "Madinah to Jeddah Airport Taxi | Private Long-Distance Transfer",
+    metaDescription:
+      "Private Madinah to Jeddah Airport (JED) taxi (about 420 km). Hotel pickup, rest stops, fixed prices, and flight-timed drop-off for pilgrims, 24/7.",
+    sections: [
+      {
+        heading: "Madinah to Jeddah Airport: route overview",
+        paragraphs: [
+          "Not every pilgrim flies home from Madinah's own airport — many return flights, especially with certain airlines and Umrah packages, depart from Jeddah instead. The drive south is around 420 kilometres and takes roughly four hours, and a private transfer means you can leave your Madinah hotel at a time that fits your flight, rather than working around a shared shuttle schedule.",
+          "We collect you from your hotel lobby, help with your luggage, and drive directly toward Jeddah. Our <a href='/umrah-taxi-service'>Umrah taxi service</a> covers the wider pilgrim journey, and our <a href='/airport-transfer/jeddah-airport'>Jeddah airport transfers</a> page has more on departures from JED.",
+        ],
+      },
+      {
+        heading: "Planning around your flight",
+        paragraphs: [
+          "Given the four-hour drive, timing matters. Tell us your flight time and departure terminal when booking, and we will recommend a realistic pickup time from Madinah that leaves a sensible buffer for rest stops, traffic, and check-in — rather than cutting it close after such a long journey.",
+          "If you would prefer to fly the short Madinah to Jeddah leg instead and only need a local transfer, our <a href='/airport-transfer/madinah-airport'>Madinah airport transfers</a> page covers departures from Madinah's own airport.",
+        ],
+      },
+      {
+        heading: "A comfortable journey after your pilgrimage",
+        paragraphs: [
+          "After the physical demands of Umrah or Hajj, a long drive is best done in comfort rather than rushed. We plan rest stops for prayer and refreshments, and choose vehicles sized to your group and luggage, including room for Zamzam water and gifts collected along the way. Because the fare is fixed in advance, none of this changes your price.",
+          "Groups and families travelling together can book one departure transfer for the whole party. Our <a href='/hajj-transport-service'>Hajj transport service</a> arranges group and minibus transfers for larger pilgrim parties.",
+        ],
+      },
+      {
+        heading: "Booking your Madinah to Jeddah Airport transfer",
+        paragraphs: [
+          "Booking takes a few minutes: share your hotel name, flight details, and departure terminal, and we confirm your vehicle and a fixed, all-in price before the day of travel. We operate 24/7 and track your flight, so a late departure never leaves you stranded.",
+          "Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and we will confirm your pickup time ahead of your journey. We aim to make the long drive from Madinah to Jeddah Airport as calm as the rest of your pilgrimage.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the Madinah to Jeddah Airport transfer take?", answer: "The drive is about 420 kilometres and usually takes around four hours, depending on traffic and rest stops. We plan pickup times with this in mind so you are not rushed." },
+      { question: "Why would I fly from Jeddah instead of Madinah's own airport?", answer: "Some return flights and Umrah packages are only routed through Jeddah's King Abdulaziz International Airport, so this transfer covers pilgrims whose booking requires departure from JED rather than Madinah." },
+      { question: "Are rest stops included on the way to Jeddah?", answer: "Yes. Given the distance, we build in rest-stop flexibility for prayer and refreshments, particularly for families and elderly pilgrims, at no extra cost to the fixed price." },
+      { question: "Can you drop me at the Hajj Terminal?", answer: "Yes. We drop you at the Hajj Terminal during pilgrimage season or Terminal 1 the rest of the year, whichever matches your airline and flight." },
+      { question: "Can a group travel together to the airport?", answer: "Yes. We offer vans and minibuses for pilgrim groups and families travelling together, so your whole party departs in one private vehicle." },
+      { question: "Is the price fixed for such a long journey?", answer: "Yes. The fare is agreed before you travel with no meter and no surge, so traffic or an extra rest stop never changes what you pay." },
+    ],
+    keywords: ["madinah to jeddah airport taxi", "madinah to jeddah airport transfer", "madinah to jed private car", "madinah hotel to jeddah airport", "umrah departure transfer madinah"],
+  },
 ];
 
 /** Base routes plus the merged Makkah intercity + departure routes. */

@@ -28,7 +28,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" },
     { path: "/get-quote", priority: 0.9, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
-    { path: "/intercity-transfers", priority: 0.8, changeFrequency: "monthly" },
+    // /intercity-transfers is intentionally NOT listed here — it's already
+    // emitted once via servicePaths below (data/services.ts has a matching
+    // entry with href: "/intercity-transfers"); listing it here too produced
+    // a duplicate <url> entry in sitemap.xml.
     { path: "/terms-and-conditions", priority: 0.3, changeFrequency: "yearly" },
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
   ];

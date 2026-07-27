@@ -33,9 +33,11 @@ export function ServicePage({
   ];
   const hero = serviceHero(service.slug, service.name);
   const content = getServiceContent(service.slug);
-  // Prefer the rich FAQ set when present, but keep the on-page list focused:
-  // show at most 6 FAQs (and emit the same set as FAQ schema).
-  const faqs = (content?.faqs ?? service.faqs).slice(0, 6);
+  // Prefer the rich FAQ set when present. The full authored set renders (and
+  // is schema'd) — FAQSection uses a <details>/<summary> accordion, so a
+  // longer list stays collapsed and scannable rather than overwhelming the
+  // page.
+  const faqs = content?.faqs ?? service.faqs;
 
   return (
     <>

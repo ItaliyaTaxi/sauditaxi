@@ -28,6 +28,8 @@ export default function UmrahTaxiPage() {
           "makkah-to-madinah",
           "madinah-to-makkah",
           "jeddah-to-madinah",
+          "jeddah-airport-to-madinah",
+          "madinah-to-jeddah-airport",
         ]}
       />
       <CityGrid

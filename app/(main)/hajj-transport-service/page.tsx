@@ -22,7 +22,13 @@ export default function HajjTransportPage() {
         background="white"
         heading="Hajj & Pilgrim Transfer Routes"
         subheading="Group transfers across the holy cities and the main pilgrim routes."
-        only={["jeddah-to-makkah", "makkah-to-madinah", "jeddah-to-madinah"]}
+        only={[
+          "jeddah-to-makkah",
+          "makkah-to-madinah",
+          "jeddah-to-madinah",
+          "jeddah-airport-to-madinah",
+          "madinah-to-jeddah-airport",
+        ]}
       />
     </ServicePage>
   );
