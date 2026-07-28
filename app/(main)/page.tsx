@@ -12,6 +12,7 @@ import { AirportGrid } from "@/components/sections/AirportGrid";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { TestimonialSection } from "@/components/sections/TestimonialSection";
+import { TrustpilotWidget } from "@/components/TrustpilotWidget";
 import { HomeSeoContent } from "@/components/sections/HomeSeoContent";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
@@ -95,6 +96,20 @@ export default function HomePage() {
       <TrustSection background="muted" />
 
       <TestimonialSection />
+
+      <section className="bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            Rate Your Experience
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Already booked a transfer with us? Share your experience on Trustpilot.
+          </p>
+          <div className="mt-8">
+            <TrustpilotWidget />
+          </div>
+        </div>
+      </section>
 
       <HomeSeoContent />
 

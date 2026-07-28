@@ -3,6 +3,7 @@ import { MessageCircle, Mail, Clock, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CTASection } from "@/components/sections/CTASection";
+import { TrustpilotWidget } from "@/components/TrustpilotWidget";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -107,6 +108,20 @@ export default function ContactPage() {
             <div className="mt-5">
               <QuoteForm serviceType="Contact page enquiry" twoColumn={false} />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            Had a Great Trip?
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Let other travellers know — leave us a review on Trustpilot.
+          </p>
+          <div className="mt-8">
+            <TrustpilotWidget />
           </div>
         </div>
       </section>

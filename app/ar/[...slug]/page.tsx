@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Clock, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
+import { BlogContent } from "@/components/blog/BlogContent";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FAQSection } from "@/components/sections/FAQSection";
@@ -117,18 +118,24 @@ export default async function ArabicPage({
               </div>
             )}
 
-            <div className="mt-6 space-y-8">
-              {page.sections.map((s) => (
-                <div key={s.heading}>
-                  <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
-                  <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                    {s.paragraphs.map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
+            {page.contentHtml ? (
+              <div className="mt-6">
+                <BlogContent html={page.contentHtml} />
+              </div>
+            ) : (
+              <div className="mt-6 space-y-8">
+                {page.sections.map((s) => (
+                  <div key={s.heading}>
+                    <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
+                    <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {isBookable && (

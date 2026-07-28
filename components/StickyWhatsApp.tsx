@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Star } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
 import { getDictionary, localeFromPathname } from "@/lib/i18n";
 
@@ -17,6 +17,15 @@ export function StickyWhatsApp() {
   const dict = getDictionary(localeFromPathname(usePathname()));
   return (
     <div className="fixed bottom-24 end-4 z-50 flex flex-col items-end gap-3 lg:bottom-6 lg:end-6">
+      <a
+        href="https://www.trustpilot.com/review/saudiprivatetransfers.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Rate us on Trustpilot"
+        className="flex size-11 items-center justify-center rounded-full bg-[#00b67a] text-white shadow-lg shadow-[#00b67a]/40 transition-transform hover:scale-105"
+      >
+        <Star className="size-5 fill-current" />
+      </a>
       <a
         href={whatsappLink(dict.stickyWhatsapp.defaultMessage)}
         target="_blank"

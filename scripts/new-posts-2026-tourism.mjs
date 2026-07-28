@@ -12,6 +12,9 @@ import { post as taifSummer } from "./posts-2026/taif-summer.mjs";
 import { post as jeddahToAlula } from "./posts-2026/jeddah-to-alula.mjs";
 import { post as riyadhAir } from "./posts-2026/riyadh-air.mjs";
 import { post as riyadhDayTrips } from "./posts-2026/riyadh-day-trips.mjs";
+import { post as augustTravel } from "./posts-2026/saudi-arabia-in-august.mjs";
+import { post as soloSafety } from "./posts-2026/solo-tourist-safety-saudi-arabia.mjs";
+import { post as airportWifi } from "./posts-2026/saudi-airport-wifi-guide.mjs";
 
 // Shared CTA appended to every article (kept verbatim in sync with seed-blogs).
 const GENERAL_CTA = `<h2 id="book-your-transfer">Book Your Private Transfer</h2>
@@ -49,4 +52,7 @@ export const extraPosts2026 = [
   jeddahToAlula,
   riyadhAir,
   riyadhDayTrips,
+  augustTravel,
+  soloSafety,
+  airportWifi,
 ].map(finalise);
