@@ -25,6 +25,12 @@ export const siteConfig = {
   // SVG social previews, so the share image must be a PNG/JPG.
   ogImage: "/og-image.png",
   twitterHandle: "@sauditaxi",
+  social: {
+    pinterest: "https://www.pinterest.com/saudiprivate",
+    facebook: "https://www.facebook.com/profile.php?id=61588795481731",
+    instagram: "https://www.instagram.com/saudiprivatetransfer/",
+    reddit: "https://www.reddit.com/user/SaudiPrivateTransfer/",
+  },
   address: {
     streetAddress: "King Fahd Road",
     addressLocality: "Riyadh",

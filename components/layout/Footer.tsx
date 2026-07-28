@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Car, Mail, MapPin } from "lucide-react";
+import { FacebookIcon, InstagramIcon, PinterestIcon, RedditIcon } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/lib/site";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
@@ -49,6 +50,44 @@ export function Footer() {
               <p className="flex items-center gap-2">
                 <MapPin className="size-4 text-gold" /> {dict.footer.servingAllOfSaudi}
               </p>
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={isAr ? "تابعنا على فيسبوك" : "Follow us on Facebook"}
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-gold hover:text-navy"
+              >
+                <FacebookIcon className="size-4" />
+              </a>
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={isAr ? "تابعنا على انستغرام" : "Follow us on Instagram"}
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-gold hover:text-navy"
+              >
+                <InstagramIcon className="size-4" />
+              </a>
+              <a
+                href={siteConfig.social.pinterest}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={isAr ? "تابعنا على بينترست" : "Follow us on Pinterest"}
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-gold hover:text-navy"
+              >
+                <PinterestIcon className="size-4" />
+              </a>
+              <a
+                href={siteConfig.social.reddit}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={isAr ? "تابعنا على ريديت" : "Follow us on Reddit"}
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-gold hover:text-navy"
+              >
+                <RedditIcon className="size-4" />
+              </a>
             </div>
           </div>
 
