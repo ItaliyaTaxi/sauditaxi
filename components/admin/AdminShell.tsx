@@ -18,12 +18,14 @@ import {
   X,
   Car,
   Receipt,
+  FileSignature,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mainLinks = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Leads", href: "/admin/leads", icon: Inbox },
+  { label: "Quotations", href: "/admin/quotations", icon: FileSignature },
   { label: "Invoices", href: "/admin/invoices", icon: Receipt },
 ];
 

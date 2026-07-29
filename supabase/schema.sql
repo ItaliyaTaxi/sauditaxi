@@ -203,9 +203,64 @@ create trigger invoices_set_updated_at
   before update on public.invoices
   for each row execute function public.set_updated_at();
 
+-- Quotations ------------------------------------------------------------------
+-- Client-facing pre-booking estimates. Distinct from invoices: a quotation
+-- has no payment status (nothing has been booked/billed yet), carries its own
+-- validity window, and includes trip details (flight number, special
+-- requests) invoices don't need. Delivered the same way as invoices — an
+-- unguessable public_token link, never the sequential id.
+create table if not exists public.quotations (
+  id                   uuid primary key default gen_random_uuid(),
+  quote_number         text not null unique,
+  public_token         text not null unique default encode(gen_random_bytes(16), 'hex'),
+
+  lead_id              uuid references public.leads(id) on delete set null,
+
+  client_name          text,
+  client_phone         text,
+  client_email         text,
+
+  service_type         text,
+  pickup_location      text,
+  dropoff_location     text,
+  date                 text,
+  time                 text,
+  flight_number        text,
+  special_requests     text,
+  booking_reference    text,
+
+  -- [{ description, vehicleType, passengers, luggage, amount }] — same shape as invoices.line_items
+  line_items           jsonb not null default '[]'::jsonb,
+
+  currency             text not null default 'SAR',
+  total_amount         numeric(12,2) not null default 0,
+
+  payment_terms        text,
+  cancellation_policy  text,
+  notes                text,
+
+  status               text not null default 'Draft',
+  quote_date           date not null default current_date,
+  valid_until          date,
+
+  created_at           timestamptz not null default now(),
+  updated_at           timestamptz not null default now()
+);
+
+create index if not exists quotations_created_at_idx   on public.quotations (created_at desc);
+create index if not exists quotations_lead_id_idx      on public.quotations (lead_id);
+create index if not exists quotations_public_token_idx on public.quotations (public_token);
+create index if not exists quotations_status_idx       on public.quotations (status);
+
+drop trigger if exists quotations_set_updated_at on public.quotations;
+create trigger quotations_set_updated_at
+  before update on public.quotations
+  for each row execute function public.set_updated_at();
+
 -- Lock everything down to the service role only -----------------------------
 alter table public.leads      enable row level security;
 alter table public.email_logs enable row level security;
 alter table public.admins     enable row level security;
 alter table public.blogs      enable row level security;
 alter table public.invoices   enable row level security;
+alter table public.quotations enable row level security;

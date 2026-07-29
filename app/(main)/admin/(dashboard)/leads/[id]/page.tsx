@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Receipt } from "lucide-react";
+import { ArrowLeft, Receipt, FileSignature } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/admin/StatusBadge";
 import { LeadStatusSelect } from "@/components/admin/LeadStatusSelect";
@@ -54,6 +54,11 @@ export default async function LeadDetailPage({
         <div className="flex items-center gap-3">
           <StatusBadge status={lead.status} />
           <LeadStatusSelect leadId={lead.id} status={lead.status} />
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/admin/quotations/new?leadId=${lead.id}`}>
+              <FileSignature className="size-4" /> Create Quotation
+            </Link>
+          </Button>
           <Button asChild variant="gold" size="sm">
             <Link href={`/admin/invoices/new?leadId=${lead.id}`}>
               <Receipt className="size-4" /> Create Invoice

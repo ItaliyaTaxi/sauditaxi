@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import type { Lead } from "@/lib/leads";
 import type { Invoice } from "@/lib/invoices";
+import type { Quotation } from "@/lib/quotations";
 import { siteConfig } from "@/lib/site";
 
 export function isEmailConfigured(): boolean {
@@ -192,6 +193,37 @@ export function invoiceReadyEmail(
          View Invoice
        </a>
      </div>
+     <p style="color:#777;font-size:12px;margin:16px 0 0">
+       Or copy this link: ${esc(viewUrl)}
+     </p>`
+  );
+  return { subject, html };
+}
+
+export function quotationReadyEmail(
+  quotation: Quotation,
+  viewUrl: string
+): { subject: string; html: string } {
+  const subject = `Your Quotation ${quotation.quoteNumber} — ${siteConfig.name}`;
+  const html = shell(
+    "Your Quotation Is Ready",
+    `<p style="color:#444;margin:0 0 16px">
+       Thank you for your interest in ${esc(siteConfig.name)}. Please find your quotation
+       <strong>${esc(quotation.quoteNumber)}</strong> for
+       ${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)} below. Click the
+       button to view the full quotation online — no login required.
+     </p>
+     <div style="text-align:center;margin:24px 0">
+       <a href="${esc(viewUrl)}"
+          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;
+                 padding:12px 28px;border-radius:9999px;text-decoration:none">
+         View Quotation
+       </a>
+     </div>
+     <p style="color:#444;margin:16px 0 0">
+       If you would like to confirm this booking, simply reply to this email or contact us —
+       we look forward to serving you.
+     </p>
      <p style="color:#777;font-size:12px;margin:16px 0 0">
        Or copy this link: ${esc(viewUrl)}
      </p>`
