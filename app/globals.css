@@ -248,19 +248,38 @@ html[dir="rtl"] body {
   font-family: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ── Print (invoices) ────────────────────────────────────────────────────
-   The invoice's "PDF" is just the browser's print/save-as-PDF output, styled
-   here rather than pulling in a PDF-generation library. .invoice-print-page
-   is the InvoiceDocument's outer wrapper (components/invoice/InvoiceDocument.tsx);
-   print:hidden (Tailwind's built-in print variant) hides everything else —
-   admin sidebar, action buttons, public site header/footer. */
+/* ── Print (invoices & quotations) ───────────────────────────────────────
+   The document's "PDF" is just the browser's print/save-as-PDF output,
+   styled here rather than pulling in a PDF-generation library.
+   .invoice-print-page / .quotation-print-page are the respective document's
+   outer wrapper; print:hidden (Tailwind's built-in print variant) hides
+   everything else — admin sidebar, action buttons, public site header/footer.
+
+   @page margin is 0 on purpose: Chrome (and most browsers) draw their own
+   header/footer — URL, page title, date, page number — inside the page's
+   margin box when "Headers and footers" is on in the print dialog. With a
+   non-zero @page margin there's room for that browser chrome to render, so
+   it shows up in the exported PDF alongside our content. Zeroing the margin
+   leaves no space for it, so it's suppressed regardless of that browser
+   setting — the actual inset around the document is instead applied via
+   print:p-[10mm] on the document's own wrapper, so the visual spacing is
+   unchanged but it now comes from our CSS, not the page margin box.
+
+   Browsers also strip background colors on print by default (an ink-saving
+   default) — print-color-adjust: exact overrides that so the navy header,
+   gold accents, and status colors actually appear in the printed/PDF output. */
 @media print {
   @page {
-    margin: 12mm;
+    margin: 0;
     size: A4;
   }
   html,
   body {
     background: #ffffff !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 }

@@ -1,14 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Pencil, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuotationForm } from "@/components/admin/QuotationForm";
 import { QuoteStatusSelect } from "@/components/admin/QuoteStatusSelect";
 import { SendQuotationEmailButton } from "@/components/admin/SendQuotationEmailButton";
+import { SendBookingConfirmationButton } from "@/components/admin/SendBookingConfirmationButton";
 import { DeleteQuotationButton } from "@/components/admin/DeleteQuotationButton";
 import { CopyQuotationLink } from "@/components/quotation/CopyQuotationLink";
-import { PrintButton } from "@/components/invoice/PrintButton";
+import { DownloadPdfButton } from "@/components/invoice/DownloadPdfButton";
 import { QuotationDocument } from "@/components/quotation/QuotationDocument";
 import type { Quotation, QuotationInput } from "@/lib/quotations";
 
@@ -20,6 +21,7 @@ export function QuotationReview({
   publicUrl: string;
 }) {
   const [editing, setEditing] = useState(false);
+  const documentRef = useRef<HTMLDivElement>(null);
 
   if (editing) {
     const initialValues: QuotationInput = {
@@ -63,17 +65,18 @@ export function QuotationReview({
         </Button>
         <QuoteStatusSelect quotationId={quotation.id} status={quotation.status} />
         <CopyQuotationLink url={publicUrl} />
-        <PrintButton />
+        <DownloadPdfButton targetRef={documentRef} filename={`${quotation.quoteNumber}.pdf`} />
         <div className="ms-auto">
           <DeleteQuotationButton quotationId={quotation.id} redirectTo="/admin/quotations" />
         </div>
       </div>
 
-      <div className="print:hidden rounded-xl border border-neutral-200 bg-white p-4">
+      <div className="print:hidden flex flex-wrap gap-6 rounded-xl border border-neutral-200 bg-white p-4">
         <SendQuotationEmailButton quotationId={quotation.id} clientEmail={quotation.clientEmail} />
+        <SendBookingConfirmationButton quotationId={quotation.id} clientEmail={quotation.clientEmail} />
       </div>
 
-      <QuotationDocument quotation={quotation} />
+      <QuotationDocument ref={documentRef} quotation={quotation} />
     </div>
   );
 }

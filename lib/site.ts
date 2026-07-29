@@ -19,7 +19,7 @@ export const siteConfig = {
   // (not rendered visibly anywhere on the site).
   phoneDisplay: "+92 314 8932631",
   phoneHref: "+923148932631",
-  email: "bookings@sauditaxitransfers.com",
+  email: "taxiservicesaudiaa@gmail.com",
   locale: "en_US",
   // Raster (PNG) OG image — Facebook, LinkedIn, WhatsApp, and X do not render
   // SVG social previews, so the share image must be a PNG/JPG.

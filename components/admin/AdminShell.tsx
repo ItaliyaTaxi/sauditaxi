@@ -164,7 +164,7 @@ export function AdminShell({
             {open ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
         </header>
-        <main className="flex-1 p-4 sm:p-6 lg:p-8">{children}</main>
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 print:p-[10mm]">{children}</main>
       </div>
     </div>
   );

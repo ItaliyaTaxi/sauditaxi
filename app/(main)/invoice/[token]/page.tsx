@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { InvoiceDocument } from "@/components/invoice/InvoiceDocument";
-import { PrintButton } from "@/components/invoice/PrintButton";
+import { InvoiceDownloadSection } from "@/components/invoice/InvoiceDownloadSection";
 import { isSupabaseConfigured } from "@/lib/supabase";
 import { getInvoiceByToken } from "@/lib/invoices";
 
@@ -34,11 +33,8 @@ export default async function PublicInvoicePage({
   if (!invoice) notFound();
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 sm:py-12">
-      <InvoiceDocument invoice={invoice} />
-      <div className="mt-6 flex justify-center print:hidden">
-        <PrintButton />
-      </div>
+    <div className="mx-auto max-w-3xl px-4 py-8 print:p-[10mm] sm:py-12">
+      <InvoiceDownloadSection invoice={invoice} />
     </div>
   );
 }

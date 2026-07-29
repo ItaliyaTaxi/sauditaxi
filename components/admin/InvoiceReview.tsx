@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Pencil, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InvoiceForm } from "@/components/admin/InvoiceForm";
@@ -8,12 +8,13 @@ import { PaymentStatusSelect } from "@/components/admin/PaymentStatusSelect";
 import { SendInvoiceEmailButton } from "@/components/admin/SendInvoiceEmailButton";
 import { DeleteInvoiceButton } from "@/components/admin/DeleteInvoiceButton";
 import { CopyInvoiceLink } from "@/components/invoice/CopyInvoiceLink";
-import { PrintButton } from "@/components/invoice/PrintButton";
+import { DownloadPdfButton } from "@/components/invoice/DownloadPdfButton";
 import { InvoiceDocument } from "@/components/invoice/InvoiceDocument";
 import type { Invoice, InvoiceInput } from "@/lib/invoices";
 
 export function InvoiceReview({ invoice, publicUrl }: { invoice: Invoice; publicUrl: string }) {
   const [editing, setEditing] = useState(false);
+  const documentRef = useRef<HTMLDivElement>(null);
 
   if (editing) {
     const initialValues: InvoiceInput = {
@@ -51,7 +52,7 @@ export function InvoiceReview({ invoice, publicUrl }: { invoice: Invoice; public
         </Button>
         <PaymentStatusSelect invoiceId={invoice.id} status={invoice.paymentStatus} />
         <CopyInvoiceLink url={publicUrl} />
-        <PrintButton />
+        <DownloadPdfButton targetRef={documentRef} filename={`${invoice.invoiceNumber}.pdf`} />
         <div className="ms-auto">
           <DeleteInvoiceButton invoiceId={invoice.id} redirectTo="/admin/invoices" />
         </div>
@@ -61,7 +62,7 @@ export function InvoiceReview({ invoice, publicUrl }: { invoice: Invoice; public
         <SendInvoiceEmailButton invoiceId={invoice.id} clientEmail={invoice.clientEmail} />
       </div>
 
-      <InvoiceDocument invoice={invoice} />
+      <InvoiceDocument ref={documentRef} invoice={invoice} />
     </div>
   );
 }

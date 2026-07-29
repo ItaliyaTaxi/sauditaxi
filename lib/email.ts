@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import type { Lead } from "@/lib/leads";
 import type { Invoice } from "@/lib/invoices";
 import type { Quotation } from "@/lib/quotations";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, whatsappLink } from "@/lib/site";
 
 export function isEmailConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY && process.env.FROM_EMAIL);
@@ -120,10 +120,21 @@ function shell(title: string, bodyHtml: string): string {
       <td align="center">
         <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e5e4">
           <tr>
-            <td style="background:#0a0a0a;padding:20px 24px">
-              <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
-                siteConfig.shortName
-              )}<span style="color:#f5b820">.</span></span>
+            <td style="background:#0a0a0a;padding:16px 24px">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding-right:10px">
+                    <img src="${esc(siteConfig.url)}/images/logo.webp" width="36" height="36" alt="${esc(
+                      siteConfig.shortName
+                    )}" style="display:block;width:36px;height:36px;border-radius:50%" />
+                  </td>
+                  <td style="vertical-align:middle">
+                    <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
+                      siteConfig.shortName
+                    )}<span style="color:#f5b820">.</span></span>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           <tr>
@@ -227,6 +238,61 @@ export function quotationReadyEmail(
      <p style="color:#777;font-size:12px;margin:16px 0 0">
        Or copy this link: ${esc(viewUrl)}
      </p>`
+  );
+  return { subject, html };
+}
+
+/**
+ * Sent manually by the admin once a booking is confirmed (e.g. the client
+ * already confirmed over WhatsApp) — a written, branded record of exactly
+ * what was booked, separate from the WhatsApp conversation itself.
+ */
+export function bookingConfirmationEmail(
+  quotation: Quotation
+): { subject: string; html: string } {
+  const vehicle = quotation.lineItems.find((li) => li.vehicleType)?.vehicleType ?? null;
+  const rows: [string, string | null][] = [
+    ["Booking reference", quotation.bookingReference || quotation.quoteNumber],
+    ["Passenger", quotation.clientName],
+    ["Phone / WhatsApp", quotation.clientPhone],
+    ["Vehicle", vehicle],
+    ["Pickup", quotation.pickupLocation],
+    ["Drop-off", quotation.dropoffLocation],
+    ["Date", quotation.date],
+    ["Time", quotation.time],
+    ["Flight number", quotation.flightNumber],
+  ];
+  const detailRows = rows
+    .filter(([, v]) => v)
+    .map(
+      ([k, v]) =>
+        `<tr><td class="detail-label" style="padding:6px 12px;color:#666;vertical-align:top;width:38%">${esc(
+          k
+        )}</td><td style="padding:6px 12px;color:#111;font-weight:600;word-break:break-word">${esc(v)}</td></tr>`
+    )
+    .join("");
+
+  const whatsappUrl = whatsappLink(
+    `Hi, I have a question about my booking ${quotation.bookingReference || quotation.quoteNumber}.`
+  );
+
+  const subject = `Booking Confirmed — ${quotation.bookingReference || quotation.quoteNumber} — ${siteConfig.name}`;
+  const html = shell(
+    "Your Booking Is Confirmed",
+    `<p style="color:#444;margin:0 0 16px">
+       Thank you — your booking with ${esc(siteConfig.name)} is confirmed. Here are your trip details:
+     </p>
+     <table class="detail-table" style="width:100%;border-collapse:collapse;font-size:14px">${detailRows}</table>
+     <p style="color:#444;margin:20px 0 0">
+       If you have any questions, just message us on WhatsApp — we're happy to help.
+     </p>
+     <div style="text-align:center;margin:20px 0 0">
+       <a href="${esc(whatsappUrl)}"
+          style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;
+                 padding:12px 28px;border-radius:9999px;text-decoration:none">
+         Message Us on WhatsApp
+       </a>
+     </div>`
   );
   return { subject, html };
 }

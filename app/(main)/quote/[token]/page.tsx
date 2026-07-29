@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { QuotationDocument } from "@/components/quotation/QuotationDocument";
-import { PrintButton } from "@/components/invoice/PrintButton";
+import { QuotationDownloadSection } from "@/components/quotation/QuotationDownloadSection";
 import { isSupabaseConfigured } from "@/lib/supabase";
 import { getQuotationByToken } from "@/lib/quotations";
 
@@ -34,11 +33,8 @@ export default async function PublicQuotationPage({
   if (!quotation) notFound();
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 sm:py-12">
-      <QuotationDocument quotation={quotation} />
-      <div className="mt-6 flex justify-center print:hidden">
-        <PrintButton />
-      </div>
+    <div className="mx-auto max-w-3xl px-4 py-8 print:p-[10mm] sm:py-12">
+      <QuotationDownloadSection quotation={quotation} />
     </div>
   );
 }
