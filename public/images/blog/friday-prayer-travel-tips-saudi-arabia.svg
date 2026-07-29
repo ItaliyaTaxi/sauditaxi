@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#2a2238"/></linearGradient>
+    <radialGradient id="g" cx="40%" cy="60%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.30"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- mosque -->
+  <g fill="#0c1422">
+    <rect x="300" y="520" width="700" height="200"/>
+    <rect x="360" y="320" width="28" height="200"/>
+    <rect x="560" y="320" width="28" height="200"/>
+    <rect x="760" y="320" width="28" height="200"/>
+  </g>
+  <path d="M600 520 q60 -150 120 0 Z" fill="#f5b820" opacity="0.85"/>
+  <g fill="#f5b820" opacity="0.6"><circle cx="374" cy="320" r="10"/><circle cx="574" cy="320" r="10"/><circle cx="774" cy="320" r="10"/></g>
+  <!-- crescent -->
+  <path d="M1220 260 a70 70 0 1 0 10 138 a56 56 0 1 1 -10 -138 Z" fill="#f5b820"/>
+  <!-- clock -->
+  <g transform="translate(1170 480)">
+    <circle cx="0" cy="0" r="90" fill="#0c1422" stroke="#f5b820" stroke-width="8"/>
+    <line x1="0" y1="0" x2="0" y2="-56" stroke="#f5b820" stroke-width="9" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="42" y2="20" stroke="#f5b820" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.55"/>
+</svg>

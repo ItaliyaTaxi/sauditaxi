@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#2a2238"/></linearGradient>
+    <radialGradient id="g" cx="65%" cy="35%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.24"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- terminal -->
+  <g fill="#0c1422"><rect x="200" y="360" width="44" height="300"/><rect x="180" y="330" width="84" height="50" rx="8"/><rect x="0" y="560" width="1600" height="120"/></g>
+  <!-- plane -->
+  <g fill="#0c1422" transform="translate(1040 220) rotate(-8)">
+    <path d="M0 40 L300 22 q38 -2 38 18 q0 20 -38 18 L0 78 Z"/>
+    <path d="M110 50 L56 -36 L90 -36 L188 46 Z"/>
+  </g>
+  <!-- clock -->
+  <g transform="translate(700 420)">
+    <circle cx="0" cy="0" r="130" fill="#0c1422" stroke="#f5b820" stroke-width="10"/>
+    <line x1="0" y1="0" x2="0" y2="-80" stroke="#f5b820" stroke-width="12" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="60" y2="30" stroke="#f5b820" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="10" fill="#f5b820"/>
+  </g>
+  <rect x="0" y="680" width="1600" height="220" fill="#070b14" opacity="0.55"/>
+</svg>

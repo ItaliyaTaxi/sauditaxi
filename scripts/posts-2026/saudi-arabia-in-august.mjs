@@ -3,7 +3,7 @@ export const post = {
   slug: "saudi-arabia-in-august-weather-crowds-travel-tips",
   category: "Saudi Arabia Tourism",
   author: "Saudi Private Transfers",
-  featuredImage: null,
+  featuredImage: "/images/blog/saudi-arabia-in-august-weather-crowds-travel-tips.svg",
   featuredImageAlt: "A private car driving through a heat-shimmered Saudi Arabian highway in August, with a city skyline in the distance",
   focusKeyword: "Saudi Arabia in August",
   secondaryKeywords: [

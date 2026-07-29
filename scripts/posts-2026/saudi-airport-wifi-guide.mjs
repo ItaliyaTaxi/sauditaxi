@@ -3,7 +3,7 @@ export const post = {
   slug: "saudi-arabia-airport-wifi-guide",
   category: "Travel Guides",
   author: "Saudi Private Transfers",
-  featuredImage: null,
+  featuredImage: "/images/blog/saudi-arabia-airport-wifi-guide.svg",
   featuredImageAlt: "A traveller connecting to WiFi on a laptop in a Saudi airport departure lounge",
   focusKeyword: "Saudi airport WiFi",
   secondaryKeywords: ["airport internet Saudi", "JED WiFi", "RUH WiFi", "DMM WiFi"],

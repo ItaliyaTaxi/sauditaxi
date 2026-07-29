@@ -15,6 +15,13 @@ import { post as riyadhDayTrips } from "./posts-2026/riyadh-day-trips.mjs";
 import { post as augustTravel } from "./posts-2026/saudi-arabia-in-august.mjs";
 import { post as soloSafety } from "./posts-2026/solo-tourist-safety-saudi-arabia.mjs";
 import { post as airportWifi } from "./posts-2026/saudi-airport-wifi-guide.mjs";
+import { post as flightDelayed } from "./posts-2026/flight-delayed-saudi-arabia.mjs";
+import { post as elderlyParents } from "./posts-2026/saudi-arabia-with-elderly-parents.mjs";
+import { post as cashlessPayments } from "./posts-2026/cashless-payment-apps-saudi-arabia.mjs";
+import { post as fridayPrayer } from "./posts-2026/friday-prayer-travel-tips-saudi-arabia.mjs";
+import { post as hotelNearHaram } from "./posts-2026/hotel-near-haram-what-to-know.mjs";
+import { post as travelScams } from "./posts-2026/saudi-arabia-travel-scams.mjs";
+import { post as aiVsLocal } from "./posts-2026/ai-travel-planning-vs-local-experts.mjs";
 
 // Shared CTA appended to every article (kept verbatim in sync with seed-blogs).
 const GENERAL_CTA = `<h2 id="book-your-transfer">Book Your Private Transfer</h2>
@@ -55,4 +62,11 @@ export const extraPosts2026 = [
   augustTravel,
   soloSafety,
   airportWifi,
+  flightDelayed,
+  elderlyParents,
+  cashlessPayments,
+  fridayPrayer,
+  hotelNearHaram,
+  travelScams,
+  aiVsLocal,
 ].map(finalise);

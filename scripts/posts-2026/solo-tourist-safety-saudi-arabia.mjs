@@ -3,7 +3,7 @@ export const post = {
   slug: "is-saudi-arabia-safe-for-solo-tourists-2026",
   category: "Travel Guides",
   author: "Saudi Private Transfers",
-  featuredImage: null,
+  featuredImage: "/images/blog/is-saudi-arabia-safe-for-solo-tourists-2026.svg",
   featuredImageAlt: "A solo traveller walking confidently through a lit-up Saudi city street at night",
   focusKeyword: "Saudi Arabia solo travel",
   secondaryKeywords: ["solo travel Saudi Arabia", "safety Saudi Arabia", "women solo travel", "tourist safety Saudi Arabia"],

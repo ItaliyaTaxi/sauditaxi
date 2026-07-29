@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#10283a"/></linearGradient>
+    <radialGradient id="g" cx="55%" cy="40%" r="55%"><stop offset="0" stop-color="#3ab0f5" stop-opacity="0.28"/><stop offset="1" stop-color="#3ab0f5" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- plane -->
+  <g fill="#0c1422" transform="translate(280 260) rotate(-8)">
+    <path d="M0 40 L300 22 q38 -2 38 18 q0 20 -38 18 L0 78 Z"/>
+    <path d="M110 50 L56 -36 L90 -36 L188 46 Z"/>
+  </g>
+  <rect x="0" y="620" width="1600" height="60" fill="#0c1422"/>
+  <rect x="0" y="680" width="1600" height="220" fill="#0c1422"/>
+  <!-- wifi signal -->
+  <g fill="none" stroke="#3ab0f5" stroke-width="16" stroke-linecap="round">
+    <path d="M1000 560 a220 220 0 0 1 380 0" opacity="0.5"/>
+    <path d="M1060 610 a140 140 0 0 1 260 0" opacity="0.75"/>
+    <path d="M1120 660 a70 70 0 0 1 140 0"/>
+  </g>
+  <circle cx="1190" cy="700" r="16" fill="#3ab0f5"/>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.55"/>
+</svg>

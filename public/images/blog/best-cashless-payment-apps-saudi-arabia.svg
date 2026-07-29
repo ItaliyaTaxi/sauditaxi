@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#21304d"/></linearGradient>
+    <radialGradient id="g" cx="55%" cy="45%" r="55%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.26"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- city skyline -->
+  <g fill="#0c1422" opacity="0.8">
+    <rect x="80" y="480" width="80" height="240"/>
+    <rect x="180" y="420" width="60" height="300"/>
+    <rect x="1380" y="460" width="80" height="260"/>
+    <rect x="1470" y="400" width="60" height="320"/>
+    <rect x="0" y="700" width="1600" height="120"/>
+  </g>
+  <!-- phone -->
+  <g transform="translate(660 260)">
+    <rect x="0" y="0" width="280" height="480" rx="36" fill="#0c1422" stroke="#f5b820" stroke-width="8"/>
+    <rect x="24" y="40" width="232" height="360" rx="10" fill="#152036"/>
+    <circle cx="140" cy="440" r="16" fill="#f5b820"/>
+  </g>
+  <!-- contactless waves -->
+  <g fill="none" stroke="#f5b820" stroke-width="14" stroke-linecap="round">
+    <path d="M990 340 a120 120 0 0 1 0 220" opacity="0.5"/>
+    <path d="M950 380 a70 70 0 0 1 0 140" opacity="0.8"/>
+  </g>
+  <circle cx="920" cy="450" r="14" fill="#f5b820"/>
+  <rect x="0" y="720" width="1600" height="180" fill="#070b14" opacity="0.55"/>
+</svg>
