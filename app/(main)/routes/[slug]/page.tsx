@@ -89,7 +89,7 @@ export default async function RoutePage({
   const route = getRoute(slug);
   if (!route) notFound();
 
-  const faqs = (route.faqs ?? routeFaqs(route.from, route.to)).slice(0, 6);
+  const faqs = (route.faqs ?? routeFaqs(route.from, route.to)).slice(0, 15);
   const path = `/routes/${route.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },

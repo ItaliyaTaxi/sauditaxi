@@ -60,6 +60,7 @@ export const QuotationDocument = forwardRef<HTMLDivElement, { quotation: Quotati
           <h2 className="text-xs font-bold uppercase tracking-wide text-neutral-500">Prepared For</h2>
           <p className="mt-2 text-sm text-neutral-900 print:mt-1 print:text-xs">Name: {quotation.clientName || "—"}</p>
           <p className="text-sm text-neutral-900 print:text-xs">Email: {quotation.clientEmail || "—"}</p>
+          <p className="text-sm text-neutral-900 print:text-xs">Phone / WhatsApp: {quotation.clientPhone || "—"}</p>
           {quotation.bookingReference && (
             <p className="text-sm text-neutral-900 print:text-xs">Booking Reference: {quotation.bookingReference}</p>
           )}
