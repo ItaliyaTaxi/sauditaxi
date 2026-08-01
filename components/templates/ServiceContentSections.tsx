@@ -126,6 +126,60 @@ export function ServiceContentSections({
       {/* Animated cross-border journey map (where relevant) */}
       {map && <JourneyMap heading={map.heading} origin={map.origin} stops={map.stops} />}
 
+      {/* Explore individual site pages — direct link-out to the cluster's own pages */}
+      {content.exploreSites && content.exploreSites.items.length > 0 && (
+        <section className={bg("white")} aria-labelledby="sc-explore">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <h2 id="sc-explore" className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+                {content.exploreSites.heading}
+              </h2>
+              {content.exploreSites.intro && (
+                <p className="mt-3 max-w-3xl text-muted-foreground">{content.exploreSites.intro}</p>
+              )}
+            </Reveal>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {content.exploreSites.items.map((r, i) => {
+                const inner = (
+                  <div className="lift glow flex h-full flex-col rounded-2xl border border-border bg-white p-6">
+                    <div className="h-1 w-12 rounded-full bg-gradient-to-r from-gold to-gold-soft" aria-hidden="true" />
+                    <div className="mt-4 flex items-center gap-2 text-base font-bold text-navy">
+                      <MapPin className="size-4 shrink-0 text-gold" />
+                      {r.to}
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-xs font-medium text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="size-3.5 text-gold" /> {r.distance}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock className="size-3.5 text-gold" /> {r.duration}
+                      </span>
+                    </div>
+                    <p className="mt-4 flex-1 text-sm text-muted-foreground">{r.benefit}</p>
+                    {r.href && (
+                      <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy">
+                        View page <ArrowRight className="size-4 text-gold" />
+                      </span>
+                    )}
+                  </div>
+                );
+                return (
+                  <Reveal key={`${r.from}-${r.to}`} delay={(i % 3) * 80}>
+                    {r.href ? (
+                      <Link href={r.href} className="block h-full">
+                        {inner}
+                      </Link>
+                    ) : (
+                      inner
+                    )}
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Popular routes — floating premium cards */}
       <section className={bg("muted")} aria-labelledby="sc-routes">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

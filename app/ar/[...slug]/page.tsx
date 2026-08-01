@@ -17,6 +17,7 @@ import { pageHeroes } from "@/lib/hero";
 
 const heroFor = (page: ArPage): string => {
   if (page.type === "airport" || page.type === "hotel-transfer") return pageHeroes.airport;
+  if (page.type === "attraction") return page.enPath.startsWith("/madinah/") ? pageHeroes.madinah : pageHeroes.makkah;
   if (page.type === "route" || page.type === "blog") return pageHeroes.makkah;
   if (page.type === "city") return pageHeroes.city;
   return pageHeroes.home;
@@ -58,6 +59,7 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     about: "Taxi Service",
     contact: "Taxi Service",
     blog: "Taxi Service",
+    attraction: "Private Transfer",
   })[type];
 
 export default async function ArabicPage({
@@ -69,8 +71,8 @@ export default async function ArabicPage({
   const page = resolve(slug);
   if (!page) notFound();
 
-  const faqs = page.faqs.slice(0, 6);
-  const isBookable = ["service", "airport", "city", "route", "hotel-transfer"].includes(page.type);
+  const faqs = page.faqs.slice(0, 20);
+  const isBookable = ["service", "airport", "city", "route", "hotel-transfer", "attraction"].includes(page.type);
 
   return (
     <>

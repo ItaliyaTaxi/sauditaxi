@@ -39,7 +39,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
     { name: label, path: `/${t.citySlug}/${t.slug}` },
   ];
 
-  const faqs = t.faqs.slice(0, 6);
+  const faqs = t.faqs.slice(0, 20);
 
   // Build cross-links: sibling transfers + related routes.
   const relatedTransfers = (t.relatedTransferSlugs ?? [])
@@ -69,8 +69,8 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
         title={t.h1}
         subtitle={t.intro}
         crumbs={crumbs}
-        backgroundImage={cityHero(t.citySlug, cityName).src}
-        backgroundAlt={isService ? `${t.to} in ${cityName}, Saudi Arabia` : `Private transfer from ${t.from} to ${t.to} in ${cityName}, Saudi Arabia`}
+        backgroundImage={t.heroImage ?? cityHero(t.citySlug, cityName).src}
+        backgroundAlt={t.heroAlt ?? (isService ? `${t.to} in ${cityName}, Saudi Arabia` : `Private transfer from ${t.from} to ${t.to} in ${cityName}, Saudi Arabia`)}
         whatsappMessage={isService ? `Hello! I'd like a quote for ${t.to} in ${cityName}.` : `Hello! I'd like a quote for a ${t.from} to ${t.to} transfer.`}
       />
 
@@ -203,6 +203,12 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
                     className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
                   >
                     Ziyarat taxi service <ArrowRight className="size-4 text-gold" />
+                  </Link>
+                  <Link
+                    href="/hajj-transport-service"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
+                  >
+                    Hajj transport service <ArrowRight className="size-4 text-gold" />
                   </Link>
                 </>
               )}

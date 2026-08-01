@@ -71,6 +71,113 @@ export const content: ServiceContent = {
     ]
   },
 
+  exploreSites: {
+    heading: "Explore Every Ziyarat Site",
+    intro:
+      "Each site below has its own dedicated page with full details on the visit, waiting-driver arrangements, and fixed pricing — book a single site or combine several into one circuit.",
+    items: [
+      {
+        from: "Makkah (Your Hotel)",
+        to: "Makkah Ziyarat Tour (Mina, Arafat & Muzdalifah)",
+        distance: "60–80 km total loop",
+        duration: "Half or full day",
+        benefit:
+          "The complete Makkah circuit in one booking — the Hajj sites of Mina, Muzdalifah and Arafat, plus views of Jabal al-Noor and Jabal Thawr, shaped around your pace and prayer times.",
+        href: "/makkah/makkah-ziyarat-tour",
+      },
+      {
+        from: "Makkah (Haram Area)",
+        to: "Cave of Hira, Jabal al-Noor",
+        distance: "approx. 5 km",
+        duration: "2–3 hrs with waiting",
+        benefit:
+          "Where the first revelation came to the Prophet Muhammad. A private car takes you to the base and waits, however long your visit or ascent takes.",
+        href: "/makkah/makkah-to-cave-of-hira",
+      },
+      {
+        from: "Makkah (Haram Area)",
+        to: "Jabal Thawr",
+        distance: "approx. 8 km south",
+        duration: "2–3 hrs with waiting",
+        benefit:
+          "The mountain that sheltered the Prophet and Abu Bakr during the Hijrah — a quieter, steeper sister site to Jabal al-Noor, reached by the same waiting-driver service.",
+        href: "/makkah/makkah-to-jabal-thawr",
+      },
+      {
+        from: "Makkah (Your Hotel)",
+        to: "Historical Sites & Heritage Tour",
+        distance: "Makkah city & outskirts",
+        duration: "Half day",
+        benefit:
+          "A heritage-focused counterpart to the Ziyarat tour — the Makkah Museum, the Hudaybiyyah area, and the Hajj plains, for pilgrims who want historical context alongside their worship.",
+        href: "/makkah/makkah-historical-sites-tour",
+      },
+      {
+        from: "Makkah (Haram Area)",
+        to: "Mina",
+        distance: "approx. 6 km east",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "The valley of the Hajj tent city and the Jamarat, a short drive east of the Haram, visited outside the Hajj season at an unhurried pace.",
+        href: "/makkah/makkah-to-mina",
+      },
+      {
+        from: "Makkah (Haram Area)",
+        to: "Muzdalifah",
+        distance: "approx. 9 km east",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "The open plain between Mina and Arafat where pilgrims gather during Hajj — quiet and open to visit for the rest of the year.",
+        href: "/makkah/makkah-to-muzdalifah",
+      },
+      {
+        from: "Makkah (Haram Area)",
+        to: "Arafat & Jabal al-Rahmah",
+        distance: "approx. 20 km southeast",
+        duration: "2–3 hrs with waiting",
+        benefit:
+          "The plain of Arafat and the Mount of Mercy, where the Prophet delivered his Farewell Sermon — the longest of the Makkah Ziyarat legs.",
+        href: "/makkah/makkah-to-arafat",
+      },
+      {
+        from: "Madinah (Your Hotel)",
+        to: "Quba Mosque",
+        distance: "approx. 5 km south",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "The first mosque built in Islam, founded by the Prophet himself. Praying two rakahs here is one of the most recommended acts for any Madinah visitor.",
+        href: "/madinah/madinah-to-quba-mosque",
+      },
+      {
+        from: "Madinah (Your Hotel)",
+        to: "Mount Uhud & the Martyrs' Cemetery",
+        distance: "approx. 6 km north",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "The site of the Battle of Uhud and the resting place of its martyrs — a place of quiet reflection just north of the Prophet's Mosque.",
+        href: "/madinah/madinah-to-mount-uhud",
+      },
+      {
+        from: "Madinah (Your Hotel)",
+        to: "Masjid al-Qiblatain",
+        distance: "approx. 4 km",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "The Mosque of the Two Qiblas, where the direction of prayer changed from Jerusalem to Makkah during a single prayer.",
+        href: "/madinah/madinah-to-qiblatain-mosque",
+      },
+      {
+        from: "Madinah (Your Hotel)",
+        to: "The Seven Mosques",
+        distance: "approx. 4 km",
+        duration: "1–2 hrs with waiting",
+        benefit:
+          "A cluster of small historic mosques marking the site of the Battle of the Trench, easily combined with Quba Mosque and Masjid al-Qiblatain.",
+        href: "/madinah/madinah-to-seven-mosques",
+      },
+    ],
+  },
+
   popularRoutes: {
     heading: "Popular Ziyarat Routes and Connecting Transfers",
     intro: "The routes below represent the most commonly requested Ziyarat circuits and the intercity transfers that pilgrims combine with them. Whether you are completing a classic Umrah itinerary between Makkah and Madinah or building a custom multi-day visit, these routes form the backbone of a well-planned Ziyarat journey. Distances are approximate; journey times assume normal daytime traffic conditions.",

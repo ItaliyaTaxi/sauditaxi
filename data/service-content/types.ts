@@ -54,6 +54,14 @@ export interface ServiceContent {
   whyChoose: { heading: string; items: SCPillar[] };
   /** 3. Service coverage areas (≈300–500 words) with contextual city links. */
   coverage: { heading: string; paragraphs: string[]; cities: SCCity[] };
+  /**
+   * Optional direct links to individual site/attraction pages within this
+   * service's cluster (e.g. every Ziyarat location page). Renders as its own
+   * card grid, distinct from `popularRoutes` (which covers intercity legs).
+   * Exists specifically to give the hub page a real click-path down into its
+   * individual site pages — see the Ziyarat content audit, finding F2.
+   */
+  exploreSites?: { heading: string; intro?: string; items: SCRoute[] };
   /** 4. Popular routes (≈400–600 words). */
   popularRoutes: { heading: string; intro?: string; routes: SCRoute[] };
   /** 5. Booking process (≈250–400 words). */

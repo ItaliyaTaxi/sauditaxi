@@ -39,11 +39,14 @@ export interface PointTransfer {
   highlights?: string[];
   /** Main body (H2 sections). */
   sections: PointTransferSection[];
-  /** 5–6 FAQs (rendered + FAQ schema; capped at 6 by the template). */
+  /** FAQs (rendered + FAQ schema; capped at 20 by the template). */
   faqs: PointTransferFaq[];
   /** Sibling /{city}/{slug} transfer slugs to cross-link. */
   relatedTransferSlugs?: string[];
   /** /routes/{slug} route slugs to cross-link. */
   relatedRouteSlugs?: string[];
   keywords?: string[];
+  /** Optional per-page hero photo override; falls back to the generic city hero. */
+  heroImage?: string;
+  heroAlt?: string;
 }
