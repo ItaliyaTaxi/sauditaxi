@@ -22,6 +22,14 @@ import { post as fridayPrayer } from "./posts-2026/friday-prayer-travel-tips-sau
 import { post as hotelNearHaram } from "./posts-2026/hotel-near-haram-what-to-know.mjs";
 import { post as travelScams } from "./posts-2026/saudi-arabia-travel-scams.mjs";
 import { post as aiVsLocal } from "./posts-2026/ai-travel-planning-vs-local-experts.mjs";
+import { post as riyadhToAlula } from "./posts-2026/riyadh-to-alula-road-trip.mjs";
+import { post as madinahToYanbu } from "./posts-2026/madinah-to-yanbu-transfer-guide.mjs";
+import { post as businessTravelBahrainDammam } from "./posts-2026/business-travel-bahrain-dammam.mjs";
+import { post as familyTravelBahrainSaudi } from "./posts-2026/family-travel-bahrain-saudi-arabia.mjs";
+import { post as gccResidentsRoadTravel } from "./posts-2026/gcc-residents-road-travel-saudi-arabia.mjs";
+import { post as bestVehicleCrossBorder } from "./posts-2026/best-vehicle-cross-border-travel.mjs";
+import { post as bahrainToSaudiByRoad } from "./posts-2026/bahrain-to-saudi-arabia-by-road.mjs";
+import { post as travelDocumentsBahrainSaudi } from "./posts-2026/travel-documents-bahrain-saudi-arabia.mjs";
 
 // Shared CTA appended to every article (kept verbatim in sync with seed-blogs).
 const GENERAL_CTA = `<h2 id="book-your-transfer">Book Your Private Transfer</h2>
@@ -69,4 +77,12 @@ export const extraPosts2026 = [
   hotelNearHaram,
   travelScams,
   aiVsLocal,
+  riyadhToAlula,
+  madinahToYanbu,
+  businessTravelBahrainDammam,
+  familyTravelBahrainSaudi,
+  gccResidentsRoadTravel,
+  bestVehicleCrossBorder,
+  bahrainToSaudiByRoad,
+  travelDocumentsBahrainSaudi,
 ].map(finalise);

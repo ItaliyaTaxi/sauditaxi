@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1020"/><stop offset="1" stop-color="#16314a"/></linearGradient>
+    <radialGradient id="g" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#f5b820" stop-opacity="0.22"/><stop offset="1" stop-color="#f5b820" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#b)"/><rect width="1600" height="900" fill="url(#g)"/>
+  <!-- AlUla rock formations (background silhouette) -->
+  <g fill="#0c1422" opacity="0.9">
+    <path d="M120 620 L220 400 L300 500 L360 340 L460 620 Z"/>
+    <path d="M980 640 L1080 460 L1160 560 L1260 380 L1380 640 Z"/>
+    <rect x="640" y="560" width="220" height="80" rx="10"/>
+  </g>
+  <!-- distant sun/glow -->
+  <circle cx="800" cy="300" r="70" fill="#f5b820" opacity="0.35"/>
+  <!-- road -->
+  <path d="M0 820 L650 660 L950 660 L1600 820 L1600 900 L0 900 Z" fill="#0a0f1a"/>
+  <path d="M700 664 L740 664 M780 664 L820 664 M860 664 L900 664" stroke="#f5b820" stroke-width="6" opacity="0.6"/>
+  <!-- car silhouette -->
+  <g fill="#0c1422"><rect x="700" y="560" width="240" height="70" rx="16"/><path d="M745 560 l30-50 h110 l35 50 Z"/></g>
+  <g fill="#f5b820" opacity="0.85"><rect x="775" y="572" width="50" height="10" rx="3"/></g>
+  <circle cx="750" cy="636" r="18" fill="#0a0f1a"/><circle cx="900" cy="636" r="18" fill="#0a0f1a"/>
+  <rect x="0" y="740" width="1600" height="160" fill="#070b14" opacity="0.4"/>
+</svg>
