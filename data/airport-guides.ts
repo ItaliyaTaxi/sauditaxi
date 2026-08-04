@@ -14,11 +14,14 @@ export interface AirportGuide {
   sections?: { heading: string; paragraphs: string[] }[];
   faqs?: Faq[];
   keywords?: string[];
+  /** ISO date this guide's content was last substantively reviewed/updated. */
+  lastUpdated?: string;
 }
 
 export const airportGuides: Record<string, AirportGuide> = {
   // ── RIYADH · RUH ──────────────────────────────────────────────────────────
   "riyadh-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "riyadh airport taxi",
       "king khalid airport transfer",
@@ -94,11 +97,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Request child seats when you book, and choose an SUV, van, or minibus if you're travelling as a group or with extra luggage.",
       },
+      {
+        question: "How far in advance should I book a Riyadh airport transfer?",
+        answer:
+          "Booking a day or two ahead is comfortable for most travellers, though same-day requests are usually possible. During major events such as Riyadh Season or large conferences, book earlier to guarantee your preferred vehicle class.",
+      },
+      {
+        question: "What vehicle should I choose for a business trip from RUH?",
+        answer:
+          "A business sedan or SUV suits most solo executives and small teams heading to Olaya or KAFD. For a visiting delegation or a day with several meetings, a van keeps everyone together and a full-day chauffeur booking removes the need to arrange separate local transport.",
+      },
+      {
+        question: "Is the price for a Riyadh airport taxi fixed, or does it change with traffic?",
+        answer:
+          "Your fare is fixed and agreed before you travel. Traffic on Airport Road, immigration queues, or baggage delays never change the price you were quoted.",
+      },
+      {
+        question: "How far is King Khalid Airport from Diriyah and the Riyadh Season venues?",
+        answer:
+          "Diriyah is on the opposite side of the city from the airport, so allow roughly 45–60 minutes depending on which Riyadh Season venue or district you're visiting and current traffic.",
+      },
+      {
+        question: "Do you offer wheelchair-accessible vehicles at RUH?",
+        answer:
+          "Let us know about any mobility needs when you book so we can arrange a suitable vehicle and allow extra time at pickup — mention this alongside your flight number so your driver is prepared.",
+      },
+      {
+        question: "What's the best time to arrive at Riyadh airport to avoid traffic?",
+        answer:
+          "Mid-morning and early afternoon arrivals generally clear Airport Road faster than the evening rush. Whatever time you land, flight tracking means your driver is ready regardless, so this affects your drive time more than your pickup.",
+      },
     ],
   },
 
   // ── JEDDAH · JED ──────────────────────────────────────────────────────────
   "jeddah-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "jeddah airport taxi",
       "king abdulaziz airport transfer",
@@ -167,11 +201,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "We track your flight and your driver waits regardless of the arrival time. Meet & greet in the arrivals hall means you're collected as soon as you clear customs.",
       },
+      {
+        question: "How far ahead should I book during peak Umrah season or Ramadan?",
+        answer:
+          "Book at least a week ahead where possible during Ramadan and peak Umrah months, when flight banks are largest and vehicle demand is highest. Outside those periods, a day or two ahead is usually enough.",
+      },
+      {
+        question: "What vehicle suits a large pilgrim group from JED?",
+        answer:
+          "A van or minibus is the practical choice for groups of six or more travelling together with shared luggage and Zamzam water, keeping the whole party in one vehicle for one fixed price rather than splitting across several cars.",
+      },
+      {
+        question: "Can the driver stop at a miqat on the way from JED to Makkah?",
+        answer:
+          "Yes, if you haven't entered ihram before landing. Mention this when you book so your driver can plan a stop at the appropriate miqat point on the route to Makkah.",
+      },
+      {
+        question: "Is a private transfer from JED a good option for women travelling alone?",
+        answer:
+          "Yes. The vehicle is exclusively yours for the journey, with no strangers sharing the ride, which many solo female travellers and pilgrims find more comfortable than shared transport.",
+      },
+      {
+        question: "How far is Jeddah Corniche from the airport?",
+        answer:
+          "The Corniche and central Jeddah hotels are a more direct, shorter drive than the routes to Makkah or Madinah — typically well under an hour depending on your exact hotel and traffic.",
+      },
+      {
+        question: "Is airport transfer available 24/7 at JED?",
+        answer:
+          "Yes. Flights land around the clock throughout Umrah and Hajj seasons, and meet-and-greet pickup is available for any arrival time, day or night.",
+      },
     ],
   },
 
   // ── MADINAH · MED ─────────────────────────────────────────────────────────
   "madinah-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "madinah airport taxi",
       "prince mohammad airport transfer",
@@ -240,11 +305,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV, van, or minibus for groups or extra luggage, and request child seats when you book.",
       },
+      {
+        question: "How far in advance should I book a Madinah airport transfer?",
+        answer:
+          "A day or two ahead is usually sufficient outside peak season. During Ramadan and busy Umrah periods, book at least a week ahead to secure your preferred vehicle and pickup time.",
+      },
+      {
+        question: "What is the best vehicle for elderly pilgrims arriving at MED?",
+        answer:
+          "An SUV with easier entry height is generally more comfortable than a low sedan for elderly travellers, and it's worth mentioning any mobility needs when booking so we can allow extra time and choose the most suitable vehicle.",
+      },
+      {
+        question: "Is the fare from Madinah airport fixed regardless of my hotel's exact location?",
+        answer:
+          "Yes, once your hotel address is confirmed at booking, the price is fixed for that destination and does not change due to traffic, immigration queues, or how long baggage claim takes.",
+      },
+      {
+        question: "How far is Quba Mosque from Madinah airport?",
+        answer:
+          "Quba Mosque is on the opposite side of central Madinah from the airport, roughly 20 km away. Most travellers visit Quba as part of a separate Ziyarat trip from their hotel rather than directly from the airport.",
+      },
+      {
+        question: "Is it safe for a woman to book a private transfer alone from Madinah airport?",
+        answer:
+          "Yes. Your vehicle is private and exclusive to your booking, with a licensed driver and no shared passengers, which is a common and practical choice for women travelling to Madinah without a male relative.",
+      },
+      {
+        question: "Can the driver wait if I want to visit the Prophet's Mosque before checking into my hotel?",
+        answer:
+          "Let us know when booking if you'd like a brief stop before heading to your hotel, and we can plan the routing and any waiting time around it as part of your transfer.",
+      },
     ],
   },
 
   // ── DAMMAM · DMM ──────────────────────────────────────────────────────────
   "dammam-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "dammam airport taxi",
       "king fahd airport transfer",
@@ -313,11 +409,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose comfort or business class for corporate trips, or an SUV, van, or minibus for groups and extra luggage. Child seats are available on request.",
       },
+      {
+        question: "How far in advance should corporate travellers book from DMM?",
+        answer:
+          "A day ahead is typically enough for a standard pickup. For recurring business travel, a corporate account with pre-arranged bookings removes the need to book each trip individually — ask our team to set one up.",
+      },
+      {
+        question: "What is the best vehicle for an Aramco or corporate team arriving together?",
+        answer:
+          "A van or minibus keeps a visiting team together for one fixed price, while a single business sedan or SUV suits a solo executive who values a discreet, professional pickup.",
+      },
+      {
+        question: "Is the price from DMM to Khobar or Jubail fixed in advance?",
+        answer:
+          "Yes. Your fare is agreed before you travel based on your exact destination, with no meter and no change for traffic or wait time within the agreed booking.",
+      },
+      {
+        question: "How long does the crossing to Bahrain take after landing at DMM?",
+        answer:
+          "Including the drive to the King Fahd Causeway and the border crossing itself, budget roughly one to one and a half hours from the airport to arriving in Bahrain, longer on Thursday or Friday when the causeway is busiest.",
+      },
+      {
+        question: "How hot does it get at Dammam airport in summer, and does it affect the transfer?",
+        answer:
+          "Eastern Province summers are hot and humid, but the transfer itself is unaffected — vehicles are air-conditioned throughout, and drivers carry water for longer trips such as the Riyadh or Bahrain routes.",
+      },
+      {
+        question: "Is airport transfer available for early-morning or overnight flights at DMM?",
+        answer:
+          "Yes. Meet-and-greet pickup runs around the clock, and flight tracking means your driver is ready whenever you actually land, including early-morning or late-night arrivals.",
+      },
     ],
   },
 
   // ── TAIF · TIF ────────────────────────────────────────────────────────────
   "taif-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "taif airport taxi",
       "taif regional airport transfer",
@@ -379,11 +506,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV, van, or minibus for families or groups, and request child seats when you book.",
       },
+      {
+        question: "How far ahead should I book during Taif's summer escape season?",
+        answer:
+          "Book a few days ahead during the peak summer months (roughly June through August), when Taif sees the most demand as a cool-weather retreat from Makkah and Jeddah.",
+      },
+      {
+        question: "What vehicle is best for the Al Hada mountain road?",
+        answer:
+          "A standard sedan is comfortable for most travellers, while an SUV offers a smoother ride and extra stability on the switchbacks, particularly useful for families or anyone prone to motion sickness on winding roads.",
+      },
+      {
+        question: "Is the fixed price for Taif to Makkah the same regardless of traffic on Al Hada road?",
+        answer:
+          "Yes, your fare is agreed before travel and doesn't change if traffic on the mountain road is heavier than usual — you only pay the price confirmed at booking.",
+      },
+      {
+        question: "How far are Taif's rose farms from the airport?",
+        answer:
+          "The main rose-growing areas are a short drive from the airport and city centre, easily added as a stop on your transfer or a separate local outing during your stay.",
+      },
+      {
+        question: "Is Taif airport a good gateway for family trips?",
+        answer:
+          "Yes. Taif's cooler mountain climate and attractions like the rose farms and cable car make it a popular family stop, and we can arrange an SUV or van with child seats for a comfortable arrival.",
+      },
+      {
+        question: "Can I combine a Taif airport arrival with an onward Umrah trip to Makkah?",
+        answer:
+          "Yes. Many travellers land at Taif, spend a day or two in the cooler highlands, then continue down the Al Hada road to Makkah — mention this plan when booking so both legs are arranged together.",
+      },
     ],
   },
 
   // ── ABHA · AHB ────────────────────────────────────────────────────────────
   "abha-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "abha airport taxi",
       "abha international airport transfer",
@@ -445,11 +603,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. We arrange private day trips to Habala, the terraced countryside, and mountain viewpoints, with a driver and comfortable vehicle.",
       },
+      {
+        question: "How far ahead should I book during the Abha summer festival season?",
+        answer:
+          "Book several days ahead during the peak summer festival months, when Asir sees its highest visitor numbers and vehicle demand is at its busiest.",
+      },
+      {
+        question: "How far is Habala from Abha airport?",
+        answer:
+          "Habala, the hanging village, is a scenic drive from the airport through the Asir mountains — allow extra time beyond a flat-road distance given the winding terrain, and treat it as a half-day outing rather than a quick stop.",
+      },
+      {
+        question: "Is the price for an Abha airport transfer fixed despite the mountain roads?",
+        answer:
+          "Yes. Your fare is agreed before travel regardless of road conditions, fog, or how winding the specific route is on the day.",
+      },
+      {
+        question: "What should I pack for the temperature difference when landing in Abha?",
+        answer:
+          "Even in warm months, Abha's altitude keeps evenings noticeably cooler than the rest of Saudi Arabia, and mist is common. A light jacket or layer is worth packing regardless of season.",
+      },
+      {
+        question: "Are vehicles suited to Asir's foggy mountain conditions?",
+        answer:
+          "Yes. Drivers who regularly cover the Asir highlands are used to planning around fog and adjusting timing accordingly, and vehicles are well maintained for the mountain driving conditions.",
+      },
+      {
+        question: "Can you connect Abha airport with Jazan or Najran on the same trip?",
+        answer:
+          "Yes. We run private intercity transfers linking Abha with both Jazan on the coast and Najran inland, useful for a combined southern-Saudi itinerary by private car.",
+      },
     ],
   },
 
   // ── TABUK · TUU ───────────────────────────────────────────────────────────
   "tabuk-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "tabuk airport taxi",
       "tabuk regional airport transfer",
@@ -511,11 +700,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV, van, or minibus for groups or extra luggage, and request child seats when you book.",
       },
+      {
+        question: "How should NEOM-bound business travellers book from Tabuk airport?",
+        answer:
+          "Share your project site or meeting location and arrival time when booking, and consider a corporate account if your company sends staff to NEOM regularly, so recurring trips don't need individual arrangement each time.",
+      },
+      {
+        question: "What vehicle is best for the long desert distances around Tabuk?",
+        answer:
+          "An SUV is the practical default for comfort over longer distances, while a van suits teams or families travelling together with luggage across the region's larger distances between towns.",
+      },
+      {
+        question: "Is the fare fixed for long routes like Tabuk to NEOM or AlUla?",
+        answer:
+          "Yes, the price is agreed and fixed before you travel based on your exact destination, regardless of how long the drive takes on the day.",
+      },
+      {
+        question: "How far is the historic Hejaz Railway station from Tabuk airport?",
+        answer:
+          "Tabuk Castle and the Hejaz Railway station are within the city itself, a straightforward short drive from the airport rather than a long detour.",
+      },
+      {
+        question: "Is it safe to travel the long desert routes around Tabuk by private car?",
+        answer:
+          "Yes. Drivers who cover this region regularly plan fuel and rest stops for the distances involved, and vehicles are checked and air-conditioned for comfort on longer legs such as the route toward NEOM or AlUla.",
+      },
+      {
+        question: "How cold does Tabuk get in winter, and should I plan around it?",
+        answer:
+          "Tabuk's highland winters can be genuinely cold, occasionally with frost, so pack a warm layer — the transfer itself is unaffected, as vehicles are comfortable and climate-controlled year-round.",
+      },
     ],
   },
 
   // ── YANBU · YNB ───────────────────────────────────────────────────────────
   "yanbu-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "yanbu airport taxi",
       "yanbu airport transfer",
@@ -577,11 +797,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV, van, or minibus for groups, families, or dive teams, and request child seats when you book.",
       },
+      {
+        question: "How far ahead should I book during dive season in Yanbu?",
+        answer:
+          "Book a few days ahead during the peak diving months, when resort and dive-centre transfers are in highest demand along the Yanbu coast.",
+      },
+      {
+        question: "What vehicle should I choose if I'm carrying dive gear?",
+        answer:
+          "An SUV or van gives enough space for dive bags and equipment alongside regular luggage — mention your gear when booking so we send a suitably sized vehicle.",
+      },
+      {
+        question: "Is the fare fixed for the drive from Yanbu airport to Madinah?",
+        answer:
+          "Yes, the price for the inland route to Madinah is agreed before you travel and does not change based on traffic or rest stops within the trip.",
+      },
+      {
+        question: "Is Yanbu airport a good gateway for a family beach holiday?",
+        answer:
+          "Yes. Yanbu's resorts and corniche are a popular family destination, and we can arrange an SUV or van with child seats for a comfortable transfer from the airport.",
+      },
+      {
+        question: "Do you serve business travellers heading to Yanbu's industrial city?",
+        answer:
+          "Yes. We provide direct transfers to the Royal Commission area and industrial city for energy-sector business travellers, alongside the resort and corniche transfers for leisure guests.",
+      },
+      {
+        question: "Can I book a return transfer from Yanbu back to the airport in advance?",
+        answer:
+          "Yes. You can book your return airport transfer at the same time as your arrival pickup, which is worth doing if you're on a tight schedule for a departing flight.",
+      },
     ],
   },
 
   // ── ALULA · ULH ───────────────────────────────────────────────────────────
   "alula-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "alula airport taxi",
       "alula international airport transfer",
@@ -643,11 +894,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV or van for families and groups with luggage, and request child seats when you book.",
       },
+      {
+        question: "How far ahead should I book during AlUla's peak events season?",
+        answer:
+          "Book well ahead during the cooler-season events calendar, when AlUla's resorts and transfers see their highest demand of the year.",
+      },
+      {
+        question: "What vehicle is best for touring AlUla's spread-out sites?",
+        answer:
+          "An SUV is comfortable for most couples and small families touring between Hegra, the Old Town, and Maraya, while a van suits larger groups wanting to stay together across a full day of sightseeing.",
+      },
+      {
+        question: "Is the price fixed if I book a driver for a full day of AlUla sightseeing?",
+        answer:
+          "Yes, a full-day touring arrangement is quoted as one fixed price agreed before you start, covering the driver's time between sites rather than being charged per stop.",
+      },
+      {
+        question: "How far is Elephant Rock from AlUla airport?",
+        answer:
+          "Elephant Rock (Jabal AlFil) is a short drive from the airport and resorts, easily combined with a Maraya or Old Town visit on the same outing.",
+      },
+      {
+        question: "Is AlUla airport a good gateway for a family heritage trip?",
+        answer:
+          "Yes. AlUla's sites are reached comfortably by private car, making it manageable for families with children or grandparents, and we can arrange a suitable vehicle with child seats on request.",
+      },
+      {
+        question: "Can you arrange transport for a multi-day AlUla stay, not just the airport transfer?",
+        answer:
+          "Yes. Beyond the initial airport pickup, we can arrange a driver for hotel transfers and sightseeing across your whole stay, so you're not booking a separate ride for each day.",
+      },
     ],
   },
 
   // ── JAZAN · GIZ ───────────────────────────────────────────────────────────
   "jazan-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "jazan airport taxi",
       "jazan airport transfer",
@@ -709,11 +991,42 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Yes. Choose an SUV, van, or minibus for families or groups, and request child seats when you book.",
       },
+      {
+        question: "How far ahead should I book a Jazan airport transfer?",
+        answer:
+          "A day or two ahead is usually enough. If you're timing your pickup around a specific Farasan ferry sailing, book a little earlier so we can plan the transfer around the current schedule.",
+      },
+      {
+        question: "What vehicle suits the Fifa Mountains drive from Jazan?",
+        answer:
+          "An SUV handles the steep, winding roads into the Fifa Mountains more comfortably than a low sedan, particularly for families or anyone prone to motion sickness.",
+      },
+      {
+        question: "Is the price fixed for the transfer to the Farasan ferry terminal?",
+        answer:
+          "Yes, the fare to the ferry terminal is agreed before you travel and doesn't change based on traffic or how busy the terminal is on arrival.",
+      },
+      {
+        question: "How humid is Jazan, and does it affect the ride?",
+        answer:
+          "Jazan is tropical and humid year-round, but the transfer itself stays comfortable — vehicles are air-conditioned throughout, and drivers carry water on longer trips inland.",
+      },
+      {
+        question: "Is Jazan airport suitable for a family beach and mountain trip?",
+        answer:
+          "Yes. Families often combine the corniche with a Fifa Mountains day trip, and we can arrange an SUV or van with child seats for both legs.",
+      },
+      {
+        question: "Is meet-and-greet available for all Jazan flight times?",
+        answer:
+          "Yes, meet-and-greet pickup is available for any arrival time. Share your flight number when booking and your driver will be waiting regardless of the hour.",
+      },
     ],
   },
 
   // ── HAIL · HAS ────────────────────────────────────────────────────────────
   "hail-airport": {
+    lastUpdated: "2026-08-04",
     keywords: [
       "hail airport taxi",
       "hail regional airport transfer",
@@ -774,6 +1087,36 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Are larger vehicles available at Hail airport?",
         answer:
           "Yes. Choose an SUV, van, or minibus for families or groups, and request child seats when you book.",
+      },
+      {
+        question: "How far in advance should I book a Hail airport transfer?",
+        answer:
+          "A day ahead is usually sufficient. If you're planning a longer desert leg toward AlUla or Qassim, let us know your timing early so the route and rest stops can be planned properly.",
+      },
+      {
+        question: "What vehicle is best for the open desert routes around Hail?",
+        answer:
+          "An SUV is the comfortable default for the region's longer distances, while a van suits groups or families travelling together toward the rock-art sites or onward to AlUla.",
+      },
+      {
+        question: "How far is A'arif Fort from Hail airport?",
+        answer:
+          "A'arif Fort and the Qishlah are within Hail city itself, a short drive from the airport rather than a long detour.",
+      },
+      {
+        question: "Is the price fixed for the drive from Hail toward AlUla?",
+        answer:
+          "Yes, the fare for longer intercity legs such as the route toward AlUla is agreed and fixed before you travel, regardless of fuel or rest stops along the way.",
+      },
+      {
+        question: "Is a Hail airport transfer suitable for a family trip to the rock art sites?",
+        answer:
+          "Yes. The Jubbah petroglyphs make a good family day trip by private car, and we can arrange a suitable vehicle with child seats and allow extra time for the desert drive.",
+      },
+      {
+        question: "Can you arrange transport from Hail toward Qassim as well as AlUla?",
+        answer:
+          "Yes. Besides the route toward AlUla, we run private intercity transfers from Hail toward Qassim, useful if your itinerary continues through the northern desert region.",
       },
     ],
   },

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml -o /tmp/full-sitemap.xml -w \"%{http_code}\\\\n\")",
+      "Read(//tmp/**)"
+    ]
+  }
+}

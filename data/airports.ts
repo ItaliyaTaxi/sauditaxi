@@ -40,6 +40,8 @@ export interface Airport {
   nearbyHotels?: { name: string; href?: string }[];
   /** Optional gallery images (rendered only once files are added). */
   images?: GalleryImage[];
+  /** ISO date this page's content was last substantively reviewed/updated. */
+  lastUpdated?: string;
 }
 
 const baseAirports: Airport[] = [

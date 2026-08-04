@@ -103,6 +103,8 @@ export function serviceSchema(input: {
   path: string;
   serviceType?: string;
   areaServed?: string;
+  /** ISO date the page's content was last substantively updated, if tracked. */
+  dateModified?: string;
 }): JsonLd {
   return {
     "@context": "https://schema.org",
@@ -116,6 +118,27 @@ export function serviceSchema(input: {
       "@type": input.areaServed ? "Place" : "Country",
       name: input.areaServed ?? "Saudi Arabia",
     },
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+  };
+}
+
+/** HowTo node for step-by-step process sections (e.g. airport pickup flow). */
+export function howToSchema(input: {
+  name: string;
+  description: string;
+  steps: { name: string; text?: string }[];
+}): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: input.name,
+    description: input.description,
+    step: input.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text ?? s.name,
+    })),
   };
 }
 

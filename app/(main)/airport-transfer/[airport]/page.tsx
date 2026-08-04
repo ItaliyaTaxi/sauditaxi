@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Plane, ArrowRight, CircleCheck } from "lucide-react";
+import { Plane, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -26,6 +26,7 @@ import {
   serviceSchema,
   taxiServiceSchema,
   faqSchema,
+  howToSchema,
 } from "@/lib/schema";
 
 type Params = { airport: string };
@@ -87,7 +88,13 @@ export default async function AirportPage({
   if (!airport) notFound();
 
   const city = airport.citySlug ? getCity(airport.citySlug) : undefined;
-  const faqs = (airport.faqs ?? airportFaqs(airport)).slice(0, 6);
+  const faqs = (airport.faqs ?? airportFaqs(airport)).slice(0, 15);
+  const pickupSteps = [
+    { name: "Flight tracking begins", text: "We track your flight in real time from the moment you book, so we know your actual landing time even if it changes." },
+    { name: "Driver meets you in arrivals", text: `Your driver waits in the arrivals hall at ${airport.name} with a name board, ready as soon as you clear customs.` },
+    { name: "Luggage assistance", text: "Your driver helps carry your luggage from the arrivals hall to the vehicle." },
+    { name: "Direct transfer to your destination", text: `You're driven directly to your hotel or destination in ${airport.city} at the fixed price agreed when you booked.` },
+  ];
   // Real Airport → Hotel deep links, derived from the hotel-transfer engine so
   // they are always valid (empty for cities without hotels).
   const hotelLinks =
@@ -117,6 +124,12 @@ export default async function AirportPage({
             path,
             serviceType: "Airport Transfer",
             areaServed: `${airport.city}, Saudi Arabia`,
+            dateModified: airport.lastUpdated,
+          }),
+          howToSchema({
+            name: `How pickup works at ${airport.name}`,
+            description: `Step-by-step process for a private airport transfer from ${airport.name} (${airport.code}).`,
+            steps: pickupSteps,
           }),
           faqSchema(faqs),
         ]}
@@ -134,7 +147,19 @@ export default async function AirportPage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
-            <h2 className="text-2xl font-bold text-navy">
+            {/* Key takeaways — a scannable summary an AI system or a skimming reader can extract in one pass */}
+            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">Key takeaways</h2>
+              <ul className="mt-3 space-y-1.5 text-sm text-navy">
+                <li>• Meet-and-greet pickup at {airport.name} ({airport.code}), with real-time flight tracking included.</li>
+                <li>• Fixed price agreed before you travel — delays, immigration queues, and traffic don't change your fare.</li>
+                <li>• {airport.terminals.length > 1 ? `${airport.terminals.length} terminals served` : "Single-terminal airport"}; tell us your flight number so your driver waits at the right one.</li>
+                <li>• Popular onward destinations: {airport.popularDestinations.slice(0, 3).join(", ")}.</li>
+                {airport.lastUpdated && <li>• Page reviewed {airport.lastUpdated}.</li>}
+              </ul>
+            </div>
+
+            <h2 className="mt-10 text-2xl font-bold text-navy">
               Private transfers from {airport.name}
             </h2>
             <p className="mt-3 text-muted-foreground">{airport.about}</p>
@@ -142,19 +167,14 @@ export default async function AirportPage({
             <h2 className="mt-10 text-xl font-bold text-navy">
               How airport pickup works
             </h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {[
-                "We track your flight in real time",
-                "Driver meets you in arrivals with a name board",
-                "Help with luggage to the vehicle",
-                "Direct, fixed-price ride to your destination",
-              ].map((h) => (
-                <li key={h} className="flex items-start gap-2 text-sm text-navy">
-                  <CircleCheck className="mt-0.5 size-4 shrink-0 text-gold" />
-                  {h}
+            <ol className="mt-4 grid gap-3 sm:grid-cols-2">
+              {pickupSteps.map((s, i) => (
+                <li key={s.name} className="flex items-start gap-2 text-sm text-navy">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold text-xs font-bold text-navy">{i + 1}</span>
+                  {s.name}
                 </li>
               ))}
-            </ul>
+            </ol>
 
             <h2 className="mt-10 text-xl font-bold text-navy">Terminals served</h2>
             <ul className="mt-4 flex flex-wrap gap-2">
