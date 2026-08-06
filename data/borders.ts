@@ -31,6 +31,8 @@ export interface Border {
   keywords?: string[];
   /** Optional gallery images (rendered only once files are added). */
   images?: GalleryImage[];
+  /** ISO date this page's content was last substantively reviewed. */
+  lastUpdated?: string;
 }
 
 const baseBorders: Border[] = [

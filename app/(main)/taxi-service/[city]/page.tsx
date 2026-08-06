@@ -52,7 +52,7 @@ export async function generateMetadata({
   });
 }
 
-function cityFaqs(name: string): Faq[] {
+function fallbackCityFaqs(name: string): Faq[] {
   return [
     {
       question: `Do you provide taxi service in ${name}?`,
@@ -89,7 +89,7 @@ export default async function CityPage({
   const attractionTransfers = pointTransfersForCity(city.slug).filter(
     (t) => t.category === "attraction"
   );
-  const faqs = cityFaqs(city.name);
+  const faqs = (city.faqs ?? fallbackCityFaqs(city.name)).slice(0, 15);
   const path = `/taxi-service/${city.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -112,6 +112,7 @@ export default async function CityPage({
             path,
             serviceType: "City Taxi Service",
             areaServed: `${city.name}, Saudi Arabia`,
+            dateModified: city.lastUpdated,
           }),
           faqSchema(faqs),
         ]}
@@ -129,7 +130,29 @@ export default async function CityPage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
-            <h2 className="text-2xl font-bold text-navy">
+            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
+                Key takeaways
+              </h2>
+              <ul className="mt-3 space-y-1.5 text-sm text-navy">
+                <li>
+                  • Fixed-price private taxi service across {city.name}, booked on
+                  WhatsApp or our quote form, available 24/7.
+                </li>
+                {airport && (
+                  <li>
+                    • Airport pickup via {airport.name} ({airport.code}) with
+                    real-time flight tracking included.
+                  </li>
+                )}
+                <li>
+                  • Popular routes from {city.name}: {city.popularDestinations.slice(0, 3).join(", ")}.
+                </li>
+                {city.lastUpdated && <li>• Page reviewed {city.lastUpdated}.</li>}
+              </ul>
+            </div>
+
+            <h2 className="mt-10 text-2xl font-bold text-navy">
               Private Taxi Service in {city.name}
             </h2>
             <p className="mt-3 text-muted-foreground">{city.about}</p>
@@ -139,6 +162,14 @@ export default async function CityPage({
               transfer, request a quote through WhatsApp or our booking form for a
               fixed price.
             </p>
+            {city.localInsight && (
+              <>
+                <h2 className="mt-10 text-xl font-bold text-navy">
+                  Local travel advice for {city.name}
+                </h2>
+                <p className="mt-3 text-muted-foreground">{city.localInsight}</p>
+              </>
+            )}
 
             <h2 className="mt-10 text-xl font-bold text-navy">
               Why book your {city.name} taxi with us

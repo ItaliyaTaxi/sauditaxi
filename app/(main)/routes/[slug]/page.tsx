@@ -116,6 +116,7 @@ export default async function RoutePage({
             description: route.intro,
             path,
             serviceType: "Intercity Transfer",
+            dateModified: route.lastUpdated,
           }),
           faqSchema(faqs),
         ]}
@@ -133,7 +134,21 @@ export default async function RoutePage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
-            <div className="flex flex-wrap gap-3">
+            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
+                Key takeaways
+              </h2>
+              <ul className="mt-3 space-y-1.5 text-sm text-navy">
+                <li>
+                  • {route.from} to {route.to}: {route.distance}, approximately {route.duration} by private transfer.
+                </li>
+                <li>• Fixed price agreed before you travel — no meter, no surge, no toll surprises.</li>
+                <li>• Door-to-door pickup and drop-off, available 24/7.</li>
+                {route.lastUpdated && <li>• Page reviewed {route.lastUpdated}.</li>}
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
                 <Clock className="size-4 text-gold" /> Approx. {route.duration}
               </span>

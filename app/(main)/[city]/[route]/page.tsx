@@ -40,6 +40,7 @@ import {
   transferIntro,
   transferAbout,
   routeFaqs,
+  hotelTransfersLastUpdated,
 } from "@/lib/hotel-transfers";
 import { pointTransfers, getPointTransfer } from "@/lib/point-transfers";
 import { PointTransferView } from "@/components/templates/PointTransferView";
@@ -191,6 +192,7 @@ export default async function HotelTransferPage({
             path: t.path,
             serviceType: "Airport Transfer",
             areaServed: `${t.cityName}, Saudi Arabia`,
+            dateModified: hotelTransfersLastUpdated,
           }),
           faqSchema(faqs),
         ]}
@@ -208,8 +210,22 @@ export default async function HotelTransferPage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
+            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
+                Key takeaways
+              </h2>
+              <ul className="mt-3 space-y-1.5 text-sm text-navy">
+                <li>
+                  • {t.from} to {t.to}: {t.distance}, approximately {t.duration} by private transfer.
+                </li>
+                <li>• Fixed price agreed before you travel — no prepayment required, pay the driver on the day.</li>
+                <li>• Meet & greet pickup with real-time flight tracking and free waiting time included.</li>
+                <li>• Page reviewed {hotelTransfersLastUpdated}.</li>
+              </ul>
+            </div>
+
             {/* Route overview */}
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
                 <Clock className="size-4 text-gold" /> Approx. {t.duration}
               </span>

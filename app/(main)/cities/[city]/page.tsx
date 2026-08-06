@@ -60,7 +60,7 @@ export async function generateMetadata({
   });
 }
 
-function hubFaqs(cityName: string, aName: string): Faq[] {
+function fallbackHubFaqs(cityName: string, aName: string): Faq[] {
   return [
     {
       question: `How do I book an airport transfer in ${cityName}?`,
@@ -124,7 +124,7 @@ export default async function CityHubPage({
     .filter((r) => r.relatedCitySlugs.includes(city.slug))
     .map((r) => r.slug);
 
-  const faqs = hubFaqs(city.name, aName).slice(0, 6);
+  const faqs = (city.hubFaqs ?? fallbackHubFaqs(city.name, aName)).slice(0, 12);
 
   const hotelCount = hotels.length;
 
@@ -140,6 +140,7 @@ export default async function CityHubPage({
             path,
             serviceType: "Airport Transfer",
             areaServed: `${city.name}, Saudi Arabia`,
+            dateModified: city.lastUpdated,
           }),
           faqSchema(faqs),
         ]}
@@ -157,7 +158,22 @@ export default async function CityHubPage({
       {/* Intro / overview */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-3xl rounded-xl border border-gold/30 bg-gold/5 p-5 text-left">
+            <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
+              Key takeaways
+            </h2>
+            <ul className="mt-3 space-y-1.5 text-sm text-navy">
+              <li>
+                • Private, fixed-price transfers between {airport.name} ({airport.code})
+                and {hotelCount} hotels across {city.name}, in both directions.
+              </li>
+              <li>• Meet-and-greet pickup with real-time flight tracking on arrival.</li>
+              <li>• Return transfers back to the airport are available for every hotel route.</li>
+              {city.lastUpdated && <li>• Page reviewed {city.lastUpdated}.</li>}
+            </ul>
+          </div>
+
+          <div className="mx-auto mt-8 max-w-3xl text-center">
             <h2 className="text-2xl font-bold text-navy sm:text-3xl">
               Private hotel transfers from {airport.name}
             </h2>

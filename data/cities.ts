@@ -1,3 +1,6 @@
+import type { Faq } from "./faqs";
+import { cityGuides } from "./city-guides";
+
 export interface City {
   slug: string;
   name: string;
@@ -20,9 +23,14 @@ export interface City {
   /** Optional hero image override + alt; falls back to a themed scene. */
   heroImage?: string;
   heroAlt?: string;
+  /** Enrichment merged in from city-guides.ts. */
+  lastUpdated?: string;
+  localInsight?: string;
+  faqs?: Faq[];
+  hubFaqs?: Faq[];
 }
 
-export const cities: City[] = [
+const baseCities: City[] = [
   {
     slug: "riyadh",
     name: "Riyadh",
@@ -478,6 +486,11 @@ export const cities: City[] = [
     nearestAirportSlug: "abha-airport",
   },
 ];
+
+export const cities: City[] = baseCities.map((c) => ({
+  ...c,
+  ...cityGuides[c.slug],
+}));
 
 export const cityMap: Record<string, City> = Object.fromEntries(
   cities.map((c) => [c.slug, c])

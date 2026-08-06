@@ -13,6 +13,9 @@ import { cities, getCity, type City } from "@/data/cities";
 import { getAirport, type Airport } from "@/data/airports";
 import type { Faq } from "@/data/faqs";
 
+/** Date this generation template's content (angles, FAQs) was last substantively reviewed. */
+export const hotelTransfersLastUpdated = "2026-08-05";
+
 export type TransferDirection = "airport-to-hotel" | "hotel-to-airport";
 
 export interface HotelTransfer {
@@ -336,6 +339,18 @@ export function routeFaqs(t: HotelTransfer): Faq[] {
     {
       question: `What if my flight is delayed?`,
       answer: `We monitor your flight and adjust the schedule automatically, with free waiting time included, so a change in your arrival never costs you the transfer.`,
+    },
+    {
+      question: `Is the ${t.from} to ${t.to} transfer private, or shared with other passengers?`,
+      answer: `It's fully private for your booking only — no shared rides, no other passengers, and no stops beyond your own journey.`,
+    },
+    {
+      question: `Do I need to pay in advance for this transfer?`,
+      answer: `No prepayment is required. The price is agreed when you book, and you pay the driver directly — in cash (SAR) or by card — on the day.`,
+    },
+    {
+      question: `Can I cancel or change this booking?`,
+      answer: `Yes. Since there's no prepayment, you can cancel or change your ${t.from} to ${t.to} booking free of charge with reasonable notice — just message us on WhatsApp.`,
     },
   ];
 }

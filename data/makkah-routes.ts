@@ -18,6 +18,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "870 km",
     duration: "approx. 9 hours",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to Riyadh taxi is a long-distance private transfer across the heart of the Kingdom, chosen by families and groups who prefer door-to-door comfort over the airport shuffle.",
     about:
@@ -98,6 +99,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "870 km",
     duration: "approx. 9 hours",
+    lastUpdated: "2026-08-05",
     intro:
       "The Riyadh to Makkah taxi is a private long-distance transfer for pilgrims and residents travelling from the capital to the Holy City for Umrah.",
     about:
@@ -178,6 +180,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "180 km",
     duration: "approx. 2 hours",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to King Abdullah Economic City (KAEC) taxi is a smooth coastal transfer north past Jeddah to the modern port and resort city on the Red Sea.",
     about:
@@ -258,6 +261,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "330 km",
     duration: "approx. 3 hours 30 min",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to Yanbu taxi is a private coastal transfer north to the Red Sea industrial and resort city, popular for both business and leisure travel.",
     about:
@@ -338,6 +342,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "690 km",
     duration: "approx. 7 hours 30 min",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to AlUla taxi is a long-distance private transfer toward the Kingdom's flagship heritage destination, home to the UNESCO-listed Hegra.",
     about:
@@ -418,6 +423,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "1,250 km",
     duration: "approx. 12 hours",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to Dammam taxi is a coast-to-coast private transfer across the Kingdom to the Eastern Province, for travellers who prefer the road over flying.",
     about:
@@ -498,6 +504,7 @@ export const makkahRoutes: Route[] = [
     category: "intercity",
     distance: "630 km",
     duration: "approx. 7 hours",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to Abha taxi is a private long-distance transfer south to the cool, green highlands of Asir, a favourite summer escape.",
     about:
@@ -578,6 +585,7 @@ export const makkahRoutes: Route[] = [
     category: "airport",
     distance: "95 km",
     duration: "approx. 1 hour 20 min",
+    lastUpdated: "2026-08-05",
     intro:
       "The Makkah to Jeddah airport taxi is a private departure transfer for pilgrims flying home, timed carefully around your check-in from your hotel near the Haram.",
     about:

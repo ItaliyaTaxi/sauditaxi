@@ -15,11 +15,13 @@ export interface BorderGuide {
   sections?: { heading: string; paragraphs: string[] }[];
   faqs?: Faq[];
   keywords?: string[];
+  lastUpdated?: string;
 }
 
 export const borderGuides: Record<string, BorderGuide> = {
   // ── BAHRAIN · King Fahd Causeway ──────────────────────────────────────────
   "bahrain-causeway": {
+    lastUpdated: "2026-08-05",
     keywords: [
       "saudi to bahrain taxi",
       "king fahd causeway transfer",
@@ -88,11 +90,42 @@ export const borderGuides: Record<string, BorderGuide> = {
         answer:
           "We collect from Khobar, Dammam, Jubail, Hofuf, and other Eastern Province locations, and can meet you at Dammam airport for a direct onward transfer to Bahrain.",
       },
+      {
+        question: "How far in advance should I book a Bahrain Causeway transfer?",
+        answer:
+          "Same-day booking is often possible, but booking a day ahead gives more vehicle choice, especially around weekend evenings and holidays when causeway traffic peaks.",
+      },
+      {
+        question: "What vehicle should I book for a family crossing to Bahrain?",
+        answer:
+          "For families we recommend a larger sedan or van depending on group size and luggage — mention passenger count and any car seats needed when requesting your quote.",
+      },
+      {
+        question: "Is the price fixed even if the causeway queue is long?",
+        answer:
+          "Yes, we agree a fixed price before you travel; immigration queues at Passport Island don't change your fare.",
+      },
+      {
+        question: "Can I book a return transfer from Bahrain back to Saudi Arabia?",
+        answer:
+          "Yes, we arrange return transfers from Bahrain back into the Eastern Province — let us know your return date when booking, or contact us once you're ready to head back.",
+      },
+      {
+        question: "What happens if my visa or documents aren't in order at the crossing?",
+        answer:
+          "Immigration decisions at Passport Island are made by Saudi and Bahraini border officials, not by us — we strongly recommend confirming your visa and document requirements with official sources before you travel to avoid delays.",
+      },
+      {
+        question: "Is the King Fahd Causeway transfer suitable for business travellers?",
+        answer:
+          "Yes, many business travellers use this route for day trips to Manama; we can plan pickup and return timing around your meeting schedule.",
+      },
     ],
   },
 
   // ── QATAR · Salwa Crossing ────────────────────────────────────────────────
   "qatar-border": {
+    lastUpdated: "2026-08-05",
     keywords: [
       "saudi to qatar taxi",
       "salwa border crossing transfer",
@@ -161,11 +194,42 @@ export const borderGuides: Record<string, BorderGuide> = {
         answer:
           "Crossing hours and procedures can change. Please confirm the latest operating information for the Salwa crossing before you set out.",
       },
+      {
+        question: "How far in advance should I book a Qatar border transfer?",
+        answer:
+          "Given the long desert route, booking at least a day ahead is recommended so we can plan the vehicle, driver, and rest stops properly.",
+      },
+      {
+        question: "What vehicle is best for the long drive to Salwa?",
+        answer:
+          "A comfortable sedan suits most travellers; for families or groups with more luggage we recommend a larger vehicle or van — mention passenger count when requesting your quote.",
+      },
+      {
+        question: "Is the price fixed for the whole journey to Salwa?",
+        answer:
+          "Yes, we agree a fixed price before you travel based on your pickup city, so traffic or fuel stops along the way don't change your fare.",
+      },
+      {
+        question: "Can you arrange a return transfer from the Qatar border?",
+        answer:
+          "Yes, we can arrange a pickup back from Salwa into Saudi Arabia for your return journey — let us know your plans when booking.",
+      },
+      {
+        question: "Who do I contact if my Qatar visa isn't approved in time?",
+        answer:
+          "Visa approval is handled by Qatari immigration authorities, not by us — we recommend confirming your visa status with official Qatari sources well before your travel date.",
+      },
+      {
+        question: "Is this route suitable for business travel to Qatar?",
+        answer:
+          "Yes, though most business travellers to Doha fly given the distance; the Salwa crossing suits those who prefer a private overland trip or need to bring a vehicle-load of luggage.",
+      },
     ],
   },
 
   // ── UAE · Al Batha Crossing ───────────────────────────────────────────────
   "uae-border": {
+    lastUpdated: "2026-08-05",
     keywords: [
       "saudi to uae taxi",
       "al batha border crossing transfer",
@@ -234,11 +298,42 @@ export const borderGuides: Record<string, BorderGuide> = {
         answer:
           "Customs checks apply on both sides, with restrictions on alcohol and certain goods. Check current allowances and declare anything you're unsure about.",
       },
+      {
+        question: "How far in advance should I book a UAE border transfer?",
+        answer:
+          "Booking at least a day ahead is recommended given the long route and Al Batha's busier traffic, especially around weekends and holidays.",
+      },
+      {
+        question: "What vehicle is best for the drive to Al Batha?",
+        answer:
+          "A comfortable sedan suits most travellers; for families or groups with extra luggage we recommend a larger vehicle — mention passenger count when requesting your quote.",
+      },
+      {
+        question: "Is the price fixed for the whole journey to the UAE border?",
+        answer:
+          "Yes, we agree a fixed price before you travel based on your pickup city, so traffic doesn't change your fare.",
+      },
+      {
+        question: "Can you arrange a return transfer from the UAE border?",
+        answer:
+          "Yes, we can arrange a pickup back from Al Batha into Saudi Arabia for your return journey — let us know your plans when booking.",
+      },
+      {
+        question: "Who handles visa questions for entering the UAE?",
+        answer:
+          "Visa approval is handled by UAE immigration authorities, not by us — confirm your visa status and eligibility with official UAE sources before you travel.",
+      },
+      {
+        question: "Is this route suitable for business travel to Abu Dhabi or Dubai?",
+        answer:
+          "Most business travellers to the UAE fly given the distance from the Eastern Province; the Al Batha crossing suits those who prefer a private overland trip or are carrying significant luggage.",
+      },
     ],
   },
 
   // ── KUWAIT · Al Khafji Crossing ───────────────────────────────────────────
   "kuwait-border": {
+    lastUpdated: "2026-08-05",
     keywords: [
       "saudi to kuwait taxi",
       "al khafji border crossing transfer",
@@ -307,11 +402,42 @@ export const borderGuides: Record<string, BorderGuide> = {
         answer:
           "Crossing hours and procedures can change. Please confirm the latest operating information for the Al Khafji crossing before you set out.",
       },
+      {
+        question: "How far in advance should I book a Kuwait border transfer?",
+        answer:
+          "Booking at least a day ahead is recommended, particularly around weekends and holidays when the coastal route sees more traffic.",
+      },
+      {
+        question: "What vehicle is best for the drive to Al Khafji?",
+        answer:
+          "A comfortable sedan suits most travellers; for families or groups with extra luggage we recommend a larger vehicle — mention passenger count when requesting your quote.",
+      },
+      {
+        question: "Is the price fixed for the whole journey to Kuwait?",
+        answer:
+          "Yes, we agree a fixed price before you travel based on your pickup city, so traffic doesn't change your fare.",
+      },
+      {
+        question: "Can you arrange a return transfer from the Kuwait border?",
+        answer:
+          "Yes, we can arrange a pickup back from Al Khafji into Saudi Arabia for your return journey — let us know your plans when booking.",
+      },
+      {
+        question: "Who handles visa questions for entering Kuwait?",
+        answer:
+          "Visa approval is handled by Kuwaiti immigration authorities, not by us — confirm your visa status and eligibility with official Kuwaiti sources before you travel, especially given Kuwait's strict customs rules.",
+      },
+      {
+        question: "Is this route suitable for business travel to Kuwait City?",
+        answer:
+          "Yes, the northern coastal route is a practical option for business travellers who prefer a private overland trip from the Eastern Province.",
+      },
     ],
   },
 
   // ── JORDAN · Al Haditha / Al Durra Crossing ───────────────────────────────
   "jordan-border": {
+    lastUpdated: "2026-08-05",
     keywords: [
       "saudi to jordan taxi",
       "al haditha border crossing transfer",
@@ -379,6 +505,36 @@ export const borderGuides: Record<string, BorderGuide> = {
         question: "Can you combine the trip with AlUla sightseeing?",
         answer:
           "Yes. Many travellers combine the northern route with a stop in AlUla for heritage sightseeing. We can arrange a driver and itinerary to suit your plans.",
+      },
+      {
+        question: "How far in advance should I book a Jordan border transfer?",
+        answer:
+          "Booking at least a day ahead is recommended given the long northern route, so we can plan the vehicle, driver, and rest stops properly.",
+      },
+      {
+        question: "What vehicle is best for the long drive to the Jordan border?",
+        answer:
+          "A comfortable sedan suits most travellers; for families or groups with more luggage we recommend a larger vehicle — mention passenger count when requesting your quote.",
+      },
+      {
+        question: "Is the price fixed for the whole journey to the Jordan border?",
+        answer:
+          "Yes, we agree a fixed price before you travel based on your pickup city, so traffic and fuel stops don't change your fare.",
+      },
+      {
+        question: "Can you arrange a return transfer from the Jordan border?",
+        answer:
+          "Yes, we can arrange a pickup back into Saudi Arabia from either crossing for your return journey — let us know your plans when booking.",
+      },
+      {
+        question: "Who handles visa questions for entering Jordan?",
+        answer:
+          "Visa approval is handled by Jordanian immigration authorities, not by us — confirm your visa status and eligibility, including Jordan Pass options, with official Jordanian sources before you travel.",
+      },
+      {
+        question: "Should I use Al Haditha or Al Durra for Aqaba?",
+        answer:
+          "Al Durra, near Haql on the Red Sea coast, is generally the more convenient crossing for travellers heading to Aqaba; tell us your destination and we'll recommend the appropriate route.",
       },
     ],
   },

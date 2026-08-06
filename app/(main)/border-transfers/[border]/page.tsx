@@ -78,7 +78,7 @@ export default async function BorderPage({
   const border = getBorder(slug);
   if (!border) notFound();
 
-  const faqs = (border.faqs ?? borderFaqs(border)).slice(0, 6);
+  const faqs = (border.faqs ?? borderFaqs(border)).slice(0, 15);
   const path = `/border-transfers/${border.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -96,6 +96,7 @@ export default async function BorderPage({
             description: border.intro,
             path,
             serviceType: "Border Transfer",
+            dateModified: border.lastUpdated,
           }),
           faqSchema(faqs),
         ]}
@@ -113,7 +114,26 @@ export default async function BorderPage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
-            <h2 className="text-2xl font-bold text-navy">
+            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
+                Key takeaways
+              </h2>
+              <ul className="mt-3 space-y-1.5 text-sm text-navy">
+                <li>
+                  • Private, fixed-price door-to-door transfer from Saudi Arabia to
+                  the {border.country} border via {border.crossing}.
+                </li>
+                <li>• Pickup cities: {border.pickupCities.join(", ")}.</li>
+                <li>
+                  • A valid passport and the correct {border.country} entry
+                  permission are required — always verify current visa rules with
+                  official sources before you travel.
+                </li>
+                {border.lastUpdated && <li>• Page reviewed {border.lastUpdated}.</li>}
+              </ul>
+            </div>
+
+            <h2 className="mt-10 text-2xl font-bold text-navy">
               Private transfer to the {border.country} border
             </h2>
             <p className="mt-3 text-muted-foreground">{border.about}</p>
