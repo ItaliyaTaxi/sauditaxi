@@ -42,6 +42,8 @@ export interface Route {
 const baseRoutes: Route[] = [
   {
     slug: "jeddah-to-makkah",
+    metaTitle: "Jeddah Airport to Makkah Private Transfer | Taxi Booking",
+    metaDescription: "Book a private transfer from Jeddah Airport (JED) to Makkah (85 km, ~1h 15m). Professional driver, door-to-door Haram hotel drop-off, 24/7 availability.",
     from: "Jeddah",
     to: "Makkah",
     category: "religious",

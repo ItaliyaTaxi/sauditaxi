@@ -27,6 +27,18 @@ export interface Lead {
   message: string | null;
   sourcePage: string | null;
   serviceType: string | null;
+  firstLandingPage?: string | null;
+  firstReferrer?: string | null;
+  firstUtmSource?: string | null;
+  firstUtmMedium?: string | null;
+  firstUtmCampaign?: string | null;
+  landingPage?: string | null;
+  referrer?: string | null;
+  utmSource?: string | null;
+  utmMedium?: string | null;
+  utmCampaign?: string | null;
+  gclid?: string | null;
+  searchSource?: string | null;
   status: LeadStatus;
   createdAt: string;
   updatedAt: string;
@@ -53,6 +65,18 @@ type LeadRow = {
   message: string | null;
   source_page: string | null;
   service_type: string | null;
+  first_landing_page?: string | null;
+  first_referrer?: string | null;
+  first_utm_source?: string | null;
+  first_utm_medium?: string | null;
+  first_utm_campaign?: string | null;
+  landing_page?: string | null;
+  referrer?: string | null;
+  utm_source?: string | null;
+  utm_medium?: string | null;
+  utm_campaign?: string | null;
+  gclid?: string | null;
+  search_source?: string | null;
   status: string;
   created_at: string;
   updated_at: string;
@@ -77,6 +101,18 @@ function rowToLead(row: LeadRow): Lead {
     message: row.message,
     sourcePage: row.source_page,
     serviceType: row.service_type,
+    firstLandingPage: row.first_landing_page ?? null,
+    firstReferrer: row.first_referrer ?? null,
+    firstUtmSource: row.first_utm_source ?? null,
+    firstUtmMedium: row.first_utm_medium ?? null,
+    firstUtmCampaign: row.first_utm_campaign ?? null,
+    landingPage: row.landing_page ?? null,
+    referrer: row.referrer ?? null,
+    utmSource: row.utm_source ?? null,
+    utmMedium: row.utm_medium ?? null,
+    utmCampaign: row.utm_campaign ?? null,
+    gclid: row.gclid ?? null,
+    searchSource: row.search_source ?? null,
     status: (LEAD_STATUSES as readonly string[]).includes(row.status)
       ? (row.status as LeadStatus)
       : "New",
@@ -101,6 +137,18 @@ function inputToRow(input: NewLeadInput): Partial<LeadRow> {
     message: input.message ?? null,
     source_page: input.sourcePage ?? null,
     service_type: input.serviceType ?? null,
+    first_landing_page: input.firstLandingPage ?? null,
+    first_referrer: input.firstReferrer ?? null,
+    first_utm_source: input.firstUtmSource ?? null,
+    first_utm_medium: input.firstUtmMedium ?? null,
+    first_utm_campaign: input.firstUtmCampaign ?? null,
+    landing_page: input.landingPage ?? null,
+    referrer: input.referrer ?? null,
+    utm_source: input.utmSource ?? null,
+    utm_medium: input.utmMedium ?? null,
+    utm_campaign: input.utmCampaign ?? null,
+    gclid: input.gclid ?? null,
+    search_source: input.searchSource ?? null,
   };
 }
 

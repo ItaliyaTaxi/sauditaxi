@@ -5,12 +5,71 @@ import { listPublishedBlogs } from "@/lib/blogs";
 import { routes } from "@/data/routes";
 import { formatBlogDate } from "@/lib/format";
 
-const quickLinks = [
+const defaultQuickLinks = [
   { label: "Airport Transfers", href: "/airport-transfers", icon: Plane },
   { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
   { label: "Makkah Taxi Service", href: "/taxi-service/makkah", icon: RouteIcon },
   { label: "Madinah Taxi Service", href: "/taxi-service/madinah", icon: RouteIcon },
 ];
+
+const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
+  {
+    match: ["umrah", "miqat", "ihram"],
+    links: [
+      { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Jeddah → Makkah Route", href: "/routes/jeddah-to-makkah", icon: RouteIcon },
+      { label: "Madinah Airport Transfer", href: "/airport-transfer/madinah-airport", icon: Plane },
+    ],
+  },
+  {
+    match: ["jeddah-airport", "jeddah airport", "king-abdulaziz", "landing-at-jeddah"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Jeddah → Makkah Transfer", href: "/routes/jeddah-to-makkah", icon: RouteIcon },
+      { label: "Airport Transfers", href: "/airport-transfers", icon: Plane },
+      { label: "Makkah Taxi Service", href: "/taxi-service/makkah", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["dammam", "bahrain", "khobar"],
+    links: [
+      { label: "Dammam → Bahrain Transfer", href: "/routes/dammam-to-bahrain", icon: RouteIcon },
+      { label: "Dammam → Riyadh Transfer", href: "/routes/dammam-to-riyadh", icon: RouteIcon },
+      { label: "Khobar → Riyadh Transfer", href: "/routes/khobar-to-riyadh", icon: RouteIcon },
+      { label: "Airport Transfers", href: "/airport-transfers", icon: Plane },
+    ],
+  },
+  {
+    match: ["hajj", "ziyarat"],
+    links: [
+      { label: "Ziyarat Taxi Service", href: "/ziyarat-taxi-service", icon: BookOpen },
+      { label: "Hajj Transport", href: "/hajj-transport-service", icon: RouteIcon },
+      { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
+      { label: "Makkah Taxi Service", href: "/taxi-service/makkah", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["madinah", "medina", "madina"],
+    links: [
+      { label: "Madinah Airport Transfer", href: "/airport-transfer/madinah-airport", icon: Plane },
+      { label: "Madinah Taxi Service", href: "/taxi-service/madinah", icon: RouteIcon },
+      { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
+      { label: "Makkah → Madinah Route", href: "/routes/makkah-to-madinah", icon: RouteIcon },
+    ],
+  },
+];
+
+function getQuickLinks(slug: string) {
+  const s = slug.toLowerCase();
+  for (const topic of topicServiceLinks) {
+    if (topic.match.some((kw) => s.includes(kw))) {
+      return topic.links;
+    }
+  }
+  return defaultQuickLinks;
+}
+
 
 /** Sticky sidebar for blog posts: conversion CTAs + discovery links. */
 export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
@@ -19,6 +78,7 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
     .slice(0, 5);
   const popularRoutes = routes.slice(0, 5);
   const waMessage = "Hello! I'd like to book a private transfer in Saudi Arabia.";
+  const quickLinks = getQuickLinks(currentSlug);
 
   return (
     <div className="space-y-6">

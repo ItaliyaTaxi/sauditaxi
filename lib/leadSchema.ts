@@ -28,6 +28,20 @@ export const leadSchema = z.object({
   message: str(2000),
   sourcePage: str(300),
   serviceType: str(120),
+  // Multi-touch lead attribution
+  firstLandingPage: str(300),
+  firstReferrer: str(300),
+  firstUtmSource: str(100),
+  firstUtmMedium: str(100),
+  firstUtmCampaign: str(100),
+  landingPage: str(300),
+  referrer: str(300),
+  utmSource: str(100),
+  utmMedium: str(100),
+  utmCampaign: str(100),
+  gclid: str(100),
+  searchSource: str(100),
 });
 
 export type LeadFormInput = z.infer<typeof leadSchema>;
+

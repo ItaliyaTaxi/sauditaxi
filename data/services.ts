@@ -231,7 +231,7 @@ export const services: Service[] = [
           "Yes. This is our most requested Umrah transfer. We meet you at the airport and drive directly to your Makkah hotel near the Haram.",
       },
     ],
-    metaTitle: "Umrah Taxi Saudi Arabia | Makkah & Madinah Transfers",
+    metaTitle: "Umrah Taxi Service Saudi Arabia | Makkah & Madinah Transfers",
     metaDescription:
       "Book private Umrah taxi service for Jeddah airport to Makkah, Makkah to Madinah, Ziyarat, and hotel transfers.",
     featured: true,

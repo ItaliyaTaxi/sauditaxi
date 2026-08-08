@@ -58,7 +58,7 @@ const baseAirports: Airport[] = [
       "We track your flight and meet you in the arrivals hall at RUH with a name board, then drive you directly to your hotel, office, or onward city. Fixed quotes mean no surge pricing, and our drivers know all five terminals plus the route into central Riyadh and the highways to Dammam and Qassim.",
     terminals: ["Terminal 1 & 2 (international)", "Terminal 3 & 4 (domestic)", "Terminal 5 (low-cost)"],
     popularDestinations: ["Riyadh city", "Diriyah", "Dammam", "Qassim", "AlUla"],
-    metaTitle: "Riyadh Airport Taxi | King Khalid (RUH) Transfers",
+    metaTitle: "Riyadh Airport Taxi | King Khalid (RUH) Terminal 1-5 Transfers",
     metaDescription:
       "Private Riyadh airport taxi from King Khalid International (RUH). Meet-and-greet pickup, fixed quotes, hotel and intercity transfers across Saudi Arabia.",
   },
@@ -75,7 +75,7 @@ const baseAirports: Airport[] = [
       "JED is the first stop for most Umrah and Hajj pilgrims. We provide meet-and-greet at the Hajj Terminal, Terminal 1, and the North Terminal, then drive directly to Makkah hotels near the Haram or onward to Madinah and Taif. Drivers assist with luggage and understand pilgrim schedules.",
     terminals: ["Terminal 1 (North)", "Hajj Terminal", "Domestic terminal"],
     popularDestinations: ["Makkah", "Madinah", "Jeddah city", "Taif"],
-    metaTitle: "Jeddah Airport Taxi | King Abdulaziz (JED) to Makkah",
+    metaTitle: "Jeddah Airport Transfer & Taxi | JED to Makkah & Hotels",
     metaDescription:
       "Book Jeddah airport taxi from King Abdulaziz International (JED) to Makkah, Madinah, and Jeddah hotels. Meet-and-greet pickup with fixed quotes.",
   },

@@ -79,8 +79,24 @@ function detailRows(lead: Lead, { includeSource = true }: { includeSource?: bool
     ["Flight number", lead.flightNumber],
     ["Message", lead.message],
     ["Service", lead.serviceType],
-    // Source page is internal — admin only, never shown to the client.
-    ...(includeSource ? ([["Source page", lead.sourcePage]] as [string, string | null][]) : []),
+    // Source page & attribution are internal — admin only, never shown to the client.
+    ...(includeSource
+      ? ([
+          ["Source page", lead.sourcePage],
+          ["First Landing Page", lead.firstLandingPage ?? null],
+          ["First Referrer", lead.firstReferrer ?? null],
+          ["First UTM Source", lead.firstUtmSource ?? null],
+          ["First UTM Medium", lead.firstUtmMedium ?? null],
+          ["First UTM Campaign", lead.firstUtmCampaign ?? null],
+          ["Session Landing Page", lead.landingPage ?? null],
+          ["Session Referrer", lead.referrer ?? null],
+          ["UTM Source", lead.utmSource ?? null],
+          ["UTM Medium", lead.utmMedium ?? null],
+          ["UTM Campaign", lead.utmCampaign ?? null],
+          ["GCLID", lead.gclid ?? null],
+          ["Search Source", lead.searchSource ?? null],
+        ] as [string, string | null][])
+      : []),
   ];
   return rows
     .filter(([, v]) => v)

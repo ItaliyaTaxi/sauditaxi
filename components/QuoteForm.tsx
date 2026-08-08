@@ -54,11 +54,45 @@ export function QuoteForm({
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
+  // Store first-touch attribution in localStorage on initial page load
+  if (typeof window !== "undefined") {
+    try {
+      if (!localStorage.getItem("spt_first_touch")) {
+        const params = new URLSearchParams(window.location.search);
+        const firstTouch = {
+          firstLandingPage: window.location.href,
+          firstReferrer: document.referrer || undefined,
+          firstUtmSource: params.get("utm_source") || undefined,
+          firstUtmMedium: params.get("utm_medium") || undefined,
+          firstUtmCampaign: params.get("utm_campaign") || undefined,
+        };
+        localStorage.setItem("spt_first_touch", JSON.stringify(firstTouch));
+      }
+    } catch {
+      // Storage access blocked or restricted
+    }
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     const get = (k: string) => (data.get(k) as string | null)?.trim() ?? "";
+
+    let firstTouchData: Record<string, string | undefined> = {};
+    if (typeof window !== "undefined") {
+      try {
+        const raw = localStorage.getItem("spt_first_touch");
+        if (raw) firstTouchData = JSON.parse(raw);
+      } catch {
+        // Fallback
+      }
+    }
+
+    let searchParams: URLSearchParams | null = null;
+    if (typeof window !== "undefined") {
+      searchParams = new URLSearchParams(window.location.search);
+    }
 
     const payload = {
       fullName: get("name") || undefined,
@@ -79,6 +113,20 @@ export function QuoteForm({
           ? `${serviceType} (City: ${city})`
           : serviceType,
       sourcePage: `${siteConfig.url}${pathname}`,
+
+      // Multi-touch attribution fields
+      firstLandingPage: firstTouchData.firstLandingPage || undefined,
+      firstReferrer: firstTouchData.firstReferrer || undefined,
+      firstUtmSource: firstTouchData.firstUtmSource || undefined,
+      firstUtmMedium: firstTouchData.firstUtmMedium || undefined,
+      firstUtmCampaign: firstTouchData.firstUtmCampaign || undefined,
+      landingPage: typeof window !== "undefined" ? window.location.href : undefined,
+      referrer: typeof document !== "undefined" ? document.referrer || undefined : undefined,
+      utmSource: searchParams?.get("utm_source") || undefined,
+      utmMedium: searchParams?.get("utm_medium") || undefined,
+      utmCampaign: searchParams?.get("utm_campaign") || undefined,
+      gclid: searchParams?.get("gclid") || undefined,
+      searchSource: typeof document !== "undefined" && document.referrer.includes("google.") ? "google_organic" : undefined,
     };
 
     setStatus("submitting");

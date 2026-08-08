@@ -180,13 +180,13 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               )}
 
               {/* Mobile CTA (after intro) */}
-              <BlogInlineCta />
+              <BlogInlineCta slug={blog.slug} />
 
               {/* Body */}
               <BlogContent html={blog.content} />
 
               {/* Mobile CTA (before conclusion / end) */}
-              <BlogInlineCta />
+              <BlogInlineCta slug={blog.slug} />
 
               {/* FAQ (only when the post defines FAQs) */}
               {blog.faqs.length > 0 && (

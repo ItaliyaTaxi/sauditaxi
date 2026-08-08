@@ -14,7 +14,49 @@ import { getDictionary, localeFromPathname } from "@/lib/i18n";
  * whole app into dynamic rendering (see app/layout.tsx).
  */
 export function StickyWhatsApp() {
-  const dict = getDictionary(localeFromPathname(usePathname()));
+  const pathname = usePathname();
+  const dict = getDictionary(localeFromPathname(pathname));
+
+  const handleClick = () => {
+    if (typeof window === "undefined") return;
+    let firstLandingPage: string | undefined;
+    let utmSource: string | undefined;
+    try {
+      const raw = localStorage.getItem("spt_first_touch");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        firstLandingPage = parsed.firstLandingPage;
+      }
+      const params = new URLSearchParams(window.location.search);
+      utmSource = params.get("utm_source") || undefined;
+    } catch {
+      // Storage access disabled
+    }
+
+    const payload = JSON.stringify({
+      sourcePage: window.location.href,
+      firstLandingPage,
+      utmSource,
+      timestamp: new Date().toISOString(),
+    });
+
+    try {
+      if (navigator.sendBeacon) {
+        const blob = new Blob([payload], { type: "application/json" });
+        navigator.sendBeacon("/api/whatsapp-click", blob);
+      } else {
+        fetch("/api/whatsapp-click", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {});
+      }
+    } catch {
+      // Fallback
+    }
+  };
+
   return (
     <div className="fixed bottom-24 end-4 z-50 flex flex-col items-end gap-3 lg:bottom-6 lg:end-6">
       <a
@@ -31,6 +73,7 @@ export function StickyWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={dict.stickyWhatsapp.ariaLabel}
+        onClick={handleClick}
         className="group flex items-center gap-2 rounded-full bg-[#25D366] py-3 ps-3 pe-4 text-white shadow-lg shadow-[#25D366]/40 transition-transform hover:scale-105"
       >
         <MessageCircle className="size-6" />
