@@ -231,29 +231,135 @@ export function quotationReadyEmail(
   quotation: Quotation,
   viewUrl: string
 ): { subject: string; html: string } {
+  const acceptUrl = `${viewUrl}?action=accept`;
+  const declineUrl = `${viewUrl}?action=decline`;
+  const waUrl = whatsappLink(
+    `Hi, I am reaching out regarding Quotation ${quotation.quoteNumber} (${quotation.totalAmount.toFixed(2)} ${quotation.currency}).`
+  );
+
   const subject = `Your Quotation ${quotation.quoteNumber} — ${siteConfig.name}`;
   const html = shell(
     "Your Quotation Is Ready",
     `<p style="color:#444;margin:0 0 16px">
        Thank you for your interest in ${esc(siteConfig.name)}. Please find your quotation
        <strong>${esc(quotation.quoteNumber)}</strong> for
-       ${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)} below. Click the
-       button to view the full quotation online — no login required.
+       <strong>${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</strong>.
      </p>
-     <div style="text-align:center;margin:24px 0">
-       <a href="${esc(viewUrl)}"
-          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;
-                 padding:12px 28px;border-radius:9999px;text-decoration:none">
-         View Quotation
+     <div style="margin:24px 0;text-align:center">
+       <div style="display:inline-block;margin:4px">
+         <a href="${esc(acceptUrl)}"
+            style="display:inline-block;background:#16a34a;color:#ffffff;font-weight:700;
+                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
+           ✓ Accept Quotation
+         </a>
+       </div>
+       <div style="display:inline-block;margin:4px">
+         <a href="${esc(declineUrl)}"
+            style="display:inline-block;background:#dc2626;color:#ffffff;font-weight:700;
+                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
+           ✕ Decline Quotation
+         </a>
+       </div>
+       <div style="display:inline-block;margin:4px">
+         <a href="${esc(waUrl)}"
+            style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;
+                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
+           Chat on WhatsApp
+         </a>
+       </div>
+     </div>
+     <div style="text-align:center;margin:16px 0">
+       <a href="${esc(viewUrl)}" style="color:#2563eb;text-decoration:underline;font-size:13px">
+         View full quotation online
        </a>
      </div>
-     <p style="color:#444;margin:16px 0 0">
-       If you would like to confirm this booking, simply reply to this email or contact us —
-       we look forward to serving you.
-     </p>
-     <p style="color:#777;font-size:12px;margin:16px 0 0">
-       Or copy this link: ${esc(viewUrl)}
+     <p style="color:#444;margin:16px 0 0;font-size:13px">
+       Click any option above to respond instantly or discuss your trip with us on WhatsApp.
      </p>`
+  );
+  return { subject, html };
+}
+
+export function quotationAcceptedClientEmail(
+  quotation: Quotation
+): { subject: string; html: string } {
+  const subject = `Quotation ${quotation.quoteNumber} Accepted — ${siteConfig.name}`;
+  const waUrl = whatsappLink(
+    `Hi, I accepted Quotation ${quotation.quoteNumber}. Can you update me on the next steps?`
+  );
+  const html = shell(
+    "Quotation Accepted",
+    `<p style="color:#444;margin:0 0 16px">
+       Thank you for accepting Quotation <strong>${esc(quotation.quoteNumber)}</strong>.
+     </p>
+     <p style="color:#444;margin:0 0 16px;line-height:1.6">
+       We have received your acceptance! Our team is reviewing your trip details and we will let you know regarding the next steps for your booking shortly.
+     </p>
+     <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:20px 0;font-size:14px">
+       <p style="margin:0 0 8px;font-weight:700;color:#111">Summary of Accepted Quotation:</p>
+       <p style="margin:4px 0;color:#555"><strong>Quote #:</strong> ${esc(quotation.quoteNumber)}</p>
+       <p style="margin:4px 0;color:#555"><strong>Total Amount:</strong> ${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</p>
+       ${quotation.pickupLocation ? `<p style="margin:4px 0;color:#555"><strong>Pickup:</strong> ${esc(quotation.pickupLocation)}</p>` : ""}
+       ${quotation.dropoffLocation ? `<p style="margin:4px 0;color:#555"><strong>Drop-off:</strong> ${esc(quotation.dropoffLocation)}</p>` : ""}
+       ${quotation.date ? `<p style="margin:4px 0;color:#555"><strong>Date:</strong> ${esc(quotation.date)}</p>` : ""}
+       ${quotation.time ? `<p style="margin:4px 0;color:#555"><strong>Time:</strong> ${esc(quotation.time)}</p>` : ""}
+     </div>
+     <p style="color:#444;margin:16px 0">
+       If you have any urgent questions, feel free to reach out to us directly on WhatsApp:
+     </p>
+     <div style="text-align:center;margin:20px 0">
+       <a href="${esc(waUrl)}"
+          style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;
+                 padding:12px 28px;border-radius:9999px;text-decoration:none">
+         Chat on WhatsApp
+       </a>
+     </div>`
+  );
+  return { subject, html };
+}
+
+export function quotationAcceptedAdminEmail(
+  quotation: Quotation
+): { subject: string; html: string } {
+  const subject = `Client Accepted Quotation ${quotation.quoteNumber}`;
+  const html = shell(
+    "Client Accepted Quotation",
+    `<p style="color:#444;margin:0 0 16px">
+       Great news! The client has accepted Quotation <strong>${esc(quotation.quoteNumber)}</strong>.
+     </p>
+     <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:20px 0;font-size:14px">
+       <p style="margin:4px 0;color:#555"><strong>Client Name:</strong> ${esc(quotation.clientName || "—")}</p>
+       <p style="margin:4px 0;color:#555"><strong>Client Email:</strong> ${esc(quotation.clientEmail || "—")}</p>
+       <p style="margin:4px 0;color:#555"><strong>Client Phone:</strong> ${esc(quotation.clientPhone || "—")}</p>
+       <p style="margin:4px 0;color:#555"><strong>Quote #:</strong> ${esc(quotation.quoteNumber)}</p>
+       <p style="margin:4px 0;color:#555"><strong>Total Amount:</strong> ${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</p>
+       ${quotation.pickupLocation ? `<p style="margin:4px 0;color:#555"><strong>Pickup:</strong> ${esc(quotation.pickupLocation)}</p>` : ""}
+       ${quotation.dropoffLocation ? `<p style="margin:4px 0;color:#555"><strong>Drop-off:</strong> ${esc(quotation.dropoffLocation)}</p>` : ""}
+       ${quotation.date ? `<p style="margin:4px 0;color:#555"><strong>Date:</strong> ${esc(quotation.date)}</p>` : ""}
+       ${quotation.time ? `<p style="margin:4px 0;color:#555"><strong>Time:</strong> ${esc(quotation.time)}</p>` : ""}
+     </div>
+     <p style="color:#444;margin:16px 0">
+       Please check the admin dashboard to proceed with booking confirmation and vehicle assignment.
+     </p>`
+  );
+  return { subject, html };
+}
+
+export function quotationDeclinedAdminEmail(
+  quotation: Quotation
+): { subject: string; html: string } {
+  const subject = `Client Declined Quotation ${quotation.quoteNumber}`;
+  const html = shell(
+    "Quotation Declined",
+    `<p style="color:#444;margin:0 0 16px">
+       The client has declined Quotation <strong>${esc(quotation.quoteNumber)}</strong>.
+     </p>
+     <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:20px 0;font-size:14px">
+       <p style="margin:4px 0;color:#555"><strong>Client Name:</strong> ${esc(quotation.clientName || "—")}</p>
+       <p style="margin:4px 0;color:#555"><strong>Client Email:</strong> ${esc(quotation.clientEmail || "—")}</p>
+       <p style="margin:4px 0;color:#555"><strong>Quote #:</strong> ${esc(quotation.quoteNumber)}</p>
+       <p style="margin:4px 0;color:#555"><strong>Total Amount:</strong> ${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</p>
+     </div>`
   );
   return { subject, html };
 }

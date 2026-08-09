@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getQuotation } from "@/lib/quotations";
+import { getQuotation, updateQuotationStatus } from "@/lib/quotations";
 import { logEmail } from "@/lib/leads";
 import { quotationReadyEmail, isEmailConfigured, sendEmail } from "@/lib/email";
 import { siteConfig } from "@/lib/site";
@@ -39,6 +39,13 @@ export async function POST(
 
   try {
     await sendEmail({ to: quotation.clientEmail, subject, html });
+
+    if (quotation.status === "Draft") {
+      await updateQuotationStatus(id, "Sent").catch((e) =>
+        console.error("[admin] update status to Sent failed:", e)
+      );
+    }
+
     try {
       await logEmail({
         leadId: quotation.leadId ?? undefined,

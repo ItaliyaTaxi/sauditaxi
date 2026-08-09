@@ -291,6 +291,21 @@ export async function updateQuotationStatus(
   return rowToQuotation(data as QuotationRow);
 }
 
+export async function updateQuotationStatusByToken(
+  token: string,
+  status: QuoteStatus
+): Promise<Quotation> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from(TABLE)
+    .update({ status })
+    .eq("public_token", token)
+    .select("*")
+    .single();
+  if (error) throw new Error(error.message);
+  return rowToQuotation(data as QuotationRow);
+}
+
 export async function deleteQuotation(id: string): Promise<void> {
   const supabase = getSupabaseAdmin();
   const { error } = await supabase.from(TABLE).delete().eq("id", id);
