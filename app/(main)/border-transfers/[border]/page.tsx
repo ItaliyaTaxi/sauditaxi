@@ -11,6 +11,7 @@ import { TrustSection } from "@/components/sections/TrustSection";
 import { ImageGallery } from "@/components/sections/ImageGallery";
 import { borderHero } from "@/lib/hero";
 import { BorderGrid } from "@/components/sections/BorderGrid";
+import { RouteGrid } from "@/components/sections/RouteGrid";
 import { CityGrid } from "@/components/sections/CityGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
@@ -226,6 +227,15 @@ export default async function BorderPage({
           heading="Taxi Service in Pickup Cities"
           subheading="Local transfers in the cities served by this border crossing."
           only={border.relatedCitySlugs}
+        />
+      )}
+
+      {border.popularRoutes && border.popularRoutes.length > 0 && (
+        <RouteGrid
+          background="white"
+          heading={`Private Transfers to ${border.country}`}
+          subheading={`Fixed-price cross-border transfers via ${border.crossing}.`}
+          only={border.popularRoutes}
         />
       )}
 

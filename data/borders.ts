@@ -18,6 +18,11 @@ export interface Border {
   notes: string[];
   /** City slugs for internal linking. */
   relatedCitySlugs: string[];
+  /**
+   * Route slugs for popular cross-border transfers via this crossing.
+   * Renders a dedicated RouteGrid section on the border landing page.
+   */
+  popularRoutes?: string[];
   metaTitle?: string;
   metaDescription?: string;
   /** Optional hero image override + alt; falls back to a themed scene. */
@@ -53,6 +58,11 @@ const baseBorders: Border[] = [
       "Door-to-door to Manama or anywhere in Bahrain",
     ],
     relatedCitySlugs: ["khobar", "dammam", "jubail", "hofuf"],
+    popularRoutes: [
+      "dammam-to-bahrain",
+      "khobar-to-bahrain",
+      "dammam-airport-to-bahrain",
+    ],
     metaTitle: "Bahrain Causeway Taxi | Saudi to Bahrain Transfers",
     metaDescription:
       "Private taxi over the King Fahd Causeway from Khobar and Dammam to Bahrain. Door-to-door cross-border transfers with WhatsApp booking.",
@@ -74,6 +84,9 @@ const baseBorders: Border[] = [
       "Onward Qatar transport arranged separately",
     ],
     relatedCitySlugs: ["riyadh", "dammam", "hofuf"],
+    popularRoutes: [
+      "riyadh-to-qatar-border",
+    ],
     metaTitle: "Qatar Border Taxi | Saudi to Salwa Crossing Transfers",
     metaDescription:
       "Private taxi to the Salwa border crossing between Saudi Arabia and Qatar from Riyadh, Dammam, and the Eastern Province.",

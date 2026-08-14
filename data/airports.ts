@@ -18,6 +18,12 @@ export interface Airport {
   /** Popular destinations served from this airport (display strings). */
   popularDestinations: string[];
   /**
+   * Route slugs for popular onward long-distance transfers from this airport.
+   * When populated, the airport page renders linked route cards and a RouteGrid
+   * section — providing direct internal link authority to commercial route pages.
+   */
+  popularRoutes?: string[];
+  /**
    * Short slug used in hotel-transfer URLs, e.g. "king-abdulaziz-airport" for
    * `/jeddah/king-abdulaziz-airport-to-jeddah-hilton`. Derived from the airport
    * name when omitted (see lib/hotel-transfers.ts).
@@ -58,6 +64,16 @@ const baseAirports: Airport[] = [
       "We track your flight and meet you in the arrivals hall at RUH with a name board, then drive you directly to your hotel, office, or onward city. Fixed quotes mean no surge pricing, and our drivers know all five terminals plus the route into central Riyadh and the highways to Dammam and Qassim.",
     terminals: ["Terminal 1 & 2 (international)", "Terminal 3 & 4 (domestic)", "Terminal 5 (low-cost)"],
     popularDestinations: ["Riyadh city", "Diriyah", "Dammam", "Qassim", "AlUla"],
+    popularRoutes: [
+      "riyadh-to-khobar",
+      "riyadh-to-jubail",
+      "riyadh-to-hofuf",
+      "riyadh-to-qassim",
+      "riyadh-to-hail",
+      "riyadh-to-taif",
+      "riyadh-to-tabuk",
+      "riyadh-to-neom",
+    ],
     metaTitle: "Riyadh Airport Taxi | King Khalid (RUH) Terminal 1-5 Transfers",
     metaDescription:
       "Private Riyadh airport taxi from King Khalid International (RUH). Meet-and-greet pickup, fixed quotes, hotel and intercity transfers across Saudi Arabia.",
@@ -75,6 +91,13 @@ const baseAirports: Airport[] = [
       "JED is the first stop for most Umrah and Hajj pilgrims. We provide meet-and-greet at the Hajj Terminal, Terminal 1, and the North Terminal, then drive directly to Makkah hotels near the Haram or onward to Madinah and Taif. Drivers assist with luggage and understand pilgrim schedules.",
     terminals: ["Terminal 1 (North)", "Hajj Terminal", "Domestic terminal"],
     popularDestinations: ["Makkah", "Madinah", "Jeddah city", "Taif"],
+    popularRoutes: [
+      "jeddah-to-makkah",
+      "jeddah-to-madinah",
+      "jeddah-to-taif",
+      "jeddah-to-yanbu",
+      "jeddah-to-kaec",
+    ],
     metaTitle: "Jeddah Airport Transfer & Taxi | JED to Makkah & Hotels",
     metaDescription:
       "Book Jeddah airport taxi from King Abdulaziz International (JED) to Makkah, Madinah, and Jeddah hotels. Meet-and-greet pickup with fixed quotes.",
@@ -92,6 +115,12 @@ const baseAirports: Airport[] = [
       "Our MED airport service offers meet-and-greet arrivals, direct transfers to hotels around the Haram, and private long-distance rides to Makkah, Yanbu, and AlUla. Drivers are familiar with prayer-time routing and pilgrim luggage needs.",
     terminals: ["International terminal", "Domestic terminal"],
     popularDestinations: ["Madinah city", "Makkah", "AlUla", "Yanbu"],
+    popularRoutes: [
+      "madinah-to-makkah",
+      "madinah-to-alula",
+      "madinah-to-jeddah",
+      "madinah-to-riyadh",
+    ],
     metaTitle: "Madinah Airport Taxi | Prince Mohammad (MED) Transfers",
     metaDescription:
       "Private Madinah airport taxi from Prince Mohammad bin Abdulaziz International (MED). Hotel transfers, Ziyarat, and rides to Makkah and AlUla.",
@@ -109,6 +138,10 @@ const baseAirports: Airport[] = [
       "DMM is the largest airport in the world by land area and serves the energy capital of the Kingdom. We provide meet-and-greet pickups, transfers to Khobar, Dhahran, and Jubail, and cross-border rides to Bahrain via the King Fahd Causeway.",
     terminals: ["Main terminal (international & domestic)"],
     popularDestinations: ["Dammam", "Khobar", "Jubail", "Bahrain", "Riyadh"],
+    popularRoutes: [
+      "dammam-to-riyadh",
+      "dammam-to-bahrain",
+    ],
     metaTitle: "Dammam Airport Taxi | King Fahd (DMM) Transfers",
     metaDescription:
       "Book Dammam airport taxi from King Fahd International (DMM). Transfers to Khobar, Jubail, Riyadh, and the Bahrain Causeway with fixed quotes.",
@@ -126,6 +159,11 @@ const baseAirports: Airport[] = [
       "Our TIF airport service provides meet-and-greet arrivals and scenic transfers down the Al Hada mountain road to Makkah, plus rides to Taif's rose farms and the cable car. A popular choice for pilgrims combining Umrah with a highland stay.",
     terminals: ["Main terminal"],
     popularDestinations: ["Taif", "Makkah", "Jeddah", "Al Hada"],
+    popularRoutes: [
+      "taif-to-riyadh",
+      "taif-to-makkah",
+      "taif-to-jeddah",
+    ],
     metaTitle: "Taif Airport Taxi | Taif Regional (TIF) Transfers",
     metaDescription:
       "Private Taif airport taxi from Taif Regional (TIF). Transfers to Taif resorts, Makkah, and Jeddah via the scenic Al Hada road.",
@@ -143,6 +181,9 @@ const baseAirports: Airport[] = [
       "Our AHB airport service offers meet-and-greet arrivals and transfers to Abha and Khamis Mushait hotels, the cable car, and Asir highland resorts at Al Soudah. Ideal for families exploring Saudi Arabia's cooler southern mountains.",
     terminals: ["Main terminal"],
     popularDestinations: ["Abha", "Khamis Mushait", "Al Soudah", "Najran"],
+    popularRoutes: [
+      "abha-to-riyadh",
+    ],
     metaTitle: "Abha Airport Taxi | Abha International (AHB) Transfers",
     metaDescription:
       "Private Abha airport taxi from Abha International (AHB). Transfers to Abha, Khamis Mushait hotels, and Asir highland resorts.",
@@ -160,6 +201,10 @@ const baseAirports: Airport[] = [
       "Our TUU airport service provides meet-and-greet arrivals and transfers to Tabuk hotels, NEOM project sites, and historic landmarks. A practical gateway for business travellers and tourists heading to the Red Sea northwest.",
     terminals: ["Main terminal"],
     popularDestinations: ["Tabuk", "NEOM", "AlUla", "Red Sea coast"],
+    popularRoutes: [
+      "tabuk-to-riyadh",
+      "tabuk-to-alula",
+    ],
     metaTitle: "Tabuk Airport Taxi | Tabuk Regional (TUU) Transfers",
     metaDescription:
       "Private Tabuk airport taxi from Tabuk Regional (TUU). Transfers to Tabuk city, NEOM project areas, and the northwest coast.",
@@ -177,6 +222,10 @@ const baseAirports: Airport[] = [
       "Our YNB airport service offers meet-and-greet arrivals and transfers to Yanbu resorts, the Royal Commission waterfront, and intercity rides to Madinah and Jeddah for both leisure and corporate travellers.",
     terminals: ["Main terminal"],
     popularDestinations: ["Yanbu", "Madinah", "Jeddah", "AlUla"],
+    popularRoutes: [
+      "yanbu-to-riyadh",
+      "yanbu-to-jeddah",
+    ],
     metaTitle: "Yanbu Airport Taxi | Yanbu (YNB) Transfers",
     metaDescription:
       "Private Yanbu airport taxi from Yanbu Airport (YNB). Transfers to Red Sea resorts, the industrial city, and Madinah.",
@@ -194,6 +243,10 @@ const baseAirports: Airport[] = [
       "Our ULH airport service provides meet-and-greet arrivals and transfers to AlUla resorts, the Old Town, Hegra (Madain Salih), and Maraya. Comfortable vehicles make desert touring and onward trips to Madinah and Tabuk easy.",
     terminals: ["Main terminal"],
     popularDestinations: ["AlUla", "Hegra", "Madinah", "Tabuk"],
+    popularRoutes: [
+      "alula-to-tabuk",
+      "alula-to-neom",
+    ],
     metaTitle: "AlUla Airport Taxi | AlUla (ULH) Transfers",
     metaDescription:
       "Private AlUla airport taxi from AlUla International (ULH). Transfers to resorts, Hegra, the Old Town, and onward to Madinah and Tabuk.",
@@ -228,6 +281,9 @@ const baseAirports: Airport[] = [
       "Our HAS airport service provides meet-and-greet arrivals and transfers to Hail city, A'arif Fort, the Jubbah rock-art sites, and intercity rides toward AlUla and Qassim.",
     terminals: ["Main terminal"],
     popularDestinations: ["Hail", "Jubbah", "AlUla", "Buraidah"],
+    popularRoutes: [
+      "hail-to-riyadh",
+    ],
     metaTitle: "Hail Airport Taxi | Hail Regional (HAS) Transfers",
     metaDescription:
       "Private Hail airport taxi from Hail Regional (HAS). Transfers to Hail city, rock-art sites, and onward to AlUla and Qassim.",

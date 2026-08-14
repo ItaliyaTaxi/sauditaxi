@@ -13,7 +13,9 @@ import { TrustSection } from "@/components/sections/TrustSection";
 import { ImageGallery } from "@/components/sections/ImageGallery";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
+import { RouteGrid } from "@/components/sections/RouteGrid";
 import { airports, getAirport } from "@/data/airports";
+import { getRoute } from "@/data/routes";
 import { getCity } from "@/data/cities";
 import { hotelsForCity } from "@/data/hotels";
 import { transfersForCity } from "@/lib/hotel-transfers";
@@ -193,15 +195,31 @@ export default async function AirportPage({
               Popular destinations from {airport.city} airport
             </h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {airport.popularDestinations.map((dest) => (
-                <li
-                  key={dest}
-                  className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
-                >
-                  <ArrowRight className="size-4 text-gold" />
-                  {airport.city} Airport to {dest}
-                </li>
-              ))}
+              {airport.popularRoutes
+                ? airport.popularRoutes.map((routeSlug) => {
+                    const r = getRoute(routeSlug);
+                    if (!r) return null;
+                    return (
+                      <li key={routeSlug}>
+                        <Link
+                          href={`/routes/${routeSlug}`}
+                          className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy transition hover:border-gold hover:text-gold"
+                        >
+                          <ArrowRight className="size-4 shrink-0 text-gold" />
+                          {airport.city} Airport to {r.to}
+                        </Link>
+                      </li>
+                    );
+                  })
+                : airport.popularDestinations.map((dest) => (
+                    <li
+                      key={dest}
+                      className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
+                    >
+                      <ArrowRight className="size-4 text-gold" />
+                      {airport.city} Airport to {dest}
+                    </li>
+                  ))}
             </ul>
 
             {city && (
@@ -308,8 +326,18 @@ export default async function AirportPage({
       <VehicleOptions background="muted" />
       <TrustSection background="white" />
       <HowItWorks background="muted" />
+
+      {airport.popularRoutes && airport.popularRoutes.length > 0 && (
+        <RouteGrid
+          background="white"
+          heading={`Popular Onward Transfers from ${airport.city} Airport`}
+          subheading={`Fixed-price private long-distance transfers directly from ${airport.name}.`}
+          only={airport.popularRoutes}
+        />
+      )}
+
       <AirportGrid
-        background="white"
+        background="muted"
         exclude={airport.slug}
         heading="Other Saudi Airport Transfers"
         subheading="We cover meet-and-greet pickups at every major airport in the Kingdom."

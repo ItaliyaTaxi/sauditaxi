@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { ArrowRight, Clock, MapPin, CircleCheck } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
@@ -96,15 +97,53 @@ export default async function RoutePage({
     { name: "Routes", path: "/intercity-transfers" },
     { name: `${route.from} to ${route.to}`, path },
   ];
-  const relatedRoutes = routes
+
+  // 1. Find exact reverse route if it exists
+  const reverseRoute = routes.find(
+    (r) =>
+      r.slug !== route.slug &&
+      r.from.toLowerCase() === route.to.toLowerCase() &&
+      r.to.toLowerCase() === route.from.toLowerCase()
+  );
+
+  // 2. Smart related routes prioritization:
+  //    - Reverse route first
+  //    - Shared origin routes
+  //    - Shared destination routes
+  //    - Regionally / contextually connected routes
+  const candidateRoutes: string[] = [];
+  if (reverseRoute) candidateRoutes.push(reverseRoute.slug);
+
+  routes
     .filter(
       (r) =>
         r.slug !== route.slug &&
+        r.slug !== reverseRoute?.slug &&
+        r.from.toLowerCase() === route.from.toLowerCase()
+    )
+    .forEach((r) => candidateRoutes.push(r.slug));
+
+  routes
+    .filter(
+      (r) =>
+        r.slug !== route.slug &&
+        r.slug !== reverseRoute?.slug &&
+        r.to.toLowerCase() === route.to.toLowerCase() &&
+        !candidateRoutes.includes(r.slug)
+    )
+    .forEach((r) => candidateRoutes.push(r.slug));
+
+  routes
+    .filter(
+      (r) =>
+        r.slug !== route.slug &&
+        !candidateRoutes.includes(r.slug) &&
         (r.category === route.category ||
           r.relatedCitySlugs.some((c) => route.relatedCitySlugs.includes(c)))
     )
-    .slice(0, 6)
-    .map((r) => r.slug);
+    .forEach((r) => candidateRoutes.push(r.slug));
+
+  const relatedRoutes = candidateRoutes.slice(0, 6);
 
   return (
     <>
@@ -147,6 +186,24 @@ export default async function RoutePage({
                 {route.lastUpdated && <li>• Page reviewed {route.lastUpdated}.</li>}
               </ul>
             </div>
+
+            {reverseRoute && (
+              <div className="mt-6 rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-navy">
+                  Return Journey Available
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Planning your return trip? We also provide private transfers in the opposite direction from{" "}
+                  <Link
+                    href={`/routes/${reverseRoute.slug}`}
+                    className="font-semibold text-navy underline underline-offset-2 hover:text-gold"
+                  >
+                    {reverseRoute.from} to {reverseRoute.to}
+                  </Link>{" "}
+                  with fixed fares and door-to-door pickup.
+                </p>
+              </div>
+            )}
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">

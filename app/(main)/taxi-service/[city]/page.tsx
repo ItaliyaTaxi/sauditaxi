@@ -9,9 +9,11 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
 import { CityGrid } from "@/components/sections/CityGrid";
+import { RouteGrid } from "@/components/sections/RouteGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { cities, getCity } from "@/data/cities";
+import { getRoute } from "@/data/routes";
 import { getAirport } from "@/data/airports";
 import { hotelsForCity } from "@/data/hotels";
 import { pointTransfersForCity } from "@/lib/point-transfers";
@@ -242,15 +244,31 @@ export default async function CityPage({
               Popular routes from {city.name}
             </h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {city.popularDestinations.map((dest) => (
-                <li
-                  key={dest}
-                  className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
-                >
-                  <ArrowRight className="size-4 text-gold" />
-                  {city.name} to {dest}
-                </li>
-              ))}
+              {city.popularRoutes
+                ? city.popularRoutes.map((routeSlug) => {
+                    const r = getRoute(routeSlug);
+                    if (!r) return null;
+                    return (
+                      <li key={routeSlug}>
+                        <Link
+                          href={`/routes/${routeSlug}`}
+                          className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy transition hover:border-gold hover:text-gold"
+                        >
+                          <ArrowRight className="size-4 shrink-0 text-gold" />
+                          {r.from} to {r.to}
+                        </Link>
+                      </li>
+                    );
+                  })
+                : city.popularDestinations.map((dest) => (
+                    <li
+                      key={dest}
+                      className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
+                    >
+                      <ArrowRight className="size-4 text-gold" />
+                      {city.name} to {dest}
+                    </li>
+                  ))}
             </ul>
           </div>
 
@@ -306,6 +324,15 @@ export default async function CityPage({
 
       <VehicleOptions background="muted" />
       <HowItWorks background="white" />
+
+      {city.popularRoutes && city.popularRoutes.length > 0 && (
+        <RouteGrid
+          background="muted"
+          heading={`Intercity Transfers from ${city.name}`}
+          subheading={`Fixed-price private transfers on the most-requested long-distance routes from ${city.name}.`}
+          only={city.popularRoutes}
+        />
+      )}
 
       {relatedCities.length > 0 && (
         <CityGrid

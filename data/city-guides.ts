@@ -51,6 +51,10 @@ export const cityGuides: Record<string, CityGuide> = {
         answer: "Yes, intercity private transfers from Riyadh to Dammam, Khobar, and other Eastern Province cities are available with a fixed price agreed before you travel.",
       },
       {
+        question: "Do you offer private transfers from Riyadh to Jeddah or AlUla?",
+        answer: "Yes, we provide fixed-price long-distance transfers across the Kingdom, including our <a href='/routes/riyadh-to-jeddah'>private Riyadh to Jeddah transfer</a> and scenic journeys like our <a href='/routes/riyadh-to-alula'>private Riyadh to AlUla transfer</a>.",
+      },
+      {
         question: "Are your Riyadh drivers familiar with the Diplomatic Quarter's access rules?",
         answer: "Yes, our drivers regularly serve the Diplomatic Quarter and are used to its entry procedures; just confirm your exact building or gate when booking so the driver can plan accordingly.",
       },
@@ -234,7 +238,7 @@ export const cityGuides: Record<string, CityGuide> = {
       },
       {
         question: "Can I book a private transfer from Madinah to AlUla?",
-        answer: "Yes, Madinah to AlUla is available as a private intercity transfer, popular with travellers combining a pilgrimage visit with AlUla's heritage sites.",
+        answer: "Yes, our <a href='/routes/madinah-to-alula'>private Madinah to AlUla transfer</a> is available as a fixed-price intercity ride, popular with travellers combining a pilgrimage visit with AlUla's heritage sites.",
       },
       {
         question: "How long is the drive from Madinah to Makkah?",

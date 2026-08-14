@@ -88,7 +88,7 @@ export const borderGuides: Record<string, BorderGuide> = {
       {
         question: "Which Saudi cities do you collect from for Bahrain?",
         answer:
-          "We collect from Khobar, Dammam, Jubail, Hofuf, and other Eastern Province locations, and can meet you at Dammam airport for a direct onward transfer to Bahrain.",
+          "We collect from Khobar, Dammam, Jubail, Hofuf, and other Eastern Province locations, and can meet you at Dammam airport for a <a href='/routes/dammam-airport-to-bahrain'>private Dammam Airport to Bahrain transfer</a> directly across the causeway.",
       },
       {
         question: "How far in advance should I book a Bahrain Causeway transfer?",

@@ -15,6 +15,12 @@ export interface City {
   landmarks: string[];
   /** Common destinations travellers ask for from this city (display strings). */
   popularDestinations: string[];
+  /**
+   * Route slugs for the most-requested intercity transfers FROM this city.
+   * When populated, the city page renders a linked RouteGrid instead of a
+   * plain-text destination list — improving internal linking to route pages.
+   */
+  popularRoutes?: string[];
   /** Slug of the airport that serves this city, if any. */
   nearestAirportSlug?: string;
   /** Optional SEO overrides; generated automatically when omitted. */
@@ -53,6 +59,18 @@ const baseCities: City[] = [
       "Riyadh Front",
     ],
     popularDestinations: ["Dammam", "Jeddah", "AlUla", "Qassim", "Qatar Border"],
+    popularRoutes: [
+      "riyadh-to-jeddah",
+      "riyadh-to-makkah",
+      "riyadh-to-madinah",
+      "riyadh-to-alula",
+      "riyadh-to-dammam",
+      "riyadh-to-qatar-border",
+      "riyadh-to-khobar",
+      "riyadh-to-jubail",
+      "riyadh-to-neom",
+      "riyadh-to-taif",
+    ],
     nearestAirportSlug: "riyadh-airport",
     metaTitle: "Riyadh Taxi Service | Airport & City Transfers",
     metaDescription:
@@ -161,6 +179,10 @@ const baseCities: City[] = [
       "Dhahran",
     ],
     popularDestinations: ["Khobar", "Bahrain Border", "Riyadh", "Jubail"],
+    popularRoutes: [
+      "dammam-to-riyadh",
+      "dammam-to-bahrain",
+    ],
     nearestAirportSlug: "dammam-airport",
   },
   {
@@ -185,6 +207,11 @@ const baseCities: City[] = [
       "Ithra (Dhahran)",
     ],
     popularDestinations: ["Bahrain Border", "Dammam", "Riyadh", "Jubail"],
+    popularRoutes: [
+      "khobar-to-riyadh",
+      "riyadh-to-khobar",
+      "khobar-to-bahrain",
+    ],
     nearestAirportSlug: "dammam-airport",
   },
   {
@@ -208,6 +235,10 @@ const baseCities: City[] = [
       "Royal Commission area",
     ],
     popularDestinations: ["Dammam", "Khobar", "Riyadh", "Bahrain Border"],
+    popularRoutes: [
+      "jubail-to-riyadh",
+      "riyadh-to-jubail",
+    ],
     nearestAirportSlug: "dammam-airport",
   },
   {
@@ -232,6 +263,10 @@ const baseCities: City[] = [
       "Taif Regional Airport",
     ],
     popularDestinations: ["Makkah", "Jeddah", "Madinah", "Abha"],
+    popularRoutes: [
+      "taif-to-riyadh",
+      "riyadh-to-taif",
+    ],
     nearestAirportSlug: "taif-airport",
   },
   {
@@ -256,6 +291,10 @@ const baseCities: City[] = [
       "Abha Dam Lake",
     ],
     popularDestinations: ["Khamis Mushait", "Najran", "Jazan", "Taif"],
+    popularRoutes: [
+      "abha-to-riyadh",
+      "riyadh-to-abha",
+    ],
     nearestAirportSlug: "abha-airport",
   },
   {
@@ -279,6 +318,13 @@ const baseCities: City[] = [
       "NEOM region",
     ],
     popularDestinations: ["AlUla", "Madinah", "NEOM", "Yanbu"],
+    popularRoutes: [
+      "tabuk-to-riyadh",
+      "riyadh-to-tabuk",
+      "riyadh-to-neom",
+      "neom-to-riyadh",
+      "tabuk-to-alula",
+    ],
     nearestAirportSlug: "tabuk-airport",
   },
   {
@@ -303,6 +349,10 @@ const baseCities: City[] = [
       "AlUla International Airport",
     ],
     popularDestinations: ["Madinah", "Tabuk", "Riyadh", "Yanbu"],
+    popularRoutes: [
+      "alula-to-tabuk",
+      "alula-to-neom",
+    ],
     nearestAirportSlug: "alula-airport",
   },
   {
@@ -326,6 +376,10 @@ const baseCities: City[] = [
       "Yanbu Industrial City",
     ],
     popularDestinations: ["Madinah", "Jeddah", "AlUla", "Makkah"],
+    popularRoutes: [
+      "yanbu-to-riyadh",
+      "riyadh-to-yanbu",
+    ],
     nearestAirportSlug: "yanbu-airport",
   },
   {
@@ -349,6 +403,10 @@ const baseCities: City[] = [
       "Jubbah rock art",
     ],
     popularDestinations: ["AlUla", "Buraidah", "Riyadh", "Tabuk"],
+    popularRoutes: [
+      "hail-to-riyadh",
+      "riyadh-to-hail",
+    ],
     nearestAirportSlug: "hail-airport",
   },
   {
@@ -417,6 +475,10 @@ const baseCities: City[] = [
       "Qassim Date Festival grounds",
     ],
     popularDestinations: ["Riyadh", "Hail", "Madinah", "Makkah"],
+    popularRoutes: [
+      "qassim-to-riyadh",
+      "riyadh-to-qassim",
+    ],
   },
   {
     slug: "hofuf",
@@ -439,6 +501,10 @@ const baseCities: City[] = [
       "Jabal Al-Qarah",
     ],
     popularDestinations: ["Dammam", "Khobar", "Riyadh", "Bahrain Border"],
+    popularRoutes: [
+      "hofuf-to-riyadh",
+      "riyadh-to-hofuf",
+    ],
   },
   {
     slug: "al-ahsa",
