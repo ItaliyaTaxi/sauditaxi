@@ -86,6 +86,7 @@ const baseBorders: Border[] = [
     relatedCitySlugs: ["riyadh", "dammam", "hofuf"],
     popularRoutes: [
       "riyadh-to-qatar-border",
+      "dammam-to-qatar-border",
     ],
     metaTitle: "Qatar Border Taxi | Saudi to Salwa Crossing Transfers",
     metaDescription:

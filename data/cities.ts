@@ -70,6 +70,7 @@ const baseCities: City[] = [
       "riyadh-to-jubail",
       "riyadh-to-neom",
       "riyadh-to-taif",
+      "riyadh-to-jizan",
     ],
     nearestAirportSlug: "riyadh-airport",
     metaTitle: "Riyadh Taxi Service | Airport & City Transfers",
@@ -98,6 +99,15 @@ const baseCities: City[] = [
       "Hajj Terminal",
     ],
     popularDestinations: ["Makkah", "Madinah", "Taif", "Riyadh", "Yanbu"],
+    popularRoutes: [
+      "jeddah-to-makkah",
+      "jeddah-to-madinah",
+      "jeddah-to-riyadh",
+      "jeddah-to-alula",
+      "jeddah-to-dammam",
+      "jeddah-to-taif",
+      "jeddah-to-abha",
+    ],
     nearestAirportSlug: "jeddah-airport",
     metaTitle: "Jeddah Taxi Service | Airport to Makkah Transfers",
     metaDescription:
@@ -125,6 +135,12 @@ const baseCities: City[] = [
       "Jabal Thawr",
     ],
     popularDestinations: ["Madinah", "Jeddah", "Taif", "Jeddah Airport"],
+    popularRoutes: [
+      "makkah-to-madinah",
+      "makkah-to-jeddah",
+      "makkah-to-taif",
+      "makkah-to-riyadh",
+    ],
     nearestAirportSlug: "jeddah-airport",
     metaTitle: "Makkah Taxi Service | Umrah & Ziyarat Transfers",
     metaDescription:
@@ -152,6 +168,16 @@ const baseCities: City[] = [
       "Prince Mohammad bin Abdulaziz Airport",
     ],
     popularDestinations: ["Makkah", "AlUla", "Jeddah", "Yanbu"],
+    popularRoutes: [
+      "madinah-to-makkah",
+      "madinah-to-jeddah",
+      "madinah-to-alula",
+      "madinah-to-tabuk",
+      "madinah-to-riyadh",
+      "madinah-to-yanbu",
+      "madinah-to-taif",
+      "madinah-to-hail",
+    ],
     nearestAirportSlug: "madinah-airport",
     metaTitle: "Madinah Taxi Service | Airport, Hotel & Ziyarat Transfers",
     metaDescription:
@@ -180,8 +206,12 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Khobar", "Bahrain Border", "Riyadh", "Jubail"],
     popularRoutes: [
-      "dammam-to-riyadh",
       "dammam-to-bahrain",
+      "dammam-to-riyadh",
+      "dammam-to-jeddah",
+      "dammam-to-jubail",
+      "dammam-to-khobar",
+      "dammam-to-qatar-border",
     ],
     nearestAirportSlug: "dammam-airport",
   },
@@ -266,6 +296,8 @@ const baseCities: City[] = [
     popularRoutes: [
       "taif-to-riyadh",
       "riyadh-to-taif",
+      "taif-to-jeddah-airport",
+      "taif-to-madinah",
     ],
     nearestAirportSlug: "taif-airport",
   },
@@ -293,6 +325,7 @@ const baseCities: City[] = [
     popularDestinations: ["Khamis Mushait", "Najran", "Jazan", "Taif"],
     popularRoutes: [
       "abha-to-riyadh",
+      "abha-to-jeddah",
       "riyadh-to-abha",
     ],
     nearestAirportSlug: "abha-airport",
@@ -320,10 +353,9 @@ const baseCities: City[] = [
     popularDestinations: ["AlUla", "Madinah", "NEOM", "Yanbu"],
     popularRoutes: [
       "tabuk-to-riyadh",
-      "riyadh-to-tabuk",
-      "riyadh-to-neom",
-      "neom-to-riyadh",
       "tabuk-to-alula",
+      "tabuk-to-neom",
+      "tabuk-to-madinah",
     ],
     nearestAirportSlug: "tabuk-airport",
   },
@@ -352,6 +384,10 @@ const baseCities: City[] = [
     popularRoutes: [
       "alula-to-tabuk",
       "alula-to-neom",
+      "alula-to-riyadh",
+      "alula-to-jeddah",
+      "alula-to-madinah",
+      "alula-to-yanbu",
     ],
     nearestAirportSlug: "alula-airport",
   },
@@ -379,6 +415,9 @@ const baseCities: City[] = [
     popularRoutes: [
       "yanbu-to-riyadh",
       "riyadh-to-yanbu",
+      "yanbu-to-madinah",
+      "yanbu-to-alula",
+      "yanbu-to-jeddah-airport",
     ],
     nearestAirportSlug: "yanbu-airport",
   },
@@ -406,6 +445,7 @@ const baseCities: City[] = [
     popularRoutes: [
       "hail-to-riyadh",
       "riyadh-to-hail",
+      "hail-to-madinah",
     ],
     nearestAirportSlug: "hail-airport",
   },
@@ -452,6 +492,9 @@ const baseCities: City[] = [
       "Jazan Corniche",
     ],
     popularDestinations: ["Abha", "Najran", "Khamis Mushait", "Farasan"],
+    popularRoutes: [
+      "jizan-to-riyadh",
+    ],
     nearestAirportSlug: "jazan-airport",
   },
   {

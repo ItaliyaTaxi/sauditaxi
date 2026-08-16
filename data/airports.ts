@@ -73,6 +73,9 @@ const baseAirports: Airport[] = [
       "riyadh-to-taif",
       "riyadh-to-tabuk",
       "riyadh-to-neom",
+      "riyadh-airport-to-jeddah",
+      "riyadh-airport-to-makkah",
+      "riyadh-airport-to-madinah",
     ],
     metaTitle: "Riyadh Airport Taxi | King Khalid (RUH) Terminal 1-5 Transfers",
     metaDescription:
@@ -97,6 +100,9 @@ const baseAirports: Airport[] = [
       "jeddah-to-taif",
       "jeddah-to-yanbu",
       "jeddah-to-kaec",
+      "jeddah-airport-to-riyadh",
+      "jeddah-airport-to-taif",
+      "jeddah-airport-to-yanbu",
     ],
     metaTitle: "Jeddah Airport Transfer & Taxi | JED to Makkah & Hotels",
     metaDescription:
@@ -118,8 +124,7 @@ const baseAirports: Airport[] = [
     popularRoutes: [
       "madinah-to-makkah",
       "madinah-to-alula",
-      "madinah-to-jeddah",
-      "madinah-to-riyadh",
+      "madinah-airport-to-riyadh",
     ],
     metaTitle: "Madinah Airport Taxi | Prince Mohammad (MED) Transfers",
     metaDescription:
@@ -139,8 +144,11 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal (international & domestic)"],
     popularDestinations: ["Dammam", "Khobar", "Jubail", "Bahrain", "Riyadh"],
     popularRoutes: [
-      "dammam-to-riyadh",
-      "dammam-to-bahrain",
+      "dammam-airport-to-khobar",
+      "dammam-airport-to-jubail",
+      "dammam-airport-to-hofuf",
+      "dammam-airport-to-bahrain",
+      "dammam-airport-to-riyadh",
     ],
     metaTitle: "Dammam Airport Taxi | King Fahd (DMM) Transfers",
     metaDescription:
@@ -183,6 +191,8 @@ const baseAirports: Airport[] = [
     popularDestinations: ["Abha", "Khamis Mushait", "Al Soudah", "Najran"],
     popularRoutes: [
       "abha-to-riyadh",
+      "abha-airport-to-jeddah",
+      "abha-airport-to-riyadh",
     ],
     metaTitle: "Abha Airport Taxi | Abha International (AHB) Transfers",
     metaDescription:
@@ -204,6 +214,7 @@ const baseAirports: Airport[] = [
     popularRoutes: [
       "tabuk-to-riyadh",
       "tabuk-to-alula",
+      "tabuk-to-neom",
     ],
     metaTitle: "Tabuk Airport Taxi | Tabuk Regional (TUU) Transfers",
     metaDescription:
@@ -246,6 +257,8 @@ const baseAirports: Airport[] = [
     popularRoutes: [
       "alula-to-tabuk",
       "alula-to-neom",
+      "alula-airport-to-riyadh",
+      "alula-airport-to-jeddah",
     ],
     metaTitle: "AlUla Airport Taxi | AlUla (ULH) Transfers",
     metaDescription:

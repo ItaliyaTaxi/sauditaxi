@@ -231,50 +231,103 @@ export function quotationReadyEmail(
   quotation: Quotation,
   viewUrl: string
 ): { subject: string; html: string } {
-  const acceptUrl = `${viewUrl}?action=accept`;
-  const declineUrl = `${viewUrl}?action=decline`;
   const waUrl = whatsappLink(
     `Hi, I am reaching out regarding Quotation ${quotation.quoteNumber} (${quotation.totalAmount.toFixed(2)} ${quotation.currency}).`
   );
 
   const subject = `Your Quotation ${quotation.quoteNumber} — ${siteConfig.name}`;
+  const clientGreeting = quotation.clientName ? esc(quotation.clientName) : "Valued Customer";
+
+  const routeSummary =
+    quotation.pickupLocation && quotation.dropoffLocation
+      ? `${esc(quotation.pickupLocation)} &rarr; ${esc(quotation.dropoffLocation)}`
+      : quotation.pickupLocation
+      ? `Pickup: ${esc(quotation.pickupLocation)}`
+      : null;
+
+  const dateSummary =
+    quotation.date && quotation.time
+      ? `${esc(quotation.date)} at ${esc(quotation.time)}`
+      : quotation.date
+      ? esc(quotation.date)
+      : null;
+
+  const vehicleSummary =
+    quotation.lineItems.find((li) => li.vehicleType)?.vehicleType ?? quotation.serviceType ?? null;
+
   const html = shell(
     "Your Quotation Is Ready",
-    `<p style="color:#444;margin:0 0 16px">
-       Thank you for your interest in ${esc(siteConfig.name)}. Please find your quotation
-       <strong>${esc(quotation.quoteNumber)}</strong> for
-       <strong>${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</strong>.
+    `<p style="color:#222;font-size:15px;margin:0 0 16px">
+       Dear <strong>${clientGreeting}</strong>,
      </p>
-     <div style="margin:24px 0;text-align:center">
-       <div style="display:inline-block;margin:4px">
-         <a href="${esc(acceptUrl)}"
-            style="display:inline-block;background:#16a34a;color:#ffffff;font-weight:700;
-                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
-           ✓ Accept Quotation
-         </a>
+     <p style="color:#444;font-size:14px;line-height:1.6;margin:0 0 20px">
+       Thank you for your interest in <strong>${esc(siteConfig.name)}</strong>. We have prepared a customized private transfer quotation for your journey. Please find the summary below:
+     </p>
+
+     <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f5b820;border-radius:8px;padding:18px 20px;margin:0 0 24px;font-size:14px">
+       <div style="display:flex;justify-content:space-between;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #e2e8f0">
+         <span style="color:#64748b">Quotation Number:</span>
+         <strong style="color:#0f172a">${esc(quotation.quoteNumber)}</strong>
        </div>
-       <div style="display:inline-block;margin:4px">
-         <a href="${esc(declineUrl)}"
-            style="display:inline-block;background:#dc2626;color:#ffffff;font-weight:700;
-                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
-           ✕ Decline Quotation
-         </a>
+       <div style="display:flex;justify-content:space-between;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #e2e8f0">
+         <span style="color:#64748b">Total Amount:</span>
+         <strong style="color:#0f172a;font-size:16px;color:#16a34a">${esc(quotation.totalAmount.toFixed(2))} ${esc(quotation.currency)}</strong>
        </div>
-       <div style="display:inline-block;margin:4px">
-         <a href="${esc(waUrl)}"
-            style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;
-                   padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px">
-           Chat on WhatsApp
-         </a>
-       </div>
+       ${
+         routeSummary
+           ? `<div style="margin-bottom:8px">
+                <span style="color:#64748b;display:block;font-size:12px;margin-bottom:2px">Transfer Route:</span>
+                <strong style="color:#0f172a">${routeSummary}</strong>
+              </div>`
+           : ""
+       }
+       ${
+         dateSummary
+           ? `<div style="margin-bottom:8px">
+                <span style="color:#64748b;display:block;font-size:12px;margin-bottom:2px">Scheduled Date &amp; Time:</span>
+                <strong style="color:#0f172a">${dateSummary}</strong>
+              </div>`
+           : ""
+       }
+       ${
+         vehicleSummary
+           ? `<div>
+                <span style="color:#64748b;display:block;font-size:12px;margin-bottom:2px">Vehicle / Service:</span>
+                <strong style="color:#0f172a">${esc(vehicleSummary)}</strong>
+              </div>`
+           : ""
+       }
      </div>
-     <div style="text-align:center;margin:16px 0">
-       <a href="${esc(viewUrl)}" style="color:#2563eb;text-decoration:underline;font-size:13px">
-         View full quotation online
+
+     <p style="color:#444;font-size:14px;line-height:1.6;margin:0 0 16px;text-align:center">
+       Click the button below to view your full quotation details, download your official PDF quote, and accept or decline your booking online:
+     </p>
+
+     <div style="text-align:center;margin:24px 0">
+       <a href="${esc(viewUrl)}"
+          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;font-size:15px;
+                 padding:14px 34px;border-radius:8px;text-decoration:none;box-shadow:0 2px 4px rgba(0,0,0,0.1)">
+         Review &amp; Accept Quotation &rarr;
        </a>
      </div>
-     <p style="color:#444;margin:16px 0 0;font-size:13px">
-       Click any option above to respond instantly or discuss your trip with us on WhatsApp.
+
+     <p style="color:#64748b;font-size:12px;text-align:center;margin:0 0 20px;line-height:1.5">
+       No login required. You can review all inclusions, vehicle details, and respond directly online.
+     </p>
+
+     <div style="border-top:1px solid #e2e8f0;margin:24px 0 16px;padding-top:16px;text-align:center">
+       <p style="color:#444;font-size:13px;margin:0 0 10px">
+         Have questions or need modifications to your trip?
+       </p>
+       <a href="${esc(waUrl)}"
+          style="display:inline-block;background:#25d366;color:#ffffff;font-weight:600;font-size:13px;
+                 padding:9px 20px;border-radius:6px;text-decoration:none">
+         Chat with us on WhatsApp
+       </a>
+     </div>
+
+     <p style="color:#94a3b8;font-size:11px;margin:16px 0 0;text-align:center;word-break:break-all">
+       Direct link: <a href="${esc(viewUrl)}" style="color:#94a3b8;text-decoration:underline">${esc(viewUrl)}</a>
      </p>`
   );
   return { subject, html };

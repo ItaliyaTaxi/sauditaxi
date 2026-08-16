@@ -6538,6 +6538,1262 @@ const baseRoutes: Route[] = [
     ],
     keywords: ["neom to riyadh taxi", "neom to riyadh transfer", "neom riyadh private car", "neom to riyadh airport taxi", "neom long distance taxi"],
   },
+
+  {
+    slug: "jeddah-to-riyadh",
+    from: "Jeddah",
+    to: "Riyadh",
+    category: "intercity",
+    distance: "950 km",
+    duration: "9 hours",
+    intro:
+      "Direct private transfer from Jeddah to Riyadh across the Kingdom with professional chauffeur, fixed upfront pricing, and 24/7 door-to-door service.",
+    about:
+      "Travel comfortably between Saudi Arabia's commercial port city and the capital without airport waiting or luggage restrictions. Our private Jeddah to Riyadh transfer offers executive sedans, spacious SUVs, and family vans with scheduled highway rest stops, chilled refreshments, and flight or hotel meet-and-greet.",
+    notes: [
+      "Door-to-door service from any Jeddah hotel, residential address, or airport",
+      "Direct drop-off at any Riyadh district, hotel, or King Khalid International Airport",
+      "Flexible rest stops along Route 40 for dining, prayer, and stretching",
+      "Available 24/7 with fixed fares — zero surge pricing",
+    ],
+    relatedCitySlugs: ["jeddah", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Jeddah to Riyadh: Journey details and highway route",
+        paragraphs: [
+          "The overland journey from Jeddah to Riyadh covers approximately 950 kilometres along Highway 40, travelling past Taif, Zalim, and the central desert plains into Riyadh. Driving time is typically around 9 hours depending on rest breaks.",
+          "Our experienced chauffeurs are accustomed to long-distance highway driving, ensuring a smooth, air-conditioned ride in late-model vehicles equipped for family and business comfort.",
+        ],
+      },
+      {
+        heading: "Vehicle selection and executive service",
+        paragraphs: [
+          "Choose between premium sedans for solo travellers and executives, spacious SUVs for families, or multi-passenger vans with ample luggage capacity. Every private booking includes complimentary bottled water, phone charging ports, and route flexibility.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does a private transfer from Jeddah to Riyadh take?", answer: "The 950 km drive takes approximately 8.5 to 9.5 hours, including scheduled rest stops along Highway 40." },
+      { question: "Can we stop for meals and prayer along the way?", answer: "Yes, your driver accommodates rest stops at major modern service stations along the route at your convenience." },
+      { question: "Is hotel or airport pickup included in Jeddah?", answer: "Yes, your driver meets you directly at your Jeddah hotel lobby, private residence, or terminal at King Abdulaziz Airport." },
+      { question: "Are prices fixed before travelling?", answer: "Yes, our quotes are 100% fixed with no hidden fees, fuel surcharges, or toll charges." },
+    ],
+    keywords: ["jeddah to riyadh taxi", "jeddah to riyadh private transfer", "chauffeur jeddah to riyadh", "car transfer jeddah riyadh"],
+  },
+  {
+    slug: "jeddah-airport-to-riyadh",
+    from: "Jeddah Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "950 km",
+    duration: "9 hours",
+    intro:
+      "Direct meet-and-greet airport transfer from King Abdulaziz International Airport (JED) to any destination in Riyadh with flight tracking and executive vehicles.",
+    about:
+      "Avoid domestic flight connections or layovers by booking a seamless private transfer directly from Jeddah Airport (JED) to Riyadh. Your driver tracks your incoming flight, greets you in the arrival hall with a personalized name sign, assists with luggage, and provides a comfortable overland ride directly to your Riyadh hotel or office.",
+    notes: [
+      "Meet and greet inside Terminal 1, North Terminal, or Hajj Terminal",
+      "Live flight tracking with 60 minutes complimentary arrival wait time",
+      "Direct highway route to Riyadh without changing vehicles",
+      "Spacious SUVs and vans for international luggage volume",
+    ],
+    relatedCitySlugs: ["jeddah", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Airport pickup at King Abdulaziz International Airport (JED)",
+        paragraphs: [
+          "Upon landing at JED, pass through customs to find your professional chauffeur waiting in the arrivals hall. We handle all luggage assistance and guide you straight to your waiting private vehicle in the VIP parking area.",
+        ],
+      },
+      {
+        heading: "Direct long-distance comfort to the capital",
+        paragraphs: [
+          "Enjoy a quiet, private ride equipped with climate control, charging cables, and reclining seats, making the intercity journey an opportunity to rest or work seamlessly between cities.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "What happens if my flight into Jeddah is delayed?", answer: "We monitor your flight in real time and automatically adjust your pickup time with no penalty or extra charge." },
+      { question: "Where does the driver meet me at Jeddah Airport?", answer: "Your chauffeur meets you inside the arrivals hall holding a paging board with your name clearly displayed." },
+      { question: "Can the vehicle accommodate multiple large suitcases?", answer: "Yes, we offer large SUVs and executive vans capable of handling extensive international luggage." },
+    ],
+    keywords: ["jeddah airport to riyadh taxi", "jeddah airport to riyadh transfer", "jed airport to riyadh private car", "king abdulaziz airport to riyadh"],
+  },
+  {
+    slug: "riyadh-airport-to-jeddah",
+    from: "Riyadh Airport",
+    to: "Jeddah",
+    category: "airport",
+    distance: "950 km",
+    duration: "9 hours",
+    intro:
+      "Private airport chauffeur transfer from King Khalid International Airport (RUH) to Jeddah with meet-and-greet service and fixed pricing.",
+    about:
+      "Arriving at King Khalid International Airport (RUH) and heading to Jeddah? Our dedicated long-distance transfer service meets you directly at Terminal 1, 2, 3, 4, or 5 and transports you straight to Jeddah in a private, late-model vehicle. Ideal for travellers with heavy luggage, families, or those seeking an overland journey without flight transfers.",
+    notes: [
+      "Meet-and-greet pickup across all King Khalid Airport (RUH) terminals",
+      "Direct door-to-door transfer to all Jeddah districts and resorts",
+      "Flight monitoring ensures punctual curbside or arrivals meet",
+      "Fixed comprehensive rates with zero hidden costs",
+    ],
+    relatedCitySlugs: ["riyadh", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Seamless RUH airport departure to Western Province",
+        paragraphs: [
+          "Skip taxi queues and transfer shuttles at RUH. Your chauffeur handles luggage loading and guides you onto Highway 40 toward the Western Province, offering an efficient, private travel solution.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Which terminals are served at Riyadh Airport?", answer: "We provide pickup across Terminals 1, 2, 3, 4, and 5 at King Khalid International Airport (RUH)." },
+      { question: "Can we be dropped off anywhere in Jeddah?", answer: "Yes, drop-off is provided to any hotel, Corniche resort, residential address, or seaport in Jeddah." },
+    ],
+    keywords: ["riyadh airport to jeddah taxi", "ruh to jeddah private transfer", "riyadh airport to jeddah car service"],
+  },
+  {
+    slug: "tabuk-to-neom",
+    from: "Tabuk",
+    to: "NEOM",
+    category: "intercity",
+    distance: "180 km",
+    duration: "2 hours",
+    intro:
+      "Reliable private transfer service from Tabuk city or Tabuk Airport (TUU) to NEOM project sites, communities, and accommodation hubs.",
+    about:
+      "Tabuk serves as the primary logistical and transportation gateway to the NEOM mega-development. Our private transfer service offers secure, punctual, and executive transportation connecting Tabuk hotels, residential areas, and Tabuk Regional Airport directly to NEOM communities (NC1, NC2), OXAGON, Sindalah ferry points, and Trojena transit routes.",
+    notes: [
+      "Pickup from Tabuk Regional Airport (TUU) or any Tabuk city location",
+      "Direct delivery to NEOM Community 1 & 2, base camps, and project offices",
+      "Experienced drivers familiar with regional security gates and project access roads",
+      "Executive sedans and 4WD SUVs suited for business and project teams",
+    ],
+    relatedCitySlugs: ["tabuk", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Tabuk to NEOM: The primary northern project corridor",
+        paragraphs: [
+          "The drive from Tabuk to NEOM takes approximately 2 hours across Highway 80/875. Our drivers understand the specific routing required for contractors, consultants, VIP delegates, and visitors travelling into the development zones.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long is the drive from Tabuk to NEOM?", answer: "The 180 km drive typically takes around 2 hours under standard highway conditions." },
+      { question: "Can you drop off at specific NEOM communities or contractor camps?", answer: "Yes, our drivers deliver directly to designated residential communities (NC1, NC2), project offices, and authorized drop zones." },
+      { question: "Is pickup available from Tabuk Airport (TUU)?", answer: "Yes, we provide meet-and-greet airport pickups matched to your scheduled flight arrival." },
+    ],
+    keywords: ["tabuk to neom taxi", "tabuk to neom private transfer", "tabuk airport to neom transfer", "tabuk neom chauffeur"],
+  },
+  {
+    slug: "neom-to-tabuk",
+    from: "NEOM",
+    to: "Tabuk",
+    category: "intercity",
+    distance: "180 km",
+    duration: "2 hours",
+    intro:
+      "Private return transfer from NEOM project sites and residential communities directly to Tabuk city and Tabuk Regional Airport (TUU).",
+    about:
+      "Schedule your return transfer from NEOM to Tabuk with guaranteed punctuality. Whether heading to catch a domestic or international flight at Tabuk Airport or returning to Tabuk city, our private chauffeurs collect you directly from your camp or office and ensure a smooth, comfortable 2-hour journey.",
+    notes: [
+      "Direct pickup from NEOM Community camps, hotels, and project facilities",
+      "Punctual transfer timed to flight departures at Tabuk Regional Airport (TUU)",
+      "Professional drivers, modern air-conditioned fleet, and 24/7 booking support",
+      "Fixed pricing for corporate accounts and individual project staff",
+    ],
+    relatedCitySlugs: ["tabuk", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Scheduled return transfers from NEOM to Tabuk",
+        paragraphs: [
+          "Heading back to Tabuk? We coordinate departure times with your flight schedule from TUU airport to ensure stress-free check-in and luggage handling.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "What is the pickup procedure inside NEOM?", answer: "Your driver coordinates arrival at your camp or community security gate and collects you directly from your designated reception area." },
+      { question: "Can I book a transfer to catch an early morning flight from Tabuk?", answer: "Yes, our service operates 24/7 with early morning departures scheduled to match flight check-in requirements." },
+    ],
+    keywords: ["neom to tabuk taxi", "neom to tabuk private transfer", "neom to tabuk airport transfer", "neom chauffeur to tabuk"],
+  },
+  {
+    slug: "jeddah-to-alula",
+    from: "Jeddah",
+    to: "AlUla",
+    category: "intercity",
+    distance: "720 km",
+    duration: "7 hours",
+    intro:
+      "Private luxury chauffeur transfer from Jeddah city or airport to AlUla's historic resorts, desert pavilions, and UNESCO heritage sites.",
+    about:
+      "Embark on a scenic journey from the Red Sea coast to the ancient oasis of AlUla. Our private transfer service connects Jeddah hotels and King Abdulaziz Airport directly with AlUla's luxury resorts (Habitas, Banyan Tree, Shaden) and Hegra heritage sites, featuring premium SUVs and executive vehicles for an unforgettable journey.",
+    notes: [
+      "Direct hotel-to-resort transfer from Jeddah to AlUla oasis",
+      "Premium SUVs and luxury vehicles equipped for desert and long-distance travel",
+      "Scenic stops through Yanbu and the Hejaz mountain passes",
+      "Fixed transparent pricing with zero surprise charges",
+    ],
+    relatedCitySlugs: ["jeddah", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Overland scenic journey to the AlUla heritage region",
+        paragraphs: [
+          "Covering roughly 720 km north along Highway 55 and Route 375, the private transfer from Jeddah to AlUla takes approximately 7 hours. Travel in supreme comfort with panoramic desert views and tailored refreshment breaks.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the private drive from Jeddah to AlUla take?", answer: "The 720 km transfer takes approximately 7 to 7.5 hours depending on preferred rest stops." },
+      { question: "Do you drop off directly at AlUla luxury desert resorts?", answer: "Yes, we drop off directly at Habitas AlUla, Banyan Tree, Cloud7, Shaden Resort, and Old Town hotels." },
+    ],
+    keywords: ["jeddah to alula taxi", "jeddah to alula private transfer", "luxury transfer jeddah to alula", "jeddah alula car service"],
+  },
+  {
+    slug: "alula-to-riyadh",
+    from: "AlUla",
+    to: "Riyadh",
+    category: "intercity",
+    distance: "1,050 km",
+    duration: "10 hours",
+    intro:
+      "Private long-distance chauffeur service from AlUla heritage resorts to Riyadh city center, business districts, and King Khalid Airport.",
+    about:
+      "Conclude your AlUla holiday or cultural tour with a private, stress-free overland transfer to Riyadh. Our experienced drivers collect you directly from your AlUla villa or hotel and transport you across the heart of the Kingdom to any Riyadh address, offering spacious seating, climate control, and flexible stops.",
+    notes: [
+      "Door-to-door pickup from all AlUla resorts and Old Town properties",
+      "Direct drop-off at any Riyadh hotel, corporate headquarters, or RUH airport",
+      "Comfortable long-distance vehicles with large luggage capacity",
+      "Available for single travellers, private groups, and families",
+    ],
+    relatedCitySlugs: ["riyadh", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "AlUla to Riyadh: Crossing the historic central plains",
+        paragraphs: [
+          "The 1,050 km highway route connects AlUla through Hail and Qassim into Riyadh over approximately 10 hours. Relax in a spacious cabin with personalized stops at modern highway facilities.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the transfer from AlUla to Riyadh take?", answer: "The journey covers roughly 1,050 km and takes approximately 10 hours including rest and meal stops." },
+      { question: "Can we request stops in Hail or Qassim along the way?", answer: "Yes, route stops for meals and sightseeing can be arranged when booking your private transfer." },
+    ],
+    keywords: ["alula to riyadh taxi", "alula to riyadh private transfer", "chauffeur alula to riyadh", "car service alula riyadh"],
+  },
+  {
+    slug: "alula-to-jeddah",
+    from: "AlUla",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "720 km",
+    duration: "7 hours",
+    intro:
+      "Private executive transfer from AlUla resorts to Jeddah hotels, Red Sea destinations, and King Abdulaziz International Airport (JED).",
+    about:
+      "Travel comfortably from your AlUla desert retreat back to Jeddah with our dedicated private chauffeur service. We pick you up directly from your hotel or resort reception in AlUla and provide a smooth, scenic journey south to your destination in Jeddah with complete luggage assistance.",
+    notes: [
+      "Pickup from all AlUla luxury resorts, camps, and heritage properties",
+      "Drop-off at any Jeddah hotel, residential district, or JED airport terminal",
+      "Comfortable air-conditioned vehicles suited for long-distance highway travel",
+      "24/7 availability with fixed quotes agreed in advance",
+    ],
+    relatedCitySlugs: ["jeddah", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "AlUla to Jeddah: Scenic return to the Red Sea",
+        paragraphs: [
+          "The 720 km drive south toward Jeddah takes roughly 7 hours via well-maintained expressways, providing an effortless transition from AlUla's cultural landscape to the coastal hub.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can we be dropped off directly at Jeddah Airport for an onward flight?", answer: "Yes, we can drop you off directly at Terminal 1, North Terminal, or VIP aviation at JED." },
+      { question: "What vehicle types are available for the AlUla to Jeddah route?", answer: "We provide executive sedans, spacious 4x4 SUVs, and luxury vans for families and touring groups." },
+    ],
+    keywords: ["alula to jeddah taxi", "alula to jeddah private transfer", "alula to jeddah airport transfer", "alula jeddah chauffeur"],
+  },
+  {
+    slug: "riyadh-airport-to-makkah",
+    from: "Riyadh Airport",
+    to: "Makkah",
+    category: "airport",
+    distance: "880 km",
+    duration: "8 hours 30 min",
+    intro:
+      "Private Umrah transfer service from King Khalid International Airport (RUH) in Riyadh directly to Makkah hotels near the Holy Haram.",
+    about:
+      "Arriving at King Khalid International Airport in Riyadh for your Umrah pilgrimage? Avoid connecting flights and domestic airport transfers with our direct private transfer to Makkah. Your dedicated chauffeur meets you at arrivals, assists with baggage, and provides a peaceful, private journey directly to your Makkah hotel with optional Miqat stop coordination.",
+    notes: [
+      "Meet-and-greet service across all RUH terminals (T1, T2, T3, T4, T5)",
+      "Direct drop-off at Makkah hotels in the Clock Tower, Ajyad, and Haram areas",
+      "Optional stop at designated Miqat locations for Ihram preparation",
+      "Spacious family vans and executive SUVs for pilgrims with luggage",
+    ],
+    relatedCitySlugs: ["riyadh", "makkah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct pilgrim transfer from Riyadh Airport to Makkah",
+        paragraphs: [
+          "The 880 km drive from RUH to Makkah takes around 8.5 hours via Highway 40. Pilgrims can enter Ihram or stop at a designated Miqat along the route with prior notice.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can the driver stop at a Miqat before entering Makkah?", answer: "Yes, inform us when booking and your chauffeur will coordinate a stop at the appropriate Miqat point." },
+      { question: "Is this transfer suitable for elderly pilgrims and families?", answer: "Yes, our private vehicles provide quiet comfort, reclining seats, and customized rest breaks for family members and elders." },
+    ],
+    keywords: ["riyadh airport to makkah taxi", "ruh to makkah transfer", "riyadh to makkah private car umrah", "riyadh airport umrah taxi"],
+  },
+  {
+    slug: "jeddah-to-dammam",
+    from: "Jeddah",
+    to: "Dammam",
+    category: "intercity",
+    distance: "1,350 km",
+    duration: "13 hours",
+    intro:
+      "Comprehensive coast-to-coast private transfer connecting Jeddah and the Red Sea with Dammam and the Arabian Gulf.",
+    about:
+      "Need to transport staff, families, or equipment coast-to-coast without air travel constraints? Our private cross-Kingdom transfer from Jeddah to Dammam offers dedicated executive chauffeurs, spacious late-model vehicles, and customized routing with overnight or long-distance meal stops.",
+    notes: [
+      "Direct coast-to-coast connection across Saudi Arabia (Red Sea to Arabian Gulf)",
+      "Door-to-door collection from any Jeddah location and delivery in Dammam/Khobar",
+      "Spacious vehicles with unlimited luggage capacity",
+      "Experienced highway chauffeurs with relief and safety protocols",
+    ],
+    relatedCitySlugs: ["jeddah", "dammam"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Coast-to-coast journey across Saudi Arabia",
+        paragraphs: [
+          "Covering 1,350 km via Highway 40 through Riyadh to the Eastern Province, this long-distance route is ideal for overland corporate relocations and travellers desiring private ground transport.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the drive from Jeddah to Dammam take?", answer: "The 1,350 km journey takes approximately 13 hours with regular highway rest stops." },
+      { question: "Can we deliver passengers to Khobar or Dhahran as well?", answer: "Yes, drop-off can be arranged to any address across Dammam, Khobar, Dhahran, or Jubail." },
+    ],
+    keywords: ["jeddah to dammam taxi", "jeddah to dammam private transfer", "cross saudi car transfer", "jeddah dammam chauffeur"],
+  },
+  {
+    slug: "dammam-to-jeddah",
+    from: "Dammam",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "1,350 km",
+    duration: "13 hours",
+    intro:
+      "Private cross-country chauffeur transfer from Dammam and the Eastern Province to Jeddah hotels, resorts, and port facilities.",
+    about:
+      "Enjoy a direct, comfortable journey from the Eastern Province to the Red Sea coast. Our private Dammam to Jeddah transfer picks you up from your office, hotel, or home in Dammam and drives you straight to Jeddah in an air-conditioned executive vehicle with scheduled stops along the way.",
+    notes: [
+      "Door-to-door pickup in Dammam, Khobar, or Dhahran",
+      "Direct drop-off at any hotel, resort, or private address in Jeddah",
+      "Fixed pricing covering all fuel, highway transit, and vehicle expenses",
+      "Available 24/7 with flexible departure timing",
+    ],
+    relatedCitySlugs: ["dammam", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "East to West overland transfer",
+        paragraphs: [
+          "Travel in comfort from Dammam across Riyadh and the central desert to Jeddah with experienced chauffeurs familiar with trans-Kingdom highway routes.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Is pickup available in Khobar for the Jeddah route?", answer: "Yes, we pick up from Khobar, Dammam, Jubail, and surrounding Eastern Province communities." },
+      { question: "Are vehicles fully air-conditioned for the long cross-country drive?", answer: "Yes, all vehicles in our long-distance fleet feature modern multi-zone climate control." },
+    ],
+    keywords: ["dammam to jeddah taxi", "dammam to jeddah private transfer", "eastern province to jeddah car service"],
+  },
+  {
+    slug: "alula-to-madinah",
+    from: "AlUla",
+    to: "Madinah",
+    category: "intercity",
+    distance: "330 km",
+    duration: "3 hours 30 min",
+    intro:
+      "Comfortable private transfer from AlUla heritage hotels directly to Madinah, the Prophet's Mosque, and Madinah Airport (MED).",
+    about:
+      "Seamlessly transition from the ancient wonders of AlUla to the spiritual serenity of Madinah. Our private chauffeur service provides direct pickup from your AlUla hotel or desert resort, luggage handling, and a comfortable 3.5-hour drive to your hotel near the Prophet's Mosque or Prince Mohammad Airport in Madinah.",
+    notes: [
+      "Direct pickup from all AlUla resorts, Old Town hotels, and AlUla Airport (ULH)",
+      "Drop-off at Madinah hotels surrounding the Haram Central Area or MED airport",
+      "Scenic desert highway route with flexible refreshment breaks",
+      "Family vans, SUVs, and luxury sedans available on demand",
+    ],
+    relatedCitySlugs: ["madinah", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Connecting AlUla heritage with Madinah",
+        paragraphs: [
+          "The 330 km drive south along Route 375 and Highway 15 takes roughly 3.5 hours, providing a smooth and scenic link between two of Saudi Arabia's premier cultural and spiritual destinations.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long is the transfer from AlUla to Madinah?", answer: "The 330 km drive takes approximately 3.5 hours door-to-door." },
+      { question: "Can we be dropped off directly at our hotel near the Prophet's Mosque?", answer: "Yes, your driver drops you off at your designated hotel entrance in Madinah's Central Area." },
+    ],
+    keywords: ["alula to madinah taxi", "alula to madinah private transfer", "alula madinah chauffeur", "transfer alula to medina"],
+  },
+  {
+    slug: "riyadh-airport-to-madinah",
+    from: "Riyadh Airport",
+    to: "Madinah",
+    category: "airport",
+    distance: "850 km",
+    duration: "8 hours",
+    intro:
+      "Private airport pickup from King Khalid International Airport (RUH) in Riyadh to Madinah hotels and the Prophet's Mosque.",
+    about:
+      "Arriving in Riyadh and proceeding directly to Madinah? Our private airport chauffeur service meets you inside the arrival terminal at King Khalid International Airport (RUH), loads your luggage, and provides a direct, restful highway transfer to your hotel near the Prophet's Mosque in Madinah.",
+    notes: [
+      "Meet-and-greet pickup across all Riyadh Airport terminals",
+      "Direct delivery to hotels in Madinah's Northern and Southern Central Areas",
+      "Spacious long-distance fleet with reclining seats and generous baggage space",
+      "Fixed prices with zero hidden charges or waiting penalties",
+    ],
+    relatedCitySlugs: ["riyadh", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct airport transfer from RUH to the Prophet's City",
+        paragraphs: [
+          "The 850 km drive via Highway 65/60 through Qassim takes approximately 8 hours, offering international and domestic arrivals a private overland alternative to connecting flights.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How does the driver locate me at Riyadh Airport?", answer: "Your driver waits in the terminal arrivals hall holding a sign with your name and tracks your flight number in real time." },
+      { question: "Are rest breaks included on the way to Madinah?", answer: "Yes, comfortable stops at modern highway service plazas are included throughout the trip." },
+    ],
+    keywords: ["riyadh airport to madinah taxi", "ruh to madinah private transfer", "riyadh to madinah airport transfer"],
+  },
+  {
+    slug: "abha-to-jeddah",
+    from: "Abha",
+    to: "Jeddah",
+    category: "intercity",
+    distance: "620 km",
+    duration: "6 hours 30 min",
+    intro:
+      "Private chauffeur transfer from the mountain city of Abha and Asir province down to Jeddah and the Red Sea coast.",
+    about:
+      "Travel from the scenic Asir highlands in Abha down to Jeddah with our private long-distance transfer service. We collect you from your Abha hotel or residence and navigate the coastal Highway 5 route, dropping you off directly at your hotel, resort, or King Abdulaziz Airport in Jeddah.",
+    notes: [
+      "Door-to-door pickup across Abha, Khamis Mushait, and Asir resorts",
+      "Drop-off at any Jeddah district, Corniche hotel, or JED airport",
+      "Professional mountain-experienced drivers and modern air-conditioned fleet",
+      "Fixed rates with no roadside surprises or meter surges",
+    ],
+    relatedCitySlugs: ["abha", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "From the Asir Highlands to the Red Sea Coast",
+        paragraphs: [
+          "The 620 km journey descends from the cool mountain plateau of Abha through Jazan/Al Lith along coastal expressways into Jeddah in approximately 6.5 hours.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does a private taxi from Abha to Jeddah take?", answer: "The 620 km transfer takes approximately 6.5 hours under normal highway driving conditions." },
+      { question: "Can you pick up from Khamis Mushait as well as Abha?", answer: "Yes, our drivers collect passengers from Abha, Khamis Mushait, and surrounding Asir region towns." },
+    ],
+    keywords: ["abha to jeddah taxi", "abha to jeddah private transfer", "asir to jeddah car service", "khamis mushait to jeddah taxi"],
+  },
+  {
+    slug: "tabuk-to-madinah",
+    from: "Tabuk",
+    to: "Madinah",
+    category: "intercity",
+    distance: "680 km",
+    duration: "6 hours 30 min",
+    intro:
+      "Private intercity transfer connecting Tabuk in the north with the holy city of Madinah and the Prophet's Mosque.",
+    about:
+      "Travel smoothly from Tabuk to Madinah for Umrah, business, or family visits. Our private chauffeur service provides direct door-to-door collection in Tabuk and delivers you to your hotel in Madinah with comfortable vehicles, luggage assistance, and planned highway rest stops.",
+    notes: [
+      "Pickup from any Tabuk hotel, residence, or Tabuk Regional Airport",
+      "Direct drop-off at Madinah hotels near the Prophet's Mosque",
+      "Comfortable long-haul vehicles with ample legroom and luggage space",
+      "Available 24/7 with advance booking and fixed transparent pricing",
+    ],
+    relatedCitySlugs: ["tabuk", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Tabuk to Madinah: Northern pilgrim and commercial link",
+        paragraphs: [
+          "Covering 680 km along Highway 15 south through Khaybar into Madinah, the journey takes around 6.5 hours in air-conditioned comfort.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the drive from Tabuk to Madinah take?", answer: "The 680 km drive takes approximately 6.5 hours including rest breaks." },
+      { question: "Can we book this transfer for family groups with multiple bags?", answer: "Yes, family vans and spacious SUVs are available to accommodate larger parties with luggage." },
+    ],
+    keywords: ["tabuk to madinah taxi", "tabuk to madinah private transfer", "tabuk to madinah car transfer"],
+  },
+  {
+    slug: "madinah-to-tabuk",
+    from: "Madinah",
+    to: "Tabuk",
+    category: "intercity",
+    distance: "680 km",
+    duration: "6 hours 30 min",
+    intro:
+      "Private transfer service from Madinah hotels and airport north to Tabuk city, business hubs, and Tabuk Regional Airport.",
+    about:
+      "Heading north from the Holy City to Tabuk? Our private transfer service picks you up directly from your Madinah hotel or Prince Mohammad Airport (MED) and provides a secure, comfortable 6.5-hour journey to Tabuk with experienced long-distance drivers.",
+    notes: [
+      "Pickup from any hotel in Madinah's Central Area or MED airport",
+      "Drop-off at any residential district, hotel, or office in Tabuk",
+      "Modern, well-maintained vehicles equipped for long-distance highway travel",
+      "Fixed prices agreed upfront with zero unexpected fees",
+    ],
+    relatedCitySlugs: ["madinah", "tabuk"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Heading North: Madinah to Tabuk Corridor",
+        paragraphs: [
+          "The 680 km highway route traverses the northern plains via Highway 15, connecting Madinah with Tabuk's growing commercial and tourism hub.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Where does the driver pick us up in Madinah?", answer: "Your chauffeur meets you directly at your Madinah hotel reception or curbside at Prince Mohammad Airport." },
+      { question: "Are stops available along the northern highway?", answer: "Yes, your driver accommodates planned breaks for refreshments and prayer along the route." },
+    ],
+    keywords: ["madinah to tabuk taxi", "madinah to tabuk private transfer", "chauffeur madinah to tabuk"],
+  },
+  {
+    slug: "dammam-airport-to-riyadh",
+    from: "Dammam Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "420 km",
+    duration: "4 hours",
+    intro:
+      "Private meet-and-greet airport transfer from King Fahd International Airport (DMM) in Dammam directly to any location in Riyadh.",
+    about:
+      "Arriving at King Fahd International Airport (DMM) with an onward destination in Riyadh? Skip train and flight connection schedules with our direct private airport transfer. Your driver tracks your flight, meets you at DMM arrivals, and delivers you directly to your hotel, office, or residence in Riyadh.",
+    notes: [
+      "Meet-and-greet service inside King Fahd Airport (DMM) arrivals",
+      "Direct 4-hour highway transfer to all Riyadh districts and corporate parks",
+      "Live flight tracking with complimentary wait time included",
+      "Spacious vehicles with generous luggage room for international arrivals",
+    ],
+    relatedCitySlugs: ["dammam", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct airport transfer from King Fahd International (DMM)",
+        paragraphs: [
+          "The 420 km drive along the modern Dammam–Riyadh Expressway takes approximately 4 hours, offering an efficient, private link between Eastern Province arrivals and the capital.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Where will my driver meet me at Dammam Airport?", answer: "Your chauffeur will wait in the arrivals hall holding a sign with your name after you clear baggage claim." },
+      { question: "How long is the transfer from Dammam Airport to Riyadh?", answer: "The 420 km journey takes approximately 4 hours in normal highway traffic conditions." },
+    ],
+    keywords: ["dammam airport to riyadh taxi", "dmm to riyadh transfer", "king fahd airport to riyadh private car"],
+  },
+  {
+    slug: "madinah-airport-to-riyadh",
+    from: "Madinah Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "850 km",
+    duration: "8 hours",
+    intro:
+      "Direct private airport chauffeur transfer from Prince Mohammad bin Abdulaziz Airport (MED) in Madinah to Riyadh.",
+    about:
+      "Landing at Prince Mohammad bin Abdulaziz International Airport (MED) and travelling overland to Riyadh? Our private chauffeur service meets you inside the terminal, takes care of your luggage, and provides a direct, air-conditioned ride to your destination in Riyadh with total privacy and scheduled comfort stops.",
+    notes: [
+      "Meet-and-greet at Prince Mohammad bin Abdulaziz Airport (MED) arrivals",
+      "Direct delivery to any Riyadh hotel, residence, or commercial district",
+      "Flight tracking ensures on-time pickup even with delayed flights",
+      "Comfortable long-haul sedans, SUVs, and vans with fixed upfront fares",
+    ],
+    relatedCitySlugs: ["madinah", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Overland connection from Madinah Airport to the Capital",
+        paragraphs: [
+          "The 850 km route via Highway 60 and 65 through Qassim into Riyadh takes approximately 8 hours, offering international travellers a peaceful and private road journey.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "What if my flight arriving at Madinah Airport is delayed?", answer: "We track your flight number live and adjust the pickup time automatically at no additional cost." },
+      { question: "Can we stop for meals between Madinah Airport and Riyadh?", answer: "Yes, your driver accommodates rest and dining stops at major highway plazas along the way." },
+    ],
+    keywords: ["madinah airport to riyadh taxi", "med airport to riyadh transfer", "madinah airport to riyadh private car"],
+  },
+
+  {
+    slug: "jeddah-airport-to-taif",
+    from: "Jeddah Airport",
+    to: "Taif",
+    category: "airport",
+    distance: "175 km",
+    duration: "2 hours",
+    intro:
+      "Direct private airport transfer from King Abdulaziz International Airport (JED) in Jeddah to mountain resorts, hotels, and residences across Taif.",
+    about:
+      "Arriving at King Abdulaziz International Airport and heading to the cool mountain heights of Taif? Our private airport chauffeur meets you in the arrival terminal (T1, North, or Hajj Terminal), handles your baggage, and drives you directly via the Al Hada mountain highway to your Taif hotel or resort.",
+    notes: [
+      "Meet-and-greet pickup across all JED airport terminals with flight tracking",
+      "Direct scenic drive up the Al Hada mountain pass into Taif",
+      "Spacious SUVs and vans suited for family luggage and mountain ascents",
+      "Fixed rates with zero surge pricing during peak summer and weekend seasons",
+    ],
+    relatedCitySlugs: ["jeddah", "taif"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Airport pickup at JED and scenic ascent to Taif",
+        paragraphs: [
+          "Covering 175 km via the modern highway past Makkah and up the dramatic Al Hada escarpment, the drive from Jeddah Airport to Taif takes approximately 2 hours in comfort.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does a taxi from Jeddah Airport to Taif take?", answer: "The 175 km journey takes approximately 2 hours depending on mountain traffic and weather conditions." },
+      { question: "Where will my driver meet me at Jeddah Airport?", answer: "Your chauffeur waits inside the arrivals hall holding a sign with your name after you clear customs and baggage claim." },
+    ],
+    keywords: ["jeddah airport to taif taxi", "jed to taif transfer", "king abdulaziz airport to taif private car"],
+  },
+  {
+    slug: "taif-to-jeddah-airport",
+    from: "Taif",
+    to: "Jeddah Airport",
+    category: "airport",
+    distance: "175 km",
+    duration: "2 hours",
+    intro:
+      "Reliable private airport transfer from Taif hotels, resorts, and homes directly to departure terminals at King Abdulaziz International Airport (JED).",
+    about:
+      "Ensure a punctual and stress-free departure from the City of Roses. Our private Taif to Jeddah Airport transfer collects you directly from your resort or hotel lobby in Taif, navigates the Al Hada highway, and delivers you curbside at your JED terminal with time to spare.",
+    notes: [
+      "Door-to-door pickup from any hotel, resort, or private villa in Taif",
+      "Direct drop-off at Terminal 1, North Terminal, or VIP aviation at JED",
+      "Punctual scheduling tailored to your international or domestic flight departure",
+      "Comfortable air-conditioned vehicles for the downhill mountain transit",
+    ],
+    relatedCitySlugs: ["taif", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Scheduled airport departures from Taif to JED",
+        paragraphs: [
+          "Our chauffeurs schedule your pickup time carefully to account for mountain descent traffic and airport check-in deadlines at King Abdulaziz International Airport.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How early should I book my transfer from Taif to Jeddah Airport?", answer: "We recommend scheduling pickup at least 4.5 to 5 hours before international flights to allow for the 2-hour drive and standard check-in times." },
+    ],
+    keywords: ["taif to jeddah airport taxi", "taif to jed transfer", "taif private car to jeddah airport"],
+  },
+  {
+    slug: "madinah-to-yanbu",
+    from: "Madinah",
+    to: "Yanbu",
+    category: "intercity",
+    distance: "230 km",
+    duration: "2 hours 15 min",
+    intro:
+      "Private chauffeur transfer from Madinah hotels and the Prophet's Mosque directly to Yanbu coastal resorts, port facilities, and Royal Commission districts.",
+    about:
+      "Connect seamlessly from the Holy City of Madinah to the Red Sea diving and petrochemical center in Yanbu. Our private transfer service collects you directly from your Madinah hotel and drives you comfortably along Highway 60 to your destination in Yanbu.",
+    notes: [
+      "Direct hotel-to-hotel or hotel-to-resort private service",
+      "Convenient connection between Holy City visits and Red Sea diving holidays",
+      "Comfortable sedans, executive SUVs, and business vans available",
+      "Fixed pricing agreed in advance with no roadside extras",
+    ],
+    relatedCitySlugs: ["madinah", "yanbu"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Connecting the Prophet's City with the Red Sea coast",
+        paragraphs: [
+          "The 230 km expressway journey takes approximately 2 hours and 15 minutes across scenic desert and mountain foothills to the coast of Yanbu.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long is the drive from Madinah to Yanbu?", answer: "The 230 km highway drive takes approximately 2 hours and 15 minutes door-to-door." },
+    ],
+    keywords: ["madinah to yanbu taxi", "madinah to yanbu private transfer", "transfer medina to yanbu"],
+  },
+  {
+    slug: "yanbu-to-madinah",
+    from: "Yanbu",
+    to: "Madinah",
+    category: "intercity",
+    distance: "230 km",
+    duration: "2 hours 15 min",
+    intro:
+      "Private intercity transfer from Yanbu hotels, Royal Commission offices, and beaches directly to Madinah and the Prophet's Mosque.",
+    about:
+      "Travelling from the Red Sea coast to Madinah for pilgrimage, business, or family visits? Our private chauffeur service provides direct door-to-door pickup in Yanbu and drops you off at your hotel in Madinah's Central Area near the Prophet's Mosque.",
+    notes: [
+      "Door-to-door collection in Yanbu Al Sinaiyah (Royal Commission) or Yanbu Al Bahr",
+      "Direct drop-off at Madinah hotels in the Northern and Southern Central Areas",
+      "Professional drivers, modern air-conditioned fleet, and 24/7 service",
+      "Transparent upfront quotes with zero surge pricing",
+    ],
+    relatedCitySlugs: ["yanbu", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Smooth travel from Yanbu to the Holy City",
+        paragraphs: [
+          "Enjoy a quiet, private ride along Highway 60 with customized pickup timing and optional rest stops as you journey from the coast to Madinah.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can we be dropped off directly at our hotel near the Prophet's Mosque?", answer: "Yes, your driver delivers you straight to your hotel entrance in Madinah's central district." },
+    ],
+    keywords: ["yanbu to madinah taxi", "yanbu to madinah private transfer", "yanbu medina car service"],
+  },
+  {
+    slug: "taif-to-madinah",
+    from: "Taif",
+    to: "Madinah",
+    category: "intercity",
+    distance: "480 km",
+    duration: "4 hours 45 min",
+    intro:
+      "Private intercity transfer connecting the highland city of Taif directly with the Prophet's Mosque in Madinah.",
+    about:
+      "Combine your mountain holiday or highland tour in Taif with a pilgrimage visit to Madinah. Our private long-distance transfer collects you from your hotel in Taif and provides a comfortable 480 km highway transfer directly to your accommodation in Madinah.",
+    notes: [
+      "Door-to-door transfer from any hotel or resort in Taif to Madinah",
+      "Spacious vehicles with generous luggage space for extended pilgrimage tours",
+      "Flexible rest and prayer stops along Highway 15/40",
+      "Available 24/7 with advance booking and fixed quotes",
+    ],
+    relatedCitySlugs: ["taif", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct highland connection to the Holy City",
+        paragraphs: [
+          "The 480 km journey bypasses coastal traffic, travelling north through western valleys into Madinah in roughly 4 hours and 45 minutes.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the transfer from Taif to Madinah take?", answer: "The 480 km drive takes approximately 4.5 to 5 hours with scheduled comfort stops." },
+    ],
+    keywords: ["taif to madinah taxi", "taif to madinah private transfer", "transfer taif to medina"],
+  },
+  {
+    slug: "madinah-to-taif",
+    from: "Madinah",
+    to: "Taif",
+    category: "intercity",
+    distance: "480 km",
+    duration: "4 hours 45 min",
+    intro:
+      "Private chauffeur transfer from Madinah hotels directly to the cooler mountain heights and resorts of Taif.",
+    about:
+      "Escape the summer heat or continue your Kingdom tour after visiting the Prophet's Mosque. Our private Madinah to Taif transfer provides a comfortable, air-conditioned long-distance ride directly from your Madinah hotel to any resort, villa, or hotel in Taif.",
+    notes: [
+      "Direct pickup from Madinah hotels surrounding the Prophet's Mosque",
+      "Comfortable long-haul fleet equipped with climate control and spacious seating",
+      "Drop-off across Al Hada, Al Shafa, and central Taif",
+      "Fixed prices with zero meter surcharges",
+    ],
+    relatedCitySlugs: ["madinah", "taif"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Scenic ascent to the City of Roses",
+        paragraphs: [
+          "Travel in total comfort from Madinah south toward the Sarawat mountain range, concluding with an ascent into the fragrant highland oasis of Taif.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Are stops available along the route between Madinah and Taif?", answer: "Yes, your driver accommodates refreshment and prayer breaks at major highway plazas." },
+    ],
+    keywords: ["madinah to taif taxi", "madinah to taif private transfer", "medina to taif car service"],
+  },
+  {
+    slug: "jeddah-to-abha",
+    from: "Jeddah",
+    to: "Abha",
+    category: "intercity",
+    distance: "620 km",
+    duration: "6 hours 30 min",
+    intro:
+      "Private scenic chauffeur transfer from Jeddah and Red Sea hotels up to the Asir highlands and mountain resorts of Abha.",
+    about:
+      "Travel from the Red Sea coast up to the lush green mountain plateau of Abha with our private transfer service. We collect you directly from your home, hotel, or King Abdulaziz Airport in Jeddah and provide a comfortable 6.5-hour journey along the scenic coastal and mountain highway to Abha.",
+    notes: [
+      "Door-to-door pickup across all Jeddah districts and JED airport",
+      "Direct drop-off at Abha mountain resorts, hotels, and Al Soudah villas",
+      "Late-model air-conditioned vehicles and mountain-experienced chauffeurs",
+      "Fixed upfront pricing with no hidden toll or fuel fees",
+    ],
+    relatedCitySlugs: ["jeddah", "abha"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "From the Red Sea coast to the mist-covered Asir Mountains",
+        paragraphs: [
+          "Covering 620 km south along Highway 5 through Al Lith and the Tihama plains before ascending into Abha, this scenic drive takes approximately 6.5 hours in comfort.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does a private transfer from Jeddah to Abha take?", answer: "The 620 km journey takes roughly 6.5 hours including rest breaks." },
+    ],
+    keywords: ["jeddah to abha taxi", "jeddah to abha private transfer", "jeddah to asir chauffeur"],
+  },
+  {
+    slug: "alula-to-yanbu",
+    from: "AlUla",
+    to: "Yanbu",
+    category: "intercity",
+    distance: "360 km",
+    duration: "3 hours 45 min",
+    intro:
+      "Private luxury transfer connecting AlUla desert heritage resorts directly with Red Sea diving retreats and beaches in Yanbu.",
+    about:
+      "Seamlessly combine UNESCO World Heritage exploration in AlUla with coastal relaxation and world-class diving in Yanbu. Our private chauffeur service collects you directly from your luxury resort in AlUla (Habitas, Banyan Tree) and transports you to Yanbu's waterfront hotels in complete comfort.",
+    notes: [
+      "Direct pickup from all AlUla luxury resorts and Old Town properties",
+      "Drop-off at Yanbu beach resorts, diving centers, and Royal Commission hotels",
+      "Scenic transfer connecting ancient desert history with the Red Sea coast",
+      "Spacious SUVs and vans with ample luggage capacity",
+    ],
+    relatedCitySlugs: ["alula", "yanbu"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "From ancient desert valleys to Red Sea coral waters",
+        paragraphs: [
+          "The 360 km drive along Route 375 and Highway 60 takes approximately 3 hours and 45 minutes, offering an effortless transition between two contrasting tourism destinations.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long is the transfer from AlUla to Yanbu?", answer: "The 360 km drive takes approximately 3 hours and 45 minutes." },
+    ],
+    keywords: ["alula to yanbu taxi", "alula to yanbu private transfer", "transfer alula to red sea"],
+  },
+  {
+    slug: "yanbu-to-alula",
+    from: "Yanbu",
+    to: "AlUla",
+    category: "intercity",
+    distance: "360 km",
+    duration: "3 hours 45 min",
+    intro:
+      "Private executive transfer from Yanbu coastal resorts and cruise ports directly to AlUla's historic desert pavilions.",
+    about:
+      "Arriving in Yanbu by cruise ship or completing a coastal beach stay? Continue your journey into the historic oasis of AlUla with our private chauffeur service. We collect you from any hotel, marina, or port in Yanbu and drive you directly to your luxury resort in AlUla.",
+    notes: [
+      "Pickup from Yanbu cruise terminal, beachfront resorts, or Yanbu Airport",
+      "Direct drop-off at Habitas AlUla, Banyan Tree, Shaden, and Old Town hotels",
+      "Comfortable 4x4 SUVs and luxury sedans equipped for desert touring",
+      "Fixed prices with personalized route flexibility",
+    ],
+    relatedCitySlugs: ["yanbu", "alula"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Coastal departure into the ancient Hegra kingdom",
+        paragraphs: [
+          "Ascend from the Red Sea coast through dramatic mountain passes toward AlUla's golden sandstone canyons in roughly 3 hours and 45 minutes.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can the driver collect us directly from a cruise ship in Yanbu?", answer: "Yes, we coordinate pickup at the port terminal according to your ship's docking schedule." },
+    ],
+    keywords: ["yanbu to alula taxi", "yanbu to alula private transfer", "cruise transfer yanbu to alula"],
+  },
+  {
+    slug: "hail-to-madinah",
+    from: "Hail",
+    to: "Madinah",
+    category: "intercity",
+    distance: "440 km",
+    duration: "4 hours 15 min",
+    intro:
+      "Private intercity transfer connecting the northern heritage city of Hail directly with the Prophet's Mosque in Madinah.",
+    about:
+      "Travel from the northern desert city of Hail directly to Madinah for pilgrimage or business. Our private chauffeur service collects you from your hotel or home in Hail and provides a comfortable 4-hour highway journey to your hotel in Madinah's Central Area.",
+    notes: [
+      "Door-to-door pickup across Hail city and Hail Regional Airport",
+      "Direct drop-off at Madinah hotels near the Prophet's Mosque",
+      "Comfortable long-haul vehicles with ample luggage space",
+      "Available 24/7 with fixed transparent pricing",
+    ],
+    relatedCitySlugs: ["hail", "madinah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Northern connection to the Holy City",
+        paragraphs: [
+          "The 440 km route south via Highway 65/60 takes roughly 4 hours and 15 minutes across central plains into the sanctuary of Madinah.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does the drive from Hail to Madinah take?", answer: "The 440 km journey takes approximately 4 hours and 15 minutes." },
+    ],
+    keywords: ["hail to madinah taxi", "hail to madinah private transfer", "transfer hail to medina"],
+  },
+  {
+    slug: "madinah-to-hail",
+    from: "Madinah",
+    to: "Hail",
+    category: "intercity",
+    distance: "440 km",
+    duration: "4 hours 15 min",
+    intro:
+      "Private transfer service from Madinah hotels and airport north to Hail, Aja Mountains, and UNESCO rock art sites.",
+    about:
+      "Heading north from the Holy City to explore the desert heritage and mountainous terrain of Hail? Our private transfer service collects you directly from your Madinah hotel and provides a smooth, air-conditioned 4-hour ride to Hail.",
+    notes: [
+      "Pickup from any hotel in Madinah or Prince Mohammad Airport (MED)",
+      "Drop-off at any hotel, residence, or commercial office in Hail",
+      "Modern, well-maintained vehicles for long-distance highway comfort",
+      "Fixed rates agreed in advance with zero surprise fees",
+    ],
+    relatedCitySlugs: ["madinah", "hail"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Heading North from Madinah to Hail",
+        paragraphs: [
+          "Travel north into the historical desert landscapes of Hail with experienced highway drivers and planned comfort stops.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Where does the driver collect us in Madinah?", answer: "Your chauffeur meets you directly at your Madinah hotel lobby or curbside at Prince Mohammad Airport." },
+    ],
+    keywords: ["madinah to hail taxi", "madinah to hail private transfer", "medina to hail chauffeur"],
+  },
+  {
+    slug: "alula-airport-to-riyadh",
+    from: "AlUla Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "1,050 km",
+    duration: "10 hours",
+    intro:
+      "Private long-distance airport chauffeur transfer from AlUla International Airport (ULH) directly to Riyadh.",
+    about:
+      "Arriving at AlUla International Airport (ULH) and requiring private ground transport to the capital? Our dedicated long-distance transfer service meets you at arrivals, loads your luggage, and drives you directly across the Kingdom to your destination in Riyadh in luxury comfort.",
+    notes: [
+      "Meet-and-greet pickup inside AlUla International Airport (ULH) terminal",
+      "Direct overland transfer to all Riyadh districts, corporate centers, and RUH airport",
+      "Luxury SUVs and executive sedans equipped for long-distance desert journeys",
+      "Fixed pricing with complimentary refreshments and customized rest breaks",
+    ],
+    relatedCitySlugs: ["alula", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Overland transit from AlUla Airport to the Capital",
+        paragraphs: [
+          "The 1,050 km highway route via Hail and Qassim into Riyadh takes approximately 10 hours, providing an exclusive private alternative for touring parties.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How does the driver meet me at AlUla Airport?", answer: "Your chauffeur waits in the ULH arrivals hall holding a personalized paging board." },
+    ],
+    keywords: ["alula airport to riyadh taxi", "ulh to riyadh transfer", "alula airport to riyadh private car"],
+  },
+  {
+    slug: "alula-airport-to-jeddah",
+    from: "AlUla Airport",
+    to: "Jeddah",
+    category: "airport",
+    distance: "720 km",
+    duration: "7 hours",
+    intro:
+      "Direct private transfer from AlUla International Airport (ULH) south to Jeddah hotels, resorts, and seaport.",
+    about:
+      "Landing at AlUla International Airport and heading south to the Red Sea commercial hub of Jeddah? Our private airport chauffeur service meets you upon flight arrival and provides a direct, air-conditioned 7-hour transfer straight to your hotel or residence in Jeddah.",
+    notes: [
+      "Personalized meet-and-greet at AlUla Airport (ULH) with flight monitoring",
+      "Direct drop-off at any hotel, Corniche resort, or district in Jeddah",
+      "Spacious vehicles with ample room for luxury luggage and sports gear",
+      "24/7 availability with fixed upfront pricing",
+    ],
+    relatedCitySlugs: ["alula", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct airport connection from AlUla to Jeddah",
+        paragraphs: [
+          "Traverse 720 km south along modern expressways through Yanbu directly into Jeddah in approximately 7 hours.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can we stop for meals between AlUla Airport and Jeddah?", answer: "Yes, your driver accommodates dining and refreshment stops along the route." },
+    ],
+    keywords: ["alula airport to jeddah taxi", "ulh to jeddah transfer", "alula to jeddah private airport car"],
+  },
+  {
+    slug: "abha-airport-to-jeddah",
+    from: "Abha Airport",
+    to: "Jeddah",
+    category: "airport",
+    distance: "620 km",
+    duration: "6 hours 30 min",
+    intro:
+      "Private chauffeur transfer from Abha International Airport (AHB) down to Jeddah hotels, residences, and Corniche resorts.",
+    about:
+      "Arriving at Abha International Airport (AHB) with onward travel to the Western Province? Skip flight connections with our private overland transfer. Your driver meets you at AHB arrivals and delivers you directly to your destination in Jeddah in a modern, climate-controlled vehicle.",
+    notes: [
+      "Meet-and-greet service inside Abha International Airport (AHB) terminal",
+      "Direct coastal expressway route descending from Asir to Jeddah",
+      "Professional mountain-experienced drivers and late-model fleet",
+      "Fixed fares covering all highway travel and fuel expenses",
+    ],
+    relatedCitySlugs: ["abha", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct airport transfer from the Asir highlands to Jeddah",
+        paragraphs: [
+          "The 620 km drive takes approximately 6.5 hours, providing a reliable and private road journey between southern airport arrivals and the Red Sea hub.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Where will my driver meet me at Abha Airport?", answer: "Your chauffeur will wait inside the AHB arrival hall holding a sign with your name." },
+    ],
+    keywords: ["abha airport to jeddah taxi", "ahb to jeddah transfer", "abha airport to jeddah private car"],
+  },
+  {
+    slug: "abha-airport-to-riyadh",
+    from: "Abha Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "950 km",
+    duration: "9 hours",
+    intro:
+      "Direct private airport transfer from Abha International Airport (AHB) to any hotel, residence, or office in Riyadh.",
+    about:
+      "Landing at Abha International Airport and requiring long-distance private transportation to the capital? Our chauffeur meets you at AHB arrivals, takes care of your luggage, and drives you comfortably across the southern desert into Riyadh with planned comfort stops.",
+    notes: [
+      "Meet-and-greet pickup across domestic and international arrivals at AHB",
+      "Direct delivery to any Riyadh district, corporate park, or hotel",
+      "Spacious SUVs and vans with generous baggage space",
+      "Guaranteed fixed pricing agreed before departure",
+    ],
+    relatedCitySlugs: ["abha", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Long-distance overland transfer from AHB to Riyadh",
+        paragraphs: [
+          "The 950 km highway route connects the Asir highlands through Wadi Ad-Dawasir directly into Riyadh over roughly 9 hours.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long is the transfer from Abha Airport to Riyadh?", answer: "The 950 km journey takes approximately 9 hours with regular highway rest breaks." },
+    ],
+    keywords: ["abha airport to riyadh taxi", "ahb to riyadh transfer", "abha airport to riyadh chauffeur"],
+  },
+  {
+    slug: "yanbu-to-jeddah-airport",
+    from: "Yanbu",
+    to: "Jeddah Airport",
+    category: "airport",
+    distance: "330 km",
+    duration: "3 hours 15 min",
+    intro:
+      "Reliable private airport transfer from Yanbu hotels and Royal Commission complexes directly to King Abdulaziz International Airport (JED).",
+    about:
+      "Catch your international or domestic flight from Jeddah Airport with complete peace of mind. Our private transfer service collects you directly from your hotel or residence in Yanbu and delivers you straight to your departure terminal at King Abdulaziz Airport (JED) on schedule.",
+    notes: [
+      "Direct pickup from Yanbu Al Sinaiyah, Yanbu Al Bahr, and resort areas",
+      "Drop-off at Terminal 1, North Terminal, or VIP aviation at JED",
+      "Punctual scheduling timed to flight check-in requirements",
+      "Spacious vehicles with plenty of luggage room",
+    ],
+    relatedCitySlugs: ["yanbu", "jeddah"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct airport departure link from Yanbu to JED",
+        paragraphs: [
+          "The 330 km drive south along Highway 5 takes approximately 3 hours and 15 minutes, offering an efficient airport link for business and leisure travellers.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How far in advance should I leave Yanbu for a flight at Jeddah Airport?", answer: "We recommend scheduling pickup at least 6 to 6.5 hours before an international flight departure to allow for the 3.25-hour drive and security check-in." },
+    ],
+    keywords: ["yanbu to jeddah airport taxi", "yanbu to jed airport transfer", "yanbu private car to jeddah airport"],
+  },
+  {
+    slug: "jeddah-airport-to-yanbu",
+    from: "Jeddah Airport",
+    to: "Yanbu",
+    category: "airport",
+    distance: "330 km",
+    duration: "3 hours 15 min",
+    intro:
+      "Private meet-and-greet airport transfer from King Abdulaziz International Airport (JED) directly to Yanbu hotels, resorts, and industrial complexes.",
+    about:
+      "Arriving at King Abdulaziz International Airport in Jeddah and proceeding straight to Yanbu? Our private chauffeur tracks your incoming flight, greets you in the arrival hall, and drives you directly north along the coastal highway to your destination in Yanbu without delay.",
+    notes: [
+      "Meet-and-greet service across all Jeddah Airport terminals (T1, North, Hajj)",
+      "Direct 3.25-hour highway transfer to Yanbu Al Bahr and Royal Commission districts",
+      "Live flight tracking ensures punctual pickup even if flights are delayed",
+      "Fixed rates with no meter surprises or surge charges",
+    ],
+    relatedCitySlugs: ["jeddah", "yanbu"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Seamless arrival at JED and transfer to Yanbu",
+        paragraphs: [
+          "Enjoy a smooth transition from your flight to a private air-conditioned vehicle heading north along the coastal expressway to Yanbu.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Where will my driver meet me at Jeddah Airport for the Yanbu trip?", answer: "Your driver meets you inside the arrival terminal holding a paging board with your name." },
+    ],
+    keywords: ["jeddah airport to yanbu taxi", "jed airport to yanbu transfer", "king abdulaziz airport to yanbu private car"],
+  },
+  {
+    slug: "riyadh-to-jizan",
+    from: "Riyadh",
+    to: "Jizan",
+    category: "intercity",
+    distance: "1,000 km",
+    duration: "10 hours",
+    intro:
+      "Private long-distance chauffeur service from Riyadh directly to Jizan port city, economic zone, and Red Sea ferry terminals.",
+    about:
+      "Connect the capital with Saudi Arabia's southern Red Sea economic hub and port city. Our private Riyadh to Jizan transfer provides dedicated executive chauffeurs, spacious late-model vehicles, and tailored routing for business executives, families, and project engineers.",
+    notes: [
+      "Door-to-door pickup across all Riyadh districts and King Khalid Airport",
+      "Direct delivery to Jizan city center, port, King Abdullah Economic City, or Farasan ferry",
+      "Spacious SUVs and vans with unlimited luggage capacity",
+      "Experienced highway chauffeurs with safety and comfort protocols",
+    ],
+    relatedCitySlugs: ["riyadh", "jazan"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Connecting the Capital to the Southern Economic Hub",
+        paragraphs: [
+          "Covering roughly 1,000 km south via Highway 10 and coastal routes into Jizan over approximately 10 hours, this route provides dependable overland connectivity.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How long does a private taxi from Riyadh to Jizan take?", answer: "The 1,000 km journey takes approximately 10 hours with scheduled highway rest stops." },
+    ],
+    keywords: ["riyadh to jizan taxi", "riyadh to jazan private transfer", "riyadh jizan chauffeur"],
+  },
+  {
+    slug: "jizan-to-riyadh",
+    from: "Jizan",
+    to: "Riyadh",
+    category: "intercity",
+    distance: "1,000 km",
+    duration: "10 hours",
+    intro:
+      "Private cross-country chauffeur transfer from Jizan and the southern Red Sea coast directly to Riyadh.",
+    about:
+      "Travel from Jizan port, economic city, or Farasan ferry terminal directly to Riyadh. Our private transfer service collects you from your hotel, office, or residence in Jizan and transports you comfortably across the Kingdom to any address or airport in Riyadh.",
+    notes: [
+      "Door-to-door pickup in Jizan, Jazan Airport, or Farasan ferry terminal",
+      "Direct drop-off at any hotel, corporate office, or residence in Riyadh",
+      "Fully air-conditioned late-model fleet with spacious luggage capacity",
+      "Fixed upfront quotes with zero hidden fees",
+    ],
+    relatedCitySlugs: ["jazan", "riyadh"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Overland corridor from Jizan to the Capital",
+        paragraphs: [
+          "Travel in comfort from the southwestern coast through southern valleys into Riyadh with professional long-distance drivers.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can the driver pick us up from the Farasan Islands ferry terminal in Jizan?", answer: "Yes, we coordinate pickup directly at the Jizan ferry terminal according to your boat arrival." },
+    ],
+    keywords: ["jizan to riyadh taxi", "jazan to riyadh private transfer", "jizan riyadh chauffeur"],
+  },
+  {
+    slug: "dammam-to-qatar-border",
+    from: "Dammam",
+    to: "Qatar Border",
+    category: "border",
+    distance: "300 km",
+    duration: "3 hours",
+    intro:
+      "Private cross-border transfer from Dammam, Khobar, and Eastern Province cities directly to the Salwa / Abu Samra Qatar border crossing.",
+    about:
+      "Need a comfortable, reliable transfer from Dammam to the Saudi–Qatar border? Our private border transfer service picks you up from your hotel, residence, or airport in Dammam or Khobar and drives you directly to the Salwa border crossing with guidance on border procedures.",
+    notes: [
+      "Door-to-door pickup across Dammam, Khobar, Dhahran, and King Fahd Airport",
+      "Direct transfer to the Salwa (Saudi) / Abu Samra (Qatar) border crossing",
+      "Assistance with luggage and border terminal drop-off points",
+      "Available 24/7 with fixed pricing and advance booking",
+    ],
+    relatedCitySlugs: ["dammam", "khobar", "hofuf"],
+    lastUpdated: "2026-08-16",
+    sections: [
+      {
+        heading: "Direct Eastern Province transfer to the Qatar Border",
+        paragraphs: [
+          "The 300 km highway drive south via Hofuf to the Salwa border crossing takes approximately 3 hours, offering a smooth cross-border travel experience.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "How far is the Qatar border from Dammam?", answer: "The Salwa border crossing is approximately 300 km from Dammam, taking around 3 hours by private car." },
+      { question: "Do you pick up from Khobar and Dhahran for the Qatar border?", answer: "Yes, we provide door-to-door collection across all Eastern Province cities including Khobar, Dhahran, and Dammam." },
+    ],
+    keywords: ["dammam to qatar border taxi", "dammam to salwa border transfer", "dammam to abu samra taxi"],
+  },
+
 ];
 
 /** Base routes plus the merged Makkah intercity + departure routes. */

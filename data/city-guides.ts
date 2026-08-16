@@ -124,6 +124,12 @@ export const cityGuides: Record<string, CityGuide> = {
         question: "Is there a private transfer option from Jeddah to Taif?",
         answer: "Yes, the Jeddah to Taif mountain route is available as a private transfer, popular with travellers seeking the cooler highland climate above Makkah.",
       },
+    
+      {
+        question: "Do you offer private transfers from Jeddah to Riyadh, AlUla, or Dammam?",
+        answer:
+          "Yes, we provide long-distance transfers across Saudi Arabia, including our <a href='/routes/jeddah-to-riyadh'>private Jeddah to Riyadh transfer</a>, our <a href='/routes/jeddah-to-alula'>luxury Jeddah to AlUla transfer</a>, and cross-country routes like <a href='/routes/jeddah-to-dammam'>Jeddah to Dammam</a>.",
+      },
     ],
     hubFaqs: [
       {
@@ -256,6 +262,18 @@ export const cityGuides: Record<string, CityGuide> = {
         question: "Is airport pickup available for late-night flights into Madinah?",
         answer: "Yes, meet-and-greet pickup at Madinah Airport runs 24/7 regardless of your flight's arrival time.",
       },
+    
+      {
+        question: "Do you offer private transfers from Madinah north to Tabuk?",
+        answer:
+          "Yes, we provide direct private rides along the northern corridor with our <a href='/routes/madinah-to-tabuk'>private Madinah to Tabuk transfer</a>.",
+      },
+    
+      {
+        question: "Do you provide private transfers from Madinah to Yanbu, Taif, or Hail?",
+        answer:
+          "Yes, we connect Madinah with regional cities through our <a href='/routes/madinah-to-yanbu'>Madinah to Yanbu transfer</a>, <a href='/routes/madinah-to-taif'>Madinah to Taif transfer</a>, and <a href='/routes/madinah-to-hail'>Madinah to Hail transfer</a>.",
+      },
     ],
     hubFaqs: [
       {
@@ -321,6 +339,18 @@ export const cityGuides: Record<string, CityGuide> = {
       {
         question: "What documents do I need for a Dammam to Bahrain crossing?",
         answer: "Border document requirements can change, so we recommend checking official Saudi and Bahraini government sources before travelling; we handle the driving, not the paperwork.",
+      },
+    
+      {
+        question: "Can I book a long-distance transfer from Dammam to Jeddah?",
+        answer:
+          "Yes, we provide cross-country private transfers connecting the Eastern Province to the Red Sea with our <a href='/routes/dammam-to-jeddah'>private Dammam to Jeddah transfer</a>.",
+      },
+    
+      {
+        question: "Do you offer private transfers from Dammam to the Qatar border?",
+        answer:
+          "Yes, we provide direct private cross-border transfers from Dammam, Khobar, and Eastern Province hotels to the Salwa crossing with our <a href='/routes/dammam-to-qatar-border'>Dammam to Qatar border transfer</a>.",
       },
     ],
     hubFaqs: [
@@ -468,6 +498,12 @@ export const cityGuides: Record<string, CityGuide> = {
         question: "Is Taif a good stop between Makkah and Abha?",
         answer: "Yes, some travellers combine Taif with an onward trip toward Abha; ask us about a multi-city itinerary and we'll quote each leg.",
       },
+    
+      {
+        question: "Do you offer private transfers between Taif and Madinah or Jeddah Airport?",
+        answer:
+          "Yes, we provide direct private rides including our <a href='/routes/taif-to-madinah'>private Taif to Madinah transfer</a> and scheduled airport departures via our <a href='/routes/taif-to-jeddah-airport'>Taif to Jeddah Airport transfer</a>.",
+      },
     ],
   },
 
@@ -507,6 +543,12 @@ export const cityGuides: Record<string, CityGuide> = {
       {
         question: "Do you provide family-friendly vehicles for highland sightseeing in Abha?",
         answer: "Yes, comfortable family vehicles are available for highland day trips — mention passenger count and any specific stops when requesting a quote.",
+      },
+    
+      {
+        question: "Do you offer private transfers from Abha to Jeddah?",
+        answer:
+          "Yes, we provide scenic long-distance transfers from the Asir highlands down to the Red Sea coast with our <a href='/routes/abha-to-jeddah'>private Abha to Jeddah transfer</a>.",
       },
     ],
   },
@@ -548,6 +590,12 @@ export const cityGuides: Record<string, CityGuide> = {
         question: "Do you provide airport pickup for late or early Tabuk flights?",
         answer: "Yes, meet-and-greet pickup at Tabuk Regional Airport runs 24/7 regardless of flight time.",
       },
+    
+      {
+        question: "Can I book transfers between Tabuk and NEOM or Madinah?",
+        answer:
+          "Yes, we operate regular private transfers to project sites including our <a href='/routes/tabuk-to-neom'>Tabuk to NEOM transfer</a>, return <a href='/routes/neom-to-tabuk'>NEOM to Tabuk transfer</a>, and the northern route via our <a href='/routes/tabuk-to-madinah'>Tabuk to Madinah transfer</a>.",
+      },
     ],
   },
 
@@ -587,6 +635,18 @@ export const cityGuides: Record<string, CityGuide> = {
       {
         question: "Are your AlUla vehicles suitable for desert touring?",
         answer: "Yes, our vehicles are comfortable for AlUla's desert touring routes; mention any specific sites or a full-day itinerary when requesting a quote.",
+      },
+    
+      {
+        question: "Can I arrange private return transfers from AlUla to Riyadh, Jeddah, or Madinah?",
+        answer:
+          "Yes, we provide door-to-door return transfers from all AlUla luxury resorts, including our <a href='/routes/alula-to-riyadh'>AlUla to Riyadh transfer</a>, <a href='/routes/alula-to-jeddah'>AlUla to Jeddah transfer</a>, and <a href='/routes/alula-to-madinah'>AlUla to Madinah transfer</a>.",
+      },
+    
+      {
+        question: "Can I travel privately from AlUla to Red Sea resorts in Yanbu?",
+        answer:
+          "Yes, we provide direct luxury resort transfers connecting ancient heritage with the coast via our <a href='/routes/alula-to-yanbu'>private AlUla to Yanbu transfer</a>.",
       },
     ],
   },
@@ -628,6 +688,12 @@ export const cityGuides: Record<string, CityGuide> = {
         question: "Do you offer transfers between Yanbu and AlUla?",
         answer: "Yes, private intercity transfers from Yanbu to AlUla are available with a fixed price agreed before you travel.",
       },
+    
+      {
+        question: "Can I book private transfers from Yanbu to Madinah, AlUla, or Jeddah Airport?",
+        answer:
+          "Yes, we connect the Red Sea coast with major hubs through our <a href='/routes/yanbu-to-madinah'>Yanbu to Madinah transfer</a>, <a href='/routes/yanbu-to-alula'>Yanbu to AlUla heritage transfer</a>, and <a href='/routes/yanbu-to-jeddah-airport'>Yanbu to Jeddah Airport transfer</a>.",
+      },
     ],
   },
 
@@ -667,6 +733,12 @@ export const cityGuides: Record<string, CityGuide> = {
       {
         question: "Can I book a transfer from Hail toward Riyadh?",
         answer: "Yes, private intercity transfers from Hail to Riyadh are available with a fixed price agreed before you travel.",
+      },
+    
+      {
+        question: "Do you offer private transfers from Hail to Madinah?",
+        answer:
+          "Yes, we provide direct door-to-door private transfers along the northern corridor with our <a href='/routes/hail-to-madinah'>private Hail to Madinah transfer</a>.",
       },
     ],
   },
@@ -747,6 +819,12 @@ export const cityGuides: Record<string, CityGuide> = {
       {
         question: "Do you provide transfers for groups heading to Farasan with luggage or gear?",
         answer: "Yes, larger vehicles are available for groups travelling to the ferry terminal with extra luggage or diving gear.",
+      },
+    
+      {
+        question: "Can I book a private long-distance transfer from Jazan to Riyadh?",
+        answer:
+          "Yes, we provide cross-country private chauffeur transfers connecting the southern port city and Farasan ferry terminal with the capital via our <a href='/routes/jizan-to-riyadh'>private Jizan to Riyadh transfer</a>.",
       },
     ],
   },

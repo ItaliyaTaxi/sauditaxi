@@ -116,24 +116,27 @@ export function QuotationClientActions({ quotation }: { quotation: Quotation }) 
       ) : (
         <div className="space-y-4">
           <div className="text-center sm:text-left">
-            <h3 className="text-base font-bold text-neutral-900">Respond to Quotation</h3>
-            <p className="text-xs text-neutral-500">
-              Select an option below to accept, decline, or speak with us on WhatsApp.
+            <div className="flex items-center gap-2">
+              <span className="inline-block size-2 rounded-full bg-emerald-500 animate-pulse" />
+              <h3 className="text-base font-bold text-neutral-900">Review &amp; Respond to Quotation</h3>
+            </div>
+            <p className="mt-1 text-xs sm:text-sm text-neutral-600">
+              Please review your quotation details, inclusions, and pricing below. You can accept or decline your booking with a single click, or chat with us on WhatsApp if you have questions or need adjustments.
             </p>
           </div>
 
           {feedback && !feedback.ok && (
-            <div className="rounded-md bg-red-50 p-3 text-xs text-red-600">
+            <div className="rounded-md bg-red-50 p-3 text-xs text-red-600 font-medium">
               {feedback.text}
             </div>
           )}
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2 sm:justify-start">
             <button
               type="button"
               onClick={() => handleAction("accept")}
               disabled={loading}
-              className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700 disabled:opacity-50 transition"
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 text-sm font-bold text-white shadow hover:bg-emerald-700 disabled:opacity-50 transition cursor-pointer"
             >
               {loading ? <Loader2 className="size-4 animate-spin" /> : <CheckCircle2 className="size-4" />}
               Accept Quotation
@@ -143,7 +146,7 @@ export function QuotationClientActions({ quotation }: { quotation: Quotation }) 
               type="button"
               onClick={() => handleAction("decline")}
               disabled={loading}
-              className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-2.5 text-sm font-bold text-neutral-700 shadow-sm hover:bg-neutral-50 hover:text-red-600 disabled:opacity-50 transition"
+              className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-700 shadow-sm hover:bg-neutral-50 hover:text-red-600 disabled:opacity-50 transition cursor-pointer"
             >
               {loading ? <Loader2 className="size-4 animate-spin" /> : <XCircle className="size-4" />}
               Decline Quotation
@@ -153,7 +156,7 @@ export function QuotationClientActions({ quotation }: { quotation: Quotation }) 
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-[#20ba5a] transition"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow hover:bg-[#20ba5a] transition"
             >
               <MessageSquare className="size-4" />
               Chat on WhatsApp

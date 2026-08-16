@@ -127,6 +127,12 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Mid-morning and early afternoon arrivals generally clear Airport Road faster than the evening rush. Whatever time you land, flight tracking means your driver is ready regardless, so this affects your drive time more than your pickup.",
       },
+    
+      {
+        question: "Do you provide direct long-distance transfers from Riyadh Airport to Jeddah, Makkah, or Madinah?",
+        answer:
+          "Yes, arriving passengers at King Khalid Airport (RUH) can book direct private transfers including our <a href='/routes/riyadh-airport-to-jeddah'>Riyadh Airport to Jeddah transfer</a>, our <a href='/routes/riyadh-airport-to-makkah'>Riyadh Airport to Makkah Umrah transfer</a>, and our <a href='/routes/riyadh-airport-to-madinah'>Riyadh Airport to Madinah transfer</a>.",
+      },
     ],
   },
 
@@ -230,6 +236,18 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Is airport transfer available 24/7 at JED?",
         answer:
           "Yes. Flights land around the clock throughout Umrah and Hajj seasons, and meet-and-greet pickup is available for any arrival time, day or night.",
+      },
+    
+      {
+        question: "Can I book a direct transfer from Jeddah Airport to Riyadh?",
+        answer:
+          "Yes, we provide meet-and-greet pickups at King Abdulaziz Airport (JED) with direct overland transfer via our <a href='/routes/jeddah-airport-to-riyadh'>private Jeddah Airport to Riyadh transfer</a> service.",
+      },
+    
+      {
+        question: "Do you offer direct transfers from Jeddah Airport to Taif or Yanbu?",
+        answer:
+          "Yes, arriving passengers at King Abdulaziz Airport (JED) can book our <a href='/routes/jeddah-airport-to-taif'>Jeddah Airport to Taif transfer</a> or our <a href='/routes/jeddah-airport-to-yanbu'>Jeddah Airport to Yanbu transfer</a>.",
       },
     ],
   },
@@ -335,6 +353,12 @@ export const airportGuides: Record<string, AirportGuide> = {
         answer:
           "Let us know when booking if you'd like a brief stop before heading to your hotel, and we can plan the routing and any waiting time around it as part of your transfer.",
       },
+    
+      {
+        question: "Can I book a transfer from Madinah Airport directly to Riyadh?",
+        answer:
+          "Yes, we provide meet-and-greet arrivals at Prince Mohammad Airport (MED) with direct transfer to Riyadh via our <a href='/routes/madinah-airport-to-riyadh'>private Madinah Airport to Riyadh transfer</a>.",
+      },
     ],
   },
 
@@ -438,6 +462,12 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Is airport transfer available for early-morning or overnight flights at DMM?",
         answer:
           "Yes. Meet-and-greet pickup runs around the clock, and flight tracking means your driver is ready whenever you actually land, including early-morning or late-night arrivals.",
+      },
+    
+      {
+        question: "Can I book a private transfer from Dammam Airport directly to Riyadh?",
+        answer:
+          "Yes, we provide meet-and-greet pickups at King Fahd Airport (DMM) with direct highway transfer via our <a href='/routes/dammam-airport-to-riyadh'>private Dammam Airport to Riyadh transfer</a>.",
       },
     ],
   },
@@ -632,6 +662,12 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Can you connect Abha airport with Jazan or Najran on the same trip?",
         answer:
           "Yes. We run private intercity transfers linking Abha with both Jazan on the coast and Najran inland, useful for a combined southern-Saudi itinerary by private car.",
+      },
+    
+      {
+        question: "Do you provide direct transfers from Abha Airport to Jeddah or Riyadh?",
+        answer:
+          "Yes, arriving passengers at Abha Airport (AHB) can book direct private overland transfers via our <a href='/routes/abha-airport-to-jeddah'>Abha Airport to Jeddah transfer</a> or our <a href='/routes/abha-airport-to-riyadh'>Abha Airport to Riyadh transfer</a>.",
       },
     ],
   },
@@ -923,6 +959,12 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Can you arrange transport for a multi-day AlUla stay, not just the airport transfer?",
         answer:
           "Yes. Beyond the initial airport pickup, we can arrange a driver for hotel transfers and sightseeing across your whole stay, so you're not booking a separate ride for each day.",
+      },
+    
+      {
+        question: "Can I book long-distance private transfers from AlUla Airport to Riyadh or Jeddah?",
+        answer:
+          "Yes, we provide direct luxury overland transfers from ULH Airport including our <a href='/routes/alula-airport-to-riyadh'>AlUla Airport to Riyadh transfer</a> and <a href='/routes/alula-airport-to-jeddah'>AlUla Airport to Jeddah transfer</a>.",
       },
     ],
   },
