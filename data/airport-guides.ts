@@ -54,7 +54,7 @@ export const airportGuides: Record<string, AirportGuide> = {
       {
         heading: "Where travellers go from RUH",
         paragraphs: [
-          "Most arrivals head to hotels in Olaya, the King Abdullah Financial District (KAFD), or the diplomatic quarter, while visitors often continue to <a href='/taxi-service/riyadh'>explore Riyadh</a> attractions such as historic Diriyah, the National Museum, and the Riyadh Season venues. Browse <a href='/cities/riyadh'>Riyadh hotel transfers</a> for fixed-price rides straight to your hotel.",
+          "Most arrivals head to hotels in Olaya, the <a href='/riyadh/king-khalid-airport-to-kafd'>King Abdullah Financial District (KAFD)</a>, or the diplomatic quarter, while visitors often continue to <a href='/taxi-service/riyadh'>explore Riyadh</a> attractions such as historic <a href='/riyadh/riyadh-to-diriyah-transfers'>Diriyah & Bujairi Terrace</a>, the National Museum, and major events via our <a href='/riyadh/king-khalid-airport-to-ricec-exhibition-center'>Riyadh exhibition center transfers</a>. Browse <a href='/cities/riyadh'>Riyadh hotel transfers</a> for fixed-price rides straight to your hotel.",
           "RUH is also a springboard for intercity travel. We run <a href='/intercity-transfers'>private intercity transfers</a> toward Qassim, Hail, and the Eastern Province, and connect to other <a href='/airport-transfers'>Saudi airport transfers</a> if your journey continues by air.",
         ],
       },
@@ -887,7 +887,7 @@ export const airportGuides: Record<string, AirportGuide> = {
       {
         heading: "Hegra, the Old Town and Maraya",
         paragraphs: [
-          "From the airport we drive to AlUla's resorts, the restored Old Town, the ancient Nabataean tombs of Hegra, Dadan, Elephant Rock, and the mirrored Maraya concert hall. Distances between sites are easy by private car, and we can arrange a driver for touring across your stay.",
+          "From the airport we drive to AlUla's resorts via our dedicated <a href='/alula/alula-airport-to-habitas-and-banyan-tree'>Habitas and Banyan Tree transfers</a>, the restored Old Town, the ancient Nabataean tombs of Hegra, Dadan, Elephant Rock, and the mirrored Maraya concert hall. Distances between sites are easy by private car, and we can arrange a driver for touring across your stay.",
           "Explore our full <a href='/taxi-service/alula'>AlUla taxi service</a> for sightseeing, and connect to <a href='/airport-transfer/madinah-airport'>Madinah</a> or <a href='/airport-transfer/tabuk-airport'>Tabuk</a> for onward heritage travel across the northwest.",
         ],
       },
@@ -1159,6 +1159,125 @@ export const airportGuides: Record<string, AirportGuide> = {
         question: "Can you arrange transport from Hail toward Qassim as well as AlUla?",
         answer:
           "Yes. Besides the route toward AlUla, we run private intercity transfers from Hail toward Qassim, useful if your itinerary continues through the northern desert region.",
+      },
+    ],
+  },
+  // ── RED SEA INTERNATIONAL · RSI ──────────────────────────────────────────
+  "red-sea-airport": {
+    lastUpdated: "2026-08-18",
+    keywords: [
+      "red sea airport transfer",
+      "red sea international airport taxi",
+      "RSI airport chauffeur",
+      "red sea resort private transfer",
+      "st regis red sea airport transfer",
+    ],
+    sections: [
+      {
+        heading: "Arriving at Red Sea International Airport (RSI)",
+        paragraphs: [
+          "Red Sea International Airport (RSI) is the dedicated gateway to the Red Sea destination—one of the world's most ambitious regenerative tourism projects. Designed by Foster + Partners with its iconic dune-inspired canopy, RSI welcomes direct domestic and international flights from Riyadh, Jeddah, and international hubs.",
+          "Situated on the mainland coastal plain near Hanak, the airport connects directly to marine terminals, seaplane docks, and mainland resort corridors. Because the destination is strictly access-managed and car rentals or standard street taxis are unavailable, pre-arranged executive road transport is essential.",
+        ],
+      },
+      {
+        heading: "Meet & Greet to Island Jetties and Coastal Resorts",
+        paragraphs: [
+          "When you land at RSI, your private chauffeur greets you inside the arrivals concourse, assists with your luggage and diving gear, and escorts you directly to your executive 4x4 SUV or premium van.",
+          "From RSI, our drivers provide transfers to all key destination access points:",
+          "• **Marine Red Sea Jetties:** For chartered boat transfers to Ummahat Island (The St. Regis Red Sea Resort and Nujuma, a Ritz-Carlton Reserve).",
+          "• **Shebara Island Terminal:** For marine departures to the stainless-steel overwater orbs of Shebara.",
+          "• **Desert Rock Resort:** Mountain canyon transfers into the granite cliffs of the inland desert.",
+          "• **Umluj & Yanbu Connections:** Mainland transfers connecting coastal hotels, dive centers, and neighboring cities.",
+        ],
+      },
+      {
+        heading: "Luxury Vehicles and Luggage Handling",
+        paragraphs: [
+          "Our Red Sea fleet consists of late-model luxury 4x4 SUVs (GMC Yukon, Chevrolet Tahoe) and executive passenger vans fitted with high-specification climate control and spacious luggage compartments for resort luggage, sports gear, and family needs.",
+          "Every booking includes fixed pricing agreed in advance with real-time flight tracking, ensuring zero stress whether your flight arrives on schedule or experiences air traffic delays.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I reach the island resorts (St. Regis, Nujuma) from RSI Airport?",
+        answer:
+          "Our private transfer takes you from RSI Airport directly to the dedicated coastal marine jetty (typically 20–30 minutes drive), where your resort's luxury boat or seaplane transfer connects directly to your island villa.",
+      },
+      {
+        question: "Where will my driver meet me at Red Sea International Airport?",
+        answer:
+          "Your driver will wait inside the RSI arrivals terminal with a personalized name board, assist with your luggage, and guide you directly to your private vehicle.",
+      },
+      {
+        question: "Can I book a transfer from RSI Airport to Umluj or Yanbu?",
+        answer:
+          "Yes. We provide fixed-price intercity and coastal transfers from RSI Airport south to Umluj (approx. 1 hour) and Yanbu (approx. 2.5 hours).",
+      },
+      {
+        question: "What happens if my inbound flight to RSI is delayed?",
+        answer:
+          "We track all flights landing at RSI in real time. Your pickup time adjusts automatically with free wait time included, ensuring your driver is ready when you disembark.",
+      },
+    ],
+  },
+  // ── NEOM BAY · NUM ───────────────────────────────────────────────────────
+  "neom-bay-airport": {
+    lastUpdated: "2026-08-18",
+    keywords: [
+      "neom bay airport transfer",
+      "neom bay airport taxi",
+      "NUM airport chauffeur",
+      "sindalah island transfer neom",
+      "neom community private car",
+    ],
+    sections: [
+      {
+        heading: "Arriving at NEOM Bay Airport (NUM)",
+        paragraphs: [
+          "NEOM Bay Airport (NUM) is the primary aviation hub serving the visionary NEOM region in the northwest corner of Saudi Arabia. Located in the Sharma district along the Gulf of Aqaba coastline, the airport handles commercial and private charter flights connecting Riyadh, Jeddah, London, Dubai, and regional centers.",
+          "Due to the vast geography of NEOM's development sectors and the absence of public transit or street taxis, pre-booking a private executive chauffeur is the most reliable way to navigate between airport terminals, accommodation camps, coastal marinas, and project sites.",
+        ],
+      },
+      {
+        heading: "Transfers to Sindalah Island Connections and NEOM Communities",
+        paragraphs: [
+          "Our private transfer service covers all primary destinations across the NEOM region:",
+          "• **Sindalah Island Marine Terminals:** Direct transfers to coastal departure docks and yacht marinas for guests heading to Sindalah luxury island.",
+          "• **NEOM Community 1 & Community 2:** Executive door-to-door transport for consultants, corporate visitors, and residents.",
+          "• **Sharma & Magna Coastal Districts:** Comfortable travel to coastal resorts, project headquarters, and Gulf of Aqaba beachfronts.",
+          "• **Tabuk Intercity Link:** Long-distance transfers connecting NUM with Tabuk city and Tabuk Regional Airport (TUU).",
+        ],
+      },
+      {
+        heading: "Executive Vehicles for Business and VIP Travel",
+        paragraphs: [
+          "We provide premium full-size 4x4 SUVs (GMC Yukon, Chevrolet Suburban) and business sedans engineered for comfort across northern desert and coastal expressways. Experienced drivers familiar with NEOM security access protocols ensure timely, professional service.",
+          "Bookings feature fixed quotes with no hidden fees or remote-area surcharges, complete with round-the-clock WhatsApp support.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How far is NEOM Bay Airport from the Sindalah Island boat departure dock?",
+        answer:
+          "The drive from NUM Airport to the coastal marina departure point for Sindalah Island takes approximately 20 to 30 minutes by private vehicle.",
+      },
+      {
+        question: "Where will my driver meet me at NEOM Bay Airport (NUM)?",
+        answer:
+          "Your driver will wait inside the NUM arrivals hall with a personalized name sign, handle your luggage, and escort you to your vehicle in the designated VIP pickup area.",
+      },
+      {
+        question: "Can you provide transfers between NEOM Bay Airport and Tabuk?",
+        answer:
+          "Yes. We operate long-distance private transfers between NEOM Bay Airport and Tabuk (approx. 150 km, ~1 hour 45 min) with fixed pricing agreed in advance.",
+      },
+      {
+        question: "Are child seats available for family travel in NEOM?",
+        answer:
+          "Yes. Child safety seats and booster seats can be arranged upon request during booking.",
       },
     ],
   },

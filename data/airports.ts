@@ -301,6 +301,45 @@ const baseAirports: Airport[] = [
     metaDescription:
       "Private Hail airport taxi from Hail Regional (HAS). Transfers to Hail city, rock-art sites, and onward to AlUla and Qassim.",
   },
+  {
+    slug: "red-sea-airport",
+    name: "Red Sea International Airport",
+    code: "RSI",
+    city: "Red Sea",
+    region: "Tabuk Province",
+    intro:
+      "Red Sea International Airport (RSI) is the luxury aviation gateway to the Red Sea destination, with private transfers to island jetties, Umluj, and coastal resorts.",
+    about:
+      "We provide personalized meet-and-greet pickups at RSI, transferring guests in luxury 4x4 vehicles and executive vans to the Red Sea marine jetties, coastal island terminals, and mainland resorts. Flight monitoring ensures seamless connection with all international and domestic flights.",
+    terminals: ["Main Passenger Terminal", "Private Aviation Terminal"],
+    popularDestinations: ["St. Regis Red Sea Jetty", "Nujuma Ritz-Carlton Reserve", "Shebara Island Terminal", "Umluj", "Yanbu"],
+    popularRoutes: [
+      "jeddah-to-yanbu",
+    ],
+    metaTitle: "Red Sea Airport Taxi | Red Sea International (RSI) Transfers",
+    metaDescription:
+      "Private Red Sea Airport taxi from Red Sea International (RSI). Luxury transfers to island jetties, Umluj, and coastal resorts with meet and greet.",
+  },
+  {
+    slug: "neom-bay-airport",
+    name: "NEOM Bay Airport",
+    code: "NUM",
+    city: "NEOM",
+    region: "Tabuk Province",
+    intro:
+      "NEOM Bay Airport (NUM) serves the Kingdom's flagship futuristic region, with private transfers to the NEOM Community, Sindalah Island connections, and Sharma.",
+    about:
+      "We provide executive meet-and-greet transfers from NEOM Bay Airport (NUM) to NEOM project sectors, Sharma, and coastal boat departures for Sindalah. Professional drivers and premium SUVs ensure smooth, punctual travel across the northwest.",
+    terminals: ["Commercial Terminal", "Executive Aviation Terminal"],
+    popularDestinations: ["Sindalah Marina Link", "NEOM Community 1 & 2", "Sharma", "Gayal", "Tabuk"],
+    popularRoutes: [
+      "tabuk-to-neom",
+      "alula-to-neom",
+    ],
+    metaTitle: "NEOM Bay Airport Taxi | NEOM Bay (NUM) Transfers",
+    metaDescription:
+      "Private NEOM Bay airport taxi from NEOM Bay Airport (NUM). Executive transfers to Sindalah Island connections, NEOM Community, and Sharma.",
+  },
 ];
 
 /** Base airport records enriched with long-form guide content by slug. */

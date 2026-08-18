@@ -19,8 +19,20 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   const locale = localeFromPathname(pathname);
   const dict = getDictionary(locale);
 
-  const enHref = locale === "ar" ? getEnPathForArPath(pathname) : pathname;
-  const arHref = locale === "en" ? (getArPathForEnPath(pathname) ?? "/ar") : pathname;
+  // Normalise legacy /index aliases so the language switcher never emits
+  // an href to a non-canonical URL. next.config.ts 301-redirects these at
+  // the HTTP layer, but usePathname() returns the raw un-redirected path,
+  // causing the EN link to render as href="/index" and creating an internal
+  // link that Google uses to discover and crawl the non-canonical URL.
+  const CANONICAL_ALIASES: Record<string, string> = {
+    "/index": "/",
+    "/index.html": "/",
+    "/index.php": "/",
+  };
+  const normalizedPathname = CANONICAL_ALIASES[pathname] ?? pathname;
+
+  const enHref = locale === "ar" ? getEnPathForArPath(normalizedPathname) : normalizedPathname;
+  const arHref = locale === "en" ? (getArPathForEnPath(normalizedPathname) ?? "/ar") : normalizedPathname;
 
   return (
     <div className={cn("flex items-center gap-1", className)}>
