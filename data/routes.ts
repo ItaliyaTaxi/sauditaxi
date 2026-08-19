@@ -7794,6 +7794,528 @@ const baseRoutes: Route[] = [
     keywords: ["dammam to qatar border taxi", "dammam to salwa border transfer", "dammam to abu samra taxi"],
   },
 
+  // ── Phase 1 Expansion Routes ─────────────────────────────────────────────
+  {
+    slug: "riyadh-airport-to-riyadh",
+    from: "Riyadh Airport",
+    to: "Riyadh",
+    category: "airport",
+    distance: "35 km",
+    duration: "30-45 min",
+    lastUpdated: "2026-08-19",
+    intro: "The Riyadh Airport to Riyadh city private transfer provides direct door-to-door transportation from King Khalid International Airport (RUH) to hotels, residential districts, and the King Abdullah Financial District (KAFD).",
+    about: "Arriving at King Khalid International Airport (RUH) after a long flight requires seamless onward transport. Our private Riyadh airport taxi service meets you inside the arrival terminal (Terminals 1, 2, 3, 4, or 5), assists with your baggage, and drives you directly to your hotel or residence in Olaya, Al Nakheel, KAFD, or Diplomatic Quarter with zero waiting and a pre-agreed fixed price.",
+    notes: [
+      "Meet and greet inside RUH Terminals 1, 2, 3, 4, and 5 with flight tracking",
+      "Fixed transparent pricing with no surge rates during peak Riyadh traffic",
+      "Direct drop-off at hotels across Olaya, KAFD, Sulaimaniyah, and Al Malqa",
+      "Spacious sedans, GMC Yukon XL SUVs, and Mercedes V-Class vans available"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Riyadh Airport to Riyadh Taxi | King Khalid Airport (RUH) Transfer",
+    metaDescription: "Book a private Riyadh Airport (RUH) to Riyadh city transfer. Meet & greet, flight tracking, fixed pricing, and 24/7 service across all Riyadh hotels and districts.",
+    faqs: [
+      {
+            "question": "Where will my driver meet me at King Khalid International Airport?",
+            "answer": "Your private chauffeur waits directly in the arrivals hall of your landing terminal (Terminal 1-5) holding a customized name board, ready to assist with your luggage."
+      },
+      {
+            "question": "What happens if my flight to Riyadh is delayed?",
+            "answer": "We track your flight number in real time. Pickup timing adjusts automatically according to actual landing time, with 60 minutes complimentary wait time included."
+      },
+      {
+            "question": "How long is the transfer from RUH Airport to central Riyadh?",
+            "answer": "The journey covers approximately 35 km and typically takes 30 to 45 minutes depending on traffic and your specific drop-off district."
+      },
+      {
+            "question": "Can I book a large vehicle for family and extra luggage?",
+            "answer": "Yes, we provide luxury 7-seater SUVs (GMC Yukon/Chevy Suburban), 7-seater Mercedes V-Class, and 12-to-15 seater HiAce vans for groups."
+      }
+    ],
+    keywords: ["riyadh airport to riyadh taxi","king khalid airport transfer","ruh to riyadh private car","riyadh airport hotel transfer"]
+  },
+  {
+    slug: "riyadh-to-riyadh-airport",
+    from: "Riyadh",
+    to: "Riyadh Airport",
+    category: "airport",
+    distance: "35 km",
+    duration: "30-45 min",
+    lastUpdated: "2026-08-19",
+    intro: "Book a private Riyadh to King Khalid International Airport (RUH) transfer for punctual, comfortable door-to-door hotel and office pickup.",
+    about: "Our private Riyadh to RUH Airport transfer ensures you reach your departure terminal with complete peace of mind. Your driver arrives early at your hotel, home, or office across Riyadh, handles your luggage, and takes the optimal route to Terminals 1, 2, 3, 4, or 5 at a guaranteed fixed rate.",
+    notes: [
+      "Punctual pickup from all Riyadh hotels, compounds, and business towers",
+      "Drop-off directly at your specific departure terminal at King Khalid Airport",
+      "Fixed fares regardless of traffic congestion on Airport Road / Northern Ring",
+      "Available 24/7 for early morning and late night international departures"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Riyadh to Riyadh Airport Taxi | King Khalid Airport (RUH) Departure",
+    metaDescription: "Reliable private taxi from Riyadh city to King Khalid International Airport (RUH). Guaranteed on-time pickup, fixed rates, and direct departure terminal drop-off.",
+    faqs: [
+      {
+            "question": "How far in advance should I arrange pickup before my flight?",
+            "answer": "We recommend scheduling pickup 3 hours before international departures and 2 to 2.5 hours before domestic flights to ensure comfortable check-in."
+      },
+      {
+            "question": "Do you pick up from any district in Riyadh?",
+            "answer": "Yes, we serve all areas including KAFD, Olaya, Al Malqa, Diplomatic Quarter, Al Yasmin, and eastern/southern Riyadh."
+      }
+    ],
+    keywords: ["riyadh to riyadh airport taxi","taxi to king khalid airport","ruh airport departure transfer"]
+  },
+  {
+    slug: "jeddah-airport-to-jeddah",
+    from: "Jeddah Airport",
+    to: "Jeddah",
+    category: "airport",
+    distance: "25 km",
+    duration: "25-35 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from King Abdulaziz International Airport (JED) to hotels and destinations across Jeddah city.",
+    about: "Whether arriving for business, leisure, or transiting on the Red Sea coast, our private transfer from Jeddah Airport (JED) Terminal 1 or North Terminal provides door-to-door comfort to Jeddah Corniche, Al Hamra, Al Rawdah, and Al Andalus hotels.",
+    notes: [
+      "Meet and greet at JED Terminal 1, North Terminal, and Private Aviation",
+      "Direct transit to Corniche resorts, business hotels, and residential areas",
+      "Flight monitoring and free waiting time included",
+      "Clean air-conditioned sedans, SUVs, and luxury vans"
+    ],
+    relatedCitySlugs: ["jeddah"],
+    metaTitle: "Jeddah Airport to Jeddah City Taxi | King Abdulaziz Airport (JED) Transfer",
+    metaDescription: "Private transfer from Jeddah King Abdulaziz Airport (JED) to Jeddah hotels and city center. Meet & greet, flight tracking, 24/7 service.",
+    faqs: [
+      {
+            "question": "How will I meet my driver at Jeddah Airport (JED)?",
+            "answer": "Your chauffeur will greet you inside the arrival terminal holding a personalized name board."
+      },
+      {
+            "question": "Do you serve hotels along the Jeddah Corniche?",
+            "answer": "Yes, we provide direct transfers to all Corniche resorts including Jeddah Hilton, Park Hyatt, Shangri-La, Rosewood, and The Ritz-Carlton."
+      }
+    ],
+    keywords: ["jeddah airport to jeddah taxi","king abdulaziz airport to jeddah hotel","jed airport transfer"]
+  },
+  {
+    slug: "jeddah-to-jeddah-airport",
+    from: "Jeddah",
+    to: "Jeddah Airport",
+    category: "airport",
+    distance: "25 km",
+    duration: "25-35 min",
+    lastUpdated: "2026-08-19",
+    intro: "Direct private taxi from your Jeddah hotel or residence to King Abdulaziz International Airport (JED).",
+    about: "Ensure an effortless departure with our private transfer from anywhere in Jeddah to King Abdulaziz International Airport (JED). We provide prompt pickups, luggage assistance, and drop-off directly curbside at your departure terminal.",
+    notes: [
+      "Door-to-door collection from all Jeddah districts and waterfront resorts",
+      "Guaranteed on-time arrival for Terminal 1 and North Terminal flights",
+      "Fixed pricing with zero luggage surcharges"
+    ],
+    relatedCitySlugs: ["jeddah"],
+    metaTitle: "Jeddah to Jeddah Airport Taxi | JED Airport Departure Transfer",
+    metaDescription: "Book a private taxi from Jeddah city to King Abdulaziz International Airport (JED). 24/7 on-time pickup, fixed pricing, all terminals.",
+    faqs: [
+      {
+            "question": "Which Jeddah Airport terminal will I be dropped at?",
+            "answer": "We drop you off directly curbside at your airline's departure terminal (Terminal 1, North Terminal, or South Terminal)."
+      }
+    ],
+    keywords: ["jeddah to jeddah airport taxi","taxi to jeddah airport","jed airport departure taxi"]
+  },
+  {
+    slug: "madinah-airport-to-madinah",
+    from: "Madinah Airport",
+    to: "Madinah",
+    category: "airport",
+    distance: "20 km",
+    duration: "20-25 min",
+    lastUpdated: "2026-08-19",
+    intro: "Direct private airport transfer from Prince Mohammad Bin Abdulaziz Airport (MED) to central Madinah hotels near the Prophet's Mosque.",
+    about: "Landing at Madinah Airport (MED) is the start of a blessed journey. Our private chauffeur meets you at international or domestic arrivals, handles your family's luggage, and drives you directly to your hotel in the Central Northern or Southern Markazia area facing Al-Masjid an-Nabawi.",
+    notes: [
+      "Meet & greet service at Prince Mohammad Bin Abdulaziz International Airport (MED)",
+      "Direct drop-off at Central Area (Markazia) hotels surrounding Al-Masjid an-Nabawi",
+      "Generous luggage capacity for families and pilgrim groups",
+      "24/7 flight monitoring to accommodate all airline schedules"
+    ],
+    relatedCitySlugs: ["madinah"],
+    metaTitle: "Madinah Airport to Madinah Taxi | Prince Mohammad (MED) Transfer",
+    metaDescription: "Private transfer from Madinah Airport (MED) to Markazia hotels near Al-Masjid an-Nabawi. Meet and greet, fixed rates, 24/7 service.",
+    faqs: [
+      {
+            "question": "Can the taxi drop us directly in front of our Markazia hotel?",
+            "answer": "Yes, our drivers navigate the Markazia pedestrian and access zones to drop you as close to your hotel lobby as municipal traffic regulations permit."
+      }
+    ],
+    keywords: ["madinah airport to madinah taxi","med airport to haram transfer","madinah airport hotel taxi"]
+  },
+  {
+    slug: "madinah-to-madinah-airport",
+    from: "Madinah",
+    to: "Madinah Airport",
+    category: "airport",
+    distance: "20 km",
+    duration: "20-25 min",
+    lastUpdated: "2026-08-19",
+    intro: "Reliable private taxi from your Madinah hotel to Prince Mohammad Bin Abdulaziz International Airport (MED).",
+    about: "Conclude your Madinah visit with a smooth, punctual transfer from your hotel lobby to Prince Mohammad Bin Abdulaziz Airport (MED). Fixed upfront pricing, luggage assistance, and courteous drivers.",
+    notes: [
+      "Prompt pickup from all Central Area, Quba, and King Fahd Road hotels",
+      "Curbside drop-off at international and domestic departures",
+      "Family vans and minibuses available for group departures"
+    ],
+    relatedCitySlugs: ["madinah"],
+    metaTitle: "Madinah to Madinah Airport Taxi | MED Airport Departure",
+    metaDescription: "Private taxi from Madinah Markazia hotels to Madinah Airport (MED). On-time pickup, fixed price, family vans available.",
+    faqs: [
+      {
+            "question": "How early should we leave our Madinah hotel for the airport?",
+            "answer": "We advise departing 3 hours before international flights and 2 hours before domestic flights."
+      }
+    ],
+    keywords: ["madinah to madinah airport taxi","taxi from haram to madinah airport","madinah airport departure"]
+  },
+  {
+    slug: "riyadh-to-al-kharj",
+    from: "Riyadh",
+    to: "Al-Kharj",
+    category: "intercity",
+    distance: "85 km",
+    duration: "55 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private executive and family transfer between Riyadh and Al-Kharj city.",
+    about: "Our Riyadh to Al-Kharj private transfer connects the capital with Al-Kharj's industrial, agricultural, and military centers in under an hour. Enjoy door-to-door comfort, professional drivers, and fixed rates with no hidden fees.",
+    notes: [
+      "Direct 85 km highway route via Route 65 / Al-Kharj Road",
+      "Door-to-door pickup across all Riyadh districts and Prince Sultan Air Base area",
+      "Ideal for business engineers, corporate commuters, and family visits"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Riyadh to Al-Kharj Taxi | Private Intercity Transfer",
+    metaDescription: "Book a private taxi from Riyadh to Al-Kharj (85 km, ~55 min). Door-to-door service, fixed price, corporate and family vehicles.",
+    faqs: [
+      {
+            "question": "How long does the drive take from Riyadh to Al-Kharj?",
+            "answer": "The 85 km journey typically takes 50 to 60 minutes depending on your departure point in Riyadh."
+      }
+    ],
+    keywords: ["riyadh to al kharj taxi","riyadh to al kharj transfer","taxi riyadh al kharj price"]
+  },
+  {
+    slug: "al-kharj-to-riyadh",
+    from: "Al-Kharj",
+    to: "Riyadh",
+    category: "intercity",
+    distance: "85 km",
+    duration: "55 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private taxi from Al-Kharj to Riyadh city or King Khalid International Airport.",
+    about: "Travel comfortably from Al-Kharj to central Riyadh, KAFD, or directly to King Khalid Airport (RUH) in a private air-conditioned vehicle with a professional driver.",
+    notes: [
+      "Pickup from any address, hotel, or compound in Al-Kharj",
+      "Drop-off anywhere in Riyadh or direct connection to King Khalid Airport",
+      "Fixed pre-agreed rate with WhatsApp booking"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Al-Kharj to Riyadh Taxi | Private Intercity Transfer",
+    metaDescription: "Private transfer from Al-Kharj to Riyadh city and RUH Airport. Fixed fare, professional drivers, 24/7 availability.",
+    faqs: [
+      {
+            "question": "Can you take me directly from Al-Kharj to Riyadh Airport?",
+            "answer": "Yes, we offer direct transfers from Al-Kharj to King Khalid Airport (RUH) departures."
+      }
+    ],
+    keywords: ["al kharj to riyadh taxi","al kharj to ruh airport transfer"]
+  },
+  {
+    slug: "riyadh-to-diriyah",
+    from: "Riyadh",
+    to: "Diriyah",
+    category: "intercity",
+    distance: "20 km",
+    duration: "25 min",
+    lastUpdated: "2026-08-19",
+    intro: "Premium private transfer from Riyadh hotels to Historic Diriyah, Bujairi Terrace, and At-Turaif UNESCO World Heritage site.",
+    about: "Experience the birthplace of the Saudi state in total luxury. Our private transfer takes you seamlessly from your hotel or residence in Riyadh to Bujairi Terrace's fine dining and the historic At-Turaif district, with optional round-trip standby service.",
+    notes: [
+      "Direct drop-off at Bujairi Terrace valet and At-Turaif visitor center",
+      "Luxury sedans and executive SUVs suitable for VIPs and tourists",
+      "Round-trip booking with scheduled return pickup available"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Riyadh to Diriyah Taxi | Bujairi Terrace & At-Turaif Transfer",
+    metaDescription: "Private transfer from Riyadh to Diriyah, Bujairi Terrace, and At-Turaif UNESCO site. Fixed price, premium vehicles, 24/7 service.",
+    faqs: [
+      {
+            "question": "Can the driver wait for us during our visit to Bujairi Terrace?",
+            "answer": "Yes, we offer round-trip packages with waiting time so your driver is ready when you finish dining or touring."
+      }
+    ],
+    keywords: ["riyadh to diriyah taxi","bujairi terrace transfer","at turaif private car"]
+  },
+  {
+    slug: "diriyah-to-riyadh",
+    from: "Diriyah",
+    to: "Riyadh",
+    category: "intercity",
+    distance: "20 km",
+    duration: "25 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from Historic Diriyah and Bujairi Terrace back to Riyadh city hotels or King Khalid Airport.",
+    about: "After your evening dining at Bujairi Terrace or touring At-Turaif, enjoy a comfortable private ride back to your hotel in Riyadh or directly to King Khalid International Airport (RUH).",
+    notes: [
+      "Scheduled pickup from Bujairi Terrace and Diriyah visitor gates",
+      "Direct drop-off across Olaya, Sulaimaniyah, Diplomatic Quarter, or RUH Airport"
+    ],
+    relatedCitySlugs: ["riyadh"],
+    metaTitle: "Diriyah to Riyadh Taxi | Return Private Transfer",
+    metaDescription: "Private transfer from Diriyah and Bujairi Terrace to Riyadh city or King Khalid Airport. Guaranteed on-time pickup, fixed rates.",
+    faqs: [
+      {
+            "question": "Where in Diriyah does the driver pick us up?",
+            "answer": "We coordinate pickup directly at the Bujairi Terrace drop-off circle or the designated visitor parking area."
+      }
+    ],
+    keywords: ["diriyah to riyadh taxi","bujairi terrace to riyadh transfer"]
+  },
+  {
+    slug: "khobar-to-bahrain-airport",
+    from: "Khobar",
+    to: "Bahrain Airport",
+    category: "border",
+    distance: "70 km",
+    duration: "1 hr 15 min + border",
+    lastUpdated: "2026-08-19",
+    intro: "Cross-border private transfer from Al Khobar across the King Fahd Causeway directly to Bahrain International Airport (BAH).",
+    about: "Our private Khobar to Bahrain Airport transfer provides seamless door-to-door transit over the King Fahd Causeway. Your driver picks you up from your hotel or home in Al Khobar, assists with customs and passport control, and drops you curbside at Bahrain International Airport (BAH) in Muharraq.",
+    notes: [
+      "Door-to-door transfer from Khobar across King Fahd Causeway to BAH departures",
+      "Experienced drivers familiar with Saudi & Bahrain border formalities",
+      "Valid passport and Bahrain visa/entry permit required",
+      "Fixed pricing inclusive of causeway toll fees"
+    ],
+    relatedCitySlugs: ["khobar","dammam"],
+    metaTitle: "Khobar to Bahrain Airport Taxi | King Fahd Causeway Transfer",
+    metaDescription: "Private taxi from Al Khobar to Bahrain International Airport (BAH) via King Fahd Causeway. 24/7 service, border assistance, fixed price.",
+    faqs: [
+      {
+            "question": "How much time should I allow for the Causeway crossing to Bahrain Airport?",
+            "answer": "We recommend allowing 3 to 4 hours before your flight departure to account for potential border queue times during peak weekend or evening hours."
+      }
+    ],
+    keywords: ["khobar to bahrain airport taxi","causeway transfer to bahrain airport","khobar to bah airport"]
+  },
+  {
+    slug: "bahrain-airport-to-khobar",
+    from: "Bahrain Airport",
+    to: "Khobar",
+    category: "border",
+    distance: "70 km",
+    duration: "1 hr 15 min + border",
+    lastUpdated: "2026-08-19",
+    intro: "Private cross-border arrival transfer from Bahrain International Airport (BAH) across the King Fahd Causeway to Al Khobar.",
+    about: "Landing at Bahrain Airport and heading to the Eastern Province? Our chauffeur meets you at Bahrain Airport arrivals, assists with baggage, and drives you across the King Fahd Causeway directly to your hotel or residence in Al Khobar.",
+    notes: [
+      "Meet & greet at Bahrain International Airport (Muharraq) arrivals hall",
+      "Direct transit into Al Khobar hotels, Corniche, and residential districts",
+      "Flight monitoring and complimentary arrival waiting time included"
+    ],
+    relatedCitySlugs: ["khobar","dammam"],
+    metaTitle: "Bahrain Airport to Khobar Taxi | Causeway Arrival Transfer",
+    metaDescription: "Private transfer from Bahrain Airport (BAH) to Al Khobar via King Fahd Causeway. Meet and greet, flight tracking, 24/7 border transit.",
+    faqs: [
+      {
+            "question": "Will the driver meet me inside Bahrain Airport?",
+            "answer": "Yes, our chauffeur waits inside the arrivals hall holding a personalized name sign."
+      }
+    ],
+    keywords: ["bahrain airport to khobar taxi","bah airport to khobar transfer","bahrain to khobar private car"]
+  },
+  {
+    slug: "dammam-to-bahrain-airport",
+    from: "Dammam",
+    to: "Bahrain Airport",
+    category: "border",
+    distance: "85 km",
+    duration: "1 hr 30 min + border",
+    lastUpdated: "2026-08-19",
+    intro: "Private cross-border transfer from Dammam city to Bahrain International Airport (BAH) via the King Fahd Causeway.",
+    about: "Travel directly from Dammam city or hotel to Bahrain International Airport (BAH) in complete comfort. Avoid the hassle of changing cars at the border — our private transfer takes you all the way across the Causeway to your departure gate.",
+    notes: [
+      "Direct pickup from all Dammam hotels, Corniche, and residential addresses",
+      "Full Causeway border crossing assistance to Bahrain Airport (BAH)",
+      "Fixed all-inclusive price with no hidden border fees"
+    ],
+    relatedCitySlugs: ["dammam","khobar"],
+    metaTitle: "Dammam to Bahrain Airport Taxi | King Fahd Causeway Transfer",
+    metaDescription: "Book a private taxi from Dammam to Bahrain International Airport (BAH). Door-to-door cross-border transfer, fixed price, 24/7 service.",
+    faqs: [
+      {
+            "question": "Can you pick up from anywhere in Dammam for Bahrain Airport?",
+            "answer": "Yes, we pick up from all hotels, business towers, and homes across Dammam."
+      }
+    ],
+    keywords: ["dammam to bahrain airport taxi","dammam to bah airport transfer","causeway taxi to bahrain airport"]
+  },
+  {
+    slug: "jeddah-port-to-makkah",
+    from: "Jeddah Port",
+    to: "Makkah",
+    category: "religious",
+    distance: "90 km",
+    duration: "1 hr 20 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private Umrah and passenger transfer from Jeddah Islamic Port (Cruise Terminal) directly to Makkah hotels near the Grand Mosque.",
+    about: "Arriving by cruise ship or ferry at Jeddah Islamic Port? Our private transfer meets you at the passenger cruise terminal and drives you directly to Makkah to perform Umrah or check in at your Haram-facing hotel in comfort.",
+    notes: [
+      "Pickup directly at Jeddah Islamic Port cruise passenger terminal",
+      "Drop-off at all Makkah hotels in Clock Tower, Ibrahim Al Khalil, and Ajyad",
+      "Spacious vehicles with generous room for luggage and pilgrim families",
+      "Flexible schedule coordinated with your cruise docking times"
+    ],
+    relatedCitySlugs: ["jeddah","makkah"],
+    metaTitle: "Jeddah Port to Makkah Taxi | Cruise Terminal Umrah Transfer",
+    metaDescription: "Private transfer from Jeddah Islamic Port cruise terminal to Makkah hotels near the Haram. Meet & greet, fixed price, 24/7 Umrah transit.",
+    faqs: [
+      {
+            "question": "Can cruise passengers perform Umrah during a Jeddah port call?",
+            "answer": "Yes, we provide round-trip Umrah transfers tailored to your ship's docking schedule with guaranteed timely return to the port."
+      }
+    ],
+    keywords: ["jeddah port to makkah taxi","jeddah cruise terminal to makkah","jeddah port umrah transfer"]
+  },
+  {
+    slug: "makkah-to-jeddah-port",
+    from: "Makkah",
+    to: "Jeddah Port",
+    category: "religious",
+    distance: "90 km",
+    duration: "1 hr 20 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from Makkah hotels directly to Jeddah Islamic Port (Cruise Terminal).",
+    about: "Complete your Umrah and travel directly from your Makkah hotel lobby to Jeddah Islamic Port for your cruise embarkation or ferry departure on a smooth, fixed-price private ride.",
+    notes: [
+      "Pickup from all Makkah hotels around the Haram",
+      "Direct drop-off at the Jeddah Islamic Port passenger terminal gates",
+      "Punctual scheduling to meet ship embarkation deadlines"
+    ],
+    relatedCitySlugs: ["makkah","jeddah"],
+    metaTitle: "Makkah to Jeddah Port Taxi | Cruise Terminal Transfer",
+    metaDescription: "Private taxi from Makkah hotels to Jeddah Islamic Port cruise terminal. Guaranteed on-time arrival, fixed fare, family vans available.",
+    faqs: [
+      {
+            "question": "How early should we leave Makkah for our cruise boarding in Jeddah?",
+            "answer": "We recommend departing Makkah 3 hours before your scheduled embarkation time."
+      }
+    ],
+    keywords: ["makkah to jeddah port taxi","makkah to jeddah cruise terminal transfer"]
+  },
+  {
+    slug: "red-sea-airport-to-umluj",
+    from: "Red Sea Airport",
+    to: "Umluj",
+    category: "airport",
+    distance: "95 km",
+    duration: "1 hr 10 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from Red Sea International Airport (RSI) to coastal resorts and hotels in Umluj.",
+    about: "Landing at the architectural marvel of Red Sea International Airport (RSI)? Our private chauffeur meets you at arrivals and provides a scenic, luxurious transfer south along the Red Sea coast to Umluj hotels, beaches, and diving marinas.",
+    notes: [
+      "Meet and greet at Red Sea International Airport (RSI) arrivals",
+      "Direct transfer to Umluj coastal resorts, chalets, and marinas",
+      "Premium SUVs and luxury sedans with chilled refreshments",
+      "Flight tracking aligned with RSI scheduled domestic and international arrivals"
+    ],
+    relatedCitySlugs: ["yanbu","alula"],
+    metaTitle: "Red Sea Airport (RSI) to Umluj Taxi | Luxury Coastal Transfer",
+    metaDescription: "Private transfer from Red Sea International Airport (RSI) to Umluj resorts and hotels. Meet & greet, premium SUVs, fixed price.",
+    faqs: [
+      {
+            "question": "How far is Umluj from Red Sea International Airport?",
+            "answer": "The drive covers approximately 95 km along Highway 55 and takes around 1 hour and 10 minutes."
+      }
+    ],
+    keywords: ["red sea airport to umluj taxi","rsi airport to umluj transfer","red sea international airport private car"]
+  },
+  {
+    slug: "umluj-to-red-sea-airport",
+    from: "Umluj",
+    to: "Red Sea Airport",
+    category: "airport",
+    distance: "95 km",
+    duration: "1 hr 10 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from Umluj hotels and chalets to Red Sea International Airport (RSI).",
+    about: "Enjoy a punctual, stress-free departure from your Umluj resort or beach villa to Red Sea International Airport (RSI) with our private chauffeur service.",
+    notes: [
+      "Door-to-door pickup from any resort, hotel, or marina in Umluj",
+      "Direct departure terminal drop-off at Red Sea International Airport (RSI)",
+      "Fixed transparent pricing with luggage assistance"
+    ],
+    relatedCitySlugs: ["yanbu","alula"],
+    metaTitle: "Umluj to Red Sea Airport Taxi | RSI Airport Departure",
+    metaDescription: "Private taxi from Umluj resorts to Red Sea International Airport (RSI). Reliable pickup, luxury vehicles, fixed fare.",
+    faqs: [
+      {
+            "question": "What vehicle types are available for the RSI airport transfer?",
+            "answer": "We offer luxury GMC Yukon SUVs, Mercedes-Benz sedans, and executive passenger vans."
+      }
+    ],
+    keywords: ["umluj to red sea airport taxi","umluj to rsi airport transfer"]
+  },
+  {
+    slug: "alula-airport-to-alula",
+    from: "AlUla Airport",
+    to: "AlUla",
+    category: "airport",
+    distance: "30 km",
+    duration: "25-30 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private luxury transfer from AlUla International Airport (ULH) to AlUla Old Town, Ashar Valley resorts, and desert hotels.",
+    about: "Begin your journey into ancient heritage in complete comfort. Our private chauffeur greets you inside AlUla International Airport (ULH), assists with your luggage, and drives you directly to your resort in Ashar Valley (Habitas, Banyan Tree), AlUla Old Town, or Elephant Rock.",
+    notes: [
+      "Meet & greet inside AlUla International Airport (ULH) arrivals hall",
+      "Direct transfer to Banyan Tree, Habitas AlUla, Shaden Resort, and Cloud7",
+      "Premium 4x4 SUVs and executive sedans suited for desert resort access",
+      "Flight tracking for all domestic and international seasonal arrivals"
+    ],
+    relatedCitySlugs: ["alula"],
+    metaTitle: "AlUla Airport to AlUla Taxi | Ashar Valley & Resort Transfer",
+    metaDescription: "Private luxury transfer from AlUla Airport (ULH) to Ashar Valley resorts, Habitas, Banyan Tree, and Old Town. Fixed rates, meet & greet.",
+    faqs: [
+      {
+            "question": "Do you deliver passengers directly to Ashar Valley resorts?",
+            "answer": "Yes, our drivers have authorized resort access to drop you directly at Habitas AlUla, Banyan Tree AlUla, and Ashar Valley villas."
+      }
+    ],
+    keywords: ["alula airport to alula taxi","ulh airport transfer","alula airport to habitas transfer","alula airport to banyan tree"]
+  },
+  {
+    slug: "alula-to-alula-airport",
+    from: "AlUla",
+    to: "AlUla Airport",
+    category: "airport",
+    distance: "30 km",
+    duration: "25-30 min",
+    lastUpdated: "2026-08-19",
+    intro: "Private transfer from AlUla resorts and hotels to AlUla International Airport (ULH).",
+    about: "Wrap up your unforgettable stay in AlUla with an executive, on-time private transfer from your Ashar Valley or desert resort directly to AlUla International Airport (ULH) departures.",
+    notes: [
+      "Prompt resort pickup from Ashar Valley, Hegra area, and AlUla Old Town",
+      "Curbside drop-off at AlUla Airport departure gates",
+      "Fixed rate with no hidden charges"
+    ],
+    relatedCitySlugs: ["alula"],
+    metaTitle: "AlUla to AlUla Airport Taxi | ULH Airport Departure",
+    metaDescription: "Book a private transfer from AlUla resorts and Old Town to AlUla International Airport (ULH). Fixed price, luxury SUVs, 24/7 service.",
+    faqs: [
+      {
+            "question": "How early should we leave our resort for AlUla Airport?",
+            "answer": "We recommend leaving your resort 2 to 2.5 hours before flight departure."
+      }
+    ],
+    keywords: ["alula to alula airport taxi","habitas to alula airport transfer","alula airport departure taxi"]
+  },
 ];
 
 /** Base routes plus the merged Makkah intercity + departure routes. */

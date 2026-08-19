@@ -65,6 +65,7 @@ const baseAirports: Airport[] = [
     terminals: ["Terminal 1 & 2 (international)", "Terminal 3 & 4 (domestic)", "Terminal 5 (low-cost)"],
     popularDestinations: ["Riyadh city", "Diriyah", "Dammam", "Qassim", "AlUla"],
     popularRoutes: [
+      "riyadh-airport-to-riyadh",
       "riyadh-to-khobar",
       "riyadh-to-jubail",
       "riyadh-to-hofuf",
@@ -95,6 +96,8 @@ const baseAirports: Airport[] = [
     terminals: ["Terminal 1 (North)", "Hajj Terminal", "Domestic terminal"],
     popularDestinations: ["Makkah", "Madinah", "Jeddah city", "Taif"],
     popularRoutes: [
+      "jeddah-airport-to-jeddah",
+      "jeddah-port-to-makkah",
       "jeddah-to-makkah",
       "jeddah-to-madinah",
       "jeddah-to-taif",
@@ -122,6 +125,7 @@ const baseAirports: Airport[] = [
     terminals: ["International terminal", "Domestic terminal"],
     popularDestinations: ["Madinah city", "Makkah", "AlUla", "Yanbu"],
     popularRoutes: [
+      "madinah-airport-to-madinah",
       "madinah-to-makkah",
       "madinah-to-alula",
       "madinah-airport-to-riyadh",
@@ -144,8 +148,11 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal (international & domestic)"],
     popularDestinations: ["Dammam", "Khobar", "Jubail", "Bahrain", "Riyadh"],
     popularRoutes: [
+      "dammam-to-bahrain-airport",
+      "khobar-to-bahrain-airport",
       "dammam-airport-to-khobar",
       "dammam-airport-to-jubail",
+      "dammam-airport-to-dhahran",
       "dammam-airport-to-hofuf",
       "dammam-airport-to-bahrain",
       "dammam-airport-to-riyadh",
@@ -255,6 +262,7 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal"],
     popularDestinations: ["AlUla", "Hegra", "Madinah", "Tabuk"],
     popularRoutes: [
+      "alula-airport-to-alula",
       "alula-to-tabuk",
       "alula-to-neom",
       "alula-airport-to-riyadh",

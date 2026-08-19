@@ -60,6 +60,8 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Dammam", "Jeddah", "AlUla", "Qassim", "Qatar Border"],
     popularRoutes: [
+      "riyadh-to-al-kharj",
+      "riyadh-to-diriyah",
       "riyadh-to-jeddah",
       "riyadh-to-makkah",
       "riyadh-to-madinah",
@@ -100,6 +102,7 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Makkah", "Madinah", "Taif", "Riyadh", "Yanbu"],
     popularRoutes: [
+      "jeddah-port-to-makkah",
       "jeddah-to-makkah",
       "jeddah-to-madinah",
       "jeddah-to-riyadh",
@@ -136,6 +139,7 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Madinah", "Jeddah", "Taif", "Jeddah Airport"],
     popularRoutes: [
+      "makkah-to-jeddah-port",
       "makkah-to-madinah",
       "makkah-to-jeddah",
       "makkah-to-taif",
@@ -206,6 +210,7 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Khobar", "Bahrain Border", "Riyadh", "Jubail"],
     popularRoutes: [
+      "dammam-to-bahrain-airport",
       "dammam-to-bahrain",
       "dammam-to-riyadh",
       "dammam-to-jeddah",
@@ -238,6 +243,7 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Bahrain Border", "Dammam", "Riyadh", "Jubail"],
     popularRoutes: [
+      "khobar-to-bahrain-airport",
       "khobar-to-riyadh",
       "riyadh-to-khobar",
       "khobar-to-bahrain",
