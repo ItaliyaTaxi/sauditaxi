@@ -45,6 +45,39 @@ const nextConfig: NextConfig = {
         destination: "https://saudiprivatetransfers.com/:path*",
         permanent: true,
       },
+      // Blog posts renamed to their current slug. Each of these was 404ing in
+      // Search Console; the destination is the live post covering the same
+      // topic (confirmed against data/translations/ar.ts, which still had an
+      // Arabic page's enPath pointing at the old English slug).
+      {
+        source: "/blog/king-fahd-causeway-private-taxi-guide",
+        destination: "/blog/saudi-to-bahrain-taxi-king-fahd-causeway",
+        permanent: true,
+      },
+      {
+        source: "/blog/riyadh-airport-transfer-guide",
+        destination: "/blog/riyadh-airport-transfer-business-travelers",
+        permanent: true,
+      },
+      {
+        source: "/blog/complete-umrah-transport-guide-2025",
+        destination: "/blog/umrah-transport-makkah-madinah-guide",
+        permanent: true,
+      },
+      {
+        source: "/blog/private-taxi-vs-uber-careem-saudi-arabia",
+        destination: "/blog/uber-vs-careem-vs-private-transfer-saudi-arabia",
+        permanent: true,
+      },
+      // No live post covers the general tourist/expat angle this slug
+      // targeted (the current Jeddah-arrival post is Umrah-pilgrim-specific),
+      // so this redirects to the closest topical match rather than the
+      // homepage.
+      {
+        source: "/blog/jeddah-airport-arrival-guide-tourist-expat",
+        destination: "/blog/what-to-do-after-landing-at-jeddah-airport",
+        permanent: true,
+      },
     ];
   },
 };

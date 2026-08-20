@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { listPublishedBlogs } from "@/lib/blogs";
+import { listPublishedBlogs, pickDistributed } from "@/lib/blogs";
 
 interface LatestGuidesProps {
   heading?: string;
@@ -28,15 +28,23 @@ export async function LatestGuides({
   limit = 3,
   background = "white",
 }: LatestGuidesProps) {
-  // Prefer the category, then top up with the newest posts overall.
-  let blogs = await listPublishedBlogs({ category, limit: limit + 1 });
+  // This block renders on most service/city/route pages sitewide, so always
+  // picking the newest posts would permanently starve everything else in the
+  // catalog of internal links as new posts get published. Rotate the
+  // selection by a weekly time-bucket instead — every page shows a
+  // consistent set within the week (no hydration mismatch, no per-page prop
+  // needed), but which posts get featured cycles over time.
+  const weekBucket = String(Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000)));
+  const seed = `${category ?? "all"}:${weekBucket}`;
+
+  const categoryPool = (await listPublishedBlogs({ category })).filter((b) => b.slug !== exclude);
+  let blogs = pickDistributed(categoryPool, seed, limit);
   if (blogs.length < limit) {
-    const latest = await listPublishedBlogs({ limit: limit + 4 });
-    for (const b of latest) {
-      if (!blogs.some((x) => x.slug === b.slug)) blogs.push(b);
-    }
+    const pool = (await listPublishedBlogs()).filter(
+      (b) => b.slug !== exclude && !blogs.some((x) => x.slug === b.slug)
+    );
+    blogs = [...blogs, ...pickDistributed(pool, seed, limit - blogs.length)];
   }
-  blogs = blogs.filter((b) => b.slug !== exclude).slice(0, limit);
   if (blogs.length === 0) return null;
 
   return (

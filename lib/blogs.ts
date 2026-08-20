@@ -221,18 +221,48 @@ export async function getPublishedBlogBySlug(slug: string): Promise<Blog | null>
 }
 
 /** Published posts in the same category (fallback to recent), excluding `slug`. */
+/** Stable string hash (djb2) — same convention used in lib/hotel-transfers.ts. */
+function stableHash(input: string): number {
+  let hash = 5381;
+  for (let i = 0; i < input.length; i++) {
+    hash = (hash * 33) ^ input.charCodeAt(i);
+  }
+  return Math.abs(hash);
+}
+
+/**
+ * Pick `count` items from `pool`, rotated by a stable hash of `seed` (e.g.
+ * the current page's slug) rather than always taking the first N. Plain
+ * "take the newest N" selection means older posts in a growing category
+ * never get chosen as new posts are published, so they end up with zero
+ * inbound links from sibling content. Rotating keeps the selection
+ * deterministic per page (same page always shows the same picks, so no
+ * hydration mismatch) while spreading inbound links across the whole pool
+ * over time.
+ */
+export function pickDistributed<T extends { slug: string }>(
+  pool: T[],
+  seed: string,
+  count: number
+): T[] {
+  if (pool.length <= count) return pool;
+  const offset = stableHash(seed) % pool.length;
+  return [...pool.slice(offset), ...pool.slice(0, offset)].slice(0, count);
+}
+
 export async function getRelatedBlogs(
   blog: Pick<Blog, "slug" | "category">,
   limit = 3
 ): Promise<Blog[]> {
-  const sameCategory = await listPublishedBlogs({ category: blog.category, limit: limit + 1 });
-  const related = sameCategory.filter((b) => b.slug !== blog.slug);
+  const sameCategory = (await listPublishedBlogs({ category: blog.category })).filter(
+    (b) => b.slug !== blog.slug
+  );
+  let related = pickDistributed(sameCategory, blog.slug, limit);
   if (related.length < limit) {
-    const recent = await listPublishedBlogs({ limit: limit + 3 });
-    for (const b of recent) {
-      if (b.slug !== blog.slug && !related.some((r) => r.slug === b.slug)) related.push(b);
-      if (related.length >= limit) break;
-    }
+    const recent = (await listPublishedBlogs()).filter(
+      (b) => b.slug !== blog.slug && !related.some((r) => r.slug === b.slug)
+    );
+    related = [...related, ...pickDistributed(recent, blog.slug, limit - related.length)];
   }
   return related.slice(0, limit);
 }
