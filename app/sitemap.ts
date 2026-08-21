@@ -5,7 +5,7 @@ import { airports } from "@/data/airports";
 import { routes } from "@/data/routes";
 import { borders } from "@/data/borders";
 import { services } from "@/data/services";
-import { hotelTransfers, hotelCities } from "@/lib/hotel-transfers";
+import { hotelCities } from "@/lib/hotel-transfers";
 import { pointTransfers } from "@/lib/point-transfers";
 import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
@@ -73,12 +73,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
   }));
 
-  // Generated airport ↔ hotel transfer route pages.
-  const hotelTransferPaths = hotelTransfers.map((t) => ({
-    path: t.path,
-    priority: 0.7,
-    changeFrequency: "monthly" as const,
-  }));
+  // The 174 individual hotel-transfer pages (airport ↔ hotel) 301-redirect to
+  // their city hub's hotel table (proxy.ts) and are deliberately NOT listed
+  // here — see HOTEL_TRANSFER_SIMILARITY.md for why. cityHubPaths above
+  // carries the same content now. Point transfers (attractions, ports,
+  // railways, services) are unaffected and still listed below.
 
   // Attraction / landmark transfer pages (point transfers).
   const pointTransferPaths = pointTransfers.map((t) => ({
@@ -95,7 +94,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...routePaths,
     ...borderPaths,
     ...cityHubPaths,
-    ...hotelTransferPaths,
     ...pointTransferPaths,
   ].map((entry) => {
     // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.
@@ -125,8 +123,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  // Native Arabic pages (/ar/{slug}) — each cross-links back to its English original.
-  const arEntries: MetadataRoute.Sitemap = arPages.map((p) => ({
+  // Native Arabic pages (/ar/{slug}) — each cross-links back to its English
+  // original. type: "hotel-transfer" (41 entries) 301-redirects to its Arabic
+  // city-hub anchor (proxy.ts) and is excluded here, mirroring hotelTransfers
+  // above; type: "city-hub" (5 entries, the Arabic /cities/{city} counterpart)
+  // is included normally like every other type.
+  const arEntries: MetadataRoute.Sitemap = arPages
+    .filter((p) => p.type !== "hotel-transfer")
+    .map((p) => ({
     url: absoluteUrl(arPath(p)),
     lastModified: now,
     changeFrequency: "monthly",

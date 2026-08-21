@@ -18,7 +18,6 @@ import { airports, getAirport } from "@/data/airports";
 import { getRoute } from "@/data/routes";
 import { getCity } from "@/data/cities";
 import { hotelsForCity } from "@/data/hotels";
-import { transfersForCity } from "@/lib/hotel-transfers";
 import { airportHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -97,16 +96,12 @@ export default async function AirportPage({
     { name: "Luggage assistance", text: "Your driver helps carry your luggage from the arrivals hall to the vehicle." },
     { name: "Direct transfer to your destination", text: `You're driven directly to your hotel or destination in ${airport.city} at the fixed price agreed when you booked.` },
   ];
-  // Real Airport → Hotel deep links, derived from the hotel-transfer engine so
-  // they are always valid (empty for cities without hotels).
+  // Hotel names for internal-linking context. Individual hotel-transfer pages
+  // now redirect to the city hub's hotel table (/cities/{city}#hotels), so
+  // these are shown as plain names, not per-hotel links — see hub link below.
   const hotelLinks =
     airport.nearbyHotels ??
-    (city
-      ? transfersForCity(city.slug)
-          .filter((t) => t.direction === "airport-to-hotel")
-          .slice(0, 6)
-          .map((t) => ({ name: t.to, href: t.path }))
-      : []);
+    (city ? hotelsForCity(city.slug).slice(0, 6).map((h) => ({ name: h.name })) : []);
   const path = `/airport-transfer/${airport.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -274,24 +269,24 @@ export default async function AirportPage({
                 </h2>
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                   {hotelLinks.map((h) => (
-                    <li key={h.name}>
-                      {h.href ? (
-                        <Link
-                          href={h.href}
-                          className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy hover:border-gold hover:text-gold"
-                        >
-                          <ArrowRight className="size-4 text-gold" />
-                          {h.name}
-                        </Link>
-                      ) : (
-                        <span className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy">
-                          <ArrowRight className="size-4 text-gold" />
-                          {h.name}
-                        </span>
-                      )}
+                    <li
+                      key={h.name}
+                      className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
+                    >
+                      <ArrowRight className="size-4 text-gold" />
+                      {h.name}
                     </li>
                   ))}
                 </ul>
+                {city && (
+                  <Link
+                    href={`/cities/${city.slug}#hotels`}
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
+                  >
+                    See all {city.name} hotel transfers
+                    <ArrowRight className="size-4" />
+                  </Link>
+                )}
               </div>
             )}
           </div>
@@ -343,7 +338,7 @@ export default async function AirportPage({
         subheading="We cover meet-and-greet pickups at every major airport in the Kingdom."
       />
       <FAQSection faqs={faqs} background="muted" />
-      <LatestGuides background="white" />
+      <LatestGuides background="white" pageKey={airport.slug} />
       <CTASection
         title={`Book Your ${airport.city} Airport Taxi`}
         whatsappMessage={`Hello! I'd like to book an airport transfer from ${airport.city} airport.`}

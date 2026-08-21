@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Plane, ArrowRight, CircleCheck, Building2, Sparkles } from "lucide-react";
+import { Plane, ArrowRight, CircleCheck, Building2, Clock, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -9,8 +9,6 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { LatestGuides } from "@/components/sections/LatestGuides";
 import { RouteGrid } from "@/components/sections/RouteGrid";
-import { HotelTransferGrid } from "@/components/sections/HotelTransferGrid";
-import { HotelTransferExplorer } from "@/components/sections/HotelTransferExplorer";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getCity } from "@/data/cities";
 import { getAirport } from "@/data/airports";
@@ -26,11 +24,8 @@ import {
   taxiServiceSchema,
   faqSchema,
 } from "@/lib/schema";
-import {
-  citiesWithHotels,
-  transfersForCity,
-  airportTransferName,
-} from "@/lib/hotel-transfers";
+import { citiesWithHotels, airportTransferName } from "@/lib/hotel-transfers";
+import { cityAirportFacts } from "@/lib/city-hub-facts";
 
 type Params = { city: string };
 
@@ -98,8 +93,16 @@ export default async function CityHubPage({
   if (!airport) notFound();
 
   const aName = airportTransferName(airport);
-  const transfers = transfersForCity(city.slug);
   const hotels = hotelsForCity(city.slug);
+  const facts = cityAirportFacts[city.slug];
+
+  // Real distance/duration range, computed from data/hotels.ts (never invented).
+  const distances = hotels.map((h) => h.distanceKm);
+  const durations = hotels.map((h) => h.durationMin);
+  const distanceRange =
+    distances.length > 0 ? { min: Math.min(...distances), max: Math.max(...distances) } : null;
+  const durationRange =
+    durations.length > 0 ? { min: Math.min(...durations), max: Math.max(...durations) } : null;
 
   const path = `/cities/${city.slug}`;
   const crumbs = [
@@ -107,17 +110,6 @@ export default async function CityHubPage({
     { name: "Airport Transfers", path: "/airport-transfers" },
     { name: `${city.name} Hotel Transfers`, path },
   ];
-
-  // Featured: 5-star airport → hotel routes.
-  const featured = transfers
-    .filter((t) => t.direction === "airport-to-hotel" && t.hotel.stars === 5)
-    .slice(0, 6);
-
-  // Recently added: the last hotels in the data file, airport → hotel direction.
-  const recentSlugs = hotels.slice(-3).map((h) => h.slug);
-  const recent = transfers.filter(
-    (t) => t.direction === "airport-to-hotel" && recentSlugs.includes(t.hotel.slug)
-  );
 
   // Popular tourist / intercity routes touching this city.
   const cityRoutes = routes
@@ -222,49 +214,112 @@ export default async function CityHubPage({
         </div>
       </section>
 
-      {/* Featured 5-star transfers */}
-      {featured.length > 0 && (
-        <HotelTransferGrid
-          background="muted"
-          heading="Popular Hotel Transfers"
-          subheading={`Our most-booked ${city.name} luxury airport transfers.`}
-          transfers={featured}
-        />
-      )}
+      {/* Airport-transfer facts — sourced only from data/hotels.ts,
+          data/airports.ts, and existing route pages (see cityAirportFacts
+          above). Renders nothing for a city with no facts on file yet. */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            {city.name} airport transfer essentials
+          </h2>
 
-      {/* Full searchable / filterable listing with pagination */}
-      <HotelTransferExplorer transfers={transfers} airportName={aName} />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {distanceRange && durationRange && (
+              <div className="rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="flex items-center gap-2 font-semibold text-navy">
+                  <MapPin className="size-4 text-gold" /> Distance from {airport.name}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Our {hotelCount} {city.name} hotels sit between {distanceRange.min}
+                  {distanceRange.min === distanceRange.max ? "" : `–${distanceRange.max}`} km
+                  from {airport.name} ({airport.code}) — roughly {durationRange.min}
+                  {durationRange.min === durationRange.max ? "" : `–${durationRange.max}`} minutes
+                  by car, depending on traffic.
+                </p>
+              </div>
+            )}
 
-      {/* Recently added */}
-      {recent.length > 0 && (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="inline-flex items-center gap-2 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-                <Sparkles className="size-6 text-gold" />
-                Recently Added Routes
-              </h2>
-              <p className="mt-3 text-muted-foreground">
-                The newest {city.name} hotel transfers in our network.
-              </p>
+            <div className="rounded-xl border border-border bg-muted/40 p-5">
+              <h3 className="flex items-center gap-2 font-semibold text-navy">
+                <Clock className="size-4 text-gold" /> Terminals at {airport.name}
+              </h3>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                {airport.terminals.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {recent.map((t) => (
-                <Link
-                  key={t.path}
-                  href={t.path}
-                  className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
-                >
-                  <span className="text-sm font-semibold text-navy">
-                    {t.from} → {t.to}
-                  </span>
-                  <ArrowRight className="size-4 shrink-0 text-gold" />
-                </Link>
-              ))}
-            </div>
+
+            {facts?.dropoffConstraint && (
+              <div className="rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="font-semibold text-navy">Drop-off</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{facts.dropoffConstraint}</p>
+              </div>
+            )}
+
+            {facts?.miqat && (
+              <div className="rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="font-semibold text-navy">Miqat</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{facts.miqat}</p>
+              </div>
+            )}
+
+            {facts?.seasonal && (
+              <div className="rounded-xl border border-border bg-muted/40 p-5 sm:col-span-2">
+                <h3 className="font-semibold text-navy">Seasonal timing</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{facts.seasonal}</p>
+              </div>
+            )}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+
+      {/* Every hotel in this city, one row each — replaces the 2 (or fewer)
+          per-hotel pages that now redirect here. */}
+      <section id="hotels" className="bg-muted py-16 sm:py-20 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            Every {city.name} hotel we transfer to
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            {hotelCount} hotels, both directions, fixed price agreed before you travel.
+          </p>
+
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-border bg-white">
+            <table className="w-full min-w-[720px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-border bg-muted/60 text-xs font-semibold uppercase tracking-wide text-navy">
+                  <th className="px-4 py-3">Hotel</th>
+                  <th className="px-4 py-3">District</th>
+                  <th className="px-4 py-3">Stars</th>
+                  <th className="px-4 py-3">Distance</th>
+                  <th className="px-4 py-3">Duration</th>
+                  <th className="px-4 py-3">Quote</th>
+                </tr>
+              </thead>
+              <tbody>
+                {hotels.map((h) => (
+                  <tr key={h.slug} className="border-b border-border last:border-0">
+                    <td className="px-4 py-3 font-medium text-navy">{h.name}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{h.area}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{h.stars}★</td>
+                    <td className="px-4 py-3 text-muted-foreground">{h.distanceKm} km</td>
+                    <td className="px-4 py-3 text-muted-foreground">{h.durationMin} min</td>
+                    <td className="px-4 py-3">
+                      <Link
+                        href={`/get-quote?pickup=${encodeURIComponent(airport.name)}&dropoff=${encodeURIComponent(h.name)}`}
+                        className="font-semibold text-navy underline decoration-dotted hover:text-gold"
+                      >
+                        Get a quote
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       <VehicleOptions background="muted" />
       <HowItWorks background="white" />
@@ -280,7 +335,7 @@ export default async function CityHubPage({
       )}
 
       <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" />
+      <LatestGuides background="muted" pageKey={city.slug} />
       <CTASection
         title={`Book Your ${city.name} Airport Transfer`}
         whatsappMessage={`Hello! I'd like to book an airport transfer in ${city.name}.`}

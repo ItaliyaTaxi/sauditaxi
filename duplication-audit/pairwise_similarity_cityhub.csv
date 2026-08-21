@@ -1,0 +1,11 @@
+page_a,page_b,jaccard_5gram
+/cities/madinah,/cities/makkah,0.2199
+/cities/madinah,/cities/jeddah,0.2400
+/cities/madinah,/cities/riyadh,0.1743
+/cities/madinah,/cities/dammam,0.1315
+/cities/makkah,/cities/jeddah,0.2704
+/cities/makkah,/cities/riyadh,0.1986
+/cities/makkah,/cities/dammam,0.1361
+/cities/jeddah,/cities/riyadh,0.1608
+/cities/jeddah,/cities/dammam,0.1290
+/cities/riyadh,/cities/dammam,0.2444

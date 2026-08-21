@@ -14,19 +14,32 @@ import { buildMetadata } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n";
 import { arPages, getArPage, arPath, type ArPage } from "@/data/translations/ar";
 import { pageHeroes } from "@/lib/hero";
+import { getCity } from "@/data/cities";
+import { getAirport } from "@/data/airports";
+import { hotelsForCity } from "@/data/hotels";
+import { airportTransferName } from "@/lib/hotel-transfers";
+import { cityAirportFactsAr } from "@/lib/city-hub-facts";
 
 const heroFor = (page: ArPage): string => {
   if (page.type === "airport" || page.type === "hotel-transfer") return pageHeroes.airport;
   if (page.type === "attraction") return page.enPath.startsWith("/madinah/") ? pageHeroes.madinah : pageHeroes.makkah;
   if (page.type === "route" || page.type === "blog") return pageHeroes.makkah;
-  if (page.type === "city") return pageHeroes.city;
+  if (page.type === "city" || page.type === "city-hub") return pageHeroes.city;
   return pageHeroes.home;
 };
+
+/** /cities/{city} -> {city}, for the city-hub type only (enPath is always in this form). */
+const citySlugFor = (page: ArPage): string => page.enPath.replace("/cities/", "");
 
 const dict = getDictionary("ar");
 
 export function generateStaticParams() {
-  return arPages.map((p) => ({ slug: p.slug.split("/") }));
+  // The 41 hotel-transfer entries 301-redirect to their city-hub anchor
+  // (proxy.ts, built from the same arPages array) and are excluded here —
+  // see lib/city-hub-facts.ts / the "city-hub" type above. Data stays in
+  // arPages (needed to build the redirect map); only static generation and
+  // the sitemap (app/sitemap.ts) exclude them.
+  return arPages.filter((p) => p.type !== "hotel-transfer").map((p) => ({ slug: p.slug.split("/") }));
 }
 
 // Old Arabic slugs that were only ever referenced from breadcrumbs (never
@@ -85,6 +98,7 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     contact: "Taxi Service",
     blog: "Taxi Service",
     attraction: "Private Transfer",
+    "city-hub": "Airport Transfer",
   })[type];
 
 export default async function ArabicPage({
@@ -104,7 +118,31 @@ export default async function ArabicPage({
   if (!page) notFound();
 
   const faqs = page.faqs.slice(0, 20);
-  const isBookable = ["service", "airport", "city", "route", "hotel-transfer", "attraction"].includes(page.type);
+  const isBookable = ["service", "airport", "city", "route", "hotel-transfer", "attraction", "city-hub"].includes(
+    page.type
+  );
+
+  // city-hub: mirrors app/(main)/cities/[city]/page.tsx's structure — airport
+  // facts computed from data/hotels.ts/data/airports.ts, hotel table read
+  // directly from data/hotels.ts (never re-authored in Arabic), prose facts
+  // from cityAirportFactsAr (a translation of cityAirportFacts, not new text).
+  let hubCity: ReturnType<typeof getCity> | undefined;
+  let hubAirport: ReturnType<typeof getAirport> | undefined;
+  let hubHotels: ReturnType<typeof hotelsForCity> = [];
+  let hubFacts: (typeof cityAirportFactsAr)[string] | undefined;
+  let hubDistanceRange: { min: number; max: number } | null = null;
+  let hubDurationRange: { min: number; max: number } | null = null;
+  if (page.type === "city-hub") {
+    const citySlug = citySlugFor(page);
+    hubCity = getCity(citySlug);
+    hubAirport = hubCity?.nearestAirportSlug ? getAirport(hubCity.nearestAirportSlug) : undefined;
+    hubHotels = hotelsForCity(citySlug);
+    hubFacts = cityAirportFactsAr[citySlug];
+    const distances = hubHotels.map((h) => h.distanceKm);
+    const durations = hubHotels.map((h) => h.durationMin);
+    hubDistanceRange = distances.length > 0 ? { min: Math.min(...distances), max: Math.max(...distances) } : null;
+    hubDurationRange = durations.length > 0 ? { min: Math.min(...durations), max: Math.max(...durations) } : null;
+  }
 
   return (
     <>
@@ -152,7 +190,97 @@ export default async function ArabicPage({
               </div>
             )}
 
-            {page.contentHtml ? (
+            {page.type === "city-hub" && hubCity && hubAirport ? (
+              <div className="mt-6 space-y-8">
+                <div>
+                  <h2 className="text-xl font-bold text-navy sm:text-2xl">
+                    أساسيات النقل من مطار {hubCity.name}
+                  </h2>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                    {hubDistanceRange && hubDurationRange && (
+                      <div className="rounded-xl border border-border bg-muted/40 p-5">
+                        <h3 className="font-semibold text-navy">المسافة من {hubAirport.name}</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          فنادقنا في {hubCity.name} ({hubHotels.length}) تبعد بين {hubDistanceRange.min}
+                          {hubDistanceRange.min === hubDistanceRange.max ? "" : `–${hubDistanceRange.max}`} كم عن{" "}
+                          {hubAirport.name} ({hubAirport.code}) — نحو {hubDurationRange.min}
+                          {hubDurationRange.min === hubDurationRange.max ? "" : `–${hubDurationRange.max}`} دقيقة
+                          بالسيارة، حسب حركة السير.
+                        </p>
+                      </div>
+                    )}
+                    <div className="rounded-xl border border-border bg-muted/40 p-5">
+                      <h3 className="font-semibold text-navy">صالات {hubAirport.name}</h3>
+                      <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                        {hubAirport.terminals.map((t) => (
+                          <li key={t}>{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    {hubFacts?.dropoffConstraint && (
+                      <div className="rounded-xl border border-border bg-muted/40 p-5">
+                        <h3 className="font-semibold text-navy">نقطة النزول</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">{hubFacts.dropoffConstraint}</p>
+                      </div>
+                    )}
+                    {hubFacts?.miqat && (
+                      <div className="rounded-xl border border-border bg-muted/40 p-5">
+                        <h3 className="font-semibold text-navy">الميقات</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">{hubFacts.miqat}</p>
+                      </div>
+                    )}
+                    {hubFacts?.seasonal && (
+                      <div className="rounded-xl border border-border bg-muted/40 p-5 sm:col-span-2">
+                        <h3 className="font-semibold text-navy">التوقيت الموسمي</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">{hubFacts.seasonal}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div id="hotels" className="scroll-mt-20">
+                  <h2 className="text-xl font-bold text-navy sm:text-2xl">
+                    كل فنادق {hubCity.name} التي ننقل إليها
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {hubHotels.length} فندقًا، بالاتجاهين، سعر ثابت متفق عليه قبل السفر.
+                  </p>
+                  <div className="mt-4 overflow-x-auto rounded-2xl border border-border bg-white">
+                    <table className="w-full min-w-[640px] text-right text-sm">
+                      <thead>
+                        <tr className="border-b border-border bg-muted/60 text-xs font-semibold uppercase tracking-wide text-navy">
+                          <th className="px-4 py-3">الفندق</th>
+                          <th className="px-4 py-3">الحي</th>
+                          <th className="px-4 py-3">النجوم</th>
+                          <th className="px-4 py-3">المسافة</th>
+                          <th className="px-4 py-3">المدة</th>
+                          <th className="px-4 py-3">عرض السعر</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {hubHotels.map((h) => (
+                          <tr key={h.slug} className="border-b border-border last:border-0">
+                            <td className="px-4 py-3 font-medium text-navy">{h.name}</td>
+                            <td className="px-4 py-3 text-muted-foreground">{h.area}</td>
+                            <td className="px-4 py-3 text-muted-foreground">{h.stars}★</td>
+                            <td className="px-4 py-3 text-muted-foreground">{h.distanceKm} كم</td>
+                            <td className="px-4 py-3 text-muted-foreground">{h.durationMin} دقيقة</td>
+                            <td className="px-4 py-3">
+                              <a
+                                href={`/get-quote?pickup=${encodeURIComponent(hubAirport.name)}&dropoff=${encodeURIComponent(h.name)}`}
+                                className="font-semibold text-navy underline decoration-dotted hover:text-gold"
+                              >
+                                {dict.cta.getAQuote}
+                              </a>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            ) : page.contentHtml ? (
               <div className="mt-6">
                 <BlogContent html={page.contentHtml} />
               </div>

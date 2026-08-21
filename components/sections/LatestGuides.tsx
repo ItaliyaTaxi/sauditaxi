@@ -10,6 +10,8 @@ interface LatestGuidesProps {
   category?: string;
   /** Exclude a slug (e.g. the current post). */
   exclude?: string;
+  /** Identifies the page this block renders on (e.g. the page's own slug/path), so the weekly rotation varies per page instead of showing the identical picks everywhere. */
+  pageKey?: string;
   limit?: number;
   background?: "white" | "muted";
 }
@@ -25,6 +27,7 @@ export async function LatestGuides({
   subheading = "Practical tips on Umrah, Hajj, airport transfers, and getting around Saudi Arabia.",
   category,
   exclude,
+  pageKey,
   limit = 3,
   background = "white",
 }: LatestGuidesProps) {
@@ -32,10 +35,12 @@ export async function LatestGuides({
   // picking the newest posts would permanently starve everything else in the
   // catalog of internal links as new posts get published. Rotate the
   // selection by a weekly time-bucket instead — every page shows a
-  // consistent set within the week (no hydration mismatch, no per-page prop
-  // needed), but which posts get featured cycles over time.
+  // consistent set within the week (no hydration mismatch), but which posts
+  // get featured cycles over time. `pageKey` is folded into the seed so
+  // different pages in the same category/week don't all show the identical
+  // picks.
   const weekBucket = String(Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000)));
-  const seed = `${category ?? "all"}:${weekBucket}`;
+  const seed = `${category ?? "all"}:${weekBucket}:${pageKey ?? ""}`;
 
   const categoryPool = (await listPublishedBlogs({ category })).filter((b) => b.slug !== exclude);
   let blogs = pickDistributed(categoryPool, seed, limit);

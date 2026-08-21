@@ -344,7 +344,7 @@ export default async function CityPage({
       )}
 
       <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" />
+      <LatestGuides background="muted" pageKey={city.slug} />
       <CTASection
         title={`Book Your ${city.name} Taxi Today`}
         whatsappMessage={`Hello! I'd like to book a taxi in ${city.name}.`}

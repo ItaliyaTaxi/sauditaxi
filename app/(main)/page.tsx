@@ -115,7 +115,7 @@ export default function HomePage() {
 
       <FAQSection faqs={generalFaqs.slice(0, 6)} background="muted" />
 
-      <LatestGuides />
+      <LatestGuides pageKey="home" />
 
       <CTASection />
     </>

@@ -227,7 +227,7 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
       <VehicleOptions background="white" />
       <HowItWorks background="muted" />
       <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" />
+      <LatestGuides background="muted" pageKey={`${t.citySlug}/${t.slug}`} />
       <CTASection
         title={isService ? `Book Your ${t.to} in ${cityName}` : `Book Your ${t.from} to ${t.to} Transfer`}
         whatsappMessage={isService ? `Hello! I'd like to book ${t.to} in ${cityName}.` : `Hello! I'd like to book a ${t.from} to ${t.to} transfer.`}

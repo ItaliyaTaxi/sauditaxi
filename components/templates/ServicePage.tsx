@@ -113,7 +113,7 @@ export function ServicePage({
           <VehicleOptions background="muted" />
           <HowItWorks background="white" />
           <FAQSection faqs={faqs} background="muted" />
-          <LatestGuides />
+          <LatestGuides pageKey={service.slug} />
         </>
       )}
       <CTASection

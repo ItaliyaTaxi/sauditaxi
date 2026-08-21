@@ -1,3 +1,5 @@
+import type { Faq } from "@/data/faqs";
+
 /**
  * Hotels served by our airport-transfer route system.
  *
@@ -30,6 +32,32 @@ export interface Hotel {
   blurb: string;
   /** Landmarks / attractions near the hotel, for unique on-page content. */
   nearby: string[];
+
+  // ── Hand-written per-hotel content (optional). Rendered only when present —
+  // no fallback, no generated substitute. See app/(main)/[city]/[route]/page.tsx.
+
+  /** Exact terminal + door/meeting point for pickup. */
+  terminalPickup?: string;
+  /** Where the vehicle can physically stop for drop-off. */
+  dropoffDetail?: string;
+  /** Lowest vehicle-class price for this transfer, in SAR. */
+  priceFrom?: number;
+  /** What changes the price (vehicle class, time of day, etc). */
+  priceNotes?: string;
+  /** Distance measured for this specific hotel (not the generic city figure). */
+  realDistanceKm?: number;
+  /** Typical drive time for this hotel — not the best-case figure. */
+  realDurationMin?: number;
+  /** Drive time during prayer times / Ramadan / Hajj peak. */
+  peakDurationMin?: number;
+  /** Hotel-side arrangements: shuttle, porter, vehicle entrance. */
+  hotelArrangements?: string;
+  /** Things learned from actually driving this hotel's transfer. */
+  operatorNotes?: string[];
+  /** Hotel-specific FAQs. Replaces the generated FAQ set when present. */
+  customFaqs?: Faq[];
+  /** Real photographs of this hotel/pickup point (not stock, not reused). */
+  photos?: { src: string; alt: string }[];
 }
 
 export const hotels: Hotel[] = [

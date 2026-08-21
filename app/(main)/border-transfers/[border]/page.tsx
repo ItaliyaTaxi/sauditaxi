@@ -246,7 +246,7 @@ export default async function BorderPage({
         subheading="We cover all the main land borders out of Saudi Arabia."
       />
       <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" />
+      <LatestGuides background="muted" pageKey={border.slug} />
       <CTASection
         title={`Book Your ${border.country} Border Transfer`}
         whatsappMessage={`Hello! I'd like to book a border transfer to ${border.country}.`}

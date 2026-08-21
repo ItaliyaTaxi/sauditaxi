@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -34,7 +35,6 @@ import {
   faqSchema,
 } from "@/lib/schema";
 import {
-  hotelTransfers,
   getHotelTransfer,
   transfersForCity,
   transferIntro,
@@ -44,16 +44,24 @@ import {
 } from "@/lib/hotel-transfers";
 import { pointTransfers, getPointTransfer } from "@/lib/point-transfers";
 import { PointTransferView } from "@/components/templates/PointTransferView";
+import type { Hotel } from "@/data/hotels";
 
 type Params = { city: string; route: string };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [
-    ...hotelTransfers.map((t) => ({ city: t.citySlug, route: t.slug })),
-    ...pointTransfers.map((t) => ({ city: t.citySlug, route: t.slug })),
-  ];
+  // Hotel-transfer pages (t.citySlug/t.slug) are no longer prerendered here —
+  // proxy.ts 301-redirects all 174 of them to /cities/{city}#hotels, built
+  // from the exact same hotelTransfers array, so every one of these paths is
+  // caught before Next's router ever resolves params for this page. With
+  // dynamicParams = false below, any hotel-transfer path that somehow reached
+  // this page anyway (proxy bypassed or misconfigured) 404s rather than
+  // rendering — the getHotelTransfer() branch in the component below is
+  // consequently unreachable for real traffic; left in place rather than
+  // removed since data/hotels.ts and lib/hotel-transfers.ts stay live for the
+  // city-hub hotel table. Point transfers are unaffected.
+  return pointTransfers.map((t) => ({ city: t.citySlug, route: t.slug }));
 }
 
 export async function generateMetadata({
@@ -114,6 +122,26 @@ const features = [
   },
 ];
 
+// Hand-written per-hotel fields (see data/hotels.ts). Once 4 or more of these
+// are populated for a hotel, the templated hotelVariation() angle paragraph
+// is suppressed in favor of the real content — see richHotelContentCount()
+// call sites below.
+function richHotelContentCount(hotel: Hotel): number {
+  return [
+    hotel.terminalPickup,
+    hotel.dropoffDetail,
+    hotel.priceFrom,
+    hotel.priceNotes,
+    hotel.realDistanceKm,
+    hotel.realDurationMin,
+    hotel.peakDurationMin,
+    hotel.hotelArrangements,
+    hotel.operatorNotes && hotel.operatorNotes.length > 0 ? hotel.operatorNotes : undefined,
+    hotel.customFaqs && hotel.customFaqs.length > 0 ? hotel.customFaqs : undefined,
+    hotel.photos && hotel.photos.length > 0 ? hotel.photos : undefined,
+  ].filter((v) => v !== undefined && v !== null).length;
+}
+
 export default async function HotelTransferPage({
   params,
 }: {
@@ -135,7 +163,11 @@ export default async function HotelTransferPage({
     { name: `${t.from} → ${t.to}`, path: t.path },
   ];
 
-  const faqs = routeFaqs(t);
+  // 4+ hand-written fields on this hotel (data/hotels.ts) suppresses the
+  // templated hotelVariation() angle paragraph in favor of the real content.
+  const suppressAngle = richHotelContentCount(t.hotel) >= 4;
+  const hasCustomFaqs = !!t.hotel.customFaqs && t.hotel.customFaqs.length > 0;
+  const faqs = hasCustomFaqs ? t.hotel.customFaqs! : routeFaqs(t);
 
   const pickup =
     t.fromType === "airport"
@@ -200,7 +232,7 @@ export default async function HotelTransferPage({
 
       <PageHeader
         title={`${t.from} to ${t.to} Taxi`}
-        subtitle={transferIntro(t)}
+        subtitle={suppressAngle ? undefined : transferIntro(t)}
         crumbs={crumbs}
         backgroundImage={cityHero(t.citySlug, t.cityName).src}
         backgroundAlt={`Private taxi transfer from ${t.from} to ${t.to} in ${t.cityName}, Saudi Arabia`}
@@ -224,6 +256,75 @@ export default async function HotelTransferPage({
               </ul>
             </div>
 
+            {/* Hand-written per-hotel content (data/hotels.ts). Each field
+                renders only when present — no fallback, no placeholder. */}
+            {(t.hotel.terminalPickup || t.hotel.dropoffDetail) && (
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                {t.hotel.terminalPickup && (
+                  <div className="rounded-xl border border-border bg-white p-5">
+                    <h3 className="font-semibold text-navy">Exact pickup point</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{t.hotel.terminalPickup}</p>
+                  </div>
+                )}
+                {t.hotel.dropoffDetail && (
+                  <div className="rounded-xl border border-border bg-white p-5">
+                    <h3 className="font-semibold text-navy">Exact drop-off point</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{t.hotel.dropoffDetail}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {(t.hotel.priceFrom !== undefined || t.hotel.realDistanceKm !== undefined || t.hotel.realDurationMin !== undefined) && (
+              <div className="mt-6 rounded-xl border border-border bg-muted/40 p-5">
+                <h3 className="font-semibold text-navy">Real numbers for this hotel</h3>
+                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                  {t.hotel.priceFrom !== undefined && (
+                    <li>
+                      From SAR {t.hotel.priceFrom}
+                      {t.hotel.priceNotes ? ` — ${t.hotel.priceNotes}` : ""}
+                    </li>
+                  )}
+                  {t.hotel.realDistanceKm !== undefined && <li>Measured distance: {t.hotel.realDistanceKm} km</li>}
+                  {t.hotel.realDurationMin !== undefined && <li>Typical drive time: {t.hotel.realDurationMin} min</li>}
+                  {t.hotel.peakDurationMin !== undefined && (
+                    <li>During prayer times / Ramadan / Hajj: {t.hotel.peakDurationMin} min</li>
+                  )}
+                </ul>
+              </div>
+            )}
+
+            {t.hotel.hotelArrangements && (
+              <div className="mt-6">
+                <h3 className="font-semibold text-navy">At the hotel</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t.hotel.hotelArrangements}</p>
+              </div>
+            )}
+
+            {t.hotel.operatorNotes && t.hotel.operatorNotes.length > 0 && (
+              <div className="mt-6">
+                <h3 className="font-semibold text-navy">Notes from drivers who've made this run</h3>
+                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+                  {t.hotel.operatorNotes.map((n) => (
+                    <li key={n} className="flex items-start gap-2">
+                      <CircleCheck className="mt-0.5 size-4 shrink-0 text-gold" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {t.hotel.photos && t.hotel.photos.length > 0 && (
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {t.hotel.photos.map((p) => (
+                  <div key={p.src} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted">
+                    <Image src={p.src} alt={p.alt} fill className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
+
             {/* Route overview */}
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-navy">
@@ -237,10 +338,14 @@ export default async function HotelTransferPage({
               </span>
             </div>
 
-            <h2 className="mt-8 text-2xl font-bold text-navy">
-              Private transfer from {t.from} to {t.to}
-            </h2>
-            <p className="mt-3 text-muted-foreground">{transferAbout(t)}</p>
+            {!suppressAngle && (
+              <>
+                <h2 className="mt-8 text-2xl font-bold text-navy">
+                  Private transfer from {t.from} to {t.to}
+                </h2>
+                <p className="mt-3 text-muted-foreground">{transferAbout(t)}</p>
+              </>
+            )}
 
             {/* Pickup & drop-off */}
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -379,8 +484,18 @@ export default async function HotelTransferPage({
         </div>
       </section>
 
-      <VehicleOptions background="muted" />
-      <HowItWorks background="white" />
+      <details className="border-t border-border">
+        <summary className="mx-auto max-w-7xl cursor-pointer px-4 py-4 text-sm font-semibold text-navy sm:px-6 lg:px-8">
+          Choose your vehicle
+        </summary>
+        <VehicleOptions background="muted" />
+      </details>
+      <details className="border-t border-border">
+        <summary className="mx-auto max-w-7xl cursor-pointer px-4 py-4 text-sm font-semibold text-navy sm:px-6 lg:px-8">
+          How booking works
+        </summary>
+        <HowItWorks background="white" />
+      </details>
 
       {nearby.length > 0 && (
         <HotelTransferGrid
@@ -460,7 +575,7 @@ export default async function HotelTransferPage({
       )}
 
       <FAQSection faqs={faqs} background="muted" />
-      <LatestGuides background="white" />
+      <LatestGuides background="white" pageKey={`${t.citySlug}/${t.slug}`} />
       <CTASection
         title={`Book Your ${t.from} to ${t.to} Taxi`}
         whatsappMessage={`Hello! I'd like to book a ${t.from} to ${t.to} taxi.`}

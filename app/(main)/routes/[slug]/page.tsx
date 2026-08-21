@@ -328,7 +328,7 @@ export default async function RoutePage({
       )}
 
       <FAQSection faqs={faqs} background="muted" />
-      <LatestGuides background="muted" />
+      <LatestGuides background="muted" pageKey={route.slug} />
       <CTASection
         title={`Book Your ${route.from} to ${route.to} Taxi`}
         whatsappMessage={`Hello! I'd like to book a ${route.from} to ${route.to} taxi.`}
