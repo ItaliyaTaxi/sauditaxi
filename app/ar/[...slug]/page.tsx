@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Clock, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { BlogContent } from "@/components/blog/BlogContent";
@@ -29,8 +29,33 @@ export function generateStaticParams() {
   return arPages.map((p) => ({ slug: p.slug.split("/") }));
 }
 
+// Old Arabic slugs that were only ever referenced from breadcrumbs (never
+// built as real pages) but already have a live page covering the same
+// topic. Redirecting avoids duplicating content that would otherwise
+// cannibalize the live page for the same query. next.config.ts's
+// redirects() did not reliably match these non-ASCII source paths in
+// testing, so the alias is resolved here instead.
+const LEGACY_AR_ALIASES: Record<string, string> = {
+  "تاكسي-عمرة": "نقل-العمرة",
+  "النقل-الحدودي": "النقل-عبر-الحدود",
+};
+
+// Next.js already decodes dynamic segments before they reach this component,
+// so decodeURIComponent here is normally a no-op — but if a proxy/CDN layer
+// ever forwards an already-decoded or malformed value, decodeURIComponent
+// throws URIError, which previously propagated as an unhandled exception
+// (HTTP 500) instead of a normal "page doesn't exist" 404.
+function safeSlug(slugParts: string[]): string {
+  const joined = slugParts.join("/");
+  try {
+    return decodeURIComponent(joined);
+  } catch {
+    return joined;
+  }
+}
+
 function resolve(slugParts: string[]): ArPage | undefined {
-  return getArPage(decodeURIComponent(slugParts.join("/")));
+  return getArPage(safeSlug(slugParts));
 }
 
 export async function generateMetadata({
@@ -68,6 +93,13 @@ export default async function ArabicPage({
   params: Promise<{ slug: string[] }>;
 }) {
   const { slug } = await params;
+  const key = safeSlug(slug);
+  const alias = LEGACY_AR_ALIASES[key];
+  // HTTP headers must be ASCII — an un-encoded Arabic destination in the
+  // Location header throws (Node: "Invalid character in header content"),
+  // which itself produced a 500. Percent-encode it.
+  if (alias) redirect(`/ar/${encodeURIComponent(alias)}`);
+
   const page = resolve(slug);
   if (!page) notFound();
 

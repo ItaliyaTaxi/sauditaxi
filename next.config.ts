@@ -78,6 +78,13 @@ const nextConfig: NextConfig = {
         destination: "/blog/what-to-do-after-landing-at-jeddah-airport",
         permanent: true,
       },
+      // Note: two Arabic-path aliases (تاكسي-عمرة, النقل-الحدودي) are handled
+      // in app/ar/[...slug]/page.tsx instead of here — Next.js's config-level
+      // redirects() did not reliably match non-ASCII `source` patterns in
+      // testing (confirmed: English redirects above fire correctly on the
+      // same build; the two Arabic ones did not), so the alias is resolved
+      // in-app instead, where the equivalent Arabic-string lookup already
+      // works correctly for every other Arabic route.
     ];
   },
 };

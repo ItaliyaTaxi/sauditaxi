@@ -16,6 +16,21 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Next.js's own dynamic-route param decoding throws an uncaught
+  // "failed to decode param" error (HTTP 500) for a malformed percent-encoded
+  // path segment — this happens inside the framework's routing internals,
+  // after middleware but before any page component runs, so it can't be
+  // caught with a try/catch in application code. Catching it here, before
+  // the request ever reaches route matching, turns it into a clean 404
+  // instead. Well-formed URLs (including all real Arabic paths) are
+  // completely unaffected — decodeURIComponent only throws on genuinely
+  // malformed sequences (e.g. a truncated %XX).
+  try {
+    decodeURIComponent(pathname);
+  } catch {
+    return new NextResponse(null, { status: 404 });
+  }
+
   const headers = new Headers(request.headers);
   headers.set("x-pathname", pathname);
   const passThrough = () => NextResponse.next({ request: { headers } });

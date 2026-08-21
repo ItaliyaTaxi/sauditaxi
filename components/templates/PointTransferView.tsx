@@ -13,6 +13,7 @@ import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 import { getRoute } from "@/data/routes";
 import { getCity } from "@/data/cities";
 import { pointTransfers, type PointTransfer } from "@/lib/point-transfers";
+import { hotelsForCity } from "@/lib/hotel-transfers";
 
 const transferBySlug = new Map(pointTransfers.map((t) => [`${t.citySlug}/${t.slug}`, t]));
 
@@ -28,6 +29,10 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
   const cityPath = `/taxi-service/${t.citySlug}`;
   // Service/tour pages read as a named offering ("Executive Car Service"),
   // whereas transfers read as an A → B route.
+  // /cities/{slug} only exists for cities with hotel data (it's the
+  // airport-to-hotel transfer hub) — linking to it for a city with none
+  // (e.g. AlUla, which has point transfers but no hotels) 404s.
+  const hasHotelHub = hotelsForCity(t.citySlug).length > 0;
   const isService = t.category === "service";
   const label = isService ? t.to : `${t.from} → ${t.to}`;
   const labelFor = (x: PointTransfer) =>
@@ -184,12 +189,14 @@ export function PointTransferView({ transfer: t }: { transfer: PointTransfer }) 
               >
                 {cityName} taxi service <ArrowRight className="size-4 text-gold" />
               </Link>
-              <Link
-                href={`/cities/${t.citySlug}`}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
-              >
-                {cityName} airport transfers <ArrowRight className="size-4 text-gold" />
-              </Link>
+              {hasHotelHub && (
+                <Link
+                  href={`/cities/${t.citySlug}`}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-gold"
+                >
+                  {cityName} airport transfers <ArrowRight className="size-4 text-gold" />
+                </Link>
+              )}
               {(t.citySlug === "makkah" || t.citySlug === "madinah") && (
                 <>
                   <Link
