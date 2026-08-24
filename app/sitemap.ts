@@ -9,6 +9,7 @@ import { hotelCities } from "@/lib/hotel-transfers";
 import { pointTransfers } from "@/lib/point-transfers";
 import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
+import { distancePages } from "@/data/distance-pages";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
 // full redeploy (the sitemap pulls published posts live from the database).
@@ -86,6 +87,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
   }));
 
+  // Informational distance/travel-time pages — separate intent from the
+  // commercial route pages above, see data/distance-pages.ts.
+  const distancePagePaths = distancePages.map((p) => ({
+    path: `/distance/${p.slug}`,
+    priority: 0.6,
+    changeFrequency: "monthly" as const,
+  }));
+
   const base = [
     ...staticPaths,
     ...servicePaths,
@@ -94,6 +103,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...routePaths,
     ...borderPaths,
     ...cityHubPaths,
+    ...distancePagePaths,
     ...pointTransferPaths,
   ].map((entry) => {
     // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.
