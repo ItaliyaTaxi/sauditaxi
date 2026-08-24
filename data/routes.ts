@@ -50,14 +50,14 @@ const baseRoutes: Route[] = [
     distance: "85 km",
     duration: "1 hour 15 min",
     intro:
-      "The Jeddah to Makkah taxi is the most requested transfer in the Kingdom — a direct private ride from the airport or city to your Makkah hotel near the Haram.",
+      "Nearly every pilgrim who flies into the Kingdom for Umrah starts their journey on this exact road — from the arrivals hall at Jeddah's King Abdulaziz International Airport straight to a hotel near the Haram. It's also the route business travellers use when they extend a Jeddah trip with a same-day Umrah visit, and the one families rely on when they need a single vehicle for the whole group instead of splitting across shared vans.",
     about:
-      "Most pilgrims land at Jeddah's King Abdulaziz International Airport and travel straight to Makkah to begin Umrah. Our private Jeddah to Makkah transfer meets you at the Hajj Terminal or Terminal 1, helps with luggage, and drops you at your hotel near the Haram — no shared waiting, no surge pricing.",
+      "Most pilgrims land at Jeddah's King Abdulaziz International Airport and travel straight to Makkah to begin Umrah. Your driver waits at the terminal matching your flight — the Hajj Terminal during pilgrimage season, Terminal 1 (North) the rest of the year — tracks your landing time in case of delay, helps with luggage, and drives you directly to your hotel near the Haram, without the transfers or waiting rooms of a shared shuttle.",
     notes: [
-      "Pickup available from JED airport or any Jeddah hotel",
-      "Drop-off directly at Makkah hotels near the Haram",
+      "Pickup available from JED airport (Hajj Terminal or Terminal 1) or any Jeddah hotel",
+      "Drop-off at a designated point near the Haram, confirmed with you in advance",
       "Family vans available for pilgrims with luggage",
-      "Available 24/7 to match flight arrival times",
+      "Available 24/7 to match flight arrival times, including delayed landings",
     ],
     relatedCitySlugs: ["jeddah", "makkah"],
     lastUpdated: "2026-08-05",
@@ -66,24 +66,31 @@ const baseRoutes: Route[] = [
         heading: "Jeddah to Makkah: route overview and distance",
         paragraphs: [
           "The drive from Jeddah to Makkah covers about 85 kilometres along a modern, well-signed highway, and takes roughly an hour and fifteen minutes outside peak periods. This is the single busiest route in our network, since the vast majority of pilgrims and visitors arriving by air land at Jeddah's King Abdulaziz International Airport before continuing straight on to the Holy City.",
-          "There are no tolls on this or any Saudi highway, so the fixed price you agree covers the complete journey with nothing added at the roadside. If you're travelling to perform Umrah and haven't yet entered ihram, tell your driver in advance so a stop at the appropriate miqat can be built into the route.",
+          "Travel time on this route is mostly a function of the calendar rather than the clock: during Ramadan and the weeks around Hajj, traffic converging on Makkah from every direction can push the drive well past ninety minutes, and drop-off points near the Haram get busier as pilgrim volume rises. There are no tolls on this or any Saudi highway, so the fixed price you agree covers the complete journey with nothing added at the roadside regardless of how long it takes.",
+        ],
+      },
+      {
+        heading: "Arriving at Jeddah Airport and reaching your Makkah hotel",
+        paragraphs: [
+          "Your driver checks your flight number before you land and waits at the correct terminal — the dedicated Hajj Terminal handles the seasonal surge of pilgrim charters during Hajj, while Terminal 1 (North) serves most scheduled international arrivals the rest of the year. If you haven't yet entered ihram and plan to at one of the recognised miqat points en route, mention it when booking so your driver can build the stop into the route without you needing to ask twice.",
+          "Private vehicles can't drive into the pedestrian zone that surrounds the Masjid al-Haram, so the last stretch of every Makkah drop-off is on foot from a fixed point your driver will confirm with you — usually a short, well-marked walk from your hotel entrance. Travellers planning to book a full <a href='/umrah-taxi-service'>Umrah taxi service</a> for the rest of their stay, or who'll need local transport once they're settled in Makkah, can arrange that alongside this transfer so pickup and city travel are handled by the same team.",
         ],
       },
       {
         heading: "Vehicle options and pilgrim travel advice",
         paragraphs: [
-          "Solo travellers and couples are comfortably served by a standard sedan, while families and small groups travelling with the extra luggage typical of an Umrah trip usually prefer a larger SUV or van — let us know your group size and luggage volume so we assign the right vehicle from the start. Vehicles serving Makkah are driven by chauffeurs familiar with the hotel districts around the Clock Tower and the designated pickup points near the Haram, since private cars can't enter the pedestrian zone directly around the mosque.",
-          "Because flight arrival times vary and immigration queues at Jeddah airport can run long, we track your flight and adjust pickup timing automatically rather than working from a fixed clock time.",
+          "Solo travellers and couples are comfortably served by a standard sedan, while families and small groups travelling with the extra luggage typical of an Umrah trip usually prefer a larger SUV or van — let us know your group size and luggage volume so we assign the right vehicle from the start. Vehicles serving Makkah are driven by chauffeurs familiar with the hotel districts around the Clock Tower and the designated pickup points near the Haram.",
+          "Because flight arrival times vary and immigration queues at Jeddah airport can run long, we track your flight and adjust pickup timing automatically rather than working from a fixed clock time. During Ramadan and peak Umrah season, booking a day ahead — rather than on arrival — gives you a wider choice of vehicle size.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Jeddah to Makkah taxi take?", answer: "The drive covers about 85 kilometres and typically takes around an hour and fifteen minutes, though this can extend somewhat during Umrah season or Hajj when traffic near Makkah is heavier." },
-      { question: "Can I stop at a miqat on the way to Makkah?", answer: "Yes, if you haven't yet entered ihram, mention this when booking and your driver will plan a stop at the appropriate miqat point on the route." },
-      { question: "Which terminal will my driver meet me at in Jeddah?", answer: "Your driver waits at the terminal matching your flight, whether that's the Hajj Terminal or the main North Terminal (T1) — just confirm your flight number when booking." },
-      { question: "Is the price fixed regardless of Umrah season traffic?", answer: "Yes, we agree a fixed price before you travel, so heavier seasonal traffic around Makkah doesn't change your fare." },
+      { question: "How far is Jeddah Airport from Makkah?", answer: "About 85 kilometres, which typically takes around an hour and fifteen minutes, though this can extend during Umrah season or Hajj when traffic near Makkah is heavier." },
+      { question: "Which terminal should I select for pickup?", answer: "Choose the Hajj Terminal if you're arriving on a pilgrim charter during Hajj season, or Terminal 1 (North) for a standard scheduled international flight — your driver waits at whichever one matches your booking." },
+      { question: "Can the driver stop for miqat on the way?", answer: "Yes — if you haven't yet entered ihram, mention this when booking and your driver will plan a stop at the appropriate miqat point on the route." },
+      { question: "How long does the journey take during Ramadan?", answer: "Traffic converging on Makkah is noticeably heavier during Ramadan and the weeks around Hajj, so allow extra time beyond the usual hour and fifteen minutes — your fare stays fixed regardless." },
       { question: "Do you offer family vans for pilgrims with extra luggage?", answer: "Yes, family and group vans are available for pilgrims travelling with more luggage than a standard sedan comfortably fits — mention your group size when requesting a quote." },
-      { question: "Where does my driver drop me off near the Haram?", answer: "Since vehicles can't enter the pedestrian zone directly around the Haram, your driver will confirm a nearby designated drop-off point with you in advance." },
+      { question: "Where does my driver drop me off near the Haram?", answer: "Since vehicles can't enter the pedestrian zone directly around the Haram, your driver will confirm a nearby designated drop-off point with you in advance, usually a short walk from your hotel." },
       { question: "Is booking available for late-night or early-morning flights?", answer: "Yes, pickup is available 24/7 and we track your flight so timing adjusts automatically to your actual landing time." },
       { question: "Can I book a return Makkah to Jeddah transfer at the same time?", answer: "Yes, you can book both legs together, or arrange the return separately once your Makkah stay is confirmed — see our Makkah to Jeddah route page for the reverse leg." },
     ],
@@ -97,14 +104,14 @@ const baseRoutes: Route[] = [
     distance: "450 km",
     duration: "4 hours 30 min",
     intro:
-      "The Makkah to Madinah taxi is a comfortable private long-distance transfer along the Hijra highway between the two Holy Cities.",
+      "Most travellers on this route have just finished Umrah — the long highway ride to Madinah is the second half of a pilgrimage, not the start of one. Their priority is comfort after several tiring days in Makkah: fewer stops to negotiate, a driver who understands an elderly parent's pace, and a straight run to a hotel bed near the Prophet's Mosque rather than another queue.",
     about:
-      "After completing Umrah in Makkah, many pilgrims travel to Madinah to visit the Prophet's Mosque. Our private Makkah to Madinah transfer uses comfortable vehicles with rest-stop flexibility, ideal for families and elders making the 450 km journey.",
+      "After completing Umrah in Makkah, many pilgrims travel to Madinah to visit the Prophet's Mosque and, for many, to close out their trip before flying home from Madinah's Prince Mohammad bin Abdulaziz Airport. Our private Makkah to Madinah transfer uses comfortable vehicles with rest-stop flexibility, ideal for families and elders making the 450 km journey after an already-long stay in Makkah.",
     notes: [
-      "Comfortable vehicles for the long highway journey",
-      "Rest-stop flexibility along the route",
-      "Hotel-to-hotel private service",
-      "Reverse Madinah to Makkah transfers also available",
+      "Timed to leave once your Umrah rites and Makkah stay are complete",
+      "Rest-stop flexibility for elderly or tired travellers",
+      "Hotel-to-hotel private service, door to door",
+      "Onward connection to Madinah's airport available if you're flying home from there",
     ],
     relatedCitySlugs: ["makkah", "madinah"],
     lastUpdated: "2026-08-05",
@@ -112,24 +119,31 @@ const baseRoutes: Route[] = [
       {
         heading: "Makkah to Madinah: route overview and distance",
         paragraphs: [
-          "The Hijra highway connecting Makkah and Madinah runs about 450 kilometres and takes roughly four and a half hours in free-flowing traffic. It's one of the busiest pilgrim corridors in the Kingdom, since most visitors combine Umrah in Makkah with a visit to the Prophet's Mosque in Madinah on the same trip.",
-          "There are no tolls anywhere on this route, so the fixed price agreed before you travel covers the entire journey. Given the distance, we build in rest-stop flexibility, particularly useful for elderly pilgrims or families travelling with young children.",
+          "The Hijra highway connecting Makkah and Madinah runs about 450 kilometres and takes roughly four and a half hours in free-flowing traffic. It's one of the busiest pilgrim corridors in the Kingdom, since most visitors combine Umrah in Makkah with a visit to the Prophet's Mosque in Madinah on the same trip, usually departing once their Makkah rites and hotel checkout are done rather than at a fixed time of day.",
+          "There are no tolls anywhere on this route, so the fixed price agreed before you travel covers the entire journey regardless of how long it actually takes. Traffic near Makkah at prayer times, and heavier corridor-wide volume during Ramadan and the weeks after Hajj, are the two biggest variables — we build rest-stop flexibility into every booking rather than a rigid schedule.",
+        ],
+      },
+      {
+        heading: "Continuing your pilgrimage: what this leg of the journey looks like",
+        paragraphs: [
+          "Your driver collects you directly from your Makkah hotel once you're checked out and ready — there's no need to arrange separate transport to a bus station or meeting point first. Many pilgrims making this journey have spent several days on their feet around the Haram, so the emphasis on this leg is genuine rest: a comfortable seat, air conditioning, and a driver who paces the stops around how the group is actually feeling rather than a fixed itinerary.",
+          "On arrival, you're dropped directly at your Madinah hotel, within walking distance of the Prophet's Mosque depending on where you're staying. If your trip continues with sightseeing around Madinah, our <a href='/taxi-service/madinah'>Madinah taxi service</a> and <a href='/ziyarat-taxi-service'>Ziyarat taxi service</a> cover local visits to historic and religious sites once you've settled in.",
         ],
       },
       {
         heading: "Vehicle options and pilgrim travel advice",
         paragraphs: [
           "A comfortable sedan suits solo travellers and couples, while families and small groups usually prefer a larger SUV or van for the four-and-a-half-hour drive, especially with the extra luggage many pilgrims carry after an extended Umrah stay. Elderly or less mobile travellers are well served by our more spacious vehicles — mention any mobility needs when requesting your quote.",
-          "Your driver collects you directly from your Makkah hotel and drops you at your Madinah hotel, so there's no need to manage luggage between separate vehicles or stations along the way.",
+          "If you're planning to fly home from Madinah rather than Jeddah, let us know your departure time when booking; we can time the Makkah pickup to leave a comfortable buffer before your flight rather than cutting it close.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the drive from Makkah to Madinah?", answer: "The Hijra highway covers about 450 kilometres and takes roughly four and a half hours under normal traffic conditions." },
-      { question: "Are rest stops included on this journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed before you travel." },
+      { question: "How long is the drive from Makkah to Madinah?", answer: "The Hijra highway covers about 450 kilometres and takes roughly four and a half hours under normal traffic conditions, longer during Ramadan or the weeks after Hajj." },
+      { question: "Can the driver wait until my Umrah rites are finished before we leave?", answer: "Yes, pickup is scheduled around when you're actually ready to leave your Makkah hotel, not a fixed departure time." },
       { question: "Is this a hotel-to-hotel transfer?", answer: "Yes, your driver collects you directly from your Makkah hotel and drops you at your Madinah hotel, door to door." },
       { question: "Do you provide comfortable vehicles for elderly pilgrims?", answer: "Yes, we offer more spacious, comfortable vehicles suited to elderly or less mobile travellers — mention any needs when booking." },
-      { question: "Is the price fixed for the full 450 km journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete highway journey, with no toll charges or hidden costs." },
+      { question: "Can this transfer be timed for a flight home from Madinah?", answer: "Yes, tell us your departure time from Madinah's airport when booking and we'll plan the Makkah pickup to leave a comfortable buffer." },
       { question: "Can I book this transfer for a family with a lot of luggage?", answer: "Yes, larger SUVs and vans are available for families and groups carrying extra luggage after an extended Umrah stay." },
       { question: "Is same-day booking possible for this route?", answer: "Same-day booking is often possible, though booking a day ahead gives more vehicle choice, especially during Ramadan or peak Umrah season." },
       { question: "Can I book a return Madinah to Makkah transfer?", answer: "Yes, see our Madinah to Makkah route page for the reverse leg, or ask us to arrange both directions in one booking." },
@@ -144,14 +158,14 @@ const baseRoutes: Route[] = [
     distance: "450 km",
     duration: "4 hours 30 min",
     intro:
-      "The Madinah to Makkah taxi offers a private hotel-to-hotel transfer for pilgrims travelling from the Prophet's Mosque to begin or continue Umrah.",
+      "This leg starts with a decision most travellers on the Makkah-to-Madinah direction don't have to make: whether you're entering ihram before you leave Madinah. Many pilgrims visit the Prophet's Mosque first, then set out for Makkah to begin Umrah — which means this journey is as much about preparation at Dhul Hulaifah as it is about the drive itself, and the planning starts at your Madinah hotel, not at the miqat.",
     about:
-      "Pilgrims who arrive at Madinah airport often visit the Prophet's Mosque first, then travel to Makkah. Our private Madinah to Makkah transfer provides a smooth, direct ride with luggage assistance and miqat stop flexibility for those entering ihram on the way.",
+      "Pilgrims who arrive at Madinah airport often visit the Prophet's Mosque first, then travel to Makkah to begin Umrah. Our private Madinah to Makkah transfer is built around that sequence: your driver confirms before departure whether you'll be entering ihram at Dhul Hulaifah (Abyar Ali), plans the stop into the route from the start, and only then continues south — rather than treating it as an afterthought partway through the drive.",
     notes: [
-      "Miqat stop available for entering ihram",
-      "Direct hotel-to-hotel transfer",
-      "Comfortable vehicles for the 450 km journey",
-      "Available 24/7 for any arrival time",
+      "Miqat stop at Dhul Hulaifah (Abyar Ali) confirmed and planned before departure",
+      "Pickup from your Madinah hotel once you're ready to begin ihram",
+      "Comfortable vehicles for the 450 km journey south",
+      "Available 24/7 for any arrival time into Madinah",
     ],
     relatedCitySlugs: ["madinah", "makkah"],
     lastUpdated: "2026-08-05",
@@ -159,26 +173,33 @@ const baseRoutes: Route[] = [
       {
         heading: "Madinah to Makkah: route overview and distance",
         paragraphs: [
-          "The drive south from Madinah to Makkah covers about 450 kilometres along the Hijra highway and takes roughly four and a half hours in normal traffic. Many pilgrims visit the Prophet's Mosque first before continuing to Makkah to perform Umrah, making this one of the most requested long-distance routes in the Kingdom.",
-          "There are no tolls on this route, and the fixed price agreed before you travel covers the full journey. If you haven't yet entered ihram, tell your driver in advance so a stop at the appropriate miqat — commonly Dhul Hulaifah (Abyar Ali) just outside Madinah — can be planned into the trip.",
+          "The drive south from Madinah to Makkah covers about 450 kilometres along the Hijra highway and takes roughly four and a half hours in normal traffic, plus whatever time you need at the miqat if you're beginning ihram there. Many pilgrims visit the Prophet's Mosque first before continuing to Makkah to perform Umrah, making this one of the most requested long-distance routes in the Kingdom.",
+          "There are no tolls on this route, and the fixed price agreed before you travel covers the full journey including the miqat stop. Traffic building near Makkah itself, particularly around prayer times and during Ramadan or peak Umrah season, is the main factor that can extend the drive beyond the usual four and a half hours.",
+        ],
+      },
+      {
+        heading: "Preparing to leave Madinah: ihram and the Dhul Hulaifah stop",
+        paragraphs: [
+          "If you haven't yet entered ihram, tell your driver when booking, not on the day — this lets us plan enough time at Dhul Hulaifah (Abyar Ali), just outside Madinah, for you to change, perform the required prayer, and set your intention before continuing. Groups travelling together are collected as one from their Madinah hotel so nobody is left waiting at the miqat while others finish preparing.",
+          "Once ihram is confirmed, the remainder of the drive continues south along the Hijra highway to Makkah. Your driver delivers you directly to your Makkah hotel near the Haram district, with luggage assistance throughout — travellers wanting a fuller pilgrimage support package can also arrange our <a href='/umrah-taxi-service'>Umrah taxi service</a> for the Makkah leg of the trip.",
         ],
       },
       {
         heading: "Vehicle options and pilgrim travel advice",
         paragraphs: [
-          "A standard sedan comfortably suits solo travellers and couples, while families and small groups usually prefer a larger SUV or van for the four-and-a-half-hour drive. Elderly or less mobile pilgrims are well served by our more spacious vehicles — mention any specific needs when requesting your quote.",
-          "Your driver collects you directly from your Madinah hotel or the airport and delivers you to your Makkah hotel near the Haram district, with luggage assistance throughout.",
+          "A standard sedan comfortably suits solo travellers and couples, while families and small groups usually prefer a larger SUV or van for the four-and-a-half-hour drive plus the miqat stop. Elderly or less mobile pilgrims are well served by our more spacious vehicles — mention any specific needs, including help at Dhul Hulaifah, when requesting your quote.",
+          "Because entering ihram adds a variable stop to an otherwise predictable drive, we'd rather confirm your plans up front than adjust on the road — a quick note when booking about whether you're beginning ihram, and where, is all it takes.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Madinah to Makkah drive take?", answer: "The Hijra highway covers about 450 kilometres and takes roughly four and a half hours under normal traffic conditions." },
-      { question: "Can I stop at the miqat before entering Makkah?", answer: "Yes, if you haven't yet entered ihram, mention this when booking and your driver will stop at Dhul Hulaifah (Abyar Ali) or another appropriate miqat point." },
-      { question: "Is this a direct hotel-to-hotel service?", answer: "Yes, your driver collects you from your Madinah hotel or the airport and drops you directly at your Makkah hotel." },
-      { question: "Are rest stops available on the way to Makkah?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
-      { question: "Do you offer vehicles suited to elderly pilgrims?", answer: "Yes, more spacious, comfortable vehicles are available for elderly or less mobile travellers — mention any needs when booking." },
-      { question: "Is the price fixed for the whole journey?", answer: "Yes, we agree a fixed price before you travel covering the complete 450 km journey, with no toll charges." },
-      { question: "Can I book this transfer for any time of day?", answer: "Yes, pickup is available 24/7 to match your travel plans, including early-morning departures from Madinah." },
+      { question: "Can the driver stop at Abyar Ali?", answer: "Yes — Dhul Hulaifah (Abyar Ali) is the standard miqat for pilgrims leaving Madinah, and your driver will plan the stop into the route when you confirm you're entering ihram there." },
+      { question: "How much extra time should I allow for miqat?", answer: "It varies by group size, but most travellers need 20 to 40 minutes at Dhul Hulaifah to change, pray, and set intention — mention your group size when booking so we allow enough time." },
+      { question: "Should I prepare for ihram before leaving my hotel, or at the miqat?", answer: "Most pilgrims change into ihram at Dhul Hulaifah itself; if you'd prefer to be ready before leaving your Madinah hotel, that works too — just let your driver know your preference." },
+      { question: "How long does the Madinah to Makkah drive take?", answer: "The Hijra highway covers about 450 kilometres and takes roughly four and a half hours under normal traffic conditions, before adding time for the miqat stop if needed." },
+      { question: "Is this a direct hotel-to-hotel service?", answer: "Yes, your driver collects you from your Madinah hotel and drops you directly at your Makkah hotel, with the miqat stop built into the same journey." },
+      { question: "Do you offer vehicles suited to elderly pilgrims?", answer: "Yes, more spacious, comfortable vehicles are available for elderly or less mobile travellers, including assistance at the miqat stop — mention any needs when booking." },
+      { question: "Is the price fixed even with the miqat stop?", answer: "Yes, we agree a fixed price before you travel covering the complete 450 km journey and the Dhul Hulaifah stop, with no toll charges or extra fees." },
       { question: "Can I book a return Makkah to Madinah transfer as well?", answer: "Yes, see our Makkah to Madinah route page for the reverse leg, or ask us to arrange both directions together." },
     ],
     keywords: ["madinah to makkah taxi", "madinah makkah private transfer", "miqat taxi madinah", "abyar ali to makkah taxi", "madinah to makkah private car"],
@@ -191,14 +212,14 @@ const baseRoutes: Route[] = [
     distance: "420 km",
     duration: "4 hours",
     intro:
-      "The Jeddah to Madinah taxi is a private long-distance transfer for pilgrims and travellers heading north to the Prophet's Mosque.",
+      "Some pilgrims deliberately plan their trip to visit Madinah before Makkah, landing in Jeddah and heading straight north rather than south. It's the longer, less-travelled option of the two Jeddah pilgrim corridors — which means less competition for vehicles at the airport, but also a longer stretch of driving right after a long-haul flight, so comfort and flight-delay tolerance matter more here than on the shorter Jeddah-to-Makkah run.",
     about:
-      "Some pilgrims fly into Jeddah but begin their journey in Madinah. Our private Jeddah to Madinah transfer provides a direct, comfortable ride from the airport or city, with luggage help and flexible timing for evening or early-morning flights.",
+      "Some pilgrims fly into Jeddah but begin their pilgrimage in Madinah rather than Makkah. Our private Jeddah to Madinah transfer provides a direct, comfortable ride from the airport or city, with luggage help and flexible timing for evening or early-morning flights — a four-hour drive is a lot to ask straight off a long-haul flight, so we build in rest-stop flexibility as standard, not as an extra.",
     notes: [
-      "Pickup from Jeddah airport or city hotels",
-      "Direct drop-off at Madinah hotels",
-      "Comfortable vehicles for the 420 km journey",
-      "Available for late and early flight arrivals",
+      "Pickup from Jeddah airport (any terminal) or city hotels",
+      "Direct drop-off at Madinah hotels near the Prophet's Mosque",
+      "Comfortable vehicles for the 420 km journey after a long flight",
+      "Available for late and early flight arrivals, with automatic delay tracking",
     ],
     relatedCitySlugs: ["jeddah", "madinah"],
     lastUpdated: "2026-08-05",
@@ -206,26 +227,33 @@ const baseRoutes: Route[] = [
       {
         heading: "Jeddah to Madinah: route overview and distance",
         paragraphs: [
-          "The drive from Jeddah to Madinah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Travellers who fly into Jeddah but begin their pilgrimage in Madinah, or who are visiting the Prophet's Mosque as a standalone trip, use this route heavily throughout the year.",
-          "There are no tolls on this or any Saudi highway, so the fixed price you agree before travelling covers the complete journey. Because flight schedules vary widely, we track your flight and adjust pickup timing automatically for both early-morning and late-night arrivals.",
+          "The drive from Jeddah to Madinah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Travellers who fly into Jeddah but begin their pilgrimage in Madinah, or who are visiting the Prophet's Mosque as a standalone trip before continuing on to Makkah later, use this route throughout the year — it's a different itinerary choice from the shorter Jeddah-to-Makkah run, and one many first-time Umrah travellers aren't aware they can make.",
+          "There are no tolls on this or any Saudi highway, so the fixed price you agree before travelling covers the complete journey. Because this is a longer drive than the Jeddah-to-Makkah corridor, and often follows a long-haul international flight, fatigue is the bigger factor here than traffic — we plan the trip with that in mind rather than rushing straight through.",
+        ],
+      },
+      {
+        heading: "Landing in Jeddah and heading straight to Madinah",
+        paragraphs: [
+          "Because flight schedules vary widely and long-haul routings often land at odd hours, we track your flight and adjust pickup timing automatically for both early-morning and late-night arrivals — there's no need to call ahead if your landing time shifts. Your driver meets you at whichever Jeddah terminal matches your flight, helps with luggage, and gets you on the road north with minimal delay.",
+          "If your itinerary has you visiting Madinah first and Makkah afterward, our <a href='/routes/madinah-to-makkah'>Madinah to Makkah route</a> covers the next leg once you're ready to continue, including the miqat stop if you haven't yet entered ihram. Travellers wanting local transport once settled in Madinah can also use our <a href='/taxi-service/madinah'>Madinah taxi service</a>.",
         ],
       },
       {
         heading: "Vehicle options and pilgrim travel advice",
         paragraphs: [
           "A standard sedan suits solo travellers and couples, while families and small groups usually prefer a larger SUV or van, particularly with the extra luggage many travellers carry for an extended stay in Madinah. Mention your group size and luggage volume when requesting a quote so we assign the right vehicle.",
-          "Your driver collects you directly from Jeddah airport or your city hotel and drops you at your Madinah hotel, with luggage assistance throughout the four-hour drive.",
+          "Given the length of the drive after what's often a long international flight, we recommend building in a short rest stop roughly halfway rather than pushing straight through — mention this preference when booking and your driver will plan accordingly.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Jeddah to Madinah taxi take?", answer: "The drive covers about 420 kilometres and takes roughly four hours under normal traffic conditions." },
-      { question: "Is pickup available for early-morning or late-night flights into Jeddah?", answer: "Yes, we track your flight and adjust pickup timing automatically, and pickup is available 24/7." },
-      { question: "Are rest stops included on this journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
+      { question: "Should I visit Madinah or Makkah first after landing in Jeddah?", answer: "Both are common — some pilgrims prefer to visit the Prophet's Mosque first and begin Umrah in Makkah afterward, which is exactly what this route is for; others go straight to Makkah. Either itinerary is fine, it's simply your choice." },
+      { question: "How long does the Jeddah to Madinah taxi take?", answer: "The drive covers about 420 kilometres and takes roughly four hours under normal traffic conditions, longer with a rest stop after a long-haul flight." },
+      { question: "Is pickup available for early-morning or late-night flights into Jeddah?", answer: "Yes, we track your flight and adjust pickup timing automatically, and pickup is available 24/7 regardless of when you land." },
+      { question: "Is a rest stop included given how long the drive is after a flight?", answer: "Yes, we build in rest-stop flexibility as standard on this route rather than rushing straight through — mention your preference when booking." },
       { question: "Is the price fixed for the full 420 km journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete highway journey, with no toll charges." },
       { question: "Do you offer larger vehicles for families with extra luggage?", answer: "Yes, SUVs and vans are available for families and groups carrying more luggage than a standard sedan comfortably fits." },
       { question: "Is this a direct hotel-to-hotel transfer?", answer: "Yes, your driver collects you from Jeddah airport or your city hotel and drops you directly at your Madinah hotel." },
-      { question: "Can I book this transfer at short notice?", answer: "Same-day booking is often possible, though booking a day ahead gives more vehicle choice, especially during Ramadan or peak Umrah season." },
       { question: "Can I book a return Madinah to Jeddah transfer?", answer: "Yes, see our Madinah to Jeddah route page for the reverse leg, or ask us to arrange both directions in one booking." },
     ],
     keywords: ["jeddah to madinah taxi", "jeddah airport to madinah transfer", "jeddah madinah private car", "jed to madinah taxi", "umrah jeddah madinah transfer"],
@@ -238,13 +266,13 @@ const baseRoutes: Route[] = [
     distance: "400 km",
     duration: "3 hours 45 min",
     intro:
-      "The Riyadh to Dammam taxi is a popular business and family transfer along the highway linking the capital with the Eastern Province.",
+      "This is the route corporate travellers use to reach Saudi Arabia's energy sector without flying — a same-day round trip to a Dhahran meeting is realistic by road in a way it isn't between Riyadh and Jeddah. It's also how families based in the capital reach the Eastern Province coast, and how travellers connecting onward to Bahrain start their journey, since the Causeway crossing sits just past Dammam itself.",
     about:
-      "Our private Riyadh to Dammam transfer connects the capital with the energy capital in under four hours. It is a favourite of business travellers and families heading to Khobar, Dhahran, or the Bahrain Causeway, with comfortable vehicles for the highway run.",
+      "Our private Riyadh to Dammam transfer connects the capital with the energy capital in under four hours by road. It is a favourite of business travellers who need to be productive before and after the drive, and families heading to Khobar, Dhahran, or the Bahrain Causeway, with comfortable vehicles for the highway run and a fixed price that doesn't move if a meeting overruns and you leave later than planned.",
     notes: [
-      "Door-to-door private transfer",
-      "Onward connections to Khobar and Bahrain",
-      "Comfortable vehicles for the 400 km drive",
+      "Door-to-door private transfer from your Riyadh location",
+      "Onward connections to Khobar, Dhahran, and the Bahrain Causeway",
+      "Comfortable vehicles for the 400 km desert-highway drive",
       "Reverse Dammam to Riyadh transfers available",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
@@ -254,7 +282,14 @@ const baseRoutes: Route[] = [
         heading: "Riyadh to Dammam: route overview and distance",
         paragraphs: [
           "The drive from Riyadh to Dammam covers about 400 kilometres along Highway 95, crossing the Ad-Dahna desert corridor before reaching the Eastern Province. In free-flowing traffic the journey takes roughly three hours forty-five minutes, and it's one of the most travelled intercity corridors in the Kingdom for both business and family trips.",
-          "There are no tolls on this route — the fixed price you agree before travelling covers the complete journey. Given the near-four-hour distance, we build in rest-stop flexibility, and drivers manage fatigue on the long desert stretch as a matter of routine.",
+          "There's also a passenger rail line connecting Riyadh and Dammam, which is worth knowing about even though most of our bookings choose the road: a private car gets you door to door from your exact starting point rather than to a station, carries as much luggage as you need without separate handling, and lets you work, rest, or make calls in privacy for the whole trip. There are no tolls on this route — the fixed price you agree before travelling covers the complete journey regardless of how the drive goes.",
+        ],
+      },
+      {
+        heading: "Planning a business trip from the capital to the Eastern Province",
+        paragraphs: [
+          "Given the near-four-hour distance, we build in rest-stop flexibility, and drivers manage fatigue on the long desert stretch as a matter of routine — but for travellers on a tight meeting schedule, this transfer can also run straight through with no stops if that's what suits the day better. Let us know your appointment time in Khobar or Dhahran when booking so pickup is planned with a sensible buffer rather than cutting it close.",
+          "Families or travellers continuing past Dammam to the <a href='/border-transfers/bahrain-causeway'>Bahrain Causeway</a> can arrange that onward leg in the same booking, and our <a href='/taxi-service/dammam'>Dammam taxi service</a> covers local trips once you've arrived if your visit continues beyond the transfer itself.",
         ],
       },
       {
@@ -266,12 +301,12 @@ const baseRoutes: Route[] = [
       },
     ],
     faqs: [
+      { question: "Is it practical to travel from Riyadh to Dammam by private car for a same-day business trip?", answer: "Yes — at under four hours each way, a same-day round trip for a meeting in Khobar or Dhahran is realistic by road, and you can work or rest in the car rather than managing an airport transfer on both ends." },
       { question: "How long does the Riyadh to Dammam taxi take?", answer: "The drive covers about 400 kilometres via Highway 95 and takes roughly three hours forty-five minutes under normal traffic conditions." },
-      { question: "Is the route mostly desert highway?", answer: "Yes, the journey crosses the Ad-Dahna desert corridor before reaching the Eastern Province, on a well-maintained multi-lane highway throughout." },
-      { question: "Are there tolls on the Riyadh to Dammam route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
+      { question: "Is there a train option between Riyadh and Dammam?", answer: "Yes, a passenger rail line connects the two cities, though most of our bookings prefer a private car for door-to-door pickup, luggage flexibility, and privacy on the drive." },
       { question: "Can this transfer continue on to Khobar or the Bahrain Causeway?", answer: "Yes, many travellers continue on to Khobar, Dhahran, or the Causeway — mention your onward destination when booking and we'll quote accordingly." },
       { question: "What vehicle suits a business trip to Dammam?", answer: "A comfort sedan suits most business travellers; for groups or families with more luggage, we recommend an SUV or van." },
-      { question: "Are rest stops included on this journey?", answer: "Yes, given the near-four-hour distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
+      { question: "Can the driver stay on schedule if my meeting overruns?", answer: "Yes — tell us your appointment time when booking and we'll build in a sensible buffer; if plans shift on the day, message us and we'll adjust pickup." },
       { question: "Is the price fixed regardless of desert-highway conditions?", answer: "Yes, the fare is agreed before you travel and doesn't change with traffic or weather conditions on the day." },
       { question: "Can I book a return Dammam to Riyadh transfer?", answer: "Yes, see our Dammam to Riyadh route page for the reverse leg, or ask us to arrange both directions in one booking." },
     ],
@@ -285,14 +320,14 @@ const baseRoutes: Route[] = [
     distance: "400 km",
     duration: "3 hours 45 min",
     intro:
-      "The Dammam to Riyadh taxi is a direct private transfer from the Eastern Province to the capital for business and family travel.",
+      "Most travellers on this leg are arriving, not departing — off a flight into King Fahd International Airport, across the border from Bahrain via the Causeway, or wrapping up business in Khobar or Dhahran before heading to the capital. That changes what matters most: a driver waiting at the right terminal or crossing point, not a fixed departure time from a hotel.",
     about:
-      "Our private Dammam to Riyadh transfer is ideal for travellers connecting from the Bahrain Causeway or King Fahd Airport to the capital. Comfortable vehicles, fixed quotes, and door-to-door pickup make the 400 km highway journey easy.",
+      "Our private Dammam to Riyadh transfer is built for arrivals: travellers connecting from the Bahrain Causeway or King Fahd International Airport straight on to the capital, often continuing to a hotel, a business meeting, or an onward flight from Riyadh the same day. Comfortable vehicles, fixed quotes, and door-to-door pickup make the 400 km highway journey easy regardless of where in the Eastern Province you're starting from.",
     notes: [
-      "Pickup from Dammam, Khobar, or the Causeway",
-      "Direct drop-off anywhere in Riyadh",
-      "Comfortable vehicles for the long drive",
-      "Available 24/7 with fixed quotes",
+      "Meet-and-greet pickup at King Fahd International Airport or the Bahrain Causeway crossing",
+      "Also available from Dammam or Khobar hotels and offices",
+      "Direct drop-off anywhere in Riyadh, including a same-day onward flight",
+      "Available 24/7 with fixed quotes regardless of arrival time",
     ],
     relatedCitySlugs: ["dammam", "riyadh"],
     lastUpdated: "2026-08-05",
@@ -300,8 +335,15 @@ const baseRoutes: Route[] = [
       {
         heading: "Dammam to Riyadh: route overview and distance",
         paragraphs: [
-          "The drive from Dammam to Riyadh covers about 400 kilometres, running the length of Highway 95 west across the Ad-Dahna desert corridor into the capital. The journey takes roughly three hours forty-five minutes in free-flowing traffic, and is popular with travellers connecting from the Bahrain Causeway or King Fahd Airport onward to Riyadh.",
-          "There are no tolls on this route, so your fixed price covers the complete journey. Given the distance, we build in rest-stop flexibility, and can time your arrival to match an onward flight from Riyadh's King Khalid International Airport.",
+          "The drive from Dammam to Riyadh covers about 400 kilometres, running the length of Highway 95 west across the Ad-Dahna desert corridor into the capital. The journey takes roughly three hours forty-five minutes in free-flowing traffic, and is popular with travellers connecting from the Bahrain Causeway or King Fahd International Airport onward to Riyadh the same day.",
+          "There are no tolls on this route, so your fixed price covers the complete journey. Because this leg often follows an international flight or a border crossing, we plan around your actual arrival time rather than a scheduled pickup — your driver tracks flight status if you're arriving by air.",
+        ],
+      },
+      {
+        heading: "Connecting into Riyadh: airport, Causeway, and onward travel",
+        paragraphs: [
+          "If you're arriving at King Fahd International Airport, your driver waits in the arrivals hall with a name board; if you're crossing from Bahrain via the <a href='/border-transfers/bahrain-causeway'>Bahrain Causeway</a>, pickup is arranged on the Saudi side once you clear the crossing. Either way, the destination is the same fixed-price run into the capital, whether that's a hotel, an office, or straight through to Riyadh's King Khalid International Airport for a same-day onward flight.",
+          "Business travellers with back-to-back commitments across both cities should also look at our <a href='/routes/riyadh-to-dammam'>Riyadh to Dammam route</a> for the outbound leg — booking both directions together locks in the return pickup so you're not arranging it again after a full day of meetings.",
         ],
       },
       {
@@ -313,14 +355,14 @@ const baseRoutes: Route[] = [
       },
     ],
     faqs: [
+      { question: "Do you offer pickup directly from King Fahd International Airport?", answer: "Yes, your driver waits in the arrivals hall with a name board and tracks your flight, so timing adjusts automatically if you land late." },
+      { question: "Can I book this transfer from the Bahrain Causeway directly?", answer: "Yes, we can collect you on the Saudi side of the Causeway once you clear the crossing and drive directly on to Riyadh in the same booking." },
       { question: "How long does the Dammam to Riyadh taxi take?", answer: "The drive covers about 400 kilometres via Highway 95 and takes roughly three hours forty-five minutes under normal traffic conditions." },
-      { question: "Can I book this transfer from the Bahrain Causeway directly?", answer: "Yes, we can collect you from the Causeway or King Fahd Airport and drive directly on to Riyadh in the same booking." },
-      { question: "Are there tolls on the Dammam to Riyadh route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Can you time the drop-off for a Riyadh flight connection?", answer: "Yes, tell us your onward flight details and we'll plan the timing to get you to King Khalid International Airport comfortably ahead of departure." },
+      { question: "Can you time the drop-off for a same-day Riyadh flight connection?", answer: "Yes, tell us your onward flight details and we'll plan the timing to get you to King Khalid International Airport comfortably ahead of departure." },
       { question: "What vehicle suits a family connecting from the Causeway?", answer: "An SUV or van is generally the better choice for families with extra luggage from a Causeway crossing — mention your group size when requesting a quote." },
-      { question: "Are rest stops included on this journey?", answer: "Yes, given the near-four-hour distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
-      { question: "Is the price fixed for the whole journey to Riyadh?", answer: "Yes, the fare is agreed before you travel and doesn't change with traffic or weather conditions on the day." },
-      { question: "Can I book a return Riyadh to Dammam transfer?", answer: "Yes, see our Riyadh to Dammam route page for the reverse leg, or ask us to arrange both directions in one booking." },
+      { question: "Are there tolls on the Dammam to Riyadh route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
+      { question: "Is the price fixed for the whole journey to Riyadh?", answer: "Yes, the fare is agreed before you travel and doesn't change with traffic, weather, or a delayed flight on the day." },
+      { question: "Can I book a return Riyadh to Dammam transfer for the same trip?", answer: "Yes, see our Riyadh to Dammam route page for the outbound leg, or ask us to arrange both directions in one booking." },
     ],
     keywords: ["dammam to riyadh taxi", "dammam riyadh private transfer", "eastern province to riyadh taxi", "king fahd airport to riyadh taxi", "dammam riyadh intercity transfer"],
   },
@@ -332,14 +374,14 @@ const baseRoutes: Route[] = [
     distance: "950 km",
     duration: "9 hours",
     intro:
-      "The Riyadh to Jeddah taxi is a long-distance private transfer across the Kingdom for travellers who prefer the road over flying.",
+      "At 950 kilometres, this is one of the longest domestic routes we operate — and almost nobody chooses it by accident. Travellers who book this transfer have usually already weighed it against a two-hour domestic flight and decided the road wins anyway: a family that doesn't want to repack for security twice, a group that wants to travel together in one vehicle, or someone continuing straight on to Makkah once they reach the west and would rather skip the airport entirely.",
     about:
-      "Our private Riyadh to Jeddah transfer covers the cross-country highway with comfortable vehicles and planned rest stops. While many fly this route, private road transfer suits families with luggage, groups, and those continuing to Makkah after arrival.",
+      "Our private Riyadh to Jeddah transfer covers the cross-country highway with comfortable vehicles and planned rest stops. While many fly this route, private road transfer suits families with luggage, groups, and those continuing to Makkah after arrival — and unlike a flight, the fixed price and the vehicle are yours alone for the whole nine hours, with no connecting shuttle needed at either end.",
     notes: [
-      "Comfortable vehicles for the 950 km journey",
-      "Planned rest stops along the highway",
-      "Onward connections to Makkah and Taif",
-      "Best suited to groups and families with luggage",
+      "Comfortable vehicles for the 950 km cross-country journey",
+      "Planned rest and fuel stops built into every booking",
+      "Onward connections to Makkah and Taif without a separate airport transfer",
+      "Best suited to groups and families with luggage who'd rather not fly",
     ],
     relatedCitySlugs: ["riyadh", "jeddah"],
     lastUpdated: "2026-08-05",
@@ -348,7 +390,14 @@ const baseRoutes: Route[] = [
         heading: "Riyadh to Jeddah: route overview and distance",
         paragraphs: [
           "The drive from Riyadh to Jeddah covers about 950 kilometres cross-country and takes roughly nine hours in free-flowing traffic — one of the longest domestic routes we cover. While most travellers fly this distance, a private road transfer suits families with a full vehicle-load of luggage, groups who want to travel together, and anyone continuing on to Makkah or Taif after arriving in the west.",
-          "There are no tolls anywhere on this route, and the fixed price agreed before you travel covers the entire nine-hour journey. Given the distance, we plan the trip with rest and fuel stops built in, and can split the drive across a full day rather than rushing it.",
+          "There are no tolls anywhere on this route, and the fixed price agreed before you travel covers the entire nine-hour journey. Given the distance, we plan the trip with rest and fuel stops built in, and can split the drive across a full day rather than rushing it — the exact pacing is worked out with you at booking, not fixed in advance.",
+        ],
+      },
+      {
+        heading: "Planning a journey of this length",
+        paragraphs: [
+          "Nine hours is a real commitment, so we treat the planning conversation as seriously as the drive itself: how many people, how much luggage, whether you'd prefer one long push with two or three short stops or a more relaxed day with a proper meal break, and what time you actually need to arrive in Jeddah. None of this changes the fixed price — it just changes how the day feels.",
+          "For pilgrims and tourists, the most common onward step is continuing straight to Makkah rather than stopping in Jeddah first — our <a href='/routes/jeddah-to-makkah'>Jeddah to Makkah route</a> covers that final 85 kilometres if you'd rather quote the whole itinerary in one booking. Travellers heading up into the hills afterward can also see our <a href='/routes/jeddah-to-taif'>Jeddah to Taif route</a> for the mountain leg.",
         ],
       },
       {
@@ -360,10 +409,10 @@ const baseRoutes: Route[] = [
       },
     ],
     faqs: [
+      { question: "Is it practical to travel from Riyadh to Jeddah by private car?", answer: "It depends what you value — a domestic flight is faster, but a private car means no repacking for security, one vehicle for the whole group and its luggage, and the option to stop or continue straight to Makkah without a separate airport leg." },
+      { question: "How many rest stops are recommended for this route?", answer: "Most travellers do well with two or three short stops across the nine hours; if you'd rather push through with minimal stopping or split the day differently, tell us when booking and we'll plan around it." },
+      { question: "Which vehicle is best for a long journey like this?", answer: "We generally recommend an SUV or van for the extra comfort and luggage space a journey of this length calls for, though a sedan is available for lighter loads." },
       { question: "How long does the Riyadh to Jeddah taxi take?", answer: "The drive covers about 950 kilometres and takes roughly nine hours in free-flowing traffic; we plan rest and fuel stops into the journey given the distance." },
-      { question: "Is it faster to fly between Riyadh and Jeddah?", answer: "For most travellers, yes — flying is quicker. A private car suits those who prefer door-to-door comfort, are travelling with a full vehicle-load of luggage, or want to combine the trip with stops along the way." },
-      { question: "Are rest stops included on this long journey?", answer: "Yes, given the near-nine-hour distance we plan fuel and rest stops as part of the transfer, at no extra cost since the fare is fixed." },
-      { question: "What vehicle is recommended for this route?", answer: "We generally recommend an SUV or van for the extra comfort and luggage space a journey of this length calls for, though a sedan is available for lighter loads." },
       { question: "Are there tolls on the Riyadh to Jeddah route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "Can I continue on to Makkah after reaching Jeddah?", answer: "Yes, many travellers continue on to Makkah or Taif after arriving in Jeddah — mention your onward plans when booking and we'll quote the full itinerary." },
       { question: "Can I choose an overnight departure for this route?", answer: "Yes, we can plan an overnight or early-morning departure to suit your schedule — let us know your preference when booking." },
@@ -379,14 +428,14 @@ const baseRoutes: Route[] = [
     distance: "1,000 km",
     duration: "9 hours 30 min",
     intro:
-      "The Riyadh to AlUla taxi is a long-distance private transfer to the Kingdom's flagship heritage destination.",
+      "Travellers booking this route are almost always going somewhere specific for its own sake, not passing through — AlUla's resorts, Hegra's UNESCO-listed tombs, and the restored Old Town draw a heritage-tourism crowd distinct from the pilgrim traffic on most of our other long routes. A private car for the near-ten-hour crossing suits travellers who want the desert landscape to be part of the trip, not just an obstacle between two airports.",
     about:
-      "Our private Riyadh to AlUla transfer is designed for travellers heading to Hegra and the AlUla resorts who prefer a private vehicle for the scenic desert journey. Comfortable SUVs and vans make the long drive relaxed, with flexible rest stops.",
+      "Our private Riyadh to AlUla transfer is designed for travellers heading to Hegra and the AlUla resorts who prefer a private vehicle for the scenic desert journey. Comfortable SUVs and vans make the long drive relaxed, with flexible rest stops — and because AlUla's own attractions are spread across a wide desert site, the same style of vehicle that gets you there comfortably is often what you'll want once you arrive too.",
     notes: [
-      "Comfortable SUVs and vans for desert touring",
-      "Flexible rest stops on the long route",
-      "Drop-off at AlUla resorts and heritage sites",
-      "Often combined with Madinah and Hail trips",
+      "Comfortable SUVs and vans for the desert crossing and AlUla touring alike",
+      "Flexible rest stops on the roughly ten-hour route",
+      "Drop-off at AlUla resorts, Old Town, and heritage-site accommodation",
+      "Often combined with Madinah or Hail as a multi-stop itinerary",
     ],
     relatedCitySlugs: ["riyadh", "alula"],
     lastUpdated: "2026-08-05",
@@ -399,6 +448,13 @@ const baseRoutes: Route[] = [
         ],
       },
       {
+        heading: "AlUla as a destination: what to plan for",
+        paragraphs: [
+          "Unlike our religious and business corridors, this route exists because of where it ends: AlUla's sandstone landscapes, the Hegra tombs, and the restored Old Town are the reason for the trip, not a stop along the way to somewhere else. Resorts and heritage-site accommodation in AlUla are spread across a genuinely large area, so tell us your specific hotel or resort when booking rather than just \"AlUla\" — drop-off points vary significantly across the site.",
+          "Families planning a multi-day stay often pair this with a stop in <a href='/taxi-service/alula'>AlUla itself</a> for local touring once they've arrived, and some extend the trip with a detour through Madinah — see our <a href='/routes/madinah-to-alula'>Madinah to AlUla route</a> if a pilgrimage stop is part of your itinerary too.",
+        ],
+      },
+      {
         heading: "Vehicle options and desert-touring advice",
         paragraphs: [
           "For a journey of this length we recommend a comfortable SUV or van, both for the extra space needed on the long drive and for AlUla's own desert-touring roads once you arrive. Families and groups should mention their exact passenger and luggage count when booking.",
@@ -407,13 +463,13 @@ const baseRoutes: Route[] = [
       },
     ],
     faqs: [
+      { question: "Is AlUla worth the ten-hour drive from Riyadh, or should I fly?", answer: "That depends on what you value — flying is faster, but a private car lets you treat the desert crossing as part of the trip, carry as much luggage as you need, and arrive already set up with a vehicle for AlUla's own spread-out attractions." },
       { question: "How long does the Riyadh to AlUla taxi take?", answer: "The drive covers roughly 1,000 kilometres and takes about nine and a half hours in free-flowing traffic, with rest and fuel stops planned into the journey." },
-      { question: "Is it faster to fly to AlUla from Riyadh?", answer: "For most travellers, yes — flying is quicker. A private car suits those who want the scenic desert drive, are carrying significant luggage, or wish to combine the trip with stops along the way." },
       { question: "What vehicle is best for this long desert route?", answer: "We recommend a comfortable SUV or van for the extra space and comfort a journey of this length calls for, which also suits AlUla's own desert-touring roads on arrival." },
+      { question: "Do I need to specify which AlUla resort or hotel for drop-off?", answer: "Yes — accommodation in AlUla is spread across a large area, so tell us your exact resort, Old Town stay, or heritage-site hotel when booking rather than just the general destination." },
+      { question: "Can I stop in Hail or Madinah along the way?", answer: "Yes, Hail sits roughly on this route and Madinah is a common detour for travellers combining pilgrimage with heritage sightseeing — mention this when booking and we'll plan the itinerary." },
       { question: "Are there tolls on the Riyadh to AlUla route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Can I stop in Hail along the way?", answer: "Yes, Hail sits roughly on this route and many travellers combine it with an AlUla trip — mention this when booking and we'll plan the itinerary." },
       { question: "Are rest stops included on this journey?", answer: "Yes, given the near-ten-hour distance we plan fuel and rest stops as part of the transfer, at no extra cost since the fare is fixed." },
-      { question: "Can I book an overnight or early-morning departure?", answer: "Yes, we can plan the departure time to suit your schedule for a journey of this length — let us know your preference when booking." },
       { question: "Can I book a return AlUla to Riyadh transfer?", answer: "Yes, we cover both directions — contact us with your travel dates and we can arrange the return leg." },
     ],
     keywords: ["riyadh to alula taxi", "riyadh alula private transfer", "riyadh to hegra taxi", "riyadh alula long distance car", "riyadh alula desert road trip taxi"],
@@ -426,14 +482,14 @@ const baseRoutes: Route[] = [
     distance: "330 km",
     duration: "3 hours 15 min",
     intro:
-      "The Madinah to AlUla taxi is a popular private transfer linking the Prophet's Mosque with the Hegra heritage site.",
+      "At just over three hours, AlUla is close enough to Madinah that many pilgrims add it to their trip almost as an afterthought once they realise the distance — a heritage detour that fits inside the same visit rather than requiring a separate journey home and back. It's a different kind of traveller from the Riyadh-to-AlUla crowd: someone already in the Kingdom for the Prophet's Mosque who's decided to extend the trip by a day or two, not someone who planned a dedicated heritage holiday from the start.",
     about:
-      "Many visitors combine Madinah with AlUla. Our private Madinah to AlUla transfer offers a comfortable, direct ride from your Madinah hotel or the airport to AlUla's resorts and heritage sites, with scenic desert views along the way.",
+      "Many visitors combine Madinah with AlUla. Our private Madinah to AlUla transfer offers a comfortable, direct ride from your Madinah hotel or the airport to AlUla's resorts and heritage sites, with scenic desert views along the way — short enough to book once you've already decided to extend your stay, rather than something that needs planning weeks in advance.",
     notes: [
-      "Pickup from Madinah airport or hotels",
-      "Drop-off at AlUla resorts and Old Town",
-      "Scenic desert route in comfortable vehicles",
-      "Reverse AlUla to Madinah transfers available",
+      "Pickup from your Madinah hotel once your pilgrimage stay is complete",
+      "Drop-off at AlUla resorts, Old Town, or heritage-site accommodation",
+      "Scenic desert route in comfortable vehicles, about three hours",
+      "Reverse AlUla to Madinah transfers available for the return leg",
     ],
     relatedCitySlugs: ["madinah", "alula"],
     lastUpdated: "2026-08-05",
@@ -441,8 +497,15 @@ const baseRoutes: Route[] = [
       {
         heading: "Madinah to AlUla: route overview and distance",
         paragraphs: [
-          "The drive from Madinah to AlUla covers about 330 kilometres and takes roughly three hours fifteen minutes through open desert scenery. Many visitors combine a pilgrimage stay in Madinah with a stop at AlUla's Hegra and Old Town, making this one of the more popular heritage-tourism routes out of the Prophet's Mosque.",
+          "The drive from Madinah to AlUla covers about 330 kilometres and takes roughly three hours fifteen minutes through open desert scenery. Many visitors combine a pilgrimage stay in Madinah with a stop at AlUla's Hegra and Old Town, making this one of the more popular heritage-tourism routes out of the Prophet's Mosque — short enough to add to an existing trip without a major detour.",
           "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. The desert landscape changes noticeably as you approach AlUla's dramatic sandstone formations, making the drive itself part of the experience.",
+        ],
+      },
+      {
+        heading: "Extending a Madinah trip into a heritage stop",
+        paragraphs: [
+          "Because this route is usually decided partway through a pilgrimage visit rather than planned from home, we keep booking simple: once you know your Madinah hotel and roughly when you'd like to leave, we can confirm the AlUla leg without needing your full itinerary settled weeks in advance. Multi-day AlUla stays are common at this distance, so let us know if you'd also like the return leg booked in the same conversation.",
+          "For travellers combining pilgrimage and heritage sightseeing more broadly, our <a href='/ziyarat-taxi-service'>Ziyarat taxi service</a> covers local historic and religious sites around Madinah itself before you set out, and our <a href='/taxi-service/alula'>AlUla taxi service</a> handles local touring once you've arrived.",
         ],
       },
       {
@@ -454,13 +517,13 @@ const baseRoutes: Route[] = [
       },
     ],
     faqs: [
+      { question: "Is this a good route to combine pilgrimage with heritage sightseeing?", answer: "Yes — at just over three hours, many visitors add AlUla to an existing Madinah pilgrimage stay rather than planning it as a separate trip." },
+      { question: "Can I book this without planning weeks in advance?", answer: "Yes, this route is often decided partway through a Madinah stay — once you know your hotel and rough departure time, we can confirm the transfer." },
       { question: "How long does the Madinah to AlUla taxi take?", answer: "The drive covers about 330 kilometres and takes roughly three hours fifteen minutes through open desert scenery." },
-      { question: "Is this a good route to combine pilgrimage with heritage sightseeing?", answer: "Yes, many visitors combine a Madinah pilgrimage stay with an AlUla heritage trip, given the manageable drive time between the two." },
-      { question: "Are there tolls on the Madinah to AlUla route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "What vehicle suits touring AlUla after arrival?", answer: "An SUV is a good choice if you're planning to tour AlUla's desert sites after arrival, though a sedan suits most travellers for the drive itself." },
       { question: "Is this a direct hotel-to-resort transfer?", answer: "Yes, your driver collects you from your Madinah hotel or the airport and delivers you directly to your AlUla resort or accommodation." },
+      { question: "Are there tolls on the Madinah to AlUla route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "Is the price fixed for the whole journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete 330 km journey." },
-      { question: "Can I book this transfer for early-morning departure?", answer: "Yes, pickup is available 24/7, including early-morning departures to make the most of your AlUla day." },
       { question: "Can I book a return AlUla to Madinah transfer?", answer: "Yes, see our AlUla to Madinah route page for the reverse leg, or ask us to arrange both directions together." },
     ],
     keywords: ["madinah to alula taxi", "madinah alula private transfer", "madinah to hegra taxi", "madinah alula desert road taxi", "madinah alula private car"],
@@ -473,14 +536,14 @@ const baseRoutes: Route[] = [
     distance: "170 km",
     duration: "2 hours",
     intro:
-      "The Jeddah to Taif taxi is a scenic private transfer up to the cool mountain city above Makkah.",
+      "This is the one route in our network where the drive itself is part of the point — the Al Hada road climbs roughly 1,700 metres out of coastal Jeddah's heat into Taif's noticeably cooler highland air, switchback by switchback, and families escaping the Jeddah summer treat that ascent as the start of the holiday rather than a stretch of highway to get through.",
     about:
-      "Our private Jeddah to Taif transfer climbs the Al Hada mountain road to the rose city of Taif. It is a favourite summer escape for families and pilgrims, with comfortable vehicles for the winding ascent and cable-car add-on stops.",
+      "Our private Jeddah to Taif transfer climbs the Al Hada mountain road to the rose city of Taif. It is a favourite summer escape for families and pilgrims, with comfortable vehicles for the winding ascent and cable-car add-on stops — a route where the temperature drop as you climb is as much a reason to travel as Taif itself.",
     notes: [
-      "Scenic Al Hada mountain road",
+      "Scenic Al Hada mountain road, climbing to Taif's cooler elevation",
       "Pickup from Jeddah airport or hotels",
-      "Cable-car and Al Shafa stop options",
-      "Comfortable vehicles for the mountain climb",
+      "Cable-car and Al Shafa stop options for families",
+      "Comfortable vehicles paced for the winding mountain climb",
     ],
     relatedCitySlugs: ["jeddah", "taif"],
     lastUpdated: "2026-08-05",
@@ -488,26 +551,33 @@ const baseRoutes: Route[] = [
       {
         heading: "Jeddah to Taif: route overview and distance",
         paragraphs: [
-          "The drive from Jeddah to Taif covers about 170 kilometres and takes roughly two hours, most of it spent climbing the winding Al Hada mountain road up to Taif's cooler highland elevation. It's a popular summer escape route, since Taif sits noticeably cooler than coastal Jeddah for much of the year.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain ascent. If you're prone to motion sickness on winding roads, mention it when booking so your driver can plan a short stop partway up.",
+          "The drive from Jeddah to Taif covers about 170 kilometres and takes roughly two hours, most of it spent climbing the winding Al Hada mountain road up to Taif's cooler highland elevation. It's a popular summer escape route, since Taif sits noticeably cooler than coastal Jeddah for much of the year — a genuinely different climate at the top of the ascent, not just a change of scenery.",
+          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain ascent. If you're prone to motion sickness on winding roads, mention it when booking so your driver can plan a short stop partway up; this matters more on this route than almost any other we operate, given how sustained the climb is.",
+        ],
+      },
+      {
+        heading: "Travelling with families and children on the mountain road",
+        paragraphs: [
+          "The Al Hada road's steady sequence of curves is easy for an experienced driver but can be tiring for young children on a long car journey, so we're happy to plan the ascent around your kids' needs — a stop partway up, a slower pace, or simply timing departure for a cooler part of the day. Families heading up specifically for the cable car or the Al Shafa viewpoint should mention it at booking so the stop is built into the route rather than requested on the road.",
+          "Taif's hotels and resorts sit at a range of elevations across the highland area, so tell us your specific accommodation when booking — drop-off points vary more here than on a flatter city route. Once you've arrived, our <a href='/taxi-service/taif'>Taif taxi service</a> covers local sightseeing for the rest of your stay.",
         ],
       },
       {
         heading: "Vehicle options and mountain-road travel advice",
         paragraphs: [
           "A standard sedan handles the Al Hada road comfortably for most travellers, while families wanting to add stops at the cable car or Al Shafa often prefer an SUV for the extra space. Mention any planned stops when booking so your driver can build them into the route.",
-          "The mountain road involves a steady series of curves as it climbs, so drivers experienced with the route pace the ascent comfortably rather than rushing it.",
+          "The best time to travel this route for comfort is outside the height of the afternoon, when the coastal heat in Jeddah is at its most intense before the climb begins — drivers experienced with the road pace the ascent comfortably rather than rushing it either way.",
         ],
       },
     ],
     faqs: [
+      { question: "How much cooler is Taif than Jeddah?", answer: "Taif's highland elevation makes it noticeably cooler than coastal Jeddah for much of the year, which is why it's a popular summer escape route." },
+      { question: "Is the mountain road manageable for young children?", answer: "Yes, though the steady curves on the climb can be tiring for kids on a long drive — mention this when booking and your driver can plan a slower pace or a stop partway up." },
       { question: "How long does the Jeddah to Taif taxi take?", answer: "The drive covers about 170 kilometres and takes roughly two hours, including the climb up the Al Hada mountain road." },
       { question: "Is the mountain road difficult for those prone to motion sickness?", answer: "The road involves a steady climb with curves, so if you're prone to motion sickness, mention it when booking and your driver can plan a short stop along the way." },
       { question: "Can I add a stop at the Taif Cable Car or Al Shafa?", answer: "Yes, mention any planned stops when booking and your driver will build them into the route." },
+      { question: "Do I need to specify which Taif hotel or resort for drop-off?", answer: "Yes — accommodation in Taif is spread across a range of elevations in the highland area, so tell us your specific hotel or resort when booking." },
       { question: "Are there tolls on the Jeddah to Taif route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Is this a popular summer route?", answer: "Yes, Taif's cooler highland climate makes it a popular summer escape from coastal Jeddah, and demand for this route rises accordingly." },
-      { question: "What vehicle suits a family sightseeing trip to Taif?", answer: "An SUV is a good choice for families wanting extra space for stops along the way, though a sedan is comfortable for a direct transfer." },
-      { question: "Is the price fixed for the whole journey including the mountain climb?", answer: "Yes, we agree a fixed price before you travel that covers the complete journey, including the ascent up Al Hada." },
       { question: "Can I book a return Taif to Jeddah transfer?", answer: "Yes, see our Taif to Jeddah route page for the reverse leg, or ask us to arrange both directions together." },
     ],
     keywords: ["jeddah to taif taxi", "jeddah taif private transfer", "al hada road taxi", "jeddah to taif mountain taxi", "jeddah taif private car"],
