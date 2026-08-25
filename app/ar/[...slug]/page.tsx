@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Clock, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { BlogContent } from "@/components/blog/BlogContent";
 import { VehicleOptions } from "@/components/sections/VehicleOptions";
@@ -23,7 +24,7 @@ import { cityAirportFactsAr } from "@/lib/city-hub-facts";
 const heroFor = (page: ArPage): string => {
   if (page.type === "airport" || page.type === "hotel-transfer") return pageHeroes.airport;
   if (page.type === "attraction") return page.enPath.startsWith("/madinah/") ? pageHeroes.madinah : pageHeroes.makkah;
-  if (page.type === "route" || page.type === "blog") return pageHeroes.makkah;
+  if (page.type === "route" || page.type === "blog" || page.type === "distance") return pageHeroes.makkah;
   if (page.type === "city" || page.type === "city-hub") return pageHeroes.city;
   return pageHeroes.home;
 };
@@ -99,6 +100,7 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     blog: "Taxi Service",
     attraction: "Private Transfer",
     "city-hub": "Airport Transfer",
+    distance: "Distance Information",
   })[type];
 
 export default async function ArabicPage({
@@ -169,7 +171,7 @@ export default async function ArabicPage({
         ctaLabel={dict.cta.getAQuote}
         contactLabel={dict.cta.contactUs}
         contactHref="/ar/اتصل-بنا"
-        showCtas={!isBookable}
+        showCtas={!isBookable && page.type !== "distance"}
       />
 
       <section className="bg-white py-16 sm:py-20">
@@ -190,7 +192,100 @@ export default async function ArabicPage({
               </div>
             )}
 
-            {page.type === "city-hub" && hubCity && hubAirport ? (
+            {page.type === "distance" ? (
+              <div className="mt-6">
+                {page.quickAnswer && (
+                  <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
+                    <h2 className="text-sm font-bold uppercase tracking-wide text-navy">الإجابة السريعة</h2>
+                    <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="mt-0.5 size-5 shrink-0 text-gold" />
+                        <div>
+                          <p className="text-sm font-semibold text-navy">مسافة القيادة</p>
+                          <p className="text-sm text-muted-foreground">{page.quickAnswer.drivingDistance}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Clock className="mt-0.5 size-5 shrink-0 text-gold" />
+                        <div>
+                          <p className="text-sm font-semibold text-navy">مدة القيادة</p>
+                          <p className="text-sm text-muted-foreground">{page.quickAnswer.drivingTime}</p>
+                        </div>
+                      </div>
+                      {page.quickAnswer.straightLineDistance && (
+                        <div className="flex items-start gap-2 sm:col-span-2">
+                          <MapPin className="mt-0.5 size-5 shrink-0 text-muted-foreground" />
+                          <div>
+                            <p className="text-sm font-semibold text-navy">المسافة المباشرة (خط مستقيم)</p>
+                            <p className="text-sm text-muted-foreground">{page.quickAnswer.straightLineDistance}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground">{page.quickAnswer.note}</p>
+                  </div>
+                )}
+
+                <div className="mt-8 space-y-8">
+                  {page.sections.map((s) => (
+                    <div key={s.heading}>
+                      <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
+                      <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                        {s.paragraphs.map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {page.transportOptions && page.transportOptions.length > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-xl font-bold text-navy sm:text-2xl">طرق السفر</h2>
+                    <div className="mt-4 space-y-4">
+                      {page.transportOptions.map((t) => (
+                        <div key={t.mode} className="rounded-xl border border-border bg-white p-5 shadow-sm">
+                          <h3 className="text-lg font-semibold text-navy">{t.mode}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">
+                            <span className="font-medium text-navy">المدة: </span>
+                            {t.duration}
+                          </p>
+                          <p className="mt-2 text-sm text-muted-foreground">
+                            <span className="font-medium text-navy">الأنسب لـ: </span>
+                            {t.suitability}
+                          </p>
+                          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                            <p className="text-sm text-muted-foreground">
+                              <span className="font-medium text-navy">المزايا: </span>
+                              {t.advantages}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              <span className="font-medium text-navy">القيود: </span>
+                              {t.limitations}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {page.ctaRoutePath && page.ctaLabel && (
+                  <div className="mt-10 rounded-xl border border-gold/30 bg-gold/5 p-6">
+                    <p className="text-sm text-navy">
+                      هل تخطط لهذه الرحلة بسيارة خاصة؟ اطّلع على{" "}
+                      <Link
+                        href={page.ctaRoutePath}
+                        className="font-semibold text-navy underline underline-offset-2 hover:text-gold"
+                      >
+                        {page.ctaLabel}
+                      </Link>{" "}
+                      للحصول على سعر ثابت وخيارات المركبات والحجز.
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : page.type === "city-hub" && hubCity && hubAirport ? (
               <div className="mt-6 space-y-8">
                 <div>
                   <h2 className="text-xl font-bold text-navy sm:text-2xl">
@@ -316,26 +411,80 @@ export default async function ArabicPage({
         </div>
       </section>
 
-      <VehicleOptions
-        heading="اختر مركبتك"
-        subheading="من السيارات الاقتصادية إلى الحافلات الصغيرة الجماعية — اختر ما يناسب مجموعتك وأمتعتك."
-        background="muted"
-      />
-      <HowItWorks
-        heading={dict.howItWorks.heading}
-        subheading={dict.howItWorks.subheading}
-        steps={dict.howItWorks.steps}
-        stepLabel={(n) => dict.howItWorks.step.replace("{n}", String(n))}
-        background="white"
-      />
+      {page.type !== "distance" && (
+        <VehicleOptions
+          heading="اختر مركبتك"
+          subheading="من السيارات الاقتصادية إلى الحافلات الصغيرة الجماعية — اختر ما يناسب مجموعتك وأمتعتك."
+          background="muted"
+        />
+      )}
+      {page.type !== "distance" && (
+        <HowItWorks
+          heading={dict.howItWorks.heading}
+          subheading={dict.howItWorks.subheading}
+          steps={dict.howItWorks.steps}
+          stepLabel={(n) => dict.howItWorks.step.replace("{n}", String(n))}
+          background="white"
+        />
+      )}
       <FAQSection faqs={faqs} heading={dict.faq.heading} background="muted" />
-      <CTASection
-        title="هل أنت مستعد لحجز رحلتك؟"
-        subtitle="أرسل تفاصيل رحلتك الآن واحصل على عرض سعر ثابت وسريع عبر واتساب."
-        whatsappLabel={dict.cta.getAQuote}
-        contactLabel={dict.cta.contactUs}
-        contactHref="/ar/اتصل-بنا"
-      />
+
+      {page.type === "distance" && page.relatedLinks && page.relatedLinks.length > 0 && (
+        <section className="bg-white py-12">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-lg font-bold text-navy">صفحات ذات صلة</h2>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {page.relatedLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy transition-colors hover:border-gold"
+                >
+                  {l.label}
+                  <ArrowRight className="size-3.5 text-gold rtl:rotate-180" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {page.type === "distance" && page.sources && page.sources.length > 0 && (
+        <section className="bg-muted py-10">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-sm font-bold uppercase tracking-wide text-navy">المصادر</h2>
+            <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">
+              {page.sources.map((s) => (
+                <li key={s.url} className="flex items-start gap-1.5">
+                  <ExternalLink className="mt-0.5 size-3 shrink-0" />
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="underline decoration-dotted hover:text-navy"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs text-muted-foreground">
+              المسافات وأوقات السفر تقريبية وقد تختلف حسب نقطة الانطلاق الدقيقة، والطريق المُتّبع، وحركة السير أو
+              الظروف الموسمية.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {page.type !== "distance" && (
+        <CTASection
+          title="هل أنت مستعد لحجز رحلتك؟"
+          subtitle="أرسل تفاصيل رحلتك الآن واحصل على عرض سعر ثابت وسريع عبر واتساب."
+          whatsappLabel={dict.cta.getAQuote}
+          contactLabel={dict.cta.contactUs}
+          contactHref="/ar/اتصل-بنا"
+        />
+      )}
     </>
   );
 }

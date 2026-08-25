@@ -9,6 +9,7 @@ import { distancePages, getDistancePage } from "@/data/distance-pages";
 import { routeHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { getArPathForEnPath } from "@/data/translations/ar";
 
 /**
  * Informational distance/travel-time pages — /distance/{slug}. Deliberately
@@ -32,10 +33,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = getDistancePage(slug);
   if (!page) return {};
+  const enPath = `/distance/${page.slug}`;
+  const arPath = getArPathForEnPath(enPath);
   return buildMetadata({
     title: page.metaTitle,
     description: page.metaDescription,
-    path: `/distance/${page.slug}`,
+    path: enPath,
+    ...(arPath ? { alternateLanguages: { en: enPath, ar: arPath } } : {}),
   });
 }
 
