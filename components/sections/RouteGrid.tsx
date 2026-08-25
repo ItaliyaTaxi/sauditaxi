@@ -48,8 +48,15 @@ export function RouteGrid({
               className="group rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
             >
               <div className="flex items-center gap-2 text-base font-semibold text-navy">
+                {/* The arrow icon separates the two names visually via flex
+                    gap only — that gap isn't a real character, so without
+                    this the rendered text content (screen readers, copy-paste,
+                    crawlers reading raw text) reads as "FromTo" concatenated
+                    with no space. The sr-only text fixes that without
+                    changing anything visible. */}
                 <span>{route.from}</span>
-                <ArrowRight className="size-4 text-gold" />
+                <ArrowRight className="size-4 text-gold" aria-hidden="true" />
+                <span className="sr-only"> to </span>
                 <span>{route.to}</span>
               </div>
               <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">

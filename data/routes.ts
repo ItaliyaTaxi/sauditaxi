@@ -590,12 +590,12 @@ const baseRoutes: Route[] = [
     distance: "55 km",
     duration: "1 hour (plus border)",
     intro:
-      "The Khobar to Bahrain taxi crosses the King Fahd Causeway for a private door-to-door transfer between Saudi Arabia and Manama.",
+      "Khobar sits closer to the King Fahd Causeway than any other Eastern Province city, which makes this the route Bahrain-bound weekend travellers and Khobar-based business commuters use most — a short domestic-feeling hop that happens to end in another country, popular enough that many locals treat a Manama evening as a routine outing rather than a trip.",
     about:
-      "Our private Khobar to Bahrain transfer takes you across the King Fahd Causeway directly to your Manama hotel or destination. We advise on documentation and border procedures, and pricing reflects the causeway toll and crossing time.",
+      "Our private Khobar to Bahrain transfer takes you across the King Fahd Causeway directly to your Manama hotel or destination. We advise on documentation and border procedures, and pricing reflects the causeway toll and crossing time — a mix of Khobar business travellers with a Manama meeting and families or friend groups making the well-worn weekend trip across.",
     notes: [
-      "Crosses the King Fahd Causeway",
-      "Allow extra time for border formalities",
+      "Shortest Causeway approach of any Eastern Province city",
+      "Allow extra time for border formalities at Passport Island",
       "Valid travel documents required",
       "Door-to-door to Manama or anywhere in Bahrain",
     ],
@@ -603,27 +603,27 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Khobar to Bahrain: route overview and distance",
+        heading: "The King Fahd Causeway journey from Khobar",
         paragraphs: [
           "The drive from Khobar to the King Fahd Causeway covers about 55 kilometres and takes around an hour before border formalities, since Khobar sits closer to the Causeway than any other major Eastern Province city. Immigration and customs for both countries are handled at the halfway point on Passport Island, so allow extra time beyond the driving time itself.",
           "There's a causeway toll and cross-border vehicles need valid insurance and documentation, both of which we handle as part of the transfer. For full detail on passports, visas, and customs allowances, see our <a href='/border-transfers/bahrain-causeway'>Bahrain Causeway border transfer guide</a>.",
         ],
       },
       {
-        heading: "Vehicle options and crossing-time advice",
+        heading: "Arriving in Manama, and border timing for business or weekend trips",
         paragraphs: [
-          "A standard sedan suits most travellers making this short hop, while families or groups with more luggage often prefer an SUV or van. Weekend evenings and public holidays see the longest queues at Passport Island, so weekday mornings are generally the smoothest time to cross.",
-          "Your driver takes you door-to-door from anywhere in Khobar directly into Manama or elsewhere in Bahrain, with no need to change vehicles at the border.",
+          "Because this route is used so heavily for short, planned trips — a Khobar business traveller with a Manama meeting, or a weekend visit to Bahrain's restaurants and waterfront — border timing matters more here than the driving distance itself. Weekend evenings and public holidays see the longest queues at Passport Island, so a Thursday-evening departure often takes noticeably longer than the same trip on a weekday morning.",
+          "Your driver takes you door-to-door from anywhere in Khobar directly into Manama or elsewhere in Bahrain, with no need to change vehicles at the border — useful for business travellers going straight to an office or hotel, and for families who'd rather not manage luggage through two separate transfers.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Khobar to Bahrain taxi take?", answer: "The drive to the Causeway is about 55 kilometres, roughly an hour before border formalities; total crossing time varies with immigration queues at Passport Island." },
-      { question: "Do you drive all the way into Bahrain?", answer: "Yes, the transfer is door-to-door — we collect you in Khobar and drive across the Causeway to Manama or anywhere in Bahrain." },
+      { question: "How long does the border crossing usually add to the trip?", answer: "It varies with immigration queues at Passport Island — weekday mornings are typically quickest, while weekend evenings and public holidays can add significantly more time than the roughly one-hour drive itself." },
+      { question: "Can the transfer go directly to Manama?", answer: "Yes, the transfer is door-to-door — we collect you in Khobar and drive across the Causeway directly to Manama or anywhere else in Bahrain." },
+      { question: "What happens if border queues are longer than expected?", answer: "Your driver waits with you through the crossing; the fixed price agreed before you travel doesn't change regardless of how long immigration and customs take." },
       { question: "What documents do I need for this crossing?", answer: "A valid passport and, for most non-GCC travellers, a Bahrain visa. See our Bahrain Causeway border guide for full current requirements before you travel." },
       { question: "Is there a toll on the Causeway?", answer: "Yes, there's a causeway toll and cross-border vehicles need valid insurance and documentation, both of which we handle as part of the transfer." },
-      { question: "When is the crossing least busy?", answer: "Weekday mornings are generally the quietest; weekend evenings and public holidays see the longest queues at Passport Island." },
-      { question: "Is the price fixed regardless of border queue times?", answer: "Yes, we agree a fixed price before you travel, so immigration queues at Passport Island don't change your fare." },
+      { question: "Is this route commonly used for business day trips?", answer: "Yes — Khobar's proximity to the Causeway makes a same-day Manama meeting genuinely practical, which is part of why this is one of our more frequently booked border routes." },
       { question: "What vehicle suits a family crossing to Bahrain?", answer: "An SUV or van suits families or groups with more luggage; a standard sedan is comfortable for solo or paired travellers." },
       { question: "Can I book a return Bahrain to Khobar transfer?", answer: "Yes, we can arrange your return pickup from Bahrain back into Khobar — let us know your return date when booking." },
     ],
@@ -637,39 +637,39 @@ const baseRoutes: Route[] = [
     distance: "70 km",
     duration: "1 hour 15 min (plus border)",
     intro:
-      "The Dammam to Bahrain taxi is a private cross-border transfer over the King Fahd Causeway to Manama.",
+      "Unlike the short Khobar-to-Causeway hop, this route usually starts further back — at King Fahd International Airport, a Dammam hotel, or a corporate office — which means the border crossing is only the middle part of a longer journey rather than the whole trip. Corporate travellers connecting through DMM to a Manama meeting, and Dammam families making the causeway trip, both start further from the border than a Khobar-based traveller would.",
     about:
-      "Our private Dammam to Bahrain transfer collects you from King Fahd Airport, your hotel, or office and drives directly across the causeway to Bahrain. We guide you through the border process and offer comfortable vehicles for families and business travellers.",
+      "Our private Dammam to Bahrain transfer collects you from King Fahd Airport, your hotel, or office and drives directly across the causeway to Bahrain. We guide you through the border process and offer comfortable vehicles for families and business travellers, timing airport pickups to your actual flight rather than a fixed schedule.",
     notes: [
       "Pickup from Dammam airport, hotel, or office",
-      "Crosses the King Fahd Causeway to Manama",
+      "Longer approach to the Causeway than from Khobar, about 70 km",
       "Valid passports and visas required",
-      "Allow extra time for border crossing",
+      "Allow extra time for border crossing at Passport Island",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Dammam to Bahrain: route overview and distance",
+        heading: "Dammam city and King Fahd Airport departures",
         paragraphs: [
-          "The drive from Dammam to the King Fahd Causeway covers about 70 kilometres and takes around an hour fifteen minutes before border formalities. Many travellers begin this trip from King Fahd International Airport, going straight from arrivals to the Causeway without a stop in the city.",
+          "The drive from Dammam to the King Fahd Causeway covers about 70 kilometres and takes around an hour fifteen minutes before border formalities — noticeably further than the Khobar approach, since Dammam and its airport sit further from the border. Many travellers begin this trip from King Fahd International Airport, going straight from arrivals to the Causeway without a stop in the city, which is where a tracked, flight-timed pickup matters most.",
           "There's a causeway toll and cross-border vehicles need valid insurance and documentation, which we handle as part of the transfer. For full detail on passports, visas, and customs, see our <a href='/border-transfers/bahrain-causeway'>Bahrain Causeway border transfer guide</a>.",
         ],
       },
       {
-        heading: "Vehicle options and crossing-time advice",
+        heading: "Corporate travel and the airport-to-Bahrain journey",
         paragraphs: [
-          "A standard sedan suits most travellers, while business travellers and families often prefer a comfort sedan or SUV for the combined airport-to-Bahrain journey. Weekend evenings and public holidays see the longest queues at Passport Island, so weekday mornings are generally the smoothest time to cross.",
-          "Your driver collects you from Dammam airport, your hotel, or office and takes you door-to-door into Bahrain, with no vehicle change needed at the border.",
+          "A meaningful share of this route's bookings are corporate travellers landing at King Fahd Airport and continuing straight on to Manama for a same-day or overnight meeting — for that pattern, the value is in a single tracked transfer rather than an airport taxi followed by a separate Causeway booking. For a shorter, Khobar-based version of this same crossing, see our <a href='/routes/khobar-to-bahrain'>Khobar to Bahrain route</a>.",
+          "Weekend evenings and public holidays see the longest queues at Passport Island, so weekday mornings are generally the smoothest time to cross regardless of whether you're starting from the airport, a hotel, or an office.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Dammam to Bahrain taxi take?", answer: "The drive to the Causeway is about 70 kilometres, roughly an hour fifteen minutes before border formalities; total crossing time varies with immigration queues." },
-      { question: "Can I book this transfer directly from King Fahd Airport?", answer: "Yes, we regularly collect passengers straight from arrivals at King Fahd International Airport for a direct transfer to the Causeway." },
+      { question: "Can I book this transfer directly from King Fahd Airport?", answer: "Yes, we regularly collect passengers straight from arrivals at King Fahd International Airport for a direct transfer to the Causeway, with pickup timed to your actual flight." },
+      { question: "Is Dammam further from the Causeway than Khobar?", answer: "Yes — the Dammam approach is about 70 km compared to roughly 55 km from Khobar, so allow slightly more driving time before border formalities begin." },
+      { question: "What happens if my flight into King Fahd Airport is delayed?", answer: "We track your flight and adjust pickup automatically, with free waiting time included, so a delayed landing doesn't cost you the transfer." },
       { question: "What documents do I need for this crossing?", answer: "A valid passport and, for most non-GCC travellers, a Bahrain visa. See our Bahrain Causeway border guide for full current requirements before you travel." },
       { question: "Is there a toll on the Causeway?", answer: "Yes, there's a causeway toll and cross-border vehicles need valid insurance and documentation, both of which we handle as part of the transfer." },
-      { question: "When is the crossing least busy?", answer: "Weekday mornings are generally the quietest; weekend evenings and public holidays see the longest queues at Passport Island." },
       { question: "Is the price fixed regardless of border queue times?", answer: "Yes, we agree a fixed price before you travel, so immigration queues don't change your fare." },
       { question: "What vehicle suits a business trip to Bahrain?", answer: "A comfort sedan suits most business travellers; families or groups with more luggage often prefer an SUV." },
       { question: "Can I book a return Bahrain to Dammam transfer?", answer: "Yes, we can arrange your return pickup from Bahrain back into Dammam — let us know your return date when booking." },
@@ -684,41 +684,48 @@ const baseRoutes: Route[] = [
     distance: "640 km",
     duration: "6 hours (to Salwa border)",
     intro:
-      "The Riyadh to Qatar border taxi is a long-distance private transfer to the Salwa crossing for onward travel into Qatar.",
+      "This page is specifically for travellers who need a private car to the Salwa border crossing itself — not a taxi that continues on into Qatar, since Salwa is a land border with its own separate immigration, customs, and vehicle checks on each side, and driving through generally means arranging a Qatar-side vehicle for the onward leg into Doha.",
     about:
-      "Our private Riyadh to Qatar border transfer drives you across the desert to the Salwa border crossing, the main land gateway between Saudi Arabia and Qatar. Comfortable vehicles and planned stops make the long journey manageable for families and business travellers.",
+      "Our private Riyadh to Qatar border transfer drives you across the desert to the Salwa border crossing, the single land gateway between Saudi Arabia and Qatar (Abu Samra on the Qatari side). Comfortable vehicles and planned stops make the long journey manageable for families and business travellers, and we're upfront that the service ends at the crossing — onward transport into Qatar is a separate arrangement.",
     notes: [
-      "Drop-off at the Salwa border crossing",
-      "Valid travel documents required for the border",
-      "Comfortable vehicles for the 640 km drive",
-      "Onward Qatar transport arranged separately",
+      "Drop-off at the Salwa crossing (Abu Samra on the Qatari side)",
+      "The crossing operates 24 hours a day, seven days a week",
+      "Valid travel documents required, including vehicle documentation for the border",
+      "Onward Qatar transport arranged separately — this transfer ends at the crossing",
     ],
     relatedCitySlugs: ["riyadh"],
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Riyadh to the Qatar border: route overview and distance",
+        heading: "A border-only transfer, not a Riyadh-to-Doha service",
         paragraphs: [
-          "The drive from Riyadh to the Salwa border crossing covers about 640 kilometres across open desert and takes roughly six hours in free-flowing traffic. Salwa (Abu Samra on the Qatari side) is the single land gateway between Saudi Arabia and Qatar, so this is the only overland route for travellers heading south by road.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey. For full detail on passports, visas, and customs at the crossing, see our <a href='/border-transfers/qatar-border'>Qatar border transfer guide</a>.",
+          "It's worth being precise about what this route covers: this is a private transfer from Riyadh to the Salwa crossing itself, not a through-service into Doha. Land border crossings between Saudi Arabia and Qatar involve separate immigration and vehicle checks on each side, so most private transfer operators — including us — bring you to the crossing and stop there, with a Qatar-side vehicle needed for the onward journey. If you need help arranging that connection, tell us when booking and we'll advise on the smoothest option.",
+          "The drive from Riyadh to Salwa covers about 640 kilometres across open desert and takes roughly six hours in free-flowing traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the full journey to the crossing.",
+        ],
+      },
+      {
+        heading: "What to expect at the Salwa crossing",
+        paragraphs: [
+          "Salwa is Saudi Arabia's only land border with Qatar, and it operates 24 hours a day, seven days a week, so there's no fixed opening-hours constraint on when you travel. Crossing on foot or by vehicle typically involves biometric checks (fingerprints, an eye scan, and a photo) at the Saudi immigration building, followed by a separate vehicle-documentation and insurance check — travellers driving their own vehicle through should also be aware that cars older than five years and buses older than ten years are not permitted to cross.",
+          "For full detail on passports, visas, and current entry requirements on the Qatari side, see our <a href='/border-transfers/qatar-border'>Qatar border transfer guide</a> before you travel — requirements at land borders can change, and it's worth checking close to your travel date rather than relying on older information.",
         ],
       },
       {
         heading: "Vehicle options and long-journey travel advice",
         paragraphs: [
-          "Given the six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage. We typically drop you at the Salwa crossing, with onward Qatar transport arranged separately.",
-          "We plan fuel and rest stops into the journey given the distance, and prepare the vehicle specifically for the long desert drive.",
+          "Given the six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage. We plan fuel and rest stops into the journey given the distance, and prepare the vehicle specifically for the long desert drive.",
+          "If you're a business traveller with a specific Doha meeting time, build in a realistic buffer for the border process itself, not just the six-hour drive — biometric and vehicle checks add time beyond the driving estimate, and it varies by how busy the crossing is when you arrive.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Riyadh to Qatar border taxi take?", answer: "The drive to Salwa covers about 640 kilometres and takes roughly six hours in free-flowing traffic, with fuel and rest stops planned in." },
-      { question: "Do you drive into Qatar or drop at the border?", answer: "We typically drive you to the Salwa crossing, with onward Qatar transport arranged separately. Tell us your plans and we'll advise on the smoothest option." },
-      { question: "What documents do I need to cross to Qatar?", answer: "A valid passport and the appropriate Qatar entry permission. See our Qatar border transfer guide for full current requirements before you travel." },
-      { question: "Are there tolls on this route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
+      { question: "Does this service continue into Doha?", answer: "No — this transfer takes you to the Salwa crossing itself; onward travel into Qatar (to Doha or elsewhere) needs a separate Qatar-side arrangement, since land border crossings require a vehicle change on each side." },
+      { question: "What happens after drop-off at Salwa?", answer: "You'll go through Saudi exit immigration and vehicle/customs checks at the crossing, then continue on the Qatari side (Abu Samra) into Qatar — tell us your onward plans when booking and we can advise on arranging that connection." },
+      { question: "How should onward transport be arranged?", answer: "Most travellers arrange a Qatar-side taxi or transfer to meet them at Abu Samra; let us know if you'd like guidance on this when you book, since it depends on your final Doha destination." },
+      { question: "Is the Salwa crossing open 24 hours?", answer: "Yes, it operates 24 hours a day, seven days a week, so there's no fixed window you need to arrive within." },
+      { question: "What documents do I need to cross to Qatar?", answer: "A valid passport and the appropriate Qatar entry permission; the crossing process also includes biometric checks (fingerprints, eye scan, photo) on the Saudi side. See our Qatar border transfer guide for full current requirements before you travel." },
+      { question: "Are there tolls on this route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey to the crossing." },
       { question: "What vehicle is recommended for this desert crossing?", answer: "We recommend a comfortable SUV or van given the six-hour distance, particularly for families or groups with luggage." },
-      { question: "Are rest stops included on this journey?", answer: "Yes, given the distance we plan fuel and rest stops as part of the transfer, at no extra cost since the fare is fixed." },
-      { question: "Is the price fixed for the whole journey to Salwa?", answer: "Yes, we agree a fixed price before you travel that covers the complete 640 km journey." },
       { question: "Can you arrange a return transfer from the Qatar border?", answer: "Yes, we can arrange a pickup back from Salwa into Riyadh for your return journey — let us know your plans when booking." },
     ],
     keywords: ["riyadh to qatar border taxi", "riyadh salwa crossing transfer", "riyadh to qatar taxi", "riyadh qatar border private car", "salwa border taxi from riyadh"],
@@ -731,13 +738,13 @@ const baseRoutes: Route[] = [
     distance: "35 km",
     duration: "30 min",
     intro:
-      "The Dammam Airport to Al Khobar taxi is a quick private transfer from King Fahd International Airport to the city's waterfront hotels and the Bahrain Causeway.",
+      "At about 30 minutes, this is one of the shortest airport transfers in our network — short enough that it's used less as a standalone trip and more as the first leg of something else: a business visitor heading straight to a Khobar office, a hotel guest starting a Corniche stay, or a traveller continuing on to Bahrain the same day without stopping in Khobar city at all.",
     about:
       "King Fahd International Airport (DMM) sits north of the Dammam–Khobar metro area, and a private transfer is the fastest, most comfortable way into Al Khobar. We meet you in the arrivals hall, help with your luggage, and drive directly to your hotel along the Corniche, a business address, or the King Fahd Causeway for onward travel to Bahrain — at a fixed price agreed before you land.",
     notes: [
       "Meet-and-greet pickup at King Fahd Airport (DMM)",
       "Direct drop-off at Al Khobar hotels and the Corniche",
-      "Onward connections to the Bahrain Causeway",
+      "Onward connections to the Bahrain Causeway for same-day Bahrain travel",
       "Flight-tracked pickup with free wait time",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
@@ -747,26 +754,26 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Dammam Airport to Al Khobar: route overview and distance",
+        heading: "Airport meet-and-greet at King Fahd International",
         paragraphs: [
           "King Fahd International Airport (DMM) sits about 35 kilometres north of Al Khobar, and the transfer takes roughly 30 minutes under normal traffic. Your driver meets you in the arrivals hall with a name board, helps with luggage, and drives you directly to your hotel, office, or the King Fahd Causeway for onward travel to Bahrain.",
-          "There are no tolls on this route, and the fixed price you agree before travelling covers the complete transfer. We track your flight so pickup timing adjusts automatically if your arrival time changes.",
+          "There are no tolls on this route, and the fixed price you agree before travelling covers the complete transfer. We track your flight so pickup timing adjusts automatically if your arrival time changes — a delayed landing or a slow immigration queue is covered by the free waiting time included on every airport pickup.",
         ],
       },
       {
-        heading: "Vehicle options and traveller advice",
+        heading: "Business district arrivals, and continuing on to Bahrain",
         paragraphs: [
-          "A standard sedan suits solo and business travellers, while families arriving with more luggage often prefer an SUV or van. Mention your onward plans — a Corniche hotel, a business address, or a continuation to Bahrain — when booking so your driver can route accordingly.",
-          "Free waiting time is included on airport pickups, so immigration queues or delayed baggage claim don't add to your cost.",
+          "Business visitors landing at DMM for meetings in Khobar's commercial districts are one of the largest groups using this transfer, alongside hotel guests heading to the Corniche waterfront. Because the drive is short, telling us your exact business address or hotel in advance means your driver can route directly there rather than needing directions on arrival.",
+          "A meaningful number of travellers use this as the first leg of a same-day Bahrain trip — landing at DMM and continuing straight to the King Fahd Causeway without an overnight stop in Khobar. For the full crossing details from Khobar, see our <a href='/routes/khobar-to-bahrain'>Khobar to Bahrain route</a>.",
         ],
       },
     ],
     faqs: [
+      { question: "Where will the driver meet me?", answer: "Your driver waits in the arrivals hall at King Fahd International Airport with a name board, ready as soon as you clear customs." },
+      { question: "What happens if my flight is delayed?", answer: "We track your flight in real time and adjust pickup timing automatically, with free waiting time included, so a delayed landing doesn't cost you anything extra." },
+      { question: "Can I continue toward Bahrain from here?", answer: "Yes — many travellers land at DMM and continue the same day straight to the King Fahd Causeway without stopping overnight in Khobar; mention this when booking and we'll quote the full journey." },
       { question: "How long does the Dammam Airport to Al Khobar taxi take?", answer: "The transfer is about 35 kilometres and takes roughly 30 minutes under normal traffic conditions." },
-      { question: "Where does my driver meet me at the airport?", answer: "Your driver waits in the arrivals hall at King Fahd International Airport with a name board, ready as soon as you clear customs." },
       { question: "Is free waiting time included?", answer: "Yes, free waiting time is included on airport pickups, so immigration queues or delayed baggage don't add to your cost." },
-      { question: "Can this transfer continue to the Bahrain Causeway?", answer: "Yes, many travellers continue from Al Khobar onward to the Causeway — mention this when booking and we'll quote the full journey." },
-      { question: "Do you track my flight for delays?", answer: "Yes, we track your flight in real time and adjust pickup timing automatically if your arrival changes." },
       { question: "What vehicle suits a family arriving with luggage?", answer: "An SUV or van is a good choice for families with more luggage; a standard sedan suits solo or business travellers." },
       { question: "Is the price fixed regardless of flight delays?", answer: "Yes, the fare is agreed before you travel and doesn't change if your flight is delayed." },
       { question: "Can I book a return Al Khobar to Dammam Airport transfer?", answer: "Yes, return airport transfers from Al Khobar are available at the same fixed-price standard." },
@@ -780,13 +787,13 @@ const baseRoutes: Route[] = [
     distance: "85 km",
     duration: "1 hour 15 min",
     intro:
-      "The Makkah to Jeddah taxi is a direct private transfer from the holy city to Jeddah's hotels, Corniche, and King Abdulaziz International Airport.",
+      "Almost everyone booking this specific leg is leaving, not arriving — a pilgrim who has finished Umrah and is heading to Jeddah for a flight home, or continuing their trip elsewhere. That changes what matters most compared to the inbound Jeddah-to-Makkah journey: getting the flight-timing right and finding your driver near the Haram matter more here than the drive itself.",
     about:
-      "After completing Umrah, many pilgrims travel back to Jeddah to catch a flight home or continue their journey. Our private Makkah to Jeddah transfer collects you from your hotel near the Haram and drives you door-to-door to the airport or anywhere in Jeddah, timed to your flight with no shared waiting and no surge pricing.",
+      "After completing Umrah, many pilgrims travel back to Jeddah to catch a flight home or continue their journey. Our private Makkah to Jeddah transfer collects you from your hotel near the Haram and drives you door-to-door to the airport or anywhere in Jeddah, timed to your flight with no shared waiting and no surge pricing — built around a departure, not an arrival.",
     notes: [
-      "Hotel pickup near the Haram in Makkah",
+      "Hotel pickup near the Haram, timed to your outbound flight",
       "Direct drop-off at Jeddah airport, hotels, or the Corniche",
-      "Flight-timed departures with luggage assistance",
+      "Flight-timed departures with luggage assistance after an extended Umrah stay",
       "Reverse Jeddah to Makkah transfers also available",
     ],
     relatedCitySlugs: ["makkah", "jeddah"],
@@ -796,29 +803,29 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Makkah to Jeddah: route overview and distance",
+        heading: "Leaving Makkah after Umrah: flight planning",
         paragraphs: [
-          "The drive from Makkah to Jeddah covers about 85 kilometres and takes roughly an hour fifteen minutes outside peak periods. It's the natural return leg for pilgrims flying home after Umrah, and one of the busiest routes in our network in both directions.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey. We track your outbound flight and time the pickup from your Makkah hotel to get you to the airport comfortably ahead of departure.",
+          "The drive from Makkah to Jeddah covers about 85 kilometres and takes roughly an hour fifteen minutes outside peak periods. It's the natural return leg for pilgrims flying home after Umrah, and one of the busiest routes in our network in both directions — but unlike the inbound trip, the departure end of this journey is built around your flight, not the reverse.",
+          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey. We track your outbound flight and time the pickup from your Makkah hotel to get you to the airport comfortably ahead of departure, with buffer for check-in and security rather than cutting it close.",
         ],
       },
       {
-        heading: "Vehicle options and pilgrim travel advice",
+        heading: "Pickup logistics near the Haram, and airport vs. city drop-off",
         paragraphs: [
-          "A standard sedan suits solo travellers and couples, while families and groups with the extra luggage typical after an Umrah stay usually prefer a larger SUV or van. Mention your flight time and group size when booking so we plan pickup with enough buffer for airport procedures.",
-          "Your driver collects you from your hotel near the Haram — from the confirmed nearby pickup point, since vehicles can't enter the pedestrian zone directly around the mosque — and drives you door-to-door to Jeddah airport, hotels, or the Corniche.",
+          "Your driver collects you from a confirmed pickup point near your Haram-area hotel — since vehicles can't drive into the pedestrian zone directly around the mosque, this is arranged in advance rather than left to figure out on the day, which matters more when you're timing a departure than when you're arriving with no schedule pressure.",
+          "Not every traveller on this route is going straight to the airport: some are dropped at a Jeddah hotel to continue their trip, or at the Corniche for a day or two before flying home. Confirm your exact destination when booking so your driver routes to the right one rather than defaulting to the airport.",
         ],
       },
     ],
     faqs: [
+      { question: "How early should I leave Makkah for my flight?", answer: "We time your hotel pickup to get you to Jeddah airport comfortably ahead of departure, factoring in check-in and security — tell us your exact flight time when booking and we'll plan the buffer accordingly." },
+      { question: "Where can the driver collect me near the Haram?", answer: "Since vehicles can't enter the pedestrian zone directly around the Haram, your driver will confirm a nearby designated pickup point with you in advance." },
+      { question: "Can I travel directly to Jeddah Airport?", answer: "Yes, airport drop-off is the most common destination on this route, but we also cover Jeddah hotels and the Corniche if your trip continues beyond the airport." },
       { question: "How long does the Makkah to Jeddah taxi take?", answer: "The drive covers about 85 kilometres and typically takes around an hour and fifteen minutes, though this can extend during Umrah season or Hajj." },
-      { question: "How is pickup timed to my flight?", answer: "We track your outbound flight and time your Makkah hotel pickup to get you to Jeddah airport comfortably ahead of departure, with buffer for check-in and security." },
-      { question: "Where does my driver collect me near the Haram?", answer: "Since vehicles can't enter the pedestrian zone directly around the Haram, your driver will confirm a nearby designated pickup point with you in advance." },
       { question: "Is the price fixed regardless of Umrah season traffic?", answer: "Yes, we agree a fixed price before you travel, so heavier seasonal traffic doesn't change your fare." },
-      { question: "Do you offer family vans for pilgrims with extra luggage?", answer: "Yes, family and group vans are available for pilgrims travelling with more luggage than a standard sedan comfortably fits." },
-      { question: "Can I be dropped at a Jeddah hotel instead of the airport?", answer: "Yes, we drop off at the airport, city hotels, or the Corniche — just confirm your exact destination when booking." },
+      { question: "Do you offer family vans for pilgrims with extra luggage?", answer: "Yes, family and group vans are available for pilgrims travelling with more luggage than a standard sedan comfortably fits after an extended Umrah stay." },
       { question: "Is booking available for late-night or early-morning flights?", answer: "Yes, pickup is available 24/7 and we track your flight so timing adjusts automatically." },
-      { question: "Can I book a return Jeddah to Makkah transfer at the same time?", answer: "Yes, see our Jeddah to Makkah route page for the outbound leg, or ask us to arrange both directions together." },
+      { question: "Can I book a return Jeddah to Makkah transfer at the same time?", answer: "Yes, see our Jeddah to Makkah route page for the inbound leg, or ask us to arrange both directions together." },
     ],
   },
   {
@@ -829,14 +836,14 @@ const baseRoutes: Route[] = [
     distance: "420 km",
     duration: "4 hours",
     intro:
-      "The Madinah to Jeddah taxi is a comfortable long-distance private transfer for pilgrims and travellers heading from the Prophet's Mosque back to Jeddah.",
+      "Two genuinely different trips share this route: pilgrims flying home from Jeddah after finishing their Madinah visit, and pilgrims continuing their itinerary on to Makkah for Umrah via Jeddah's road network. Both start the same way — leaving a Madinah hotel after a pilgrimage stay — but end differently, and telling your driver which one applies changes what the drop-off actually looks like.",
     about:
-      "Pilgrims who finish their visit to Madinah often fly home from Jeddah or continue to Makkah. Our private Madinah to Jeddah transfer offers a relaxed, direct ride with rest-stop flexibility along the highway, hotel-to-airport timing, and comfortable vehicles for families travelling with luggage after a long stay.",
+      "Pilgrims who finish their visit to Madinah often fly home from Jeddah or continue to Makkah. Our private Madinah to Jeddah transfer offers a relaxed, direct ride with rest-stop flexibility along the highway, hotel-to-airport timing, and comfortable vehicles for families travelling with luggage after a long stay — whichever of the two onward journeys applies to you.",
     notes: [
-      "Pickup from Madinah hotels or the airport",
+      "Pickup from Madinah hotels near Masjid an-Nabawi, or the airport",
       "Direct drop-off at Jeddah airport or city hotels",
       "Rest stops on the 420 km journey",
-      "Comfortable vehicles for families and groups",
+      "Comfortable vehicles for families and groups after an extended Madinah stay",
     ],
     relatedCitySlugs: ["madinah", "jeddah"],
     metaTitle: "Madinah to Jeddah Taxi | Private Transfer",
@@ -845,27 +852,27 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Madinah to Jeddah: route overview and distance",
+        heading: "Leaving Madinah: two different journey purposes",
         paragraphs: [
-          "The drive from Madinah to Jeddah covers about 420 kilometres and takes roughly four hours under normal highway conditions. It's a common return leg for pilgrims flying home from Jeddah after finishing their visit to the Prophet's Mosque, or continuing on to Makkah first.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. Given the distance, we build in rest-stop flexibility, particularly useful for families travelling with young children after an extended stay.",
+          "The drive from Madinah to Jeddah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Most bookings on this route fall into one of two groups: pilgrims flying home from Jeddah after finishing their visit to the Prophet's Mosque, and pilgrims continuing their trip on to Makkah, since Jeddah's road network is also how many travellers reach Makkah from the north.",
+          "Telling your driver which of these applies to you when you book means the right drop-off is planned from the start — a flight-timed airport run for one, a city hotel or onward connection for the other — rather than something to sort out on arrival.",
         ],
       },
       {
-        heading: "Vehicle options and pilgrim travel advice",
+        heading: "Hotel pickup and airport planning after an extended stay",
         paragraphs: [
-          "A standard sedan suits solo travellers and couples, while families and groups with more luggage usually prefer a larger SUV or van for the four-hour drive. Mention your flight time when booking so we plan pickup with enough buffer for airport check-in.",
-          "Your driver collects you from your Madinah hotel or the airport and drops you directly at Jeddah airport or your city hotel, with luggage assistance throughout.",
+          "Your driver collects you from your Madinah hotel — most commonly one within reach of Masjid an-Nabawi — or from Madinah's airport if that's your starting point instead. Given the distance, we build in rest-stop flexibility, particularly useful for families travelling with young children after an extended pilgrimage stay with more luggage than they arrived with.",
+          "For flight departures, mention your exact flight time when booking so we plan pickup with a realistic buffer for Jeddah airport check-in — this is a four-hour drive before you even reach the terminal, so timing matters more here than on a short city hop.",
         ],
       },
     ],
     faqs: [
+      { question: "Should I tell you if I'm flying home or continuing to Makkah?", answer: "Yes — both are common on this route, and telling us which applies means we plan the right drop-off (a timed airport run, or a city/onward-connection stop) from the start rather than deciding on arrival." },
+      { question: "How is pickup timed to my flight from Jeddah?", answer: "We track your outbound flight and time your Madinah hotel pickup to get you to Jeddah airport comfortably ahead of departure, factoring in the four-hour drive itself." },
       { question: "How long does the Madinah to Jeddah taxi take?", answer: "The drive covers about 420 kilometres and takes roughly four hours under normal traffic conditions." },
-      { question: "How is pickup timed to my flight from Jeddah?", answer: "We track your outbound flight and time your Madinah hotel pickup to get you to Jeddah airport comfortably ahead of departure." },
       { question: "Are rest stops included on this journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
       { question: "Is the price fixed for the full 420 km journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete highway journey, with no toll charges." },
-      { question: "Do you offer larger vehicles for families with extra luggage?", answer: "Yes, SUVs and vans are available for families and groups carrying more luggage than a standard sedan comfortably fits." },
-      { question: "Is this a direct hotel-to-airport transfer?", answer: "Yes, your driver collects you from your Madinah hotel or the airport and drops you directly at Jeddah airport or your city hotel." },
+      { question: "Do you offer larger vehicles for families with extra luggage?", answer: "Yes, SUVs and vans are available for families and groups carrying more luggage than a standard sedan comfortably fits after an extended stay." },
       { question: "Can I book this transfer at short notice?", answer: "Same-day booking is often possible, though booking a day ahead gives more vehicle choice, especially during Ramadan or peak Umrah season." },
       { question: "Can I book a return Jeddah to Madinah transfer?", answer: "Yes, see our Jeddah to Madinah route page for the reverse leg, or ask us to arrange both directions in one booking." },
     ],
@@ -878,14 +885,14 @@ const baseRoutes: Route[] = [
     distance: "170 km",
     duration: "2 hours",
     intro:
-      "The Taif to Jeddah taxi is a scenic private transfer down from the cool mountain city to Jeddah's coast, hotels, and airport.",
+      "This is the descent, not the climb — a genuinely different drive to the Jeddah-to-Taif ascent, since gravity, not elevation gain, shapes how the journey feels. Most travellers on this leg are ending a highland stay and heading back to the coast, often with a flight to catch, which puts more weight on departure timing from Taif than on the mountain road itself.",
     about:
-      "After a summer escape in the highlands of Taif, our private Taif to Jeddah transfer brings you back down the Al Hada mountain road in comfort. We collect you from your Taif hotel or resort and drive door-to-door to Jeddah airport or the city, with a driver who knows the winding descent well.",
+      "After a summer escape in the highlands of Taif, our private Taif to Jeddah transfer brings you back down the Al Hada mountain road in comfort. We collect you from your Taif hotel or resort and drive door-to-door to Jeddah airport or the city, with a driver who knows the winding descent well and paces departure around your onward plans rather than a fixed schedule.",
     notes: [
       "Pickup from Taif hotels, resorts, or the airport",
-      "Scenic descent via the Al Hada mountain road",
+      "Scenic descent via the Al Hada mountain road, back to sea level",
       "Drop-off at Jeddah airport, hotels, or the Corniche",
-      "Comfortable vehicles for the mountain journey",
+      "Comfortable vehicles for the mountain journey, timed to onward flights",
     ],
     relatedCitySlugs: ["taif", "jeddah"],
     metaTitle: "Taif to Jeddah Taxi | Private Transfer",
@@ -894,29 +901,29 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Taif to Jeddah: route overview and distance",
+        heading: "Departure timing: leaving the mountains for the coast",
         paragraphs: [
-          "The drive from Taif down to Jeddah covers about 170 kilometres and takes roughly two hours, most of it spent descending the winding Al Hada mountain road back to the coast. It's the natural return leg after a highland stay in Taif's cooler climate.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain descent. If you're prone to motion sickness on winding roads, mention it when booking so your driver can plan a short stop partway down.",
+          "The drive from Taif down to Jeddah covers about 170 kilometres and takes roughly two hours, most of it spent descending the winding Al Hada mountain road back to sea level and Jeddah's noticeably warmer coastal climate. It's the natural return leg after a highland stay, and — unlike the outbound climb, which is often the start of a relaxed holiday — this direction is more often tied to a specific departure need: a flight home, a hotel checkout, or the end of a summer break.",
+          "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain descent. If you're heading to Jeddah airport, mention your flight time when booking so pickup from your Taif hotel or resort is timed with enough buffer for both the drive and airport procedures.",
         ],
       },
       {
-        heading: "Vehicle options and mountain-road travel advice",
+        heading: "The mountain-to-coast descent",
         paragraphs: [
-          "A standard sedan handles the Al Hada descent comfortably for most travellers, while families often prefer an SUV for extra space. Your driver knows the winding descent well and paces the drive comfortably rather than rushing it.",
-          "If you're heading to Jeddah airport, mention your flight time when booking so pickup from your Taif hotel or resort is timed with enough buffer for the drive and airport procedures.",
+          "If you're prone to motion sickness on winding roads, mention it when booking so your driver can plan a short stop partway down — the descent involves the same sustained curves as the climb, just in reverse, and a driver experienced with the road paces it comfortably rather than rushing.",
+          "A standard sedan handles the descent comfortably for most travellers, while families often prefer an SUV for extra space, particularly if returning with more luggage than they arrived with after a longer stay.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Taif to Jeddah taxi take?", answer: "The drive covers about 170 kilometres and takes roughly two hours, including the descent down the Al Hada mountain road." },
+      { question: "How is pickup timed for a Jeddah flight?", answer: "Mention your flight time when booking and we'll time your Taif hotel pickup with enough buffer for the roughly two-hour drive and Jeddah airport check-in." },
+      { question: "Is the descent different from the climb up to Taif?", answer: "The road itself is the same, but the experience differs — the descent involves the same curves in reverse, ending at sea level and Jeddah's warmer coastal climate rather than Taif's highland air." },
       { question: "Is the mountain descent difficult for those prone to motion sickness?", answer: "The road involves a steady series of curves, so if you're prone to motion sickness, mention it when booking and your driver can plan a short stop along the way." },
-      { question: "How is pickup timed for a Jeddah flight?", answer: "Mention your flight time when booking and we'll time your Taif hotel pickup with enough buffer for the drive and airport check-in." },
+      { question: "How long does the Taif to Jeddah taxi take?", answer: "The drive covers about 170 kilometres and takes roughly two hours, including the descent down the Al Hada mountain road." },
       { question: "Are there tolls on the Taif to Jeddah route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "Can I be picked up from a Taif resort rather than a hotel?", answer: "Yes, pickup is available from Taif hotels, resorts, or the airport — just confirm your exact address when booking." },
       { question: "What vehicle suits a family descending from Taif?", answer: "An SUV is a good choice for families wanting extra space, though a sedan is comfortable for a direct transfer." },
-      { question: "Is the price fixed for the whole journey including the descent?", answer: "Yes, we agree a fixed price before you travel that covers the complete journey, including the descent down Al Hada." },
-      { question: "Can I book a return Jeddah to Taif transfer?", answer: "Yes, see our Jeddah to Taif route page for the reverse leg, or ask us to arrange both directions together." },
+      { question: "Can I book a return Jeddah to Taif transfer?", answer: "Yes, see our Jeddah to Taif route page for the outbound climb, or ask us to arrange both directions together." },
     ],
   },
   {
@@ -927,13 +934,13 @@ const baseRoutes: Route[] = [
     distance: "330 km",
     duration: "3 hours 30 min",
     intro:
-      "The Jeddah to Yanbu taxi is a private coastal transfer along the Red Sea to the industrial and resort city of Yanbu.",
+      "Two very different travellers book this route, often on the same day: someone heading to Yanbu's reputation as Saudi Arabia's Red Sea diving capital for a weekend of coral reefs, and an oil or petrochemical industry visitor heading to Yanbu Industrial City, one of the country's largest export ports and the western end of a roughly 1,200-kilometre pipeline network from the Eastern Province.",
     about:
-      "Our private Jeddah to Yanbu transfer follows the Red Sea coast north to Yanbu, popular with leisure travellers heading to the beaches and dive sites and with the petrochemical workforce. We pick you up from Jeddah airport or your hotel and drive door-to-door in a comfortable, air-conditioned vehicle with rest-stop flexibility.",
+      "Our private Jeddah to Yanbu transfer follows the Red Sea coast north to Yanbu, popular with leisure travellers heading to the beaches and dive sites and with the petrochemical workforce. We pick you up from Jeddah airport or your hotel and drive door-to-door in a comfortable, air-conditioned vehicle with rest-stop flexibility, to either side of a city that's genuinely two different destinations in one.",
     notes: [
       "Pickup from Jeddah airport or city hotels",
-      "Scenic Red Sea coastal highway",
-      "Drop-off at Yanbu resorts, the industrial city, or hotels",
+      "Scenic Red Sea coastal highway, about 330 km",
+      "Drop-off at Yanbu's resort/diving coast or the separate Industrial City",
       "Reverse Yanbu to Jeddah transfers available",
     ],
     relatedCitySlugs: ["jeddah", "yanbu"],
@@ -943,27 +950,27 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Jeddah to Yanbu: route overview and distance",
+        heading: "Yanbu: a resort coast and an industrial city in one",
         paragraphs: [
-          "The drive from Jeddah to Yanbu covers about 330 kilometres along the Red Sea coastal highway and takes roughly three and a half hours in normal traffic. It's used both by leisure travellers heading to Yanbu's beaches and dive sites and by the petrochemical workforce commuting to the Royal Commission waterfront and Yanbu Industrial City.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. Given the distance, we build in rest-stop flexibility along the coastal drive.",
+          "Yanbu al-Bahr (the coastal, tourism side of the city) and Yanbu al-Sina'iyah (Yanbu Industrial City) are managed together but serve very different visitors. The industrial side, developed by the Royal Commission for Jubail and Yanbu since the 1970s, is home to a major Red Sea export port and one of the country's largest facilities for handling petroleum and chemical products — the coastal side is known instead for coral reefs and diving, earning Yanbu its reputation as a diving capital of the Red Sea.",
+          "The drive from Jeddah covers about 330 kilometres along the coastal highway and takes roughly three and a half hours in normal traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey regardless of which side of Yanbu you're heading to.",
         ],
       },
       {
-        heading: "Vehicle options and coastal travel advice",
+        heading: "Business versus leisure travel, and getting the drop-off right",
         paragraphs: [
-          "A standard sedan suits most travellers, while divers or families with beach gear and extra luggage often prefer an SUV or van. Mention any diving equipment or unusually bulky luggage when booking so we assign the right vehicle.",
-          "Your driver collects you from Jeddah airport or your city hotel and drops you directly at your Yanbu resort, hotel, or industrial-city destination.",
+          "Because Yanbu's industrial and coastal areas are genuinely separate destinations, tell us specifically which one you're headed to when booking — a business park or facility address in Yanbu Industrial City, or a resort, dive centre, or hotel on the coast. Given the distance, we build in rest-stop flexibility along the drive either way.",
+          "Divers travelling with equipment, and families with beach gear and extra luggage, generally do better in an SUV or van than a standard sedan — mention any bulky equipment when booking so we assign the right vehicle from the start.",
         ],
       },
     ],
     faqs: [
-      { question: "How long does the Jeddah to Yanbu taxi take?", answer: "The drive covers about 330 kilometres along the Red Sea coast and takes roughly three and a half hours under normal traffic conditions." },
-      { question: "Are rest stops included on this coastal journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
+      { question: "How long is the journey from Jeddah to Yanbu?", answer: "About 330 kilometres along the Red Sea coastal highway, taking roughly three and a half hours under normal traffic conditions." },
+      { question: "Is a private vehicle suitable for families?", answer: "Yes — an SUV or van gives families room for beach gear and extra luggage, and door-to-door pickup means no separate transfers between the airport, hotel, and the coast." },
+      { question: "Which Yanbu destination should I provide when booking?", answer: "Be specific — Yanbu's coastal/resort area and Yanbu Industrial City are genuinely separate parts of the city, so tell us your exact resort, hotel, or business address rather than just \"Yanbu\"." },
       { question: "Do you provide vehicles suited to diving trips?", answer: "Yes, SUVs and vans with extra luggage space are available for divers carrying gear — mention this when requesting your quote." },
       { question: "Are there tolls on the Jeddah to Yanbu route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Can you drop me at a Yanbu Industrial City address?", answer: "Yes, we cover both the resort and beach areas and Yanbu Industrial City destinations — confirm your exact address when booking." },
-      { question: "Is the price fixed for the whole coastal journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete 330 km journey." },
+      { question: "Are rest stops included on this coastal journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
       { question: "Is this transfer suitable for corporate workforce travel?", answer: "Yes, we work with companies moving staff between Jeddah and Yanbu's industrial and Royal Commission areas — contact us to discuss regular travel needs." },
       { question: "Can I book a return Yanbu to Jeddah transfer?", answer: "Yes, see our Yanbu to Jeddah route page for the reverse leg, or ask us to arrange both directions together." },
     ],
@@ -976,12 +983,12 @@ const baseRoutes: Route[] = [
     distance: "330 km",
     duration: "3 hours 30 min",
     intro:
-      "The Yanbu to Jeddah taxi is a private coastal transfer from the Red Sea city back to Jeddah's hotels and King Abdulaziz International Airport.",
+      "This leg starts at one of two very different pickup points — a dive resort on Yanbu's coast, or an office or residential compound in Yanbu Industrial City — and both end the same way: back in Jeddah, usually for a flight out or a business connection. The starting point shapes what your driver needs to know more than the destination does.",
     about:
-      "Whether you have been diving on the Yanbu coast or working in the industrial city, our private Yanbu to Jeddah transfer takes you back along the Red Sea highway in comfort. We collect you from your Yanbu hotel or the airport and drive directly to Jeddah, timed to your onward flight with luggage help throughout.",
+      "Whether you have been diving on the Yanbu coast or working in the industrial city, our private Yanbu to Jeddah transfer takes you back along the Red Sea highway in comfort. We collect you from your Yanbu hotel, resort, or workplace and drive directly to Jeddah, timed to your onward flight with luggage help throughout.",
     notes: [
-      "Pickup from Yanbu resorts, the airport, or hotels",
-      "Comfortable Red Sea coastal drive",
+      "Pickup from Yanbu resorts, hotels, or Industrial City addresses",
+      "Comfortable Red Sea coastal drive, about 330 km",
       "Flight-timed drop-off at Jeddah airport or hotels",
       "Fixed price agreed before you travel",
     ],
@@ -992,28 +999,28 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Yanbu to Jeddah: route overview and distance",
+        heading: "Leaving Yanbu: business or hotel pickup",
         paragraphs: [
-          "The drive from Yanbu back to Jeddah covers about 330 kilometres along the Red Sea coastal highway and takes roughly three and a half hours in normal traffic. Whether you've been diving on the Yanbu coast or working in the industrial city, this is the natural route back to Jeddah's airport or hotels.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. We track your onward flight and time pickup from your Yanbu hotel or resort accordingly.",
+          "The drive from Yanbu back to Jeddah covers about 330 kilometres along the Red Sea coastal highway and takes roughly three and a half hours in normal traffic. Because Yanbu Industrial City and the resort/diving coast are genuinely separate parts of the city, pickup logistics differ depending on which one you're starting from — a business park or compound address for the industrial side, a hotel or resort reception for the coast.",
+          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey regardless of your exact Yanbu starting point.",
         ],
       },
       {
-        heading: "Vehicle options and coastal travel advice",
+        heading: "Jeddah Airport connections and direction-specific planning",
         paragraphs: [
-          "A standard sedan suits most travellers, while those returning with dive gear or extra luggage often prefer an SUV or van. Mention any bulky luggage when booking so we assign the right vehicle.",
-          "Given the distance, we build in rest-stop flexibility along the coastal drive, particularly useful if you're timing arrival for a specific flight.",
+          "We track your onward flight and time pickup from Yanbu accordingly, which matters more on this direction than the outbound trip since most bookings here are working backward from a departure time rather than an open-ended arrival. Given the distance, build in a realistic buffer — three and a half hours of driving before you even reach Jeddah airport itself.",
+          "Divers or workforce travellers returning with equipment or extra luggage generally do better in an SUV or van than a standard sedan — mention any bulky items when booking so the right vehicle is assigned from the start.",
         ],
       },
     ],
     faqs: [
+      { question: "How is pickup timed for my onward flight?", answer: "We track your outbound flight and time your Yanbu hotel, resort, or workplace pickup with enough buffer for the roughly three-and-a-half-hour drive plus Jeddah airport check-in." },
+      { question: "Can you collect me from Yanbu Industrial City?", answer: "Yes, pickup is available from Yanbu Industrial City business or compound addresses as well as resorts and hotels on the coast — confirm your exact location when booking." },
       { question: "How long does the Yanbu to Jeddah taxi take?", answer: "The drive covers about 330 kilometres along the Red Sea coast and takes roughly three and a half hours under normal traffic conditions." },
-      { question: "How is pickup timed for my onward flight?", answer: "We track your outbound flight and time your Yanbu hotel or resort pickup with enough buffer for the drive and airport check-in." },
       { question: "Do you provide vehicles for returning divers with gear?", answer: "Yes, SUVs and vans with extra luggage space are available for divers carrying gear — mention this when requesting your quote." },
       { question: "Are there tolls on the Yanbu to Jeddah route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Are rest stops included on this coastal journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
       { question: "Is the price fixed regardless of flight delays?", answer: "Yes, the fare is agreed before you travel and doesn't change if your flight is delayed." },
-      { question: "Can you collect me from Yanbu Industrial City?", answer: "Yes, pickup is available from Yanbu resorts, hotels, or industrial-city addresses — confirm your exact location when booking." },
+      { question: "Are rest stops included on this coastal journey?", answer: "Yes, given the distance we build in rest-stop flexibility as needed, at no extra cost since the fare is fixed." },
       { question: "Can I book a return Jeddah to Yanbu transfer?", answer: "Yes, see our Jeddah to Yanbu route page for the outbound leg, or ask us to arrange both directions together." },
     ],
   },
@@ -1025,12 +1032,12 @@ const baseRoutes: Route[] = [
     distance: "125 km",
     duration: "1 hour 20 min",
     intro:
-      "The Jeddah to KAEC taxi is a direct private transfer up the coast to King Abdullah Economic City, its business district, and the Haramain train station.",
+      "KAEC isn't a single destination but a purpose-built city with distinct districts — a business park, a growing residential and retail downtown at Hejaz Gate, resort areas, and its own Haramain train station — so this route serves corporate visitors, event attendees, hotel guests, and rail travellers who each need a different exact address, not just \"KAEC\" as a city name.",
     about:
-      "King Abdullah Economic City (KAEC) sits about 125 km north of Jeddah and is home to business parks, resorts, and a Haramain High Speed Railway station. Our private Jeddah to KAEC transfer meets you at the airport or your hotel and drives door-to-door in comfort, ideal for business travellers, resort guests, and rail connections.",
+      "King Abdullah Economic City (KAEC) sits about 125 km north of Jeddah and is home to business parks, resorts, and a Haramain High Speed Railway station. Our private Jeddah to KAEC transfer meets you at the airport or your hotel and drives door-to-door in comfort, ideal for business travellers, resort guests, and rail connections — each of whom is usually headed to a different part of the city.",
     notes: [
       "Pickup from Jeddah airport or city hotels",
-      "Drop-off at KAEC business parks, resorts, or the train station",
+      "Drop-off at KAEC's Hejaz Gate downtown, business parks, resorts, or the train station",
       "Comfortable vehicles for the coastal drive",
       "Reverse KAEC to Jeddah transfers available",
     ],
@@ -1041,27 +1048,27 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "Jeddah to KAEC: route overview and distance",
+        heading: "KAEC's districts: business, Hejaz Gate, and the Haramain station",
         paragraphs: [
-          "The drive from Jeddah to King Abdullah Economic City covers about 125 kilometres up the coast and takes roughly an hour twenty minutes under normal traffic. KAEC is home to business parks, resorts, and a Haramain High Speed Railway station, so this route sees a mix of business travellers, resort guests, and rail connections.",
+          "The drive from Jeddah to King Abdullah Economic City covers about 125 kilometres up the coast and takes roughly an hour twenty minutes under normal traffic. KAEC's Haramain High-Speed Railway station connects the city to Jeddah and King Abdulaziz Airport in under half an hour by train, and to Makkah and Madinah in under an hour — the station itself sits near Hejaz Gate, KAEC's newer downtown area of shops, restaurants, and hotels.",
           "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. If you're connecting to a Haramain train departure, mention your train time when booking so pickup is planned with enough buffer.",
         ],
       },
       {
-        heading: "Vehicle options and business travel advice",
+        heading: "Business, event, and resort travel to KAEC",
         paragraphs: [
-          "A comfort sedan suits most business travellers heading to KAEC's business parks, while families heading to a resort often prefer an SUV or van for extra luggage space. Mention your exact destination — a business park, resort, or the train station — when booking.",
-          "Your driver collects you from Jeddah airport or your city hotel and delivers you directly to your KAEC destination, door to door.",
+          "Business travellers visiting KAEC's business park district need a specific office or building address rather than just the city name, and the same is true for event attendees and resort guests heading to Bay La Sun or another waterfront property — confirm your exact destination when booking so your driver goes straight there.",
+          "A comfort sedan suits most business travellers, while families heading to a resort often prefer an SUV or van for extra luggage space. Your driver collects you from Jeddah airport or your city hotel and delivers you directly to your KAEC destination, door to door.",
         ],
       },
     ],
     faqs: [
       { question: "How long does the Jeddah to KAEC taxi take?", answer: "The drive covers about 125 kilometres and takes roughly an hour twenty minutes under normal traffic conditions." },
       { question: "Can you time pickup for a Haramain train departure?", answer: "Yes, mention your train time when booking and we'll plan your Jeddah pickup with enough buffer to reach the KAEC station comfortably." },
-      { question: "Are there tolls on the Jeddah to KAEC route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
+      { question: "What is Hejaz Gate, and can you drop me there?", answer: "Hejaz Gate is KAEC's downtown district near the Haramain station, with shops, restaurants, and hotels — yes, we can drop you there directly if that's your destination." },
       { question: "What vehicle suits a business trip to KAEC?", answer: "A comfort sedan suits most business travellers; families heading to a resort often prefer an SUV or van for extra luggage." },
       { question: "Can you drop me directly at a KAEC business park?", answer: "Yes, confirm your exact business park or office address when booking and your driver will take you there directly." },
-      { question: "Is the price fixed for the whole journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete 125 km journey." },
+      { question: "Are there tolls on the Jeddah to KAEC route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "Is this transfer suitable for regular business commuting?", answer: "Yes, we work with business travellers making regular Jeddah–KAEC trips — contact us to discuss your travel pattern." },
       { question: "Can I book a return KAEC to Jeddah transfer?", answer: "Yes, see our KAEC to Jeddah route page for the reverse leg, or ask us to arrange both directions together." },
     ],
@@ -1074,11 +1081,11 @@ const baseRoutes: Route[] = [
     distance: "125 km",
     duration: "1 hour 20 min",
     intro:
-      "The KAEC to Jeddah taxi is a direct private transfer from King Abdullah Economic City back to Jeddah's hotels and King Abdulaziz International Airport.",
+      "Coming from a KAEC business park meeting, a Bay La Sun resort stay, or straight off the Haramain train at the Hejaz Gate station — this route covers all three starting points, and each usually ends the same way, at Jeddah's airport or a city hotel for a flight or an onward meeting.",
     about:
       "Heading back from a meeting, a resort stay, or the Haramain train at King Abdullah Economic City? Our private KAEC to Jeddah transfer collects you from your hotel, office, or the station and drives directly to Jeddah airport or the city, timed to your flight with a fixed price agreed in advance.",
     notes: [
-      "Pickup from KAEC hotels, offices, or the train station",
+      "Pickup from KAEC business parks, resorts, offices, or the Haramain train station",
       "Flight-timed drop-off at Jeddah airport or hotels",
       "Comfortable, air-conditioned coastal drive",
       "Fixed price with no surge pricing",
@@ -1090,26 +1097,26 @@ const baseRoutes: Route[] = [
     lastUpdated: "2026-08-05",
     sections: [
       {
-        heading: "KAEC to Jeddah: route overview and distance",
+        heading: "Leaving KAEC: business, resort, or rail arrivals",
         paragraphs: [
-          "The drive from King Abdullah Economic City back to Jeddah covers about 125 kilometres down the coast and takes roughly an hour twenty minutes under normal traffic. Whether you're coming from a business meeting, a resort stay, or the Haramain train station, this is the natural route back to Jeddah's airport or hotels.",
-          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey. We track your onward flight and time pickup from KAEC accordingly.",
+          "The drive from King Abdullah Economic City back to Jeddah covers about 125 kilometres down the coast and takes roughly an hour twenty minutes under normal traffic. Because KAEC has genuinely separate business, downtown (Hejaz Gate), and resort districts, your driver needs the specific pickup point — a business park address, a resort reception, or the Haramain train station — rather than just \"KAEC\".",
+          "There are no tolls on this route, so the fixed price you agree before travelling covers the complete journey regardless of which part of KAEC you're starting from.",
         ],
       },
       {
-        heading: "Vehicle options and business travel advice",
+        heading: "Connections to Jeddah Airport and hotels",
         paragraphs: [
-          "A comfort sedan suits most business travellers, while families returning from a resort stay often prefer an SUV or van for extra luggage space. Mention your exact KAEC pickup point — an office, resort, or the train station — when booking.",
-          "Your driver collects you directly from your KAEC location and delivers you to Jeddah airport or your city hotel, timed to your flight.",
+          "We track your onward flight and time pickup from KAEC accordingly, which matters here since you're working backward from a departure time in most cases — whether that's a flight out of Jeddah or a business meeting on arrival. A comfort sedan suits most business travellers, while families returning from a resort stay often prefer an SUV or van for extra luggage space.",
+          "Your driver collects you directly from your KAEC location and delivers you to Jeddah airport or your city hotel, timed to your onward plans rather than a fixed departure slot.",
         ],
       },
     ],
     faqs: [
+      { question: "How is pickup timed for my Jeddah flight?", answer: "We track your outbound flight and time your KAEC pickup — from a business park, resort, or the train station — with enough buffer for the drive and airport check-in." },
+      { question: "Can you collect me from the Haramain train station at KAEC?", answer: "Yes, pickup is available from the KAEC train station near Hejaz Gate, as well as offices or resorts — confirm your exact location when booking." },
       { question: "How long does the KAEC to Jeddah taxi take?", answer: "The drive covers about 125 kilometres and takes roughly an hour twenty minutes under normal traffic conditions." },
-      { question: "How is pickup timed for my Jeddah flight?", answer: "We track your outbound flight and time your KAEC pickup with enough buffer for the drive and airport check-in." },
-      { question: "Are there tolls on the KAEC to Jeddah route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
-      { question: "Can you collect me from the Haramain train station at KAEC?", answer: "Yes, pickup is available from the KAEC train station, offices, or resorts — confirm your exact location when booking." },
       { question: "What vehicle suits a family returning from a KAEC resort?", answer: "An SUV or van is a good choice for families with extra luggage; a comfort sedan suits most business travellers." },
+      { question: "Are there tolls on the KAEC to Jeddah route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey." },
       { question: "Is the price fixed for the whole journey?", answer: "Yes, we agree a fixed price before you travel that covers the complete 125 km journey." },
       { question: "Is this transfer suitable for regular business commuting?", answer: "Yes, we work with business travellers making regular KAEC–Jeddah trips — contact us to discuss your travel pattern." },
       { question: "Can I book a return Jeddah to KAEC transfer?", answer: "Yes, see our Jeddah to KAEC route page for the outbound leg, or ask us to arrange both directions together." },
