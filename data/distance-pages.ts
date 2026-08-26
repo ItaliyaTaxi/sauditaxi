@@ -120,6 +120,7 @@ export const distancePages: DistancePage[] = [
       { label: "Jeddah to Makkah taxi and private transfer service", href: "/routes/jeddah-to-makkah" },
       { label: "Makkah to Madinah distance", href: "/distance/makkah-to-madinah-distance" },
       { label: "Jeddah Airport transfer overview", href: "/airport-transfer/jeddah-airport" },
+      { label: "Jeddah to Taif distance", href: "/distance/jeddah-to-taif-distance" },
     ],
   },
 
@@ -197,6 +198,7 @@ export const distancePages: DistancePage[] = [
       { label: "Makkah to Madinah taxi and private transfer service", href: "/routes/makkah-to-madinah" },
       { label: "Madinah to Makkah distance (reverse direction)", href: "/distance/madinah-to-makkah-distance" },
       { label: "Jeddah to Makkah distance", href: "/distance/jeddah-to-makkah-distance" },
+      { label: "Jeddah to Madinah distance", href: "/distance/jeddah-to-madinah-distance" },
     ],
   },
 

@@ -227,7 +227,7 @@ const baseRoutes: Route[] = [
       {
         heading: "Jeddah to Madinah: route overview and distance",
         paragraphs: [
-          "The drive from Jeddah to Madinah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Travellers who fly into Jeddah but begin their pilgrimage in Madinah, or who are visiting the Prophet's Mosque as a standalone trip before continuing on to Makkah later, use this route throughout the year — it's a different itinerary choice from the shorter Jeddah-to-Makkah run, and one many first-time Umrah travellers aren't aware they can make.",
+          "The drive from Jeddah to Madinah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Travellers who fly into Jeddah but begin their pilgrimage in Madinah, or who are visiting the Prophet's Mosque as a standalone trip before continuing on to Makkah later, use this route throughout the year — it's a different itinerary choice from the shorter Jeddah-to-Makkah run, and one many first-time Umrah travellers aren't aware they can make. For a closer look at how that distance and travel time breaks down, see our <a href='/distance/jeddah-to-madinah-distance'>Jeddah to Madinah distance and travel time guide</a>.",
           "There are no tolls on this or any Saudi highway, so the fixed price you agree before travelling covers the complete journey. Because this is a longer drive than the Jeddah-to-Makkah corridor, and often follows a long-haul international flight, fatigue is the bigger factor here than traffic — we plan the trip with that in mind rather than rushing straight through.",
         ],
       },
@@ -551,7 +551,7 @@ const baseRoutes: Route[] = [
       {
         heading: "Jeddah to Taif: route overview and distance",
         paragraphs: [
-          "The drive from Jeddah to Taif covers about 170 kilometres and takes roughly two hours, most of it spent climbing the winding Al Hada mountain road up to Taif's cooler highland elevation. It's a popular summer escape route, since Taif sits noticeably cooler than coastal Jeddah for much of the year — a genuinely different climate at the top of the ascent, not just a change of scenery.",
+          "The drive from Jeddah to Taif covers about 170 kilometres and takes roughly two hours, most of it spent climbing the winding Al Hada mountain road up to Taif's cooler highland elevation. It's a popular summer escape route, since Taif sits noticeably cooler than coastal Jeddah for much of the year — a genuinely different climate at the top of the ascent, not just a change of scenery. For the full distance breakdown and flight-time comparison, see our <a href='/distance/jeddah-to-taif-distance'>Jeddah to Taif distance guide</a>.",
           "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain ascent. If you're prone to motion sickness on winding roads, mention it when booking so your driver can plan a short stop partway up; this matters more on this route than almost any other we operate, given how sustained the climb is.",
         ],
       },
@@ -854,7 +854,7 @@ const baseRoutes: Route[] = [
       {
         heading: "Leaving Madinah: two different journey purposes",
         paragraphs: [
-          "The drive from Madinah to Jeddah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Most bookings on this route fall into one of two groups: pilgrims flying home from Jeddah after finishing their visit to the Prophet's Mosque, and pilgrims continuing their trip on to Makkah, since Jeddah's road network is also how many travellers reach Makkah from the north.",
+          "The drive from Madinah to Jeddah covers about 420 kilometres and takes roughly four hours under normal highway conditions. Most bookings on this route fall into one of two groups: pilgrims flying home from Jeddah after finishing their visit to the Prophet's Mosque, and pilgrims continuing their trip on to Makkah, since Jeddah's road network is also how many travellers reach Makkah from the north. See our <a href='/distance/jeddah-to-madinah-distance'>Jeddah to Madinah distance and travel time guide</a> for a full breakdown of the road distance, flight time, and Haramain train option.",
           "Telling your driver which of these applies to you when you book means the right drop-off is planned from the start — a flight-timed airport run for one, a city hotel or onward connection for the other — rather than something to sort out on arrival.",
         ],
       },
@@ -903,7 +903,7 @@ const baseRoutes: Route[] = [
       {
         heading: "Departure timing: leaving the mountains for the coast",
         paragraphs: [
-          "The drive from Taif down to Jeddah covers about 170 kilometres and takes roughly two hours, most of it spent descending the winding Al Hada mountain road back to sea level and Jeddah's noticeably warmer coastal climate. It's the natural return leg after a highland stay, and — unlike the outbound climb, which is often the start of a relaxed holiday — this direction is more often tied to a specific departure need: a flight home, a hotel checkout, or the end of a summer break.",
+          "The drive from Taif down to Jeddah covers about 170 kilometres and takes roughly two hours, most of it spent descending the winding Al Hada mountain road back to sea level and Jeddah's noticeably warmer coastal climate. It's the natural return leg after a highland stay, and — unlike the outbound climb, which is often the start of a relaxed holiday — this direction is more often tied to a specific departure need: a flight home, a hotel checkout, or the end of a summer break. See our <a href='/distance/jeddah-to-taif-distance'>Jeddah to Taif distance guide</a> for the full breakdown, including the flight-time alternative.",
           "There are no tolls on this route, so the fixed price you agree before travelling covers the full journey including the mountain descent. If you're heading to Jeddah airport, mention your flight time when booking so pickup from your Taif hotel or resort is timed with enough buffer for both the drive and airport procedures.",
         ],
       },
