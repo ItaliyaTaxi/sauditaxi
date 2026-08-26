@@ -1558,6 +1558,573 @@ export const distancePages: DistancePage[] = [
       { label: "Jeddah to Yanbu distance", href: "/distance/jeddah-to-yanbu-distance" },
     ],
   },
+
+  // ── Cross-border — Saudi ↔ Bahrain / Saudi ↔ Kuwait ────────────────────
+
+  {
+    slug: "dammam-airport-to-bahrain-distance",
+    from: "Dammam Airport",
+    to: "Bahrain",
+    routePath: "/routes/dammam-airport-to-bahrain",
+    metaTitle: "Dammam Airport to Bahrain Distance: KM & Causeway Travel Time",
+    metaDescription: "How far is Bahrain from Dammam Airport? Verified driving distance via the King Fahd Causeway, approximate travel time, and how the figure changes depending on your Bahrain destination.",
+    h1: "Dammam Airport to Bahrain Distance: How Far Is It via the King Fahd Causeway?",
+    quickAnswer: {
+      drivingDistance: "About 103 km (64 miles) to central Manama via the King Fahd Causeway",
+      drivingTime: "Approximately 90 minutes of driving, before border processing",
+      note: "This figure comes from King Fahd International Airport's own published distance data for the route to Manama. It covers driving time only — time spent at the Passport Island border facility is separate and varies by when you travel, so total journey time should be planned with a buffer beyond the 90-minute driving estimate.",
+    },
+    distanceExplanation: [
+      "King Fahd International Airport's own published figures put the driving distance to central Manama at around 103 kilometres (64 miles) via the King Fahd Causeway, with a driving time of roughly 90 minutes under normal conditions. This is airport-specific: the airport sits outside Dammam on its own large site, closer to the highway leading toward the causeway than to Dammam's city centre, so a trip starting here is not the same distance as one starting from central Dammam or Khobar.",
+      "The causeway itself covers 25 kilometres of the total distance, connecting Al Khobar on the Saudi side with Al Jasra on the Bahraini side. The remaining distance is split between the airport-to-causeway approach on the Saudi side and the causeway-to-Manama stretch on the Bahraini side.",
+    ],
+    travelTime: [
+      "The 90-minute figure is a driving-time estimate only, based on the airport's own published data — it does not include time spent at the border. The King Fahd Causeway's border facility sits on Passport Island, roughly midway across, and has operated as a one-stop crossing for Saudi exit and Bahraini entry formalities since 2017. How long that takes on any given day depends on traffic at the crossing, which tends to build at weekends and around public holidays.",
+      "Because of this, total journey time from touchdown at King Fahd Airport to arrival in Bahrain is better thought of as 'roughly 90 minutes of driving, plus a variable amount of time at the border' rather than a single fixed number.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The realistic option for this specific airport-to-country journey, since no public transport service covers this exact route",
+        duration: "~90 minutes driving, plus border processing",
+        advantages: "Direct from arrivals to a specific Bahrain address, no transfer between vehicles at the border",
+        limitations: "Subject to how busy the King Fahd Causeway border facility is at the time of travel",
+      },
+    ],
+    routeSpecific: {
+      heading: "Bahrain Airport, Manama, or elsewhere — the distance depends on where you mean",
+      paragraphs: [
+        "'Bahrain' is not a single point, and the 103-kilometre figure above is specifically to central Manama. If your actual destination is Bahrain International Airport on Muharraq Island rather than the city, or a specific hotel in the Seef District or Diplomatic Area, the real distance from Dammam Airport will differ from the Manama figure by a meaningful margin — Muharraq Island in particular sits on the opposite side of Manama from the causeway landing point.",
+        "This matters for anyone researching this route for a connecting flight versus a stay in the capital: the airport-to-airport distance (Dammam to Bahrain International) is not the same journey as Dammam Airport to a Manama hotel, even though both start at the same point.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Causeway length", value: "25 km, connecting Al Khobar (Saudi) and Al Jasra (Bahrain)" },
+      { label: "Border facility", value: "Passport Island — one-stop Saudi/Bahraini crossing since 2017" },
+      { label: "Key fact", value: "The 103 km / 90-min figure is King Fahd Airport's own published distance to Manama specifically" },
+    ],
+    faqs: [
+      { question: "How far is Bahrain from Dammam Airport?", answer: "King Fahd International Airport's own published figures put the driving distance to central Manama at around 103 kilometres (64 miles), with a driving time of roughly 90 minutes before border processing." },
+      { question: "Can I travel directly from Dammam Airport to Bahrain?", answer: "Yes — the route runs from the airport directly toward the King Fahd Causeway without needing to pass through central Dammam first, since the airport already sits closer to the northbound highway." },
+      { question: "Does border processing affect the total journey time?", answer: "Yes. The 90-minute figure covers driving only. Time at the Passport Island border facility varies by how busy the crossing is when you travel, and can't be predicted precisely in advance." },
+      { question: "Is the distance to Bahrain International Airport the same as to Manama?", answer: "No. Bahrain International Airport sits on Muharraq Island, a different point from central Manama, so the real distance depends on which of these is your actual destination." },
+      { question: "Is there a train or bus between Dammam Airport and Bahrain?", answer: "No public transport service covers this specific airport-to-country route; a private car crossing the King Fahd Causeway is the practical option." },
+    ],
+    sources: [
+      { label: "King Fahd International Airport — official distance information", url: "https://www.dmmairport.com/where-is-king-fahd-airport/" },
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Passport Island (Wikipedia)", url: "https://en.wikipedia.org/wiki/Passport_Island" },
+    ],
+    relatedLinks: [
+      { label: "Dammam Airport to Bahrain taxi and private transfer service", href: "/routes/dammam-airport-to-bahrain" },
+      { label: "Bahrain Airport to Dammam distance (reverse direction)", href: "/distance/bahrain-airport-to-dammam-distance" },
+      { label: "Bahrain to Khobar distance", href: "/distance/bahrain-to-khobar-distance" },
+    ],
+  },
+
+  {
+    slug: "bahrain-airport-to-dammam-distance",
+    from: "Bahrain Airport",
+    to: "Dammam",
+    routePath: "/routes/bahrain-airport-to-dammam",
+    metaTitle: "Bahrain Airport to Dammam Distance: KM & Travel Time",
+    metaDescription: "How far is Dammam from Bahrain International Airport? Approximate driving distance via the King Fahd Causeway, why figures vary, and the difference between Dammam city and King Fahd Airport as a destination.",
+    h1: "Bahrain Airport to Dammam Distance: How Far Is the Crossing?",
+    quickAnswer: {
+      drivingDistance: "Approximately 95–105 km (59–65 miles) depending on the exact Dammam destination",
+      drivingTime: "Roughly 1 hour 45 minutes of driving, before border processing",
+      note: "Independent route sources vary more for this specific airport-to-Dammam leg than for some other Bahrain crossings, and no single official figure was found isolating Bahrain Airport specifically. The range above is a reasonable approximation; treat it as indicative rather than exact, and expect the real distance to shift depending on where in Dammam you're actually headed.",
+    },
+    distanceExplanation: [
+      "Bahrain International Airport sits on Muharraq Island, connected to central Manama by its own bridges rather than sitting inside the capital — a genuinely different starting point from a Manama hotel. From there, the route crosses the King Fahd Causeway (25 km) to Al Khobar on the Saudi side, then continues inland toward Dammam.",
+      "Independent route sources disagree more on this specific airport-to-Dammam figure than they do on some other legs of this corridor, so rather than state a single precise number, the most honest approach is a range: expect somewhere in the region of 95–105 kilometres depending on the exact source and your specific Dammam destination.",
+    ],
+    travelTime: [
+      "Driving time is estimated at around an hour and 45 minutes under normal conditions, not counting time at the border. As with any King Fahd Causeway crossing, the Passport Island facility handles both Bahraini exit and Saudi entry formalities at a single stop, and how long that takes varies by traffic at the crossing — weekends and holidays typically see more congestion than a weekday morning.",
+      "Total journey time from Muharraq to a Dammam address should be planned as driving time plus a variable border-crossing allowance, rather than a single fixed figure.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The practical option for this specific airport-to-Eastern-Province journey",
+        duration: "~1h45 driving, plus border processing",
+        advantages: "Direct from Muharraq arrivals to a specific Dammam address, one vehicle for the whole trip",
+        limitations: "Subject to causeway border conditions on the day",
+      },
+    ],
+    routeSpecific: {
+      heading: "Dammam city or King Fahd Airport — different endpoints",
+      paragraphs: [
+        "Dammam itself covers a wide area, and King Fahd International Airport sits outside the city on its own separate site — so 'Bahrain Airport to Dammam' can mean two genuinely different final distances depending on whether the destination is a city address or the airport for an onward connection. Anyone researching this route for a flight connection specifically should note that the airport figure differs from the city figure.",
+        "Because Muharraq Island is itself a distinct starting point from central Manama, this route is also a different journey from a Manama-hotel-to-Dammam trip, even though both eventually cross the same causeway.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Causeway length", value: "25 km, connecting Al Jasra (Bahrain) and Al Khobar (Saudi)" },
+      { label: "Starting point", value: "Muharraq Island — a different point from central Manama" },
+      { label: "Key fact", value: "Dammam city and King Fahd Airport are separate destinations with different final distances" },
+    ],
+    faqs: [
+      { question: "How far is Dammam from Bahrain International Airport?", answer: "Independent sources vary; a reasonable approximation is 95–105 kilometres depending on the exact Dammam destination, with driving time of roughly an hour and 45 minutes before border processing." },
+      { question: "Is Bahrain International Airport the same starting point as Manama?", answer: "No. The airport is on Muharraq Island, connected to Manama by separate bridges, so a trip starting at the airport is a different journey from one starting at a Manama hotel." },
+      { question: "Does this distance apply to Dammam city or King Fahd Airport?", answer: "The figures above are general for the Dammam area; King Fahd International Airport sits outside the city on its own site, so confirm which destination you mean, as the exact distance differs." },
+      { question: "How is the border crossing handled?", answer: "The King Fahd Causeway has operated as a one-stop crossing at Passport Island since 2017, combining Bahraini exit and Saudi entry formalities, vehicle clearance and customs in a single stop." },
+      { question: "Is there a more precise official distance figure?", answer: "We were unable to find an official source isolating this specific airport-to-Dammam distance; the range given here is drawn from independent route data and should be treated as approximate." },
+    ],
+    sources: [
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Passport Island (Wikipedia)", url: "https://en.wikipedia.org/wiki/Passport_Island" },
+      { label: "Bahrain International Airport (Wikipedia)", url: "https://en.wikipedia.org/wiki/Bahrain_International_Airport" },
+    ],
+    relatedLinks: [
+      { label: "Bahrain Airport to Dammam taxi and private transfer service", href: "/routes/bahrain-airport-to-dammam" },
+      { label: "Dammam Airport to Bahrain distance (reverse direction)", href: "/distance/dammam-airport-to-bahrain-distance" },
+      { label: "Manama to Dammam distance", href: "/distance/manama-to-dammam-distance" },
+    ],
+  },
+
+  {
+    slug: "bahrain-to-khobar-distance",
+    from: "Bahrain",
+    to: "Khobar",
+    routePath: "/routes/bahrain-to-khobar",
+    metaTitle: "Bahrain to Khobar Distance: KM & Causeway Crossing Time",
+    metaDescription: "How far is Khobar from Bahrain? The shortest Bahrain-Saudi crossing distance, causeway travel time, and how the figure shifts depending on where in Bahrain you start.",
+    h1: "Bahrain to Khobar Distance: The Shortest Saudi-Bahrain Crossing",
+    quickAnswer: {
+      drivingDistance: "About 55 km (34 miles), varying with your exact Bahrain starting point",
+      drivingTime: "Around 1 hour of driving, before border processing",
+      note: "Al Khobar sits at the Saudi end of the King Fahd Causeway, making this the shortest of the Bahrain-Saudi road distances — but the exact figure still depends on where in Bahrain you're starting, since Bahrain itself isn't a single point.",
+    },
+    distanceExplanation: [
+      "Al Khobar is the closest major Saudi city to Bahrain, sitting right at the Saudi terminus of the King Fahd Causeway. The causeway itself runs 25 kilometres, and the remaining distance is the short approach on either side — from a Bahrain starting point to the causeway entrance, and from the Saudi landing point into Khobar itself. Total driving distance is commonly cited around 55 kilometres.",
+      "Because Bahrain is a compact country with several distinct areas — central Manama, the Seef District, the Diplomatic Area, Muharraq — the exact distance varies by a small but real margin depending on your specific starting address, even though the country is small enough that the difference rarely exceeds a few kilometres.",
+    ],
+    travelTime: [
+      "Driving time is around an hour under normal conditions — the shortest of the Bahrain-Saudi road journeys, given how close Khobar sits to the causeway. As with any causeway crossing, this figure covers driving only; time at the Passport Island border facility is separate and varies by how busy the crossing is, with weekend evenings typically busier than weekday mornings.",
+      "Because the route itself is short, border-crossing time has a proportionally larger effect on the total journey than it does on longer Bahrain-Saudi routes, where driving time dominates the total.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The practical option for this short cross-border hop",
+        duration: "~1 hour driving, plus border processing",
+        advantages: "Direct door-to-door from a Bahrain address to a specific Khobar destination",
+        limitations: "Subject to causeway crossing conditions, more noticeable on a route this short",
+      },
+    ],
+    routeSpecific: {
+      heading: "Khobar as a distinct destination from Dammam",
+      paragraphs: [
+        "Khobar and Dammam are both Eastern Province cities but Khobar is meaningfully closer to Bahrain, since it sits at the causeway's Saudi landing point while Dammam is further inland. Anyone comparing 'Bahrain to Khobar' with 'Bahrain to Dammam' should expect the Khobar figure to be shorter — continuing on to Dammam adds real additional distance beyond the causeway crossing itself.",
+        "The Khobar Corniche, the city's well-known waterfront promenade, is often used as a reference point for the city, though the exact distance to a specific hotel or address will vary somewhat from a Corniche-area figure.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Causeway length", value: "25 km — Khobar sits right at the Saudi end" },
+      { label: "Shortest Bahrain-Saudi crossing", value: "Of all Bahrain-to-Eastern-Province routes on this corridor" },
+      { label: "Key fact", value: "Distance to Khobar is shorter than distance to Dammam, since Khobar is closer to the causeway" },
+    ],
+    faqs: [
+      { question: "How far is Khobar from Bahrain?", answer: "Around 55 kilometres, making it the shortest of the Bahrain-Saudi road distances — Khobar sits right at the causeway's Saudi landing point." },
+      { question: "How long does the causeway journey take?", answer: "Roughly an hour of driving under normal conditions, plus a variable amount of time at the Passport Island border facility." },
+      { question: "Does travel time vary depending on the pickup point in Bahrain?", answer: "Slightly. Bahrain is compact, so the difference between starting in Manama, Seef, or elsewhere is small, but it isn't zero." },
+      { question: "Is Khobar closer to Bahrain than Dammam is?", answer: "Yes. Khobar sits at the causeway's Saudi terminus, while Dammam is further inland, so the Bahrain-to-Dammam distance is longer than the Bahrain-to-Khobar distance." },
+      { question: "Is there public transport across the causeway?", answer: "A private car is the practical option for this route; no public transit service covers this specific cross-border journey." },
+    ],
+    sources: [
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Khobar Corniche coverage (Saudi Press Agency)", url: "https://www.spa.gov.sa/en" },
+      { label: "Passport Island (Wikipedia)", url: "https://en.wikipedia.org/wiki/Passport_Island" },
+    ],
+    relatedLinks: [
+      { label: "Bahrain to Khobar taxi and private transfer service", href: "/routes/bahrain-to-khobar" },
+      { label: "Manama to Dammam distance", href: "/distance/manama-to-dammam-distance" },
+      { label: "Dammam Airport to Bahrain distance", href: "/distance/dammam-airport-to-bahrain-distance" },
+    ],
+  },
+
+  {
+    slug: "manama-to-dammam-distance",
+    from: "Manama",
+    to: "Dammam",
+    routePath: "/routes/manama-to-dammam",
+    metaTitle: "Manama to Dammam Distance: KM & Causeway Travel Time",
+    metaDescription: "How far is Dammam from central Manama? Approximate driving distance via the King Fahd Causeway, why sources disagree, and how the figure differs from a generic Bahrain-to-Dammam estimate.",
+    h1: "Manama to Dammam Distance: How Far Is the Journey from the Bahraini Capital?",
+    quickAnswer: {
+      drivingDistance: "Sources vary meaningfully, roughly 60–110 km (37–68 miles) depending on the source and measurement method",
+      drivingTime: "Approximately 1.5 hours of driving in most estimates, before border processing",
+      note: "This is one of the routes where independently reviewed sources disagree the most — reported distances range from around 60 km to over 100 km depending on methodology. Rather than state a false-precision single figure, this page presents the range candidly; treat any single number you see elsewhere with some caution.",
+    },
+    distanceExplanation: [
+      "Central Manama to Dammam is a well-travelled cross-border route, but pinning down one exact distance figure is genuinely harder than it is for some of the shorter Bahrain-Saudi legs. Independent route sources checked for this route disagreed by a wide margin — some placing the distance around 60 kilometres, others over 100 — likely reflecting differences in exactly which points within each city are being measured, since neither Manama nor Dammam is a single fixed point.",
+      "What is well established is the shape of the route: it crosses the 25-kilometre King Fahd Causeway from the Bahraini side to Al Khobar on the Saudi side, then continues inland to Dammam. The most defensible approach for this specific pairing is to treat any single-figure claim with some skepticism and plan around the general driving-time estimate instead of an exact kilometre count.",
+    ],
+    travelTime: [
+      "Most estimates for this route put driving time at around an hour and a half under normal conditions, though given the distance uncertainty noted above, this should be treated as a general guide rather than a precise figure. As with any King Fahd Causeway crossing, this doesn't include time at the Passport Island border facility, which varies independently of the driving distance.",
+      "Total journey time — from a Manama pickup to arrival in Dammam — is best planned as 'roughly ninety minutes of driving, plus a variable border-crossing allowance' rather than a single fixed number.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The practical option for a central-Manama-to-Dammam journey",
+        duration: "~1.5 hours driving, plus border processing",
+        advantages: "Direct from a specific Manama address to a specific Dammam destination",
+        limitations: "Subject to causeway conditions and, per the note above, some genuine uncertainty in the driving distance itself",
+      },
+    ],
+    routeSpecific: {
+      heading: "Why this is different from a general 'Bahrain to Dammam' distance",
+      paragraphs: [
+        "This page covers the journey starting specifically in central Manama — a hotel, an office in the Seef District, or an address in the Diplomatic Area — rather than a generic 'Bahrain' starting point. That distinction matters because Bahrain's own geography spans Manama, Muharraq Island (where the international airport sits), and other areas, each with a somewhat different distance to Dammam.",
+        "For travellers starting from Bahrain International Airport specifically rather than a Manama address, the relevant figures differ from what's presented here — see the dedicated page for that route instead.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Causeway length", value: "25 km, part of the total Manama-Dammam distance" },
+      { label: "Distance uncertainty", value: "Sources disagree meaningfully for this specific pairing — treat single-figure claims with caution" },
+      { label: "Key fact", value: "Manama is a different starting point from Bahrain International Airport (Muharraq)" },
+    ],
+    faqs: [
+      { question: "How far is Dammam from Manama?", answer: "Independently reviewed sources disagree meaningfully, ranging from around 60 to over 100 kilometres. Rather than assert one precise figure, we recommend treating any single number with some caution and planning around the general driving-time estimate instead." },
+      { question: "How long does the drive take?", answer: "Most estimates put driving time at around an hour and a half under normal conditions, not including time at the Passport Island border facility." },
+      { question: "Is this the same as a general Bahrain to Dammam distance?", answer: "Not exactly — this page is specific to a central Manama starting point. Bahrain International Airport, on Muharraq Island, is a different starting point with its own distance to Dammam." },
+      { question: "Why do distance sources disagree so much for this route?", answer: "Likely because neither Manama nor Dammam is a single fixed point — different measurement tools use different reference addresses within each city, producing a wider spread than shorter, more clearly defined routes." },
+      { question: "Does border processing add to the journey time?", answer: "Yes. The driving-time estimate doesn't include time at the King Fahd Causeway border facility, which varies independently and tends to be busier at weekends and holidays." },
+    ],
+    sources: [
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Passport Island (Wikipedia)", url: "https://en.wikipedia.org/wiki/Passport_Island" },
+    ],
+    relatedLinks: [
+      { label: "Manama to Dammam taxi and private transfer service", href: "/routes/manama-to-dammam" },
+      { label: "Bahrain Airport to Dammam distance", href: "/distance/bahrain-airport-to-dammam-distance" },
+      { label: "Bahrain to Khobar distance", href: "/distance/bahrain-to-khobar-distance" },
+    ],
+  },
+
+  {
+    slug: "riyadh-to-bahrain-distance",
+    from: "Riyadh",
+    to: "Bahrain",
+    routePath: "/routes/riyadh-to-bahrain",
+    metaTitle: "Riyadh to Bahrain Distance: KM & Causeway Road Trip Time",
+    metaDescription: "How far is Bahrain from Riyadh by road? Approximate driving distance across the Eastern Province and the King Fahd Causeway, and why the figure varies by Bahrain destination.",
+    h1: "Riyadh to Bahrain Distance: How Far Is the Road Journey to Manama?",
+    quickAnswer: {
+      drivingDistance: "Approximately 450 km (280 miles), though estimates vary",
+      drivingTime: "Roughly 4.5 to 5 hours of driving, before border processing",
+      note: "This is a genuine cross-country distance with two distinct legs — the long highway run to the Eastern Province, then the King Fahd Causeway itself — and independent sources vary somewhat on the exact total. The figure above is a reasonable middle estimate; treat it as approximate rather than precise.",
+    },
+    distanceExplanation: [
+      "The road distance from Riyadh to Bahrain has two genuinely different components: the long highway run east from the capital to the Eastern Province, largely along the Riyadh-Dammam corridor (roughly 400 kilometres on its own), and the King Fahd Causeway crossing (25 kilometres) as the final stage into Bahrain. Added together with the short approach on either side, the total is commonly estimated around 450 kilometres, though independent sources vary by a meaningful margin for this specific long-distance pairing.",
+      "Because most of the distance belongs to the Eastern Province highway leg rather than the causeway itself, this is a substantially longer journey than any of the Bahrain-to-Eastern-Province routes covered elsewhere on this site — worth keeping in mind if you're comparing this route to a shorter Khobar-to-Bahrain or Dammam-to-Bahrain trip.",
+    ],
+    travelTime: [
+      "Driving time for the highway leg alone is typically estimated at four to five hours, depending on traffic and stops. This does not include time at the King Fahd Causeway border facility on Passport Island, which is a separate and variable factor — busier at weekends and around public holidays than on a weekday.",
+      "Given both the length of the drive and the added border-crossing time, total journey time from Riyadh to a Bahrain destination is best planned as a half-day undertaking rather than a fixed number of hours.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "Travellers who want a genuine door-to-door journey rather than flying plus a separate transfer",
+        duration: "~4.5–5 hours driving, plus border processing",
+        advantages: "No airport check-in or baggage limits, room for rest stops on a long journey",
+        limitations: "A genuinely long single-day undertaking; total time depends on both traffic and border conditions",
+      },
+      {
+        mode: "Direct flight (Riyadh to Bahrain)",
+        suitability: "Travellers prioritising speed over the road-trip experience",
+        duration: "Considerably shorter than the drive; this page doesn't cover specific schedules or fares",
+        advantages: "Fastest way to cover the distance itself",
+        limitations: "Not door-to-door; still requires ground transport at both ends",
+      },
+    ],
+    routeSpecific: {
+      heading: "Bahrain isn't one point — the destination affects the total",
+      paragraphs: [
+        "The 450-kilometre estimate above is to central Manama specifically. If your actual destination is Bahrain International Airport on Muharraq Island, or a specific address in Seef or the Diplomatic Area, the real distance will differ from the Manama figure by some margin, since these areas sit at different points relative to the causeway landing.",
+        "Anyone researching this route for a long road trip should also note that most of the distance and driving time belongs to the Eastern Province highway leg, not the causeway crossing — the crossing itself is comparatively short once you've already covered the bulk of the journey.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Two-stage journey", value: "~400 km highway leg to the Eastern Province, then the 25 km causeway crossing" },
+      { label: "Typical driving time", value: "4.5–5 hours, not including border processing" },
+      { label: "Key fact", value: "Most of the distance belongs to the highway leg, not the causeway itself" },
+    ],
+    faqs: [
+      { question: "How long is the drive from Riyadh to Bahrain?", answer: "Around 450 kilometres in total, taking roughly four and a half to five hours of driving, plus a variable amount of time at the King Fahd Causeway border. Estimates vary somewhat between sources for this long-distance pairing." },
+      { question: "Is the Causeway crossing included in this distance?", answer: "Yes — the causeway's 25 kilometres are the final stage of the journey, after the much longer Eastern Province highway leg." },
+      { question: "Does the distance change depending on where in Bahrain I'm going?", answer: "Yes. The estimate above is to central Manama; Bahrain International Airport and other Bahrain destinations sit at somewhat different distances." },
+      { question: "Is there a flight alternative to the long drive?", answer: "Yes, a direct flight between Riyadh and Bahrain covers the distance considerably faster, though it isn't door-to-door and this page doesn't cover specific flight schedules or fares." },
+      { question: "Does border processing add significant time to the journey?", answer: "It can. Border crossing time varies independently of the driving distance and tends to be higher at weekends and public holidays, so total journey time is best planned with a buffer beyond the driving estimate." },
+    ],
+    sources: [
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Highway 40 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_40_(Saudi_Arabia)" },
+    ],
+    relatedLinks: [
+      { label: "Riyadh to Bahrain taxi and private transfer service", href: "/routes/riyadh-to-bahrain" },
+      { label: "Bahrain to Riyadh distance (reverse direction)", href: "/distance/bahrain-to-riyadh-distance" },
+      { label: "Riyadh to Dammam distance", href: "/distance/riyadh-to-dammam-distance" },
+    ],
+  },
+
+  {
+    slug: "bahrain-to-riyadh-distance",
+    from: "Bahrain",
+    to: "Riyadh",
+    routePath: "/routes/bahrain-to-riyadh",
+    metaTitle: "Bahrain to Riyadh Distance: KM & Long-Distance Road Trip Time",
+    metaDescription: "How far is Riyadh from Bahrain by road? Driving distance from the King Fahd Causeway across the Eastern Province, and how the journey differs starting from Bahrain rather than Riyadh.",
+    h1: "Bahrain to Riyadh Distance: How Far Is the Road Journey to the Saudi Capital?",
+    quickAnswer: {
+      drivingDistance: "Approximately 450 km (280 miles), though estimates vary",
+      drivingTime: "Roughly 4.5 to 5 hours of driving, before border processing",
+      note: "Same total road distance as the Riyadh-to-Bahrain direction, but this journey's shape is different — the King Fahd Causeway crossing happens near the start rather than the end, which affects how the day plays out even though the total kilometres are similar.",
+    },
+    distanceExplanation: [
+      "The road distance from Bahrain to Riyadh covers the same physical route as the reverse direction — the King Fahd Causeway (25 km) followed by the long highway leg west across the Eastern Province to the capital, largely along the Riyadh-Dammam corridor. Total distance is commonly estimated around 450 kilometres, though independent sources vary somewhat for this long-distance pairing.",
+      "What differs from the Riyadh-to-Bahrain direction isn't the distance itself but the order: this journey crosses the causeway early, close to the start, while the long highway drive makes up the bulk of what follows — the opposite shape from the outbound direction, where the highway leg comes first and the causeway is the final stage.",
+    ],
+    travelTime: [
+      "Driving time is estimated at four to five hours in total, not including time at the King Fahd Causeway border facility. Because the border crossing happens early in this direction rather than at the end, a longer-than-expected wait there has more effect on your overall arrival time in Riyadh than it would on the reverse journey, where any border delay is the last thing before you're already at your destination.",
+      "Total journey time should be planned as driving time plus a variable border allowance — and, in this direction specifically, worth factoring in near the start of your day rather than assuming it'll only affect the very end.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "Travellers who want a genuine door-to-door journey from Bahrain to a specific Riyadh address",
+        duration: "~4.5–5 hours driving, plus border processing near the start",
+        advantages: "No airport check-in or baggage limits, flexible for onward Riyadh airport connections",
+        limitations: "A genuinely long single-day undertaking",
+      },
+      {
+        mode: "Direct flight (Bahrain to Riyadh)",
+        suitability: "Travellers prioritising speed",
+        duration: "Considerably shorter than driving; this page doesn't cover specific schedules or fares",
+        advantages: "Fastest way to cover the distance",
+        limitations: "Not door-to-door",
+      },
+    ],
+    routeSpecific: {
+      heading: "Riyadh is a large capital — the destination changes the final leg",
+      paragraphs: [
+        "Riyadh is a large, spread-out city, and your specific destination — a hotel, a business district, a residential area, or King Khalid International Airport for an onward flight — determines the final stretch of this journey once the highway leg is complete. The 450-kilometre estimate is a general figure for the city as a whole; the exact distance to your specific address will vary somewhat.",
+        "Anyone timing this journey around a flight from Riyadh should account for the fact that the border crossing happens early, near the Bahrain side, meaning any border delay affects planning for the whole rest of the day rather than just the final approach.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Same distance, different shape", value: "~450 km total, but the causeway comes near the start of this direction, not the end" },
+      { label: "Typical driving time", value: "4.5–5 hours, not including border processing" },
+      { label: "Key fact", value: "Border-crossing delays affect this direction's schedule earlier in the day than the reverse route" },
+    ],
+    faqs: [
+      { question: "How far is Riyadh from Bahrain?", answer: "Around 450 kilometres by road, the same total distance as the Riyadh-to-Bahrain direction, taking roughly four and a half to five hours of driving plus border processing." },
+      { question: "Does this journey cross the border at the start or the end?", answer: "At the start. Unlike the Riyadh-to-Bahrain direction, this route crosses the King Fahd Causeway shortly after leaving Bahrain, with the long highway drive to Riyadh following." },
+      { question: "Does border processing affect this route differently than the reverse direction?", answer: "In a sense — because the crossing happens early here, a longer-than-expected border wait affects the rest of your day's schedule, whereas on the reverse route any delay is closer to your final arrival." },
+      { question: "Is there a flight alternative?", answer: "Yes, direct flights between Bahrain and Riyadh cover the distance considerably faster, though this page doesn't cover specific flight schedules or fares." },
+      { question: "Does the distance change depending on my Riyadh destination?", answer: "Yes. The 450-kilometre estimate is general for the city; a specific hotel, office, or the airport will each have a slightly different exact distance." },
+    ],
+    sources: [
+      { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
+      { label: "Highway 40 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_40_(Saudi_Arabia)" },
+    ],
+    relatedLinks: [
+      { label: "Bahrain to Riyadh taxi and private transfer service", href: "/routes/bahrain-to-riyadh" },
+      { label: "Riyadh to Bahrain distance (outbound direction)", href: "/distance/riyadh-to-bahrain-distance" },
+      { label: "Dammam to Riyadh distance", href: "/distance/dammam-to-riyadh-distance" },
+    ],
+  },
+
+  {
+    slug: "dammam-to-kuwait-city-distance",
+    from: "Dammam",
+    to: "Kuwait City",
+    routePath: "/routes/dammam-to-kuwait-city",
+    metaTitle: "Dammam to Kuwait City Distance: KM & Khafji Border Road Trip",
+    metaDescription: "How far is Kuwait City from Dammam by road? Driving distance along Highway 95 to the Khafji border, approximate travel time, and border-crossing considerations.",
+    h1: "Dammam to Kuwait City Distance: How Far Is the Road Journey via Khafji?",
+    quickAnswer: {
+      drivingDistance: "Approximately 420–450 km (260–280 miles) along Highway 95",
+      drivingTime: "Roughly 4 to 4.5 hours of driving, before border processing",
+      note: "This figure covers the driving portion via Highway 95 to the Khafji border crossing. Independent travel sources converge reasonably closely around this range, though none is an official government figure, so treat it as a well-supported estimate rather than an exact number.",
+    },
+    distanceExplanation: [
+      "The road distance from Dammam to Kuwait City runs almost the full length of Highway 95, the Eastern Province's coastal corridor, passing near Khobar, Qatif and Jubail before reaching Khafji at the Kuwaiti border. Independent travel sources converge reasonably closely on a distance of roughly 420 to 450 kilometres for the driving portion, though this isn't an officially published government figure.",
+      "Because Highway 95 runs the length of the province, the exact starting point within Dammam — or a nearby city like Khobar — makes only a small difference to the total, since most of the distance is the long highway stretch itself rather than the local approach.",
+    ],
+    travelTime: [
+      "Driving time is estimated at roughly four to four and a half hours under normal conditions, based on independent travel-source convergence rather than an official figure. This covers driving only — it does not include time spent at the Khafji (Saudi side) / Nuwaiseeb (Kuwaiti side) border crossing, which varies by traffic and time of day and cannot be predicted precisely.",
+      "Total journey time from Dammam to a Kuwait City destination is best planned as the driving estimate above plus a variable border allowance, rather than a single fixed total.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The practical option for this long cross-border journey",
+        duration: "~4–4.5 hours driving, plus border processing",
+        advantages: "Door-to-door from a specific Dammam address to a specific Kuwait City destination, room for rest stops on a long drive",
+        limitations: "A genuinely long single-day undertaking; total time depends on border conditions",
+      },
+    ],
+    routeSpecific: {
+      heading: "Kuwait City destination variation",
+      paragraphs: [
+        "Kuwait City covers a range of districts and neighbourhoods within its wider metropolitan area, so the exact distance once you're across the Khafji/Nuwaiseeb border depends on your specific destination — a downtown hotel, a business address, or elsewhere in the city. The figure above is a general estimate for the journey as a whole rather than to one specific address.",
+        "This route follows the same Highway 95 corridor throughout, without the causeway-and-island border structure used for the Bahrain crossings — the Khafji/Nuwaiseeb crossing is a standard land border rather than an island-based one-stop facility.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Route", value: "Highway 95, the Eastern Province coastal corridor" },
+      { label: "Border crossing", value: "Khafji (Saudi side) / Nuwaiseeb (Kuwaiti side)" },
+      { label: "Key fact", value: "A standard land border, not an island/causeway crossing like the Bahrain routes" },
+    ],
+    faqs: [
+      { question: "How far is Kuwait City from Dammam by road?", answer: "Independent travel sources converge on roughly 420 to 450 kilometres along Highway 95, though this isn't an official government-published figure." },
+      { question: "How long does the drive take before border processing?", answer: "Roughly four to four and a half hours of driving under normal conditions, based on independent source convergence rather than an official figure." },
+      { question: "Can the journey include rest stops?", answer: "The distance is long enough that many travellers plan for rest stops along Highway 95, though specific stop locations and durations vary by personal preference." },
+      { question: "Where exactly is the border crossing?", answer: "At Khafji on the Saudi side and Nuwaiseeb on the Kuwaiti side, at the northern end of Highway 95." },
+      { question: "Is this a causeway crossing like the Bahrain routes?", answer: "No. Khafji/Nuwaiseeb is a standard land border crossing, unlike the King Fahd Causeway's island-based, one-stop facility used for Bahrain routes." },
+    ],
+    sources: [
+      { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+    ],
+    relatedLinks: [
+      { label: "Dammam to Kuwait City taxi and private transfer service", href: "/routes/dammam-to-kuwait-city" },
+      { label: "Kuwait City to Dammam distance (reverse direction)", href: "/distance/kuwait-city-to-dammam-distance" },
+      { label: "Riyadh to Kuwait City distance", href: "/distance/riyadh-to-kuwait-city-distance" },
+    ],
+  },
+
+  {
+    slug: "kuwait-city-to-dammam-distance",
+    from: "Kuwait City",
+    to: "Dammam",
+    routePath: "/routes/kuwait-city-to-dammam",
+    metaTitle: "Kuwait City to Dammam Distance: KM & Nuwaiseeb Border Road Trip",
+    metaDescription: "How far is Dammam from Kuwait City by road? Driving distance via the Nuwaiseeb/Khafji border and Highway 95, and the difference between Dammam city and King Fahd Airport as a destination.",
+    h1: "Kuwait City to Dammam Distance: How Far Is the Southbound Journey?",
+    quickAnswer: {
+      drivingDistance: "Approximately 420–450 km (260–280 miles) along Highway 95",
+      drivingTime: "Roughly 4 to 4.5 hours of driving, before border processing",
+      note: "Same route and comparable distance to the Dammam-to-Kuwait-City direction, but the journey starts on the Kuwaiti side and the border crossing comes early rather than late — worth noting when planning your day.",
+    },
+    distanceExplanation: [
+      "The road distance from Kuwait City to Dammam covers the same Highway 95 corridor as the reverse direction, running south from the Kuwaiti capital across the Nuwaiseeb/Khafji border and down through the Eastern Province. Independent travel sources place the driving distance at roughly 420 to 450 kilometres, broadly consistent with the northbound figure.",
+      "Once across the border, the route continues south through Jubail and Qatif toward Dammam and Khobar — so the specific Dammam destination at the end, rather than the starting point in Kuwait City, is what introduces the most variation in the final distance.",
+    ],
+    travelTime: [
+      "Driving time is estimated at roughly four to four and a half hours, consistent with the reverse direction, based on independent source convergence rather than an official figure. This is driving time only — the border crossing at Nuwaiseeb (Kuwaiti side) / Khafji (Saudi side) adds separate, variable time depending on traffic and time of day.",
+      "Because the border crossing happens early in this direction — shortly after leaving Kuwait City — any delay there affects the rest of the day's schedule more than it would on the reverse route, where the crossing comes near the end of the journey.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "The practical option for this long cross-border journey",
+        duration: "~4–4.5 hours driving, plus border processing near the start",
+        advantages: "Door-to-door from Kuwait City to a specific Dammam address or King Fahd Airport",
+        limitations: "A genuinely long single-day undertaking",
+      },
+    ],
+    routeSpecific: {
+      heading: "Dammam city or King Fahd Airport — a different final leg",
+      paragraphs: [
+        "Once back in the Eastern Province, the destination matters: a Dammam city address is a different final distance from King Fahd International Airport, which sits outside the city on its own site. Travellers connecting onward to a flight should note that the airport figure differs somewhat from a city-centre estimate.",
+        "This route uses the same standard land border as the outbound direction — Nuwaiseeb on the Kuwaiti side, Khafji on the Saudi side — rather than an island-based crossing like the King Fahd Causeway used for the Bahrain routes.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Route", value: "Highway 95, southbound from the Kuwaiti border" },
+      { label: "Border crossing", value: "Nuwaiseeb (Kuwaiti side) / Khafji (Saudi side)" },
+      { label: "Key fact", value: "Dammam city and King Fahd Airport are different final destinations with slightly different distances" },
+    ],
+    faqs: [
+      { question: "How far is Dammam from Kuwait City?", answer: "Independent travel sources place the driving distance at roughly 420 to 450 kilometres along Highway 95, broadly consistent with the northbound direction." },
+      { question: "Does this distance apply to Dammam city or King Fahd Airport?", answer: "The figures are general for the Dammam area; King Fahd International Airport sits outside the city on its own site, so the exact distance depends on which is your destination." },
+      { question: "Where is the border crossing?", answer: "At Nuwaiseeb on the Kuwaiti side and Khafji on the Saudi side, where Highway 95 continues into the Eastern Province." },
+      { question: "Does the border crossing happen early or late on this route?", answer: "Early — shortly after leaving Kuwait City, unlike the reverse direction where the crossing comes near the end of the journey." },
+      { question: "How long does the journey take in total?", answer: "Roughly four to four and a half hours of driving, plus a variable amount of time at the border crossing that can't be predicted precisely in advance." },
+    ],
+    sources: [
+      { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+    ],
+    relatedLinks: [
+      { label: "Kuwait City to Dammam taxi and private transfer service", href: "/routes/kuwait-city-to-dammam" },
+      { label: "Dammam to Kuwait City distance (outbound direction)", href: "/distance/dammam-to-kuwait-city-distance" },
+      { label: "Riyadh to Kuwait City distance", href: "/distance/riyadh-to-kuwait-city-distance" },
+    ],
+  },
+
+  {
+    slug: "riyadh-to-kuwait-city-distance",
+    from: "Riyadh",
+    to: "Kuwait City",
+    routePath: "/routes/riyadh-to-kuwait-city",
+    metaTitle: "Riyadh to Kuwait City Distance: KM & Longest GCC Road Trip",
+    metaDescription: "How far is Kuwait City from Riyadh by road? Approximate driving distance via Highway 40 and Highway 95 to the Khafji border, and why this is the longest Saudi-Kuwait road journey.",
+    h1: "Riyadh to Kuwait City Distance: How Far Is the Capital-to-Capital Road Trip?",
+    quickAnswer: {
+      drivingDistance: "Estimates vary considerably, roughly 600–700 km (373–435 miles)",
+      drivingTime: "Approximately 6.5 to 7 hours of driving, before border processing",
+      note: "This is genuinely one of the longer road distances in this region, and independent sources disagree more here than for shorter routes — figures found during research ranged from around 636 km to 718 km. Rather than assert a single precise number, this page presents the range and recommends planning generously around it.",
+    },
+    distanceExplanation: [
+      "The road distance from Riyadh to Kuwait City runs via Highway 40 east to the Eastern Province, then Highway 95 north along the coast to the Khafji border crossing. Independent route sources disagree meaningfully on the total — figures found ranged from around 636 to 718 kilometres — likely reflecting different measurement points and routing assumptions, since no single official figure for this specific capital-to-capital pairing was found.",
+      "What's well established is the route itself: this is the longest regular Saudi-Kuwait road journey, since it covers the full width of the Eastern Province highway network before the border is even reached, unlike a Dammam-to-Kuwait-City trip which starts much closer to the crossing.",
+    ],
+    travelTime: [
+      "Given the distance uncertainty, driving time is best estimated in a range: roughly six and a half to seven hours under normal conditions, not including time at the Khafji/Nuwaiseeb border crossing. This is a genuine full-day undertaking by any measure, and total time should be planned generously rather than to a precise schedule.",
+      "Border-crossing time is a separate, variable factor on top of the driving estimate — it depends on traffic and time of day at the crossing and cannot be predicted precisely for a specific date.",
+    ],
+    transportOptions: [
+      {
+        mode: "Private car / taxi",
+        suitability: "Travellers who want a genuine door-to-door journey for this long-distance route",
+        duration: "~6.5–7 hours driving, plus border processing",
+        advantages: "Room for rest stops on a genuinely long drive, no airport check-in or baggage limits",
+        limitations: "A substantial single-day undertaking; total time depends heavily on both driving conditions and the border crossing",
+      },
+      {
+        mode: "Direct flight (Riyadh to Kuwait City)",
+        suitability: "Travellers prioritising speed for this specific long-distance route",
+        duration: "Considerably shorter than driving; this page doesn't cover specific schedules or fares",
+        advantages: "By far the fastest way to cover this particular distance",
+        limitations: "Not door-to-door",
+      },
+    ],
+    routeSpecific: {
+      heading: "The longest Saudi-Kuwait road journey",
+      paragraphs: [
+        "Because this route starts in Riyadh rather than the Eastern Province, it covers considerably more distance than a Dammam-to-Kuwait-City trip — the Riyadh-to-Eastern-Province leg alone (via Highway 40) adds roughly 400 kilometres before the Highway 95 stretch north to the border even begins. Anyone comparing this route to the shorter Eastern-Province-to-Kuwait journeys should expect a meaningfully longer total.",
+        "Like the Dammam-to-Kuwait-City route, this crossing at Khafji/Nuwaiseeb is a standard land border, not an island-based facility like the King Fahd Causeway used for the Bahrain routes — a genuinely different border experience from a Riyadh-to-Bahrain trip, even though both are long-distance capital departures.",
+      ],
+    },
+    infoBoxes: [
+      { label: "Route", value: "Highway 40 to the Eastern Province, then Highway 95 to Khafji" },
+      { label: "Distance estimates", value: "Range from ~636 to ~718 km across independent sources" },
+      { label: "Key fact", value: "The longest regular Saudi-Kuwait road journey, and a standard land border rather than a causeway crossing" },
+    ],
+    faqs: [
+      { question: "How far is Kuwait City from Riyadh?", answer: "Independent sources disagree meaningfully, with figures ranging from around 636 to 718 kilometres. We recommend treating this as a genuine range rather than a single precise figure until a more authoritative source is available." },
+      { question: "Why is this route longer than Dammam to Kuwait City?", answer: "Because it starts in Riyadh, this route includes the full Riyadh-to-Eastern-Province highway leg (roughly 400 km) before even reaching the Highway 95 stretch to the border, unlike a Dammam-based trip which starts much closer to the crossing." },
+      { question: "Is the border crossing similar to the Bahrain Causeway crossings?", answer: "No. The Khafji/Nuwaiseeb crossing is a standard land border, unlike the King Fahd Causeway's island-based, one-stop facility used for the Bahrain routes." },
+      { question: "How long should I plan for the whole journey?", answer: "Given the distance uncertainty, plan generously — roughly six and a half to seven hours of driving, plus a variable and unpredictable amount of time at the border crossing." },
+      { question: "Is there a flight alternative to this long drive?", answer: "Yes, a direct flight between Riyadh and Kuwait City covers the distance considerably faster, though this page doesn't cover specific flight schedules or fares." },
+    ],
+    sources: [
+      { label: "Highway 40 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_40_(Saudi_Arabia)" },
+      { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+    ],
+    relatedLinks: [
+      { label: "Riyadh to Kuwait City taxi and private transfer service", href: "/routes/riyadh-to-kuwait-city" },
+      { label: "Dammam to Kuwait City distance", href: "/distance/dammam-to-kuwait-city-distance" },
+      { label: "Riyadh to Bahrain distance", href: "/distance/riyadh-to-bahrain-distance" },
+    ],
+  },
 ];
 
 export function getDistancePage(slug: string): DistancePage | undefined {
