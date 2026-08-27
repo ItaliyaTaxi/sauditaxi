@@ -75,9 +75,9 @@ const baseCities: City[] = [
       "riyadh-to-jizan",
     ],
     nearestAirportSlug: "riyadh-airport",
-    metaTitle: "Riyadh Taxi Service | Airport & City Transfers",
+    metaTitle: "Riyadh Taxi Service – Private Airport & City Transfers",
     metaDescription:
-      "Book reliable Riyadh taxi service for airport pickups, hotel transfers, business travel, and intercity rides across Saudi Arabia.",
+      "Book a private taxi in Riyadh for airport pickups, business travel, and city rides. Fixed pricing, professional drivers, 24/7 WhatsApp booking.",
   },
   {
     slug: "jeddah",
@@ -112,9 +112,9 @@ const baseCities: City[] = [
       "jeddah-to-abha",
     ],
     nearestAirportSlug: "jeddah-airport",
-    metaTitle: "Jeddah Taxi Service | Airport to Makkah Transfers",
+    metaTitle: "Jeddah Taxi Service – Private Airport & City Transfers",
     metaDescription:
-      "Private Jeddah taxi service for airport transfers, Makkah trips, hotel pickups, Umrah passengers, and city travel.",
+      "Reliable private taxi service in Jeddah, from King Abdulaziz Airport pickups to Corniche hotel transfers and onward trips to Makkah. Fixed price, 24/7.",
   },
   {
     slug: "makkah",
@@ -146,9 +146,9 @@ const baseCities: City[] = [
       "makkah-to-riyadh",
     ],
     nearestAirportSlug: "jeddah-airport",
-    metaTitle: "Makkah Taxi Service | Umrah & Ziyarat Transfers",
+    metaTitle: "Makkah Taxi Service – Private Umrah & Ziyarat Transfers",
     metaDescription:
-      "Book Makkah taxi service for Umrah, Ziyarat, hotel transfers, Jeddah airport pickup, and private rides to Madinah.",
+      "Private taxi and transfer service in Makkah for pilgrims and visitors, covering hotel pickups near the Haram, Ziyarat sites, and Jeddah Airport transfers.",
   },
   {
     slug: "madinah",
@@ -183,9 +183,9 @@ const baseCities: City[] = [
       "madinah-to-hail",
     ],
     nearestAirportSlug: "madinah-airport",
-    metaTitle: "Madinah Taxi Service | Airport, Hotel & Ziyarat Transfers",
+    metaTitle: "Madinah Taxi Service – Private Ziyarat & Airport Transfers",
     metaDescription:
-      "Reliable Madinah taxi service for airport transfers, hotel pickups, Ziyarat tours, and private travel to Makkah or AlUla.",
+      "Book a private taxi in Madinah for airport pickups, hotel transfers near the Prophet's Mosque, and Ziyarat site visits. Fixed price, 24/7 booking.",
   },
   {
     slug: "dammam",
@@ -219,6 +219,9 @@ const baseCities: City[] = [
       "dammam-to-qatar-border",
     ],
     nearestAirportSlug: "dammam-airport",
+    metaTitle: "Dammam Taxi Service – Private Airport & Bahrain Transfers",
+    metaDescription:
+      "Private taxi service in Dammam covering King Fahd Airport pickups, Bahrain Causeway crossings, and business travel across Khobar and Dhahran.",
   },
   {
     slug: "khobar",
@@ -249,6 +252,9 @@ const baseCities: City[] = [
       "khobar-to-bahrain",
     ],
     nearestAirportSlug: "dammam-airport",
+    metaTitle: "Khobar Taxi Service – Private Corniche & Causeway Transfers",
+    metaDescription:
+      "Book a private taxi in Khobar for Corniche hotel pickups, King Fahd Airport transfers, and the popular crossing to Bahrain. Fixed price, 24/7.",
   },
   {
     slug: "jubail",
@@ -276,6 +282,9 @@ const baseCities: City[] = [
       "riyadh-to-jubail",
     ],
     nearestAirportSlug: "dammam-airport",
+    metaTitle: "Jubail Taxi Service – Private Corporate & Airport Transfers",
+    metaDescription:
+      "Private taxi service in Jubail for project-site pickups, corporate accounts, and airport transfers from Dammam. On-time drivers for shift schedules.",
   },
   {
     slug: "taif",
@@ -306,6 +315,9 @@ const baseCities: City[] = [
       "taif-to-madinah",
     ],
     nearestAirportSlug: "taif-airport",
+    metaTitle: "Taif Taxi Service – Private Al Hada Mountain Transfers",
+    metaDescription:
+      "Book a private taxi in Taif for airport transfers, the scenic Al Hada mountain road from Makkah, and rose-farm or cable car day trips.",
   },
   {
     slug: "abha",
@@ -335,6 +347,9 @@ const baseCities: City[] = [
       "riyadh-to-abha",
     ],
     nearestAirportSlug: "abha-airport",
+    metaTitle: "Abha Taxi Service – Private Asir Highlands Transfers",
+    metaDescription:
+      "Private taxi service in Abha covering airport pickups, cable car and mountain resort transfers, and sightseeing across the Asir highlands.",
   },
   {
     slug: "tabuk",
@@ -364,6 +379,9 @@ const baseCities: City[] = [
       "tabuk-to-madinah",
     ],
     nearestAirportSlug: "tabuk-airport",
+    metaTitle: "Tabuk Taxi Service – Private Airport & NEOM Transfers",
+    metaDescription:
+      "Book a private taxi in Tabuk for airport pickups, NEOM project-area rides, and visits to the Hejaz Railway station and Tabuk Castle.",
   },
   {
     slug: "alula",
@@ -396,6 +414,9 @@ const baseCities: City[] = [
       "alula-to-yanbu",
     ],
     nearestAirportSlug: "alula-airport",
+    metaTitle: "AlUla Taxi Service – Private Hegra & Resort Transfers",
+    metaDescription:
+      "Private taxi and chauffeur service in AlUla for airport and resort transfers, plus rides to Hegra, Elephant Rock, and AlUla Old Town.",
   },
   {
     slug: "yanbu",
@@ -426,6 +447,9 @@ const baseCities: City[] = [
       "yanbu-to-jeddah-airport",
     ],
     nearestAirportSlug: "yanbu-airport",
+    metaTitle: "Yanbu Taxi Service – Private Airport & Resort Transfers",
+    metaDescription:
+      "Book a private taxi in Yanbu for airport pickups, Red Sea resort and dive-site transfers, and intercity rides to Madinah and Jeddah.",
   },
   {
     slug: "hail",
@@ -454,6 +478,9 @@ const baseCities: City[] = [
       "hail-to-madinah",
     ],
     nearestAirportSlug: "hail-airport",
+    metaTitle: "Hail Taxi Service – Private Airport & City Transfers",
+    metaDescription:
+      "Private taxi service in Hail covering airport pickups, city rides, and trips to the UNESCO Jubbah rock-art site and A'arif Fort in the northern desert.",
   },
   {
     slug: "najran",
@@ -476,6 +503,9 @@ const baseCities: City[] = [
       "Aan Palace",
     ],
     popularDestinations: ["Abha", "Jazan", "Khamis Mushait", "Riyadh"],
+    metaTitle: "Najran Taxi Service – Private Airport & City Transfers",
+    metaDescription:
+      "Book a private taxi in Najran for airport transfers, visits to Al-Ukhdood and Najran Dam, and intercity rides to Abha and Jazan.",
   },
   {
     slug: "jazan",
@@ -502,6 +532,9 @@ const baseCities: City[] = [
       "jizan-to-riyadh",
     ],
     nearestAirportSlug: "jazan-airport",
+    metaTitle: "Jazan Taxi Service – Private Airport & Ferry Transfers",
+    metaDescription:
+      "Private taxi service in Jazan for airport pickups, Farasan Islands ferry-terminal transfers, and sightseeing in the Fifa Mountains.",
   },
   {
     slug: "buraidah",
@@ -528,6 +561,9 @@ const baseCities: City[] = [
       "qassim-to-riyadh",
       "riyadh-to-qassim",
     ],
+    metaTitle: "Buraidah Taxi Service – Private Airport & Intercity Transfers",
+    metaDescription:
+      "Book a private taxi in Buraidah for Qassim airport transfers and long-distance intercity rides across central Saudi Arabia. Fixed price, 24/7.",
   },
   {
     slug: "hofuf",
@@ -554,6 +590,9 @@ const baseCities: City[] = [
       "hofuf-to-riyadh",
       "riyadh-to-hofuf",
     ],
+    metaTitle: "Hofuf Taxi Service – Private Al-Ahsa Oasis Transfers",
+    metaDescription:
+      "Private taxi service in Hofuf covering Al-Ahsa airport transfers, Qaisariah Souq heritage tours, and intercity rides to Dammam and Riyadh.",
   },
   {
     slug: "al-ahsa",
@@ -576,6 +615,9 @@ const baseCities: City[] = [
       "Yellow Lake",
     ],
     popularDestinations: ["Dammam", "Khobar", "Riyadh", "Bahrain Border"],
+    metaTitle: "Al-Ahsa Taxi Service – Private Oasis & Airport Transfers",
+    metaDescription:
+      "Book a private taxi in Al-Ahsa for airport transfers, oasis and heritage sightseeing, and intercity rides to Dammam, Riyadh, and Bahrain.",
   },
   {
     slug: "khamis-mushait",
@@ -599,6 +641,9 @@ const baseCities: City[] = [
     ],
     popularDestinations: ["Abha", "Najran", "Jazan", "Riyadh"],
     nearestAirportSlug: "abha-airport",
+    metaTitle: "Khamis Mushait Taxi – Private Abha Airport Transfers",
+    metaDescription:
+      "Private taxi service in Khamis Mushait covering Abha Airport transfers, city rides, and highland sightseeing across the Asir mountains.",
   },
 ];
 

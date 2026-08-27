@@ -16,9 +16,9 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Us | Book Your Saudi Arabia Taxi",
+  title: "Contact Saudi Private Transfers – Get Help & Book a Ride",
   description:
-    "Contact our Saudi Arabia taxi service by email or our quick online booking form. Fast quotes for airport transfers, city rides, intercity routes, borders, Umrah, and Hajj.",
+    "Contact Saudi Private Transfers by WhatsApp or our online form for fast, fixed-price quotes on airport, city, intercity, and border transfers.",
   path: "/contact",
   alternateLanguages: { en: "/contact", ar: "/ar/اتصل-بنا" },
 });

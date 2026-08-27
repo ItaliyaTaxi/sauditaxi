@@ -9,7 +9,7 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Privacy Policy",
+  title: "Privacy Policy | Saudi Private Transfers",
   description:
     "How Saudi Private Transfers collects, uses, and protects your personal information when you request a taxi or transfer quote in Saudi Arabia.",
   path: "/privacy-policy",

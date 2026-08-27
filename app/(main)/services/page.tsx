@@ -18,9 +18,9 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Our Services | Taxi & Transfer Services in Saudi Arabia",
+  title: "Our Transfer Services in Saudi Arabia – Taxi & Chauffeur",
   description:
-    "Explore our private taxi and transfer services in Saudi Arabia: airport transfers, city and intercity rides, border crossings, Umrah, Hajj, Ziyarat, and hotel transfers.",
+    "Explore our private transfer services across Saudi Arabia — airport, city, intercity, border, Umrah, Hajj, Ziyarat, and hotel transfers.",
   path: "/services",
 });
 

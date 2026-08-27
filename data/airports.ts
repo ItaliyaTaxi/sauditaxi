@@ -78,9 +78,9 @@ const baseAirports: Airport[] = [
       "riyadh-airport-to-makkah",
       "riyadh-airport-to-madinah",
     ],
-    metaTitle: "Riyadh Airport Taxi | King Khalid (RUH) Terminal 1-5 Transfers",
+    metaTitle: "Riyadh Airport Transfer (RUH) – Private Taxi & Chauffeur",
     metaDescription:
-      "Private Riyadh airport taxi from King Khalid International (RUH). Meet-and-greet pickup, fixed quotes, hotel and intercity transfers across Saudi Arabia.",
+      "Book a private Riyadh Airport (RUH) transfer with meet-and-greet, flight tracking, and fixed pricing. Comfortable rides to your hotel or across the city.",
   },
   {
     slug: "jeddah-airport",
@@ -107,9 +107,9 @@ const baseAirports: Airport[] = [
       "jeddah-airport-to-taif",
       "jeddah-airport-to-yanbu",
     ],
-    metaTitle: "Jeddah Airport Transfer & Taxi | JED to Makkah & Hotels",
+    metaTitle: "Jeddah Airport Transfer (JED) – Private Car to Makkah",
     metaDescription:
-      "Book Jeddah airport taxi from King Abdulaziz International (JED) to Makkah, Madinah, and Jeddah hotels. Meet-and-greet pickup with fixed quotes.",
+      "Private taxi from Jeddah Airport (JED) to Makkah, Madinah, or your Jeddah hotel. Meet-and-greet pickup, flight tracking, fixed price, 24/7 booking.",
   },
   {
     slug: "madinah-airport",
@@ -130,9 +130,9 @@ const baseAirports: Airport[] = [
       "madinah-to-alula",
       "madinah-airport-to-riyadh",
     ],
-    metaTitle: "Madinah Airport Taxi | Prince Mohammad (MED) Transfers",
+    metaTitle: "Madinah Airport Transfer (MED) – Private Taxi & Chauffeur",
     metaDescription:
-      "Private Madinah airport taxi from Prince Mohammad bin Abdulaziz International (MED). Hotel transfers, Ziyarat, and rides to Makkah and AlUla.",
+      "Book a private Madinah Airport (MED) transfer with meet-and-greet pickup, hotel drop-off near the Haram, and onward rides to Makkah and AlUla.",
   },
   {
     slug: "dammam-airport",
@@ -157,9 +157,9 @@ const baseAirports: Airport[] = [
       "dammam-airport-to-bahrain",
       "dammam-airport-to-riyadh",
     ],
-    metaTitle: "Dammam Airport Taxi | King Fahd (DMM) Transfers",
+    metaTitle: "Dammam Airport Transfer (DMM) – Book a Private Car",
     metaDescription:
-      "Book Dammam airport taxi from King Fahd International (DMM). Transfers to Khobar, Jubail, Riyadh, and the Bahrain Causeway with fixed quotes.",
+      "Private taxi from King Fahd International Airport (DMM) to Khobar, Jubail, Riyadh, or across the Bahrain Causeway. Fixed price, meet-and-greet.",
   },
   {
     slug: "taif-airport",
@@ -179,9 +179,9 @@ const baseAirports: Airport[] = [
       "taif-to-makkah",
       "taif-to-jeddah",
     ],
-    metaTitle: "Taif Airport Taxi | Taif Regional (TIF) Transfers",
+    metaTitle: "Taif Airport Transfer (TIF) – Private Car & Chauffeur",
     metaDescription:
-      "Private Taif airport taxi from Taif Regional (TIF). Transfers to Taif resorts, Makkah, and Jeddah via the scenic Al Hada road.",
+      "Book a private Taif Airport (TIF) transfer, including the scenic Al Hada mountain drive to Makkah and rides to Taif resorts and Jeddah.",
   },
   {
     slug: "abha-airport",
@@ -201,9 +201,9 @@ const baseAirports: Airport[] = [
       "abha-airport-to-jeddah",
       "abha-airport-to-riyadh",
     ],
-    metaTitle: "Abha Airport Taxi | Abha International (AHB) Transfers",
+    metaTitle: "Abha Airport Transfer (AHB) – Private Taxi & Chauffeur",
     metaDescription:
-      "Private Abha airport taxi from Abha International (AHB). Transfers to Abha, Khamis Mushait hotels, and Asir highland resorts.",
+      "Private taxi from Abha International Airport (AHB) to Abha and Khamis Mushait hotels, the cable car, and Asir highland resorts. Fixed price.",
   },
   {
     slug: "tabuk-airport",
@@ -223,9 +223,9 @@ const baseAirports: Airport[] = [
       "tabuk-to-alula",
       "tabuk-to-neom",
     ],
-    metaTitle: "Tabuk Airport Taxi | Tabuk Regional (TUU) Transfers",
+    metaTitle: "Tabuk Airport Transfer (TUU) – Private Car Service",
     metaDescription:
-      "Private Tabuk airport taxi from Tabuk Regional (TUU). Transfers to Tabuk city, NEOM project areas, and the northwest coast.",
+      "Book a private Tabuk Airport (TUU) transfer to Tabuk city, NEOM project sites, and historic landmarks. Meet-and-greet, fixed pricing, 24/7.",
   },
   {
     slug: "yanbu-airport",
@@ -244,9 +244,9 @@ const baseAirports: Airport[] = [
       "yanbu-to-riyadh",
       "yanbu-to-jeddah",
     ],
-    metaTitle: "Yanbu Airport Taxi | Yanbu (YNB) Transfers",
+    metaTitle: "Yanbu Airport Transfer (YNB) – Private Taxi & Chauffeur",
     metaDescription:
-      "Private Yanbu airport taxi from Yanbu Airport (YNB). Transfers to Red Sea resorts, the industrial city, and Madinah.",
+      "Private taxi from Yanbu Airport (YNB) to Red Sea resorts, the Royal Commission waterfront, and intercity rides to Madinah and Jeddah.",
   },
   {
     slug: "alula-airport",
@@ -268,9 +268,9 @@ const baseAirports: Airport[] = [
       "alula-airport-to-riyadh",
       "alula-airport-to-jeddah",
     ],
-    metaTitle: "AlUla Airport Taxi | AlUla (ULH) Transfers",
+    metaTitle: "AlUla Airport Transfer (ULH) – Private Car & Chauffeur",
     metaDescription:
-      "Private AlUla airport taxi from AlUla International (ULH). Transfers to resorts, Hegra, the Old Town, and onward to Madinah and Tabuk.",
+      "Book a private AlUla Airport (ULH) transfer to your resort, Hegra, and AlUla Old Town, plus onward rides to Madinah and Tabuk. Fixed price.",
   },
   {
     slug: "jazan-airport",
@@ -285,9 +285,9 @@ const baseAirports: Airport[] = [
       "Our GIZ airport service offers meet-and-greet arrivals and transfers to Jazan hotels, the Farasan Islands ferry terminal, and the Fifa Mountains, plus intercity rides to Abha and Najran.",
     terminals: ["Main terminal"],
     popularDestinations: ["Jazan", "Farasan ferry", "Abha", "Najran"],
-    metaTitle: "Jazan Airport Taxi | Jazan (GIZ) Transfers",
+    metaTitle: "Jazan Airport Transfer (GIZ) – Private Taxi Service",
     metaDescription:
-      "Private Jazan airport taxi from Jazan Airport (GIZ). Transfers to the Farasan ferry terminal, the corniche, and the Fifa Mountains.",
+      "Private taxi from Jazan Airport (GIZ) to the Farasan Islands ferry terminal, Jazan Corniche, and the Fifa Mountains. Fixed price, 24/7.",
   },
   {
     slug: "hail-airport",
@@ -305,9 +305,9 @@ const baseAirports: Airport[] = [
     popularRoutes: [
       "hail-to-riyadh",
     ],
-    metaTitle: "Hail Airport Taxi | Hail Regional (HAS) Transfers",
+    metaTitle: "Hail Airport Transfer (HAS) – Private Car Service",
     metaDescription:
-      "Private Hail airport taxi from Hail Regional (HAS). Transfers to Hail city, rock-art sites, and onward to AlUla and Qassim.",
+      "Book a private Hail Airport (HAS) transfer to Hail city, the A'arif Fort, Jubbah rock-art sites, and onward rides toward AlUla.",
   },
   {
     slug: "red-sea-airport",
@@ -324,9 +324,9 @@ const baseAirports: Airport[] = [
     popularRoutes: [
       "jeddah-to-yanbu",
     ],
-    metaTitle: "Red Sea Airport Taxi | Red Sea International (RSI) Transfers",
+    metaTitle: "Red Sea Airport Transfer (RSI) – Luxury Private Car",
     metaDescription:
-      "Private Red Sea Airport taxi from Red Sea International (RSI). Luxury transfers to island jetties, Umluj, and coastal resorts with meet and greet.",
+      "Private luxury transfer from Red Sea International Airport (RSI) to island jetties, resorts, and Umluj. Flight tracking, meet-and-greet.",
   },
   {
     slug: "neom-bay-airport",
@@ -344,9 +344,9 @@ const baseAirports: Airport[] = [
       "tabuk-to-neom",
       "alula-to-neom",
     ],
-    metaTitle: "NEOM Bay Airport Taxi | NEOM Bay (NUM) Transfers",
+    metaTitle: "NEOM Bay Airport Transfer (NUM) – Private Executive Car",
     metaDescription:
-      "Private NEOM Bay airport taxi from NEOM Bay Airport (NUM). Executive transfers to Sindalah Island connections, NEOM Community, and Sharma.",
+      "Book a private executive transfer from NEOM Bay Airport (NUM) to NEOM Community sectors, Sharma, and Sindalah boat connections.",
   },
 ];
 

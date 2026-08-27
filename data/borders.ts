@@ -63,7 +63,7 @@ const baseBorders: Border[] = [
       "khobar-to-bahrain",
       "dammam-airport-to-bahrain",
     ],
-    metaTitle: "Bahrain Causeway Taxi | Saudi to Bahrain Transfers",
+    metaTitle: "Bahrain Causeway Transfer – Private Cross-Border Taxi",
     metaDescription:
       "Private taxi over the King Fahd Causeway from Khobar and Dammam to Bahrain. Door-to-door cross-border transfers with WhatsApp booking.",
   },
@@ -88,9 +88,9 @@ const baseBorders: Border[] = [
       "riyadh-to-qatar-border",
       "dammam-to-qatar-border",
     ],
-    metaTitle: "Qatar Border Taxi | Saudi to Salwa Crossing Transfers",
+    metaTitle: "Saudi Arabia to Qatar Border Transfer – Private Car",
     metaDescription:
-      "Private taxi to the Salwa border crossing between Saudi Arabia and Qatar from Riyadh, Dammam, and the Eastern Province.",
+      "Private taxi to the Salwa border crossing between Saudi Arabia and Qatar from Riyadh, Dammam, and the Eastern Province. Fixed price, rest stops.",
   },
   {
     slug: "uae-border",
@@ -109,9 +109,9 @@ const baseBorders: Border[] = [
       "Onward UAE transport arranged separately",
     ],
     relatedCitySlugs: ["dammam", "khobar", "hofuf"],
-    metaTitle: "UAE Border Taxi | Saudi to Al Batha Crossing Transfers",
+    metaTitle: "Saudi Arabia to UAE Border Transfer – Private Taxi",
     metaDescription:
-      "Private taxi to the Al Batha border crossing between Saudi Arabia and the UAE from Dammam, Khobar, and the Eastern Province.",
+      "Private taxi to the Al Batha border crossing between Saudi Arabia and the UAE from Dammam, Khobar, and the Eastern Province. Fixed price.",
   },
   {
     slug: "kuwait-border",
@@ -130,9 +130,9 @@ const baseBorders: Border[] = [
       "Onward Kuwait transport arranged separately",
     ],
     relatedCitySlugs: ["dammam", "jubail", "khobar"],
-    metaTitle: "Kuwait Border Taxi | Saudi to Al Khafji Crossing Transfers",
+    metaTitle: "Saudi Arabia to Kuwait Border Transfer – Private Car",
     metaDescription:
-      "Private taxi to the Al Khafji border crossing between Saudi Arabia and Kuwait from Dammam, Jubail, and the Eastern Province.",
+      "Private taxi to the Al Khafji border crossing between Saudi Arabia and Kuwait from Dammam, Jubail, and the Eastern Province. Fixed price.",
   },
   {
     slug: "jordan-border",
@@ -151,9 +151,9 @@ const baseBorders: Border[] = [
       "Onward Jordan transport arranged separately",
     ],
     relatedCitySlugs: ["tabuk", "hail", "alula"],
-    metaTitle: "Jordan Border Taxi | Saudi to Al Haditha Crossing Transfers",
+    metaTitle: "Saudi Arabia to Jordan Border Transfer – Private Taxi",
     metaDescription:
-      "Private taxi to the Al Haditha border crossing between Saudi Arabia and Jordan from Tabuk, Hail, and northern Saudi Arabia.",
+      "Private taxi to the Al Haditha border crossing between Saudi Arabia and Jordan from Tabuk, Hail, and northern Saudi Arabia. Fixed price.",
   },
 ];
 

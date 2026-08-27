@@ -42,8 +42,8 @@ export interface Route {
 const baseRoutes: Route[] = [
   {
     slug: "jeddah-to-makkah",
-    metaTitle: "Jeddah Airport to Makkah Private Transfer | Taxi Booking",
-    metaDescription: "Book a private transfer from Jeddah Airport (JED) to Makkah (85 km, ~1h 15m). Professional driver, door-to-door Haram hotel drop-off, 24/7 availability.",
+    metaTitle: "Jeddah to Makkah Taxi – Private Umrah Airport Transfer",
+    metaDescription: "Book a private taxi from Jeddah Airport to Makkah (85 km, about 1h 15m). Professional driver, door-to-door hotel drop-off near the Haram, 24/7.",
     from: "Jeddah",
     to: "Makkah",
     category: "religious",
@@ -98,6 +98,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "makkah-to-madinah",
+    metaTitle: "Makkah to Madinah Private Transfer – Book Your Taxi",
+    metaDescription: "Travel from Makkah to Madinah (450 km, about 4.5 hours) in a private car with rest stops for elderly or tired pilgrims. Door-to-door, fixed price.",
     from: "Makkah",
     to: "Madinah",
     category: "religious",
@@ -152,6 +154,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-makkah",
+    metaTitle: "Madinah to Makkah Taxi – Private Transfer for Umrah",
+    metaDescription: "Private taxi from Madinah to Makkah (450 km, about 4.5 hours) for pilgrims beginning Umrah. Comfortable vehicles, professional drivers, fixed fare.",
     from: "Madinah",
     to: "Makkah",
     category: "religious",
@@ -206,6 +210,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-to-madinah",
+    metaTitle: "Jeddah to Madinah Transfer – Private Airport Taxi",
+    metaDescription: "Book a private transfer from Jeddah Airport to Madinah (420 km, about 4 hours). Comfortable vehicle, professional driver, door-to-door to your hotel.",
     from: "Jeddah",
     to: "Madinah",
     category: "religious",
@@ -260,6 +266,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-to-dammam",
+    metaTitle: "Riyadh to Dammam Transfer – Private Chauffeur Service",
+    metaDescription: "Travel from Riyadh to Dammam (400 km, about 3 hours 45 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Riyadh",
     to: "Dammam",
     category: "intercity",
@@ -314,6 +322,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "dammam-to-riyadh",
+    metaTitle: "Dammam to Riyadh Private Transfer – Fixed-Price Taxi",
+    metaDescription: "Reserve a private car from Dammam to Riyadh (400 km, about 3 hours 45 min). Comfortable vehicles for solo travellers, families and small groups.",
     from: "Dammam",
     to: "Riyadh",
     category: "intercity",
@@ -368,6 +378,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-to-jeddah",
+    metaTitle: "Riyadh to Jeddah Transfer – Private Chauffeur Service",
+    metaDescription: "Get a private Riyadh to Jeddah transfer (950 km, about 9 hours) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "Riyadh",
     to: "Jeddah",
     category: "intercity",
@@ -422,6 +434,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-to-alula",
+    metaTitle: "Riyadh to AlUla Private Transfer – Fixed-Price Taxi",
+    metaDescription: "Book a private taxi from Riyadh to AlUla (1,000 km, about 9 hours 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     from: "Riyadh",
     to: "AlUla",
     category: "intercity",
@@ -476,6 +490,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-alula",
+    metaTitle: "Madinah to AlUla Taxi – Private Transfer & Chauffeur",
+    metaDescription: "Reserve a private car from Madinah to AlUla (330 km, about 3 hours 15 min). Comfortable vehicles for solo travellers, families and small groups.",
     from: "Madinah",
     to: "AlUla",
     category: "intercity",
@@ -530,6 +546,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-to-taif",
+    metaTitle: "Jeddah to Taif Taxi – Private Transfer & Chauffeur",
+    metaDescription: "Book a private taxi from Jeddah to Taif (170 km, about 2 hours). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     from: "Jeddah",
     to: "Taif",
     category: "intercity",
@@ -584,6 +602,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "khobar-to-bahrain",
+    metaTitle: "Khobar to Bahrain Private Transfer – Book Your Taxi",
+    metaDescription: "Book a private cross-border transfer from Khobar to Bahrain (55 km, 1 hour). Door-to-door service into Bahrain, fixed fare.",
     from: "Khobar",
     to: "Bahrain",
     category: "border",
@@ -631,6 +651,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "dammam-to-bahrain",
+    metaTitle: "Dammam to Bahrain Private Transfer – Book Your Taxi",
+    metaDescription: "Book a private cross-border transfer from Dammam to Bahrain (70 km, 1 hour 15 min). Door-to-door service into Bahrain, fixed fare.",
     from: "Dammam",
     to: "Bahrain",
     category: "border",
@@ -678,6 +700,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-to-qatar-border",
+    metaTitle: "Private Taxi: Riyadh to Qatar Border",
+    metaDescription: "Private taxi from Riyadh to Qatar Border (640 km, 6 hours (to Salwa border) via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     from: "Riyadh",
     to: "Qatar Border",
     category: "border",
@@ -748,9 +772,9 @@ const baseRoutes: Route[] = [
       "Flight-tracked pickup with free wait time",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Dammam Airport to Al Khobar Taxi | Private Transfer",
+    metaTitle: "Private Taxi: Dammam Airport to Al Khobar",
     metaDescription:
-      "Book a private Dammam Airport (DMM) to Al Khobar taxi — a quick 30-minute transfer with meet-and-greet pickup, fixed prices, and comfortable family vehicles.",
+      "Travel from Dammam Airport to Al Khobar (35 km, about 30 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -797,9 +821,9 @@ const baseRoutes: Route[] = [
       "Reverse Jeddah to Makkah transfers also available",
     ],
     relatedCitySlugs: ["makkah", "jeddah"],
-    metaTitle: "Makkah to Jeddah Taxi | Private Transfer",
+    metaTitle: "Makkah to Jeddah Airport Taxi – Private Departure Transfer",
     metaDescription:
-      "Book a private Makkah to Jeddah taxi (85 km, approx. 1 hr 15 min) to the airport, hotels, or Corniche. Fixed price, flight-timed pickup, and door-to-door comfort.",
+      "Private taxi from your Makkah hotel to Jeddah Airport (85 km, about 1h 15m) timed to your flight. Fixed price, professional driver, 24/7 booking.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -846,9 +870,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles for families and groups after an extended Madinah stay",
     ],
     relatedCitySlugs: ["madinah", "jeddah"],
-    metaTitle: "Madinah to Jeddah Taxi | Private Transfer",
+    metaTitle: "Madinah to Jeddah Airport Transfer – Private Taxi",
     metaDescription:
-      "Book a private Madinah to Jeddah taxi (420 km, approx. 4 hours) with rest stops, fixed pricing, and door-to-door comfort to the airport or your Jeddah hotel.",
+      "Book a private transfer from Madinah to Jeddah Airport (420 km, about 4 hours) for your departure flight. Comfortable car, fixed price, 24/7.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -895,9 +919,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles for the mountain journey, timed to onward flights",
     ],
     relatedCitySlugs: ["taif", "jeddah"],
-    metaTitle: "Taif to Jeddah Taxi | Private Transfer",
+    metaTitle: "Taif to Jeddah Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Taif to Jeddah taxi (170 km, approx. 2 hours) down the scenic Al Hada road. Fixed price, door-to-door pickup, and comfortable mountain-road vehicles.",
+      "Travel from Taif to Jeddah (170 km, about 2 hours) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -944,9 +968,9 @@ const baseRoutes: Route[] = [
       "Reverse Yanbu to Jeddah transfers available",
     ],
     relatedCitySlugs: ["jeddah", "yanbu"],
-    metaTitle: "Jeddah to Yanbu Taxi | Private Transfer",
+    metaTitle: "Jeddah to Yanbu Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Jeddah to Yanbu taxi (330 km, approx. 3 hr 30 min) along the Red Sea coast. Fixed price, door-to-door pickup, and comfortable vehicles with rest stops.",
+      "Travel from Jeddah to Yanbu (330 km, about 3 hours 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -993,9 +1017,9 @@ const baseRoutes: Route[] = [
       "Fixed price agreed before you travel",
     ],
     relatedCitySlugs: ["yanbu", "jeddah"],
-    metaTitle: "Yanbu to Jeddah Taxi | Private Transfer",
+    metaTitle: "Private Car from Yanbu to Jeddah – Book Your Ride",
     metaDescription:
-      "Book a private Yanbu to Jeddah taxi (330 km, approx. 3 hr 30 min) along the Red Sea coast, with fixed pricing, flight-timed drop-off, and comfortable vehicles.",
+      "Book a private taxi from Yanbu to Jeddah (330 km, about 3 hours 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -1042,9 +1066,9 @@ const baseRoutes: Route[] = [
       "Reverse KAEC to Jeddah transfers available",
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "Jeddah to KAEC Taxi | Private Transfer",
+    metaTitle: "Jeddah to KAEC Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Jeddah to King Abdullah Economic City (KAEC) taxi (125 km, approx. 1 hr 20 min). Fixed price, door-to-door pickup for business, resorts, and the train.",
+      "Book a private taxi from Jeddah to King Abdullah Economic City (125 km, about 1h 20m). Professional driver, fixed price, door-to-door service.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -1091,9 +1115,9 @@ const baseRoutes: Route[] = [
       "Fixed price with no surge pricing",
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "KAEC to Jeddah Taxi | Private Transfer",
+    metaTitle: "KAEC to Jeddah Taxi – Private Transfer Service",
     metaDescription:
-      "Book a private King Abdullah Economic City (KAEC) to Jeddah taxi (125 km, approx. 1 hr 20 min) to the airport or hotels, with fixed pricing and door-to-door comfort.",
+      "Private taxi from King Abdullah Economic City to Jeddah (125 km, about 1h 20m). Comfortable vehicle, professional driver, fixed price.",
     lastUpdated: "2026-08-05",
     sections: [
       {
@@ -1142,9 +1166,9 @@ const baseRoutes: Route[] = [
       "Drop-off anywhere in Bahrain — Manama or elsewhere — on one fixed price",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam Airport to Bahrain Taxi | King Fahd Causeway Transfer",
+    metaTitle: "Private Taxi: Dammam Airport to Bahrain",
     metaDescription:
-      "Private transfer from King Fahd International Airport (DMM) to Bahrain via the King Fahd Causeway. Flight tracking, meet-and-greet, fixed price, door-to-door to Manama or anywhere in Bahrain.",
+      "Reserve a private Dammam Airport to Bahrain taxi (~100 km, 1 hr 30 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     sections: [
       {
         heading: "From the arrivals hall straight to Bahrain",
@@ -1242,9 +1266,9 @@ const baseRoutes: Route[] = [
       "Drop-off at a Dammam address or King Fahd Airport — tell us which",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Bahrain Airport to Dammam Taxi | King Fahd Causeway Transfer",
+    metaTitle: "Bahrain Airport to Dammam Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private transfer from Bahrain International Airport (Muharraq) to Dammam via the King Fahd Causeway. Flight tracking, meet-and-greet, fixed price, drop-off at Dammam city or King Fahd Airport.",
+      "Reserve a private Bahrain Airport to Dammam taxi (~100 km, 1 hr 45 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     sections: [
       {
         heading: "Starting from Muharraq, not from Manama",
@@ -1309,9 +1333,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required Saudi visa needed at the border",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Bahrain to Al Khobar Taxi | King Fahd Causeway Transfer",
+    metaTitle: "Bahrain to Al Khobar Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private transfer from Bahrain (Manama, Seef, or anywhere else) to Al Khobar via the King Fahd Causeway — the shortest Bahrain-Saudi crossing. Fixed price, door-to-door to the Corniche or your exact address.",
+      "Book a private cross-border transfer from Bahrain to Al Khobar (~55 km, 1 hr). Door-to-door service into Bahrain, fixed fare.",
     sections: [
       {
         heading: "The shortest crossing between Bahrain and Saudi Arabia",
@@ -1376,9 +1400,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required Saudi visa needed at the border",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Manama to Dammam Taxi | King Fahd Causeway Transfer",
+    metaTitle: "Manama to Dammam Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private transfer from central Manama (Seef, Diplomatic Area, or anywhere else) to Dammam via the King Fahd Causeway. Fixed price, door-to-door to Dammam city or King Fahd Airport.",
+      "Reserve a private Manama to Dammam taxi (~90 km, 1 hr 30 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     sections: [
       {
         heading: "Central Manama: the natural starting point",
@@ -1443,9 +1467,9 @@ const baseRoutes: Route[] = [
       "Rest-stop flexibility built into the journey, fixed price regardless",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Bahrain Taxi | Private Cross-Border Transfer",
+    metaTitle: "Riyadh to Bahrain Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Riyadh to Bahrain taxi across the Eastern Province and the King Fahd Causeway to Manama. Fixed price, rest stops built in, door-to-door comfort, available 24/7.",
+      "Reserve a private Riyadh to Bahrain taxi (~450 km, 4.5-5 hours). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     sections: [
       {
         heading: "Two stages: the highway east, then the Causeway",
@@ -1510,9 +1534,9 @@ const baseRoutes: Route[] = [
       "Timed for onward flights from Riyadh if that's your final leg",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Bahrain to Riyadh Taxi | Private Cross-Border Transfer",
+    metaTitle: "Bahrain to Riyadh Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private Bahrain to Riyadh taxi across the King Fahd Causeway and the Eastern Province to the capital. Fixed price, rest stops built in, door-to-door comfort, available 24/7.",
+      "Reserve a private Bahrain to Riyadh taxi (~450 km, 4.5-5 hours). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     sections: [
       {
         heading: "This journey starts with the border, not ends with it",
@@ -1579,9 +1603,9 @@ const baseRoutes: Route[] = [
       "Rest-stop flexibility on the long drive, fixed price regardless",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Kuwait City Taxi | Khafji Border Transfer",
+    metaTitle: "Dammam to Kuwait City Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Dammam to Kuwait City taxi north on Highway 95 via the Khafji border crossing. Fixed price, rest stops built in, professional drivers, door-to-door, available 24/7.",
+      "Book a private cross-border transfer from Dammam to Kuwait City (~450 km, 4-5 hours). Door-to-door service into Kuwait, fixed fare.",
     sections: [
       {
         heading: "North on Highway 95, the full length of the Eastern Province",
@@ -1646,9 +1670,9 @@ const baseRoutes: Route[] = [
       "Drop-off in Dammam city — or King Fahd Airport, if that's your final leg",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Kuwait City to Dammam Taxi | Nuwaiseeb Border Transfer",
+    metaTitle: "Kuwait City to Dammam Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Kuwait City to Dammam taxi via the Nuwaiseeb/Khafji border crossing and Highway 95. Fixed price, rest stops built in, door-to-door comfort and airport timing, available 24/7.",
+      "Book a private cross-border transfer from Kuwait City to Dammam (~450 km, 4-5 hours). Door-to-door service into Kuwait, fixed fare.",
     sections: [
       {
         heading: "Starting in Kuwait City",
@@ -1713,9 +1737,9 @@ const baseRoutes: Route[] = [
       "A standard land border crossing — no causeway or island involved",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Kuwait City Taxi | Khafji Border Transfer",
+    metaTitle: "Riyadh to Kuwait City Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private long-distance transfer from Riyadh to Kuwait City via Highway 40, Highway 95 and the Khafji border crossing. Fixed price, rest stops built in, door-to-door comfort.",
+      "Reserve a private Riyadh to Kuwait City taxi (~650 km, 6.5-7 hours). Comfortable vehicle for the long-distance drive toward Kuwait, fixed price.",
     sections: [
       {
         heading: "The longest cross-border route we operate",
@@ -1780,9 +1804,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Riyadh if needed",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Kuwait City to Riyadh Taxi | Cross-Border Transfer",
+    metaTitle: "Kuwait City to Riyadh Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Kuwait City to Riyadh taxi (about 500 km) via the Khafji border. Fixed price, rest stops, door-to-door comfort and airport timing, available 24/7.",
+      "Reserve a private Kuwait City to Riyadh taxi (~500 km, 5 hours). Comfortable vehicle for the long-distance drive toward Kuwait, fixed price.",
     sections: [
       {
         heading: "Kuwait City to Riyadh: route overview",
@@ -1848,9 +1872,9 @@ const baseRoutes: Route[] = [
       "Fixed price with flight tracking and free wait time",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Dammam Airport to Khafji Border Taxi | Transfer",
+    metaTitle: "Dammam Airport to Khafji Border Taxi – Private Transfer",
     metaDescription:
-      "Private Dammam Airport to Khafji border taxi with meet and greet, flight tracking and fixed prices. Direct drive to the Kuwait crossing for onward travel, 24/7.",
+      "Private taxi from Dammam Airport to Khafji Border (~180 km, ~2 hours). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Dammam Airport to Khafji border: route overview",
@@ -1909,9 +1933,9 @@ const baseRoutes: Route[] = [
       "Fixed price, professional drivers, 24/7",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Khafji Border to Dammam Airport Taxi | Transfer",
+    metaTitle: "Khafji Border to Dammam Airport Taxi – Private Transfer",
     metaDescription:
-      "Private Khafji border to Dammam Airport taxi with a timed pickup at the crossing and fixed prices. Direct drive south to King Fahd Airport for your flight, 24/7.",
+      "Private taxi from Khafji Border to Dammam Airport (~180 km, ~2 hours). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Khafji border to Dammam Airport: route overview",
@@ -1970,9 +1994,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed to your flight, rest stops on the way",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Kuwait Airport Taxi | Cross-Border Transfer",
+    metaTitle: "Private Taxi: Dammam to Kuwait Airport",
     metaDescription:
-      "Private Dammam to Kuwait International Airport taxi (about 470 km) via the Khafji border. Fixed price, rest stops, timed to your flight, door-to-door, 24/7.",
+      "Book a private cross-border transfer from Dammam to Kuwait Airport (~470 km, 5 hours). Door-to-door service into Kuwait, fixed fare.",
     sections: [
       {
         heading: "Dammam to Kuwait Airport: route overview",
@@ -2031,9 +2055,9 @@ const baseRoutes: Route[] = [
       "Fixed price with flight tracking, door-to-door, 24/7",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Kuwait Airport to Dammam Taxi | Cross-Border Transfer",
+    metaTitle: "Kuwait Airport to Dammam Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private Kuwait International Airport to Dammam taxi (about 470 km) via the Khafji border. Meet and greet, fixed prices, rest stops and door-to-door service, 24/7.",
+      "Book a private cross-border transfer from Kuwait Airport to Dammam (~470 km, 5 hours). Door-to-door service into Kuwait, fixed fare.",
     sections: [
       {
         heading: "Kuwait Airport to Dammam: route overview",
@@ -2094,9 +2118,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles with rest stops, fixed price, 24/7",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam Airport to Doha Taxi | Cross-Border Transfer",
+    metaTitle: "Private Taxi: Dammam Airport to Doha",
     metaDescription:
-      "Private Dammam Airport (DMM) to Doha taxi (about 420 km) via the Salwa border. Meet and greet, flight tracking, fixed prices and door-to-door service to Qatar, 24/7.",
+      "Private taxi from Dammam Airport to Doha (~420 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Dammam Airport to Doha: route overview",
@@ -2155,9 +2179,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for your flight, rest stops on the way",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Doha to Dammam Airport Taxi | Cross-Border Transfer",
+    metaTitle: "Doha to Dammam Airport Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private Doha to Dammam Airport taxi (about 420 km) via the Salwa border. Fixed price, rest stops, timed to your flight, door-to-door pickup in Qatar, 24/7.",
+      "Private taxi from Doha to Dammam Airport (~420 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Doha to Dammam Airport: route overview",
@@ -2216,9 +2240,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Doha Taxi | Private Cross-Border Transfer",
+    metaTitle: "Riyadh to Doha Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Riyadh to Doha taxi (about 640 km) across the Salwa border to Qatar. Fixed price, rest stops, professional drivers and door-to-door comfort, available 24/7.",
+      "Private taxi from Riyadh to Doha (~640 km, 6-7 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Riyadh to Doha: route overview",
@@ -2277,9 +2301,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Riyadh if needed",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Doha to Riyadh Taxi | Private Cross-Border Transfer",
+    metaTitle: "Doha to Riyadh Border Taxi – Fixed-Price Private Car",
     metaDescription:
-      "Private Doha to Riyadh taxi (about 640 km) across the Salwa border and desert to the capital. Fixed price, rest stops, door-to-door comfort and airport timing, 24/7.",
+      "Private taxi from Doha to Riyadh (~640 km, 6-7 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Doha to Riyadh: route overview",
@@ -2338,9 +2362,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Al Khobar to Doha Taxi | Cross-Border Transfer",
+    metaTitle: "Private Taxi: Al Khobar to Doha",
     metaDescription:
-      "Private Al Khobar to Doha taxi (about 380 km) via the Salwa border to Qatar. Fixed price, rest stops, professional drivers and door-to-door comfort, available 24/7.",
+      "Private taxi from Al Khobar to Doha (~380 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Al Khobar to Doha: route overview",
@@ -2392,9 +2416,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles with rest stops, fixed price, 24/7",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Doha to Al Khobar Taxi | Cross-Border Transfer",
+    metaTitle: "Doha to Al Khobar Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Doha to Al Khobar taxi (about 380 km) via the Salwa border to the Eastern Province. Fixed price, rest stops, door-to-door comfort and border guidance, 24/7.",
+      "Travel from Doha to Al Khobar (~380 km, 5 hours) in a private vehicle, crossing via the Salwa border crossing. Fixed price, professional driver.",
     sections: [
       {
         heading: "Doha to Al Khobar: route overview",
@@ -2448,9 +2472,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Dubai Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Riyadh to Dubai",
     metaDescription:
-      "Private Riyadh to Dubai taxi (about 870 km) across the Al Batha border to the UAE. Fixed price, rest stops, professional drivers and door-to-door comfort, 24/7.",
+      "Reserve a private Riyadh to Dubai taxi (~870 km, 9-10 hours). Comfortable vehicle for the long-distance drive toward the UAE, fixed price.",
     sections: [
       {
         heading: "Riyadh to Dubai: route overview",
@@ -2509,9 +2533,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Riyadh if needed",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Dubai to Riyadh Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Dubai to Riyadh",
     metaDescription:
-      "Private Dubai to Riyadh taxi (about 870 km) across the Al Batha border and desert to the capital. Fixed price, rest stops, door-to-door comfort and airport timing, 24/7.",
+      "Reserve a private Dubai to Riyadh taxi (~870 km, 9-10 hours). Comfortable vehicle for the long-distance drive toward the UAE, fixed price.",
     sections: [
       {
         heading: "Dubai to Riyadh: route overview",
@@ -2570,9 +2594,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Dubai Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Dammam to Dubai",
     metaDescription:
-      "Private Dammam to Dubai taxi (about 650 km) across the Al Batha border into the UAE. Fixed price, rest stops, professional drivers and door-to-door comfort, 24/7.",
+      "Book a private cross-border transfer from Dammam to Dubai (~650 km, 6-7 hours). Door-to-door service into the UAE, fixed fare.",
     sections: [
       {
         heading: "Dammam to Dubai: route overview",
@@ -2631,9 +2655,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Dammam if needed",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dubai to Dammam Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Dubai to Dammam",
     metaDescription:
-      "Private Dubai to Dammam taxi (about 650 km) across the Al Batha border into the Eastern Province. Fixed price, rest stops, door-to-door comfort and airport timing, 24/7.",
+      "Book a private cross-border transfer from Dubai to Dammam (~650 km, 6-7 hours). Door-to-door service into the UAE, fixed fare.",
     sections: [
       {
         heading: "Dubai to Dammam: route overview",
@@ -2692,9 +2716,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Abu Dhabi Taxi | Cross-Border Transfer",
+    metaTitle: "Riyadh to Abu Dhabi Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Riyadh to Abu Dhabi taxi (about 750 km) across the Al Batha border to the UAE capital. Fixed price, rest stops, door-to-door comfort, available 24/7.",
+      "Book a private cross-border transfer from Riyadh to Abu Dhabi (~750 km, 8 hours). Door-to-door service into the UAE, fixed fare.",
     sections: [
       {
         heading: "Riyadh to Abu Dhabi: route overview",
@@ -2753,9 +2777,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Riyadh if needed",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Abu Dhabi to Riyadh Taxi | Cross-Border Transfer",
+    metaTitle: "Abu Dhabi to Riyadh Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private Abu Dhabi to Riyadh taxi (about 750 km) across the Al Batha border and desert to the capital. Fixed price, rest stops, door-to-door comfort and airport timing, 24/7.",
+      "Book a private cross-border transfer from Abu Dhabi to Riyadh (~750 km, 8 hours). Door-to-door service into the UAE, fixed fare.",
     sections: [
       {
         heading: "Abu Dhabi to Riyadh: route overview",
@@ -2814,9 +2838,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Al Batha Border Taxi | Private Transfer",
+    metaTitle: "Riyadh to Al Batha Border Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Riyadh to Al Batha border taxi with door-to-door pickup and fixed prices. Direct drive to the UAE crossing for onward travel, professional drivers, 24/7.",
+      "Reserve a private Riyadh to Al Batha Border taxi (~470 km, 4-5 hours). Comfortable vehicle for the long-distance drive, fixed price.",
     sections: [
       {
         heading: "Riyadh to Al Batha border: route overview",
@@ -2868,9 +2892,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Al Batha Border to Riyadh Taxi | Private Transfer",
+    metaTitle: "Al Batha Border to Riyadh Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private Al Batha border to Riyadh taxi with a coordinated pickup at the crossing and fixed prices. Direct drive west to the capital or the airport, 24/7.",
+      "Reserve a private Al Batha Border to Riyadh taxi (~470 km, 4-5 hours). Comfortable vehicle for the long-distance drive, fixed price.",
     sections: [
       {
         heading: "Al Batha border to Riyadh: route overview",
@@ -2922,9 +2946,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Al Batha Border Taxi | Private Transfer",
+    metaTitle: "Dammam to Al Batha Border Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Dammam to Al Batha border taxi with door-to-door pickup and fixed prices. Direct drive to the UAE crossing for onward travel, professional drivers, 24/7.",
+      "Book a private cross-border transfer from Dammam to Al Batha Border (~400 km, 4 hours). Door-to-door service, fixed fare.",
     sections: [
       {
         heading: "Dammam to Al Batha border: route overview",
@@ -2976,9 +3000,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Al Batha Border to Dammam Taxi | Private Transfer",
+    metaTitle: "Al Batha Border to Dammam Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private Al Batha border to Dammam taxi with a coordinated pickup at the crossing and fixed prices. Direct drive into the Eastern Province or to the airport, 24/7.",
+      "Book a private cross-border transfer from Al Batha Border to Dammam (~400 km, 4 hours). Door-to-door service, fixed fare.",
     sections: [
       {
         heading: "Al Batha border to Dammam: route overview",
@@ -3032,9 +3056,9 @@ const baseRoutes: Route[] = [
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["tabuk"],
-    metaTitle: "Tabuk to Amman Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Tabuk to Amman",
     metaDescription:
-      "Private Tabuk to Amman taxi (about 600 km) across the Al Haditha border into Jordan. Fixed price, rest stops, professional drivers and door-to-door comfort, 24/7.",
+      "Travel from Tabuk to Amman (~600 km, 6-7 hours) in a private vehicle, crossing via the Al Haditha crossing. Fixed price, professional driver.",
     sections: [
       {
         heading: "Tabuk to Amman: route overview",
@@ -3093,9 +3117,9 @@ const baseRoutes: Route[] = [
       "Fixed price, timed for onward flights from Tabuk if needed",
     ],
     relatedCitySlugs: ["tabuk"],
-    metaTitle: "Amman to Tabuk Taxi | Private Cross-Border Transfer",
+    metaTitle: "Amman to Tabuk Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Amman to Tabuk taxi (about 600 km) across the Al Haditha border into northwest Saudi Arabia. Fixed price, rest stops, door-to-door comfort, 24/7.",
+      "Private taxi from Amman to Tabuk (~600 km, 6-7 hours via the Al Haditha crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Amman to Tabuk: route overview",
@@ -3154,9 +3178,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles with rest stops, fixed price, 24/7",
     ],
     relatedCitySlugs: ["alula", "tabuk"],
-    metaTitle: "AlUla to Amman Taxi | Private Cross-Border Transfer",
+    metaTitle: "AlUla to Amman Border Taxi – Fixed-Price Private Car",
     metaDescription:
-      "Private AlUla to Amman taxi (about 800 km) across the Al Haditha border into Jordan. Fixed price, rest stops, ideal for AlUla and Petra heritage trips, 24/7.",
+      "Travel from AlUla to Amman (~800 km, 8-9 hours) in a private vehicle, crossing via the Al Haditha crossing. Fixed price, professional driver.",
     sections: [
       {
         heading: "AlUla to Amman: route overview",
@@ -3215,9 +3239,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles with rest stops, fixed price, 24/7",
     ],
     relatedCitySlugs: ["alula", "tabuk"],
-    metaTitle: "Amman to AlUla Taxi | Private Cross-Border Transfer",
+    metaTitle: "Private Taxi: Amman to AlUla",
     metaDescription:
-      "Private Amman to AlUla taxi (about 800 km) across the Al Haditha border into Saudi Arabia. Fixed price, rest stops, ideal for Petra and AlUla heritage trips, 24/7.",
+      "Private taxi from Amman to AlUla (~800 km, 8-9 hours via the Al Haditha crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Amman to AlUla: route overview",
@@ -3278,9 +3302,9 @@ const baseRoutes: Route[] = [
       "Flight tracking, fixed price, family vehicles, 24/7",
     ],
     relatedCitySlugs: ["makkah", "taif"],
-    metaTitle: "Taif Airport to Makkah Taxi | Private Transfer",
+    metaTitle: "Book Taif Airport to Makkah – Private Transfer",
     metaDescription:
-      "Private Taif Airport (TIF) to Makkah taxi via the scenic Al Hada road. Meet and greet, flight tracking, fixed prices and door-to-door service to your hotel, 24/7.",
+      "Reserve a private Taif Airport to Makkah transfer (~100 km, about 1 hr 30 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     sections: [
       {
         heading: "Taif Airport to Makkah: route overview",
@@ -3339,9 +3363,9 @@ const baseRoutes: Route[] = [
       "Flight tracking, fixed price, family vehicles, 24/7",
     ],
     relatedCitySlugs: ["madinah", "taif"],
-    metaTitle: "Taif Airport to Madinah Taxi | Private Transfer",
+    metaTitle: "Taif Airport Taxi to Madinah – Fixed-Price Transfer",
     metaDescription:
-      "Private Taif Airport (TIF) to Madinah taxi (about 530 km). Meet and greet, flight tracking, rest stops, fixed prices and door-to-door service to your hotel, 24/7.",
+      "Private car from Taif Airport to Madinah (~530 km, about 5 hours) with meet-and-greet pickup and a fixed fare agreed before you travel. Book online.",
     sections: [
       {
         heading: "Taif Airport to Madinah: route overview",
@@ -3400,9 +3424,9 @@ const baseRoutes: Route[] = [
       "Flight tracking, fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["madinah", "alula"],
-    metaTitle: "AlUla Airport to Madinah Taxi | Private Transfer",
+    metaTitle: "AlUla Airport to Madinah Transfer – Private Car",
     metaDescription:
-      "Private AlUla Airport (ULH) to Madinah taxi (about 330 km). Meet and greet, flight tracking, fixed prices and door-to-door service to your Madinah hotel, 24/7.",
+      "Get a fixed-price private transfer from AlUla Airport to Madinah (~330 km, about 3 hr 30 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     sections: [
       {
         heading: "AlUla Airport to Madinah: route overview",
@@ -3461,9 +3485,9 @@ const baseRoutes: Route[] = [
       "Flight tracking, fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["tabuk", "alula"],
-    metaTitle: "AlUla Airport to Tabuk Taxi | Private Transfer",
+    metaTitle: "AlUla Airport Taxi to Tabuk – Fixed-Price Transfer",
     metaDescription:
-      "Private AlUla Airport (ULH) to Tabuk taxi (about 330 km) across the scenic northwest. Meet and greet, flight tracking, fixed prices and door-to-door service, 24/7.",
+      "Travel from AlUla Airport to Tabuk (~330 km, about 3 hr 30 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "AlUla Airport to Tabuk: route overview",
@@ -3522,9 +3546,9 @@ const baseRoutes: Route[] = [
       "Flight tracking, fixed price, 24/7",
     ],
     relatedCitySlugs: ["tabuk", "alula"],
-    metaTitle: "AlUla Airport to NEOM Taxi | Private Transfer",
+    metaTitle: "Private Taxi: AlUla Airport to NEOM",
     metaDescription:
-      "Private AlUla Airport (ULH) to NEOM taxi (about 500 km) across the scenic northwest. Meet and greet, flight tracking, rest stops, fixed prices, door-to-door, 24/7.",
+      "Book a private transfer from AlUla Airport to NEOM (~500 km, about 5-6 hours). Professional driver, flight tracking, fixed price, 24/7 availability.",
     sections: [
       {
         heading: "AlUla Airport to NEOM: route overview",
@@ -3583,9 +3607,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["makkah", "taif"],
-    metaTitle: "Makkah to Taif Taxi | Private Transfer",
+    metaTitle: "Book a Makkah to Taif Transfer – Private Car Service",
     metaDescription:
-      "Private Makkah to Taif taxi (about 90 km) up the scenic Al Hada mountain road to the cool highlands. Fixed price, door-to-door pickup, comfortable vehicles, 24/7.",
+      "Book a private taxi from Makkah to Taif (~90 km, about 1 hr 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "Makkah to Taif: route overview",
@@ -3637,9 +3661,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["makkah", "taif"],
-    metaTitle: "Taif to Makkah Taxi | Private Transfer",
+    metaTitle: "Taif to Makkah Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Private Taif to Makkah taxi (about 90 km) down the scenic Al Hada mountain road to your hotel near the Haram. Fixed price, door-to-door pickup, comfortable vehicles, 24/7.",
+      "Book a private taxi from Taif to Makkah (~90 km, about 1 hr 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "Taif to Makkah: route overview",
@@ -3691,9 +3715,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["tabuk", "alula"],
-    metaTitle: "AlUla to Tabuk Taxi | Private Transfer",
+    metaTitle: "AlUla to Tabuk Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private AlUla to Tabuk taxi (about 330 km) across the scenic northwest. Fixed price, door-to-door pickup, comfortable vehicles and professional drivers, 24/7.",
+      "Book a private taxi from AlUla to Tabuk (~330 km, about 3 hr 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "AlUla to Tabuk: route overview",
@@ -3745,9 +3769,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["alula", "tabuk"],
-    metaTitle: "Tabuk to AlUla Taxi | Private Transfer",
+    metaTitle: "Tabuk to AlUla Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Tabuk to AlUla taxi (about 330 km) across the scenic northwest to the heritage valley. Fixed price, door-to-door pickup, comfortable vehicles, 24/7.",
+      "Travel from Tabuk to AlUla (~330 km, about 3 hr 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Tabuk to AlUla: route overview",
@@ -3799,9 +3823,9 @@ const baseRoutes: Route[] = [
       "Fixed price, professional drivers, 24/7",
     ],
     relatedCitySlugs: ["tabuk", "alula"],
-    metaTitle: "AlUla to NEOM Taxi | Private Transfer",
+    metaTitle: "AlUla to NEOM Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Private AlUla to NEOM taxi (about 500 km) across the scenic northwest toward the Red Sea. Fixed price, rest stops, comfortable vehicles and professional drivers, 24/7.",
+      "Private transfer from AlUla to NEOM (~500 km, about 5-6 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "AlUla to NEOM: route overview",
@@ -3860,9 +3884,9 @@ const baseRoutes: Route[] = [
       "Fixed price, comfortable vehicles with rest stops, 24/7",
     ],
     relatedCitySlugs: ["alula", "tabuk"],
-    metaTitle: "NEOM to AlUla Taxi | Private Transfer",
+    metaTitle: "NEOM to AlUla Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Private NEOM to AlUla taxi (about 500 km) across the scenic northwest to the heritage valley. Fixed price, rest stops, comfortable vehicles and professional drivers, 24/7.",
+      "Get a private NEOM to AlUla transfer (~500 km, about 5-6 hours) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "NEOM to AlUla: route overview",
@@ -3916,9 +3940,9 @@ const baseRoutes: Route[] = [
       "Valid passport, visa and vehicle documentation needed at the border",
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "Jeddah to Dubai Taxi | Long-Haul Private Transfer",
+    metaTitle: "Jeddah to Dubai Border Taxi – Fixed-Price Private Car",
     metaDescription:
-      "Private Jeddah to Dubai transfer across the peninsula via the Al Batha border. A premium long-haul road option with rest stops and a fixed price for those who prefer driving.",
+      "Travel from Jeddah to Dubai (~1,250 km, 13-14 hours) in a private vehicle, crossing via the Al Batha crossing. Fixed price, professional driver.",
     sections: [
       {
         heading: "Jeddah to Dubai: an honest overview",
@@ -3977,9 +4001,9 @@ const baseRoutes: Route[] = [
       "Valid passport, visa and vehicle documentation needed at the border",
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "Dubai to Jeddah Taxi | Long-Haul Private Transfer",
+    metaTitle: "Dubai to Jeddah Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private Dubai to Jeddah transfer across the peninsula via the Al Batha border. A premium long-haul road option with rest stops and a fixed price for those who prefer driving.",
+      "Private taxi from Dubai to Jeddah (~1,250 km, 13-14 hours via the Al Batha crossing). Comfortable car, fixed price, WhatsApp booking.",
     sections: [
       {
         heading: "Dubai to Jeddah: an honest overview",
@@ -4038,9 +4062,9 @@ const baseRoutes: Route[] = [
       "Valid passport, visa and vehicle documentation needed at the border",
     ],
     relatedCitySlugs: ["madinah", "tabuk"],
-    metaTitle: "Madinah to Amman Taxi | Long-Haul Private Transfer",
+    metaTitle: "Madinah to Amman Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private Madinah to Amman transfer across the northwest via the Al Haditha border. A premium long-haul road option with rest stops and a fixed price for those who prefer driving.",
+      "Reserve a private Madinah to Amman taxi (~1,300 km, 14-15 hours). Comfortable vehicle for the long-distance drive toward Jordan, fixed price.",
     sections: [
       {
         heading: "Madinah to Amman: an honest overview",
@@ -4099,9 +4123,9 @@ const baseRoutes: Route[] = [
       "Valid passport, visa and vehicle documentation needed at the border",
     ],
     relatedCitySlugs: ["madinah", "tabuk"],
-    metaTitle: "Amman to Madinah Taxi | Long-Haul Private Transfer",
+    metaTitle: "Amman to Madinah Private Transfer – Book Your Taxi",
     metaDescription:
-      "Private Amman to Madinah transfer across the northwest via the Al Haditha border. A premium long-haul road option with rest stops and a fixed price for those who prefer driving.",
+      "Reserve a private Amman to Madinah taxi (~1,300 km, 14-15 hours). Comfortable vehicle for the long-distance drive toward Jordan, fixed price.",
     sections: [
       {
         heading: "Amman to Madinah: an honest overview",
@@ -4160,9 +4184,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles, fixed price, 24/7 availability",
     ],
     relatedCitySlugs: ["madinah", "jeddah"],
-    metaTitle: "Jeddah Airport to Madinah Taxi | Private Long-Distance Transfer",
+    metaTitle: "Jeddah Airport (JED) to Madinah – Private Taxi",
     metaDescription:
-      "Private Jeddah Airport (JED) to Madinah taxi (about 420 km). Meet and greet, rest stops, fixed prices, and door-to-door service to your Haram hotel, 24/7.",
+      "Travel from Jeddah Airport to Madinah (~420 km, about 4 hours) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Jeddah Airport to Madinah: route overview",
@@ -4221,9 +4245,9 @@ const baseRoutes: Route[] = [
       "Comfortable vehicles, fixed price, 24/7 availability",
     ],
     relatedCitySlugs: ["madinah", "jeddah"],
-    metaTitle: "Madinah to Jeddah Airport Taxi | Private Long-Distance Transfer",
+    metaTitle: "Private Taxi: Madinah to Jeddah Airport (JED)",
     metaDescription:
-      "Private Madinah to Jeddah Airport (JED) taxi (about 420 km). Hotel pickup, rest stops, fixed prices, and flight-timed drop-off for pilgrims, 24/7.",
+      "Travel from Madinah to Jeddah Airport (~420 km, about 4 hours) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Madinah to Jeddah Airport: route overview",
@@ -4282,9 +4306,9 @@ const baseRoutes: Route[] = [
       "Onward connection to the Bahrain Causeway available",
     ],
     relatedCitySlugs: ["riyadh", "khobar", "dammam"],
-    metaTitle: "Riyadh to Khobar Taxi | Private Highway Transfer (~4 Hours)",
+    metaTitle: "Riyadh to Khobar Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Book a private Riyadh to Khobar taxi (~405 km, about 4 hours) via Highway 95. Fixed price, door-to-door, no tolls, rest stops available, 24/7 booking.",
+      "Book a private taxi from Riyadh to Khobar (~405 km, about 4 hours). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "Riyadh to Khobar: route overview and distance",
@@ -4397,9 +4421,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["khobar", "riyadh", "dammam"],
-    metaTitle: "Khobar to Riyadh Taxi | Private Highway Transfer (~4 Hours)",
+    metaTitle: "Khobar to Riyadh Transfer – Private Chauffeur Service",
     metaDescription:
-      "Book a private Khobar to Riyadh taxi (~405 km, about 4 hours) via Highway 95. Fixed price, door-to-door, airport drop-off, no tolls, 24/7 booking.",
+      "Get a private Khobar to Riyadh transfer (~405 km, about 4 hours) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "Khobar to Riyadh: route overview and distance",
@@ -4512,9 +4536,9 @@ const baseRoutes: Route[] = [
       "Familiar with compound and site-gate access procedures",
     ],
     relatedCitySlugs: ["riyadh", "jubail", "dammam"],
-    metaTitle: "Riyadh to Jubail Taxi | Private Transfer (~4h 45m)",
+    metaTitle: "Riyadh to Jubail Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Book a private Riyadh to Jubail taxi (~480 km, about 4h 45m). Fixed price, door-to-door to compounds and Jubail Industrial City, no tolls, 24/7 booking.",
+      "Private transfer from Riyadh to Jubail (~480 km, about 4 hours 45 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "Riyadh to Jubail: route overview and distance",
@@ -4617,9 +4641,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["jubail", "riyadh", "dammam"],
-    metaTitle: "Jubail to Riyadh Taxi | Private Transfer (~4h 45m)",
+    metaTitle: "Jubail to Riyadh Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Book a private Jubail to Riyadh taxi (~480 km, about 4h 45m). Fixed price, door-to-door from compounds and gates, airport drop-off, no tolls, 24/7 booking.",
+      "Book a private taxi from Jubail to Riyadh (~480 km, about 4 hours 45 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "Jubail to Riyadh: route overview and distance",
@@ -4723,9 +4747,9 @@ const baseRoutes: Route[] = [
       "Reverse Hofuf to Riyadh transfers available",
     ],
     relatedCitySlugs: ["riyadh", "hofuf", "dammam"],
-    metaTitle: "Riyadh to Hofuf Taxi | Private Transfer to Al-Ahsa (~3h 15m)",
+    metaTitle: "Riyadh to Hofuf Transfer – Private Chauffeur Service",
     metaDescription:
-      "Book a private Riyadh to Hofuf (Al-Ahsa) taxi (~330 km, about 3h 15m). Fixed price, direct highway, door-to-door, no tolls, 24/7 booking.",
+      "Reserve a private car from Riyadh to Hofuf (~330 km, about 3 hours 15 min). Comfortable vehicles for solo travellers, families and small groups.",
     sections: [
       {
         heading: "Riyadh to Hofuf: route overview and distance",
@@ -4829,9 +4853,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["hofuf", "riyadh", "dammam"],
-    metaTitle: "Hofuf to Riyadh Taxi | Private Transfer from Al-Ahsa (~3h 15m)",
+    metaTitle: "Hofuf to Riyadh Transfer – Private Chauffeur Service",
     metaDescription:
-      "Book a private Hofuf (Al-Ahsa) to Riyadh taxi (~330 km, about 3h 15m). Fixed price, direct highway, airport drop-off, no tolls, 24/7 booking.",
+      "Travel from Hofuf to Riyadh (~330 km, about 3 hours 15 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Hofuf to Riyadh: route overview and distance",
@@ -4935,9 +4959,9 @@ const baseRoutes: Route[] = [
       "Familiar with the region's camel market and farm-visit schedules",
     ],
     relatedCitySlugs: ["riyadh", "buraidah"],
-    metaTitle: "Riyadh to Qassim Taxi | Private Transfer to Buraidah (~3h 30m)",
+    metaTitle: "Book a Riyadh to Qassim Transfer – Private Car Service",
     metaDescription:
-      "Book a private Riyadh to Qassim (Buraidah) taxi (~345 km, about 3h 30m). Fixed price, door-to-door, no tolls, 24/7 booking.",
+      "Travel from Riyadh to Qassim (~345 km, about 3 hours 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Riyadh to Qassim: route overview and distance",
@@ -5042,9 +5066,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["buraidah", "riyadh"],
-    metaTitle: "Qassim to Riyadh Taxi | Private Transfer from Buraidah (~3h 30m)",
+    metaTitle: "Qassim to Riyadh Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Qassim (Buraidah) to Riyadh taxi (~345 km, about 3h 30m). Fixed price, door-to-door, airport drop-off, no tolls, 24/7 booking.",
+      "Get a private Qassim to Riyadh transfer (~345 km, about 3 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "Qassim to Riyadh: route overview and distance",
@@ -5148,9 +5172,9 @@ const baseRoutes: Route[] = [
       "Onward connections toward the north-west available",
     ],
     relatedCitySlugs: ["riyadh", "hail"],
-    metaTitle: "Riyadh to Hail Taxi | Private Long-Distance Transfer (~6h 30m)",
+    metaTitle: "Book a Riyadh to Hail Transfer – Private Car Service",
     metaDescription:
-      "Book a private Riyadh to Hail taxi (~640 km, about 6h 30m). Fixed price, door-to-door, rest stops, no tolls, 24/7 booking.",
+      "Book a private taxi from Riyadh to Hail (~640 km, about 6 hours 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     sections: [
       {
         heading: "Riyadh to Hail: route overview and distance",
@@ -5255,9 +5279,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["hail", "riyadh"],
-    metaTitle: "Hail to Riyadh Taxi | Private Long-Distance Transfer (~6h 30m)",
+    metaTitle: "Hail to Riyadh Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Hail to Riyadh taxi (~640 km, about 6h 30m). Fixed price, door-to-door, airport drop-off, rest stops, no tolls, 24/7 booking.",
+      "Reserve a private car from Hail to Riyadh (~640 km, about 6 hours 30 min). Comfortable vehicles for solo travellers, families and small groups.",
     sections: [
       {
         heading: "Hail to Riyadh: route overview and distance",
@@ -5361,9 +5385,9 @@ const baseRoutes: Route[] = [
       "Onward connections to Makkah for Umrah available",
     ],
     relatedCitySlugs: ["riyadh", "madinah"],
-    metaTitle: "Riyadh to Madinah Taxi | Private Transfer (~8h 30m)",
+    metaTitle: "Riyadh to Madinah Private Transfer – Long-Distance Taxi",
     metaDescription:
-      "Book a private Riyadh to Madinah taxi (~850 km, about 8h 30m). Fixed price, door-to-door to hotels near the Haram, rest stops for prayer, 24/7 booking.",
+      "Book a private car from Riyadh to Madinah (about 850 km, roughly 8.5 hours) with rest stops along the way. Comfortable vehicles, fixed price.",
     sections: [
       {
         heading: "Riyadh to Madinah: route overview and distance",
@@ -5467,9 +5491,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["madinah", "riyadh"],
-    metaTitle: "Madinah to Riyadh Taxi | Private Transfer (~8h 30m)",
+    metaTitle: "Madinah to Riyadh Taxi – Private Long-Distance Transfer",
     metaDescription:
-      "Book a private Madinah to Riyadh taxi (~850 km, about 8h 30m). Fixed price, hotel pickup near the Haram, airport drop-off, rest stops, 24/7 booking.",
+      "Private transfer from Madinah to Riyadh (about 850 km, roughly 8.5 hours) with a professional driver and planned rest stops. Fixed price, 24/7.",
     sections: [
       {
         heading: "Madinah to Riyadh: route overview and distance",
@@ -5573,9 +5597,9 @@ const baseRoutes: Route[] = [
       "Onward connections to Makkah available via the Al-Hada mountain road",
     ],
     relatedCitySlugs: ["riyadh", "taif"],
-    metaTitle: "Riyadh to Taif Taxi | Private Transfer to the Mountains (~7h 30m)",
+    metaTitle: "Riyadh to Taif Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Book a private Riyadh to Taif taxi (~740 km, about 7h 30m). Fixed price, door-to-door, rest stops, no tolls, 24/7 booking.",
+      "Private transfer from Riyadh to Taif (~740 km, about 7 hours 30 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "Riyadh to Taif: route overview and distance",
@@ -5679,9 +5703,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["taif", "riyadh"],
-    metaTitle: "Taif to Riyadh Taxi | Private Transfer from the Mountains (~7h 30m)",
+    metaTitle: "Taif to Riyadh Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Book a private Taif to Riyadh taxi (~740 km, about 7h 30m). Fixed price, door-to-door, airport drop-off, no tolls, 24/7 booking.",
+      "Reserve a private car from Taif to Riyadh (~740 km, about 7 hours 30 min). Comfortable vehicles for solo travellers, families and small groups.",
     sections: [
       {
         heading: "Taif to Riyadh: route overview and distance",
@@ -5785,9 +5809,9 @@ const baseRoutes: Route[] = [
       "Familiar with the mountain roads around Al-Soudah and the Asir highlands",
     ],
     relatedCitySlugs: ["riyadh", "abha"],
-    metaTitle: "Riyadh to Abha Taxi | Private Transfer to the Asir Mountains (~8h 45m)",
+    metaTitle: "Book a Riyadh to Abha Transfer – Private Car Service",
     metaDescription:
-      "Book a private Riyadh to Abha taxi (~830 km, about 8h 45m). Fixed price, door-to-door, rest stops, no tolls, 24/7 booking.",
+      "Travel from Riyadh to Abha (~830 km, about 8 hours 45 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Riyadh to Abha: route overview and distance",
@@ -5891,9 +5915,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["abha", "riyadh"],
-    metaTitle: "Abha to Riyadh Taxi | Private Transfer from the Mountains (~8h 45m)",
+    metaTitle: "Private Car from Abha to Riyadh – Book Your Ride",
     metaDescription:
-      "Book a private Abha to Riyadh taxi (~830 km, about 8h 45m). Fixed price, door-to-door, airport drop-off, no tolls, 24/7 booking.",
+      "Private transfer from Abha to Riyadh (~830 km, about 8 hours 45 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "Abha to Riyadh: route overview and distance",
@@ -5997,9 +6021,9 @@ const baseRoutes: Route[] = [
       "Onward connections toward the Red Sea coast and NEOM available",
     ],
     relatedCitySlugs: ["riyadh", "tabuk"],
-    metaTitle: "Riyadh to Tabuk Taxi | Private Long-Distance Transfer (~10h 30m)",
+    metaTitle: "Private Car from Riyadh to Tabuk – Book Your Ride",
     metaDescription:
-      "Book a private Riyadh to Tabuk taxi (~1,050 km, about 10h 30m). Fixed price, door-to-door, rest stops, no tolls, 24/7 booking.",
+      "Get a private Riyadh to Tabuk transfer (~1,050 km, about 10 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "Riyadh to Tabuk: route overview and distance",
@@ -6103,9 +6127,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["tabuk", "riyadh"],
-    metaTitle: "Tabuk to Riyadh Taxi | Private Long-Distance Transfer (~10h 30m)",
+    metaTitle: "Private Car from Tabuk to Riyadh – Book Your Ride",
     metaDescription:
-      "Book a private Tabuk to Riyadh taxi (~1,050 km, about 10h 30m). Fixed price, door-to-door, airport drop-off, rest stops, no tolls, 24/7 booking.",
+      "Get a private Tabuk to Riyadh transfer (~1,050 km, about 10 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "Tabuk to Riyadh: route overview and distance",
@@ -6209,9 +6233,9 @@ const baseRoutes: Route[] = [
       "Familiar with both leisure and industrial-city destinations in Yanbu",
     ],
     relatedCitySlugs: ["riyadh", "yanbu"],
-    metaTitle: "Riyadh to Yanbu Taxi | Private Transfer to the Red Sea Coast (~9h 30m)",
+    metaTitle: "Riyadh to Yanbu Transfer – Private Chauffeur Service",
     metaDescription:
-      "Book a private Riyadh to Yanbu taxi (~950 km, about 9h 30m). Fixed price, door-to-door, rest stops, no tolls, 24/7 booking.",
+      "Private transfer from Riyadh to Yanbu (~950 km, about 9 hours 30 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "Riyadh to Yanbu: route overview and distance",
@@ -6315,9 +6339,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["yanbu", "riyadh"],
-    metaTitle: "Yanbu to Riyadh Taxi | Private Transfer from the Red Sea Coast (~9h 30m)",
+    metaTitle: "Yanbu to Riyadh Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Book a private Yanbu to Riyadh taxi (~950 km, about 9h 30m). Fixed price, door-to-door, airport drop-off, no tolls, 24/7 booking.",
+      "Private transfer from Yanbu to Riyadh (~950 km, about 9 hours 30 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     sections: [
       {
         heading: "Yanbu to Riyadh: route overview and distance",
@@ -6421,9 +6445,9 @@ const baseRoutes: Route[] = [
       "A practical option for groups, equipment moves, or those who prefer road travel over flying",
     ],
     relatedCitySlugs: ["riyadh", "tabuk"],
-    metaTitle: "Riyadh to NEOM Taxi | Private Long-Distance Transfer (~11h 30m)",
+    metaTitle: "Riyadh to NEOM Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Book a private Riyadh to NEOM taxi (~1,150 km, about 11h 30m). Fixed price, door-to-door, structured rest stops, no tolls, 24/7 booking.",
+      "Travel from Riyadh to NEOM (~1,150 km, about 11 hours 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     sections: [
       {
         heading: "Riyadh to NEOM: route overview and distance",
@@ -6527,9 +6551,9 @@ const baseRoutes: Route[] = [
       "Timed pickups available for onward Riyadh flight connections",
     ],
     relatedCitySlugs: ["tabuk", "riyadh"],
-    metaTitle: "NEOM to Riyadh Taxi | Private Long-Distance Transfer (~11h 30m)",
+    metaTitle: "NEOM to Riyadh Transfer – Private Chauffeur Service",
     metaDescription:
-      "Book a private NEOM to Riyadh taxi (~1,150 km, about 11h 30m). Fixed price, door-to-door, airport drop-off, structured rest stops, 24/7 booking.",
+      "Get a private NEOM to Riyadh transfer (~1,150 km, about 11 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     sections: [
       {
         heading: "NEOM to Riyadh: route overview and distance",
@@ -6612,6 +6636,8 @@ const baseRoutes: Route[] = [
 
   {
     slug: "jeddah-to-riyadh",
+    metaTitle: "Jeddah to Riyadh Transfer – Private Chauffeur Service",
+    metaDescription: "Get a private Jeddah to Riyadh transfer (950 km, about 9 hours) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "Jeddah",
     to: "Riyadh",
     category: "intercity",
@@ -6654,6 +6680,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-airport-to-riyadh",
+    metaTitle: "Jeddah Airport to Riyadh Transfer – Private Car",
+    metaDescription: "Reserve a private Jeddah Airport to Riyadh transfer (950 km, about 9 hours) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     from: "Jeddah Airport",
     to: "Riyadh",
     category: "airport",
@@ -6694,6 +6722,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-airport-to-jeddah",
+    metaTitle: "Riyadh Airport Taxi to Jeddah – Fixed-Price Transfer",
+    metaDescription: "Get a fixed-price private transfer from Riyadh Airport to Jeddah (950 km, about 9 hours). Comfortable vehicles, English-speaking drivers, easy booking.",
     from: "Riyadh Airport",
     to: "Jeddah",
     category: "airport",
@@ -6727,6 +6757,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "tabuk-to-neom",
+    metaTitle: "Tabuk to NEOM Taxi Service – Reliable Private Transfer",
+    metaDescription: "Travel from Tabuk to NEOM (180 km, about 2 hours) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Tabuk",
     to: "NEOM",
     category: "intercity",
@@ -6761,6 +6793,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "neom-to-tabuk",
+    metaTitle: "NEOM to Tabuk Private Transfer – Fixed-Price Taxi",
+    metaDescription: "Private transfer from NEOM to Tabuk (180 km, about 2 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "NEOM",
     to: "Tabuk",
     category: "intercity",
@@ -6794,6 +6828,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-to-alula",
+    metaTitle: "Jeddah to AlUla Taxi Service – Reliable Private Transfer",
+    metaDescription: "Private transfer from Jeddah to AlUla (720 km, about 7 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "Jeddah",
     to: "AlUla",
     category: "intercity",
@@ -6827,6 +6863,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-to-riyadh",
+    metaTitle: "AlUla to Riyadh Transfer – Private Chauffeur Service",
+    metaDescription: "Reserve a private car from AlUla to Riyadh (1,050 km, about 10 hours). Comfortable vehicles for solo travellers, families and small groups.",
     from: "AlUla",
     to: "Riyadh",
     category: "intercity",
@@ -6860,6 +6898,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-to-jeddah",
+    metaTitle: "AlUla to Jeddah Taxi Service – Reliable Private Transfer",
+    metaDescription: "Travel from AlUla to Jeddah (720 km, about 7 hours) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "AlUla",
     to: "Jeddah",
     category: "intercity",
@@ -6893,6 +6933,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-airport-to-makkah",
+    metaTitle: "Private Taxi: Riyadh Airport to Makkah",
+    metaDescription: "Private car from Riyadh Airport to Makkah (880 km, about 8 hours 30 min) with meet-and-greet pickup and a fixed fare agreed before you travel. Book online.",
     from: "Riyadh Airport",
     to: "Makkah",
     category: "airport",
@@ -6926,6 +6968,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-to-dammam",
+    metaTitle: "Book a Jeddah to Dammam Transfer – Private Car Service",
+    metaDescription: "Private transfer from Jeddah to Dammam (1,350 km, about 13 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "Jeddah",
     to: "Dammam",
     category: "intercity",
@@ -6959,6 +7003,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "dammam-to-jeddah",
+    metaTitle: "Private Car from Dammam to Jeddah – Book Your Ride",
+    metaDescription: "Travel from Dammam to Jeddah (1,350 km, about 13 hours) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Dammam",
     to: "Jeddah",
     category: "intercity",
@@ -6992,6 +7038,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-to-madinah",
+    metaTitle: "Book a AlUla to Madinah Transfer – Private Car Service",
+    metaDescription: "Get a private AlUla to Madinah transfer (330 km, about 3 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "AlUla",
     to: "Madinah",
     category: "intercity",
@@ -7025,6 +7073,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-airport-to-madinah",
+    metaTitle: "Private Taxi: Riyadh Airport to Madinah",
+    metaDescription: "Travel from Riyadh Airport to Madinah (850 km, about 8 hours) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     from: "Riyadh Airport",
     to: "Madinah",
     category: "airport",
@@ -7058,6 +7108,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "abha-to-jeddah",
+    metaTitle: "Abha to Jeddah Private Transfer – Fixed-Price Taxi",
+    metaDescription: "Book a private taxi from Abha to Jeddah (620 km, about 6 hours 30 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     from: "Abha",
     to: "Jeddah",
     category: "intercity",
@@ -7091,6 +7143,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "tabuk-to-madinah",
+    metaTitle: "Private Car from Tabuk to Madinah – Book Your Ride",
+    metaDescription: "Get a private Tabuk to Madinah transfer (680 km, about 6 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "Tabuk",
     to: "Madinah",
     category: "intercity",
@@ -7124,6 +7178,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-tabuk",
+    metaTitle: "Book a Madinah to Tabuk Transfer – Private Car Service",
+    metaDescription: "Travel from Madinah to Tabuk (680 km, about 6 hours 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Madinah",
     to: "Tabuk",
     category: "intercity",
@@ -7157,6 +7213,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "dammam-airport-to-riyadh",
+    metaTitle: "Private Taxi: Dammam Airport to Riyadh",
+    metaDescription: "Book a private transfer from Dammam Airport to Riyadh (420 km, about 4 hours). Professional driver, flight tracking, fixed price, 24/7 availability.",
     from: "Dammam Airport",
     to: "Riyadh",
     category: "airport",
@@ -7190,6 +7248,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-airport-to-riyadh",
+    metaTitle: "Madinah Airport (MED) to Riyadh – Private Taxi",
+    metaDescription: "Get a fixed-price private transfer from Madinah Airport to Riyadh (850 km, about 8 hours). Comfortable vehicles, English-speaking drivers, easy booking.",
     from: "Madinah Airport",
     to: "Riyadh",
     category: "airport",
@@ -7224,6 +7284,8 @@ const baseRoutes: Route[] = [
 
   {
     slug: "jeddah-airport-to-taif",
+    metaTitle: "Jeddah Airport Taxi to Taif – Fixed-Price Transfer",
+    metaDescription: "Get a fixed-price private transfer from Jeddah Airport to Taif (175 km, about 2 hours). Comfortable vehicles, English-speaking drivers, easy booking.",
     from: "Jeddah Airport",
     to: "Taif",
     category: "airport",
@@ -7257,6 +7319,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "taif-to-jeddah-airport",
+    metaTitle: "Taif to Jeddah Airport (JED) – Private Taxi",
+    metaDescription: "Book a private transfer from Taif to Jeddah Airport (175 km, about 2 hours). Professional driver, flight tracking, fixed price, 24/7 availability.",
     from: "Taif",
     to: "Jeddah Airport",
     category: "airport",
@@ -7289,6 +7353,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-yanbu",
+    metaTitle: "Private Car from Madinah to Yanbu – Book Your Ride",
+    metaDescription: "Book a private taxi from Madinah to Yanbu (230 km, about 2 hours 15 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     from: "Madinah",
     to: "Yanbu",
     category: "intercity",
@@ -7321,6 +7387,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "yanbu-to-madinah",
+    metaTitle: "Book a Yanbu to Madinah Transfer – Private Car Service",
+    metaDescription: "Reserve a private car from Yanbu to Madinah (230 km, about 2 hours 15 min). Comfortable vehicles for solo travellers, families and small groups.",
     from: "Yanbu",
     to: "Madinah",
     category: "intercity",
@@ -7353,6 +7421,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "taif-to-madinah",
+    metaTitle: "Taif to Madinah Taxi – Private Transfer & Chauffeur",
+    metaDescription: "Travel from Taif to Madinah (480 km, about 4 hours 45 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Taif",
     to: "Madinah",
     category: "intercity",
@@ -7385,6 +7455,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-taif",
+    metaTitle: "Madinah to Taif Taxi – Private Transfer & Chauffeur",
+    metaDescription: "Travel from Madinah to Taif (480 km, about 4 hours 45 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     from: "Madinah",
     to: "Taif",
     category: "intercity",
@@ -7417,6 +7489,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-to-abha",
+    metaTitle: "Jeddah to Abha Transfer – Private Chauffeur Service",
+    metaDescription: "Private transfer from Jeddah to Abha (620 km, about 6 hours 30 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "Jeddah",
     to: "Abha",
     category: "intercity",
@@ -7449,6 +7523,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-to-yanbu",
+    metaTitle: "Private Car from AlUla to Yanbu – Book Your Ride",
+    metaDescription: "Get a private AlUla to Yanbu transfer (360 km, about 3 hours 45 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "AlUla",
     to: "Yanbu",
     category: "intercity",
@@ -7481,6 +7557,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "yanbu-to-alula",
+    metaTitle: "Private Car from Yanbu to AlUla – Book Your Ride",
+    metaDescription: "Private transfer from Yanbu to AlUla (360 km, about 3 hours 45 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "Yanbu",
     to: "AlUla",
     category: "intercity",
@@ -7513,6 +7591,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "hail-to-madinah",
+    metaTitle: "Hail to Madinah Taxi Service – Reliable Private Transfer",
+    metaDescription: "Get a private Hail to Madinah transfer (440 km, about 4 hours 15 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "Hail",
     to: "Madinah",
     category: "intercity",
@@ -7545,6 +7625,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "madinah-to-hail",
+    metaTitle: "Madinah to Hail Transfer – Private Chauffeur Service",
+    metaDescription: "Private transfer from Madinah to Hail (440 km, about 4 hours 15 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     from: "Madinah",
     to: "Hail",
     category: "intercity",
@@ -7577,6 +7659,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-airport-to-riyadh",
+    metaTitle: "Book AlUla Airport to Riyadh – Private Transfer",
+    metaDescription: "Get a fixed-price private transfer from AlUla Airport to Riyadh (1,050 km, about 10 hours). Comfortable vehicles, English-speaking drivers, easy booking.",
     from: "AlUla Airport",
     to: "Riyadh",
     category: "airport",
@@ -7609,6 +7693,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "alula-airport-to-jeddah",
+    metaTitle: "AlUla Airport (ULH) to Jeddah – Private Taxi",
+    metaDescription: "Reserve a private AlUla Airport to Jeddah transfer (720 km, about 7 hours) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     from: "AlUla Airport",
     to: "Jeddah",
     category: "airport",
@@ -7641,6 +7727,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "abha-airport-to-jeddah",
+    metaTitle: "Abha Airport Taxi to Jeddah – Fixed-Price Transfer",
+    metaDescription: "Book a private transfer from Abha Airport to Jeddah (620 km, about 6 hours 30 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     from: "Abha Airport",
     to: "Jeddah",
     category: "airport",
@@ -7673,6 +7761,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "abha-airport-to-riyadh",
+    metaTitle: "Private Taxi: Abha Airport to Riyadh",
+    metaDescription: "Private car from Abha Airport to Riyadh (950 km, about 9 hours) with meet-and-greet pickup and a fixed fare agreed before you travel. Book online.",
     from: "Abha Airport",
     to: "Riyadh",
     category: "airport",
@@ -7705,6 +7795,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "yanbu-to-jeddah-airport",
+    metaTitle: "Book Yanbu to Jeddah Airport – Private Transfer",
+    metaDescription: "Reserve a private Yanbu to Jeddah Airport transfer (330 km, about 3 hours 15 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     from: "Yanbu",
     to: "Jeddah Airport",
     category: "airport",
@@ -7737,6 +7829,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jeddah-airport-to-yanbu",
+    metaTitle: "Private Taxi: Jeddah Airport to Yanbu",
+    metaDescription: "Reserve a private Jeddah Airport to Yanbu transfer (330 km, about 3 hours 15 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     from: "Jeddah Airport",
     to: "Yanbu",
     category: "airport",
@@ -7769,6 +7863,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "riyadh-to-jizan",
+    metaTitle: "Riyadh to Jizan Taxi Service – Reliable Private Transfer",
+    metaDescription: "Get a private Riyadh to Jizan transfer (1,000 km, about 10 hours) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     from: "Riyadh",
     to: "Jizan",
     category: "intercity",
@@ -7801,6 +7897,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "jizan-to-riyadh",
+    metaTitle: "Jizan to Riyadh Taxi Service – Reliable Private Transfer",
+    metaDescription: "Reserve a private car from Jizan to Riyadh (1,000 km, about 10 hours). Comfortable vehicles for solo travellers, families and small groups.",
     from: "Jizan",
     to: "Riyadh",
     category: "intercity",
@@ -7833,6 +7931,8 @@ const baseRoutes: Route[] = [
   },
   {
     slug: "dammam-to-qatar-border",
+    metaTitle: "Dammam to Qatar Border Taxi – Private Cross-Border Transfer",
+    metaDescription: "Travel from Dammam to Qatar Border (300 km, 3 hours) in a private vehicle, crossing via the Salwa border crossing. Fixed price, professional driver.",
     from: "Dammam",
     to: "Qatar Border",
     category: "border",
@@ -7883,8 +7983,8 @@ const baseRoutes: Route[] = [
       "Spacious sedans, GMC Yukon XL SUVs, and Mercedes V-Class vans available"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Riyadh Airport to Riyadh Taxi | King Khalid Airport (RUH) Transfer",
-    metaDescription: "Book a private Riyadh Airport (RUH) to Riyadh city transfer. Meet & greet, flight tracking, fixed pricing, and 24/7 service across all Riyadh hotels and districts.",
+    metaTitle: "Private Taxi: Riyadh Airport to Riyadh",
+    metaDescription: "Book a private transfer from Riyadh Airport to Riyadh (35 km, about 30-45 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     faqs: [
       {
             "question": "Where will my driver meet me at King Khalid International Airport?",
@@ -7922,8 +8022,8 @@ const baseRoutes: Route[] = [
       "Available 24/7 for early morning and late night international departures"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Riyadh to Riyadh Airport Taxi | King Khalid Airport (RUH) Departure",
-    metaDescription: "Reliable private taxi from Riyadh city to King Khalid International Airport (RUH). Guaranteed on-time pickup, fixed rates, and direct departure terminal drop-off.",
+    metaTitle: "Private Taxi: Riyadh to Riyadh Airport (RUH)",
+    metaDescription: "Travel from Riyadh to Riyadh Airport (35 km, about 30-45 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       {
             "question": "How far in advance should I arrange pickup before my flight?",
@@ -7953,8 +8053,8 @@ const baseRoutes: Route[] = [
       "Clean air-conditioned sedans, SUVs, and luxury vans"
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "Jeddah Airport to Jeddah City Taxi | King Abdulaziz Airport (JED) Transfer",
-    metaDescription: "Private transfer from Jeddah King Abdulaziz Airport (JED) to Jeddah hotels and city center. Meet & greet, flight tracking, 24/7 service.",
+    metaTitle: "Book Jeddah Airport to Jeddah – Private Transfer",
+    metaDescription: "Travel from Jeddah Airport to Jeddah (25 km, about 25-35 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       {
             "question": "How will I meet my driver at Jeddah Airport (JED)?",
@@ -7983,8 +8083,8 @@ const baseRoutes: Route[] = [
       "Fixed pricing with zero luggage surcharges"
     ],
     relatedCitySlugs: ["jeddah"],
-    metaTitle: "Jeddah to Jeddah Airport Taxi | JED Airport Departure Transfer",
-    metaDescription: "Book a private taxi from Jeddah city to King Abdulaziz International Airport (JED). 24/7 on-time pickup, fixed pricing, all terminals.",
+    metaTitle: "Book Jeddah to Jeddah Airport – Private Transfer",
+    metaDescription: "Reserve a private Jeddah to Jeddah Airport transfer (25 km, about 25-35 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     faqs: [
       {
             "question": "Which Jeddah Airport terminal will I be dropped at?",
@@ -8010,8 +8110,8 @@ const baseRoutes: Route[] = [
       "24/7 flight monitoring to accommodate all airline schedules"
     ],
     relatedCitySlugs: ["madinah"],
-    metaTitle: "Madinah Airport to Madinah Taxi | Prince Mohammad (MED) Transfer",
-    metaDescription: "Private transfer from Madinah Airport (MED) to Markazia hotels near Al-Masjid an-Nabawi. Meet and greet, fixed rates, 24/7 service.",
+    metaTitle: "Madinah Airport to Madinah Transfer – Private Car",
+    metaDescription: "Travel from Madinah Airport to Madinah (20 km, about 20-25 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       {
             "question": "Can the taxi drop us directly in front of our Markazia hotel?",
@@ -8036,8 +8136,8 @@ const baseRoutes: Route[] = [
       "Family vans and minibuses available for group departures"
     ],
     relatedCitySlugs: ["madinah"],
-    metaTitle: "Madinah to Madinah Airport Taxi | MED Airport Departure",
-    metaDescription: "Private taxi from Madinah Markazia hotels to Madinah Airport (MED). On-time pickup, fixed price, family vans available.",
+    metaTitle: "Book Madinah to Madinah Airport – Private Transfer",
+    metaDescription: "Reserve a private Madinah to Madinah Airport transfer (20 km, about 20-25 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     faqs: [
       {
             "question": "How early should we leave our Madinah hotel for the airport?",
@@ -8062,8 +8162,8 @@ const baseRoutes: Route[] = [
       "Ideal for business engineers, corporate commuters, and family visits"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Riyadh to Al-Kharj Taxi | Private Intercity Transfer",
-    metaDescription: "Book a private taxi from Riyadh to Al-Kharj (85 km, ~55 min). Door-to-door service, fixed price, corporate and family vehicles.",
+    metaTitle: "Book a Riyadh to Al-Kharj Transfer – Private Car Service",
+    metaDescription: "Reserve a private car from Riyadh to Al-Kharj (85 km, about 55 min). Comfortable vehicles for solo travellers, families and small groups.",
     faqs: [
       {
             "question": "How long does the drive take from Riyadh to Al-Kharj?",
@@ -8088,8 +8188,8 @@ const baseRoutes: Route[] = [
       "Fixed pre-agreed rate with WhatsApp booking"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Al-Kharj to Riyadh Taxi | Private Intercity Transfer",
-    metaDescription: "Private transfer from Al-Kharj to Riyadh city and RUH Airport. Fixed fare, professional drivers, 24/7 availability.",
+    metaTitle: "Al-Kharj to Riyadh Taxi – Private Transfer & Chauffeur",
+    metaDescription: "Private transfer from Al-Kharj to Riyadh (85 km, about 55 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     faqs: [
       {
             "question": "Can you take me directly from Al-Kharj to Riyadh Airport?",
@@ -8114,8 +8214,8 @@ const baseRoutes: Route[] = [
       "Round-trip booking with scheduled return pickup available"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Riyadh to Diriyah Taxi | Bujairi Terrace & At-Turaif Transfer",
-    metaDescription: "Private transfer from Riyadh to Diriyah, Bujairi Terrace, and At-Turaif UNESCO site. Fixed price, premium vehicles, 24/7 service.",
+    metaTitle: "Book a Riyadh to Diriyah Transfer – Private Car Service",
+    metaDescription: "Reserve a private car from Riyadh to Diriyah (20 km, about 25 min). Comfortable vehicles for solo travellers, families and small groups.",
     faqs: [
       {
             "question": "Can the driver wait for us during our visit to Bujairi Terrace?",
@@ -8139,8 +8239,8 @@ const baseRoutes: Route[] = [
       "Direct drop-off across Olaya, Sulaimaniyah, Diplomatic Quarter, or RUH Airport"
     ],
     relatedCitySlugs: ["riyadh"],
-    metaTitle: "Diriyah to Riyadh Taxi | Return Private Transfer",
-    metaDescription: "Private transfer from Diriyah and Bujairi Terrace to Riyadh city or King Khalid Airport. Guaranteed on-time pickup, fixed rates.",
+    metaTitle: "Private Car from Diriyah to Riyadh – Book Your Ride",
+    metaDescription: "Book a private taxi from Diriyah to Riyadh (20 km, about 25 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       {
             "question": "Where in Diriyah does the driver pick us up?",
@@ -8166,8 +8266,8 @@ const baseRoutes: Route[] = [
       "Fixed pricing inclusive of causeway toll fees"
     ],
     relatedCitySlugs: ["khobar","dammam"],
-    metaTitle: "Khobar to Bahrain Airport Taxi | King Fahd Causeway Transfer",
-    metaDescription: "Private taxi from Al Khobar to Bahrain International Airport (BAH) via King Fahd Causeway. 24/7 service, border assistance, fixed price.",
+    metaTitle: "Khobar to Bahrain Airport Private Transfer – Book Your Taxi",
+    metaDescription: "Reserve a private Khobar to Bahrain Airport taxi (70 km, 1 hr 15 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     faqs: [
       {
             "question": "How much time should I allow for the Causeway crossing to Bahrain Airport?",
@@ -8192,8 +8292,8 @@ const baseRoutes: Route[] = [
       "Flight monitoring and complimentary arrival waiting time included"
     ],
     relatedCitySlugs: ["khobar","dammam"],
-    metaTitle: "Bahrain Airport to Khobar Taxi | Causeway Arrival Transfer",
-    metaDescription: "Private transfer from Bahrain Airport (BAH) to Al Khobar via King Fahd Causeway. Meet and greet, flight tracking, 24/7 border transit.",
+    metaTitle: "Bahrain Airport to Khobar Private Transfer – Book Your Taxi",
+    metaDescription: "Reserve a private Bahrain Airport to Khobar taxi (70 km, 1 hr 15 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     faqs: [
       {
             "question": "Will the driver meet me inside Bahrain Airport?",
@@ -8218,8 +8318,8 @@ const baseRoutes: Route[] = [
       "Fixed all-inclusive price with no hidden border fees"
     ],
     relatedCitySlugs: ["dammam","khobar"],
-    metaTitle: "Dammam to Bahrain Airport Taxi | King Fahd Causeway Transfer",
-    metaDescription: "Book a private taxi from Dammam to Bahrain International Airport (BAH). Door-to-door cross-border transfer, fixed price, 24/7 service.",
+    metaTitle: "Dammam to Bahrain Airport Transfer – Private Cross-Border Taxi",
+    metaDescription: "Reserve a private Dammam to Bahrain Airport taxi (85 km, 1 hr 30 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
     faqs: [
       {
             "question": "Can you pick up from anywhere in Dammam for Bahrain Airport?",
@@ -8245,8 +8345,8 @@ const baseRoutes: Route[] = [
       "Flexible schedule coordinated with your cruise docking times"
     ],
     relatedCitySlugs: ["jeddah","makkah"],
-    metaTitle: "Jeddah Port to Makkah Taxi | Cruise Terminal Umrah Transfer",
-    metaDescription: "Private transfer from Jeddah Islamic Port cruise terminal to Makkah hotels near the Haram. Meet & greet, fixed price, 24/7 Umrah transit.",
+    metaTitle: "Jeddah Port to Makkah Taxi – Private Cruise Transfer",
+    metaDescription: "Private transfer from Jeddah Islamic Port to Makkah (90 km, about 1h 20m) for cruise passengers and ferry arrivals. Comfortable car, fixed price.",
     faqs: [
       {
             "question": "Can cruise passengers perform Umrah during a Jeddah port call?",
@@ -8271,8 +8371,8 @@ const baseRoutes: Route[] = [
       "Punctual scheduling to meet ship embarkation deadlines"
     ],
     relatedCitySlugs: ["makkah","jeddah"],
-    metaTitle: "Makkah to Jeddah Port Taxi | Cruise Terminal Transfer",
-    metaDescription: "Private taxi from Makkah hotels to Jeddah Islamic Port cruise terminal. Guaranteed on-time arrival, fixed fare, family vans available.",
+    metaTitle: "Makkah to Jeddah Port Transfer – Private Taxi",
+    metaDescription: "Book a private taxi from Makkah to Jeddah Islamic Port (90 km, about 1h 20m) for your cruise departure or ferry connection. Fixed price, 24/7.",
     faqs: [
       {
             "question": "How early should we leave Makkah for our cruise boarding in Jeddah?",
@@ -8298,8 +8398,8 @@ const baseRoutes: Route[] = [
       "Flight tracking aligned with RSI scheduled domestic and international arrivals"
     ],
     relatedCitySlugs: ["yanbu","alula"],
-    metaTitle: "Red Sea Airport (RSI) to Umluj Taxi | Luxury Coastal Transfer",
-    metaDescription: "Private transfer from Red Sea International Airport (RSI) to Umluj resorts and hotels. Meet & greet, premium SUVs, fixed price.",
+    metaTitle: "Red Sea Airport to Umluj Transfer – Private Car",
+    metaDescription: "Get a fixed-price private transfer from Red Sea Airport to Umluj (95 km, about 1 hr 10 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       {
             "question": "How far is Umluj from Red Sea International Airport?",
@@ -8324,8 +8424,8 @@ const baseRoutes: Route[] = [
       "Fixed transparent pricing with luggage assistance"
     ],
     relatedCitySlugs: ["yanbu","alula"],
-    metaTitle: "Umluj to Red Sea Airport Taxi | RSI Airport Departure",
-    metaDescription: "Private taxi from Umluj resorts to Red Sea International Airport (RSI). Reliable pickup, luxury vehicles, fixed fare.",
+    metaTitle: "Umluj to Red Sea Airport Taxi – Fixed-Price Transfer",
+    metaDescription: "Get a fixed-price private transfer from Umluj to Red Sea Airport (95 km, about 1 hr 10 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       {
             "question": "What vehicle types are available for the RSI airport transfer?",
@@ -8351,8 +8451,8 @@ const baseRoutes: Route[] = [
       "Flight tracking for all domestic and international seasonal arrivals"
     ],
     relatedCitySlugs: ["alula"],
-    metaTitle: "AlUla Airport to AlUla Taxi | Ashar Valley & Resort Transfer",
-    metaDescription: "Private luxury transfer from AlUla Airport (ULH) to Ashar Valley resorts, Habitas, Banyan Tree, and Old Town. Fixed rates, meet & greet.",
+    metaTitle: "AlUla Airport to AlUla Transfer – Private Car",
+    metaDescription: "Get a fixed-price private transfer from AlUla Airport to AlUla (30 km, about 25-30 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       {
             "question": "Do you deliver passengers directly to Ashar Valley resorts?",
@@ -8377,8 +8477,8 @@ const baseRoutes: Route[] = [
       "Fixed rate with no hidden charges"
     ],
     relatedCitySlugs: ["alula"],
-    metaTitle: "AlUla to AlUla Airport Taxi | ULH Airport Departure",
-    metaDescription: "Book a private transfer from AlUla resorts and Old Town to AlUla International Airport (ULH). Fixed price, luxury SUVs, 24/7 service.",
+    metaTitle: "Book AlUla to AlUla Airport – Private Transfer",
+    metaDescription: "Reserve a private AlUla to AlUla Airport transfer (30 km, about 25-30 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     faqs: [
       {
             "question": "How early should we leave our resort for AlUla Airport?",

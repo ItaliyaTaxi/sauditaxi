@@ -592,7 +592,7 @@ const rawAttractions: Omit<PointTransfer, "citySlug">[] = [
     h1: "Jeddah Airport to King Fahd Fountain Private Transfer",
     metaTitle: "Jeddah Airport to King Fahd Fountain Transfer",
     metaDescription:
-      "Book a fixed-price private transfer from Jeddah Airport (JED) to King Fahd Fountain. Meet and greet, professional drivers, door-to-door service, 24/7 and no surge pricing.",
+      "Book a fixed-price private transfer from Jeddah Airport (JED) to King Fahd Fountain. Meet and greet, professional drivers, door-to-door service, 24/7.",
     intro:
       "Arriving at Jeddah Airport and heading straight for the world's tallest fountain on the Corniche? Our private transfer meets you at JED and drives you door-to-door for one clear, fixed price.",
     distance: "~28 km",
@@ -707,7 +707,7 @@ const rawAttractions: Omit<PointTransfer, "citySlug">[] = [
     h1: "Jeddah Hotels to King Fahd Fountain Private Transfer",
     metaTitle: "Jeddah Hotels to King Fahd Fountain Transfer",
     metaDescription:
-      "Private evening transfer from your Jeddah hotel to the King Fahd Fountain on the Corniche. Fixed price, professional drivers, door-to-door pickup and 24/7 booking, no surge.",
+      "Private evening transfer from your Jeddah hotel to the King Fahd Fountain on the Corniche. Fixed price, professional drivers, door-to-door pickup, 24/7.",
     intro:
       "Planning an evening out to see the world's tallest fountain lit up over the Red Sea? We collect you from your Jeddah hotel and drive you door-to-door to the Corniche for one fixed price.",
     distance: "6-12 km",

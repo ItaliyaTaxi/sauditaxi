@@ -19,9 +19,9 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Saudi Arabia Taxi Blog | Travel & Transfer Guides",
+  title: "Saudi Arabia Travel & Transfer Guides – Blog",
   description:
-    "Expert guides on taxi service in Saudi Arabia — airport transfers, Makkah & Madinah routes, Riyadh travel, intercity transfers, Umrah and Hajj transport.",
+    "Expert guides on getting around Saudi Arabia — airport transfers, Makkah and Madinah routes, Riyadh travel, and Umrah and Hajj transport tips.",
   path: "/blog",
 });
 

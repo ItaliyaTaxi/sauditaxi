@@ -78,7 +78,7 @@ export const services: Service[] = [
           "We track your flight number and adjust the pickup time automatically, with free wait time included so you are never charged extra for a delay.",
       },
     ],
-    metaTitle: "Saudi Arabia Airport Transfer | Private Taxi Booking",
+    metaTitle: "Saudi Arabia Airport Transfers – Private Car & Taxi Service",
     metaDescription:
       "Book private airport transfers in Saudi Arabia from Riyadh, Jeddah, Madinah, Dammam, Taif, Abha, Tabuk, and more. Flight tracking and meet-and-greet.",
     featured: true,
@@ -115,7 +115,7 @@ export const services: Service[] = [
           "Yes. Full-day driver hire is available in all major cities — ideal for business meetings, sightseeing, and family outings.",
       },
     ],
-    metaTitle: "City Taxi Service Saudi Arabia | Private City Transfers",
+    metaTitle: "Private City Transfers in Saudi Arabia – Book Your Ride",
     metaDescription:
       "Private city taxi service in Riyadh, Jeddah, Makkah, Madinah, Dammam, and more. Hotel pickups, business travel, and full-day driver hire.",
     featured: true,
@@ -152,9 +152,9 @@ export const services: Service[] = [
           "Yes. On longer journeys such as Riyadh to Jeddah or Riyadh to AlUla, the driver will stop for rest and refreshments as needed.",
       },
     ],
-    metaTitle: "Intercity Taxi Saudi Arabia | Long-Distance Transfers",
+    metaTitle: "Saudi Arabia Intercity Transfers – Private Car Service",
     metaDescription:
-      "Private intercity taxi service across Saudi Arabia including Riyadh, Jeddah, Makkah, Madinah, Dammam, AlUla, Taif, and more.",
+      "Private intercity taxi service between Saudi Arabia's major cities, including Riyadh, Jeddah, Makkah, Madinah, Dammam, and AlUla. Fixed price, door-to-door.",
     featured: true,
   },
   {
@@ -189,9 +189,9 @@ export const services: Service[] = [
           "You will need a valid passport and the appropriate visa for the destination country. We advise on the specific requirements when you book.",
       },
     ],
-    metaTitle: "Saudi Border Taxi Transfers | Bahrain, Qatar, UAE & Kuwait",
+    metaTitle: "Saudi Arabia Border Transfers – Private Cross-Border Taxi",
     metaDescription:
-      "Private Saudi border taxi transfers for Bahrain, Qatar, UAE, Kuwait, and Jordan routes. Book safe long-distance rides by WhatsApp.",
+      "Private cross-border taxi transfers from Saudi Arabia to Bahrain, Qatar, UAE, Kuwait, and Jordan. Fixed price, comfortable vehicles, WhatsApp booking.",
     featured: true,
   },
   {
@@ -231,9 +231,9 @@ export const services: Service[] = [
           "Yes. This is our most requested Umrah transfer. We meet you at the airport and drive directly to your Makkah hotel near the Haram.",
       },
     ],
-    metaTitle: "Umrah Taxi Service Saudi Arabia | Makkah & Madinah Transfers",
+    metaTitle: "Umrah Taxi Service in Saudi Arabia – Private Transfers",
     metaDescription:
-      "Book private Umrah taxi service for Jeddah airport to Makkah, Makkah to Madinah, Ziyarat, and hotel transfers.",
+      "Book a private Umrah taxi for Jeddah Airport to Makkah, Makkah to Madinah, Ziyarat tours, and hotel transfers. Fixed price, family-friendly vehicles.",
     featured: true,
   },
   {
@@ -268,9 +268,9 @@ export const services: Service[] = [
           "Yes. We arrange meet-and-greet for groups at Jeddah and Madinah airports and transfer everyone together to Makkah or Madinah.",
       },
     ],
-    metaTitle: "Hajj Transport Saudi Arabia | Group Pilgrim Transfers",
+    metaTitle: "Hajj Transport in Saudi Arabia – Private Group Transfers",
     metaDescription:
-      "Private and group Hajj transport for airport arrivals, hotel transfers, and travel between Makkah, Mina, Arafat, and Madinah.",
+      "Private and group Hajj transport for airport arrivals, hotel transfers, and travel between Makkah, Mina, Arafat, and Madinah. Fixed price, 24/7.",
     featured: true,
   },
   {
@@ -305,7 +305,7 @@ export const services: Service[] = [
           "We offer both half-day and full-day Ziyarat tours. The full-day option allows a more relaxed visit to all the major sites.",
       },
     ],
-    metaTitle: "Ziyarat Taxi Service | Makkah & Madinah Historic Site Tours",
+    metaTitle: "Ziyarat Taxi Service in Saudi Arabia – Private Transfers",
     metaDescription:
       "Private Ziyarat taxi service to visit the historic Islamic sites of Makkah and Madinah with a knowledgeable driver. Half-day and full-day tours.",
     featured: true,
@@ -336,9 +336,9 @@ export const services: Service[] = [
           "Yes. Hotel-to-hotel transfers between the Holy Cities are one of our most common bookings, with comfortable vehicles for the journey.",
       },
     ],
-    metaTitle: "Hotel Transfer Service Saudi Arabia | Private Hotel Taxi",
+    metaTitle: "Saudi Arabia Hotel Transfers – Private Car Service",
     metaDescription:
-      "Private hotel transfer service across Saudi Arabia for arrivals, departures, and city-to-city hotel moves with luggage assistance.",
+      "Private hotel transfer service across Saudi Arabia for arrivals, departures, and city-to-city hotel moves, with luggage assistance included.",
     featured: false,
   },
 ];

@@ -783,7 +783,7 @@ export const distancePages: DistancePage[] = [
     to: "Bahrain",
     routePath: "/routes/khobar-to-bahrain",
     metaTitle: "Khobar to Bahrain Distance: KM, Causeway Crossing Time & Border Info",
-    metaDescription: "How far is Bahrain from Khobar? Distance to the King Fahd Causeway, the 25 km bridge crossing itself, realistic border-crossing time, and how far into Bahrain you're actually going.",
+    metaDescription: "How far is Bahrain from Khobar? Distance to the King Fahd Causeway, the 25 km crossing itself, realistic border time, and how far into Bahrain you're really going.",
     h1: "Khobar to Bahrain Distance: How Far Is the Causeway, and How Long Does the Crossing Take?",
     quickAnswer: {
       drivingDistance: "About 45–55 km to the causeway entrance, plus the 25 km King Fahd Causeway bridge itself",
@@ -851,7 +851,7 @@ export const distancePages: DistancePage[] = [
     to: "Bahrain",
     routePath: "/routes/dammam-to-bahrain",
     metaTitle: "Dammam to Bahrain Distance: KM, Causeway Crossing Time & Flight Option",
-    metaDescription: "How far is Bahrain from Dammam? Distance to the King Fahd Causeway, realistic crossing time, and the roughly 45-minute direct flight alternative between Dammam and Manama.",
+    metaDescription: "How far is Bahrain from Dammam? Distance to the King Fahd Causeway, realistic crossing time, and the roughly 45-minute direct flight alternative to Manama.",
     h1: "Dammam to Bahrain Distance: How Far Is It, and Is Flying an Option?",
     quickAnswer: {
       drivingDistance: "About 60–70 km to the causeway entrance, plus the 25 km King Fahd Causeway bridge itself",
@@ -926,7 +926,7 @@ export const distancePages: DistancePage[] = [
     to: "the Qatar Border",
     routePath: "/routes/riyadh-to-qatar-border",
     metaTitle: "Riyadh to Qatar Border Distance: KM to Salwa/Abu Samra & Travel Time",
-    metaDescription: "How far is the Qatar border from Riyadh? Road distance to the Salwa/Abu Samra crossing via Al Hofuf, realistic driving time, and how that differs from the distance to Doha.",
+    metaDescription: "How far is the Qatar border from Riyadh? Road distance to Salwa/Abu Samra via Al Hofuf, realistic driving time, and how it differs from the distance to Doha.",
     h1: "Riyadh to Qatar Border Distance: How Far Is the Salwa Crossing, and How Is It Different From the Distance to Doha?",
     quickAnswer: {
       drivingDistance: "Roughly 460–500 km to the Salwa/Abu Samra border crossing via Al Hofuf",
@@ -1056,7 +1056,7 @@ export const distancePages: DistancePage[] = [
     to: "Jeddah",
     routePath: "/routes/makkah-to-jeddah",
     metaTitle: "Makkah to Jeddah Distance: KM, Travel Time & Airport vs City Center",
-    metaDescription: "How far is Jeddah from Makkah? Road distance, driving time, the Haramain train, and why the distance depends heavily on whether you're headed to Jeddah's airport or city centre.",
+    metaDescription: "How far is Jeddah from Makkah? Road distance, driving time, the Haramain train, and why it depends on whether you're headed to Jeddah's airport or city centre.",
     h1: "Makkah to Jeddah Distance: How Far Is It, and Does Your Jeddah Destination Change the Answer?",
     quickAnswer: {
       drivingDistance: "Roughly 85–95 km by road",
@@ -1277,7 +1277,7 @@ export const distancePages: DistancePage[] = [
     to: "Yanbu",
     routePath: "/routes/jeddah-to-yanbu",
     metaTitle: "Jeddah to Yanbu Distance: KM, Travel Time & Coastal Highway Route",
-    metaDescription: "How far is Yanbu from Jeddah? Road distance up the Red Sea coastal highway, realistic driving time, and how the distance shifts depending on whether you're headed to Yanbu Al Bahr or the industrial city.",
+    metaDescription: "How far is Yanbu from Jeddah? Road distance up the Red Sea coastal highway, driving time, and how it shifts between Yanbu Al Bahr and the industrial city.",
     h1: "Jeddah to Yanbu Distance: How Far Is It Up the Red Sea Coast?",
     quickAnswer: {
       drivingDistance: "Roughly 330–350 km via the coastal highway",
@@ -1567,7 +1567,7 @@ export const distancePages: DistancePage[] = [
     to: "Bahrain",
     routePath: "/routes/dammam-airport-to-bahrain",
     metaTitle: "Dammam Airport to Bahrain Distance: KM & Causeway Travel Time",
-    metaDescription: "How far is Bahrain from Dammam Airport? Verified driving distance via the King Fahd Causeway, approximate travel time, and how the figure changes depending on your Bahrain destination.",
+    metaDescription: "How far is Bahrain from Dammam Airport? Driving distance via the King Fahd Causeway, approximate travel time, and how it varies by your Bahrain destination.",
     h1: "Dammam Airport to Bahrain Distance: How Far Is It via the King Fahd Causeway?",
     quickAnswer: {
       drivingDistance: "About 103 km (64 miles) to central Manama via the King Fahd Causeway",
@@ -1628,7 +1628,7 @@ export const distancePages: DistancePage[] = [
     to: "Dammam",
     routePath: "/routes/bahrain-airport-to-dammam",
     metaTitle: "Bahrain Airport to Dammam Distance: KM & Travel Time",
-    metaDescription: "How far is Dammam from Bahrain International Airport? Approximate driving distance via the King Fahd Causeway, why figures vary, and the difference between Dammam city and King Fahd Airport as a destination.",
+    metaDescription: "How far is Dammam from Bahrain Airport? Driving distance via the King Fahd Causeway, why figures vary, and Dammam city vs. the airport as your destination.",
     h1: "Bahrain Airport to Dammam Distance: How Far Is the Crossing?",
     quickAnswer: {
       drivingDistance: "Approximately 95–105 km (59–65 miles) depending on the exact Dammam destination",
@@ -1750,7 +1750,7 @@ export const distancePages: DistancePage[] = [
     to: "Dammam",
     routePath: "/routes/manama-to-dammam",
     metaTitle: "Manama to Dammam Distance: KM & Causeway Travel Time",
-    metaDescription: "How far is Dammam from central Manama? Approximate driving distance via the King Fahd Causeway, why sources disagree, and how the figure differs from a generic Bahrain-to-Dammam estimate.",
+    metaDescription: "How far is Dammam from central Manama? Driving distance via the King Fahd Causeway, why sources disagree, and how it differs from a generic Bahrain estimate.",
     h1: "Manama to Dammam Distance: How Far Is the Journey from the Bahraini Capital?",
     quickAnswer: {
       drivingDistance: "Sources vary meaningfully, roughly 60–110 km (37–68 miles) depending on the source and measurement method",
@@ -1810,7 +1810,7 @@ export const distancePages: DistancePage[] = [
     to: "Bahrain",
     routePath: "/routes/riyadh-to-bahrain",
     metaTitle: "Riyadh to Bahrain Distance: KM & Causeway Road Trip Time",
-    metaDescription: "How far is Bahrain from Riyadh by road? Approximate driving distance across the Eastern Province and the King Fahd Causeway, and why the figure varies by Bahrain destination.",
+    metaDescription: "How far is Bahrain from Riyadh by road? Approximate driving distance across the Eastern Province and King Fahd Causeway, and why it varies by Bahrain destination.",
     h1: "Riyadh to Bahrain Distance: How Far Is the Road Journey to Manama?",
     quickAnswer: {
       drivingDistance: "Approximately 450 km (280 miles), though estimates vary",
@@ -1877,7 +1877,7 @@ export const distancePages: DistancePage[] = [
     to: "Riyadh",
     routePath: "/routes/bahrain-to-riyadh",
     metaTitle: "Bahrain to Riyadh Distance: KM & Long-Distance Road Trip Time",
-    metaDescription: "How far is Riyadh from Bahrain by road? Driving distance from the King Fahd Causeway across the Eastern Province, and how the journey differs starting from Bahrain rather than Riyadh.",
+    metaDescription: "How far is Riyadh from Bahrain by road? Driving distance from the King Fahd Causeway across the Eastern Province, and how starting from Bahrain changes the trip.",
     h1: "Bahrain to Riyadh Distance: How Far Is the Road Journey to the Saudi Capital?",
     quickAnswer: {
       drivingDistance: "Approximately 450 km (280 miles), though estimates vary",
@@ -2004,7 +2004,7 @@ export const distancePages: DistancePage[] = [
     to: "Dammam",
     routePath: "/routes/kuwait-city-to-dammam",
     metaTitle: "Kuwait City to Dammam Distance: KM & Nuwaiseeb Border Road Trip",
-    metaDescription: "How far is Dammam from Kuwait City by road? Driving distance via the Nuwaiseeb/Khafji border and Highway 95, and the difference between Dammam city and King Fahd Airport as a destination.",
+    metaDescription: "How far is Dammam from Kuwait City by road? Driving distance via Nuwaiseeb/Khafji and Highway 95, and Dammam city vs. King Fahd Airport as your destination.",
     h1: "Kuwait City to Dammam Distance: How Far Is the Southbound Journey?",
     quickAnswer: {
       drivingDistance: "Approximately 420–450 km (260–280 miles) along Highway 95",
@@ -2064,7 +2064,7 @@ export const distancePages: DistancePage[] = [
     to: "Kuwait City",
     routePath: "/routes/riyadh-to-kuwait-city",
     metaTitle: "Riyadh to Kuwait City Distance: KM & Longest GCC Road Trip",
-    metaDescription: "How far is Kuwait City from Riyadh by road? Approximate driving distance via Highway 40 and Highway 95 to the Khafji border, and why this is the longest Saudi-Kuwait road journey.",
+    metaDescription: "How far is Kuwait City from Riyadh by road? Driving distance via Highway 40/95 to the Khafji border, and why this is the longest Saudi-Kuwait road trip.",
     h1: "Riyadh to Kuwait City Distance: How Far Is the Capital-to-Capital Road Trip?",
     quickAnswer: {
       drivingDistance: "Estimates vary considerably, roughly 600–700 km (373–435 miles)",

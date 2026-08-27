@@ -15,7 +15,7 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Get a Taxi Quote | Saudi Arabia Private Transfers",
+  title: "Get a Private Transfer Quote in Saudi Arabia – Book Online",
   description:
     "Request a fast, fixed-price taxi quote in Saudi Arabia. Enter your pickup, drop-off, date, and passengers — we reply on WhatsApp in minutes.",
   path: "/get-quote",

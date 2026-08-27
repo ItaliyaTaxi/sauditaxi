@@ -9,7 +9,7 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions",
+  title: "Terms & Conditions | Saudi Private Transfers",
   description:
     "The terms and conditions for using the Saudi Private Transfers website and requesting taxi, airport, and transfer quotes across Saudi Arabia.",
   path: "/terms-and-conditions",

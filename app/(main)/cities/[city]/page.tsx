@@ -35,6 +35,38 @@ export function generateStaticParams() {
   return citiesWithHotels().map((city) => ({ city }));
 }
 
+// Hand-written per-city metadata for the 5 hotel-transfer hub pages. Distinct
+// from both /taxi-service/{city} (general city taxi intent) and
+// /airport-transfer/{airport} (general airport intent) — these pages are
+// specifically about the hotel<->airport leg, so the metadata leads with that.
+const HUB_META: Record<string, { title: string; description: string }> = {
+  jeddah: {
+    title: "Jeddah Hotel Transfers – Private Airport Pickup (JED)",
+    description:
+      "Book a private transfer between Jeddah's King Abdulaziz Airport and your hotel. Fixed price, meet-and-greet, and flight tracking for every stay.",
+  },
+  riyadh: {
+    title: "Riyadh Hotel Transfers – Private Airport Pickup (RUH)",
+    description:
+      "Book a private transfer between King Khalid International Airport and your Riyadh hotel. Fixed price, meet-and-greet, flight tracking included.",
+  },
+  makkah: {
+    title: "Makkah Hotel Transfers – Private Pickup from Jeddah Airport",
+    description:
+      "Book a private transfer from Jeddah Airport to your Makkah hotel near the Haram. Fixed price, meet-and-greet, and pilgrim-friendly vehicles.",
+  },
+  madinah: {
+    title: "Madinah Hotel Transfers – Private Airport Pickup (MED)",
+    description:
+      "Book a private transfer between Prince Mohammad bin Abdulaziz Airport and your Madinah hotel near the Prophet's Mosque. Fixed price, 24/7.",
+  },
+  dammam: {
+    title: "Dammam Hotel Transfers – Private Airport Pickup (DMM)",
+    description:
+      "Book a private transfer between King Fahd International Airport and your Dammam hotel. Fixed price, meet-and-greet, flight tracking included.",
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -47,9 +79,12 @@ export async function generateMetadata({
   const aName = airport ? airportTransferName(airport) : `${city.name} Airport`;
   const path = `/cities/${city.slug}`;
   const arPath = getArPathForEnPath(path);
+  const hub = HUB_META[city.slug];
   return buildMetadata({
-    title: `${city.name} Airport Transfers | Hotel Taxi from ${aName}`,
-    description: `Private ${city.name} airport transfers between ${aName} and every major 3, 4 & 5-star hotel. Fixed prices, meet & greet, flight tracking, and 24/7 booking.`,
+    title: hub?.title ?? `${city.name} Airport Transfers | Hotel Taxi from ${aName}`,
+    description:
+      hub?.description ??
+      `Private ${city.name} airport transfers between ${aName} and every major 3, 4 & 5-star hotel. Fixed prices, meet & greet, flight tracking, and 24/7 booking.`,
     path,
     ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
   });

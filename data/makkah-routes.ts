@@ -30,9 +30,9 @@ export const makkahRoutes: Route[] = [
       "Hotel-to-hotel private service, available 24/7",
     ],
     relatedCitySlugs: ["makkah", "riyadh"],
-    metaTitle: "Makkah to Riyadh Taxi | Private Long-Distance Transfer",
+    metaTitle: "Makkah to Riyadh Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Book a private Makkah to Riyadh taxi (approx. 870 km, 9 hours). Comfortable vehicles, rest stops, fixed pricing and 24/7 booking for families and groups.",
+      "Travel from Makkah to Riyadh (870 km, about approx. 9 hours) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     keywords: [
       "makkah to riyadh taxi",
       "makkah to riyadh transfer",
@@ -111,9 +111,9 @@ export const makkahRoutes: Route[] = [
       "Direct drop-off at Makkah hotels near the Haram",
     ],
     relatedCitySlugs: ["riyadh", "makkah"],
-    metaTitle: "Riyadh to Makkah Taxi | Private Umrah Transfer",
+    metaTitle: "Riyadh to Makkah Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Private Riyadh to Makkah taxi for Umrah pilgrims (approx. 870 km). Miqat stop, comfortable vehicles, rest stops, fixed pricing and 24/7 booking.",
+      "Book a private taxi from Riyadh to Makkah (870 km, about approx. 9 hours). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     keywords: [
       "riyadh to makkah taxi",
       "riyadh to makkah umrah transfer",
@@ -192,9 +192,9 @@ export const makkahRoutes: Route[] = [
       "Hotel-to-address private service, available 24/7",
     ],
     relatedCitySlugs: ["makkah", "jeddah"],
-    metaTitle: "Makkah to KAEC Taxi | King Abdullah Economic City Transfer",
+    metaTitle: "Makkah to KAEC Taxi – Private Transfer Service",
     metaDescription:
-      "Private Makkah to King Abdullah Economic City (KAEC) taxi, approx. 180 km. Coastal transfer for business, port, and resort travel with fixed pricing.",
+      "Reserve a private car from Makkah to King Abdullah Economic City (180 km, about 2 hours). Comfortable vehicle, professional driver, fixed price.",
     keywords: [
       "makkah to kaec taxi",
       "makkah to king abdullah economic city transfer",
@@ -273,9 +273,9 @@ export const makkahRoutes: Route[] = [
       "Hotel-to-address private service, available 24/7",
     ],
     relatedCitySlugs: ["makkah", "yanbu"],
-    metaTitle: "Makkah to Yanbu Taxi | Private Red Sea Coast Transfer",
+    metaTitle: "Makkah to Yanbu Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Makkah to Yanbu taxi, approx. 330 km along the Red Sea coast. Comfortable transfers for resorts, diving, and business with fixed pricing, 24/7.",
+      "Reserve a private car from Makkah to Yanbu (330 km, about approx. 3 hours 30 min). Comfortable vehicles for solo travellers, families and small groups.",
     keywords: [
       "makkah to yanbu taxi",
       "makkah to yanbu transfer",
@@ -354,9 +354,9 @@ export const makkahRoutes: Route[] = [
       "Direct drop-off at AlUla resorts and the Old Town area",
     ],
     relatedCitySlugs: ["makkah", "alula"],
-    metaTitle: "Makkah to AlUla Taxi | Private Heritage Transfer",
+    metaTitle: "Makkah to AlUla Transfer – Private Chauffeur Service",
     metaDescription:
-      "Private Makkah to AlUla taxi, approx. 690 km. Comfortable long-distance transfer to Hegra and the Old Town with rest stops and fixed pricing.",
+      "Get a private Makkah to AlUla transfer (690 km, about approx. 7 hours 30 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     keywords: [
       "makkah to alula taxi",
       "makkah to alula transfer",
@@ -435,9 +435,9 @@ export const makkahRoutes: Route[] = [
       "Often routed via Riyadh; overnight travel available",
     ],
     relatedCitySlugs: ["makkah", "dammam", "riyadh"],
-    metaTitle: "Makkah to Dammam Taxi | Coast-to-Coast Private Transfer",
+    metaTitle: "Makkah to Dammam Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Makkah to Dammam taxi, approx. 1,250 km across the Kingdom. Comfortable long-distance transfer via Riyadh with rest stops and fixed pricing.",
+      "Reserve a private car from Makkah to Dammam (1,250 km, about approx. 12 hours). Comfortable vehicles for solo travellers, families and small groups.",
     keywords: [
       "makkah to dammam taxi",
       "makkah to dammam transfer",
@@ -516,9 +516,9 @@ export const makkahRoutes: Route[] = [
       "Direct drop-off at Abha and Khamis Mushait addresses",
     ],
     relatedCitySlugs: ["makkah", "abha"],
-    metaTitle: "Makkah to Abha Taxi | Private Asir Highlands Transfer",
+    metaTitle: "Book a Makkah to Abha Transfer – Private Car Service",
     metaDescription:
-      "Private Makkah to Abha taxi, approx. 630 km to the cool Asir highlands. Comfortable long-distance transfer with rest stops and fixed pricing, 24/7.",
+      "Private transfer from Makkah to Abha (630 km, about approx. 7 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     keywords: [
       "makkah to abha taxi",
       "makkah to abha transfer",
@@ -597,9 +597,9 @@ export const makkahRoutes: Route[] = [
       "Family vans for pilgrims travelling with extra bags and Zamzam water",
     ],
     relatedCitySlugs: ["makkah", "jeddah"],
-    metaTitle: "Makkah to Jeddah Airport Taxi | Departure Transfer",
+    metaTitle: "Private Taxi: Makkah to Jeddah Airport (JED)",
     metaDescription:
-      "Private Makkah to Jeddah airport (JED) taxi, approx. 95 km. Departure transfer timed to your flight with luggage help and fixed pricing, 24/7.",
+      "Travel from Makkah to Jeddah Airport (95 km, about approx. 1 hour 20 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     keywords: [
       "makkah to jeddah airport taxi",
       "makkah to jed transfer",

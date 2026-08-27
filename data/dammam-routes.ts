@@ -29,9 +29,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Al Khobar to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Al Khobar Taxi | Private Transfer",
+    metaTitle: "Private Car from Dammam to Al Khobar – Book Your Ride",
     metaDescription:
-      "Book a private Dammam to Al Khobar taxi — a quick 20-minute transfer with fixed prices, comfortable vehicles, and door-to-door pickup, available 24/7.",
+      "Book a private taxi from Dammam to Al Khobar (15 km, about 20 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       { question: "How long does the Dammam to Al Khobar taxi take?", answer: "The two cities are only about 15 kilometres apart, and the drive normally takes around 20 minutes. Traffic on the connecting roads at peak hours can add a few minutes, though your fixed price never changes." },
       { question: "Can you pick me up from anywhere in Dammam?", answer: "Yes. This is a door-to-door service from any hotel, office or home address in Dammam, with drop-off anywhere in Al Khobar, including the Corniche and business districts." },
@@ -62,9 +62,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Al Khobar transfers available",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Al Khobar to Dammam Taxi | Private Transfer",
+    metaTitle: "Private Car from Al Khobar to Dammam – Book Your Ride",
     metaDescription:
-      "Private Al Khobar to Dammam taxi — a quick 20-minute door-to-door transfer with fixed prices and comfortable vehicles, available 24/7.",
+      "Private transfer from Al Khobar to Dammam (15 km, about 20 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     faqs: [
       { question: "How far is Al Khobar from Dammam?", answer: "The two cities are about 15 kilometres apart, a drive of roughly 20 minutes under normal traffic conditions." },
       { question: "Can I book a same-day transfer for a business meeting?", answer: "Yes. Most bookings are confirmed within minutes on WhatsApp, and we can accommodate short-notice requests between the two cities." },
@@ -95,9 +95,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dhahran to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Dhahran Taxi | Private Transfer",
+    metaTitle: "Private Car from Dammam to Dhahran – Book Your Ride",
     metaDescription:
-      "Book a private Dammam to Dhahran taxi — a quick 15-minute transfer to Aramco, KFUPM, and Ithra, with fixed prices and door-to-door pickup, 24/7.",
+      "Private transfer from Dammam to Dhahran (13 km, about 15 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     faqs: [
       { question: "How long does the drive from Dammam to Dhahran take?", answer: "It is a short trip of about 13 kilometres, usually taking around 15 minutes depending on traffic." },
       { question: "Can you drop me at Ithra or KFUPM?", answer: "Yes. Drivers are familiar with the Ithra cultural centre and the King Fahd University of Petroleum and Minerals campus, as well as the surrounding Aramco residential area." },
@@ -128,9 +128,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Dhahran transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dhahran to Dammam Taxi | Private Transfer",
+    metaTitle: "Dhahran to Dammam Taxi – Private Transfer & Chauffeur",
     metaDescription:
-      "Private Dhahran to Dammam taxi — a quick 15-minute transfer with fixed prices and comfortable vehicles, available 24/7 with door-to-door pickup.",
+      "Get a private Dhahran to Dammam transfer (13 km, about 15 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     faqs: [
       { question: "How far is Dhahran from Dammam?", answer: "The two are about 13 kilometres apart, a short drive of around 15 minutes." },
       { question: "Can you collect me from Ithra after a visit?", answer: "Yes. We regularly collect visitors from Ithra (King Abdulaziz Center for World Culture) and take them into Dammam city." },
@@ -161,9 +161,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Jubail to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Dammam to Jubail Taxi | Private Transfer",
+    metaTitle: "Dammam to Jubail Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Dammam to Jubail taxi (about 90 km) for business and industrial travel. Fixed prices, comfortable vehicles, and reliable pickup, 24/7.",
+      "Book a private taxi from Dammam to Jubail (90 km, about 1 hour). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       { question: "How long does the drive from Dammam to Jubail take?", answer: "It is about 90 kilometres north along the Gulf coast highway, typically an hour's drive depending on traffic." },
       { question: "Do you serve Jubail Industrial City and the Royal Commission area?", answer: "Yes, drivers regularly take business and project visitors directly to offices and facilities within Jubail Industrial City and the Royal Commission district." },
@@ -194,9 +194,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Jubail transfers available",
     ],
     relatedCitySlugs: ["jubail", "dammam"],
-    metaTitle: "Jubail to Dammam Taxi | Private Transfer",
+    metaTitle: "Jubail to Dammam Transfer – Private Chauffeur Service",
     metaDescription:
-      "Private Jubail to Dammam taxi (about 90 km). Fixed prices, comfortable vehicles for contractors and business travellers, available 24/7.",
+      "Get a private Jubail to Dammam transfer (90 km, about 1 hour) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     faqs: [
       { question: "How far is Jubail from Dammam?", answer: "It is around 90 kilometres, a drive of about an hour along the Gulf coast highway." },
       { question: "Can you collect me from a specific project site or compound?", answer: "Yes, share your exact pickup point within Jubail Industrial City or the Royal Commission area when you book." },
@@ -227,9 +227,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Ras Tanura to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Dammam to Ras Tanura Taxi | Private Transfer",
+    metaTitle: "Dammam to Ras Tanura Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Dammam to Ras Tanura taxi (about 75 km) for business travel or a Gulf coast beach trip. Fixed prices, comfortable vehicles, 24/7.",
+      "Reserve a private car from Dammam to Ras Tanura (75 km, about 55 min). Comfortable vehicles for solo travellers, families and small groups.",
     faqs: [
       { question: "How long is the drive from Dammam to Ras Tanura?", answer: "It is about 75 kilometres, typically a 55-minute drive along the coastal highway." },
       { question: "Can you take me to the Ras Tanura public beach?", answer: "Yes, drivers know the route to the public coastal areas as well as the town itself. Note that some Aramco facilities and residential zones require a pass for entry, which is arranged separately." },
@@ -260,9 +260,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Ras Tanura transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Ras Tanura to Dammam Taxi | Private Transfer",
+    metaTitle: "Ras Tanura to Dammam Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Ras Tanura to Dammam taxi (about 75 km). Fixed prices, comfortable vehicles, and reliable pickup for business or leisure travel, 24/7.",
+      "Private transfer from Ras Tanura to Dammam (75 km, about 55 min) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     faqs: [
       { question: "How far is Ras Tanura from Dammam?", answer: "It is around 75 kilometres, about a 55-minute drive along the Gulf coast highway." },
       { question: "Can you continue to Dammam Airport from Ras Tanura?", answer: "Yes, we can route your transfer directly to King Fahd International Airport if you are flying onward." },
@@ -293,9 +293,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Qatif to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Qatif Taxi | Private Transfer",
+    metaTitle: "Dammam to Qatif Transfer – Private Chauffeur Service",
     metaDescription:
-      "Private Dammam to Qatif taxi (about 35 km) to the historic market and old town. Fixed prices, comfortable vehicles, and door-to-door pickup, 24/7.",
+      "Reserve a private car from Dammam to Qatif (35 km, about 30 min). Comfortable vehicles for solo travellers, families and small groups.",
     faqs: [
       { question: "How long does it take to reach Qatif from Dammam?", answer: "It is about 35 kilometres, usually a 30-minute drive." },
       { question: "Can you take me to the Qatif Central Market?", answer: "Yes, drivers know the route into the old town and can drop you close to the market and historic district." },
@@ -326,9 +326,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Qatif transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Qatif to Dammam Taxi | Private Transfer",
+    metaTitle: "Qatif to Dammam Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Qatif to Dammam taxi (about 35 km). Fixed prices, comfortable vehicles, and reliable door-to-door pickup, available 24/7.",
+      "Travel from Qatif to Dammam (35 km, about 30 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     faqs: [
       { question: "How far is Qatif from Dammam?", answer: "It is around 35 kilometres, about a 30-minute drive." },
       { question: "Can you collect me from Tarout Island?", answer: "Yes, we can start your pickup from Tarout Island and continue into Dammam in the same trip." },
@@ -359,9 +359,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Saihat to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Saihat Taxi | Private Transfer",
+    metaTitle: "Dammam to Saihat Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Dammam to Saihat taxi (about 30 km). Fixed prices, comfortable vehicles, and door-to-door pickup, available 24/7.",
+      "Travel from Dammam to Saihat (30 km, about 25 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     faqs: [
       { question: "How long does the Dammam to Saihat taxi take?", answer: "It is about 30 kilometres, usually a 25-minute drive along the coastal road." },
       { question: "Can you pick me up from anywhere in Dammam?", answer: "Yes, this is a door-to-door service from any hotel, office or home address in Dammam." },
@@ -392,9 +392,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Saihat transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Saihat to Dammam Taxi | Private Transfer",
+    metaTitle: "Saihat to Dammam Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Saihat to Dammam taxi (about 30 km). Fixed prices, comfortable vehicles, and reliable pickup, available 24/7.",
+      "Book a private taxi from Saihat to Dammam (30 km, about 25 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       { question: "How far is Saihat from Dammam?", answer: "It is around 30 kilometres, about a 25-minute drive." },
       { question: "Can you take me straight to Dammam Airport from Saihat?", answer: "Yes, we can route your Saihat to Dammam transfer directly to King Fahd International Airport if you are flying onward." },
@@ -425,9 +425,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Al Khafji to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Dammam to Al Khafji Taxi | Private Transfer",
+    metaTitle: "Dammam to Al Khafji Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Dammam to Al Khafji taxi (about 180 km) along the northern Gulf coast. Fixed prices, rest stops, and comfortable vehicles, available 24/7.",
+      "Private transfer from Dammam to Al Khafji (180 km, about 2 hours) with a fixed fare and door-to-door service. Reserve online or via WhatsApp.",
     faqs: [
       { question: "How long is the Dammam to Al Khafji drive?", answer: "It is around 180 kilometres, typically about two hours along the coastal highway, with rest stops available on request." },
       { question: "Is this the same as crossing into Kuwait?", answer: "No, this transfer takes you to Al Khafji town itself. If you need to cross the border, see our dedicated Kuwait border transfer service." },
@@ -458,9 +458,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Al Khafji transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Al Khafji to Dammam Taxi | Private Transfer",
+    metaTitle: "Al Khafji to Dammam Transfer – Private Chauffeur Service",
     metaDescription:
-      "Private Al Khafji to Dammam taxi (about 180 km). Fixed prices, rest stops, and comfortable vehicles for the northern Gulf coast drive, 24/7.",
+      "Book a private taxi from Al Khafji to Dammam (180 km, about 2 hours). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       { question: "How long does the drive from Al Khafji to Dammam take?", answer: "It is about 180 kilometres, typically a two-hour drive along the coastal highway." },
       { question: "Can you continue to Dammam Airport or Riyadh?", answer: "Yes, we can route your Al Khafji to Dammam transfer onward to King Fahd International Airport or continue further to Riyadh on request." },
@@ -491,9 +491,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Hofuf to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "Dammam to Hofuf Taxi | Al-Ahsa Oasis Transfer",
+    metaTitle: "Dammam to Hofuf Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Dammam to Hofuf taxi (about 160 km) to the Al-Ahsa Oasis. Fixed prices, comfortable vehicles, and door-to-door pickup, available 24/7.",
+      "Travel from Dammam to Hofuf (160 km, about 1 hour 45 min) in a comfortable private car with an English-speaking driver. No shared rides, fixed price.",
     faqs: [
       { question: "How long is the drive from Dammam to Hofuf?", answer: "It is about 160 kilometres, typically taking 1 hour 45 minutes along the inland highway." },
       { question: "Can you take me to the Qaisariah Souq or Ibrahim Palace?", answer: "Yes, drivers regularly take visitors directly to the historic heritage sites in Hofuf's old town." },
@@ -524,9 +524,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Hofuf transfers available",
     ],
     relatedCitySlugs: ["hofuf", "dammam"],
-    metaTitle: "Hofuf to Dammam Taxi | Private Transfer",
+    metaTitle: "Hofuf to Dammam Taxi Service – Reliable Private Transfer",
     metaDescription:
-      "Private Hofuf to Dammam taxi (about 160 km). Fixed prices, comfortable vehicles, and reliable door-to-door pickup, available 24/7.",
+      "Book a private taxi from Hofuf to Dammam (160 km, about 1 hour 45 min). Professional driver, comfortable vehicle, fixed price agreed before you travel.",
     faqs: [
       { question: "How far is Hofuf from Dammam?", answer: "It is around 160 kilometres, about a 1 hour 45 minute drive along the inland highway." },
       { question: "Can you continue to Dammam Airport from Hofuf?", answer: "Yes, we can route your Hofuf to Dammam transfer directly to King Fahd International Airport if you are flying onward." },
@@ -557,9 +557,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Abqaiq to Dammam transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "Dammam to Abqaiq Taxi | Private Transfer",
+    metaTitle: "Dammam to Abqaiq Private Transfer – Fixed-Price Taxi",
     metaDescription:
-      "Private Dammam to Abqaiq taxi (about 65 km) for business and industrial travel. Fixed prices, comfortable vehicles, and reliable pickup, 24/7.",
+      "Reserve a private car from Dammam to Abqaiq (65 km, about 45 min). Comfortable vehicles for solo travellers, families and small groups.",
     faqs: [
       { question: "How long does the drive from Dammam to Abqaiq take?", answer: "It is about 65 kilometres, typically a 45-minute drive." },
       { question: "Do you serve contractors visiting the Aramco facility?", answer: "Yes, this is a regular route for contractors and staff, though access inside the restricted facility itself requires your own pass or sponsor clearance." },
@@ -590,9 +590,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dammam to Abqaiq transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "Abqaiq to Dammam Taxi | Private Transfer",
+    metaTitle: "Abqaiq to Dammam Transfer – Private Chauffeur Service",
     metaDescription:
-      "Private Abqaiq to Dammam taxi (about 65 km). Fixed prices, comfortable vehicles for contractors and business travellers, available 24/7.",
+      "Get a private Abqaiq to Dammam transfer (65 km, about 45 min) with rest-stop flexibility and 24/7 booking. Reliable, on-time, fixed price.",
     faqs: [
       { question: "How far is Abqaiq from Dammam?", answer: "It is around 65 kilometres, about a 45-minute drive." },
       { question: "Can you take me to Dammam Airport from Abqaiq?", answer: "Yes, we can route your Abqaiq to Dammam transfer directly to King Fahd International Airport if needed." },
@@ -623,9 +623,9 @@ export const dammamRoutes: Route[] = [
       "Comfortable vehicles with rest stops, fixed price, 24/7",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Dammam to Khafji Border Taxi | Kuwait Crossing",
+    metaTitle: "Dammam to Khafji Border Taxi – Private Cross-Border Transfer",
     metaDescription:
-      "Private Dammam city to Khafji border taxi (about 185 km) for the Kuwait crossing. Fixed price, rest stops, and comfortable vehicles, 24/7.",
+      "Travel from Dammam to Khafji Border (185 km, 2 hours 15 min) in a private vehicle, crossing via the Al Khafji crossing. Fixed price, professional driver.",
     faqs: [
       { question: "How long does it take from Dammam city to the Khafji border?", answer: "It is about 185 kilometres, typically 2 hours 15 minutes from central Dammam, slightly longer than from the airport given the added distance within the city." },
       { question: "Is this different from the Dammam Airport to Khafji border transfer?", answer: "Yes. This route starts from anywhere in Dammam city itself, useful if you are not flying in but are already staying in Dammam before heading to the border." },
@@ -656,9 +656,9 @@ export const dammamRoutes: Route[] = [
       "Onward connections to Dammam Airport and Riyadh",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Khafji Border to Dammam Taxi | Private Transfer",
+    metaTitle: "Private Taxi: Khafji Border to Dammam",
     metaDescription:
-      "Private Khafji border to Dammam city taxi (about 185 km) after crossing from Kuwait. Fixed price, rest stops, comfortable vehicles, 24/7.",
+      "Travel from Khafji Border to Dammam (185 km, 2 hours 15 min) in a private vehicle, crossing via the Al Khafji crossing. Fixed price, professional driver.",
     faqs: [
       { question: "Where does the driver meet me at the border?", answer: "Your driver waits at an agreed meeting point on the Saudi side of the Al Khafji crossing after you clear immigration and customs." },
       { question: "How long is the drive into Dammam?", answer: "It is about 185 kilometres, typically 2 hours 15 minutes to reach central Dammam." },
@@ -691,9 +691,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Al Khobar transfers available",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Al Khobar to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Private Taxi: Al Khobar to Dammam Airport (DMM)",
     metaDescription:
-      "Book a private Al Khobar to King Fahd Airport (DMM) taxi — a 30-minute transfer with fixed prices, on-time pickup, and comfortable vehicles, 24/7.",
+      "Travel from Al Khobar to Dammam Airport (35 km, about 30 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       { question: "How long does the drive from Al Khobar to King Fahd Airport take?", answer: "It is about 35 kilometres, typically a 30-minute drive, though we add extra buffer time given the airport's large size." },
       { question: "How early should I leave my Khobar hotel for my flight?", answer: "Aim to reach the terminal about three hours before an international flight and two hours before a domestic one, then add the drive time and a traffic buffer." },
@@ -724,9 +724,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Dhahran to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "King Fahd Airport to Dhahran Taxi | Private Transfer",
+    metaTitle: "Book Dammam Airport to Dhahran – Private Transfer",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Dhahran taxi — a 25-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Get a fixed-price private transfer from Dammam Airport to Dhahran (25 km, about 25 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       { question: "How long does the transfer to Dhahran take?", answer: "It is about 25 kilometres from King Fahd Airport, typically a 25-minute drive." },
       { question: "Can you drop me at Ithra or KFUPM?", answer: "Yes, drivers are familiar with Ithra, the King Fahd University of Petroleum and Minerals campus, and the surrounding Aramco residential area." },
@@ -757,9 +757,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Dhahran transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dhahran to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Dhahran to Dammam Airport Taxi – Fixed-Price Transfer",
     metaDescription:
-      "Private Dhahran to King Fahd Airport (DMM) taxi — a 25-minute transfer with fixed prices and on-time pickup, available 24/7.",
+      "Get a fixed-price private transfer from Dhahran to Dammam Airport (25 km, about 25 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       { question: "How long is the drive from Dhahran to King Fahd Airport?", answer: "It is about 25 kilometres, typically a 25-minute drive." },
       { question: "Can you collect me from Ithra or the KFUPM campus?", answer: "Yes, this is a regular pickup point, and we plan the timing around your flight and the airport's large terminal layout." },
@@ -790,9 +790,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Jubail to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "King Fahd Airport to Jubail Taxi | Private Transfer",
+    metaTitle: "Private Taxi: Dammam Airport to Jubail",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Jubail taxi — a 50-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Travel from Dammam Airport to Jubail (70 km, about 50 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       { question: "How long does the transfer from the airport to Jubail take?", answer: "It is about 70 kilometres, typically a 50-minute drive along the Gulf coast highway." },
       { question: "Can you drop me at a specific Jubail project site?", answer: "Yes, share your exact destination within Jubail Industrial City or the Royal Commission area when you book." },
@@ -823,9 +823,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Jubail transfers available",
     ],
     relatedCitySlugs: ["jubail", "dammam"],
-    metaTitle: "Jubail to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Book Jubail to Dammam Airport – Private Transfer",
     metaDescription:
-      "Private Jubail to King Fahd Airport (DMM) taxi — a 50-minute transfer with fixed prices for contractors and business travellers, 24/7.",
+      "Reserve a private Jubail to Dammam Airport transfer (70 km, about 50 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     faqs: [
       { question: "How long is the drive from Jubail to King Fahd Airport?", answer: "It is about 70 kilometres, typically a 50-minute drive." },
       { question: "How early should I leave Jubail for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the airport's large terminal." },
@@ -856,9 +856,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Qatif to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "King Fahd Airport to Qatif Taxi | Private Transfer",
+    metaTitle: "Dammam Airport to Qatif Transfer – Private Car",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Qatif taxi — a 28-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Get a fixed-price private transfer from Dammam Airport to Qatif (30 km, about 28 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       { question: "How long does the transfer from the airport to Qatif take?", answer: "It is about 30 kilometres, typically a 28-minute drive." },
       { question: "Can you take me to Tarout Island from the airport?", answer: "Yes, we can extend your transfer to Tarout Island, a short causeway crossing from Qatif, on request." },
@@ -889,9 +889,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Qatif transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Qatif to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Qatif to Dammam Airport (DMM) – Private Taxi",
     metaDescription:
-      "Private Qatif to King Fahd Airport (DMM) taxi — a 28-minute transfer with fixed prices and on-time pickup, available 24/7.",
+      "Book a private transfer from Qatif to Dammam Airport (30 km, about 28 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     faqs: [
       { question: "How long is the drive from Qatif to King Fahd Airport?", answer: "It is about 30 kilometres, typically a 28-minute drive." },
       { question: "How early should I leave Qatif for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the terminal." },
@@ -922,9 +922,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Ras Tanura to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "King Fahd Airport to Ras Tanura Taxi | Transfer",
+    metaTitle: "Dammam Airport to Ras Tanura Transfer – Private Car",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Ras Tanura taxi — a 45-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Get a fixed-price private transfer from Dammam Airport to Ras Tanura (65 km, about 45 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       { question: "How long does the transfer from the airport to Ras Tanura take?", answer: "It is about 65 kilometres, typically a 45-minute drive along the coastal highway." },
       { question: "Can you take me to the public beach areas?", answer: "Yes, drivers know the route to the public coastal areas. Some Aramco residential zones require a pass for entry, which is arranged separately." },
@@ -955,9 +955,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Ras Tanura transfers available",
     ],
     relatedCitySlugs: ["dammam", "jubail"],
-    metaTitle: "Ras Tanura to Dammam Airport Taxi | Transfer",
+    metaTitle: "Ras Tanura to Dammam Airport (DMM) – Private Taxi",
     metaDescription:
-      "Private Ras Tanura to King Fahd Airport (DMM) taxi — a 45-minute transfer with fixed prices and reliable pickup, available 24/7.",
+      "Book a private transfer from Ras Tanura to Dammam Airport (65 km, about 45 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     faqs: [
       { question: "How long is the drive from Ras Tanura to King Fahd Airport?", answer: "It is about 65 kilometres, typically a 45-minute drive along the coastal highway." },
       { question: "How early should I leave Ras Tanura for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the terminal." },
@@ -988,9 +988,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Saihat to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "King Fahd Airport to Saihat Taxi | Private Transfer",
+    metaTitle: "Dammam Airport (DMM) to Saihat – Private Taxi",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Saihat taxi — a 32-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Reserve a private Dammam Airport to Saihat transfer (40 km, about 32 min) with door-to-door service and 24/7 WhatsApp booking. Reliable and on time.",
     faqs: [
       { question: "How long does the transfer from the airport to Saihat take?", answer: "It is about 40 kilometres, typically a 32-minute drive." },
       { question: "Where will my driver meet me at the airport?", answer: "Your driver waits inside the DMM arrivals hall with a printed name board, and we track your flight so delays shift the pickup time." },
@@ -1021,9 +1021,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Saihat transfers available",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Saihat to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Saihat to Dammam Airport (DMM) – Private Taxi",
     metaDescription:
-      "Private Saihat to King Fahd Airport (DMM) taxi — a 32-minute transfer with fixed prices and reliable pickup, available 24/7.",
+      "Book a private transfer from Saihat to Dammam Airport (40 km, about 32 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     faqs: [
       { question: "How long is the drive from Saihat to King Fahd Airport?", answer: "It is about 40 kilometres, typically a 32-minute drive." },
       { question: "How early should I leave Saihat for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the terminal." },
@@ -1054,9 +1054,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Abqaiq to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "King Fahd Airport to Abqaiq Taxi | Private Transfer",
+    metaTitle: "Dammam Airport Taxi to Abqaiq – Fixed-Price Transfer",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Abqaiq taxi — a 55-minute transfer with meet-and-greet pickup and fixed prices, available 24/7.",
+      "Private car from Dammam Airport to Abqaiq (80 km, about 55 min) with meet-and-greet pickup and a fixed fare agreed before you travel. Book online.",
     faqs: [
       { question: "How long does the transfer from the airport to Abqaiq take?", answer: "It is about 80 kilometres, typically a 55-minute drive." },
       { question: "Do you serve contractors flying in for Aramco work?", answer: "Yes, this is a regular route for contractors and staff, though access inside the restricted facility requires your own pass or sponsor clearance." },
@@ -1087,9 +1087,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Abqaiq transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "Abqaiq to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Abqaiq to Dammam Airport Taxi – Fixed-Price Transfer",
     metaDescription:
-      "Private Abqaiq to King Fahd Airport (DMM) taxi — a 55-minute transfer with fixed prices for contractors and business travellers, 24/7.",
+      "Get a fixed-price private transfer from Abqaiq to Dammam Airport (80 km, about 55 min). Comfortable vehicles, English-speaking drivers, easy booking.",
     faqs: [
       { question: "How long is the drive from Abqaiq to King Fahd Airport?", answer: "It is about 80 kilometres, typically a 55-minute drive." },
       { question: "How early should I leave Abqaiq for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the terminal." },
@@ -1120,9 +1120,9 @@ export const dammamRoutes: Route[] = [
       "Reverse Hofuf to King Fahd Airport transfers available",
     ],
     relatedCitySlugs: ["dammam", "hofuf"],
-    metaTitle: "King Fahd Airport to Hofuf Taxi | Al-Ahsa Transfer",
+    metaTitle: "Dammam Airport Taxi to Hofuf – Fixed-Price Transfer",
     metaDescription:
-      "Book a private King Fahd Airport (DMM) to Hofuf taxi — a 1 hour 40 minute transfer with meet-and-greet pickup and fixed prices, 24/7.",
+      "Travel from Dammam Airport to Hofuf (155 km, about 1 hour 40 min) in a comfortable private vehicle with a professional driver. No shared rides, fixed price.",
     faqs: [
       { question: "How long does the transfer from the airport to Hofuf take?", answer: "It is about 155 kilometres, typically 1 hour 40 minutes along the inland highway." },
       { question: "Can you take me straight to the Qaisariah Souq?", answer: "Yes, drivers regularly take visitors directly to the historic heritage sites in Hofuf's old town." },
@@ -1153,9 +1153,9 @@ export const dammamRoutes: Route[] = [
       "Reverse King Fahd Airport to Hofuf transfers available",
     ],
     relatedCitySlugs: ["hofuf", "dammam"],
-    metaTitle: "Hofuf to Dammam Airport Taxi | Private Transfer",
+    metaTitle: "Hofuf to Dammam Airport (DMM) – Private Taxi",
     metaDescription:
-      "Private Hofuf to King Fahd Airport (DMM) taxi — a 1 hour 40 minute transfer with fixed prices and reliable pickup, available 24/7.",
+      "Book a private transfer from Hofuf to Dammam Airport (155 km, about 1 hour 40 min). Professional driver, flight tracking, fixed price, 24/7 availability.",
     faqs: [
       { question: "How long is the drive from Hofuf to King Fahd Airport?", answer: "It is about 155 kilometres, typically 1 hour 40 minutes along the inland highway." },
       { question: "How early should I leave Hofuf for my flight?", answer: "Allow about three hours before an international flight and two before a domestic one, plus the drive time and a buffer for the airport's large terminal." },
