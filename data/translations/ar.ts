@@ -13894,6 +13894,8 @@ export const arPages: ArPage[] = [
       heroAnswer: "هذه واحدة من أطول الرحلات البرية المنتظمة في الخليج — خطط ليوم كامل فعليًا، لا لقفزة سريعة.",
       heroDistance: "~650 كم",
       heroDuration: "6.5-7 ساعات قيادة تقريبًا",
+      heroImage: "/images/journey/riyadh-skyline.jpg",
+      heroImageAlt: "أفق مدينة الرياض في نهاية الرحلة البرية من مدينة الكويت",
       facts: [
         { label: "مسافة الطريق", value: "600–700 كم تقريبًا (تتفاوت المصادر)" },
         { label: "مدة القيادة", value: "6.5–7 ساعات تقريبًا، دون احتساب المعبر", emphasis: true },
@@ -13996,6 +13998,8 @@ export const arPages: ArPage[] = [
       heroAnswer: "يغطي هذا المسار القيادة من مطار الملك فهد الدولي إلى منطقة معبر الخفجي — وليس المسافة الكاملة إلى داخل الكويت.",
       heroDistance: "270–285 كم تقريبًا",
       heroDuration: "ساعتان و45 دقيقة إلى 3 ساعات تقريبًا",
+      heroImage: "/images/journey/desert-highway.jpg",
+      heroImageAlt: "طريق سريع صحراوي في المنطقة الشرقية، على امتداد المسار بين مطار الدمام والخفجي",
       facts: [
         { label: "نقطة الانطلاق", value: "مطار الملك فهد الدولي (DMM)", emphasis: true },
         { label: "الوجهة", value: "الخفجي، عند الحدود السعودية الكويتية" },
@@ -14093,6 +14097,8 @@ export const arPages: ArPage[] = [
       heroAnswer: "عكس مرحلة المطار-الخفجي — لكن هذه المرة، احسب وقتًا إضافيًا لرحلة طيرانك لا لوقت القيادة فقط.",
       heroDistance: "270–285 كم تقريبًا",
       heroDuration: "ساعتان و45 دقيقة إلى 3 ساعات تقريبًا",
+      heroImage: "/images/journey/desert-highway.jpg",
+      heroImageAlt: "طريق سريع صحراوي في المنطقة الشرقية، على امتداد المسار بين الخفجي ومطار الدمام",
       facts: [
         { label: "نقطة الانطلاق", value: "الخفجي، عند الحدود السعودية الكويتية" },
         { label: "الوجهة", value: "مطار الملك فهد الدولي (DMM)", emphasis: true },
@@ -14190,6 +14196,8 @@ export const arPages: ArPage[] = [
       heroAnswer: "تتفاوت مصادر هذه المرحلة تحديدًا بشكل ملحوظ — خطط حول نطاق واسع لا رقم واحد، وأضف هامشًا حقيقيًا لرحلة طيرانك.",
       heroDistance: "390–470 كم تقريبًا",
       heroDuration: "4–5 ساعات قيادة تقريبًا",
+      heroImage: "/images/journey/kuwait-towers.jpg",
+      heroImageAlt: "أبراج الكويت على واجهة الخليج العربي، بالقرب من الطرف الكويتي لرحلة الدمام إلى مطار الكويت",
       facts: [
         { label: "نقطة الانطلاق", value: "الدمام، السعودية" },
         { label: "الوجهة", value: "مطار الكويت الدولي (KWI)", emphasis: true },
@@ -14289,6 +14297,8 @@ export const arPages: ArPage[] = [
       heroAnswer: "الانطلاق من مطار الكويت الدولي يمنحك مقاربة أكثر مباشرة قليلًا نحو الحدود مقارنة بالانطلاق من وسط مدينة الكويت.",
       heroDistance: "390–470 كم تقريبًا",
       heroDuration: "4–5 ساعات قيادة تقريبًا",
+      heroImage: "/images/journey/kuwait-towers.jpg",
+      heroImageAlt: "أبراج الكويت على واجهة الخليج العربي، بالقرب من الطرف الكويتي لرحلة مطار الكويت إلى الدمام",
       facts: [
         { label: "نقطة الانطلاق", value: "مطار الكويت الدولي (KWI)", emphasis: true },
         { label: "موقع المطار", value: "نحو 15.5 كم جنوب وسط مدينة الكويت" },

@@ -42,6 +42,8 @@ export const journeyPages: JourneyPage[] = [
     heroAnswer: "This is one of the longest regular road journeys in the Gulf — plan for a genuine full-day drive, not a quick hop.",
     heroDistance: "~650 km",
     heroDuration: "~6.5–7 hrs driving",
+    heroImage: "/images/journey/riyadh-skyline.jpg",
+    heroImageAlt: "Riyadh skyline at the end of the Kuwait City to Riyadh road journey",
     facts: [
       { label: "Road distance", value: "~600–700 km (sources vary)" },
       { label: "Driving time", value: "~6.5–7 hours, excluding border", emphasis: true },
@@ -127,6 +129,8 @@ export const journeyPages: JourneyPage[] = [
     heroAnswer: "This route covers the drive from King Fahd International Airport to the Khafji border area — not the full distance into Kuwait itself.",
     heroDistance: "~270–285 km",
     heroDuration: "~2h45m–3h driving",
+    heroImage: "/images/journey/desert-highway.jpg",
+    heroImageAlt: "Desert highway in the Eastern Province, along the route between Dammam Airport and Khafji",
     facts: [
       { label: "Departure point", value: "King Fahd International Airport (DMM)", emphasis: true },
       { label: "Destination", value: "Khafji, at the Saudi-Kuwait border" },
@@ -207,6 +211,8 @@ export const journeyPages: JourneyPage[] = [
     heroAnswer: "The reverse of the airport-to-Khafji leg — this time, allow buffer time for your flight rather than just the driving time.",
     heroDistance: "~270–285 km",
     heroDuration: "~2h45m–3h driving",
+    heroImage: "/images/journey/desert-highway.jpg",
+    heroImageAlt: "Desert highway in the Eastern Province, along the route between Khafji and Dammam Airport",
     facts: [
       { label: "Departure point", value: "Khafji, at the Saudi-Kuwait border" },
       { label: "Destination", value: "King Fahd International Airport (DMM)", emphasis: true },
@@ -287,6 +293,8 @@ export const journeyPages: JourneyPage[] = [
     heroAnswer: "Sources for this specific leg disagree meaningfully — plan around a wide range rather than a single figure, and add real buffer for your flight.",
     heroDistance: "~390–470 km",
     heroDuration: "~4–5 hrs driving",
+    heroImage: "/images/journey/kuwait-towers.jpg",
+    heroImageAlt: "Kuwait Towers on the Arabian Gulf waterfront, near the Kuwait end of the Dammam to Kuwait Airport route",
     facts: [
       { label: "Departure point", value: "Dammam, Saudi Arabia" },
       { label: "Destination", value: "Kuwait International Airport (KWI)", emphasis: true },
@@ -369,6 +377,8 @@ export const journeyPages: JourneyPage[] = [
     heroAnswer: "Starting from Kuwait International Airport is a slightly more direct approach to the border than starting from central Kuwait City.",
     heroDistance: "~390–470 km",
     heroDuration: "~4–5 hrs driving",
+    heroImage: "/images/journey/kuwait-towers.jpg",
+    heroImageAlt: "Kuwait Towers on the Arabian Gulf waterfront, near the Kuwait end of the Kuwait Airport to Dammam route",
     facts: [
       { label: "Departure point", value: "Kuwait International Airport (KWI)", emphasis: true },
       { label: "Airport location", value: "~15.5 km south of Kuwait City centre" },

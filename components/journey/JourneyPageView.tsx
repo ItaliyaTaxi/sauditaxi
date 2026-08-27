@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowDown,
@@ -52,6 +53,11 @@ export interface JourneyContent {
   heroAnswer: string;
   heroDistance: string;
   heroDuration: string;
+  /** Optional real photography behind the hero (licensed, locally hosted —
+   * see public/images/journey/). Falls back to the plain navy gradient when
+   * omitted. */
+  heroImage?: string;
+  heroImageAlt?: string;
   facts: JourneyFact[];
   mapOrigin: string;
   mapDestination: string;
@@ -108,6 +114,8 @@ export function JourneyPageView({
   heroAnswer,
   heroDistance,
   heroDuration,
+  heroImage,
+  heroImageAlt,
   facts,
   mapOrigin,
   mapDestination,
@@ -133,6 +141,22 @@ export function JourneyPageView({
     <>
       {/* ── Section 1: Route hero — data-focused, not a marketing hero ── */}
       <section className="relative overflow-hidden bg-navy text-white">
+        {heroImage && (
+          <>
+            <Image
+              src={heroImage}
+              alt={heroImageAlt ?? ""}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center opacity-40"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/85 to-navy"
+              aria-hidden="true"
+            />
+          </>
+        )}
         <div
           className="pointer-events-none absolute -top-32 -right-32 size-96 rounded-full bg-gold/10 blur-3xl"
           aria-hidden="true"
@@ -141,7 +165,7 @@ export function JourneyPageView({
           className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-gold/5 blur-3xl"
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-5xl px-4 pb-14 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
+        <div className="relative mx-auto max-w-5xl px-4 pb-14 pt-24 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
           <Breadcrumbs items={crumbs} onDark />
 
           <span className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold">
