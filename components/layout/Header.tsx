@@ -52,6 +52,7 @@ const navLinksEn: NavItem[] = [
       href: `/taxi-service/${c.slug}`,
     })),
   },
+  { label: "Popular Routes", href: "/intercity-transfers" },
   { label: "Umrah Taxi", href: "/umrah-taxi-service" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },

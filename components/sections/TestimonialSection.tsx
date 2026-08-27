@@ -2,16 +2,24 @@ import { Star, Quote } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { testimonials, aggregateRating } from "@/data/testimonials";
 
-export function TestimonialSection() {
+export function TestimonialSection({
+  heading = "What Travellers Say",
+  subheading = "Trusted by tourists, pilgrims, families, and business travellers across Saudi Arabia.",
+  limit = 3,
+}: {
+  heading?: string;
+  subheading?: string;
+  limit?: number;
+}) {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            What Travellers Say
+            {heading}
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Trusted by tourists, pilgrims, families, and business travellers across Saudi Arabia.
+            {subheading}
           </p>
           <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2">
             <span className="flex gap-0.5 text-gold">
@@ -29,7 +37,7 @@ export function TestimonialSection() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.slice(0, 3).map((t) => (
+          {testimonials.slice(0, limit).map((t) => (
             <Card key={t.name} className="relative p-6">
               <Quote className="absolute right-5 top-5 size-8 text-muted" />
               <div className="flex gap-0.5 text-gold">

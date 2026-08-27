@@ -5,6 +5,8 @@ import { airports, type Airport } from "@/data/airports";
 interface AirportGridProps {
   heading?: string;
   subheading?: string;
+  /** Restrict to specific airport slugs, in the given order (e.g. curated homepage picks). */
+  only?: string[];
   exclude?: string;
   limit?: number;
   background?: "white" | "muted";
@@ -13,11 +15,14 @@ interface AirportGridProps {
 export function AirportGrid({
   heading = "Airport Transfers Across Saudi Arabia",
   subheading = "Meet-and-greet pickups with flight tracking at every major airport.",
+  only,
   exclude,
   limit,
   background = "white",
 }: AirportGridProps) {
-  let list: Airport[] = airports;
+  let list: Airport[] = only
+    ? (only.map((s) => airports.find((a) => a.slug === s)).filter(Boolean) as Airport[])
+    : airports;
   if (exclude) list = list.filter((a) => a.slug !== exclude);
   if (limit) list = list.slice(0, limit);
 
@@ -49,6 +54,9 @@ export function AirportGrid({
                 </span>
                 <span className="block text-xs text-muted-foreground">
                   {airport.name}
+                </span>
+                <span className="mt-1 line-clamp-2 block text-xs text-muted-foreground/80">
+                  {airport.intro}
                 </span>
               </span>
             </Link>

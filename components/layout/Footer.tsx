@@ -7,11 +7,14 @@ import { FacebookIcon, InstagramIcon, PinterestIcon, RedditIcon } from "@/compon
 import { siteConfig } from "@/lib/site";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
+import { airports } from "@/data/airports";
 import { getDictionary, localeFromPathname } from "@/lib/i18n";
 import { arPages, arPath } from "@/data/translations/ar";
+import { cn } from "@/lib/utils";
 
 const popularCities = cities.slice(0, 8);
 const footerServices = services.filter((s) => s.featured);
+const footerAirports = airports.slice(0, 6);
 const arServices = arPages.filter((p) => p.type === "service");
 
 /**
@@ -28,7 +31,7 @@ export function Footer() {
   return (
     <footer className="bg-navy text-white/80">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className={cn("grid gap-10 md:grid-cols-2", isAr ? "lg:grid-cols-4" : "lg:grid-cols-5")}>
           <div>
             <Link href={isAr ? "/ar" : "/"} className="flex items-center gap-2 text-white">
               <span className="flex size-9 items-center justify-center rounded-lg bg-gold text-navy">
@@ -120,6 +123,23 @@ export function Footer() {
               )}
             </ul>
           </div>
+
+          {!isAr && (
+            <div>
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-white">
+                Airports
+              </h2>
+              <ul className="mt-4 space-y-2 text-sm">
+                {footerAirports.map((a) => (
+                  <li key={a.slug}>
+                    <Link href={`/airport-transfer/${a.slug}`} className="hover:text-gold">
+                      {a.city} Airport
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-white">

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { CircleCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/sections/PageHeader";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { TrustBadges } from "@/components/sections/TrustBadges";
-import { HowItWorks } from "@/components/sections/HowItWorks";
+import { ServiceCards } from "@/components/sections/ServiceCards";
+import { AboutServicePhilosophy } from "@/components/sections/AboutServicePhilosophy";
+import { AboutWhyChooseUs } from "@/components/sections/AboutWhyChooseUs";
+import { DestinationCards } from "@/components/sections/DestinationCards";
+import { VehicleOptions } from "@/components/sections/VehicleOptions";
+import { AboutHowWeWork } from "@/components/sections/AboutHowWeWork";
+import { AboutStats } from "@/components/sections/AboutStats";
+import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
@@ -15,77 +21,202 @@ const crumbs = [
   { name: "About", path: "/about" },
 ];
 
+// Canonical preserved exactly as before: https://saudiprivatetransfers.com/about
+// Title/description refreshed to match the new content — no other SEO
+// signals changed (canonical, alternates, robots all pass through unchanged).
 export const metadata: Metadata = buildMetadata({
-  title: "About Us | Trusted Taxi Service in Saudi Arabia",
+  title: "About Saudi Private Transfers | Private Transportation in Saudi Arabia",
   description:
-    "Learn about our private taxi and transfer service in Saudi Arabia — covering airports, cities, intercity routes, borders, Umrah, and Hajj with professional drivers and fixed prices.",
+    "Learn about Saudi Private Transfers and our approach to reliable private transportation across Saudi Arabia, including airport, intercity, hotel and pilgrim transfers.",
   path: "/about",
   alternateLanguages: { en: "/about", ar: "/ar/من-نحن" },
 });
 
-const commitments = [
-  "Fixed quotes agreed before every trip",
-  "Professional, experienced local drivers",
-  "Clean, well-maintained modern vehicles",
-  "Coverage of all major cities and airports",
-  "Specialist Umrah, Hajj, and Ziyarat transfers",
-  "Fast WhatsApp booking, 24 hours a day",
+const featuredServiceSlugs = [
+  "airport-transfers",
+  "city-transfers",
+  "intercity-transfers",
+  "umrah-taxi-service",
+];
+
+const featuredDestinationSlugs = [
+  "riyadh",
+  "jeddah",
+  "makkah",
+  "madinah",
+  "dammam",
+  "alula",
+  "taif",
+  "abha",
 ];
 
 export default function AboutPage() {
   return (
     <>
       <SchemaScript schema={breadcrumbSchema(crumbs)} />
+
       <PageHeader
-        title="About Our Saudi Arabia Taxi Service"
-        subtitle="A private transfer service built around comfort, safety, and clear pricing — for tourists, pilgrims, families, and business travellers across the Kingdom."
+        title="About Saudi Private Transfers"
+        subtitle="Private transportation across Saudi Arabia, built around reliable service, comfortable vehicles, professional drivers, and clear pricing."
         crumbs={crumbs}
-        backgroundImage={heroImages.city}
+        backgroundImage={heroImages.road}
+        backgroundAlt="Private vehicle on a modern Saudi Arabia highway"
       />
 
+      {/* Who We Are */}
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="space-y-4 text-muted-foreground">
-            <h2 className="text-2xl font-bold text-navy">Who We Are</h2>
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            A Private Transfer Service Built Around People
+          </h2>
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
             <p>
-              We are a dedicated taxi and transfer service operating across Saudi
-              Arabia. From the moment travellers land at Riyadh, Jeddah, Madinah, or
-              Dammam, our goal is simple: a comfortable, reliable, fairly priced
-              private ride to wherever they need to go.
+              We help tourists, pilgrims, families, business travellers, and groups
+              travel comfortably between airports, hotels, cities, holy sites, and
+              destinations across the Kingdom.
             </p>
             <p>
-              Our roots are in pilgrim transport — the Jeddah airport to Makkah
-              transfer and the Makkah to Madinah journey are among our most
-              requested routes. Over time we expanded to cover every major city,
-              the most popular intercity routes, and the Kingdom&apos;s land borders
-              with Bahrain, Qatar, the UAE, Kuwait, and Jordan.
+              Saudi Private Transfers provides pre-booked private transportation for
+              travellers moving around Saudi Arabia. Whether someone is landing for a
+              short business trip, beginning a pilgrimage, or exploring the Kingdom
+              with family, the same idea applies: a private vehicle, a driver who
+              knows the route, and a price agreed before the journey starts.
             </p>
             <p>
-              We keep things refreshingly simple. There is no app to download and no
-              account to create — you send your trip details on WhatsApp or through
-              our quote form, and we reply with a fixed price and the right vehicle
-              for your group.
+              Customers arrange transportation for airport arrivals, hotel transfers,
+              city journeys, and intercity travel, as well as Umrah, Hajj, and
+              Ziyarat journeys, family and group trips, business travel, and selected
+              cross-border routes. There is no app to install and no account to
+              create — trip details are shared through WhatsApp or the quote form,
+              and a fixed price is confirmed before travel.
             </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-navy">Our Commitments</h2>
-            <ul className="mt-5 space-y-3">
-              {commitments.map((c) => (
-                <li key={c} className="flex items-start gap-3 text-navy">
-                  <CircleCheck className="mt-0.5 size-5 shrink-0 text-gold" />
-                  <span>{c}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
-      <WhyChooseUs background="muted" />
-      <HowItWorks background="white" />
-      <CTASection />
+      {/* Our Story */}
+      <section className="bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            From Pilgrim Transfers to Nationwide Private Travel
+          </h2>
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+            <p>
+              Our roots are in pilgrim transportation. The Jeddah Airport to Makkah
+              transfer and the Makkah to Madinah journey remain among the most
+              requested routes we run, and that experience with the pilgrim journey
+              — coordinating airport arrivals, hotel pickups near the Haram, and the
+              highway between the two holy cities — shaped how we approach every
+              other kind of transfer.
+            </p>
+            <p>
+              From that starting point, the service expanded into everyday airport
+              transfers at Saudi Arabia&apos;s major gateways, then into intercity
+              transportation between the Kingdom&apos;s cities, and into city and
+              hotel transfers for travellers who need a private ride locally. As
+              demand grew from families, tour groups, and business travellers, we
+              added larger vehicles and group transportation, and extended coverage
+              to more of the destinations travellers ask for across Saudi Arabia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <ServiceCards
+        heading="Helping Travellers Move Around Saudi Arabia"
+        subheading="Private transportation for the journeys travellers need most across the Kingdom."
+        only={featuredServiceSlugs}
+      />
+
+      {/* Our Service Philosophy */}
+      <AboutServicePhilosophy />
+
+      {/* Why Travellers Choose Us */}
+      <AboutWhyChooseUs />
+
+      {/* Saudi Arabia Coverage */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <DestinationCards
+            heading="Serving Travellers Across Saudi Arabia"
+            subheading="From the major gateways of Riyadh, Jeddah, Madinah and Dammam to popular destinations such as AlUla, Taif and other cities across the Kingdom."
+            only={featuredDestinationSlugs}
+            background="white"
+          />
+          <div className="mt-2 text-center">
+            <Link
+              href="/city-transfers"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-gold"
+            >
+              Explore All Destinations
+              <ArrowRight className="size-4 rtl:rotate-180" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Pilgrim Transportation */}
+      <section className="bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            Experienced With the Pilgrim Journey
+          </h2>
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+            <p>
+              Saudi Arabia welcomes travellers undertaking Umrah and Hajj from
+              around the world, and private transportation can help pilgrims
+              coordinate the practical parts of that journey — moving between
+              Jeddah Airport, Makkah, Madinah, hotels, Ziyarat locations, and other
+              relevant destinations, with a driver who knows the route and the
+              timing.
+            </p>
+            <p>
+              This is especially useful for families, elderly travellers, and
+              groups who want to coordinate transportation comfortably rather than
+              manage it themselves at every stage. Our role is strictly the
+              transportation: we do not provide religious guidance, and we do not
+              claim official Hajj or Umrah authorisation — our focus is getting
+              pilgrims where they need to go, comfortably and on time.
+            </p>
+          </div>
+          <div className="mt-7">
+            <Link
+              href="/umrah-taxi-service"
+              className="inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-navy shadow-md shadow-gold/20 transition-colors hover:bg-gold/90"
+            >
+              Explore Umrah Transportation
+              <ArrowRight className="size-4 rtl:rotate-180" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Vehicles */}
+      <VehicleOptions
+        heading="Vehicles for Different Types of Journeys"
+        subheading="From economy sedans to group minibuses — the vehicle is matched to your group size, luggage, and journey."
+        background="white"
+      />
+
+      {/* How We Work */}
+      <AboutHowWeWork />
+
+      {/* Trust / verified numbers */}
+      <AboutStats />
+
+      {/* Testimonials */}
+      <TestimonialSection
+        heading="What Our Customers Say"
+        subheading="Real feedback from travellers who have booked a private transfer with us."
+        limit={4}
+      />
+
+      {/* Final CTA */}
+      <CTASection
+        title="Planning Your Journey Across Saudi Arabia?"
+        subtitle="Tell us where you're travelling from and where you're going, and we'll help arrange your private transfer."
+      />
     </>
   );
 }

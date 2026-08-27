@@ -1,15 +1,21 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { featuredServices } from "@/data/services";
+import { featuredServices, services } from "@/data/services";
 
 export function ServiceCards({
   heading = "Our Saudi Arabia Transfer Services",
   subheading = "Private, fixed-price transfers for every kind of journey across the Kingdom.",
+  only,
 }: {
   heading?: string;
   subheading?: string;
+  /** Restrict to specific service slugs, in the given order (e.g. curated homepage picks). */
+  only?: string[];
 }) {
+  const list = only
+    ? (only.map((s) => services.find((svc) => svc.slug === s)).filter(Boolean) as typeof services)
+    : featuredServices;
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,7 +27,7 @@ export function ServiceCards({
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredServices.map((service) => {
+          {list.map((service) => {
             const Icon = service.icon;
             return (
               <Link key={service.slug} href={service.href} className="group">
