@@ -6,6 +6,8 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { distancePages, getDistancePage } from "@/data/distance-pages";
+import { journeyPages, getJourneyPage } from "@/data/journey-pages";
+import { JourneyPageView } from "@/components/journey/JourneyPageView";
 import { routeHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -17,12 +19,20 @@ import { getArPathForEnPath } from "@/data/translations/ar";
  * HowItWorks, or QuoteForm, and only one contextual CTA linking to the
  * matching /routes/{slug} commercial page. See data/distance-pages.ts for
  * the content model and sourcing notes.
+ *
+ * A small batch of routes (data/journey-pages.ts) use a deliberately
+ * different, richer visual design instead — see JourneyPageView. Those
+ * slugs are checked first below; every other slug falls through to the
+ * original render path completely unchanged.
  */
 
 type Params = { slug: string };
 
 export function generateStaticParams() {
-  return distancePages.map((p) => ({ slug: p.slug }));
+  return [
+    ...distancePages.map((p) => ({ slug: p.slug })),
+    ...journeyPages.map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -31,6 +41,19 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
+
+  const journeyPage = getJourneyPage(slug);
+  if (journeyPage) {
+    const enPath = `/distance/${journeyPage.slug}`;
+    const arPath = getArPathForEnPath(enPath);
+    return buildMetadata({
+      title: journeyPage.metaTitle,
+      description: journeyPage.metaDescription,
+      path: enPath,
+      ...(arPath ? { alternateLanguages: { en: enPath, ar: arPath } } : {}),
+    });
+  }
+
   const page = getDistancePage(slug);
   if (!page) return {};
   const enPath = `/distance/${page.slug}`;
@@ -43,12 +66,54 @@ export async function generateMetadata({
   });
 }
 
+const journeyLabels = {
+  home: "Home",
+  quickAnswer: "Quick answer",
+  journeyAtAGlance: "Journey at a Glance",
+  routeMap: "Visual Route Map",
+  mapCaption: "Map data provided by Google Maps.",
+  distanceExplained: "The Distance Explained",
+  howLong: "How Long Does the Journey Take?",
+  understandingRoute: "Understanding the Route",
+  borderCrossing: "Border Crossing Context",
+  planYourJourney: "Plan Your Journey",
+  waysToTravel: "Ways to Make the Journey",
+  ctaPrompt: "Planning to make this journey by private vehicle? See our",
+  faqHeading: "Frequently Asked Questions",
+  relatedJourneys: "Related Journeys",
+  sources: "Sources",
+  sourceFootnote: "Distances and travel times are approximate and can vary by exact starting point, route taken, border conditions, and traffic. Last checked",
+  conclusion: "Conclusion",
+};
+
 export default async function DistancePage({
   params,
 }: {
   params: Promise<Params>;
 }) {
   const { slug } = await params;
+
+  const journeyPage = getJourneyPage(slug);
+  if (journeyPage) {
+    const journeyPath = `/distance/${journeyPage.slug}`;
+    const journeyCrumbs = [
+      { name: "Home", path: "/" },
+      { name: `${journeyPage.from} to ${journeyPage.to} Distance`, path: journeyPath },
+    ];
+    return (
+      <>
+        <SchemaScript
+          schema={[breadcrumbSchema(journeyCrumbs), faqSchema(journeyPage.faqs)]}
+        />
+        <JourneyPageView
+          {...journeyPage}
+          crumbs={journeyCrumbs}
+          labels={journeyLabels}
+        />
+      </>
+    );
+  }
+
   const page = getDistancePage(slug);
   if (!page) notFound();
 

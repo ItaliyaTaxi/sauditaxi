@@ -20,6 +20,28 @@ import { getAirport } from "@/data/airports";
 import { hotelsForCity } from "@/data/hotels";
 import { airportTransferName } from "@/lib/hotel-transfers";
 import { cityAirportFactsAr } from "@/lib/city-hub-facts";
+import { JourneyPageView } from "@/components/journey/JourneyPageView";
+
+const arJourneyLabels = {
+  home: "الرئيسية",
+  quickAnswer: "الإجابة السريعة",
+  journeyAtAGlance: "الرحلة في لمحة",
+  routeMap: "خريطة المسار",
+  mapCaption: "بيانات الخريطة من خرائط جوجل.",
+  distanceExplained: "المسافة بالتفصيل",
+  howLong: "كم تستغرق الرحلة؟",
+  understandingRoute: "فهم المسار",
+  borderCrossing: "معلومات المعبر الحدودي",
+  planYourJourney: "خطط لرحلتك",
+  waysToTravel: "طرق السفر",
+  ctaPrompt: "هل تخطط لهذه الرحلة بسيارة خاصة؟ اطّلع على",
+  faqHeading: "الأسئلة الشائعة",
+  relatedJourneys: "رحلات ذات صلة",
+  sources: "المصادر",
+  sourceFootnote:
+    "المسافات وأوقات السفر تقريبية وقد تختلف حسب نقطة الانطلاق الدقيقة، والطريق المتبع، وظروف المعبر الحدودي، وحركة السير. آخر تحقق:",
+  conclusion: "الخلاصة",
+};
 
 const heroFor = (page: ArPage): string => {
   if (page.type === "airport" || page.type === "hotel-transfer") return pageHeroes.airport;
@@ -101,6 +123,7 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     attraction: "Private Transfer",
     "city-hub": "Airport Transfer",
     distance: "Distance Information",
+    journey: "Distance Information",
   })[type];
 
 export default async function ArabicPage({
@@ -118,6 +141,24 @@ export default async function ArabicPage({
 
   const page = resolve(slug);
   if (!page) notFound();
+
+  if (page.type === "journey" && page.journey) {
+    return (
+      <>
+        <SchemaScript
+          schema={[breadcrumbSchema(page.breadcrumbs), faqSchema(page.journey.faqs)]}
+        />
+        <JourneyPageView
+          {...page.journey}
+          h1={page.h1}
+          from={page.journeyFrom ?? ""}
+          to={page.journeyTo ?? ""}
+          crumbs={page.breadcrumbs}
+          labels={arJourneyLabels}
+        />
+      </>
+    );
+  }
 
   const faqs = page.faqs.slice(0, 20);
   const isBookable = ["service", "airport", "city", "route", "hotel-transfer", "attraction", "city-hub"].includes(

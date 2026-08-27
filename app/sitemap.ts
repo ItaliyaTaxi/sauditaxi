@@ -10,6 +10,7 @@ import { pointTransfers } from "@/lib/point-transfers";
 import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
 import { distancePages } from "@/data/distance-pages";
+import { journeyPages } from "@/data/journey-pages";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
 // full redeploy (the sitemap pulls published posts live from the database).
@@ -95,6 +96,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
   }));
 
+  // "Rich journey" distance pages — same /distance/{slug} prefix, a distinct
+  // visual design, separate data source (see data/journey-pages.ts).
+  const journeyPagePaths = journeyPages.map((p) => ({
+    path: `/distance/${p.slug}`,
+    priority: 0.6,
+    changeFrequency: "monthly" as const,
+  }));
+
   const base = [
     ...staticPaths,
     ...servicePaths,
@@ -104,6 +113,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...borderPaths,
     ...cityHubPaths,
     ...distancePagePaths,
+    ...journeyPagePaths,
     ...pointTransferPaths,
   ].map((entry) => {
     // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.
