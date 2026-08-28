@@ -91,6 +91,9 @@ export default async function RoutePage({
   if (!route) notFound();
 
   const faqs = (route.faqs ?? routeFaqs(route.from, route.to)).slice(0, 15);
+  const rich = route.richLayout;
+  const activePickupPoints = rich ? rich.pickupPoints : pickupPoints;
+  const activeDropoffPoints = rich ? rich.dropoffPoints : dropoffPoints;
   const path = `/routes/${route.slug}`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -187,6 +190,67 @@ export default async function RoutePage({
               </ul>
             </div>
 
+            {rich && rich.journeyFlow.length > 0 && (
+              <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-white p-5">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-navy">
+                  How This Journey Unfolds
+                </h3>
+                <ol className="mt-4 flex min-w-max items-stretch gap-2 sm:min-w-0 sm:flex-wrap">
+                  {rich.journeyFlow.map((step, i) => (
+                    <li key={step.label} className="flex items-center gap-2">
+                      <div className="w-40 rounded-lg border border-gold/30 bg-gold/5 px-3 py-2.5 sm:w-44">
+                        <p className="text-xs font-semibold text-navy">{step.label}</p>
+                        {step.detail && (
+                          <p className="mt-1 text-[11px] leading-snug text-muted-foreground">{step.detail}</p>
+                        )}
+                      </div>
+                      {i < rich.journeyFlow.length - 1 && (
+                        <ArrowRight className="size-4 shrink-0 text-gold rtl:rotate-180" aria-hidden="true" />
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            {rich && rich.journeyFacts.length > 0 && (
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {rich.journeyFacts.map((fact) => (
+                  <div
+                    key={fact.label}
+                    className={
+                      fact.emphasis
+                        ? "rounded-lg border border-gold/40 bg-gold/[0.06] p-4"
+                        : "rounded-lg border border-border bg-muted/40 p-4"
+                    }
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      {fact.label}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-navy">{fact.value}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {rich && rich.mapOrigin && rich.mapDestination && (
+              <div className="mt-6">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Route Map</h3>
+                <div className="mt-3 overflow-hidden rounded-xl border border-border shadow-sm">
+                  <div className="relative aspect-[16/10] w-full sm:aspect-[16/7]">
+                    <iframe
+                      title={`${route.from} to ${route.to} route map`}
+                      src={`https://maps.google.com/maps?saddr=${encodeURIComponent(rich.mapOrigin)}&daddr=${encodeURIComponent(rich.mapDestination)}&output=embed`}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 size-full border-0"
+                    />
+                  </div>
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">{rich.mapNote}</p>
+              </div>
+            )}
+
             {reverseRoute && (
               <div className="mt-6 rounded-xl border border-border bg-muted/40 p-5">
                 <h3 className="text-sm font-bold uppercase tracking-wide text-navy">
@@ -218,11 +282,13 @@ export default async function RoutePage({
               Private transfer from {route.from} to {route.to}
             </h2>
             <p className="mt-3 text-muted-foreground">{route.about}</p>
-            <p className="mt-3 text-muted-foreground">
-              Our private transfer service is suitable for tourists, families,
-              business travellers, Umrah passengers, and groups travelling with
-              luggage.
-            </p>
+            {!rich?.hideGenericIntro && (
+              <p className="mt-3 text-muted-foreground">
+                Our private transfer service is suitable for tourists, families,
+                business travellers, Umrah passengers, and groups travelling with
+                luggage.
+              </p>
+            )}
 
             <h2 className="mt-10 text-xl font-bold text-navy">
               Good to know about this route
@@ -236,28 +302,30 @@ export default async function RoutePage({
               ))}
             </ul>
 
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              <div className="rounded-xl border border-border bg-muted/40 p-5">
-                <h3 className="font-semibold text-navy">Pickup locations</h3>
-                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                  {pickupPoints.map((p) => (
-                    <li key={p} className="flex items-center gap-2">
-                      <ArrowRight className="size-3.5 text-gold" /> {p}
-                    </li>
-                  ))}
-                </ul>
+            {activePickupPoints && activeDropoffPoints && (
+              <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                <div className="rounded-xl border border-border bg-muted/40 p-5">
+                  <h3 className="font-semibold text-navy">Pickup locations</h3>
+                  <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                    {activePickupPoints.map((p) => (
+                      <li key={p} className="flex items-center gap-2">
+                        <ArrowRight className="size-3.5 text-gold" /> {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-xl border border-border bg-muted/40 p-5">
+                  <h3 className="font-semibold text-navy">Drop-off locations</h3>
+                  <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                    {activeDropoffPoints.map((p) => (
+                      <li key={p} className="flex items-center gap-2">
+                        <ArrowRight className="size-3.5 text-gold" /> {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="rounded-xl border border-border bg-muted/40 p-5">
-                <h3 className="font-semibold text-navy">Drop-off locations</h3>
-                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                  {dropoffPoints.map((p) => (
-                    <li key={p} className="flex items-center gap-2">
-                      <ArrowRight className="size-3.5 text-gold" /> {p}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            )}
 
             <h2 className="mt-10 text-xl font-bold text-navy">
               Booking details required

@@ -37,6 +37,45 @@ export interface Route {
   keywords?: string[];
   /** ISO date this page's content was last substantively reviewed. */
   lastUpdated?: string;
+  /**
+   * Optional richer presentation for a small batch of routes that need a
+   * genuinely distinct layout instead of the shared generic blocks (pickup/
+   * drop-off point lists, the "suitable for tourists..." filler paragraph).
+   * Entirely additive: every route without this field renders exactly as
+   * before. See app/(main)/routes/[slug]/page.tsx for the render logic.
+   */
+  richLayout?: RouteRichLayout;
+}
+
+export interface RouteJourneyStep {
+  label: string;
+  detail?: string;
+}
+
+export interface RouteJourneyFact {
+  label: string;
+  value: string;
+  emphasis?: boolean;
+}
+
+export interface RouteRichLayout {
+  /** Visual step-by-step flow specific to this journey's shape (e.g. airport
+   * arrival vs long-distance capital-to-capital vs city-to-airport-deadline). */
+  journeyFlow: RouteJourneyStep[];
+  /** Fact cards shown near the top, supplementing the simple duration/distance pills. */
+  journeyFacts: RouteJourneyFact[];
+  /** Google Maps embed origin/destination (place names, not coordinates). */
+  mapOrigin: string;
+  mapDestination: string;
+  mapNote: string;
+  /** Suppresses the generic "suitable for tourists, families..." filler paragraph. */
+  hideGenericIntro?: boolean;
+  /** Route-specific overrides for the generic pickup/drop-off point lists.
+   * Omit either array to suppress that block entirely rather than showing
+   * irrelevant generic categories (e.g. no "pickup: airport" on a page that
+   * already starts at the airport). */
+  pickupPoints?: string[];
+  dropoffPoints?: string[];
 }
 
 const baseRoutes: Route[] = [
@@ -2106,58 +2145,77 @@ const baseRoutes: Route[] = [
     to: "Doha",
     category: "border",
     distance: "~420 km",
-    duration: "5 hours + border",
+    duration: "~4.5-5 hours driving + border",
+    lastUpdated: "2026-08-28",
     intro:
-      "Fly into Dammam and continue to Doha by private car. We meet you at King Fahd Airport and drive you across the Salwa border to Qatar, door to door.",
+      "Land at King Fahd International Airport and continue straight to Doha by private car — no connecting flight, no shared transport, just a driver waiting at arrivals and a fixed price for the whole cross-border journey.",
     about:
-      "For travellers connecting from Dammam to Qatar, a private car is a comfortable, door-to-door alternative to a connecting flight. We meet you at King Fahd International Airport, help with your luggage, and drive you across the Salwa border to Doha, with rest stops and a fixed price agreed before you travel.",
+      "This transfer is built around the airport arrival itself: we track your inbound flight, meet you inside King Fahd International Airport with a name board, help with luggage, and then drive the full distance to Doha across the Salwa border — a single continuous journey rather than a flight-plus-taxi combination.",
     notes: [
-      "Meet-and-greet pickup inside King Fahd Airport (DMM)",
-      "Crossing at the Salwa / Abu Samra border into Qatar",
-      "Valid passport and any required visa needed at the border",
-      "Comfortable vehicles with rest stops, fixed price, 24/7",
+      "Meet-and-greet inside King Fahd Airport (DMM) arrivals, with flight tracking",
+      "Crossing at the Salwa border, opposite Abu Samra on the Qatari side",
+      "Valid passport and any required visa needed at the crossing",
+      "Fixed price agreed before you fly — unaffected by a slow flight or border",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Private Taxi: Dammam Airport to Doha",
+    metaTitle: "Dammam Airport to Doha Transfer – Private Cross-Border Taxi",
     metaDescription:
-      "Private taxi from Dammam Airport to Doha (~420 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+      "Private taxi from Dammam Airport to Doha (~420 km, ~4.5-5 hours driving via the Salwa border). Flight tracking, meet-and-greet, fixed price, 24/7.",
+    richLayout: {
+      journeyFlow: [
+        { label: "Dammam Airport Arrival", detail: "Driver waiting in arrivals, flight tracked" },
+        { label: "Eastern Province Road", detail: "Highway south toward the border" },
+        { label: "Salwa Border Crossing", detail: "Saudi exit / Qatari entry formalities" },
+        { label: "Doha Arrival", detail: "Door-to-door to your destination" },
+      ],
+      journeyFacts: [
+        { label: "Road distance", value: "~420 km", emphasis: true },
+        { label: "Pure driving time", value: "~4.5-5 hours", emphasis: true },
+        { label: "Border crossing", value: "Salwa (Saudi) / Abu Samra (Qatar)" },
+        { label: "Journey type", value: "Airport arrival to international city" },
+      ],
+      mapOrigin: "King Fahd International Airport, Saudi Arabia",
+      mapDestination: "Doha, Qatar",
+      mapNote: "The map shows a typical driving route. Your exact route and total distance will vary depending on your specific Doha destination and current road/border conditions.",
+      hideGenericIntro: true,
+    },
     sections: [
       {
-        heading: "Dammam Airport to Doha: route overview",
+        heading: "Meeting You at King Fahd International Airport",
         paragraphs: [
-          "For travellers arriving at King Fahd International Airport and continuing to Qatar, a private transfer to Doha is a relaxed, door-to-door option. Rather than arranging a connecting flight or negotiating cross-border transport, you meet your driver at arrivals and travel the whole way on a single fixed price. The road journey covers around 420 kilometres via the Salwa border and, formalities aside, takes roughly five hours.",
-          "The Saudi-Qatar land border at Salwa, opposite Abu Samra on the Qatari side, reopened in 2021, making the overland drive a practical choice again. Our drivers know the route and plan sensible rest stops. For the wider set of crossings we cover, see our <a href='/border-transfers/qatar-border'>Qatar border transfers</a> and <a href='/border-transfers'>border transfers</a> pages.",
+          "This transfer starts inside the terminal, not at the curb. Your driver tracks your flight number and is positioned in the arrivals hall holding a name board before you clear immigration and baggage claim, so there is no searching for transport after a long flight. Free waiting time is built in to cover a delayed landing or a slow queue through arrivals.",
+          "Because King Fahd International Airport sits on a large site outside Dammam city, the drive to the Qatar border begins directly from the terminal — you do not need to travel into Dammam first. That is one of the practical advantages of booking the airport-to-Doha leg specifically, rather than a general Dammam-to-Doha transfer.",
         ],
       },
       {
-        heading: "Meet and greet and the Salwa border crossing",
+        heading: "The Road South: Eastern Province to the Salwa Border",
         paragraphs: [
-          "The transfer begins the moment you land. We track your flight, so your driver is in position whether you arrive early or your inbound is delayed, waiting in the arrivals hall at King Fahd Airport with a name board. Free waiting time is included after landing to cover immigration and baggage on an international arrival.",
-          "The journey crosses into Qatar at the Salwa border, passing Saudi exit and Qatari entry formalities at the crossing. You will need a valid passport and any visa or entry permit that applies to your nationality, and because border and vehicle-documentation requirements vary by nationality and change from time to time, we advise on the current procedures when you book and recommend allowing extra time for the crossing.",
+          "From the airport, the route runs south along the Eastern Province highway network toward the Salwa crossing, the sole land border between Saudi Arabia and Qatar. The drive covers roughly 420 kilometres in total, of which the pure driving time — excluding the border itself — runs approximately four and a half to five hours under normal conditions.",
+          "This is a genuinely long single-day journey, not a short hop, so the vehicle and driver are set up for distance: air-conditioned, comfortable for a group with luggage, and with rest stops built in as needed along the way.",
         ],
       },
       {
-        heading: "A comfortable long-distance journey",
+        heading: "Crossing at Salwa: Why We Don't Promise an Exact Time",
         paragraphs: [
-          "A five-hour drive is only pleasant in the right vehicle, so we use clean, air-conditioned cars chosen for distance and matched to your group and luggage, with rest stops built in as needed. Because the fare is fixed, a longer break or a slower stretch never changes the cost, and there are no baggage limits or connecting-flight queues to manage.",
-          "Travelling by private car means you leave the Dammam terminal and arrive at your Doha door, with no onward transfer to arrange. The route suits business travellers, families and groups alike. For journeys from the city rather than the airport, our <a href='/routes/al-khobar-to-doha'>Al Khobar to Doha</a> transfer covers the Eastern Province cities.",
+          "The Salwa border — opposite Abu Samra on the Qatari side — reopened in January 2021 after the earlier Gulf-wide travel restrictions were lifted, and it now functions as a normal land crossing for private vehicles. Saudi exit and Qatari entry formalities are handled here, and you will need a valid passport plus any visa or entry permit that applies to your nationality.",
+          "How long that takes is genuinely variable — travellers report anywhere from under an hour during quiet periods to several hours at busy times, particularly weekends and holidays. We do not promise a fixed crossing time because no one honestly can; what we do promise is a fixed price regardless of how long the crossing takes, and a driver who knows the current process.",
         ],
       },
       {
-        heading: "Booking your Dammam Airport to Doha transfer",
+        heading: "Arriving in Doha",
         paragraphs: [
-          "Booking is quick. Share your flight number, arrival date and your Doha destination, and we confirm the vehicle and a fixed, all-in price before you travel. We operate 24/7, so late-night and early arrivals are equally covered, and no deposit is needed simply to see a fare.",
-          "Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation. For the return direction, our <a href='/routes/doha-to-dammam-airport'>Doha to Dammam Airport</a> transfer covers the journey back, and our <a href='/blog/saudi-arabia-intercity-taxi-services-guide'>intercity taxi guide</a> has more on long-distance private travel.",
+          "Once through the border, the final stretch continues into Doha itself, where your driver takes you directly to your hotel, business address, or residence — there is no second vehicle or local taxi to arrange at the other end. Given the length of the journey, this door-to-door continuity is one of the main reasons travellers choose a private transfer over flying and then arranging separate ground transport in Doha.",
+          "For the return leg, see our <a href='/routes/doha-to-dammam-airport'>Doha to Dammam Airport</a> transfer, which is built specifically around getting back to a flight rather than mirroring this journey. If your trip starts from central Dammam or Khobar rather than the airport, our <a href='/routes/al-khobar-to-doha'>Al Khobar to Doha</a> transfer covers that instead.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the Dammam Airport to Doha drive?", answer: "It is around 420 kilometres, about five hours of driving in free-flowing conditions, plus the Salwa border crossing. With rest stops and formalities, plan for a comfortable buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Is the Saudi-Qatar land border open?", answer: "Yes. The land border at Salwa, opposite Abu Samra on the Qatari side, reopened in 2021, making the overland drive a practical option. You pass Saudi exit and Qatari entry formalities at the crossing, which is busier at weekends and on holidays." },
-      { question: "What documents do I need at the border?", answer: "A valid passport and any visa or entry permit that applies to your nationality. Border and vehicle-documentation rules vary by nationality and are updated periodically, so we advise on the current procedures when you book and recommend allowing extra time." },
-      { question: "Will the driver meet me inside Dammam airport?", answer: "Yes. Your driver waits in the arrivals hall at King Fahd International Airport with a name board, tracks your flight so timing adjusts to your landing, and helps with your luggage. Free waiting time after arrival is included." },
-      { question: "Do you make rest stops on the way?", answer: "Yes. On a journey of this length we build in rest stops for refreshments and a stretch as needed, so the drive stays comfortable. Because the fare is fixed, a longer break never adds to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "How will my driver find me at Dammam Airport?", answer: "Your driver waits inside the arrivals hall at King Fahd International Airport holding a name board and tracks your flight number, so the pickup time adjusts automatically if you land early or late." },
+      { question: "How far is it from Dammam Airport to Doha?", answer: "Approximately 420 kilometres, with pure driving time of around four and a half to five hours before the Salwa border crossing is added." },
+      { question: "How long does the Salwa border crossing take?", answer: "It genuinely varies — anywhere from under an hour in quiet periods to several hours at busy times such as weekends and holidays. We do not promise an exact figure because it depends on conditions on the day." },
+      { question: "Do I need a visa to enter Qatar from Saudi Arabia by road?", answer: "Requirements depend on your nationality and can change, so we recommend checking current Qatari entry rules for your passport before travelling. Your driver can advise on the general process, but visa requirements are your own responsibility to confirm." },
+      { question: "Is the price fixed even if the border crossing is slow?", answer: "Yes. The fare is agreed before you fly and does not change if the border takes longer than expected on the day." },
+      { question: "Can I book this if I don't know my exact flight time yet?", answer: "Yes, you can book with an estimated arrival and confirm or update your flight number closer to the date — we track the flight regardless, so the pickup timing stays accurate." },
     ],
     keywords: ["dammam airport to doha taxi", "dammam airport to doha transfer", "dammam to qatar cross border car", "dammam airport to doha via salwa", "dmm to doha private car"],
   },
@@ -2167,58 +2225,78 @@ const baseRoutes: Route[] = [
     to: "Dammam Airport",
     category: "border",
     distance: "~420 km",
-    duration: "5 hours + border",
+    duration: "~4.5-5 hours driving + border",
+    lastUpdated: "2026-08-28",
     intro:
-      "A private transfer from Doha to Dammam Airport for onward flights. We collect you in Qatar, cross the Salwa border, and drive you to King Fahd Airport, timed to your flight.",
+      "Catching a flight from Dammam means getting the timing right on a long cross-border drive — this transfer is built around your departure time, not just the distance.",
     about:
-      "Doha to Dammam International Airport is a long cross-border drive made easy by a private car. We collect you from your Doha address, cross the Salwa border into Saudi Arabia, and drive to King Fahd International Airport, with rest stops and a fixed price timed to your flight.",
+      "The main planning question on this route is not the driving itself, it is working backward from your flight: how much buffer to leave for the Salwa border, the drive itself, and check-in at King Fahd International Airport. We collect you from your Doha address and plan the whole trip around your actual departure time.",
     notes: [
       "Door-to-door pickup anywhere in Doha",
-      "Crossing at the Abu Samra / Salwa border into Saudi Arabia",
-      "Drop-off at King Fahd International Airport (DMM)",
-      "Fixed price, timed for your flight, rest stops on the way",
+      "Timing built around your flight departure, not a fixed schedule",
+      "Crossing at Abu Samra (Qatar) / Salwa (Saudi) into the Eastern Province",
+      "Drop-off directly at your King Fahd Airport terminal",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Doha to Dammam Airport Transfer – Private Cross-Border Taxi",
+    metaTitle: "Doha to Dammam Airport Taxi – Time It Right for Your Flight",
     metaDescription:
-      "Private taxi from Doha to Dammam Airport (~420 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+      "Private transfer from Doha to Dammam Airport (~420 km, ~4.5-5 hours driving via Salwa). Timed around your flight, fixed price, 24/7 booking.",
+    richLayout: {
+      journeyFlow: [
+        { label: "Doha Pickup", detail: "Collected from your address" },
+        { label: "Road to the Border", detail: "Drive toward Abu Samra / Salwa" },
+        { label: "Border Processing", detail: "Variable duration — planned for" },
+        { label: "Eastern Province Drive", detail: "On to the airport" },
+        { label: "Dammam Airport Drop-off", detail: "With buffer before check-in" },
+      ],
+      journeyFacts: [
+        { label: "Road distance", value: "~420 km", emphasis: true },
+        { label: "Pure driving time", value: "~4.5-5 hours", emphasis: true },
+        { label: "Plan around", value: "Your flight's check-in deadline", emphasis: true },
+        { label: "Border crossing", value: "Abu Samra (Qatar) / Salwa (Saudi)" },
+      ],
+      mapOrigin: "Doha, Qatar",
+      mapDestination: "King Fahd International Airport, Saudi Arabia",
+      mapNote: "The map shows a typical driving route. Your actual starting point in Doha and current road/border conditions will affect the real distance and time.",
+      hideGenericIntro: true,
+    },
     sections: [
       {
-        heading: "Doha to Dammam Airport: route overview",
+        heading: "Working Backward From Your Flight",
         paragraphs: [
-          "The drive from Doha to King Fahd International Airport in Dammam runs around 420 kilometres, crossing the Salwa border and heading up into Saudi Arabia's Eastern Province. In free-flowing conditions the driving time is roughly five hours, with border formalities on top. A private car makes it a door-to-door journey, collecting you in Doha and delivering you to the terminal in good time for your flight.",
-          "It suits travellers who prefer a single continuous journey from their Doha door to the departure gate, with no connecting flight to catch. Our drivers know the route and plan sensible rest stops. For journeys to the Eastern Province cities rather than the airport, our <a href='/routes/doha-to-al-khobar'>Doha to Al Khobar</a> transfer covers that leg.",
+          "The honest starting point for this journey is not Doha, it is your departure time at King Fahd International Airport. We plan the pickup by working backward: your airline's check-in deadline, minus reasonable time at the terminal, minus the driving time, minus a genuine buffer for the Salwa border crossing. Tell us your flight details when you book and we set the pickup time accordingly, rather than working to a generic schedule.",
+          "This matters more on this route than on most, because the border-crossing stage is the one part of the journey that cannot be timed precisely in advance.",
         ],
       },
       {
-        heading: "Crossing the border and timing your flight",
+        heading: "Pure Driving Time vs Total Journey Time",
         paragraphs: [
-          "The journey crosses from Qatar into Saudi Arabia at Abu Samra and Salwa, passing Qatari exit and Saudi entry formalities. The crossing is busiest at weekends and on holidays, so we plan the timing and work back from your flight to leave a comfortable margin for the border, the drive and check-in. You will need a valid passport and any Saudi visa or entry permit for your nationality.",
-          "Because documentation requirements vary by nationality and are updated from time to time, we advise on the current procedures when you book and always recommend allowing extra time so a busy crossing never puts your flight at risk. Our <a href='/border-transfers/qatar-border'>Qatar border transfers</a> page explains the crossing.",
+          "The driving distance from Doha to Dammam Airport is around 420 kilometres, and in free-flowing conditions the pure driving time — the border excluded — is roughly four and a half to five hours. That figure alone, though, is not the number to plan a flight around.",
+          "Total journey time also includes the Abu Samra/Salwa border crossing, which we treat as a genuinely separate and variable stage. We do not fold it into a single headline number, because doing so would create a false sense of precision that could put your flight at risk.",
         ],
       },
       {
-        heading: "Comfort on the long drive",
+        heading: "The Border Crossing and Flight Planning",
         paragraphs: [
-          "A five-hour drive to catch a flight is only relaxing in the right vehicle, so we use clean, air-conditioned cars chosen for distance and matched to your group and luggage, with rest stops built in as needed. Because the fare is fixed, a longer break or a slower stretch never changes the cost.",
-          "Travelling by private car means you leave from your Doha door and are dropped right at the King Fahd Airport terminal, with no onward transfer to arrange. Our drivers take the reliable route to the correct terminal for your airline, and our <a href='/airport-transfer/dammam-airport'>Dammam airport transfers</a> cover any local legs on the Saudi side.",
+          "Qatari exit and Saudi entry formalities are handled at the crossing — Abu Samra on the Qatari side, Salwa on the Saudi side, the sole land border between the two countries, reopened in January 2021. Processing time is reported to vary substantially, from under an hour in quiet periods to several hours during weekends and holidays.",
+          "Because this journey ends at a flight, we build in a genuine buffer for the crossing rather than assuming the best case. If your flight is time-sensitive, mention that when booking so we can plan an earlier departure from Doha.",
         ],
       },
       {
-        heading: "Booking your Doha to Dammam Airport transfer",
+        heading: "Arriving at King Fahd Airport With Time to Spare",
         paragraphs: [
-          "Booking is straightforward. Share your Doha pickup point, your flight details and your group size, and we confirm a suitable long-distance vehicle and a fixed, all-in price before you travel. We operate around the clock, and no deposit is needed simply to see a fare.",
-          "Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation. For the outbound direction, our <a href='/routes/dammam-airport-to-doha'>Dammam Airport to Doha</a> transfer mirrors this journey.",
+          "Once across the border, the route continues north into the Eastern Province to King Fahd International Airport, where your driver drops you directly at the terminal for your airline. We do not cut the margin close on a journey this long — the goal is a comfortable arrival with time for check-in and security, not a rushed dash to the gate.",
+          "For the outbound direction — flying into Dammam and continuing to Doha — see our <a href='/routes/dammam-airport-to-doha'>Dammam Airport to Doha</a> transfer, which is a different journey with a different planning focus. If you are not flying and just need to reach the Eastern Province cities, our <a href='/routes/doha-to-al-khobar'>Doha to Al Khobar</a> transfer covers that instead.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the Doha to Dammam Airport drive?", answer: "It is around 420 kilometres, about five hours of driving in free-flowing conditions, plus the Salwa border crossing. We time the trip around your flight, allowing a comfortable margin for the border, the drive and check-in. The fixed price does not change if the road or border runs slow." },
-      { question: "Will you get me there in time for my flight?", answer: "Yes. We work back from your departure time, allowing for the border, the long drive and check-in, so you reach King Fahd International Airport comfortably ahead of your flight. Share your flight details when booking and we set the pickup accordingly." },
-      { question: "Where is the border crossing?", answer: "The crossing is at Abu Samra on the Qatari side and Salwa on the Saudi side, where you pass Qatari exit and Saudi entry formalities. Weekends and holidays are busiest, so we recommend allowing extra time." },
-      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit for your nationality. Requirements vary by nationality and are updated periodically, so we advise on the current procedures when you book and recommend allowing extra time at the crossing." },
-      { question: "Do you make rest stops?", answer: "Yes. On a journey of this length we build in rest stops for refreshments and a stretch as needed, so the drive stays comfortable. Because the fare is fixed, a longer break never adds to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip to the terminal, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "How early should I leave Doha for a flight from Dammam Airport?", answer: "It depends on your departure time and airline check-in requirements — tell us your flight details when booking and we will work backward to set a pickup time with a genuine buffer for the drive and the border crossing." },
+      { question: "What if the border crossing takes longer than expected?", answer: "We build a buffer into the timing specifically because border processing is variable. If you have a flight to catch, mention this when booking so we can plan an earlier departure rather than a tight one." },
+      { question: "How long is the drive itself, not counting the border?", answer: "Roughly four and a half to five hours of pure driving over about 420 kilometres, before the Abu Samra/Salwa crossing is added." },
+      { question: "Will I be dropped at the correct terminal?", answer: "Yes — tell us your airline when booking and your driver will take you directly to the right terminal at King Fahd International Airport." },
+      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit that applies to your nationality. Requirements vary by nationality and can change, so confirm current rules before you travel." },
+      { question: "Is the price fixed even if I need an earlier pickup for a tight connection?", answer: "Yes, the fare is agreed before you travel regardless of the exact pickup time we set to match your flight." },
     ],
     keywords: ["doha to dammam airport taxi", "doha to dammam airport transfer", "qatar to dammam cross border car", "doha to dmm via salwa", "doha to dammam airport private car"],
   },
@@ -2227,59 +2305,81 @@ const baseRoutes: Route[] = [
     from: "Riyadh",
     to: "Doha",
     category: "border",
-    distance: "~640 km",
-    duration: "6-7 hours + border",
+    distance: "~570-600 km",
+    duration: "~5.5-6.5 hours driving + border",
+    lastUpdated: "2026-08-28",
     intro:
-      "A long-distance private transfer from the Saudi capital to Doha. We drive you from Riyadh across the Salwa border to Qatar, door to door, with rest stops along the way.",
+      "The road journey between the two capitals is a genuine long-distance drive, not a quick hop — from the highway out of Riyadh to the Salwa border and on to Doha.",
     about:
-      "Riyadh to Doha is a long cross-country drive, and a private car turns it into a comfortable, door-to-door journey. We collect you from your Riyadh address and drive south-east across the desert and the Salwa border to Doha, with rest-stop flexibility and a fixed price agreed in advance.",
+      "Riyadh to Doha is one of the longer capital-to-capital drives in the Gulf, and a private car turns a genuinely long day on the road into a comfortable one: your own vehicle, your own pace for rest stops, and a fixed price agreed before you set off, whatever the traffic or border does on the day.",
     notes: [
       "Door-to-door pickup anywhere in Riyadh",
-      "Crossing at the Salwa / Abu Samra border into Qatar",
-      "Comfortable vehicles with rest stops on the long drive",
+      "Long-distance vehicle with rest-stop flexibility built in",
+      "Crossing at Salwa, opposite Abu Samra on the Qatari side",
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Doha Private Transfer – Book Your Taxi",
+    metaTitle: "Riyadh to Doha Road Transfer – Private Long-Distance Taxi",
     metaDescription:
-      "Private taxi from Riyadh to Doha (~640 km, 6-7 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+      "Private car from Riyadh to Doha (~570-600 km, ~5.5-6.5 hours driving via Salwa). Comfortable long-distance vehicle, fixed price, 24/7.",
+    richLayout: {
+      journeyFlow: [
+        { label: "Riyadh Departure", detail: "Pickup from your address" },
+        { label: "Long-Distance Highway", detail: "South-east across the interior" },
+        { label: "Eastern Province", detail: "Approaching the border region" },
+        { label: "Salwa Border Crossing", detail: "Saudi exit / Qatari entry" },
+        { label: "Doha Arrival", detail: "Door-to-door to your destination" },
+      ],
+      journeyFacts: [
+        { label: "Road distance", value: "~570-600 km", emphasis: true },
+        { label: "Pure driving time", value: "~5.5-6.5 hours", emphasis: true },
+        { label: "Journey type", value: "Capital-to-capital road journey" },
+        { label: "Border crossing", value: "Salwa (Saudi) / Abu Samra (Qatar)" },
+      ],
+      mapOrigin: "Riyadh, Saudi Arabia",
+      mapDestination: "Doha, Qatar",
+      mapNote: "The map shows a typical driving route. Your actual starting point in Riyadh and current road/border conditions will affect the real distance and time.",
+      hideGenericIntro: true,
+      pickupPoints: ["Riyadh hotel or residence", "King Khalid International Airport", "Business or embassy district", "Diplomatic Quarter"],
+      dropoffPoints: ["Doha hotel or residence", "West Bay business district", "The Pearl-Qatar", "Hamad International Airport area"],
+    },
     sections: [
       {
-        heading: "Riyadh to Doha: route overview",
+        heading: "Driving to Doha from Riyadh: How the Journey Unfolds",
         paragraphs: [
-          "The road journey from Riyadh to Doha covers around 640 kilometres, heading south-east from the Saudi capital across the desert to the Salwa border and on to the Qatari capital. In free-flowing conditions the driving time is roughly six to seven hours, with border formalities on top. It is a long drive, and many travellers weigh it against a short flight, but a private car offers a true door-to-door service with space, luggage freedom and the freedom to stop when you like.",
-          "The Saudi-Qatar land border at Salwa reopened in 2021, making the overland route practical again. Our drivers know the highway and plan sensible rest stops. For travellers who only need to reach the crossing, our <a href='/routes/riyadh-to-qatar-border'>Riyadh to Qatar border</a> transfer drops you at Salwa, and our <a href='/intercity-transfers'>intercity transfers</a> serve long routes across the region.",
+          "The route leaves Riyadh heading south-east, crossing the width of the Saudi interior before reaching the Eastern Province and the Salwa border. It is a genuinely long single-day journey — around 570 to 600 kilometres depending on your exact starting point in Riyadh, with pure driving time of roughly five and a half to six and a half hours before the border crossing is added.",
+          "Independent route-distance sources vary somewhat on the exact figure for this specific city pair, generally clustering in the 550-600 kilometre range rather than a single precise number, so we present it as a range rather than false precision.",
         ],
       },
       {
-        heading: "A comfortable long-distance journey",
+        heading: "A Long Drive Done Comfortably",
         paragraphs: [
-          "The key to a six-to-seven-hour drive is comfort, so we use clean, air-conditioned vehicles chosen for distance and matched to your group and luggage. Rest stops for refreshments and a stretch are built in as needed, which makes the journey far easier for families, elderly travellers and anyone who prefers not to fly. Because the fare is fixed, a longer break or a slower stretch never changes the cost.",
-          "Travelling by private car removes airport check-in, security and baggage limits, and there is no onward transfer to arrange at the other end. You leave from your own door in Riyadh and arrive at your door in Doha. For groups and families, a single vehicle for everyone is often more comfortable and more economical than separate flights and taxis.",
+          "A drive of this length is only pleasant in the right vehicle, so this route uses cars specifically suited to distance — air-conditioned, comfortable for a full day, with rest stops built in as needed rather than treated as an inconvenience. For families travelling with children, elderly relatives, or simply a lot of luggage, having your own vehicle for the whole day removes the need to coordinate multiple legs or connections.",
+          "Groups and business travellers who want to rest, work, or simply spread out across a single vehicle for six-plus hours often find this more comfortable than the combination of a short flight plus airport transfers at both ends — though which is right depends on your priorities, and we do not claim the drive is always faster.",
         ],
       },
       {
-        heading: "Crossing the Salwa border",
+        heading: "Crossing the Salwa Border on a Long Drive",
         paragraphs: [
-          "The final part of the journey crosses the Salwa border into Qatar, passing Saudi exit and Qatari entry formalities at the crossing, opposite Abu Samra on the Qatari side. The crossing is busiest at weekends and on holidays, and we plan the timing to avoid the worst of it where possible. You will need a valid passport and any visa or entry permit that applies to your nationality.",
-          "Border and vehicle-documentation requirements vary by nationality and change from time to time, so we advise on the current procedures when you book and always recommend allowing extra time for the crossing after a long drive. Our <a href='/border-transfers/qatar-border'>Qatar border transfers</a> page sets out how the crossing works.",
+          "By the time you reach Salwa, you have already covered the bulk of the distance, and the crossing — opposite Abu Samra on the Qatari side — is the final stage before Doha. It reopened in January 2021 and functions as a normal land crossing for private vehicles, though processing time is genuinely variable: reports range from under an hour in quiet periods to several hours at busy times, especially weekends and holidays.",
+          "We do not promise an exact crossing time, and recommend treating the last stretch of the journey with some flexibility, particularly if you are timing arrival in Doha around anything specific.",
         ],
       },
       {
-        heading: "Who chooses the Riyadh to Doha drive, and booking",
+        heading: "Road or Air: A Practical Comparison",
         paragraphs: [
-          "The route suits families who value space and flexibility with children, business travellers who want to rest or work en route and arrive door-to-door, and groups who prefer to travel together. It is also popular with residents making the journey and with visitors combining a stay in the capital with time in Qatar. For the return, our <a href='/routes/doha-to-riyadh'>Doha to Riyadh</a> transfer mirrors this journey.",
-          "Booking is straightforward. Share your Riyadh pickup point, your Doha destination, your preferred time and your group size, and we confirm a suitable long-distance vehicle and a fixed, all-in price before you travel. We operate around the clock. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation.",
+          "Flying is faster in the air, and if speed alone is the priority, a short flight will usually win. What the road journey offers instead is a genuine door-to-door service with no check-in, no baggage limits, and no need to arrange separate transport at either end — you are picked up at your Riyadh address and delivered to your actual Doha destination, not just the airport.",
+          "For groups and families in particular, a single vehicle covering the whole distance can work out more practical than multiple flight tickets plus transfers on both sides, even though the total travel time is longer. We do not publish flight schedules or prices here — this is simply a private road alternative for travellers who would rather have that door-to-door continuity.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the Riyadh to Doha drive?", answer: "It is around 640 kilometres, about six to seven hours of driving in free-flowing conditions, plus the Salwa border crossing. With rest stops and formalities, plan for a comfortable buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Is it better to drive or fly Riyadh to Doha?", answer: "Both have merits. Flying is faster in the air, but a private car is genuinely door-to-door with no check-in, no baggage limits and no onward transfer, and it suits families, groups and anyone carrying a lot of luggage. Many travellers prefer the comfort and flexibility of the car." },
-      { question: "Is the Saudi-Qatar land border open?", answer: "Yes. The land border at Salwa, opposite Abu Samra on the Qatari side, reopened in 2021, making the overland drive a practical option. You pass Saudi exit and Qatari entry formalities at the crossing." },
-      { question: "What documents do I need at the border?", answer: "A valid passport and any visa or entry permit that applies to your nationality. Border and vehicle-documentation rules vary by nationality and are updated periodically, so we advise on the current procedures when you book and recommend allowing extra time." },
-      { question: "Do you make rest stops on the way?", answer: "Yes. On a journey of this length we build in rest stops for refreshments and a stretch as needed, so the drive stays comfortable. Because the fare is fixed, a longer break never adds to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "How far is Riyadh from Doha by road?", answer: "Approximately 570 to 600 kilometres depending on your exact starting point in Riyadh — sources vary somewhat on the precise figure, so we present a range rather than false precision." },
+      { question: "How long does the drive take?", answer: "Pure driving time is roughly five and a half to six and a half hours in free-flowing conditions, before the Salwa border crossing is added separately." },
+      { question: "Is it better to drive or fly from Riyadh to Doha?", answer: "Both have real advantages. Flying is faster in the air; driving is genuinely door-to-door with no check-in or baggage limits, and often suits families and groups better. Which is right depends on your priorities." },
+      { question: "Do you make rest stops on a journey this long?", answer: "Yes. We build in rest stops for refreshments and a break as needed on a drive of this length, and the fixed price does not change if a stop or the road takes longer." },
+      { question: "Is the Saudi-Qatar land border open?", answer: "Yes, the Salwa crossing reopened in January 2021 and functions as a normal land border for private vehicles, though we recommend confirming current passport and visa requirements for your nationality before travelling." },
+      { question: "Can a large family or group travel together?", answer: "Yes, we offer larger vehicles suited to families and groups travelling with luggage for the full distance — let us know your group size when requesting a quote." },
     ],
     keywords: ["riyadh to doha taxi", "riyadh to doha by car", "riyadh to qatar cross border car", "riyadh to doha via salwa", "riyadh to doha private transfer"],
   },
@@ -2288,59 +2388,79 @@ const baseRoutes: Route[] = [
     from: "Doha",
     to: "Riyadh",
     category: "border",
-    distance: "~640 km",
-    duration: "6-7 hours + border",
+    distance: "~570-600 km",
+    duration: "~5.5-6.5 hours driving + border",
+    lastUpdated: "2026-08-28",
     intro:
-      "A long-distance private transfer from Doha to the Saudi capital. We collect you in Qatar, cross the Salwa border, and drive you door to door to Riyadh.",
+      "Leaving Doha for the Saudi capital is a genuine long-distance crossing — this transfer covers the whole journey from your Doha pickup to wherever you actually need to be in Riyadh.",
     about:
-      "Doha to Riyadh is a long cross-border drive made comfortable by a private car. We collect you from your Doha address, cross the Salwa border into Saudi Arabia, and continue across the desert to your Riyadh destination or the airport, with rest stops and a fixed price agreed in advance.",
+      "This is the reverse of a well-travelled capital-to-capital route, but the journey itself has its own shape: departure from Doha, the Salwa/Abu Samra border, a long drive across the Saudi interior, and finally the question of exactly where in Riyadh you are headed — a hotel, a business address, or the airport for an onward flight.",
     notes: [
       "Door-to-door pickup anywhere in Doha",
-      "Crossing at the Abu Samra / Salwa border into Saudi Arabia",
-      "Comfortable vehicles with rest stops on the long drive",
-      "Fixed price, timed for onward flights from Riyadh if needed",
+      "Crossing at Abu Samra (Qatar) / Salwa (Saudi) into the interior",
+      "Comfortable long-distance vehicle with rest stops",
+      "Final Riyadh drop-off tailored to your actual destination",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Doha to Riyadh Border Taxi – Fixed-Price Private Car",
+    metaTitle: "Doha to Riyadh Transfer – Private Cross-Border Road Journey",
     metaDescription:
-      "Private taxi from Doha to Riyadh (~640 km, 6-7 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+      "Private car from Doha to Riyadh (~570-600 km, ~5.5-6.5 hours driving via Salwa). Fixed price, comfortable vehicle, WhatsApp booking.",
+    richLayout: {
+      journeyFlow: [
+        { label: "Doha Departure", detail: "Pickup from your address" },
+        { label: "Border Crossing", detail: "Abu Samra / Salwa" },
+        { label: "Saudi Interior Drive", detail: "Long highway journey north-west" },
+        { label: "Approaching Riyadh", detail: "City outskirts" },
+        { label: "Riyadh Drop-off", detail: "Hotel, business address, or airport" },
+      ],
+      journeyFacts: [
+        { label: "Road distance", value: "~570-600 km", emphasis: true },
+        { label: "Pure driving time", value: "~5.5-6.5 hours", emphasis: true },
+        { label: "Journey type", value: "Cross-border road journey to the capital" },
+        { label: "Border crossing", value: "Abu Samra (Qatar) / Salwa (Saudi)" },
+      ],
+      mapOrigin: "Doha, Qatar",
+      mapDestination: "Riyadh, Saudi Arabia",
+      mapNote: "The map shows a typical driving route. Your actual Riyadh destination and current road/border conditions will affect the real distance and time.",
+      hideGenericIntro: true,
+      pickupPoints: ["Doha hotel or residence", "West Bay business district", "The Pearl-Qatar", "Hamad International Airport area"],
+      dropoffPoints: ["Riyadh hotel", "Business or embassy district", "King Khalid International Airport", "Residential address"],
+    },
     sections: [
       {
-        heading: "Doha to Riyadh: route overview",
+        heading: "Leaving Doha for Riyadh",
         paragraphs: [
-          "The drive from Doha to Riyadh covers around 640 kilometres, heading north-west from the Qatari capital, across the Salwa border and on across the Saudi desert to the capital. In free-flowing conditions the driving time is roughly six to seven hours, with border formalities on top. A private car makes it a relaxed, door-to-door journey, collecting you in Doha and delivering you to your Riyadh address or the airport.",
-          "Travellers choose the car over a flight for the space, the luggage freedom and one continuous journey with no check-in or onward transfer. Our drivers know the highway and plan sensible rest stops. Once in the capital, our <a href='/taxi-service/riyadh'>Riyadh taxi service</a> and <a href='/airport-transfer/riyadh-airport'>Riyadh airport transfers</a> handle any final legs.",
+          "The journey begins with pickup anywhere in Doha — your hotel, home, or office — and heads for the Abu Samra crossing on the Qatari side of the border, the starting point of the long drive into Saudi Arabia. Unlike a short domestic transfer, this is a full-day undertaking, and the pickup time is planned with that in mind rather than treated as a quick errand.",
         ],
       },
       {
-        heading: "Crossing into Saudi Arabia and timing your flight",
+        heading: "The Cross-Border Road Journey into Saudi Arabia",
         paragraphs: [
-          "The journey crosses from Qatar into Saudi Arabia at Abu Samra and Salwa, passing Qatari exit and Saudi entry formalities at the crossing. The land border reopened in 2021, and it is busiest at weekends and on holidays, so we plan the timing carefully. You will need a valid passport and any Saudi visa or entry permit for your nationality.",
-          "If your journey ends at the airport for an onward flight, we time the whole trip around your departure, allowing for the border, the long drive and check-in. Because documentation requirements vary by nationality and change from time to time, we advise on the current procedures when you book. Our <a href='/border-transfers/qatar-border'>Qatar border transfers</a> page explains the crossing.",
+          "The crossing at Abu Samra/Salwa — the only land border between Qatar and Saudi Arabia, reopened in January 2021 — comes early in this direction, right after leaving Doha, rather than at the end as it would on the return trip. That has a practical upside: once you are through, the rest of the journey is a single uninterrupted drive across Saudi Arabia with nothing else to clear.",
+          "As with any land border, processing time is genuinely variable — reports range from under an hour in quiet periods to several hours during weekends and holidays — so we build flexibility into the schedule rather than promising an exact crossing time.",
         ],
       },
       {
-        heading: "Comfort on the long drive",
+        heading: "Understanding the Long Drive to Riyadh",
         paragraphs: [
-          "A six-to-seven-hour drive is only pleasant in the right vehicle, so we use clean, air-conditioned cars chosen for distance and matched to your group and luggage, with rest stops built in as needed. Because the fare is fixed, a longer break or a slower stretch never changes the cost, and there are no baggage limits or check-in queues to manage.",
-          "Travelling by private car means you leave from your Doha door and arrive at your Riyadh door, with no onward transfer to arrange. For groups and families, a single vehicle for everyone is often more comfortable and more economical than separate flights and taxis.",
+          "Once across the border, the route continues north-west across the Saudi interior toward Riyadh, covering roughly 570 to 600 kilometres in total and around five and a half to six and a half hours of pure driving. It is a long, straightforward highway drive rather than a technically difficult one, and the vehicle is set up accordingly — comfortable for distance, with rest stops built in as needed.",
         ],
       },
       {
-        heading: "Who chooses the Doha to Riyadh drive, and booking",
+        heading: "Choosing the Right Final Drop-Off in Riyadh",
         paragraphs: [
-          "The route suits families who value space and flexibility, business travellers who want to rest or work en route and arrive door-to-door, and groups who prefer to travel together. It is also popular with residents making the journey and with visitors combining time in Qatar with a stay in the capital. For the outbound direction, our <a href='/routes/riyadh-to-doha'>Riyadh to Doha</a> transfer mirrors this journey.",
-          "Booking is straightforward. Share your Doha pickup point, your Riyadh destination or flight details, your preferred time and your group size, and we confirm a suitable long-distance vehicle and a fixed, all-in price before you travel. We operate around the clock. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation.",
+          "Riyadh is a large, spread-out city, and where exactly you need to be changes the practical end of the journey — a hotel in the business district, a residential compound, an embassy or company address, or King Khalid International Airport for an onward flight all sit in different parts of the city. Tell us your specific destination when booking so the final approach is planned correctly rather than assumed.",
+          "If your journey continues by air from Riyadh, mention that too — we can factor a reasonable buffer into the schedule. For the outbound direction, see our <a href='/routes/riyadh-to-doha'>Riyadh to Doha</a> transfer, and for local travel once you are in the capital, our <a href='/taxi-service/riyadh'>Riyadh taxi service</a> covers city journeys.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the Doha to Riyadh drive?", answer: "It is around 640 kilometres, about six to seven hours of driving in free-flowing conditions, plus the Salwa border crossing. With rest stops and formalities, plan for a comfortable buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Can you time the trip for my flight from Riyadh?", answer: "Yes. If your journey ends at the airport, we plan the whole trip around your departure, allowing for the border, the long drive and check-in. Share your flight details when booking and we set the pickup accordingly." },
-      { question: "Where is the border crossing?", answer: "The crossing is at Abu Samra on the Qatari side and Salwa on the Saudi side, where you pass Qatari exit and Saudi entry formalities. The land border reopened in 2021. Weekends and holidays are busiest, so we recommend allowing extra time." },
-      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit for your nationality. Requirements vary by nationality and are updated periodically, so we advise on the current procedures when you book and recommend allowing extra time at the crossing." },
-      { question: "Do you make rest stops?", answer: "Yes. On a journey of this length we build in rest stops for refreshments and a stretch as needed, so the drive stays comfortable. Because the fare is fixed, a longer break never adds to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "Where in Riyadh can you drop me off?", answer: "Anywhere you need — a hotel, business address, residential compound, or King Khalid International Airport if you are continuing by air. Tell us your specific destination when booking." },
+      { question: "Does the border crossing happen at the start or end of this journey?", answer: "At the start, shortly after leaving Doha. Once you are through the Abu Samra/Salwa crossing, the rest of the trip is a single continuous drive across Saudi Arabia to Riyadh." },
+      { question: "How long is the drive from Doha to Riyadh?", answer: "Around 570 to 600 kilometres, roughly five and a half to six and a half hours of pure driving, before the border crossing is added." },
+      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit for your nationality. Requirements vary by nationality and can change, so confirm current rules before travelling." },
+      { question: "Can you time this for a flight from Riyadh?", answer: "Yes — if your journey continues by air, share your flight details when booking and we will factor a reasonable buffer into the schedule for the drive and the border." },
+      { question: "Is the price fixed for the whole journey?", answer: "Yes, the fare is agreed before you travel and does not change if the border or the drive runs longer than expected on the day." },
     ],
     keywords: ["doha to riyadh taxi", "doha to riyadh by car", "qatar to riyadh cross border car", "doha to riyadh via salwa", "doha to riyadh private transfer"],
   },
@@ -2349,52 +2469,84 @@ const baseRoutes: Route[] = [
     from: "Al Khobar",
     to: "Doha",
     category: "border",
-    distance: "~380 km",
-    duration: "5 hours + border",
+    distance: "~400-420 km",
+    duration: "~4.5-5.5 hours driving + border",
+    lastUpdated: "2026-08-28",
     intro:
-      "A private transfer from Al Khobar to Doha across the Salwa border. We collect you on the Corniche or anywhere in the Eastern Province and drive you door to door to Qatar.",
+      "A private cross-border drive from the Corniche or anywhere in Al Khobar straight to Doha — closer than the Riyadh journey, but still a genuine multi-hour drive across the Eastern Province and the Salwa border.",
     about:
-      "Al Khobar to Doha is a cross-border drive of around 380 kilometres via the Salwa border, and a private car makes it a comfortable, door-to-door journey. We collect you from your Al Khobar hotel or address and drive you into Qatar, with rest stops and a fixed price agreed in advance.",
+      "Al Khobar sits close to the Eastern Province's southern reach toward Qatar, which makes this one of the shorter Doha crossings we run — though still a real half-day journey, not a short hop. We collect you from your Khobar hotel or address and drive the whole distance to Doha on a fixed price.",
     notes: [
-      "Door-to-door pickup from Al Khobar and the Eastern Province",
-      "Crossing at the Salwa / Abu Samra border into Qatar",
-      "Comfortable vehicles with rest stops on the drive",
+      "Door-to-door pickup from Al Khobar and the wider Eastern Province",
+      "Crossing at Salwa, opposite Abu Samra on the Qatari side",
+      "Shorter than the Riyadh-Doha drive, but still several hours",
       "Valid passport and any required visa needed at the border",
     ],
     relatedCitySlugs: ["khobar", "dammam"],
-    metaTitle: "Private Taxi: Al Khobar to Doha",
+    metaTitle: "Al Khobar to Doha Taxi – Eastern Province Cross-Border Transfer",
     metaDescription:
-      "Private taxi from Al Khobar to Doha (~380 km, 5 hours via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+      "Private taxi from Al Khobar to Doha (~400-420 km, ~4.5-5.5 hours driving via Salwa). Fixed price, comfortable car, WhatsApp booking.",
+    richLayout: {
+      journeyFlow: [
+        { label: "Al Khobar Pickup", detail: "Corniche, hotel, or address" },
+        { label: "Eastern Province Road", detail: "South toward the border" },
+        { label: "Salwa Border Crossing", detail: "Saudi exit / Qatari entry" },
+        { label: "Doha Arrival", detail: "Door-to-door to your destination" },
+      ],
+      journeyFacts: [
+        { label: "Road distance", value: "~400-420 km", emphasis: true },
+        { label: "Pure driving time", value: "~4.5-5.5 hours", emphasis: true },
+        { label: "Starting point", value: "Al Khobar & wider Eastern Province" },
+        { label: "Border crossing", value: "Salwa (Saudi) / Abu Samra (Qatar)" },
+      ],
+      mapOrigin: "Al Khobar, Saudi Arabia",
+      mapDestination: "Doha, Qatar",
+      mapNote: "The map shows a typical driving route. Your exact pickup point within Al Khobar and current road/border conditions will affect the real distance and time.",
+      hideGenericIntro: true,
+      pickupPoints: ["Khobar Corniche hotels", "Al Rashid Mall area", "Half Moon Bay", "Dammam / Dhahran addresses on request"],
+      dropoffPoints: ["Doha hotel or residence", "West Bay business district", "The Pearl-Qatar", "Hamad International Airport area"],
+    },
     sections: [
       {
-        heading: "Al Khobar to Doha: route overview",
+        heading: "Starting Your Journey from Al Khobar",
         paragraphs: [
-          "The drive from Al Khobar to Doha runs around 380 kilometres, heading south from the Eastern Province coast to the Salwa border and on into Qatar. In free-flowing conditions the driving time is roughly five hours, with border formalities on top. A private car makes it a relaxed, door-to-door journey, collecting you from your Al Khobar hotel or address and delivering you to your Doha destination.",
-          "The Saudi-Qatar land border at Salwa reopened in 2021, making the overland route practical again. Our drivers know the highway and plan sensible rest stops. For journeys from the airport rather than the city, our <a href='/routes/dammam-airport-to-doha'>Dammam Airport to Doha</a> transfer covers arrivals, and our <a href='/taxi-service/khobar'>Al Khobar taxi service</a> handles local legs.",
+          "Pickup is door-to-door anywhere in Al Khobar — the Corniche hotels, the business district, or further out toward Dammam and Dhahran on request, since the wider Eastern Province shares the same road south to the border. Your driver confirms the exact pickup point with you when booking, since Al Khobar's waterfront and business areas are spread along a fairly wide stretch of coast.",
         ],
       },
       {
-        heading: "Crossing the Salwa border",
+        heading: "Al Khobar to Doha Road Distance Explained",
         paragraphs: [
-          "The journey crosses into Qatar at the Salwa border, opposite Abu Samra, passing Saudi exit and Qatari entry formalities at the crossing. It is busiest at weekends and on holidays, so a little patience helps and we plan the timing carefully. You will need a valid passport and any visa or entry permit that applies to your nationality.",
-          "Because border and vehicle-documentation requirements vary by nationality and are updated from time to time, we advise on the current procedures when you book and recommend allowing extra time for the crossing. Your driver is familiar with the route and guides you through the formalities. Our <a href='/border-transfers/qatar-border'>Qatar border transfers</a> page explains the crossing.",
+          "The drive covers roughly 400 to 420 kilometres depending on your exact starting point in Al Khobar, with pure driving time of around four and a half to five and a half hours before the Salwa crossing. That makes this one of the shorter Doha routes we run — meaningfully less driving than the Riyadh-Doha journey, since Al Khobar already sits well down the Eastern Province toward the border.",
+          "Independent distance sources for this specific city pair vary somewhat, generally clustering in the high-300s to low-400s of kilometres, so we present a range rather than a single over-precise figure.",
         ],
       },
       {
-        heading: "Comfort, who it suits and booking",
+        heading: "The Cross-Border Part of the Journey",
         paragraphs: [
-          "We use clean, air-conditioned cars chosen for distance and matched to your group and luggage, with rest stops built in as needed. Because the fare is fixed, a longer break or a slower stretch never changes the cost. The route suits business travellers, families and groups from the Eastern Province heading to Qatar, and residents making the journey regularly.",
-          "Booking is straightforward. Share your Al Khobar pickup point, your Doha destination, your preferred time and your group size, and we confirm a suitable vehicle and a fixed, all-in price before you travel. We operate around the clock. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and for the return see our <a href='/routes/doha-to-al-khobar'>Doha to Al Khobar</a> transfer.",
+          "The route crosses into Qatar at Salwa, opposite Abu Samra on the Qatari side — the sole land border between the two countries, reopened in January 2021. Saudi exit and Qatari entry formalities are handled here, and you will need a valid passport plus any visa or entry permit for your nationality.",
+          "Processing time varies genuinely by day and time — commonly reported as anywhere from under an hour to several hours, busiest at weekends and on holidays — so we do not attach a fixed figure to this stage.",
+        ],
+      },
+      {
+        heading: "Why Total Travel Time Can Vary",
+        paragraphs: [
+          "Because this is a shorter drive than the Riyadh route, the border crossing makes up a proportionally larger share of the total journey time here. A quiet crossing can mean the whole trip runs close to the pure driving estimate; a busy one adds meaningfully more. We build reasonable flexibility into the schedule rather than promising a single total-journey number.",
+        ],
+      },
+      {
+        heading: "Arriving in Doha",
+        paragraphs: [
+          "Once through the border, the final stretch continues into Doha, where your driver takes you directly to your hotel, business address, or residence. For journeys starting at the airport rather than the city, our <a href='/routes/dammam-airport-to-doha'>Dammam Airport to Doha</a> transfer is built specifically around flight arrivals. For the return leg, see <a href='/routes/doha-to-al-khobar'>Doha to Al Khobar</a>.",
         ],
       },
     ],
     faqs: [
-      { question: "How long is the Al Khobar to Doha drive?", answer: "It is around 380 kilometres, about five hours of driving in free-flowing conditions, plus the Salwa border crossing. With rest stops and formalities, plan for a comfortable buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Is the Saudi-Qatar land border open?", answer: "Yes. The land border at Salwa, opposite Abu Samra on the Qatari side, reopened in 2021, making the overland drive a practical option. You pass Saudi exit and Qatari entry formalities at the crossing." },
-      { question: "Will you collect me from my Al Khobar hotel?", answer: "Yes. This is a door-to-door service. Your driver meets you at your hotel or address in Al Khobar or the wider Eastern Province at the agreed time and drives you directly toward Doha." },
-      { question: "What documents do I need at the border?", answer: "A valid passport and any visa or entry permit that applies to your nationality. Requirements vary by nationality and are updated periodically, so we advise on the current procedures when you book and recommend allowing extra time." },
-      { question: "Do you make rest stops on the way?", answer: "Yes. On a journey of this length we build in rest stops for refreshments and a stretch as needed, so the drive stays comfortable. Because the fare is fixed, a longer break never adds to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "How far is Al Khobar from Doha?", answer: "Approximately 400 to 420 kilometres depending on your exact starting point in Al Khobar — this is one of the shorter Doha routes we run, since Al Khobar already sits well down the Eastern Province toward the border." },
+      { question: "Is this drive shorter than Riyadh to Doha?", answer: "Yes, meaningfully. Al Khobar is much closer to the Salwa border than Riyadh is, so the pure driving time is roughly an hour or more less." },
+      { question: "Will you collect me from anywhere in Al Khobar?", answer: "Yes, this is a door-to-door service from your hotel or address in Al Khobar, and we can also arrange pickup from Dammam or Dhahran on request since they share the same route south." },
+      { question: "Is the Saudi-Qatar land border open?", answer: "Yes, the Salwa crossing reopened in January 2021 and functions as a normal land border for private vehicles." },
+      { question: "What documents do I need at the border?", answer: "A valid passport and any visa or entry permit for your nationality. Requirements vary and can change, so confirm current rules before travelling." },
+      { question: "Is the fare fixed even if the border is busy?", answer: "Yes. The price is agreed before you travel and does not change if the crossing takes longer than expected." },
     ],
     keywords: ["al khobar to doha taxi", "khobar to doha by car", "khobar to qatar cross border car", "al khobar to doha via salwa", "khobar to doha private transfer"],
   },
