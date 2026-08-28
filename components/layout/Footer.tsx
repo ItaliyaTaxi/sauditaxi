@@ -175,6 +175,7 @@ export function Footer() {
               <li><Link href={isAr ? "/ar/اتصل-بنا" : "/contact"} className="hover:text-gold">{dict.footer.contact}</Link></li>
               <li><Link href="/get-quote" className="hover:text-gold">{dict.footer.getAQuote}</Link></li>
               {!isAr && <li><Link href="/services" className="hover:text-gold">{dict.footer.allServices}</Link></li>}
+              {!isAr && <li><Link href="/sitemap" className="hover:text-gold">Sitemap</Link></li>}
               <li><Link href="/terms-and-conditions" className="hover:text-gold">{dict.footer.termsAndConditions}</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-gold">{dict.footer.privacyPolicy}</Link></li>
             </ul>
