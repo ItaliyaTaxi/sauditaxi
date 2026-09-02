@@ -7,7 +7,9 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { distancePages, getDistancePage } from "@/data/distance-pages";
 import { journeyPages, getJourneyPage } from "@/data/journey-pages";
+import { distanceGuideV2Pages, getDistanceGuideV2Page } from "@/data/distance-guide-v2";
 import { JourneyPageView } from "@/components/journey/JourneyPageView";
+import { DistanceGuideV2View } from "@/components/distance-v2/DistanceGuideV2View";
 import { routeHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -32,6 +34,7 @@ export function generateStaticParams() {
   return [
     ...distancePages.map((p) => ({ slug: p.slug })),
     ...journeyPages.map((p) => ({ slug: p.slug })),
+    ...distanceGuideV2Pages.map((p) => ({ slug: p.slug })),
   ];
 }
 
@@ -41,6 +44,18 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
+
+  const v2Page = getDistanceGuideV2Page(slug);
+  if (v2Page) {
+    const enPath = `/distance/${v2Page.slug}`;
+    const arPath = getArPathForEnPath(enPath);
+    return buildMetadata({
+      title: v2Page.metaTitle,
+      description: v2Page.metaDescription,
+      path: enPath,
+      ...(arPath ? { alternateLanguages: { en: enPath, ar: arPath } } : {}),
+    });
+  }
 
   const journeyPage = getJourneyPage(slug);
   if (journeyPage) {
@@ -92,6 +107,30 @@ export default async function DistancePage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
+
+  const v2Page = getDistanceGuideV2Page(slug);
+  if (v2Page) {
+    const v2Path = `/distance/${v2Page.slug}`;
+    const v2Crumbs = [
+      { name: "Home", path: "/" },
+      { name: `${v2Page.from} to ${v2Page.to} Distance`, path: v2Path },
+    ];
+    return (
+      <>
+        <SchemaScript schema={[breadcrumbSchema(v2Crumbs), faqSchema(v2Page.faqs)]} />
+        <DistanceGuideV2View
+          {...v2Page}
+          crumbs={v2Crumbs}
+          labels={{
+            faqHeading: "Common Questions About This Route",
+            sourcesHeading: "Sources",
+            sourceFootnote:
+              "Distances and travel times are approximate and can vary by exact starting point, route taken, border conditions, and traffic. Last checked",
+          }}
+        />
+      </>
+    );
+  }
 
   const journeyPage = getJourneyPage(slug);
   if (journeyPage) {

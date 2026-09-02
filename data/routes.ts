@@ -45,6 +45,18 @@ export interface Route {
    * before. See app/(main)/routes/[slug]/page.tsx for the render logic.
    */
   richLayout?: RouteRichLayout;
+  /** H1 override for a small batch of routes needing a distinct headline
+   * instead of the generic "{from} to {to} Taxi Service". */
+  h1?: string;
+  /**
+   * Fully custom, ordered editorial composition for a small batch of routes
+   * that need a genuinely distinct page structure rather than the shared
+   * fixed block order below. When present, it entirely replaces the generic
+   * middle-of-page content (key takeaways, journeyFlow, journeyFacts, map,
+   * about/notes/pickup-dropoff, `sections`) — every route without this field
+   * renders exactly as before. See app/(main)/routes/[slug]/page.tsx.
+   */
+  customLayout?: RouteBlock[];
 }
 
 export interface RouteJourneyStep {
@@ -57,6 +69,59 @@ export interface RouteJourneyFact {
   value: string;
   emphasis?: boolean;
 }
+
+export type RouteBlock =
+  | { type: "prose"; heading: string; paragraphs: string[] }
+  | {
+      type: "map";
+      heading: string;
+      note: string;
+      origin: string;
+      destination: string;
+      size?: "default" | "large";
+    }
+  | {
+      type: "facts";
+      heading: string;
+      layout?: "grid" | "snapshot";
+      items: RouteJourneyFact[];
+    }
+  | {
+      type: "timeline";
+      heading: string;
+      orientation: "vertical" | "horizontal";
+      steps: RouteJourneyStep[];
+      note?: string;
+    }
+  | {
+      type: "comparison";
+      heading: string;
+      intro?: string;
+      columns: [string, string];
+      rows: { criterion: string; a: string; b: string }[];
+    }
+  | {
+      type: "scenarios";
+      heading: string;
+      items: { title: string; description: string }[];
+    }
+  | {
+      type: "checklist";
+      heading: string;
+      intro?: string;
+      items: string[];
+    }
+  | {
+      type: "borderPanel";
+      heading: string;
+      paragraphs: string[];
+    }
+  | {
+      type: "ctaBanner";
+      heading: string;
+      body: string;
+      whatsappMessage: string;
+    };
 
 export interface RouteRichLayout {
   /** Visual step-by-step flow specific to this journey's shape (e.g. airport
@@ -2965,230 +3030,452 @@ const baseRoutes: Route[] = [
     from: "Riyadh",
     to: "Abu Dhabi",
     category: "border",
-    distance: "~750 km",
-    duration: "8 hours + border",
+    distance: "~880-900 km",
+    duration: "~10-10.5 hours driving + border",
     intro:
-      "A long-distance private transfer from the Saudi capital to Abu Dhabi. We drive you from Riyadh across the Al Batha border into the UAE capital, door to door, with rest stops.",
+      "A private, door-to-door drive from the Saudi capital across the Al Batha border to Abu Dhabi — with real route detail, not just a booking form.",
     about:
-      "Riyadh to Abu Dhabi is a long cross-country drive, and a private car offers a door-to-door alternative for those who prefer the road to a flight. We collect you from your Riyadh address and drive east across the Al Batha border to Abu Dhabi, with rest-stop flexibility and a fixed price agreed in advance.",
+      "Riyadh to Abu Dhabi is a genuine long-haul drive: a desert highway west to east, one land border, and a UAE capital arrival. This page walks through what the journey actually involves, not just the booking mechanics.",
     notes: [
       "Door-to-door pickup anywhere in Riyadh",
-      "Crossing at the Al Batha / Al Ghuwaifat border into the UAE",
-      "Abu Dhabi is the closest UAE city to the Al Batha crossing",
-      "Valid passport and any required visa needed at the border",
+      "Crossing at Al Batha (Saudi side) / Al Ghuwaifat (UAE side)",
+      "Route clips the north-western corner of the Empty Quarter",
+      "Valid passport and any required UAE entry permit needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Abu Dhabi Private Transfer – Book Your Taxi",
+    heroImage: "/images/heroes/desert.svg",
+    heroAlt: "Desert highway crossing the Empty Quarter on the road from Riyadh toward the Saudi-UAE border",
+    metaTitle: "Riyadh to Abu Dhabi by Road – Private International Transfer",
     metaDescription:
-      "Book a private cross-border transfer from Riyadh to Abu Dhabi (~750 km, 8 hours). Door-to-door service into the UAE, fixed fare.",
-    sections: [
+      "Private door-to-door transfer from Riyadh to Abu Dhabi (~880-900 km, ~10-10.5 hrs driving). Real border guidance, comfort stops, fixed price.",
+    h1: "Riyadh to Abu Dhabi: The Complete International Road Journey",
+    lastUpdated: "2026-09-02",
+    customLayout: [
       {
-        heading: "Riyadh to Abu Dhabi: route overview",
-        paragraphs: [
-          "The road journey from Riyadh to Abu Dhabi covers around 750 kilometres, heading east from the Saudi capital across the desert to the Al Batha border and on to the UAE capital. In free-flowing conditions the driving time is roughly eight hours, with border formalities on top. It is a long drive, and many fly, but a private car offers a true door-to-door service with space, luggage freedom and the freedom to stop when you like.",
-          "Abu Dhabi is the closest major UAE city to the Al Batha crossing, so it is a slightly shorter drive than continuing to Dubai. Our drivers know the route and plan proper rest stops. For travellers who only need the crossing, our <a href='/routes/riyadh-to-al-batha-border'>Riyadh to Al Batha border</a> transfer drops you at the border, and our <a href='/border-transfers/uae-border'>UAE border transfers</a> page explains it.",
+        type: "map",
+        heading: "The Road From Riyadh to Abu Dhabi",
+        note: "Route shown is indicative — exact roads vary by GPS provider. Distance and time below are independently verified estimates, not a live routing calculation.",
+        origin: "Riyadh, Saudi Arabia",
+        destination: "Abu Dhabi, United Arab Emirates",
+        size: "large",
+      },
+      {
+        type: "facts",
+        heading: "The Journey at a Glance",
+        layout: "grid",
+        items: [
+          { label: "Road distance", value: "~880-900 km", emphasis: true },
+          { label: "Pure driving time", value: "~10-10.5 hours" },
+          { label: "Border crossing", value: "Al Batha (Saudi) / Al Ghuwaifat (UAE)" },
+          { label: "Countries crossed", value: "Saudi Arabia → United Arab Emirates" },
+          { label: "Departs from", value: "Riyadh, any address" },
+          { label: "Arrives at", value: "Abu Dhabi, any address" },
         ],
       },
       {
-        heading: "A comfortable long-distance journey",
+        type: "timeline",
+        heading: "What the Journey Actually Looks Like",
+        orientation: "vertical",
+        steps: [
+          { label: "Riyadh departure", detail: "Pickup from your Riyadh address, heading south-east on Highway 10 toward Al Kharj." },
+          { label: "Saudi road journey", detail: "A long, flat desert drive via Haradh, clipping the north-western corner of the Empty Quarter — fast highway, limited services." },
+          { label: "Al Batha border area", detail: "Saudi exit formalities at Al Batha, then Emirati entry procedures at Al Ghuwaifat, a short distance apart." },
+          { label: "UAE entry procedures", detail: "Passport control, a vehicle check, and — for private cars — purchasing mandatory third-party UAE vehicle insurance at the border." },
+          { label: "Abu Dhabi arrival", detail: "Onto the E11 corridor for the final stretch into the city and drop-off at your address." },
+        ],
+        note: "Timings assume free-flowing traffic and a routine crossing. Both can vary, which is why we build in a buffer.",
+      },
+      {
+        type: "prose",
+        heading: "What Changes at the Border?",
         paragraphs: [
-          "Comfort is key on a drive of this length, so we use clean, air-conditioned vehicles chosen for distance and matched to your group and luggage, with rest stops for meals, refreshments and a stretch built in as needed. Because the fare is fixed, a longer break or a slower stretch never changes the cost.",
-          "Travelling by private car removes airport check-in, security and baggage limits, and there is no onward transfer to arrange at the other end. You leave from your own door in Riyadh and arrive at your door in Abu Dhabi. For groups and families, a single vehicle can be more comfortable and more economical than separate flights and taxis, and our <a href='/intercity-transfers'>intercity transfers</a> handle long routes across the region.",
+          "Crossing at Al Batha/Al Ghuwaifat means leaving Saudi jurisdiction and entering the UAE's — different traffic law, different speed-camera tolerances, and a currency change from riyal to dirham. Your phone will typically switch networks around here too, so it's worth confirming roaming before you travel.",
+          "Reports on how long the crossing itself takes vary widely: some travellers clear it in under an hour during quiet periods, others describe one to two hours as fairly typical, and holiday weekends can push it to several hours. We don't control the queue, so we build a realistic buffer into your schedule rather than promising a fixed crossing time. Our <a href='/border-transfers/uae-border'>UAE border transfers</a> page has more on what to expect.",
         ],
       },
       {
-        heading: "Crossing the Al Batha border into the UAE",
-        paragraphs: [
-          "The journey crosses into the UAE at the Al Batha border, opposite Al Ghuwaifat, passing Saudi exit and Emirati entry formalities. The crossing can be busy at weekends and on holidays, so we plan the timing accordingly. You will need a valid passport and any visa or entry permit that applies to your nationality.",
-          "Border and vehicle-documentation requirements for cross-border driving vary by nationality and are updated from time to time, and a private vehicle crossing needs the correct paperwork. We advise on the current procedures, arrange the appropriate vehicle documentation, and recommend allowing generous time for the crossing when you book.",
+        type: "comparison",
+        heading: "Road Transfer vs Flying",
+        intro: "Neither option is universally better — it depends on what you're carrying and how you value your time.",
+        columns: ["Private road transfer", "Flight (RUH–AUH)"],
+        rows: [
+          { criterion: "Total time, door to door", a: "~10-10.5 hrs driving, plus the border and any rest stops", b: "~1.5 hr flight, plus airport transfers, check-in and security at both ends" },
+          { criterion: "Check-in / security", a: "None — you leave when you're ready", b: "Arrive roughly 2-3 hrs early for international check-in and security" },
+          { criterion: "Baggage", a: "No weight limits within the vehicle's capacity", b: "Airline baggage allowance and excess fees apply" },
+          { criterion: "Border experience", a: "One land crossing, handled once", b: "Passport control and customs at each airport" },
+          { criterion: "Privacy & space", a: "A private vehicle, on your own schedule", b: "Shared cabin, fixed departure time" },
+          { criterion: "Flexibility", a: "Stops, timing and pace can be adjusted en route", b: "Fixed flight schedule" },
         ],
       },
       {
-        heading: "Who chooses the Riyadh to Abu Dhabi drive, and booking",
-        paragraphs: [
-          "The route suits families who value space and flexibility, travellers who want to see the landscape and stop along the way, and groups who prefer to travel together rather than coordinate flights. For the return, our <a href='/routes/abu-dhabi-to-riyadh'>Abu Dhabi to Riyadh</a> transfer mirrors this journey, and travellers continuing to Dubai can extend the trip on request.",
-          "Booking is straightforward. Share your Riyadh pickup point, your Abu Dhabi destination, your preferred time and your group size, and we confirm a suitable long-distance vehicle and a fixed, all-in price before you travel. We operate around the clock. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation.",
+        type: "scenarios",
+        heading: "Who This Route Works Best For",
+        items: [
+          { title: "Travellers with heavy or awkward luggage", description: "Equipment, samples or gear that's expensive or impractical to fly — one uninterrupted vehicle trip avoids the hassle entirely." },
+          { title: "Families avoiding two sets of check-in queues", description: "Everyone and everything moves in one car rather than juggling connections and baggage claims at both ends." },
+          { title: "Private groups who'd rather travel together", description: "One vehicle keeps the group together instead of coordinating separate flight arrivals." },
+          { title: "Travellers connecting Saudi and UAE business meetings", description: "A single scheduled departure with a predictable, private itinerary instead of an airport transfer chain." },
         ],
+      },
+      {
+        type: "checklist",
+        heading: "Planning the Journey",
+        intro: "A drive of this length is comfortable with a little preparation.",
+        items: [
+          "Confirm your passport and any UAE entry permit before travel",
+          "Expect a rest stop roughly midway, ideally before the border",
+          "Pack water and snacks — services thin out on the desert stretch",
+          "Allow a generous buffer if you have a fixed commitment in Abu Dhabi",
+          "Tell us your luggage volume so we match the right vehicle",
+        ],
+      },
+      {
+        type: "ctaBanner",
+        heading: "Ready to Book the Drive?",
+        body: "Share your Riyadh pickup point, preferred date and group size, and we'll confirm a fixed price for the whole journey to Abu Dhabi.",
+        whatsappMessage: "Hello! I'd like a quote for a Riyadh to Abu Dhabi private transfer.",
       },
     ],
     faqs: [
-      { question: "How long is the Riyadh to Abu Dhabi drive?", answer: "It is around 750 kilometres, roughly eight hours of driving in free-flowing conditions, plus the Al Batha border crossing. We build in rest stops and recommend a generous buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Is Abu Dhabi closer than Dubai by road?", answer: "Yes. Abu Dhabi is the closest major UAE city to the Al Batha crossing, so the drive is a little shorter than continuing to Dubai, at around eight hours plus the border versus nine to ten hours to Dubai." },
-      { question: "What documents do I need to drive into the UAE?", answer: "A valid passport and any visa or entry permit that applies to your nationality. Border and vehicle-documentation rules for cross-border driving vary by nationality and are updated periodically, so we advise on the current procedures and arrange the appropriate paperwork when you book." },
-      { question: "Do you make rest stops on the way?", answer: "Yes. On a journey of this length we build in proper rest stops for meals, refreshments and a stretch as needed. Because the fare is fixed, longer breaks never add to the cost." },
-      { question: "Can a family or group travel together?", answer: "Yes. We provide vehicles sized for families and groups, with room for luggage and child seats on request, so everyone travels together in one car, which is often more comfortable than separate flights and taxis." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "How far is it really from Riyadh to Abu Dhabi by road?", answer: "Independent route-distance sources put it at roughly 880-900 kilometres depending on the exact roads used, with pure driving time around 10 to 10.5 hours in free-flowing conditions. Older estimates you may see elsewhere are often lower and less reliable." },
+      { question: "Is Abu Dhabi genuinely closer than Dubai from Riyadh?", answer: "Yes — Abu Dhabi sits before Dubai on the E11, so it's roughly 100-140 kilometres and about an hour less driving than continuing on to Dubai." },
+      { question: "Do you cross the border with me, or just drop me at it?", answer: "This service is a full door-to-door journey — we cross the Al Batha/Al Ghuwaifat border with you and continue all the way to Abu Dhabi. If you only need the Saudi-side leg, see our <a href='/routes/riyadh-to-al-batha-border'>Riyadh to Al Batha border</a> transfer instead." },
+      { question: "What should I expect at the crossing itself?", answer: "It's genuinely variable — some travellers are through in under an hour, others report one to two hours as typical, and holidays or weekends can add several more. We plan a realistic buffer rather than a fixed crossing time." },
+      { question: "Can the vehicle handle a lot of luggage?", answer: "Yes. We size the vehicle — sedan, SUV or van — to your group and bags, which suits relocation-style trips as well as normal travel. Tell us your volume when booking." },
+      { question: "Is the price still fixed if the border takes longer than expected?", answer: "Yes. The fare is agreed before you travel and doesn't change if the crossing or the drive runs long on the day." },
     ],
-    keywords: ["riyadh to abu dhabi taxi", "riyadh to abu dhabi by car", "riyadh to abu dhabi cross border car", "riyadh to abu dhabi via al batha", "riyadh to abu dhabi private transfer"],
+    keywords: ["riyadh to abu dhabi taxi", "riyadh to abu dhabi driving distance", "riyadh to abu dhabi by car", "riyadh to abu dhabi private transfer", "al batha border crossing riyadh abu dhabi"],
   },
   {
     slug: "abu-dhabi-to-riyadh",
     from: "Abu Dhabi",
     to: "Riyadh",
     category: "border",
-    distance: "~750 km",
-    duration: "8 hours + border",
+    distance: "~880-900 km",
+    duration: "~10-10.5 hours driving + border",
     intro:
-      "A long-distance private transfer from Abu Dhabi to the Saudi capital. We collect you in the UAE capital, cross the Al Batha border, and drive you door to door to Riyadh.",
+      "Collected in Abu Dhabi, driven across the Saudi border and delivered to your Riyadh address — with a clear picture of what the crossing and the drive actually involve.",
     about:
-      "Abu Dhabi to Riyadh is a long cross-border drive made comfortable by a private car. We collect you from your Abu Dhabi address, cross the Al Batha border into Saudi Arabia, and drive across the desert to your Riyadh destination or the airport, with rest stops and a fixed price agreed in advance.",
+      "Abu Dhabi to Riyadh reverses the journey but not the experience — a private car handles the UAE departure, the Al Ghuwaifat/Al Batha crossing, and the long desert drive into the Saudi capital, with practical guidance at every stage.",
     notes: [
       "Door-to-door pickup anywhere in Abu Dhabi",
-      "Crossing at the Al Ghuwaifat / Al Batha border into Saudi Arabia",
-      "Comfortable vehicles with rest stops on the long drive",
-      "Fixed price, timed for onward flights from Riyadh if needed",
+      "Crossing at Al Ghuwaifat (UAE side) / Al Batha (Saudi side)",
+      "Onward drop-off available at Riyadh addresses or the airport",
+      "Valid passport and any required Saudi entry permit needed at the border",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Abu Dhabi to Riyadh Taxi – Private Cross-Border Transfer",
+    heroImage: "/images/heroes/border.webp",
+    heroAlt: "Saudi-UAE border crossing point on the road from Abu Dhabi to Riyadh",
+    metaTitle: "Abu Dhabi to Riyadh Transfer – Border Arrival Guide",
     metaDescription:
-      "Book a private cross-border transfer from Abu Dhabi to Riyadh (~750 km, 8 hours). Door-to-door service into the UAE, fixed fare.",
-    sections: [
+      "Private transfer from Abu Dhabi to Riyadh (~880-900 km) with real border-arrival guidance — what happens after you cross into Saudi Arabia.",
+    h1: "Abu Dhabi to Riyadh: Your Border Arrival Guide",
+    lastUpdated: "2026-09-02",
+    customLayout: [
       {
-        heading: "Abu Dhabi to Riyadh: route overview",
+        type: "prose",
+        heading: "Before You Leave Abu Dhabi",
         paragraphs: [
-          "The drive from Abu Dhabi to Riyadh covers around 750 kilometres, heading west from the UAE capital across the Al Batha border and on across the Saudi desert to the capital. In free-flowing conditions the driving time is roughly eight hours, with border formalities on top. A private car makes it a relaxed, door-to-door journey, collecting you in Abu Dhabi and delivering you to your Riyadh address or the airport.",
-          "Being the closest UAE city to the crossing, Abu Dhabi makes for a slightly shorter drive than from Dubai. Our drivers know the highway and plan proper rest stops. Once in the capital, our <a href='/taxi-service/riyadh'>Riyadh taxi service</a> and <a href='/airport-transfer/riyadh-airport'>Riyadh airport transfers</a> handle any final legs.",
+          "Have your passport and any Saudi entry permit or visa ready before pickup — cross-border driving requirements vary by nationality and are updated periodically, so we confirm the current position when you book rather than assume it stays static.",
+          "Set your pickup time with the crossing in mind: leaving Abu Dhabi in the early morning keeps you ahead of the busier mid-morning traffic at the border. Let us know your luggage volume in advance so the right vehicle is waiting.",
         ],
       },
       {
-        heading: "Crossing into Saudi Arabia and timing your flight",
-        paragraphs: [
-          "The journey crosses from the UAE into Saudi Arabia at Al Ghuwaifat and Al Batha, passing Emirati exit and Saudi entry formalities. The crossing can be busy at weekends and on holidays, so we plan the timing carefully. You will need a valid passport and any Saudi visa or entry permit that applies to your nationality.",
-          "If your journey ends at the airport for an onward flight, we time the whole trip around your departure, allowing generously for the border, the long drive and check-in. Because cross-border driving requirements vary by nationality and change from time to time, we advise on the current procedures and arrange the appropriate vehicle paperwork when you book. Our <a href='/border-transfers/uae-border'>UAE border transfers</a> page explains the crossing.",
+        type: "map",
+        heading: "Abu Dhabi to Riyadh by Road",
+        note: "Route shown is indicative. Distance and time are independently verified estimates, not a live routing calculation.",
+        origin: "Abu Dhabi, United Arab Emirates",
+        destination: "Riyadh, Saudi Arabia",
+      },
+      {
+        type: "facts",
+        heading: "Route Snapshot",
+        layout: "snapshot",
+        items: [
+          { label: "Distance", value: "~880-900 km", emphasis: true },
+          { label: "Driving time", value: "~10-10.5 hrs" },
+          { label: "Border", value: "Al Ghuwaifat / Al Batha" },
+          { label: "Arrival", value: "Riyadh, any address" },
         ],
       },
       {
-        heading: "Comfort on the long-haul drive",
-        paragraphs: [
-          "An eight-hour drive is only manageable in the right vehicle, so we use clean, air-conditioned cars chosen for distance and matched to your group and luggage, with proper rest stops built in. Because the fare is fixed, longer breaks or a slower stretch never change the cost, and there are no baggage limits or check-in queues to manage.",
-          "Travelling by private car means you leave from your Abu Dhabi door and arrive at your Riyadh door, with no onward transfer to arrange. For groups and families carrying a lot of luggage, one vehicle for everyone is often more comfortable and more economical than separate flights and taxis.",
+        type: "timeline",
+        heading: "Your Journey in 3 Stages",
+        orientation: "horizontal",
+        steps: [
+          { label: "UAE departure", detail: "Pickup in Abu Dhabi, onto the E11 toward the Al Ghuwaifat crossing." },
+          { label: "UAE/Saudi border", detail: "Emirati exit, then Saudi entry formalities at Al Batha." },
+          { label: "Riyadh arrival", detail: "Highway 10 west across the desert to your address or the airport." },
         ],
       },
       {
-        heading: "Who chooses the Abu Dhabi to Riyadh drive, and booking",
+        type: "borderPanel",
+        heading: "Crossing Into Saudi Arabia",
         paragraphs: [
-          "The route suits families who value space and flexibility, travellers who prefer the road, and groups who would rather travel together than coordinate flights. For the outbound direction, our <a href='/routes/riyadh-to-abu-dhabi'>Riyadh to Abu Dhabi</a> transfer mirrors this journey.",
-          "Booking is straightforward. Share your Abu Dhabi pickup point, your Riyadh destination or flight details, your preferred time and your group size, and we confirm a suitable long-distance vehicle and a fixed, all-in price before you travel. We operate around the clock. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form and we will reply with a clear confirmation.",
+          "This is the part of the trip worth planning around. On the Emirati side you'll clear exit formalities at Al Ghuwaifat; on the Saudi side, entry procedures at Al Batha include passport control and a vehicle check. Reports on total waiting time vary a lot — commonly well under an hour off-peak, sometimes one to two hours, and occasionally several hours over a holiday weekend.",
+          "Once you're through, you're in Saudi Arabia: different traffic law applies, the currency switches from dirham to riyal, and prayer-time considerations affect when some roadside services operate. None of this needs advance arrangement on your part — it's simply useful to know what's changed.",
         ],
+      },
+      {
+        type: "prose",
+        heading: "After Border Clearance",
+        paragraphs: [
+          "Once processing is complete, your driver rejoins Highway 10 heading west. This is the long stretch of the trip — a straight, fast desert road with a rest stop built in, rather than a series of short hops.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "The Saudi-Side Drive to Riyadh",
+        paragraphs: [
+          "From the border the road runs west through Haradh and past Al Kharj before reaching the edge of Riyadh. It's flat, open highway for most of the distance, with the terrain and skyline changing noticeably only in the final stretch as the capital comes into view.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Arrival in Riyadh",
+        paragraphs: [
+          "We can drop you at a hotel, home or office address, or take you directly to the airport for an onward flight — just tell us which when you book. If you're heading to a flight, share the details and we'll build in a sensible margin for the drive and check-in rather than cutting it close.",
+        ],
+      },
+      {
+        type: "comparison",
+        heading: "Road vs Flying, In Reverse",
+        columns: ["Private road transfer", "Flight (AUH–RUH)"],
+        rows: [
+          { criterion: "Border/customs handling", a: "One land crossing, then straight on to Riyadh", b: "Passport control and customs at each airport" },
+          { criterion: "Onward arrival", a: "Delivered to your exact Riyadh address", b: "Requires a separate airport transfer in Riyadh" },
+          { criterion: "Schedule", a: "You set the departure time from Abu Dhabi", b: "Fixed flight departure and boarding cut-off" },
+          { criterion: "Luggage", a: "No weight limits within vehicle capacity", b: "Airline allowance and excess fees apply" },
+        ],
+      },
+      {
+        type: "ctaBanner",
+        heading: "Plan Your Arrival",
+        body: "Share your Abu Dhabi pickup point, your Riyadh destination or flight details, and your group size — we'll confirm a fixed price before you travel.",
+        whatsappMessage: "Hello! I'd like a quote for an Abu Dhabi to Riyadh private transfer.",
       },
     ],
     faqs: [
-      { question: "How long is the Abu Dhabi to Riyadh drive?", answer: "It is around 750 kilometres, roughly eight hours of driving in free-flowing conditions, plus the Al Batha border crossing. We build in rest stops and recommend a generous buffer. The fixed price does not change if the road or border runs slow." },
-      { question: "Can you time the trip for my flight from Riyadh?", answer: "Yes. If your journey ends at the airport, we plan the whole trip around your departure, allowing generously for the border, the long drive and check-in. Share your flight details when booking and we set the pickup accordingly." },
-      { question: "Where is the border crossing?", answer: "The crossing is at Al Ghuwaifat on the Emirati side and Al Batha on the Saudi side, where you pass Emirati exit and Saudi entry formalities. It can be busy at weekends and on holidays, so we recommend allowing extra time." },
-      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit for your nationality. Cross-border driving rules and vehicle documentation vary by nationality and are updated periodically, so we advise on the current procedures and arrange the appropriate paperwork when you book." },
-      { question: "Do you make rest stops?", answer: "Yes. On a journey of this length we build in proper rest stops for meals, refreshments and a stretch as needed. Because the fare is fixed, longer breaks never add to the cost." },
-      { question: "Is the fare fixed for the whole journey?", answer: "Yes. The price is agreed before you travel and covers the full door-to-door trip, including rest stops, with no meter and no surge, so traffic or a longer border wait never changes what you pay." },
+      { question: "What actually happens when I cross into Saudi Arabia?", answer: "You clear Emirati exit formalities at Al Ghuwaifat, then Saudi entry procedures at Al Batha — passport control and a vehicle check. Reported waiting times vary widely, from well under an hour off-peak to several hours on a busy holiday weekend." },
+      { question: "Where does my driver meet me in Abu Dhabi?", answer: "At your hotel, home or office address — this is a genuine door-to-door pickup, arranged at the time you choose." },
+      { question: "Can you time the trip for a flight out of Riyadh?", answer: "Yes. Share your flight details when booking and we plan the whole journey — including the border and the long drive — around your departure, with a sensible buffer for check-in." },
+      { question: "What documents do I need to enter Saudi Arabia?", answer: "A valid passport and any Saudi visa or entry permit that applies to your nationality. Requirements for cross-border driving vary by nationality and change periodically, so we confirm the current position when you book." },
+      { question: "Is the drive shorter if I start from Dubai instead?", answer: "No — it's the other way round. Abu Dhabi sits closer to the Al Ghuwaifat crossing than Dubai does, so starting from Abu Dhabi is the shorter of the two by roughly an hour." },
+      { question: "Is the fare fixed if the crossing runs long?", answer: "Yes. The price is agreed before you travel and doesn't change if the border or the road takes longer than planned." },
     ],
-    keywords: ["abu dhabi to riyadh taxi", "abu dhabi to riyadh by car", "abu dhabi to riyadh cross border car", "abu dhabi to riyadh via al batha", "abu dhabi to riyadh private transfer"],
+    keywords: ["abu dhabi to riyadh taxi", "abu dhabi to riyadh transfer", "abu dhabi to riyadh by car", "al ghuwaifat border crossing", "abu dhabi to riyadh private driver"],
   },
   {
     slug: "riyadh-to-al-batha-border",
     from: "Riyadh",
     to: "Al Batha Border",
     category: "border",
-    distance: "~470 km",
-    duration: "4-5 hours",
+    distance: "~530 km",
+    duration: "~7-7.5 hours driving",
     intro:
-      "A private transfer from Riyadh to the Al Batha border for onward travel into the UAE. We collect you in the capital and drive you east to the crossing, door to door.",
+      "A dedicated Saudi-side transfer from Riyadh to the Al Batha crossing — for travellers meeting onward transport, a company car, or continuing independently into the UAE.",
     about:
-      "For travellers connecting into the UAE, our Riyadh to Al Batha border transfer drives you from the capital to the Al Batha crossing. We handle the Saudi-side leg at a fixed price; onward UAE transport is arranged separately at the border.",
+      "This is a specialist border-transfer service, not a full international crossing. We handle the Riyadh-to-border leg on the Saudi side at a fixed price; what happens on the UAE side of the crossing is arranged separately by you or your onward contact.",
     notes: [
       "Door-to-door pickup anywhere in Riyadh",
-      "Direct drive east to the Al Batha border crossing",
-      "Drop-off at the Al Batha / Al Ghuwaifat crossing point",
+      "Direct drive east on Highway 10 to the Al Batha crossing",
+      "Drop-off at the Saudi-side border point only — no UAE crossing included",
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Riyadh to Al Batha Border Private Transfer – Book Your Taxi",
+    heroImage: "/images/heroes/intercity.webp",
+    heroAlt: "Private highway transfer from Riyadh toward the Al Batha border crossing",
+    metaTitle: "Riyadh to Al Batha Border Transfer – Saudi-Side Taxi",
     metaDescription:
-      "Reserve a private Riyadh to Al Batha Border taxi (~470 km, 4-5 hours). Comfortable vehicle for the long-distance drive, fixed price.",
-    sections: [
+      "Reliable private transfer from Riyadh to the Al Batha border (~530 km, ~7-7.5 hrs). We handle the Saudi-side leg; onward UAE travel is arranged separately.",
+    h1: "Riyadh to Al Batha Border: Private Saudi-Side Transfer",
+    lastUpdated: "2026-09-02",
+    customLayout: [
       {
-        heading: "Riyadh to Al Batha border: route overview",
+        type: "prose",
+        heading: "Your Border Transfer, Explained",
         paragraphs: [
-          "The Al Batha border is the main land crossing between Saudi Arabia and the United Arab Emirates, and for travellers heading east from the capital, a private transfer to the border is a straightforward first leg. We collect you from your Riyadh address and drive you to the Al Batha crossing, around 470 kilometres east, in roughly four to five hours. This is a Saudi-side transfer that drops you at the border, where onward UAE transport is arranged separately.",
-          "It is a practical arrangement for those meeting an Emirati driver or company car on the other side, or coordinating a business connection at the crossing. The fixed price covers the whole drive from Riyadh to the border. For the full journey to the UAE cities, our <a href='/routes/riyadh-to-dubai'>Riyadh to Dubai</a> and <a href='/routes/riyadh-to-abu-dhabi'>Riyadh to Abu Dhabi</a> transfers cover the complete route.",
+          "This booking covers one thing clearly: a private drive from anywhere in Riyadh to the Al Batha border crossing, on the Saudi side only. It suits travellers meeting an Emirati driver or company car on the other side, or anyone handling their own UAE-side arrangements after the crossing.",
+          "If you need the complete journey into the UAE, our <a href='/routes/riyadh-to-abu-dhabi'>Riyadh to Abu Dhabi</a> and <a href='/routes/riyadh-to-dubai'>Riyadh to Dubai</a> transfers cross the border with you and continue all the way.",
         ],
       },
       {
-        heading: "The drive east and the vehicle",
-        paragraphs: [
-          "From Riyadh the route runs east across the desert toward the Al Batha crossing, a drive of around 470 kilometres that typically takes four to five hours in free-flowing conditions. Our drivers know the highway and keep the journey comfortable, in a clean, air-conditioned vehicle sized to your group and luggage, with a rest stop where useful.",
-          "Because we drop you at the border rather than crossing, the timing is more predictable and not dependent on the crossing queues. That said, we recommend allowing a comfortable buffer if you have a fixed connection on the Emirati side. Our <a href='/border-transfers/uae-border'>UAE border transfers</a> page explains how the crossing works.",
+        type: "map",
+        heading: "Riyadh to Al Batha, Highlighted",
+        note: "Route shown is indicative. Distance and time below are independently verified estimates.",
+        origin: "Riyadh, Saudi Arabia",
+        destination: "Al Batha Border Crossing, Saudi Arabia",
+      },
+      {
+        type: "checklist",
+        heading: "What Is Included in This Transfer?",
+        intro: "Clear about what this booking covers — and what it doesn't.",
+        items: [
+          "Door-to-door pickup anywhere in Riyadh",
+          "A direct drive east on Highway 10 to the Al Batha crossing",
+          "One planned rest stop along the way",
+          "Drop-off at the Saudi-side border point",
+          "A fixed price agreed before you travel",
         ],
       },
       {
-        heading: "Who it suits and booking",
-        paragraphs: [
-          "The service suits business travellers and anyone meeting onward transport at the border, as well as travellers coordinating a cross-border journey in stages. We match the car to your group, from a sedan to an SUV or van for groups with luggage or equipment.",
-          "Booking is quick: share your Riyadh pickup point, any connection timing and your group size, and we confirm the vehicle and a fixed, all-in price before you travel. We operate 24/7. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and for the return leg see our <a href='/routes/al-batha-border-to-riyadh'>Al Batha border to Riyadh</a> transfer.",
+        type: "timeline",
+        heading: "The Drive East",
+        orientation: "vertical",
+        steps: [
+          { label: "Riyadh pickup", detail: "Collected from your hotel, home or office at the agreed time." },
+          { label: "Saudi highway journey", detail: "East via Al Kharj and Haradh on Highway 10, a long, flat desert road." },
+          { label: "Rest and journey planning", detail: "A stop timed to keep you comfortable and to plan your arrival at the crossing." },
+          { label: "Al Batha border arrival", detail: "Drop-off at the Saudi-side crossing point." },
+          { label: "Onward UAE travel", detail: "You proceed through Emirati entry formalities and onward transport, arranged separately." },
         ],
+      },
+      {
+        type: "prose",
+        heading: "Where Does the Transfer End?",
+        paragraphs: [
+          "Drop-off is at the Saudi-side facility at Al Batha, before Emirati passport control. We coordinate the exact point with you ahead of arrival — it's a single, clearly signed crossing, so there's no ambiguity about where the Saudi side ends.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "What Happens After You Reach the Border?",
+        paragraphs: [
+          "From there, the process is the same for every traveller: Saudi exit formalities, then Emirati entry procedures at Al Ghuwaifat, including a vehicle check and — for private cars continuing by road — mandatory third-party UAE insurance purchased on site. If you're meeting a driver or company car, that handover happens once you're through.",
+          "We don't control UAE-side timing or procedures, so if you have a fixed onward connection, we'd recommend building in a buffer rather than assuming an exact crossing time — reports vary from well under an hour to a few hours at busy periods.",
+        ],
+      },
+      {
+        type: "scenarios",
+        heading: "Who Typically Books This Route?",
+        items: [
+          { title: "Business travellers meeting a company car", description: "A UAE-based employer or partner arranges the pickup on the other side, so only the Saudi-side leg needs booking." },
+          { title: "Travellers with a pre-arranged UAE driver", description: "You've already sorted onward transport and just need a reliable, fixed-price ride to the crossing." },
+          { title: "Groups splitting a longer relocation into stages", description: "Moving people or belongings in planned legs rather than one continuous cross-border trip." },
+          { title: "Travellers who don't need a full cross-border service", description: "No reason to pay for the complete Riyadh-to-Dubai or Riyadh-to-Abu Dhabi journey when only the Saudi-side drive is required." },
+        ],
+      },
+      {
+        type: "ctaBanner",
+        heading: "Book Your Border Transfer",
+        body: "Share your Riyadh pickup point, any connection timing on the other side, and your group size — we'll confirm the vehicle and a fixed price.",
+        whatsappMessage: "Hello! I'd like a quote for a Riyadh to Al Batha border transfer.",
       },
     ],
     faqs: [
-      { question: "How long is the drive from Riyadh to the Al Batha border?", answer: "The crossing is around 470 kilometres east of Riyadh, a drive of about four to five hours in free-flowing conditions. Because we drop you at the border rather than crossing, the timing is more predictable, though we recommend a buffer if you have a fixed connection on the Emirati side." },
-      { question: "Do you cross into the UAE or drop me at the border?", answer: "This service drops you at the Al Batha crossing on the Saudi side, where onward UAE transport is arranged separately. If you need to travel all the way to Dubai or Abu Dhabi, our full cross-border transfers cover the complete route." },
-      { question: "Will you collect me from my Riyadh address?", answer: "Yes. This is a door-to-door service. Your driver meets you at your hotel, home or office in Riyadh at the agreed time and drives you directly to the Al Batha border." },
-      { question: "Is the price fixed?", answer: "Yes. The fare is agreed before you travel and covers the whole drive from Riyadh to the border, with no meter and no surge, so traffic never changes what you pay." },
-      { question: "Can you carry a group with luggage or equipment?", answer: "Yes. We match the vehicle to your group and bags, from a sedan to an SUV or van, which suits business travellers connecting into the UAE with equipment. Tell us your numbers when booking." },
-      { question: "Do you operate at all hours?", answer: "Yes, we run 24/7. Your driver is arranged in advance for whatever time you choose, so early departures and late crossings with an onward border connection are handled with the same fixed-price service." },
+      { question: "Do you cross into the UAE, or only drop me at the border?", answer: "Only the Saudi side. This service ends at the Al Batha crossing point; onward UAE transport is arranged separately by you. For a full cross-border journey, see our Riyadh to Dubai or Riyadh to Abu Dhabi transfers." },
+      { question: "How long does the Saudi-side drive actually take?", answer: "Around 530 kilometres, roughly seven to seven-and-a-half hours in free-flowing conditions on Highway 10 via Al Kharj and Haradh." },
+      { question: "Where exactly will I be dropped off?", answer: "At the Saudi-side facility at Al Batha, before Emirati passport control. We confirm the precise point with you ahead of arrival." },
+      { question: "Can I book onward transport into the UAE through you?", answer: "Not as part of this booking — this is a Saudi-side-only transfer. If you'd prefer a service that crosses the border with you, our Riyadh to Abu Dhabi or Riyadh to Dubai transfers cover the complete route." },
+      { question: "Is this cheaper than a full cross-border transfer?", answer: "Generally yes, since it covers a shorter distance and doesn't include the crossing itself. Ask us for both quotes if you're deciding between the two." },
+      { question: "Do you operate at night for early border crossings?", answer: "Yes, we run 24/7. Tell us your target crossing time and we'll set the Riyadh pickup accordingly." },
     ],
-    keywords: ["riyadh to al batha border taxi", "riyadh to al batha crossing transfer", "riyadh to uae border", "al batha border transfer from riyadh", "riyadh to al ghuwaifat border taxi"],
+    keywords: ["riyadh to al batha border taxi", "riyadh to al batha crossing transfer", "riyadh to uae border transfer", "al batha border transfer from riyadh", "riyadh saudi side border drop off"],
   },
   {
     slug: "al-batha-border-to-riyadh",
     from: "Al Batha Border",
     to: "Riyadh",
     category: "border",
-    distance: "~470 km",
-    duration: "4-5 hours",
+    distance: "~530 km",
+    duration: "~7-7.5 hours driving",
     intro:
-      "A private transfer from the Al Batha border to Riyadh for travellers arriving from the UAE. We collect you at the crossing and drive you door to door to the capital.",
+      "For travellers who've just cleared the Al Batha crossing from the UAE — a private car to take you the rest of the way to Riyadh, timed around your clearance.",
     about:
-      "For travellers crossing from the UAE into Saudi Arabia at Al Batha, our transfer collects you at the border and drives you west to Riyadh, around 470 kilometres away. We handle the Saudi-side leg at a fixed price, door to door or timed to an onward flight.",
+      "Border-clearance timing is never exact, so this transfer is built around flexibility: your driver waits on the Saudi side and departs once you're actually through, rather than at a fixed slot.",
     notes: [
-      "Pickup at the Al Batha / Al Ghuwaifat crossing point",
-      "Direct drive west to Riyadh or the airport",
-      "Pickup coordinated around your border clearance",
+      "Pickup at the Al Batha crossing point, Saudi side",
+      "Direct drive west to Riyadh addresses or the airport",
+      "Pickup coordinated around your actual border clearance, not a fixed time",
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["riyadh", "dammam"],
-    metaTitle: "Al Batha Border to Riyadh Transfer – Private Cross-Border Taxi",
+    heroImage: "/images/heroes/city.webp",
+    heroAlt: "Arriving in Riyadh city after crossing the Al Batha border from the UAE",
+    metaTitle: "Al Batha Border to Riyadh – Private Arrival Transfer",
     metaDescription:
-      "Reserve a private Al Batha Border to Riyadh taxi (~470 km, 4-5 hours). Comfortable vehicle for the long-distance drive, fixed price.",
-    sections: [
+      "Crossed into Saudi Arabia at Al Batha? Book a private transfer to Riyadh (~530 km, ~7-7.5 hrs) with pickup timed around your border clearance.",
+    h1: "Al Batha Border to Riyadh: Border Arrival Transfer",
+    lastUpdated: "2026-09-02",
+    customLayout: [
       {
-        heading: "Al Batha border to Riyadh: route overview",
+        type: "prose",
+        heading: "You've Crossed the Border — What's Next?",
         paragraphs: [
-          "For travellers who have crossed from the UAE into Saudi Arabia at the Al Batha border and need to reach the capital, our transfer collects you at the crossing and drives you west to Riyadh. The drive is around 470 kilometres and takes roughly four to five hours in free-flowing conditions. It is the Saudi-side leg of a cross-border journey, ideal when you are meeting onward transport at the border.",
-          "The service suits business travellers, and anyone connecting from the UAE to Riyadh or an onward flight. We collect you at an agreed point once you have cleared the crossing and drive you directly to your destination. For the outbound direction, our <a href='/routes/riyadh-to-al-batha-border'>Riyadh to Al Batha border</a> transfer mirrors this journey.",
+          "Once you're through Saudi entry formalities at Al Batha, the next step is the roughly 530-kilometre drive west to Riyadh. This service picks up specifically at that point, so you don't need to arrange onward transport at the crossing yourself.",
         ],
       },
       {
-        heading: "The drive west and flight timing",
-        paragraphs: [
-          "From the Al Batha border the route runs west across the desert to Riyadh, a comfortable drive in a clean, air-conditioned vehicle sized to your group and luggage, with a rest stop where useful. Border-clearance timing can vary, so we stay flexible and coordinate the pickup around when you actually clear the crossing.",
-          "If your journey ends at the airport for an onward flight, we plan the trip around your departure, allowing for the long drive and check-in. Because the fare is fixed, a longer wait at the border or on the road never changes what you pay. Our <a href='/border-transfers/uae-border'>UAE border transfers</a> page covers the crossing, and our <a href='/taxi-service/riyadh'>Riyadh taxi service</a> handles local legs.",
+        type: "timeline",
+        heading: "From Border to Riyadh",
+        orientation: "horizontal",
+        steps: [
+          { label: "Border arrival", detail: "You clear Saudi entry formalities at Al Batha." },
+          { label: "Driver meeting", detail: "Your driver is waiting at an agreed point on the Saudi side." },
+          { label: "Vehicle departure", detail: "Straight onto Highway 10, heading west." },
+          { label: "Saudi highway", detail: "A long, flat desert drive via Haradh and Al Kharj." },
+          { label: "Riyadh", detail: "Drop-off at your address or the airport." },
         ],
       },
       {
-        heading: "Who it suits and booking",
+        type: "prose",
+        heading: "Meeting Your Driver",
         paragraphs: [
-          "The service suits business travellers, groups and anyone continuing from the UAE into the capital or to a flight out of Riyadh. We match the car to your party, from a sedan to an SUV or van for groups with equipment, and if you are heading to the airport we drop you at the correct terminal for your airline.",
-          "Booking is quick: share your expected border-clearance time, your Riyadh destination or flight details and your group size, and we confirm the vehicle and a fixed, all-in price before your travel day. We operate 24/7. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and for full cross-border routes see our <a href='/routes/dubai-to-riyadh'>Dubai to Riyadh</a> and <a href='/intercity-transfers'>intercity transfers</a> pages.",
+          "We coordinate the meeting point on the Saudi side of the crossing and confirm it with you by WhatsApp as you approach, since exact waiting areas can shift with border layout changes. Share your estimated crossing time when you book, and update us if it changes — we'd rather adjust than have you wait.",
         ],
+      },
+      {
+        type: "map",
+        heading: "The Drive to Riyadh",
+        note: "Route shown is indicative. Distance and time are independently verified estimates.",
+        origin: "Al Batha Border Crossing, Saudi Arabia",
+        destination: "Riyadh, Saudi Arabia",
+      },
+      {
+        type: "checklist",
+        heading: "Planning Your Border Arrival",
+        intro: "Coordination matters more than exact timing on this leg.",
+        items: [
+          "Share your expected crossing time or UAE departure time when booking",
+          "Keep your phone reachable for a WhatsApp update as you approach",
+          "Tell us if you're heading to a flight out of Riyadh so we can plan the buffer",
+          "Let us know your luggage volume in advance",
+        ],
+      },
+      {
+        type: "facts",
+        heading: "What Can Affect Your Total Journey Time?",
+        layout: "grid",
+        items: [
+          { label: "Pure driving time", value: "~7-7.5 hours", emphasis: true },
+          { label: "Border processing, before pickup", value: "Highly variable — minutes to a few hours" },
+          { label: "Coordination / wait for pickup", value: "Minimised by sharing your timing in advance" },
+          { label: "Traffic and rest stops", value: "Already built into the driving estimate" },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Why a Pre-Arranged Transfer Helps",
+        paragraphs: [
+          "Arranging transport before you cross means you're not negotiating a ride at the border itself, where options and pricing can be unpredictable. A confirmed vehicle waiting on the Saudi side, with a fixed price already agreed, removes that uncertainty from an already long travel day.",
+        ],
+      },
+      {
+        type: "ctaBanner",
+        heading: "Arrange Your Pickup",
+        body: "Share your expected crossing time, your Riyadh destination or flight details, and your group size — we'll confirm the vehicle and a fixed price in advance.",
+        whatsappMessage: "Hello! I'd like to arrange a transfer from Al Batha border to Riyadh.",
       },
     ],
     faqs: [
-      { question: "How long is the drive from the Al Batha border to Riyadh?", answer: "Riyadh is around 470 kilometres west of the Al Batha crossing, a drive of about four to five hours in free-flowing conditions. If you are heading to a flight, we plan the pickup around your departure with a margin for the drive and check-in." },
-      { question: "Where does the driver meet me at the border?", answer: "Your driver meets you at an agreed point once you have cleared the Al Batha crossing into Saudi Arabia, then drives you directly to Riyadh. Because clearance timing can vary, we stay flexible and coordinate around when you are actually through." },
-      { question: "Can you take me to the airport instead of the city?", answer: "Yes. We can drop you anywhere in Riyadh or at the airport for an onward flight, timing the trip around your departure. Just tell us your destination when booking and the fixed price covers it." },
-      { question: "Is the fare fixed regardless of border delays?", answer: "Yes. The price is agreed before you travel and covers the whole drive from the border to Riyadh, with no meter and no surge, so a longer border wait or traffic never changes what you pay." },
-      { question: "Can you carry a group with luggage?", answer: "Yes. We match the vehicle to your group and bags, from a sedan to an SUV or van, which suits business travellers and groups connecting from the UAE. Tell us your numbers when booking." },
-      { question: "Do you operate at all hours?", answer: "Yes, we run 24/7. Your driver is arranged in advance for whatever time you clear the border, so early or late crossings are both covered with the same fixed-price service." },
+      { question: "How will the driver find me at the border?", answer: "We agree a meeting point on the Saudi side in advance and confirm it by WhatsApp as you approach, since exact waiting areas can shift. Share your estimated crossing time when booking." },
+      { question: "What if my border crossing takes longer than expected?", answer: "That's expected to vary, so we don't hold you to a fixed slot — your driver waits and departs once you're actually through. Just keep us updated if your timing changes significantly." },
+      { question: "Can you take me straight to the airport instead of the city?", answer: "Yes. Tell us your flight details when booking and we'll plan the drive and drop-off around your departure time." },
+      { question: "Do I need to book before or after I cross?", answer: "Before — ideally as soon as you know your approximate UAE departure or crossing time, so a vehicle is confirmed and waiting rather than arranged last minute." },
+      { question: "Is the fare fixed if I arrive later than planned?", answer: "Yes. The price is agreed before travel and doesn't change if your crossing runs longer than expected." },
+      { question: "Do you operate for early-morning or late-night crossings?", answer: "Yes, 24/7. Whatever time you clear the border, a driver is arranged in advance for that window." },
     ],
-    keywords: ["al batha border to riyadh taxi", "al batha crossing to riyadh transfer", "uae border to riyadh", "al ghuwaifat border to riyadh taxi", "al batha to riyadh private car"],
+    keywords: ["al batha border to riyadh taxi", "al batha crossing to riyadh transfer", "uae border to riyadh pickup", "al ghuwaifat border to riyadh taxi", "border arrival transfer riyadh"],
   },
   {
     slug: "dammam-to-al-batha-border",
@@ -3196,53 +3483,105 @@ const baseRoutes: Route[] = [
     to: "Al Batha Border",
     category: "border",
     distance: "~400 km",
-    duration: "4 hours",
+    duration: "~4-4.5 hours driving",
     intro:
-      "A private transfer from Dammam to the Al Batha border for onward travel into the UAE. We collect you in the Eastern Province and drive you to the crossing, door to door.",
+      "A long-distance drive from the Eastern Province to the Al Batha crossing — shorter than from Riyadh, on a different highway, with its own planning considerations.",
     about:
-      "For travellers connecting from the Eastern Province into the UAE, our Dammam to Al Batha border transfer drives you from Dammam to the Al Batha crossing. We handle the Saudi-side leg at a fixed price; onward UAE transport is arranged separately at the border.",
+      "The Eastern Province sits meaningfully closer to Al Batha than Riyadh does. This transfer takes you from Dammam down the Highway 95 corridor to the crossing, handled as its own route rather than a shorter version of the Riyadh journey.",
     notes: [
-      "Door-to-door pickup anywhere in Dammam",
-      "Direct drive to the Al Batha border crossing",
-      "Drop-off at the Al Batha / Al Ghuwaifat crossing point",
+      "Door-to-door pickup anywhere in Dammam or the wider Eastern Province",
+      "Route runs via the Highway 95 corridor",
+      "Drop-off at the Saudi-side Al Batha border point only",
       "Fixed price, comfortable vehicles, 24/7",
     ],
     relatedCitySlugs: ["dammam", "khobar"],
-    metaTitle: "Dammam to Al Batha Border Private Transfer – Book Your Taxi",
+    heroImage: "/images/heroes/eastern.webp",
+    heroAlt: "Eastern Province highway route from Dammam toward the Al Batha border crossing",
+    metaTitle: "Dammam to Al Batha Border – Eastern Province Transfer",
     metaDescription:
-      "Book a private cross-border transfer from Dammam to Al Batha Border (~400 km, 4 hours). Door-to-door service, fixed fare.",
-    sections: [
+      "Private transfer from Dammam to the Al Batha border (~400 km, ~4-4.5 hrs). The Eastern Province route to the Saudi-UAE crossing, fixed price.",
+    h1: "Dammam to Al Batha Border: Eastern Province to the UAE Frontier",
+    lastUpdated: "2026-09-02",
+    customLayout: [
       {
-        heading: "Dammam to Al Batha border: route overview",
-        paragraphs: [
-          "The Al Batha border is the main land crossing between Saudi Arabia and the United Arab Emirates, and for travellers heading from the Eastern Province into the UAE, a private transfer to the border is a simple first leg. We collect you from your Dammam address and drive you to the Al Batha crossing, around 400 kilometres away, in roughly four hours. This is a Saudi-side transfer that drops you at the border, where onward UAE transport is arranged separately.",
-          "It is a practical arrangement for those meeting an Emirati driver or company car on the other side, or coordinating a business connection at the crossing. The fixed price covers the whole drive from Dammam to the border. For the full journey to the UAE cities, our <a href='/routes/dammam-to-dubai'>Dammam to Dubai</a> transfer covers the complete route.",
+        type: "map",
+        heading: "The Road From Dammam to the Border",
+        note: "Route shown is indicative. Distance estimates for this leg vary by source — see the Route Snapshot below.",
+        origin: "Dammam, Saudi Arabia",
+        destination: "Al Batha Border Crossing, Saudi Arabia",
+        size: "large",
+      },
+      {
+        type: "facts",
+        heading: "Route Snapshot",
+        layout: "grid",
+        items: [
+          { label: "Road distance", value: "~400 km (sources range ~345-430 km)", emphasis: true },
+          { label: "Pure driving time", value: "~4-4.5 hours" },
+          { label: "Main highway", value: "Highway 95 corridor, Eastern Province" },
+          { label: "Border crossing", value: "Al Batha (Saudi) / Al Ghuwaifat (UAE)" },
         ],
       },
       {
-        heading: "The drive and the vehicle",
-        paragraphs: [
-          "From Dammam the route runs south toward the Al Batha crossing, a drive of around 400 kilometres that typically takes about four hours in free-flowing conditions. Our drivers know the highway and keep the journey comfortable, in a clean, air-conditioned vehicle sized to your group and luggage, with a rest stop where useful.",
-          "Because we drop you at the border rather than crossing, the timing is more predictable and not dependent on the crossing queues. That said, we recommend allowing a comfortable buffer if you have a fixed connection on the Emirati side. Our <a href='/border-transfers/uae-border'>UAE border transfers</a> page explains how the crossing works.",
+        type: "timeline",
+        heading: "How the Drive Unfolds",
+        orientation: "vertical",
+        steps: [
+          { label: "Dammam", detail: "Pickup from your Dammam or wider Eastern Province address." },
+          { label: "Eastern Province", detail: "South through the region's interior towns toward the connecting highway." },
+          { label: "Saudi interior", detail: "Joining the corridor used further south by the Riyadh-originating route." },
+          { label: "Al Batha border", detail: "Drop-off at the Saudi-side crossing point." },
         ],
       },
       {
-        heading: "Who it suits and booking",
+        type: "prose",
+        heading: "Why This Route Is Different",
         paragraphs: [
-          "The service suits business travellers and anyone meeting onward transport at the border, as well as travellers coordinating a cross-border journey in stages. We match the car to your group, from a sedan to an SUV or van for groups with luggage or equipment, and our <a href='/taxi-service/dammam'>Dammam taxi service</a> covers any local legs beforehand.",
-          "Booking is quick: share your Dammam pickup point, any connection timing and your group size, and we confirm the vehicle and a fixed, all-in price before you travel. We operate 24/7. Request a fixed-price quote on WhatsApp or through our <a href='/get-quote'>get a quote</a> form, and for the return leg see our <a href='/routes/al-batha-border-to-dammam'>Al Batha border to Dammam</a> transfer.",
+          "This isn't a shorter version of the Riyadh journey — it starts on a different highway corridor and runs through different terrain before the two routes effectively converge near the border. The practical upshot for you is a meaningfully shorter drive: roughly ninety minutes to two hours less than from Riyadh.",
         ],
+      },
+      {
+        type: "checklist",
+        heading: "Planning a Long Road Transfer",
+        intro: "Even at four-plus hours, a little planning makes the drive easier.",
+        items: [
+          "Set a departure time that gets you to the crossing before the busier mid-morning period",
+          "Pack for a single planned rest stop rather than several short ones",
+          "Tell us your luggage volume so the right vehicle is booked",
+          "Choose a sedan for one or two people, an SUV or van for a group with bags",
+          "Share any onward UAE connection timing so we can flag a sensible buffer",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "At the Border",
+        paragraphs: [
+          "This transfer ends at the Saudi-side facility at Al Batha, before Emirati passport control. From there you proceed through Al Ghuwaifat entry procedures and onward UAE transport, which we don't control and don't guarantee a timing for — reports on the crossing itself range from well under an hour to a few hours at busy periods. For the full journey into the UAE, our <a href='/routes/dammam-to-dubai'>Dammam to Dubai</a> transfer covers the complete route instead.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Choosing the Right Vehicle for This Route",
+        paragraphs: [
+          "A sedan suits a solo traveller or couple with normal luggage; for a family or group with bags, an SUV or van keeps everyone together in more comfort over the four-plus hours. Our <a href='/taxi-service/dammam'>Dammam taxi service</a> can also handle any local pickup legs beforehand.",
+        ],
+      },
+      {
+        type: "ctaBanner",
+        heading: "Book Your Eastern Province Transfer",
+        body: "Share your Dammam pickup point, any onward connection timing, and your group size — we'll confirm the vehicle and a fixed price.",
+        whatsappMessage: "Hello! I'd like a quote for a Dammam to Al Batha border transfer.",
       },
     ],
     faqs: [
-      { question: "How long is the drive from Dammam to the Al Batha border?", answer: "The crossing is around 400 kilometres from Dammam, a drive of about four hours in free-flowing conditions. Because we drop you at the border rather than crossing, the timing is more predictable, though we recommend a buffer if you have a fixed connection on the Emirati side." },
-      { question: "Do you cross into the UAE or drop me at the border?", answer: "This service drops you at the Al Batha crossing on the Saudi side, where onward UAE transport is arranged separately. If you need to travel all the way to Dubai or Abu Dhabi, our full cross-border transfers cover the complete route." },
-      { question: "Will you collect me from my Dammam address?", answer: "Yes. This is a door-to-door service. Your driver meets you at your hotel, home or office in Dammam or the wider Eastern Province at the agreed time and drives you directly to the Al Batha border." },
-      { question: "Is the price fixed?", answer: "Yes. The fare is agreed before you travel and covers the whole drive from Dammam to the border, with no meter and no surge, so traffic never changes what you pay." },
-      { question: "Can you carry a group with luggage or equipment?", answer: "Yes. We match the vehicle to your group and bags, from a sedan to an SUV or van, which suits business travellers connecting into the UAE with equipment. Tell us your numbers when booking." },
-      { question: "Do you operate at all hours?", answer: "Yes, we run 24/7. Your driver is arranged in advance for whatever time you choose, so early departures and late crossings with an onward border connection are handled with the same fixed-price service." },
+      { question: "Is this really shorter than driving from Riyadh?", answer: "Yes, meaningfully — the Eastern Province sits closer to Al Batha than Riyadh does, so the pure driving time is roughly ninety minutes to two hours less." },
+      { question: "Which highway do you take from Dammam?", answer: "The route runs via the Highway 95 corridor through the Eastern Province before joining the interior road network that continues toward the border." },
+      { question: "Do you cross into the UAE, or stop at the border?", answer: "This service drops you at the Saudi-side Al Batha point only. For the complete journey into the UAE, our Dammam to Dubai transfer crosses the border and continues on." },
+      { question: "Can I connect this with a flight from King Fahd Airport beforehand?", answer: "Yes. Our Dammam airport transfer can bring you from King Fahd International Airport to your pickup point before this leg begins — just let us know when booking." },
+      { question: "Is the price fixed for the whole drive?", answer: "Yes. The fare is agreed before you travel and covers the full drive from Dammam to the border, regardless of traffic on the day." },
+      { question: "Do you operate at night for early border crossings?", answer: "Yes, we run 24/7. Tell us your target crossing time and we'll set the Dammam pickup accordingly." },
     ],
-    keywords: ["dammam to al batha border taxi", "dammam to al batha crossing transfer", "dammam to uae border", "al batha border transfer from dammam", "eastern province to al batha border taxi"],
+    keywords: ["dammam to al batha border taxi", "dammam to al batha crossing transfer", "eastern province to uae border", "al batha border transfer from dammam", "dammam highway 95 border drive"],
   },
   {
     slug: "al-batha-border-to-dammam",

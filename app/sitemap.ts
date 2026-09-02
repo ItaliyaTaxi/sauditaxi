@@ -11,6 +11,7 @@ import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
 import { distancePages } from "@/data/distance-pages";
 import { journeyPages } from "@/data/journey-pages";
+import { distanceGuideV2Pages } from "@/data/distance-guide-v2";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
 // full redeploy (the sitemap pulls published posts live from the database).
@@ -104,6 +105,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
   }));
 
+  // "Road Distance Guide V2" pages — same /distance/{slug} prefix, a third
+  // distinct visual design (see data/distance-guide-v2.ts).
+  const distanceGuideV2Paths = distanceGuideV2Pages.map((p) => ({
+    path: `/distance/${p.slug}`,
+    priority: 0.6,
+    changeFrequency: "monthly" as const,
+  }));
+
   const base = [
     ...staticPaths,
     ...servicePaths,
@@ -114,6 +123,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...cityHubPaths,
     ...distancePagePaths,
     ...journeyPagePaths,
+    ...distanceGuideV2Paths,
     ...pointTransferPaths,
   ].map((entry) => {
     // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.

@@ -14,6 +14,7 @@ import { CityGrid } from "@/components/sections/CityGrid";
 import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes, getRoute } from "@/data/routes";
+import { RouteCustomBody } from "@/components/routes/RouteBlocks";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import { getArPathForEnPath } from "@/data/translations/ar";
@@ -165,7 +166,7 @@ export default async function RoutePage({
       />
 
       <PageHeader
-        title={`${route.from} to ${route.to} Taxi Service`}
+        title={route.h1 ?? `${route.from} to ${route.to} Taxi Service`}
         subtitle={route.intro}
         crumbs={crumbs}
         backgroundImage={route.heroImage ?? routeHero(route.from, route.to).src}
@@ -176,6 +177,10 @@ export default async function RoutePage({
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
           <div className="lg:col-span-3">
+            {route.customLayout ? (
+              <RouteCustomBody blocks={route.customLayout} from={route.from} to={route.to} />
+            ) : (
+              <>
             <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
               <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
                 Key takeaways
@@ -351,6 +356,8 @@ export default async function RoutePage({
                 ))}
               </div>
             )}
+              </>
+            )}
           </div>
 
           <div className="lg:col-span-2">
@@ -375,7 +382,7 @@ export default async function RoutePage({
       </section>
 
       <VehicleOptions background="muted" />
-      <HowItWorks background="white" />
+      {!route.customLayout && <HowItWorks background="white" />}
 
       {relatedRoutes.length > 0 && (
         <RouteGrid

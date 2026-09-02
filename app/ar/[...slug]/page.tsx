@@ -21,6 +21,14 @@ import { hotelsForCity } from "@/data/hotels";
 import { airportTransferName } from "@/lib/hotel-transfers";
 import { cityAirportFactsAr } from "@/lib/city-hub-facts";
 import { JourneyPageView } from "@/components/journey/JourneyPageView";
+import { DistanceGuideV2View } from "@/components/distance-v2/DistanceGuideV2View";
+
+const arDistanceV2Labels = {
+  faqHeading: "أسئلة شائعة حول هذا الطريق",
+  sourcesHeading: "المصادر",
+  sourceFootnote:
+    "المسافات وأوقات السفر تقريبية وقد تختلف حسب نقطة الانطلاق الدقيقة، والطريق المتبع، وظروف المعبر الحدودي، وحركة السير. آخر تحقق:",
+};
 
 const arJourneyLabels = {
   home: "الرئيسية",
@@ -124,6 +132,7 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     "city-hub": "Airport Transfer",
     distance: "Distance Information",
     journey: "Distance Information",
+    distanceV2: "Distance Information",
   })[type];
 
 export default async function ArabicPage({
@@ -141,6 +150,24 @@ export default async function ArabicPage({
 
   const page = resolve(slug);
   if (!page) notFound();
+
+  if (page.type === "distanceV2" && page.distanceV2) {
+    return (
+      <>
+        <SchemaScript
+          schema={[breadcrumbSchema(page.breadcrumbs), faqSchema(page.distanceV2.faqs)]}
+        />
+        <DistanceGuideV2View
+          {...page.distanceV2}
+          h1={page.h1}
+          from={page.distanceV2From ?? ""}
+          to={page.distanceV2To ?? ""}
+          crumbs={page.breadcrumbs}
+          labels={arDistanceV2Labels}
+        />
+      </>
+    );
+  }
 
   if (page.type === "journey" && page.journey) {
     return (
