@@ -431,7 +431,7 @@ export function DistanceGuideV2View({
     <>
       {/* ── Compact editorial masthead — no image hero, no booking CTA ── */}
       <section className="border-b border-border bg-white">
-        <div className="mx-auto max-w-3xl px-4 pb-10 pt-8 sm:px-6 sm:pt-12 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 pb-10 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-36">
           <Breadcrumbs items={crumbs} />
           <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-gold">{eyebrow}</p>
           <h1 className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
