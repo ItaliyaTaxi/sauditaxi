@@ -10,6 +10,11 @@ import { CtaButtons } from "@/components/CtaButtons";
  * RouteBlock union and app/(main)/routes/[slug]/page.tsx for the loop that
  * calls this. Only routes with a `customLayout` ever reach this file — every
  * other route page is untouched.
+ *
+ * Currently used exclusively by border-category routes, which are out of
+ * scope for the Phase 3 domestic city-to-city redesign — kept on the
+ * original design tokens so that redesign never touches this file. The new
+ * brand version for domestic routes lives in RouteJourneyBlocks.tsx.
  */
 
 function Prose({ heading, paragraphs }: Extract<RouteBlock, { type: "prose" }>) {

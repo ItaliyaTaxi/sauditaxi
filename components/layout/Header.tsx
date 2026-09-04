@@ -67,14 +67,14 @@ const navLinksEn: NavItem[] = [
  */
 function buildArNavLinks(): NavItem[] {
   const dict = getDictionary("ar");
-  const services = arPages.filter((p) => p.type === "service");
+  const services = arPages.filter((p) => p.type === "serviceV2");
   const airports = arPages.filter((p) => p.type === "airport");
 
   const children: NavItem[] = [];
   if (services.length) {
     children.push({
       label: dict.nav.services,
-      href: "/ar",
+      href: "/ar/خدماتنا",
       wide: true,
       children: services.map((s) => ({ label: s.h1, href: arPath(s) })),
     });
@@ -158,7 +158,7 @@ export function Header() {
               size="sm"
               className="hidden rounded-xl bg-brass text-midnight shadow-md shadow-brass/20 hover:bg-brass-soft sm:inline-flex"
             >
-              <Link href="/get-quote">{dict.nav.getQuote}</Link>
+              <Link href={locale === "ar" ? "/ar/اطلب-عرض-سعر" : "/get-quote"}>{dict.nav.getQuote}</Link>
             </Button>
             <button
               type="button"
@@ -306,7 +306,7 @@ export function Header() {
           })}
           <div className="mt-2 px-1">
             <Button asChild variant="gold" className="w-full rounded-xl bg-brass text-midnight shadow-md shadow-brass/20 hover:bg-brass-soft">
-              <Link href="/get-quote" onClick={closeAll}>
+              <Link href={locale === "ar" ? "/ar/اطلب-عرض-سعر" : "/get-quote"} onClick={closeAll}>
                 {dict.nav.getQuote}
               </Link>
             </Button>

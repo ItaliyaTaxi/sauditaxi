@@ -1,132 +1,113 @@
 import type { Metadata } from "next";
-import { MessageCircle, Mail, Clock, MapPin } from "lucide-react";
-import { PageHeader } from "@/components/sections/PageHeader";
+import { ContactPageView } from "@/components/contact/ContactPageView";
 import { QuoteForm } from "@/components/QuoteForm";
-import { CTASection } from "@/components/sections/CTASection";
-import { TrustpilotWidget } from "@/components/TrustpilotWidget";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
-import { heroImages } from "@/lib/hero";
 import { siteConfig, whatsappLink } from "@/lib/site";
+import { pageHeroes } from "@/lib/hero";
 
+// New design only — same URL (/contact), same canonical/hreflang. Distinct
+// from /get-quote and /services in purpose, structure and content: this
+// page is about communication and trust ("how do I reach you"), not a
+// booking funnel or a service catalog. Only real, functioning contact
+// channels are shown (WhatsApp deep link + email) — no invented phone
+// number, office address, or support-hour guarantee.
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "Contact", path: "/contact" },
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Saudi Private Transfers – Get Help & Book a Ride",
+  title: "Contact Saudi Private Transfers | Get in Touch",
   description:
-    "Contact Saudi Private Transfers by WhatsApp or our online form for fast, fixed-price quotes on airport, city, intercity, and border transfers.",
+    "Contact Saudi Private Transfers about a transfer question, an existing booking, or a new quote request — reach us by WhatsApp, email, or the form below.",
   path: "/contact",
   alternateLanguages: { en: "/contact", ar: "/ar/اتصل-بنا" },
 });
-
-const channels = [
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    // Number intentionally hidden — only a label is shown; the actual number
-    // lives in the wa.me link.
-    value: "Tap to start a chat",
-    href: whatsappLink("Hello! I'd like a taxi quote in Saudi Arabia."),
-    note: "Fastest response — usually within minutes",
-    external: true,
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: siteConfig.email,
-    href: `mailto:${siteConfig.email}`,
-    note: "For quotes, group, and corporate enquiries",
-    external: false,
-  },
-];
 
 export default function ContactPage() {
   return (
     <>
       <SchemaScript schema={breadcrumbSchema(crumbs)} />
-      <PageHeader
-        title="Contact Our Taxi Service"
-        subtitle="Reach us on WhatsApp, through the booking form, or by email — we'll reply quickly with a fixed quote for your journey."
+      <ContactPageView
+        eyebrow="Contact Us"
+        h1="Contact Saudi Private Transfers"
+        intro="Reach us about a transfer question, an existing booking, or a new journey — we reply by WhatsApp or email with clear next steps."
+        heroImage={pageHeroes.city}
+        heroAlt="Private transfer support across Saudi Arabia's cities"
+        topics={["Transfer questions", "Existing bookings", "Quote requests", "Journey planning", "General support"]}
+        decisionHeading="Choose the Right Way to Contact Us"
+        decisionItems={[
+          {
+            question: "Need a price for an upcoming transfer?",
+            action: "Request a Quote",
+            href: "/get-quote",
+          },
+          {
+            question: "Have a question about a journey or how the service works?",
+            action: "Send Us a Message",
+            href: "#contact-form",
+          },
+          {
+            question: "Already have a booking and need to reach us quickly?",
+            action: "Message Us on WhatsApp",
+            href: whatsappLink("Hello! I have a question about my transfer booking in Saudi Arabia."),
+          },
+        ]}
+        methodsHeading="Contact Methods"
+        methodsIntro="Both channels reach the same team — choose whichever is easier for you."
+        methods={[
+          {
+            key: "whatsapp",
+            title: "WhatsApp",
+            value: "Tap to start a chat",
+            href: whatsappLink("Hello! I'd like to get in touch about a transfer in Saudi Arabia."),
+            external: true,
+            bestFor: "Best for a quick question or a fast quote",
+          },
+          {
+            key: "email",
+            title: "Email",
+            value: siteConfig.email,
+            href: `mailto:${siteConfig.email}`,
+            bestFor: "Best for detailed questions or documentation",
+          },
+        ]}
+        formHeading="Send Us a Message"
+        formSubheading="Share your journey details below and we'll get back to you by WhatsApp or email."
+        formSlot={<QuoteForm serviceType="Contact page enquiry" twoColumn={false} />}
+        infoHeading="What Information Helps Us Assist You?"
+        infoItems={[
+          "Your pickup location and destination",
+          "Your travel date and time",
+          "Number of passengers and luggage",
+          "Your flight number, if arriving by air",
+          "Any existing booking reference, if you have one",
+        ]}
+        nextStepsHeading="What Happens Next?"
+        nextSteps={[
+          {
+            label: "Send your message",
+            text: "Use WhatsApp, email, or the form above with your journey details.",
+          },
+          {
+            label: "We review the details",
+            text: "Our team checks your journey and the information you've shared.",
+          },
+          {
+            label: "We respond through the right channel",
+            text: "You'll hear back by WhatsApp or email, whichever you used to reach us.",
+          },
+        ]}
+        linksHeading="You might also be looking for:"
+        links={[
+          { label: "Get a Quote", href: "/get-quote" },
+          { label: "Our Services", href: "/services" },
+          { label: "About Us", href: "/about" },
+        ]}
         crumbs={crumbs}
-        backgroundImage={heroImages.city}
-        showCtas={false}
       />
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div>
-            <h2 className="text-2xl font-bold text-navy">Get in Touch</h2>
-            <p className="mt-3 text-muted-foreground">
-              Whether you need an airport pickup, a city ride, or a long-distance
-              transfer, choose the channel that suits you best.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              {channels.map((c) => {
-                const Icon = c.icon;
-                return (
-                  <a
-                    key={c.title}
-                    href={c.href}
-                    target={c.external ? "_blank" : undefined}
-                    rel={c.external ? "noopener noreferrer" : undefined}
-                    className="flex items-start gap-4 rounded-xl border border-border bg-white p-5 transition-all hover:border-gold hover:shadow-sm"
-                  >
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-navy text-gold">
-                      <Icon className="size-5" />
-                    </span>
-                    <span>
-                      <span className="block font-semibold text-navy">{c.title}</span>
-                      <span className="block text-sm text-navy">{c.value}</span>
-                      <span className="block text-xs text-muted-foreground">{c.note}</span>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-
-            <div className="mt-8 space-y-2 text-sm text-muted-foreground">
-              <p className="flex items-center gap-2">
-                <Clock className="size-4 text-gold" /> Open 24 hours, 7 days a week
-              </p>
-              <p className="flex items-center gap-2">
-                <MapPin className="size-4 text-gold" /> Serving all major cities and airports in Saudi Arabia
-              </p>
-            </div>
-
-          </div>
-
-          <div className="rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-navy">Send a Booking Request</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Fill in your trip details and we&apos;ll email you a fixed price.
-            </p>
-            <div className="mt-5">
-              <QuoteForm serviceType="Contact page enquiry" twoColumn={false} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-muted py-16 sm:py-20">
-        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            Had a Great Trip?
-          </h2>
-          <p className="mt-3 text-muted-foreground">
-            Let other travellers know — leave us a review on Trustpilot.
-          </p>
-          <div className="mt-8">
-            <TrustpilotWidget />
-          </div>
-        </div>
-      </section>
-
-      <CTASection />
     </>
   );
 }

@@ -1,24 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { CityGrid } from "@/components/sections/CityGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { cityTransfersContent } from "@/data/service-pages-v2/city-transfers";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("city-transfers")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/city-transfers";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "City Transfers", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "City Transfers Saudi Arabia | Private Local Journeys",
+  description:
+    "Private city transfers in Saudi Arabia — door-to-door pickup for meetings, hotels, attractions and stations, with a driver for your day, not a shared ride.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
 
 export default function CityTransfersPage() {
   return (
-    <ServicePage service={service}>
-      <CityGrid background="white" />
-    </ServicePage>
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "City Transfers",
+            description: cityTransfersContent.dek,
+            path,
+            serviceType: "City Transfer",
+          }),
+          faqSchema(cityTransfersContent.faqs),
+        ]}
+      />
+      <ServiceV2View {...cityTransfersContent} crumbs={crumbs} labels={{ faqHeading: "City Transfer Questions" }} />
+    </>
   );
 }

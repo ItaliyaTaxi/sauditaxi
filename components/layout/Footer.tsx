@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 const popularCities = cities.slice(0, 8);
 const footerServices = services.filter((s) => s.featured);
 const footerAirports = airports.slice(0, 6);
-const arServices = arPages.filter((p) => p.type === "service");
+const arServices = arPages.filter((p) => p.type === "serviceV2");
 
 /**
  * A client component so the footer can detect /ar/* client-side without
@@ -188,11 +188,11 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href={isAr ? "/ar/من-نحن" : "/about"} className="hover:text-brass">{dict.footer.aboutUs}</Link></li>
               <li><Link href={isAr ? "/ar/اتصل-بنا" : "/contact"} className="hover:text-brass">{dict.footer.contact}</Link></li>
-              <li><Link href="/get-quote" className="hover:text-brass">{dict.footer.getAQuote}</Link></li>
-              {!isAr && <li><Link href="/services" className="hover:text-brass">{dict.footer.allServices}</Link></li>}
+              <li><Link href={isAr ? "/ar/اطلب-عرض-سعر" : "/get-quote"} className="hover:text-brass">{dict.footer.getAQuote}</Link></li>
+              <li><Link href={isAr ? "/ar/خدماتنا" : "/services"} className="hover:text-brass">{dict.footer.allServices}</Link></li>
               {!isAr && <li><Link href="/sitemap" className="hover:text-brass">Sitemap</Link></li>}
-              <li><Link href="/terms-and-conditions" className="hover:text-brass">{dict.footer.termsAndConditions}</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-brass">{dict.footer.privacyPolicy}</Link></li>
+              <li><Link href={isAr ? "/ar/الشروط-والأحكام" : "/terms-and-conditions"} className="hover:text-brass">{dict.footer.termsAndConditions}</Link></li>
+              <li><Link href={isAr ? "/ar/سياسة-الخصوصية" : "/privacy-policy"} className="hover:text-brass">{dict.footer.privacyPolicy}</Link></li>
             </ul>
           </div>
         </div>
@@ -202,9 +202,9 @@ export function Footer() {
             © {year} {siteConfig.legalName}. {dict.footer.allRightsReserved}
           </p>
           <div className="flex items-center gap-4 text-white/60">
-            <Link href="/terms-and-conditions" className="hover:text-brass">{dict.footer.terms}</Link>
+            <Link href={isAr ? "/ar/الشروط-والأحكام" : "/terms-and-conditions"} className="hover:text-brass">{dict.footer.terms}</Link>
             <span aria-hidden="true">·</span>
-            <Link href="/privacy-policy" className="hover:text-brass">{dict.footer.privacy}</Link>
+            <Link href={isAr ? "/ar/سياسة-الخصوصية" : "/privacy-policy"} className="hover:text-brass">{dict.footer.privacy}</Link>
           </div>
         </div>
       </div>

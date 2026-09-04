@@ -7247,7 +7247,7 @@ const baseRoutes: Route[] = [
     intro:
       "Direct private transfer from Jeddah to Riyadh across the Kingdom with professional chauffeur, fixed upfront pricing, and 24/7 door-to-door service.",
     about:
-      "Travel comfortably between Saudi Arabia's commercial port city and the capital without airport waiting or luggage restrictions. Our private Jeddah to Riyadh transfer offers executive sedans, spacious SUVs, and family vans with scheduled highway rest stops, chilled refreshments, and flight or hotel meet-and-greet.",
+      "Travel comfortably between Saudi Arabia's commercial port city and the capital without airport waiting or luggage restrictions. Our private Jeddah to Riyadh transfer offers a choice of sedans, SUVs, and family vans, with rest stops built into the nine-hour journey at a pace agreed with you at booking.",
     notes: [
       "Door-to-door service from any Jeddah hotel, residential address, or airport",
       "Direct drop-off at any Riyadh district, hotel, or King Khalid International Airport",
@@ -7267,7 +7267,7 @@ const baseRoutes: Route[] = [
       {
         heading: "Vehicle selection and executive service",
         paragraphs: [
-          "Choose between premium sedans for solo travellers and executives, spacious SUVs for families, or multi-passenger vans with ample luggage capacity. Every private booking includes complimentary bottled water, phone charging ports, and route flexibility.",
+          "Choose between sedans for solo travellers, SUVs for families, or vans for larger groups with more luggage. Rest-stop timing and pacing for the nine-hour drive are agreed with you at booking rather than fixed in advance.",
         ],
       },
     ],
@@ -7294,7 +7294,7 @@ const baseRoutes: Route[] = [
       "Avoid domestic flight connections or layovers by booking a seamless private transfer directly from Jeddah Airport (JED) to Riyadh. Your driver tracks your incoming flight, greets you in the arrival hall with a personalized name sign, assists with luggage, and provides a comfortable overland ride directly to your Riyadh hotel or office.",
     notes: [
       "Meet and greet inside Terminal 1, North Terminal, or Hajj Terminal",
-      "Live flight tracking with 60 minutes complimentary arrival wait time",
+      "Live flight tracking, with pickup timed to your actual landing rather than the scheduled time",
       "Direct highway route to Riyadh without changing vehicles",
       "Spacious SUVs and vans for international luggage volume",
     ],
@@ -7404,7 +7404,7 @@ const baseRoutes: Route[] = [
     intro:
       "Private return transfer from NEOM project sites and residential communities directly to Tabuk city and Tabuk Regional Airport (TUU).",
     about:
-      "Schedule your return transfer from NEOM to Tabuk with guaranteed punctuality. Whether heading to catch a domestic or international flight at Tabuk Airport or returning to Tabuk city, our private chauffeurs collect you directly from your camp or office and ensure a smooth, comfortable 2-hour journey.",
+      "Schedule your return transfer from NEOM to Tabuk with a pickup time built around your schedule. Whether heading to catch a domestic or international flight at Tabuk Airport or returning to Tabuk city, our private chauffeurs collect you directly from your camp or office for a comfortable 2-hour journey.",
     notes: [
       "Direct pickup from NEOM Community camps, hotels, and project facilities",
       "Punctual transfer timed to flight departures at Tabuk Regional Airport (TUU)",
@@ -8275,7 +8275,7 @@ const baseRoutes: Route[] = [
       "Meet-and-greet pickup inside AlUla International Airport (ULH) terminal",
       "Direct overland transfer to all Riyadh districts, corporate centers, and RUH airport",
       "Luxury SUVs and executive sedans equipped for long-distance desert journeys",
-      "Fixed pricing with complimentary refreshments and customized rest breaks",
+      "Fixed pricing agreed before travel, with rest breaks planned to suit the journey",
     ],
     relatedCitySlugs: ["alula", "riyadh"],
     lastUpdated: "2026-08-16",
@@ -8377,7 +8377,7 @@ const baseRoutes: Route[] = [
       "Meet-and-greet pickup across domestic and international arrivals at AHB",
       "Direct delivery to any Riyadh district, corporate park, or hotel",
       "Spacious SUVs and vans with generous baggage space",
-      "Guaranteed fixed pricing agreed before departure",
+      "Fixed price agreed before departure, with no meter or surge pricing",
     ],
     relatedCitySlugs: ["abha", "riyadh"],
     lastUpdated: "2026-08-16",
@@ -8593,7 +8593,7 @@ const baseRoutes: Route[] = [
       },
       {
             "question": "What happens if my flight to Riyadh is delayed?",
-            "answer": "We track your flight number in real time. Pickup timing adjusts automatically according to actual landing time, with 60 minutes complimentary wait time included."
+            "answer": "We track your flight number in real time, so the pickup timing adjusts automatically to your actual landing time rather than the scheduled one."
       },
       {
             "question": "How long is the transfer from RUH Airport to central Riyadh?",
@@ -8951,7 +8951,7 @@ const baseRoutes: Route[] = [
     faqs: [
       {
             "question": "Can cruise passengers perform Umrah during a Jeddah port call?",
-            "answer": "Yes, we provide round-trip Umrah transfers tailored to your ship's docking schedule with guaranteed timely return to the port."
+            "answer": "Yes — round-trip transfers can be coordinated around your ship's docking schedule, with a return time planned to give you a safe margin before departure. Because traffic and Umrah crowd levels can vary, confirm your preferred return time when you book."
       }
     ],
     keywords: ["jeddah port to makkah taxi","jeddah cruise terminal to makkah","jeddah port umrah transfer"]
@@ -8991,11 +8991,11 @@ const baseRoutes: Route[] = [
     duration: "1 hr 10 min",
     lastUpdated: "2026-08-19",
     intro: "Private transfer from Red Sea International Airport (RSI) to coastal resorts and hotels in Umluj.",
-    about: "Landing at the architectural marvel of Red Sea International Airport (RSI)? Our private chauffeur meets you at arrivals and provides a scenic, luxurious transfer south along the Red Sea coast to Umluj hotels, beaches, and diving marinas.",
+    about: "Landing at Red Sea International Airport (RSI)? Our private chauffeur meets you at arrivals and provides a direct transfer south along the Red Sea coast to Umluj's hotels, beaches, and diving marinas.",
     notes: [
       "Meet and greet at Red Sea International Airport (RSI) arrivals",
       "Direct transfer to Umluj coastal resorts, chalets, and marinas",
-      "Premium SUVs and luxury sedans with chilled refreshments",
+      "SUVs and sedans suited to touring and diving gear",
       "Flight tracking aligned with RSI scheduled domestic and international arrivals"
     ],
     relatedCitySlugs: ["yanbu","alula"],

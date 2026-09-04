@@ -1,29 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { CityGrid } from "@/components/sections/CityGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { ziyaratTaxiServiceContent } from "@/data/service-pages-v2/ziyarat-taxi-service";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("ziyarat-taxi-service")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/ziyarat-taxi-service";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Ziyarat Taxi Service", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "Ziyarat Transportation | Makkah & Madinah Private Transfers",
+  description:
+    "Private transportation for Ziyarat visits to historic sites around Makkah and Madinah — flexible multi-stop journeys with a driver who knows the route.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
 
 export default function ZiyaratTaxiPage() {
   return (
-    <ServicePage service={service}>
-      <CityGrid
-        background="white"
-        heading="Ziyarat in the Holy Cities"
-        subheading="Private visits to the historic Islamic sites of Makkah and Madinah."
-        only={["makkah", "madinah"]}
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "Ziyarat Transportation",
+            description: ziyaratTaxiServiceContent.dek,
+            path,
+            serviceType: "Ziyarat Transfer",
+          }),
+          faqSchema(ziyaratTaxiServiceContent.faqs),
+        ]}
       />
-    </ServicePage>
+      <ServiceV2View {...ziyaratTaxiServiceContent} crumbs={crumbs} labels={{ faqHeading: "Ziyarat Transportation Questions" }} />
+    </>
   );
 }

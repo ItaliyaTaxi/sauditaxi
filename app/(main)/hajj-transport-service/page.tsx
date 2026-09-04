@@ -1,35 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { RouteGrid } from "@/components/sections/RouteGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { hajjTransportServiceContent } from "@/data/service-pages-v2/hajj-transport-service";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("hajj-transport-service")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/hajj-transport-service";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Hajj Transport Service", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "Hajj Transportation Planning | Saudi Private Transfers",
+  description:
+    "Private transportation planning for Hajj travel — airport, hotel and group transfers, clearly separated from official Hajj permits and access rules.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
 
 export default function HajjTransportPage() {
   return (
-    <ServicePage service={service}>
-      <RouteGrid
-        background="white"
-        heading="Hajj & Pilgrim Transfer Routes"
-        subheading="Group transfers across the holy cities and the main pilgrim routes."
-        only={[
-          "jeddah-to-makkah",
-          "makkah-to-madinah",
-          "jeddah-to-madinah",
-          "jeddah-airport-to-madinah",
-          "madinah-to-jeddah-airport",
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "Hajj Transportation Planning",
+            description: hajjTransportServiceContent.dek,
+            path,
+            serviceType: "Hajj Transfer",
+          }),
+          faqSchema(hajjTransportServiceContent.faqs),
         ]}
       />
-    </ServicePage>
+      <ServiceV2View {...hajjTransportServiceContent} crumbs={crumbs} labels={{ faqHeading: "Hajj Transportation Questions" }} />
+    </>
   );
 }

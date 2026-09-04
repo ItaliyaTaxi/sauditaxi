@@ -33,7 +33,7 @@ const homeFaqs = [
   { question: "كيف أحجز رحلتي؟", answer: "يمكنك تعبئة نموذج طلب عرض السعر في أعلى الصفحة، أو التواصل معنا مباشرة عبر واتساب، وسنرد عليك خلال دقائق بسعر ثابت." },
 ];
 
-const arServices = arPages.filter((p) => p.type === "service");
+const arServices = arPages.filter((p) => p.type === "serviceV2");
 const serviceIcons = [Plane, Car, MapPinned, ShieldCheck, Building2, MapPinned, MapPinned, MapPinned];
 
 export default function ArabicHomePage() {

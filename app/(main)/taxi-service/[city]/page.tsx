@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Plane, MapPin, ArrowRight, CircleCheck } from "lucide-react";
-import { PageHeader } from "@/components/sections/PageHeader";
-import { VehicleOptions } from "@/components/sections/VehicleOptions";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { FAQSection } from "@/components/sections/FAQSection";
-import { CTASection } from "@/components/sections/CTASection";
-import { LatestGuides } from "@/components/sections/LatestGuides";
-import { CityGrid } from "@/components/sections/CityGrid";
-import { RouteGrid } from "@/components/sections/RouteGrid";
-import { QuoteForm } from "@/components/QuoteForm";
+import { CityHubView, type CityHubLinkItem, type CityHubRouteCard } from "@/components/city-hub/CityHubView";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { cities, getCity } from "@/data/cities";
 import { getRoute } from "@/data/routes";
 import { getAirport } from "@/data/airports";
 import { hotelsForCity } from "@/data/hotels";
-import { pointTransfersForCity } from "@/lib/point-transfers";
 import { cityHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -28,6 +17,14 @@ import {
   taxiServiceSchema,
 } from "@/lib/schema";
 
+// City Hub redesign — "destination transportation guide" editorial
+// identity (see components/city-hub/CityHubView.tsx), distinct from the
+// Airport Hub's arrival-journey layout and the Border Hub's
+// crossing-logistics layout. Same URL (/taxi-service/{city}), same
+// canonical/hreflang. Content is drawn from the existing, already-unique
+// per-city data in data/cities.ts (+ data/city-guides.ts) and
+// data/routes.ts — this is a presentation/IA redesign, not a content
+// rewrite, so no new facts are introduced.
 type Params = { city: string };
 
 export function generateStaticParams() {
@@ -75,6 +72,8 @@ function fallbackCityFaqs(name: string): Faq[] {
   ];
 }
 
+const BORDER_HINT = /bahrain|qatar|border|kuwait|uae|jordan/i;
+
 export default async function CityPage({
   params,
 }: {
@@ -84,13 +83,8 @@ export default async function CityPage({
   const city = getCity(slug);
   if (!city) notFound();
 
-  const airport = city.nearestAirportSlug
-    ? getAirport(city.nearestAirportSlug)
-    : undefined;
+  const airport = city.nearestAirportSlug ? getAirport(city.nearestAirportSlug) : undefined;
   const hotelCount = hotelsForCity(city.slug).length;
-  const attractionTransfers = pointTransfersForCity(city.slug).filter(
-    (t) => t.category === "attraction"
-  );
   const faqs = (city.faqs ?? fallbackCityFaqs(city.name)).slice(0, 15);
   const path = `/taxi-service/${city.slug}`;
   const crumbs = [
@@ -98,9 +92,39 @@ export default async function CityPage({
     { name: "City Transfers", path: "/city-transfers" },
     { name: `${city.name} Taxi`, path },
   ];
-  const relatedCities = city.popularDestinations
-    .map((d) => cities.find((c) => c.name.toLowerCase() === d.toLowerCase())?.slug)
-    .filter((s): s is string => Boolean(s) && s !== city.slug);
+
+  const routes: CityHubRouteCard[] = (city.popularRoutes ?? [])
+    .map((routeSlug): CityHubRouteCard | null => {
+      const r = getRoute(routeSlug);
+      if (!r) return null;
+      return { from: r.from, to: r.to, distance: r.distance, duration: r.duration, href: `/routes/${routeSlug}` };
+    })
+    .filter((r): r is CityHubRouteCard => r !== null)
+    .slice(0, 9);
+
+  const nearbyCities: CityHubLinkItem[] = city.popularDestinations
+    .map((d) => cities.find((c) => c.name.toLowerCase() === d.toLowerCase()))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+    .filter((c) => c.slug !== city.slug)
+    .map((c) => ({ label: `${c.name} Taxi`, href: `/taxi-service/${c.slug}` }));
+
+  const hasBorderRelevance =
+    city.popularDestinations.some((d) => BORDER_HINT.test(d)) ||
+    (city.popularRoutes ?? []).some((r) => BORDER_HINT.test(r));
+  const isPilgrimGateway = ["makkah", "madinah", "jeddah"].includes(city.slug);
+
+  const services: CityHubLinkItem[] = [
+    { label: "City Transfers", href: "/city-transfers" },
+    { label: "Airport Transfers", href: "/airport-transfers" },
+    { label: "Intercity Transfers", href: "/intercity-transfers" },
+    ...(isPilgrimGateway
+      ? [
+          { label: "Umrah Taxi Service", href: "/umrah-taxi-service" },
+          { label: "Ziyarat Taxi Service", href: "/ziyarat-taxi-service" },
+        ]
+      : []),
+    ...(hasBorderRelevance ? [{ label: "Border Transfers", href: "/border-transfers" }] : []),
+  ];
 
   return (
     <>
@@ -120,234 +144,63 @@ export default async function CityPage({
         ]}
       />
 
-      <PageHeader
-        title={`Taxi Service in ${city.name}`}
-        subtitle={city.intro}
+      <CityHubView
+        eyebrow={city.region}
+        h1={`Private Transfers in ${city.name}`}
+        dek={city.intro}
+        heroImage={city.heroImage ?? cityHero(city.slug, city.name).src}
+        heroAlt={city.heroAlt ?? cityHero(city.slug, city.name).alt}
+        facts={[
+          { label: "Region", value: city.region },
+          ...(airport ? [{ label: "Nearest Airport", value: `${airport.code} · ${airport.name}` }] : []),
+          ...(city.popularDestinations[0]
+            ? [{ label: "Popular Corridor", value: `${city.name} ↔ ${city.popularDestinations[0]}` }]
+            : []),
+        ]}
+        aboutHeading={`About Transfers in ${city.name}`}
+        aboutParagraphs={[city.about, city.localInsight].filter((p): p is string => Boolean(p))}
+        highlightsHeading={`Why Book a Private Transfer in ${city.name}`}
+        highlights={city.highlights}
+        routesHeading={routes.length > 0 ? `Popular Private Transfers from ${city.name}` : undefined}
+        routesIntro={
+          routes.length > 0
+            ? `A selection of the most-requested long-distance journeys from ${city.name}.`
+            : undefined
+        }
+        routes={routes}
+        airportCard={
+          airport
+            ? {
+                heading: "Airport Transfers",
+                text: `Private meet-and-greet pickup and drop-off via ${airport.name} (${airport.code}), with flight tracking included.`,
+                linkLabel: `View ${airport.city} airport transfers`,
+                href: `/airport-transfer/${airport.slug}`,
+              }
+            : undefined
+        }
+        hotelsCard={
+          hotelCount > 0
+            ? {
+                heading: "Hotel Transfers",
+                text: `Fixed-price private transfers between the airport and ${hotelCount}+ hotels across ${city.name}.`,
+                linkLabel: `Browse ${city.name} hotel transfers`,
+                href: `/cities/${city.slug}#hotels`,
+              }
+            : undefined
+        }
+        landmarksHeading={`Common Pickup & Drop-off Points in ${city.name}`}
+        landmarks={city.landmarks}
+        nearbyCitiesHeading={nearbyCities.length > 0 ? "Nearby Cities" : undefined}
+        nearbyCities={nearbyCities}
+        servicesHeading="Related Services"
+        services={services}
+        faqsHeading={`Frequently Asked Questions About ${city.name} Transfers`}
+        faqs={faqs}
+        ctaHeading={`Ready to Book Your ${city.name} Transfer?`}
+        ctaText="Share your pickup, destination, date, and passenger details — we reply with a fixed price before you travel."
+        ctaLabel={`Get a ${city.name} Quote`}
+        ctaHref={`/get-quote?pickup=${encodeURIComponent(city.name)}`}
         crumbs={crumbs}
-        backgroundImage={city.heroImage ?? cityHero(city.slug, city.name).src}
-        backgroundAlt={city.heroAlt ?? cityHero(city.slug, city.name).alt}
-        whatsappMessage={`Hello! I'd like a taxi quote in ${city.name}, Saudi Arabia.`}
-      />
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
-          <div className="lg:col-span-3">
-            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
-                Key takeaways
-              </h2>
-              <ul className="mt-3 space-y-1.5 text-sm text-navy">
-                <li>
-                  • Fixed-price private taxi service across {city.name}, booked on
-                  WhatsApp or our quote form, available 24/7.
-                </li>
-                {airport && (
-                  <li>
-                    • Airport pickup via {airport.name} ({airport.code}) with
-                    real-time flight tracking included.
-                  </li>
-                )}
-                <li>
-                  • Popular routes from {city.name}: {city.popularDestinations.slice(0, 3).join(", ")}.
-                </li>
-                {city.lastUpdated && <li>• Page reviewed {city.lastUpdated}.</li>}
-              </ul>
-            </div>
-
-            <h2 className="mt-10 text-2xl font-bold text-navy">
-              Private Taxi Service in {city.name}
-            </h2>
-            <p className="mt-3 text-muted-foreground">{city.about}</p>
-            <p className="mt-3 text-muted-foreground">
-              We provide reliable private taxi booking in {city.name} for local and
-              long-distance travel. Whether you need a quick city ride or a full-day
-              transfer, request a quote through WhatsApp or our booking form for a
-              fixed price.
-            </p>
-            {city.localInsight && (
-              <>
-                <h2 className="mt-10 text-xl font-bold text-navy">
-                  Local travel advice for {city.name}
-                </h2>
-                <p className="mt-3 text-muted-foreground">{city.localInsight}</p>
-              </>
-            )}
-
-            <h2 className="mt-10 text-xl font-bold text-navy">
-              Why book your {city.name} taxi with us
-            </h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {city.highlights.map((h) => (
-                <li key={h} className="flex items-start gap-2 text-sm text-navy">
-                  <CircleCheck className="mt-0.5 size-4 shrink-0 text-gold" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="mt-10 text-xl font-bold text-navy">
-              Popular pickup &amp; drop-off points in {city.name}
-            </h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {city.landmarks.map((l) => (
-                <span
-                  key={l}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1.5 text-sm text-navy"
-                >
-                  <MapPin className="size-3.5 text-gold" />
-                  {l}
-                </span>
-              ))}
-            </div>
-
-            {airport && (
-              <div className="mt-10 rounded-xl border border-border bg-muted/40 p-5">
-                <h2 className="flex items-center gap-2 text-lg font-bold text-navy">
-                  <Plane className="size-5 text-gold" />
-                  Airport transfers from {city.name}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Get private airport pickup and drop-off via {airport.name} (
-                  {airport.code}) with professional drivers and timely service.
-                </p>
-                <Link
-                  href={`/airport-transfer/${airport.slug}`}
-                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
-                >
-                  View {city.name} airport transfers
-                  <ArrowRight className="size-4" />
-                </Link>
-              </div>
-            )}
-
-            {hotelCount > 0 && (
-              <div className="mt-10 rounded-xl border border-border bg-muted/40 p-5">
-                <h2 className="flex items-center gap-2 text-lg font-bold text-navy">
-                  <Plane className="size-5 text-gold" />
-                  Airport to hotel transfers in {city.name}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Browse fixed-price private transfers between the airport and{" "}
-                  {hotelCount}+ hotels across {city.name}, in both directions.
-                </p>
-                <Link
-                  href={`/cities/${city.slug}`}
-                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
-                >
-                  View all {city.name} hotel transfers
-                  <ArrowRight className="size-4" />
-                </Link>
-              </div>
-            )}
-
-            <h2 className="mt-10 text-xl font-bold text-navy">
-              Popular routes from {city.name}
-            </h2>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {city.popularRoutes
-                ? city.popularRoutes.map((routeSlug) => {
-                    const r = getRoute(routeSlug);
-                    if (!r) return null;
-                    return (
-                      <li key={routeSlug}>
-                        <Link
-                          href={`/routes/${routeSlug}`}
-                          className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-navy transition hover:border-gold hover:text-gold"
-                        >
-                          <ArrowRight className="size-4 shrink-0 text-gold" />
-                          {r.from} to {r.to}
-                        </Link>
-                      </li>
-                    );
-                  })
-                : city.popularDestinations.map((dest) => (
-                    <li
-                      key={dest}
-                      className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
-                    >
-                      <ArrowRight className="size-4 text-gold" />
-                      {city.name} to {dest}
-                    </li>
-                  ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <div className="sticky top-20 rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
-              <h2 className="text-lg font-bold text-navy">
-                Get a {city.name} Taxi Quote
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Send your trip details — fixed price on WhatsApp.
-              </p>
-              <div className="mt-4">
-                <QuoteForm
-                  serviceType={`${city.name} city taxi`}
-                  city={city.name}
-                  defaultPickup={city.name}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {attractionTransfers.length > 0 && (
-        <section className="bg-muted py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-                {city.name} Attraction &amp; Landmark Transfers
-              </h2>
-              <p className="mt-3 text-muted-foreground">
-                Fixed-price private transfers to {city.name}&apos;s top sights — from the
-                airport or your hotel, door to door.
-              </p>
-            </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {attractionTransfers.map((t) => (
-                <Link
-                  key={t.slug}
-                  href={`/${t.citySlug}/${t.slug}`}
-                  className="group flex items-center justify-between gap-2 rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
-                >
-                  <span className="text-sm font-semibold text-navy">
-                    {t.from} → {t.to}
-                  </span>
-                  <ArrowRight className="size-4 shrink-0 text-gold" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <VehicleOptions background="muted" />
-      <HowItWorks background="white" />
-
-      {city.popularRoutes && city.popularRoutes.length > 0 && (
-        <RouteGrid
-          background="muted"
-          heading={`Intercity Transfers from ${city.name}`}
-          subheading={`Fixed-price private transfers on the most-requested long-distance routes from ${city.name}.`}
-          only={city.popularRoutes}
-        />
-      )}
-
-      {relatedCities.length > 0 && (
-        <CityGrid
-          background="muted"
-          heading={`Other Cities Near ${city.name}`}
-          subheading="Explore taxi services in nearby and connected destinations."
-          only={relatedCities}
-        />
-      )}
-
-      <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" pageKey={city.slug} />
-      <CTASection
-        title={`Book Your ${city.name} Taxi Today`}
-        whatsappMessage={`Hello! I'd like to book a taxi in ${city.name}.`}
       />
     </>
   );

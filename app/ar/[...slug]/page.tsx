@@ -13,15 +13,29 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n";
-import { arPages, getArPage, arPath, type ArPage } from "@/data/translations/ar";
+import { arPages, getArPage, arPath, getArPathForEnPath, type ArPage } from "@/data/translations/ar";
 import { pageHeroes } from "@/lib/hero";
 import { getCity } from "@/data/cities";
 import { getAirport } from "@/data/airports";
+import { getRoute, routes } from "@/data/routes";
 import { hotelsForCity } from "@/data/hotels";
+import { isDomesticCityRoute, isAirportToCityRoute, classifyRoute } from "@/lib/route-journey";
+import { buildArabicRouteBlocks, parseArabicFromTo } from "@/lib/route-composer";
+import { RouteJourneyView } from "@/components/routes/RouteJourneyView";
+import { AirportRouteView } from "@/components/routes/AirportRouteView";
 import { airportTransferName } from "@/lib/hotel-transfers";
 import { cityAirportFactsAr } from "@/lib/city-hub-facts";
 import { JourneyPageView } from "@/components/journey/JourneyPageView";
 import { DistanceGuideV2View } from "@/components/distance-v2/DistanceGuideV2View";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { LegalPageView } from "@/components/legal/LegalPageView";
+import { ContactPageView } from "@/components/contact/ContactPageView";
+import { QuotePageView } from "@/components/quote/QuotePageView";
+import { ServicesHubView } from "@/components/services-hub/ServicesHubView";
+import { CityHubView, type CityHubLinkItem, type CityHubContent } from "@/components/city-hub/CityHubView";
+import { AirportHubView } from "@/components/airport-hub/AirportHubView";
+
+const arServiceV2Labels = { faqHeading: "أسئلة شائعة" };
 
 const arDistanceV2Labels = {
   faqHeading: "أسئلة شائعة حول هذا الطريق",
@@ -133,12 +147,27 @@ const serviceTypeFor = (type: ArPage["type"]): string =>
     distance: "Distance Information",
     journey: "Distance Information",
     distanceV2: "Distance Information",
+    serviceV2: "Taxi Service",
+    legal: "Taxi Service",
+    contactV2: "Taxi Service",
+    quoteV2: "Taxi Service",
+    servicesV2: "Taxi Service",
   })[type];
+
+type QuoteSearchParams = {
+  pickup?: string;
+  dropoff?: string;
+  date?: string;
+  time?: string;
+  passengers?: string;
+};
 
 export default async function ArabicPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string[] }>;
+  searchParams: Promise<QuoteSearchParams>;
 }) {
   const { slug } = await params;
   const key = safeSlug(slug);
@@ -165,6 +194,475 @@ export default async function ArabicPage({
           crumbs={page.breadcrumbs}
           labels={arDistanceV2Labels}
         />
+      </>
+    );
+  }
+
+  if (page.type === "legal" && page.legal) {
+    return (
+      <>
+        <SchemaScript schema={breadcrumbSchema(page.breadcrumbs)} />
+        <LegalPageView {...page.legal} crumbs={page.breadcrumbs} />
+      </>
+    );
+  }
+
+  if (page.type === "contactV2" && page.contactV2) {
+    return (
+      <>
+        <SchemaScript schema={breadcrumbSchema(page.breadcrumbs)} />
+        <ContactPageView
+          {...page.contactV2}
+          crumbs={page.breadcrumbs}
+          formSlot={<QuoteForm serviceType="صفحة اتصل بنا" twoColumn={false} />}
+        />
+      </>
+    );
+  }
+
+  if (page.type === "quoteV2" && page.quoteV2) {
+    const sp = await searchParams;
+    return (
+      <>
+        <SchemaScript schema={breadcrumbSchema(page.breadcrumbs)} />
+        <QuotePageView
+          {...page.quoteV2}
+          crumbs={page.breadcrumbs}
+          formSlot={
+            <QuoteForm
+              serviceType="صفحة اطلب عرض سعر"
+              defaultPickup={sp.pickup ?? ""}
+              defaultDropoff={sp.dropoff ?? ""}
+              defaultDate={sp.date ?? ""}
+              defaultTime={sp.time ?? ""}
+              defaultPassengers={sp.passengers || "2"}
+            />
+          }
+        />
+      </>
+    );
+  }
+
+  if (page.type === "servicesV2" && page.servicesHub) {
+    return (
+      <>
+        <SchemaScript schema={breadcrumbSchema(page.breadcrumbs)} />
+        <ServicesHubView {...page.servicesHub} crumbs={page.breadcrumbs} />
+      </>
+    );
+  }
+
+  if (page.type === "city") {
+    const enCity = getCity(page.enPath.replace("/taxi-service/", ""));
+    const eyebrow = page.breadcrumbs[1]?.name ?? "دليل المدينة";
+
+    let airportCard: CityHubContent["airportCard"];
+    if (enCity?.nearestAirportSlug) {
+      const arAirport = arPages.find(
+        (p) => p.type === "airport" && p.enPath === `/airport-transfer/${enCity.nearestAirportSlug}`
+      );
+      if (arAirport) {
+        airportCard = {
+          heading: "النقل من المطار",
+          text: `تحتاج استقبالًا من المطار أيضًا؟ نغطي ${arAirport.h1}.`,
+          linkLabel: "عرض نقل المطار",
+          href: arPath(arAirport),
+        };
+      }
+    }
+
+    const nearbyCities: CityHubLinkItem[] = arPages
+      .filter((p) => p.type === "city" && p.slug !== page.slug)
+      .map((p) => ({
+        label: p.breadcrumbs[p.breadcrumbs.length - 1]?.name ?? p.h1,
+        href: arPath(p),
+      }));
+
+    const services: CityHubLinkItem[] = [
+      { label: "النقل بين المدن", href: "/ar/النقل-بين-المدن" },
+      { label: "نقل من المطار", href: "/ar/نقل-من-المطار" },
+      ...(["تنقلات-جدة", "تاكسي-مكة", "تاكسي-المدينة"].includes(page.slug)
+        ? [
+            { label: "نقل العمرة", href: "/ar/نقل-العمرة" },
+            { label: "نقل الزيارة", href: "/ar/نقل-الزيارة" },
+          ]
+        : []),
+    ];
+
+    return (
+      <>
+        <SchemaScript
+          schema={[
+            breadcrumbSchema(page.breadcrumbs),
+            serviceSchema({
+              name: page.h1,
+              description: page.intro,
+              path: arPath(page),
+              serviceType: "City Taxi Service",
+              areaServed: "المملكة العربية السعودية",
+            }),
+            faqSchema(page.faqs),
+          ]}
+        />
+        <CityHubView
+          eyebrow={eyebrow}
+          h1={page.h1}
+          dek={page.intro}
+          heroImage={page.heroImage ?? heroFor(page)}
+          heroAlt={page.heroAlt ?? page.h1}
+          facts={[]}
+          extraSections={page.sections}
+          airportCard={airportCard}
+          nearbyCitiesHeading={nearbyCities.length > 0 ? "مدن قريبة" : undefined}
+          nearbyCities={nearbyCities}
+          servicesHeading="خدمات ذات صلة"
+          services={services}
+          faqsHeading="الأسئلة الشائعة"
+          faqs={page.faqs}
+          ctaHeading="جاهز لحجز نقلك؟"
+          ctaText="شاركنا تفاصيل رحلتك، ونرد بسعر ثابت قبل السفر."
+          ctaLabel="اطلب عرض سعر"
+          ctaHref="/ar/اطلب-عرض-سعر"
+          crumbs={page.breadcrumbs}
+        />
+      </>
+    );
+  }
+
+  if (page.type === "airport") {
+    const enAirport = getAirport(page.enPath.replace("/airport-transfer/", ""));
+    const journeySteps = [
+      { label: "تبدأ متابعة رحلتك الجوية", detail: "نتابع رقم رحلتك فور الحجز لمعرفة موعد الهبوط الفعلي حتى لو تغيّر." },
+      { label: "يستقبلك السائق في صالة الوصول", detail: "ينتظرك سائقك داخل صالة الوصول بلافتة تحمل اسمك، بعد استلام الأمتعة مباشرة." },
+      { label: "مساعدة في حمل الأمتعة", detail: "يساعدك السائق في حمل أمتعتك من صالة الوصول إلى المركبة." },
+      { label: "نقل مباشر إلى وجهتك", detail: "تُنقل مباشرة إلى فندقك أو وجهتك بالسعر الثابت المتفق عليه عند الحجز." },
+    ];
+
+    const cityArPage = enAirport?.citySlug
+      ? arPages.find((p) => p.type === "city" && p.enPath === `/taxi-service/${enAirport.citySlug}`)
+      : undefined;
+
+    return (
+      <>
+        <SchemaScript
+          schema={[
+            breadcrumbSchema(page.breadcrumbs),
+            serviceSchema({
+              name: page.h1,
+              description: page.intro,
+              path: arPath(page),
+              serviceType: "Airport Transfer",
+              areaServed: "المملكة العربية السعودية",
+            }),
+            faqSchema(page.faqs),
+          ]}
+        />
+        <AirportHubView
+          eyebrow="نقل من المطار"
+          h1={page.h1}
+          dek={page.intro}
+          heroImage={page.heroImage ?? heroFor(page)}
+          heroAlt={page.heroAlt ?? page.h1}
+          facts={[
+            ...(page.distance ? [{ label: "المسافة", value: page.distance }] : []),
+            ...(page.duration ? [{ label: "المدة", value: page.duration }] : []),
+          ]}
+          journeyHeading="كيف يعمل استقبال المطار"
+          journeySteps={journeySteps}
+          guideSections={page.sections}
+          cityCard={
+            cityArPage
+              ? {
+                  heading: `خدمة تاكسي في ${cityArPage.breadcrumbs[cityArPage.breadcrumbs.length - 1]?.name ?? ""}`,
+                  text: "تحتاج تنقلًا داخل المدينة أيضًا؟ نغطي الرحلات المحلية والفندقية.",
+                  linkLabel: "عرض خدمة التاكسي في المدينة",
+                  href: arPath(cityArPage),
+                }
+              : undefined
+          }
+          faqsHeading="الأسئلة الشائعة"
+          faqs={page.faqs}
+          ctaHeading="جاهز لحجز نقلك من المطار؟"
+          ctaText="شاركنا رقم رحلتك ووجهتك، ونرد بسعر ثابت قبل السفر."
+          ctaLabel="اطلب عرض سعر"
+          ctaHref="/ar/اطلب-عرض-سعر"
+          crumbs={page.breadcrumbs}
+        />
+      </>
+    );
+  }
+
+  // Arabic domestic city-to-city route pages get the same new journey-type
+  // shell as their English counterparts (Phase 3 redesign). Reuses each
+  // page's own already-real Arabic sections/faqs — content is not
+  // re-authored here, only restructured into the new design. Airport/
+  // border/international Arabic route pages (out of scope) fall through to
+  // the generic renderer below, unchanged.
+  if (page.type === "route") {
+    const enSlug = page.enPath.replace("/routes/", "");
+    const enRoute = getRoute(enSlug);
+    if (enRoute && isDomesticCityRoute(enRoute)) {
+      const journeyType = classifyRoute(enRoute);
+      const parsed = parseArabicFromTo(page.h1);
+      const arFrom = parsed?.from ?? enRoute.from;
+      const arTo = parsed?.to ?? enRoute.to;
+      const distance = page.distance ?? enRoute.distance;
+      const duration = page.duration ?? enRoute.duration;
+
+      const reverseEnRoute = routes.find((r) => r.from === enRoute.to && r.to === enRoute.from);
+      const reverseArPage = reverseEnRoute
+        ? arPages.find((p) => p.type === "route" && p.enPath === `/routes/${reverseEnRoute.slug}`)
+        : undefined;
+
+      const blocks = buildArabicRouteBlocks(
+        journeyType,
+        arFrom,
+        arTo,
+        distance,
+        duration,
+        page.sections,
+        reverseArPage ? arPath(reverseArPage) : undefined,
+        reverseArPage ? parseArabicFromTo(reverseArPage.h1)?.to ?? reverseArPage.h1 : undefined
+      );
+
+      // Related routes/cities: only ever link to a real Arabic page — never
+      // fall back to an English internal link for these, per the "don't
+      // automatically send Arabic users to English pages" rule.
+      const candidateEnSlugs = routes
+        .filter(
+          (r) =>
+            r.slug !== enRoute.slug &&
+            r.slug !== reverseEnRoute?.slug &&
+            (r.from === enRoute.from || r.to === enRoute.to) &&
+            isDomesticCityRoute(r)
+        )
+        .slice(0, 6);
+      const relatedRouteItems = candidateEnSlugs
+        .map((r) => arPages.find((p) => p.type === "route" && p.enPath === `/routes/${r.slug}`))
+        .filter((p): p is NonNullable<typeof p> => p !== undefined)
+        .map((p) => {
+          const t = parseArabicFromTo(p.h1);
+          return { label: t ? `${t.from} إلى ${t.to}` : p.h1, distance: p.distance, duration: p.duration, href: arPath(p) };
+        });
+
+      const relatedCityItems = enRoute.relatedCitySlugs
+        .map((s) => arPages.find((p) => p.type === "city" && p.enPath === `/taxi-service/${s}`))
+        .filter((p): p is NonNullable<typeof p> => p !== undefined)
+        .map((p) => ({ label: p.breadcrumbs[p.breadcrumbs.length - 1]?.name ?? p.h1, href: arPath(p) }));
+
+      return (
+        <>
+          <SchemaScript
+            schema={[
+              breadcrumbSchema(page.breadcrumbs),
+              serviceSchema({
+                name: page.h1,
+                description: page.intro,
+                path: arPath(page),
+                serviceType: "Intercity Transfer",
+                areaServed: "المملكة العربية السعودية",
+              }),
+              faqSchema(page.faqs),
+            ]}
+          />
+          <RouteJourneyView
+            eyebrow="نقل خاص بين المدن"
+            h1={page.h1}
+            dek={page.intro}
+            heroImage={page.heroImage ?? heroFor(page)}
+            heroAlt={page.heroAlt ?? page.h1}
+            facts={[
+              { label: "المسافة", value: distance },
+              { label: "مدة القيادة التقريبية", value: duration },
+            ]}
+            from={arFrom}
+            to={arTo}
+            blocks={blocks}
+            pickupHeading="نقاط الانطلاق الشائعة"
+            pickupPoints={["المطار", "الفندق", "المنزل", "مقر العمل"]}
+            dropoffHeading="نقاط الوصول الشائعة"
+            dropoffPoints={["الفندق", "المطار", "وسط المدينة", "الوجهة السياحية"]}
+            relatedRoutesHeading={relatedRouteItems.length > 0 ? "رحلات ذات صلة" : undefined}
+            relatedRoutes={relatedRouteItems}
+            relatedCitiesHeading={relatedCityItems.length > 0 ? "خدمة التاكسي في مدن هذه الرحلة" : undefined}
+            relatedCities={relatedCityItems}
+            faqsHeading="الأسئلة الشائعة"
+            faqs={page.faqs}
+            ctaHeading="جاهز لحجز هذه الرحلة؟"
+            ctaText={`شاركنا وقت الانطلاق وعدد الركاب لرحلة ${arFrom} إلى ${arTo}، ونرد بسعر ثابت.`}
+            ctaLabel="اطلب عرض سعر"
+            ctaHref="/ar/اطلب-عرض-سعر"
+            formHeading={`${arFrom} ← ${arTo}`}
+            formSubheading="سعر ثابت لرحلتك الخاصة."
+            formSlot={
+              <QuoteForm
+                serviceType={`رحلة ${arFrom} إلى ${arTo}`}
+                route={`${enRoute.from} to ${enRoute.to}`}
+                defaultPickup={enRoute.from}
+                defaultDropoff={enRoute.to}
+              />
+            }
+            crumbs={page.breadcrumbs}
+          />
+        </>
+      );
+    }
+
+    if (enRoute && isAirportToCityRoute(enRoute)) {
+      const parsed = parseArabicFromTo(page.h1);
+      const arAirport = parsed?.from ?? enRoute.from;
+      const arCity = parsed?.to ?? enRoute.to;
+      const distance = page.distance ?? enRoute.distance;
+      const duration = page.duration ?? enRoute.duration;
+
+      const airportSlug = enRoute.slug.split("-to-")[0];
+      const enAirport = getAirport(airportSlug);
+      const arAirportPage = enAirport
+        ? arPages.find((p) => p.type === "airport" && p.enPath === `/airport-transfer/${enAirport.slug}`)
+        : undefined;
+      const destinationEnCity = getCity(
+        enRoute.relatedCitySlugs.find((s) => getCity(s)?.name.toLowerCase() === enRoute.to.toLowerCase()) ??
+          enRoute.relatedCitySlugs[0] ??
+          ""
+      );
+      const arCityPage = destinationEnCity
+        ? arPages.find((p) => p.type === "city" && p.enPath === `/taxi-service/${destinationEnCity.slug}`)
+        : undefined;
+
+      const cityToAirportEnReverse = routes.find((r) => r.from === enRoute.to && r.to === enRoute.from);
+      const arReversePage = cityToAirportEnReverse
+        ? arPages.find((p) => p.type === "route" && p.enPath === `/routes/${cityToAirportEnReverse.slug}`)
+        : undefined;
+
+      const relatedArAirportRoutes = routes
+        .filter((r) => r.slug !== enRoute.slug && isAirportToCityRoute(r) && (r.from === enRoute.from || r.to === enRoute.to))
+        .map((r) => arPages.find((p) => p.type === "route" && p.enPath === `/routes/${r.slug}`))
+        .filter((p): p is NonNullable<typeof p> => p !== undefined)
+        .slice(0, 4)
+        .map((p) => {
+          const t = parseArabicFromTo(p.h1);
+          return { label: t ? `${t.from} إلى ${t.to}` : p.h1, distance: p.distance, duration: p.duration, href: arPath(p) };
+        });
+
+      const hubLinks = [
+        ...(arAirportPage ? [{ label: `مركز ${arAirportPage.breadcrumbs[arAirportPage.breadcrumbs.length - 1]?.name ?? "نقل المطار"}`, href: arPath(arAirportPage) }] : []),
+        ...(arCityPage ? [{ label: `خدمة تاكسي ${arCityPage.breadcrumbs[arCityPage.breadcrumbs.length - 1]?.name ?? ""}`, href: arPath(arCityPage) }] : []),
+      ];
+
+      const arrivalSteps = [
+        { label: "تبدأ متابعة رحلتك الجوية", detail: "نتابع رقم رحلتك فور الحجز، لنعرف موعد هبوطها الفعلي حتى لو تغيّر." },
+        { label: "يستقبلك السائق في صالة الوصول", detail: page.sections[0]?.paragraphs[0] ?? "ينتظرك سائقك داخل صالة الوصول بلافتة تحمل اسمك، بعد استلام الأمتعة مباشرة." },
+        ...(page.sections[0]?.paragraphs[1] ? [{ label: "الطريق إلى الوجهة", detail: page.sections[0].paragraphs[1] }] : []),
+        { label: "الانطلاق مباشرة إلى وجهتك", detail: `يساعدك السائق بأمتعتك، وتُنقل مباشرة نحو ${arCity} بالسعر الثابت المتفق عليه عند الحجز.` },
+      ];
+
+      const bookingSteps = [
+        { label: "شارك تفاصيل رحلتك", detail: `رقم الرحلة، تاريخ ووقت الوصول، ووجهتك في ${arCity}.` },
+        { label: "استلم سعرًا ثابتًا", detail: "يُؤكَّد السعر قبل السفر — دون عداد ودون رسوم مفاجئة." },
+        { label: "استقبل سائقك عند الوصول", detail: "ينتظرك السائق في صالة الوصول، مع متابعة رحلتك في حال أي تأخير." },
+        { label: "انطلق مباشرة إلى وجهتك", detail: "نقل مباشر من الباب إلى الباب، مع المساعدة في حمل الأمتعة." },
+      ];
+
+      return (
+        <>
+          <SchemaScript
+            schema={[
+              breadcrumbSchema(page.breadcrumbs),
+              serviceSchema({
+                name: page.h1,
+                description: page.intro,
+                path: arPath(page),
+                serviceType: "Airport Transfer",
+                areaServed: "المملكة العربية السعودية",
+              }),
+              faqSchema(page.faqs),
+            ]}
+          />
+          <AirportRouteView
+            eyebrow="نقل من المطار"
+            h1={page.h1}
+            dek={page.intro}
+            heroImage={page.heroImage ?? heroFor(page)}
+            heroAlt={page.heroAlt ?? page.h1}
+            airportLabel={arAirport}
+            cityLabel={arCity}
+            facts={[
+              { label: "المسافة", value: distance },
+              { label: "الفئة", value: "نقل من المطار" },
+            ]}
+            journeyTimeHeading="مدة الرحلة"
+            pureDrivingLabel="مدة القيادة الصافية"
+            pureDrivingValue={duration}
+            totalJourneyNote="هذه مدة القيادة في ظروف طبيعية. قد تطول رحلتك الكاملة بسبب إجراءات الوصول واستلام الأمتعة وحركة السير، فاعتبرها تقديرًا لزمن الطريق نفسه لا وعدًا بموعد وصول محدد."
+            arrivalHeading={`الاستقبال في ${arAirport}`}
+            arrivalSteps={arrivalSteps}
+            roadJourneyHeading="رحلة الطريق"
+            roadJourneyParagraphs={page.sections[0]?.paragraphs ?? [page.intro]}
+            destinationHeading={`الوصول إلى ${arCity}`}
+            destinationParagraphs={page.sections[1]?.paragraphs ?? page.sections.slice(1).flatMap((s) => s.paragraphs)}
+            vehicleHeading="المركبة والأمتعة"
+            vehicleText="سيارة صالون تكفي مسافرًا منفردًا أو زوجين بأمتعة معتادة، بينما تناسب سيارة SUV أو فان العائلات أو من لديهم أمتعة أكثر — أخبرنا بعدد الركاب والحقائب عند الحجز."
+            whoSuitsHeading="من تناسبه هذه الرحلة"
+            whoSuits={[
+              { title: "المسافرون القادمون جوًا", description: `نقل مباشر من ${arAirport} إلى ${arCity} دون انتظار حافلة مشتركة.` },
+              { title: "العائلات والمجموعات", description: "مركبة واحدة لكامل المجموعة والأمتعة، بحجم يُحدَّد عند الحجز." },
+            ]}
+            bookingHeading="كيف يتم الحجز"
+            bookingSteps={bookingSteps}
+            checklistHeading="ما تحتاج تجهيزه"
+            checklist={["رقم الرحلة وتاريخ الوصول", `عنوان أو اسم الفندق في ${arCity}`, "عدد الركاب والحقائب", "رقم تواصل ليوم السفر"]}
+            reverseHeading={arReversePage ? "التخطيط لرحلة العودة" : undefined}
+            reverseText={
+              arReversePage
+                ? `تحتاج العودة إلى المطار لاحقًا؟ نوفر أيضًا نقلًا خاصًا في هذا الاتجاه، بتوقيت يناسب رحلة مغادرتك.`
+                : undefined
+            }
+            reverseLinkLabel={arReversePage ? (parseArabicFromTo(arReversePage.h1)?.from ? `${parseArabicFromTo(arReversePage.h1)!.from} إلى ${parseArabicFromTo(arReversePage.h1)!.to}` : arReversePage.h1) : undefined}
+            reverseHref={arReversePage ? arPath(arReversePage) : undefined}
+            relatedRoutesHeading={relatedArAirportRoutes.length > 0 ? "رحلات مطار ذات صلة" : undefined}
+            relatedRoutes={relatedArAirportRoutes}
+            hubLinksHeading={hubLinks.length > 0 ? "قد يهمك أيضًا:" : undefined}
+            hubLinks={hubLinks}
+            faqsHeading="الأسئلة الشائعة"
+            faqs={page.faqs}
+            ctaHeading="جاهز لحجز هذا النقل؟"
+            ctaText={`شاركنا رقم رحلتك ووجهتك في ${arCity}، ونرد بسعر ثابت قبل السفر.`}
+            ctaLabel="اطلب عرض سعر"
+            ctaHref="/ar/اطلب-عرض-سعر"
+            formHeading={`${arAirport} ← ${arCity}`}
+            formSubheading="سعر ثابت لنقل مطارك."
+            formSlot={
+              <QuoteForm
+                serviceType={`نقل ${arAirport} إلى ${arCity}`}
+                route={`${enRoute.from} to ${enRoute.to}`}
+                defaultPickup={enRoute.from}
+                defaultDropoff={enRoute.to}
+              />
+            }
+            crumbs={page.breadcrumbs}
+          />
+        </>
+      );
+    }
+  }
+
+  if (page.type === "serviceV2" && page.serviceV2) {
+    return (
+      <>
+        <SchemaScript
+          schema={[
+            breadcrumbSchema(page.breadcrumbs),
+            serviceSchema({
+              name: page.h1,
+              description: page.serviceV2.dek,
+              path: page.enPath,
+              serviceType: serviceTypeFor(page.type),
+              areaServed: "المملكة العربية السعودية",
+            }),
+            faqSchema(page.serviceV2.faqs),
+          ]}
+        />
+        <ServiceV2View {...page.serviceV2} crumbs={page.breadcrumbs} labels={arServiceV2Labels} />
       </>
     );
   }

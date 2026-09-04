@@ -1,24 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { BorderGrid } from "@/components/sections/BorderGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { borderTransfersContent } from "@/data/service-pages-v2/border-transfers";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("border-transfers")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/border-transfers";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Border Transfers", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "Cross-Border Transfers From Saudi Arabia | GCC Road Journeys",
+  description:
+    "Private cross-border road transfers between Saudi Arabia and the GCC — real border routes, honest crossing-time expectations, no invented immigration claims.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
 
 export default function BorderTransfersPage() {
   return (
-    <ServicePage service={service}>
-      <BorderGrid background="white" />
-    </ServicePage>
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "Border Transfers",
+            description: borderTransfersContent.dek,
+            path,
+            serviceType: "Cross-Border Transfer",
+          }),
+          faqSchema(borderTransfersContent.faqs),
+        ]}
+      />
+      <ServiceV2View {...borderTransfersContent} crumbs={crumbs} labels={{ faqHeading: "Border Transfer Questions" }} />
+    </>
   );
 }

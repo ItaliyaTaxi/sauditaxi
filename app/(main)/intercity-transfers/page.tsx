@@ -1,46 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { RouteGrid } from "@/components/sections/RouteGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { intercityTransfersContent } from "@/data/service-pages-v2/intercity-transfers";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("intercity-transfers")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/intercity-transfers";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Intercity Transfers", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "Intercity Transfers Saudi Arabia | Private City-to-City Travel",
+  description:
+    "Private transfers between Saudi cities — a direct drive, luggage-matched vehicle, and one departure time, without shared stops along the way.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
-
-const featuredPriorityRoutes = [
-  "riyadh-to-neom",
-  "riyadh-to-taif",
-  "riyadh-to-hail",
-  "riyadh-to-tabuk",
-  "riyadh-to-jubail",
-  "riyadh-to-hofuf",
-  "khobar-to-riyadh",
-  "hail-to-riyadh",
-  "qassim-to-riyadh",
-  "yanbu-to-riyadh",
-  "riyadh-to-khobar",
-  "riyadh-to-qassim",
-  "riyadh-to-yanbu",
-  "riyadh-to-abha",
-];
 
 export default function IntercityTransfersPage() {
   return (
-    <ServicePage service={service}>
-      <RouteGrid
-        background="white"
-        heading="Popular Intercity Routes"
-        subheading="Fixed-price private transfers between Saudi Arabia's major cities."
-        only={featuredPriorityRoutes}
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "Intercity Transfers",
+            description: intercityTransfersContent.dek,
+            path,
+            serviceType: "Intercity Transfer",
+          }),
+          faqSchema(intercityTransfersContent.faqs),
+        ]}
       />
-    </ServicePage>
+      <ServiceV2View {...intercityTransfersContent} crumbs={crumbs} labels={{ faqHeading: "Intercity Transfer Questions" }} />
+    </>
   );
 }

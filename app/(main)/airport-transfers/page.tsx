@@ -1,24 +1,43 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/templates/ServicePage";
-import { AirportGrid } from "@/components/sections/AirportGrid";
-import { getService } from "@/data/services";
+import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { airportTransfersContent } from "@/data/service-pages-v2/airport-transfers";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
+import { SchemaScript } from "@/components/seo/SchemaScript";
 import { getArPathForEnPath } from "@/data/translations/ar";
 
-const service = getService("airport-transfers")!;
-const arPath = getArPathForEnPath(service.href);
+const path = "/airport-transfers";
+const arPath = getArPathForEnPath(path);
+const crumbs = [
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Airport Transfers", path },
+];
 
 export const metadata: Metadata = buildMetadata({
-  title: service.metaTitle,
-  description: service.metaDescription,
-  path: service.href,
-  ...(arPath ? { alternateLanguages: { en: service.href, ar: arPath } } : {}),
+  title: "Airport Transfers Saudi Arabia | Private Chauffeur Pickup",
+  description:
+    "Private airport transfers across Saudi Arabia — a driver waiting after you land, flight-aware pickup timing, and a direct drive to your destination.",
+  path,
+  ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
 
 export default function AirportTransfersPage() {
   return (
-    <ServicePage service={service}>
-      <AirportGrid background="white" />
-    </ServicePage>
+    <>
+      <SchemaScript
+        schema={[
+          breadcrumbSchema(crumbs),
+          serviceSchema({
+            name: "Airport Transfers",
+            description: airportTransfersContent.dek,
+            path,
+            serviceType: "Airport Transfer",
+          }),
+          faqSchema(airportTransfersContent.faqs),
+        ]}
+      />
+      <ServiceV2View {...airportTransfersContent} crumbs={crumbs} labels={{ faqHeading: "Airport Transfer Questions" }} />
+    </>
   );
 }

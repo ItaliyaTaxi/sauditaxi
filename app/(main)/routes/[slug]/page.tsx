@@ -15,6 +15,13 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { routes, getRoute } from "@/data/routes";
 import { RouteCustomBody } from "@/components/routes/RouteBlocks";
+import { RouteJourneyView } from "@/components/routes/RouteJourneyView";
+import { AirportRouteView } from "@/components/routes/AirportRouteView";
+import { getCity } from "@/data/cities";
+import { getAirport } from "@/data/airports";
+import { isDomesticCityRoute, isAirportToCityRoute, classifyRoute, journeyTypeLabels } from "@/lib/route-journey";
+import { buildRouteBlocks, buildRouteFaqs } from "@/lib/route-composer";
+import { airportRouteContent } from "@/data/airport-route-content";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import { getArPathForEnPath } from "@/data/translations/ar";
@@ -148,6 +155,224 @@ export default async function RoutePage({
     .forEach((r) => candidateRoutes.push(r.slug));
 
   const relatedRoutes = candidateRoutes.slice(0, 6);
+
+  // Airport -> City commercial routes get the dedicated "Airport Arrival
+  // Journey Guide" shell (components/routes/AirportRouteView.tsx), with
+  // hand-written per-route content in data/airport-route-content.ts.
+  if (isAirportToCityRoute(route) && airportRouteContent[route.slug]) {
+    const content = airportRouteContent[route.slug];
+    const airportSlug = route.slug.split("-to-")[0];
+    const airport = getAirport(airportSlug);
+    const destinationCity = getCity(
+      route.relatedCitySlugs.find((s) => getCity(s)?.name.toLowerCase() === route.to.toLowerCase()) ??
+        route.relatedCitySlugs[0] ??
+        ""
+    );
+    const cityToAirportReverse = routes.find((r) => r.from === route.to && r.to === route.from);
+
+    const relatedAirportRoutes = routes
+      .filter(
+        (r) =>
+          r.slug !== route.slug &&
+          isAirportToCityRoute(r) &&
+          (r.from === route.from || r.to === route.to)
+      )
+      .slice(0, 4)
+      .map((r) => ({ label: `${r.from} to ${r.to}`, distance: r.distance, duration: r.duration, href: `/routes/${r.slug}` }));
+
+    const hubLinks = [
+      ...(airport ? [{ label: `${airport.name} (${airport.code}) hub`, href: `/airport-transfer/${airport.slug}` }] : []),
+      ...(destinationCity ? [{ label: `${destinationCity.name} taxi service`, href: `/taxi-service/${destinationCity.slug}` }] : []),
+    ];
+
+    const arrivalSteps = [
+      {
+        label: "Flight tracking begins",
+        detail: "We track your flight from the moment you book, so the pickup time adjusts automatically to your actual landing time.",
+      },
+      { label: "Your driver meets you in arrivals", detail: content.arrivalPickup[0] },
+      ...(content.arrivalPickup[1] ? [{ label: "What to expect", detail: content.arrivalPickup[1] }] : []),
+      {
+        label: "Direct transfer begins",
+        detail: `Your driver helps with luggage and you're driven directly toward ${route.to}, at the fixed price agreed when you booked.`,
+      },
+    ];
+
+    const bookingSteps = [
+      { label: "Share your journey details", detail: `Flight number, arrival date and time, and your destination in ${route.to}.` },
+      { label: "Receive a fixed price", detail: "Confirmed before you travel — no meter, no surge pricing." },
+      { label: "Meet your driver on arrival", detail: "Your driver waits in the arrivals area, tracking your flight for any delay." },
+      { label: "Travel directly to your destination", detail: "Door-to-door, with luggage assistance along the way." },
+    ];
+
+    const faqs = content.faqs;
+
+    return (
+      <>
+        <SchemaScript
+          schema={[
+            breadcrumbSchema(crumbs),
+            serviceSchema({
+              name: `${route.from} to ${route.to} Airport Transfer`,
+              description: route.intro,
+              path,
+              serviceType: "Airport Transfer",
+              dateModified: route.lastUpdated,
+            }),
+            faqSchema(faqs),
+          ]}
+        />
+        <AirportRouteView
+          eyebrow="Airport Transfer"
+          h1={route.h1 ?? `Private Transfer from ${route.from} to ${route.to}`}
+          dek={content.intro}
+          heroImage={route.heroImage ?? routeHero(route.from, route.to).src}
+          heroAlt={route.heroAlt ?? routeHero(route.from, route.to).alt}
+          airportLabel={route.from}
+          cityLabel={route.to}
+          facts={[
+            { label: "Road Distance", value: route.distance },
+            { label: "Category", value: "Airport Transfer" },
+          ]}
+          journeyTimeHeading="Journey Time"
+          pureDrivingLabel="Pure driving time"
+          pureDrivingValue={route.duration}
+          totalJourneyNote="This is driving time under normal conditions. Your total journey — including clearing customs, collecting luggage, and traffic — can run longer, so it's a baseline for the drive itself, not a door-to-door guarantee."
+          arrivalHeading={`Arrival & Pickup at ${route.from}`}
+          arrivalSteps={arrivalSteps}
+          roadJourneyHeading="The Road Journey"
+          roadJourneyParagraphs={content.roadJourney}
+          destinationHeading={`Arriving in ${route.to}`}
+          destinationParagraphs={content.destinationArrival}
+          vehicleHeading="Vehicle & Luggage"
+          vehicleText={content.vehicleLuggage}
+          whoSuitsHeading="Who This Transfer Suits"
+          whoSuits={content.whoSuits}
+          comparisonHeading={content.comparison ? "Private Transfer vs Other Options" : undefined}
+          comparisonIntro={content.comparison ? "A balanced look at the alternatives for this specific journey." : undefined}
+          comparison={content.comparison}
+          bookingHeading="How Booking Works"
+          bookingSteps={bookingSteps}
+          checklistHeading="What to Have Ready"
+          checklist={content.checklist}
+          reverseHeading={cityToAirportReverse ? "Planning the Return Journey" : undefined}
+          reverseText={
+            cityToAirportReverse
+              ? `Need to get back to the airport afterward? We also provide a private transfer from ${cityToAirportReverse.from} to ${cityToAirportReverse.to}, timed to your departure flight.`
+              : undefined
+          }
+          reverseLinkLabel={cityToAirportReverse ? `${cityToAirportReverse.from} to ${cityToAirportReverse.to}` : undefined}
+          reverseHref={cityToAirportReverse ? `/routes/${cityToAirportReverse.slug}` : undefined}
+          relatedRoutesHeading={relatedAirportRoutes.length > 0 ? "Related Airport Transfers" : undefined}
+          relatedRoutes={relatedAirportRoutes}
+          hubLinksHeading={hubLinks.length > 0 ? "You might also need:" : undefined}
+          hubLinks={hubLinks}
+          faqsHeading="Frequently Asked Questions"
+          faqs={faqs}
+          ctaHeading={`Ready to Book Your ${route.from} to ${route.to} Transfer?`}
+          ctaText="Share your flight number and destination — we reply with a fixed price before you travel."
+          ctaLabel="Get a Quote"
+          ctaHref={`/get-quote?pickup=${encodeURIComponent(route.from)}&dropoff=${encodeURIComponent(route.to)}`}
+          formHeading={`${route.from} → ${route.to} Quote`}
+          formSubheading="Fixed price for your airport transfer."
+          formSlot={
+            <QuoteForm
+              serviceType={`${route.from} to ${route.to} transfer`}
+              route={`${route.from} to ${route.to}`}
+              defaultPickup={route.from}
+              defaultDropoff={route.to}
+            />
+          }
+          crumbs={crumbs}
+        />
+      </>
+    );
+  }
+
+  // Phase 3: Saudi domestic city-to-city routes get the new journey-type
+  // shell (components/routes/RouteJourneyView.tsx). Airport/border/
+  // international routes fall through to the unchanged design below.
+  if (isDomesticCityRoute(route)) {
+    const journeyType = classifyRoute(route);
+    const domesticFaqs = buildRouteFaqs(route, journeyType);
+    const blocks =
+      route.customLayout ?? buildRouteBlocks(route, journeyType, reverseRoute ? `/routes/${reverseRoute.slug}` : undefined);
+
+    // Related-route links stay within the domestic city-to-city batch — a
+    // Riyadh-to-Jeddah page shouldn't surface Riyadh-to-Bahrain just because
+    // they share an origin; that's a different commercial intent (border
+    // transfer), out of scope for this phase.
+    const relatedRouteItems = relatedRoutes
+      .map((s) => getRoute(s))
+      .filter((r): r is NonNullable<typeof r> => r !== undefined)
+      .filter((r) => isDomesticCityRoute(r))
+      .map((r) => ({ label: `${r.from} to ${r.to}`, distance: r.distance, duration: r.duration, href: `/routes/${r.slug}` }));
+
+    const relatedCityItems = route.relatedCitySlugs
+      .map((s) => {
+        const c = getCity(s);
+        return c ? { label: `${c.name} Taxi`, href: `/taxi-service/${s}` } : null;
+      })
+      .filter((x): x is NonNullable<typeof x> => x !== null);
+
+    return (
+      <>
+        <SchemaScript
+          schema={[
+            breadcrumbSchema(crumbs),
+            serviceSchema({
+              name: `${route.from} to ${route.to} Taxi Transfer`,
+              description: route.intro,
+              path,
+              serviceType: "Intercity Transfer",
+              dateModified: route.lastUpdated,
+            }),
+            faqSchema(domesticFaqs),
+          ]}
+        />
+        <RouteJourneyView
+          eyebrow={journeyTypeLabels[journeyType]}
+          h1={route.h1 ?? `Private Transfer from ${route.from} to ${route.to}`}
+          dek={route.intro}
+          heroImage={route.heroImage ?? routeHero(route.from, route.to).src}
+          heroAlt={route.heroAlt ?? routeHero(route.from, route.to).alt}
+          facts={[
+            { label: "Distance", value: route.distance },
+            { label: "Typical Driving Time", value: route.duration },
+            { label: "Journey Type", value: journeyTypeLabels[journeyType] },
+          ]}
+          from={route.from}
+          to={route.to}
+          blocks={blocks}
+          pickupHeading="Pickup Locations"
+          pickupPoints={activePickupPoints ?? []}
+          dropoffHeading="Drop-off Locations"
+          dropoffPoints={activeDropoffPoints ?? []}
+          relatedRoutesHeading={relatedRouteItems.length > 0 ? "Related Routes" : undefined}
+          relatedRoutes={relatedRouteItems}
+          relatedCitiesHeading={relatedCityItems.length > 0 ? "Taxi Service in Cities on This Route" : undefined}
+          relatedCities={relatedCityItems}
+          faqsHeading="Frequently Asked Questions"
+          faqs={domesticFaqs}
+          ctaHeading="Planning This Journey?"
+          ctaText={`Share your pickup time and passenger details for the ${route.from} to ${route.to} transfer — we reply with a fixed price.`}
+          ctaLabel="Get a Quote"
+          ctaHref={`/get-quote?pickup=${encodeURIComponent(route.from)}&dropoff=${encodeURIComponent(route.to)}`}
+          formHeading={`${route.from} → ${route.to} Quote`}
+          formSubheading="Fixed price for your private transfer."
+          formSlot={
+            <QuoteForm
+              serviceType={`${route.from} to ${route.to} transfer`}
+              route={`${route.from} to ${route.to}`}
+              defaultPickup={route.from}
+              defaultDropoff={route.to}
+            />
+          }
+          crumbs={crumbs}
+        />
+      </>
+    );
+  }
 
   return (
     <>

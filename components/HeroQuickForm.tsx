@@ -17,7 +17,8 @@ const passengerOptions = ["1", "2", "3", "4", "5", "6", "7+"];
  */
 export function HeroQuickForm() {
   const router = useRouter();
-  const dict = getDictionary(localeFromPathname(usePathname()));
+  const locale = localeFromPathname(usePathname());
+  const dict = getDictionary(locale);
   const t = dict.heroQuickForm;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -28,7 +29,8 @@ export function HeroQuickForm() {
       const value = (data.get(key) as string | null)?.trim();
       if (value) params.set(key, value);
     }
-    router.push(`/get-quote?${params.toString()}`);
+    const quotePath = locale === "ar" ? "/ar/اطلب-عرض-سعر" : "/get-quote";
+    router.push(`${quotePath}?${params.toString()}`);
   }
 
   return (

@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Milestone, CircleCheck } from "lucide-react";
-import { PageHeader } from "@/components/sections/PageHeader";
-import { VehicleOptions } from "@/components/sections/VehicleOptions";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { FAQSection } from "@/components/sections/FAQSection";
-import { CTASection } from "@/components/sections/CTASection";
-import { LatestGuides } from "@/components/sections/LatestGuides";
-import { TrustSection } from "@/components/sections/TrustSection";
-import { ImageGallery } from "@/components/sections/ImageGallery";
-import { borderHero } from "@/lib/hero";
-import { BorderGrid } from "@/components/sections/BorderGrid";
-import { RouteGrid } from "@/components/sections/RouteGrid";
-import { CityGrid } from "@/components/sections/CityGrid";
-import { QuoteForm } from "@/components/QuoteForm";
+import { BorderHubView, type BorderHubLinkItem, type BorderHubRouteCard } from "@/components/border-hub/BorderHubView";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { borders, getBorder } from "@/data/borders";
+import { getRoute } from "@/data/routes";
+import { getCity } from "@/data/cities";
+import { borderHero } from "@/lib/hero";
 import type { Faq } from "@/data/faqs";
 import { buildMetadata } from "@/lib/seo";
 import { getArPathForEnPath } from "@/data/translations/ar";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
+// Border Hub redesign — "crossing logistics" editorial identity (see
+// components/border-hub/BorderHubView.tsx), the most specialized of the
+// three hub types: a journey visual (origin -> road -> crossing -> onward
+// destination) plus an explicit "what we handle vs what border authorities
+// control" split, so it never reads as a city page with a border name
+// swapped in. Same URL (/border-transfers/{border}), same canonical/
+// hreflang. Content is drawn from the existing, already-unique per-crossing
+// data in data/borders.ts (+ data/border-guides.ts) and data/routes.ts.
+// No Arabic border pages exist in the current architecture, so none are
+// created here.
 type Params = { border: string };
 
 export function generateStaticParams() {
@@ -38,9 +38,7 @@ export async function generateMetadata({
   const path = `/border-transfers/${border.slug}`;
   const arPath = getArPathForEnPath(path);
   return buildMetadata({
-    title:
-      border.metaTitle ??
-      `${border.country} Border Taxi | Saudi Cross-Border Transfer`,
+    title: border.metaTitle ?? `${border.country} Border Taxi | Saudi Cross-Border Transfer`,
     description:
       border.metaDescription ??
       `Private taxi transfer from Saudi Arabia to the ${border.country} border via ${border.crossing}. Door-to-door cross-border rides with WhatsApp booking.`,
@@ -57,11 +55,11 @@ function borderFaqs(b: { country: string; crossing: string }): Faq[] {
     },
     {
       question: `What documents do I need to cross to ${b.country}?`,
-      answer: `You will need a valid passport and the appropriate visa for ${b.country}. We advise on the specific requirements when you book.`,
+      answer: `You will need a valid passport and the appropriate visa for ${b.country}. We advise on the specific requirements when you book, and you should always verify current entry rules with official sources before you travel.`,
     },
     {
       question: `How long does the border crossing take?`,
-      answer: `Crossing times vary with traffic and immigration queues. We build in extra time at the ${b.crossing} so your transfer stays comfortable and unhurried.`,
+      answer: `Crossing times vary with traffic and immigration queues and are controlled by the border authorities, not by us. We build in extra time at the ${b.crossing} so your transfer stays comfortable and unhurried.`,
     },
     {
       question: `Is the transfer to the ${b.country} border private?`,
@@ -87,6 +85,25 @@ export default async function BorderPage({
     { name: border.country, path },
   ];
 
+  const routes: BorderHubRouteCard[] = (border.popularRoutes ?? [])
+    .map((routeSlug): BorderHubRouteCard | null => {
+      const r = getRoute(routeSlug);
+      if (!r) return null;
+      return { label: `${r.from} to ${r.to}`, distance: r.distance, duration: r.duration, href: `/routes/${routeSlug}` };
+    })
+    .filter((r): r is BorderHubRouteCard => r !== null);
+
+  const pickupCities: BorderHubLinkItem[] = border.relatedCitySlugs
+    .map((s) => {
+      const c = getCity(s);
+      return c ? { label: `${c.name} to ${border.country}`, href: `/taxi-service/${c.slug}` } : null;
+    })
+    .filter((c): c is BorderHubLinkItem => c !== null);
+
+  const otherBorders: BorderHubLinkItem[] = borders
+    .filter((b) => b.slug !== border.slug)
+    .map((b) => ({ label: `${b.country} Border`, href: `/border-transfers/${b.slug}` }));
+
   return (
     <>
       <SchemaScript
@@ -103,153 +120,56 @@ export default async function BorderPage({
         ]}
       />
 
-      <PageHeader
-        title={`Saudi Arabia to ${border.country} Border Taxi`}
-        subtitle={border.intro}
+      <BorderHubView
+        eyebrow="Border Transfer"
+        h1={`Saudi Arabia to ${border.country} Border Transfer`}
+        dek={border.intro}
+        heroImage={border.heroImage ?? borderHero(border.country).src}
+        heroAlt={border.heroAlt ?? borderHero(border.country).alt}
+        facts={[
+          { label: "Country", value: border.country },
+          { label: "Crossing", value: border.crossing },
+          { label: "Pickup Cities", value: border.pickupCities.join(", ") },
+        ]}
+        journeyHeading="How the Journey Works"
+        journeySteps={[
+          { label: "Pickup in Saudi Arabia", detail: `Collected from ${border.pickupCities.join(", ")}.` },
+          { label: "Road Journey", detail: `A comfortable private vehicle for the drive to ${border.crossing}.` },
+          { label: `${border.crossing}`, detail: "Drop-off at the crossing, or a coordinated handover where arranged." },
+          { label: `Onward into ${border.country}`, detail: "Onward transport is arranged separately from this transfer." },
+        ]}
+        responsibilityHeading="What We Handle vs. What Border Authorities Control"
+        weHandleHeading="This transfer covers"
+        weHandleItems={[
+          "Pickup at your starting location in Saudi Arabia",
+          `The private road journey to ${border.crossing}`,
+          "Drop-off at the crossing, with a coordinated handover where arranged",
+        ]}
+        authorityHeading="Border & immigration authorities control"
+        authorityItems={[
+          "Passport and visa checks at the crossing",
+          `Entry approval into ${border.country}`,
+          "Any customs or vehicle inspection procedures",
+          "Crossing wait times, which vary by day and time",
+        ]}
+        responsibilityNote={`Border and immigration procedures are controlled entirely by Saudi and ${border.country} authorities, not by the transfer provider. Always verify current entry requirements with official sources before you travel.`}
+        notesHeading="What to Know Before You Travel"
+        notes={border.notes}
+        pickupCitiesHeading="Pickup Cities for This Border"
+        pickupCities={pickupCities}
+        routesHeading={routes.length > 0 ? `Private Transfers to ${border.country}` : undefined}
+        routesIntro={routes.length > 0 ? `Fixed-price cross-border transfers via ${border.crossing}.` : undefined}
+        routes={routes}
+        guideSections={border.sections}
+        otherBordersHeading="Other Border Crossings"
+        otherBorders={otherBorders}
+        faqsHeading={`Frequently Asked Questions About the ${border.country} Border Transfer`}
+        faqs={faqs}
+        ctaHeading={`Ready to Book Your ${border.country} Border Transfer?`}
+        ctaText="Share your pickup city and travel date — we reply with a fixed price for the Saudi-side journey."
+        ctaLabel={`Get a ${border.country} Border Quote`}
+        ctaHref={`/get-quote?dropoff=${encodeURIComponent(`${border.country} (${border.crossing})`)}`}
         crumbs={crumbs}
-        backgroundImage={border.heroImage ?? borderHero(border.country).src}
-        backgroundAlt={border.heroAlt ?? borderHero(border.country).alt}
-        whatsappMessage={`Hello! I'd like a border transfer from Saudi Arabia to ${border.country} (${border.crossing}).`}
-      />
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
-          <div className="lg:col-span-3">
-            <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-navy">
-                Key takeaways
-              </h2>
-              <ul className="mt-3 space-y-1.5 text-sm text-navy">
-                <li>
-                  • Private, fixed-price door-to-door transfer from Saudi Arabia to
-                  the {border.country} border via {border.crossing}.
-                </li>
-                <li>• Pickup cities: {border.pickupCities.join(", ")}.</li>
-                <li>
-                  • A valid passport and the correct {border.country} entry
-                  permission are required — always verify current visa rules with
-                  official sources before you travel.
-                </li>
-                {border.lastUpdated && <li>• Page reviewed {border.lastUpdated}.</li>}
-              </ul>
-            </div>
-
-            <h2 className="mt-10 text-2xl font-bold text-navy">
-              Private transfer to the {border.country} border
-            </h2>
-            <p className="mt-3 text-muted-foreground">{border.about}</p>
-
-            <div className="mt-8 rounded-xl border border-border bg-muted/40 p-5">
-              <h3 className="flex items-center gap-2 font-semibold text-navy">
-                <Milestone className="size-5 text-gold" />
-                Crossing: {border.crossing}
-              </h3>
-            </div>
-
-            <h2 className="mt-10 text-xl font-bold text-navy">
-              What to know before you travel
-            </h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {border.notes.map((n) => (
-                <li key={n} className="flex items-start gap-2 text-sm text-navy">
-                  <CircleCheck className="mt-0.5 size-4 shrink-0 text-gold" />
-                  {n}
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="mt-10 text-xl font-bold text-navy">
-              Pickup cities for this border
-            </h2>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {border.pickupCities.map((c) => (
-                <li
-                  key={c}
-                  className="flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-navy"
-                >
-                  <ArrowRight className="size-4 text-gold" />
-                  {c} to {border.country}
-                </li>
-              ))}
-            </ul>
-
-            {/* Rich long-form border crossing guide sections */}
-            {border.sections && border.sections.length > 0 && (
-              <div className="mt-10 space-y-8 [&_a]:font-medium [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-navy">
-                {border.sections.map((s) => (
-                  <div key={s.heading}>
-                    <h2 className="text-xl font-bold text-navy sm:text-2xl">{s.heading}</h2>
-                    <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                      {s.paragraphs.map((p, i) => (
-                        <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="lg:col-span-2">
-            <div className="sticky top-20 rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
-              <h2 className="text-lg font-bold text-navy">
-                {border.country} Border Quote
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Fixed price for your cross-border transfer on WhatsApp.
-              </p>
-              <div className="mt-4">
-                <QuoteForm
-                  serviceType={`${border.country} border transfer`}
-                  route={`Saudi Arabia to ${border.country}`}
-                  defaultDropoff={`${border.country} (${border.crossing})`}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ImageGallery
-        images={border.images}
-        heading={`${border.country} Crossing in Pictures`}
-        subheading={`Views of the ${border.crossing} and the route across the border.`}
-        background="white"
-      />
-
-      <VehicleOptions background="muted" />
-      <TrustSection background="white" />
-      <HowItWorks background="muted" />
-
-      {border.relatedCitySlugs.length > 0 && (
-        <CityGrid
-          background="white"
-          heading="Taxi Service in Pickup Cities"
-          subheading="Local transfers in the cities served by this border crossing."
-          only={border.relatedCitySlugs}
-        />
-      )}
-
-      {border.popularRoutes && border.popularRoutes.length > 0 && (
-        <RouteGrid
-          background="white"
-          heading={`Private Transfers to ${border.country}`}
-          subheading={`Fixed-price cross-border transfers via ${border.crossing}.`}
-          only={border.popularRoutes}
-        />
-      )}
-
-      <BorderGrid
-        background="muted"
-        exclude={border.slug}
-        heading="Other Border Crossings"
-        subheading="We cover all the main land borders out of Saudi Arabia."
-      />
-      <FAQSection faqs={faqs} background="white" />
-      <LatestGuides background="muted" pageKey={border.slug} />
-      <CTASection
-        title={`Book Your ${border.country} Border Transfer`}
-        whatsappMessage={`Hello! I'd like to book a border transfer to ${border.country}.`}
       />
     </>
   );
