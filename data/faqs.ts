@@ -91,3 +91,37 @@ export const generalFaqs: Faq[] = [
       "Yes. We use licensed, well-maintained vehicles driven by professional, vetted drivers, so your transfer is safe, legal, and comfortable from pickup to drop-off.",
   },
 ];
+
+/** FAQs specific to the About page — company/service scope, not booking mechanics. */
+export const aboutFaqs: Faq[] = [
+  {
+    question: "What does Saudi Private Transfers provide?",
+    answer:
+      "Private, pre-booked transportation across Saudi Arabia — airport transfers, city-to-city journeys, hotel and destination pickups, and selected cross-border transfers into the GCC.",
+  },
+  {
+    question: "Which cities and destinations can I travel between?",
+    answer:
+      "Major Saudi cities and gateways including Riyadh, Jeddah, Makkah, Madinah, Dammam, Al Khobar, AlUla and Taif, plus routes between them. See our routes and city pages for the full list.",
+  },
+  {
+    question: "Do you provide airport transfers?",
+    answer:
+      "Yes. Airport transfers are coordinated around your actual flight, with pickup timing adjusted for early or delayed landings rather than a fixed slot.",
+  },
+  {
+    question: "Can I arrange a private transfer between Saudi Arabia and another GCC country?",
+    answer:
+      "Yes, for selected routes — including transfers to and from Bahrain, Kuwait, Qatar and the UAE. Cross-border journeys are planned around the crossing itself, not just the drive to it.",
+  },
+  {
+    question: "How do I request a quote?",
+    answer:
+      "Share your pickup, destination, date, time and passenger count through WhatsApp or the quote form. We reply with a fixed price before you travel — no app or account required.",
+  },
+  {
+    question: "Can vehicle selection account for luggage?",
+    answer:
+      "Yes. Vehicles are chosen by passenger count and luggage volume — from a sedan for light travel up to a van or minibus for a full family or group.",
+  },
+];
