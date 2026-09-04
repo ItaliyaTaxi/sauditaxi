@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getRoute } from "@/data/routes";
@@ -21,22 +22,24 @@ export function HomeRouteExplorer() {
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
 
   return (
-    <section className="bg-sand py-20 sm:py-28">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Popular Journeys</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
               Where our travellers are headed
             </h2>
           </div>
-          <Link
-            href="/intercity-transfers"
-            className="hidden items-center gap-1.5 text-sm font-semibold text-midnight hover:text-brass sm:inline-flex"
-          >
-            All routes
-            <ArrowRight className="size-3.5 rtl:rotate-180" />
-          </Link>
+          <div className="relative hidden h-24 w-40 shrink-0 overflow-hidden rounded-xl sm:block">
+            <Image
+              src="/images/journey/desert-highway.jpg"
+              alt="Open highway between Saudi cities"
+              fill
+              sizes="160px"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -44,7 +47,7 @@ export function HomeRouteExplorer() {
             <Link
               key={route.slug}
               href={`/routes/${route.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-hairline bg-white p-6 transition-colors hover:border-brass"
+              className="group flex flex-col justify-between rounded-2xl border border-hairline bg-sand/60 p-6 transition-colors hover:border-brass"
             >
               <div>
                 <div className="flex items-center gap-2.5 text-base font-semibold text-ink">
@@ -61,8 +64,8 @@ export function HomeRouteExplorer() {
           ))}
         </div>
 
-        <div className="mt-8 sm:hidden">
-          <Link href="/intercity-transfers" className="inline-flex items-center gap-1.5 text-sm font-semibold text-midnight">
+        <div className="mt-8 text-center sm:text-start">
+          <Link href="/intercity-transfers" className="inline-flex items-center gap-1.5 text-sm font-semibold text-midnight hover:text-brass">
             All routes
             <ArrowRight className="size-3.5 rtl:rotate-180" />
           </Link>

@@ -10,7 +10,7 @@ const points = [
 /** A restrained proof strip directly under the hero — text-led, not an icon grid. */
 export function HomeTrustStrip() {
   return (
-    <section className="border-b border-hairline bg-offwhite">
+    <section className="border-b border-hairline bg-white">
       <div className="mx-auto max-w-[1280px] px-4 py-6 sm:px-6 lg:px-8">
         <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 sm:justify-between">
           {points.map(({ icon: Icon, label }) => (

@@ -29,7 +29,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-midnight text-white/80">
+    <footer className="border-t border-brass/20 bg-midnight text-white/80">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className={cn("grid gap-10 md:grid-cols-2", isAr ? "lg:grid-cols-4" : "lg:grid-cols-3 xl:grid-cols-6")}>
           <div>

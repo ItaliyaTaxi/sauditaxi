@@ -52,7 +52,7 @@ export default function HomePage() {
       <HomeVehicleExperience />
       <HomeTravelInsights />
       <HomeCustomerTrust />
-      <FAQSection faqs={generalFaqs.slice(0, 6)} background="white" />
+      <FAQSection faqs={generalFaqs.slice(0, 6)} background="muted" />
       <HomeFinalCTA />
     </>
   );

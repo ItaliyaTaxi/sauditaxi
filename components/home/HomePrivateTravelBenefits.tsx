@@ -12,7 +12,7 @@ const benefits = [
 /** Practical, specific reasons to choose a private transfer — not generic superlatives. */
 export function HomePrivateTravelBenefits() {
   return (
-    <section className="bg-midnight py-20 text-white sm:py-28">
+    <section className="bg-midnight py-16 text-white sm:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Why a Private Transfer</p>

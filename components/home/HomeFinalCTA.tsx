@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 /** The closing CTA — one clear ask, no aggressive sales language. */
 export function HomeFinalCTA() {
   return (
-    <section className="bg-midnight py-20 text-white sm:py-24">
+    <section className="bg-midnight py-16 text-white sm:py-20">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Plan Your Private Journey</h2>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/70">

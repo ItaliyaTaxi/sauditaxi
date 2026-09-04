@@ -1,9 +1,15 @@
 import { vehicles } from "@/data/vehicles";
 
-/** Real vehicle data only (data/vehicles.ts) — no invented models, capacities, or pricing. */
+/**
+ * Real vehicle data only (data/vehicles.ts) — no invented models, capacities,
+ * or pricing. No vehicle photography exists in the system (data/vehicles.ts
+ * has no image field, and no vehicle photos live under public/images), so
+ * this stays a data-led fleet showcase rather than using stock photography
+ * of specific car models we can't verify are actually operated.
+ */
 export function HomeVehicleExperience() {
   return (
-    <section className="bg-sand py-20 sm:py-28">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">The Fleet</p>
@@ -12,20 +18,18 @@ export function HomeVehicleExperience() {
           </h2>
         </div>
 
-        <div className="mt-10 overflow-x-auto">
-          <div className="flex min-w-max gap-4 pb-2 sm:min-w-0 sm:grid sm:grid-cols-3 lg:grid-cols-6">
-            {vehicles.map((v) => (
-              <div key={v.id} className="w-56 shrink-0 rounded-2xl border border-hairline bg-white p-5 sm:w-auto">
-                <p className="font-semibold text-ink">{v.name}</p>
-                <p className="mt-1 text-xs text-ink-muted">{v.examples}</p>
-                <div className="mt-4 space-y-1 text-sm text-ink-soft">
-                  <p>{v.passengers}</p>
-                  <p>{v.luggage}</p>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft">{v.description}</p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {vehicles.map((v) => (
+            <div key={v.id} className="rounded-2xl border border-hairline bg-sand/50 p-6">
+              <div className="flex items-baseline justify-between gap-2">
+                <p className="text-lg font-semibold text-ink">{v.name}</p>
+                <p className="text-xs font-medium uppercase tracking-wide text-brass">{v.passengers}</p>
               </div>
-            ))}
-          </div>
+              <p className="mt-1 text-xs text-ink-muted">{v.examples}</p>
+              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{v.description}</p>
+              <p className="mt-4 border-t border-hairline pt-3 text-xs text-ink-muted">{v.luggage}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

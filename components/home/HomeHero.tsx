@@ -21,23 +21,31 @@ export function HomeHero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-45"
+        className="object-cover object-center opacity-55"
+      />
+      {/* Base wash for overall depth, then a left-to-right gradient concentrated
+          behind the copy (left) and easing off toward the booking panel (right),
+          plus a bottom anchor so the section doesn't read as flat. */}
+      <div className="absolute inset-0 bg-midnight/55" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-midnight/75 to-midnight/35"
+        aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-midnight/95 via-midnight/80 to-midnight"
+        className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-[1280px] px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-28 lg:pt-40">
+      <div className="relative mx-auto max-w-[1280px] px-4 pb-14 pt-28 sm:px-6 sm:pb-16 sm:pt-32 lg:px-8 lg:pb-20 lg:pt-36">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brass">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brass drop-shadow-sm">
               Private Transfers · Saudi Arabia &amp; the GCC
             </p>
-            <h1 className="mt-5 max-w-xl text-[2.25rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.75rem]">
+            <h1 className="mt-5 max-w-xl text-[2.25rem] font-bold leading-[1.08] tracking-tight drop-shadow-sm sm:text-5xl lg:text-[3.75rem]">
               Private Transfers, Made Effortless
             </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
               A private chauffeur service for airport arrivals, city-to-city journeys, and
               road transfers between Saudi Arabia and neighbouring GCC destinations —
               door to door, on your schedule.
@@ -59,7 +67,7 @@ export function HomeHero() {
               </Link>
             </div>
 
-            <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-2.5 text-sm text-white/65">
+            <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-2.5 text-sm text-white/75">
               {trustPoints.map((p) => (
                 <li key={p} className="flex items-center gap-2">
                   <span className="size-1 rounded-full bg-brass" aria-hidden="true" />
