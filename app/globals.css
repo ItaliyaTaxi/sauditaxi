@@ -31,6 +31,24 @@
   --ring: #f5b820;
 
   --radius: 0.85rem;
+
+  /* ── 2026 premium palette ──────────────────────────────────────────────
+     New, additive tokens for the homepage rebuild (and the shared
+     Header/Footer chrome) — deliberately separate from --navy/--gold above,
+     which every other existing page still renders with unchanged. See
+     PRE_REDESIGN_AUDIT.md / DO_NOT_DELETE.md: this is new brand identity for
+     newly-rebuilt pages, not a site-wide recolor. */
+  --midnight: #0b1726;
+  --midnight-soft: #16273b;
+  --sand: #f3ede3;
+  --sand-soft: #ece3d3;
+  --brass: #c8a96b;
+  --brass-soft: #d9c092;
+  --offwhite: #faf9f6;
+  --ink: #17202b;
+  --ink-soft: #5f6873;
+  --ink-muted: #8a929c;
+  --hairline: #e7e2d8;
 }
 
 @theme inline {
@@ -54,6 +72,18 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --color-midnight: var(--midnight);
+  --color-midnight-soft: var(--midnight-soft);
+  --color-sand: var(--sand);
+  --color-sand-soft: var(--sand-soft);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-offwhite: var(--offwhite);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
 
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-arabic: var(--font-arabic), ui-sans-serif, system-ui, sans-serif;

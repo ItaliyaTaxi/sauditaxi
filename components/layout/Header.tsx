@@ -128,8 +128,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 text-white transition-colors duration-300",
         solid
-          ? "bg-black/95 shadow-lg shadow-black/30 backdrop-blur"
-          : "bg-gradient-to-b from-black/60 via-black/25 to-transparent"
+          ? "bg-midnight/95 shadow-lg shadow-midnight/30 backdrop-blur"
+          : "bg-gradient-to-b from-midnight/70 via-midnight/30 to-transparent"
       )}
     >
       {/* Top bar: logo + language + quote + (mobile) menu toggle */}
@@ -156,7 +156,7 @@ export function Header() {
               asChild
               variant="gold"
               size="sm"
-              className="hidden shadow-md shadow-gold/20 sm:inline-flex"
+              className="hidden rounded-xl bg-brass text-midnight shadow-md shadow-brass/20 hover:bg-brass-soft sm:inline-flex"
             >
               <Link href="/get-quote">{dict.nav.getQuote}</Link>
             </Button>
@@ -183,10 +183,10 @@ export function Header() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                    "flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors",
                     active
-                      ? "bg-white/10 text-gold"
-                      : "text-white/80 hover:bg-white/5 hover:text-gold group-hover:text-gold"
+                      ? "bg-white/10 text-brass"
+                      : "text-white/80 hover:bg-white/5 hover:text-brass group-hover:text-brass"
                   )}
                 >
                   {link.label}
@@ -196,7 +196,7 @@ export function Header() {
                 <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div
                     className={cn(
-                      "max-h-[70vh] overflow-auto rounded-2xl border border-border bg-white p-2 text-navy shadow-2xl ring-1 ring-black/5",
+                      "max-h-[70vh] overflow-auto rounded-2xl border border-hairline bg-white p-2 text-ink shadow-2xl ring-1 ring-black/5",
                       link.wide ? "w-[30rem]" : "w-64"
                     )}
                   >
@@ -205,7 +205,7 @@ export function Header() {
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="block rounded-lg px-3 py-2 text-sm text-navy/80 transition-colors hover:bg-gold/10 hover:text-navy"
+                            className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-brass/10 hover:text-ink"
                           >
                             {child.label}
                           </Link>
@@ -220,10 +220,10 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                  "rounded-lg px-3.5 py-2 text-sm font-medium transition-colors",
                   active
-                    ? "bg-white/10 text-gold"
-                    : "text-white/80 hover:bg-white/5 hover:text-gold"
+                    ? "bg-white/10 text-brass"
+                    : "text-white/80 hover:bg-white/5 hover:text-brass"
                 )}
               >
                 {link.label}
@@ -233,13 +233,13 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Premium gold accent line (only on the solid bar) */}
-      {solid && <div className="h-[3px] w-full bg-gradient-to-r from-gold/0 via-gold to-gold/0" />}
+      {/* Premium brass accent line (only on the solid bar) */}
+      {solid && <div className="h-[3px] w-full bg-gradient-to-r from-brass/0 via-brass to-brass/0" />}
 
       {/* Mobile nav (collapsible) */}
       <div
         className={cn(
-          "lg:hidden overflow-y-auto bg-black transition-[max-height] duration-300",
+          "lg:hidden overflow-y-auto bg-midnight transition-[max-height] duration-300",
           open ? "max-h-[85vh]" : "max-h-0"
         )}
       >
@@ -254,7 +254,7 @@ export function Header() {
                     onClick={closeAll}
                     className={cn(
                       "flex-1 rounded-md px-3 py-2 text-sm font-medium",
-                      active ? "bg-white/10 text-gold" : "text-white/85 hover:bg-white/5 hover:text-gold"
+                      active ? "bg-white/10 text-brass" : "text-white/85 hover:bg-white/5 hover:text-brass"
                     )}
                   >
                     {link.label}
@@ -264,7 +264,7 @@ export function Header() {
                     aria-label={interpolate(dict.nav.toggleSubmenu, { label: link.label })}
                     aria-expanded={openSub === link.href}
                     onClick={() => setOpenSub((cur) => (cur === link.href ? null : link.href))}
-                    className="rounded-md p-2 text-white/70 hover:text-gold"
+                    className="rounded-md p-2 text-white/70 hover:text-brass"
                   >
                     <ChevronDown
                       className={cn(
@@ -281,7 +281,7 @@ export function Header() {
                         <Link
                           href={child.href}
                           onClick={closeAll}
-                          className="block rounded-md px-3 py-1.5 text-sm text-white/70 hover:bg-white/5 hover:text-gold"
+                          className="block rounded-md px-3 py-1.5 text-sm text-white/70 hover:bg-white/5 hover:text-brass"
                         >
                           {child.label}
                         </Link>
@@ -297,7 +297,7 @@ export function Header() {
                 onClick={closeAll}
                 className={cn(
                   "rounded-md px-3 py-2 text-sm font-medium",
-                  active ? "bg-white/10 text-gold" : "text-white/85 hover:bg-white/5 hover:text-gold"
+                  active ? "bg-white/10 text-brass" : "text-white/85 hover:bg-white/5 hover:text-brass"
                 )}
               >
                 {link.label}
@@ -305,7 +305,7 @@ export function Header() {
             );
           })}
           <div className="mt-2 px-1">
-            <Button asChild variant="gold" className="w-full shadow-md shadow-gold/20">
+            <Button asChild variant="gold" className="w-full rounded-xl bg-brass text-midnight shadow-md shadow-brass/20 hover:bg-brass-soft">
               <Link href="/get-quote" onClick={closeAll}>
                 {dict.nav.getQuote}
               </Link>

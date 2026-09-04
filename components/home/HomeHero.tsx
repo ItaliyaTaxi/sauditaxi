@@ -1,0 +1,77 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { HomeBookingPanel } from "@/components/home/HomeBookingPanel";
+
+const trustPoints = ["Private vehicle, every trip", "Fixed price, agreed upfront", "24/7 availability"];
+
+/**
+ * The new homepage hero — 2026 visual reset. Real photography (Riyadh
+ * skyline, already licensed and in use elsewhere on the site — see
+ * data/journey-pages.ts) instead of the old dark gradient + gold-blob hero.
+ * Functionally independent of the old HeroSection component (still used by
+ * the Arabic homepage, app/ar/page.tsx, and left untouched).
+ */
+export function HomeHero() {
+  return (
+    <section className="relative overflow-hidden bg-midnight text-white">
+      <Image
+        src="/images/journey/riyadh-skyline.jpg"
+        alt="Riyadh skyline at dusk"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center opacity-45"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-midnight/95 via-midnight/80 to-midnight"
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto max-w-[1280px] px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-28 lg:pt-40">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brass">
+              Private Transfers · Saudi Arabia &amp; the GCC
+            </p>
+            <h1 className="mt-5 max-w-xl text-[2.25rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.75rem]">
+              Private Transfers, Made Effortless
+            </h1>
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
+              A private chauffeur service for airport arrivals, city-to-city journeys, and
+              road transfers between Saudi Arabia and neighbouring GCC destinations —
+              door to door, on your schedule.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="/get-quote"
+                className="inline-flex items-center gap-2 rounded-xl bg-brass px-7 py-3.5 text-sm font-semibold text-midnight transition-colors hover:bg-brass-soft"
+              >
+                Get a Quote
+                <ArrowRight className="size-4 rtl:rotate-180" />
+              </Link>
+              <Link
+                href="/intercity-transfers"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/5"
+              >
+                Explore Routes
+              </Link>
+            </div>
+
+            <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-2.5 text-sm text-white/65">
+              {trustPoints.map((p) => (
+                <li key={p} className="flex items-center gap-2">
+                  <span className="size-1 rounded-full bg-brass" aria-hidden="true" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <HomeBookingPanel />
+        </div>
+      </div>
+    </section>
+  );
+}

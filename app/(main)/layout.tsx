@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Noto_Sans_Arabic } from "next/font/google";
+import { Manrope, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -16,19 +16,25 @@ import {
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({
+// Premium sans-serif — replaces Geist as part of the 2026 visual reset
+// (see PRE_REDESIGN_AUDIT.md / the homepage rebuild). Weights kept to the
+// ones the new typography scale actually uses (400/500/600/700) rather than
+// loading the full variable-font range.
+const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-// Arabic pages use a dedicated Arabic-script webfont — Geist has minimal
-// Arabic glyph coverage. Loaded here too (not just app/ar/layout.tsx) since
-// Header/Footer are shared components rendered under both root layouts and
-// apply the `font-arabic` class whenever the current route is Arabic.
-const notoSansArabic = Noto_Sans_Arabic({
+// Arabic pages use a dedicated Arabic-script webfont. Loaded here too (not
+// just app/ar/layout.tsx) since Header/Footer are shared components
+// rendered under both root layouts and apply the `font-arabic` class
+// whenever the current route is Arabic.
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-arabic",
   subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -60,7 +66,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1220",
+  themeColor: "#0B1726",
 };
 
 export default function RootLayout({
@@ -70,7 +76,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
-      className={cn(geist.variable, notoSansArabic.variable, "h-full")}
+      className={cn(manrope.variable, ibmPlexSansArabic.variable, "h-full")}
     >
       <body className="flex min-h-full flex-col font-sans">
         <SiteShell

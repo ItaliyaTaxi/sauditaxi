@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Noto_Sans_Arabic } from "next/font/google";
+import { Manrope, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -16,15 +16,20 @@ import {
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({
+// Kept in sync with app/(main)/layout.tsx's font choice — Header/Footer are
+// shared between both root layouts, so they'd otherwise render in two
+// different typefaces depending on locale.
+const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const notoSansArabic = Noto_Sans_Arabic({
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-arabic",
   subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1220",
+  themeColor: "#0B1726",
 };
 
 export default function ArabicRootLayout({
@@ -56,7 +61,7 @@ export default function ArabicRootLayout({
     <html
       lang="ar"
       dir="rtl"
-      className={cn(geist.variable, notoSansArabic.variable, "h-full")}
+      className={cn(manrope.variable, ibmPlexSansArabic.variable, "h-full")}
     >
       <body className="flex min-h-full flex-col font-sans">
         <SiteShell
