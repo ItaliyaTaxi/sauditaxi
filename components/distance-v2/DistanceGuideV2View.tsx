@@ -91,6 +91,17 @@ export type DistanceGuideV2Block =
       items: { question: string; answer: string }[];
     }
   | {
+      type: "transportOptions";
+      heading: string;
+      options: {
+        mode: string;
+        suitability: string;
+        duration: string;
+        advantages: string;
+        limitations: string;
+      }[];
+    }
+  | {
       type: "contextCard";
       heading: string;
       paragraphs: string[];
@@ -347,6 +358,39 @@ function PlanningNotes({ heading, items }: Extract<DistanceGuideV2Block, { type:
   );
 }
 
+function TransportOptions({ heading, options }: Extract<DistanceGuideV2Block, { type: "transportOptions" }>) {
+  return (
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{heading}</p>
+      <div className="mt-4 space-y-4">
+        {options.map((t) => (
+          <div key={t.mode} className="rounded-lg border border-border p-5">
+            <h3 className="font-semibold text-navy">{t.mode}</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              <span className="font-medium text-navy">Duration: </span>
+              {t.duration}
+            </p>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              <span className="font-medium text-navy">Best for: </span>
+              {t.suitability}
+            </p>
+            <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium text-navy">Advantages: </span>
+                {t.advantages}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium text-navy">Limitations: </span>
+                {t.limitations}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ContextCard({ heading, paragraphs }: Extract<DistanceGuideV2Block, { type: "contextCard" }>) {
   return (
     <div className="border-s-2 border-navy/20 ps-5">
@@ -403,6 +447,8 @@ function BlockRenderer({ block, from, to }: { block: DistanceGuideV2Block; from:
       return <Prose {...block} />;
     case "planningNotes":
       return <PlanningNotes {...block} />;
+    case "transportOptions":
+      return <TransportOptions {...block} />;
     case "contextCard":
       return <ContextCard {...block} />;
     case "relatedInfo":

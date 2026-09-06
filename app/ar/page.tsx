@@ -69,10 +69,10 @@ export default function ArabicHomePage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
               خدماتنا في السعودية
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-3 text-ink-soft">
               نقل خاص بأسعار ثابتة لكل نوع من أنواع الرحلات في المملكة.
             </p>
           </div>
@@ -82,13 +82,13 @@ export default function ArabicHomePage() {
               const Icon = serviceIcons[i] ?? Car;
               return (
                 <Link key={service.slug} href={arPath(service)} className="group">
-                  <Card className="h-full p-6 transition-all hover:-translate-y-1 hover:border-gold hover:shadow-md">
-                    <span className="flex size-12 items-center justify-center rounded-xl bg-navy text-gold transition-colors group-hover:bg-gold group-hover:text-navy">
+                  <Card className="h-full border-hairline p-6 transition-all hover:-translate-y-1 hover:border-brass hover:shadow-md">
+                    <span className="flex size-12 items-center justify-center rounded-xl bg-midnight text-brass transition-colors group-hover:bg-brass group-hover:text-midnight">
                       <Icon className="size-6" />
                     </span>
-                    <h3 className="mt-4 text-lg font-semibold text-navy">{service.h1}</h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground">{service.intro}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-gold">
+                    <h3 className="mt-4 text-lg font-semibold text-ink">{service.h1}</h3>
+                    <p className="mt-1.5 text-sm text-ink-soft">{service.intro}</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-ink group-hover:text-brass">
                       المزيد
                       <ArrowRight className="size-4 rtl:rotate-180 transition-transform ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                     </span>

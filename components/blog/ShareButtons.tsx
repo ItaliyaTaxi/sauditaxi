@@ -41,7 +41,7 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-sm font-semibold text-navy">Share:</span>
+      <span className="text-sm font-semibold text-ink">Share:</span>
       {links.map((l) => {
         const Icon = l.icon;
         return (
@@ -51,7 +51,7 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Share on ${l.label}`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-navy transition-colors hover:border-gold hover:bg-gold hover:text-navy"
+            className="inline-flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-brass hover:bg-brass hover:text-midnight"
           >
             <Icon className="size-3.5" />
             {l.label}
@@ -62,7 +62,7 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
         type="button"
         onClick={copy}
         aria-label="Copy link"
-        className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-navy transition-colors hover:border-gold hover:bg-gold hover:text-navy"
+        className="inline-flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-brass hover:bg-brass hover:text-midnight"
       >
         {copied ? <Check className="size-3.5 text-green-600" /> : <Link2 className="size-3.5" />}
         {copied ? "Copied" : "Copy link"}

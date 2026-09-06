@@ -9,13 +9,13 @@ export function BlogCard({ blog, featured = false }: { blog: Blog; featured?: bo
     <article
       className={
         featured
-          ? "group grid overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md md:grid-cols-2"
-          : "group flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md"
+          ? "group grid overflow-hidden rounded-2xl border border-hairline bg-white transition-colors hover:border-brass/50 md:grid-cols-2"
+          : "group flex flex-col overflow-hidden rounded-2xl border border-hairline bg-white transition-colors hover:border-brass/50"
       }
     >
       <Link
         href={`/blog/${blog.slug}`}
-        className="relative block aspect-[16/9] overflow-hidden bg-muted"
+        className="relative block aspect-[16/9] overflow-hidden bg-sand/40"
         aria-label={blog.title}
       >
         {blog.featuredImage ? (
@@ -28,17 +28,17 @@ export function BlogCard({ blog, featured = false }: { blog: Blog; featured?: bo
             unoptimized={blog.featuredImage.endsWith(".svg")}
           />
         ) : (
-          <div className="flex size-full items-center justify-center bg-navy text-gold">
+          <div className="flex size-full items-center justify-center bg-midnight text-brass">
             <span className="text-sm font-semibold">Saudi Private Transfers</span>
           </div>
         )}
-        <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-navy">
+        <span className="absolute left-3 top-3 rounded-full bg-midnight/85 px-3 py-1 text-xs font-semibold text-brass backdrop-blur-sm">
           {blog.category}
         </span>
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="flex items-center gap-3 text-xs text-ink-muted">
           <span>{formatBlogDate(blog.publishedAt ?? blog.createdAt)}</span>
           <span aria-hidden="true">·</span>
           <span className="inline-flex items-center gap-1">
@@ -49,24 +49,24 @@ export function BlogCard({ blog, featured = false }: { blog: Blog; featured?: bo
         <h3
           className={
             featured
-              ? "mt-3 text-2xl font-bold leading-snug text-navy"
-              : "mt-3 text-lg font-bold leading-snug text-navy"
+              ? "mt-3 text-2xl font-bold leading-snug text-ink"
+              : "mt-3 text-lg font-bold leading-snug text-ink"
           }
         >
-          <Link href={`/blog/${blog.slug}`} className="hover:text-gold">
+          <Link href={`/blog/${blog.slug}`} className="hover:text-brass">
             {blog.title}
           </Link>
         </h3>
 
         {blog.excerpt && (
-          <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{blog.excerpt}</p>
+          <p className="mt-2 line-clamp-3 text-sm text-ink-soft">{blog.excerpt}</p>
         )}
 
         <Link
           href={`/blog/${blog.slug}`}
-          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold-foreground/90 text-navy hover:text-gold"
+          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-midnight hover:text-brass"
         >
-          Read guide <ArrowRight className="size-4" />
+          Read guide <ArrowRight className="size-4 rtl:rotate-180" />
         </Link>
       </div>
     </article>

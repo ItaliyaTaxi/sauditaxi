@@ -8,8 +8,10 @@ import { SchemaScript } from "@/components/seo/SchemaScript";
 import { distancePages, getDistancePage } from "@/data/distance-pages";
 import { journeyPages, getJourneyPage } from "@/data/journey-pages";
 import { distanceGuideV2Pages, getDistanceGuideV2Page } from "@/data/distance-guide-v2";
+import { journeyGuideV2Pages, getJourneyGuideV2Page } from "@/data/journey-guide-v2";
 import { JourneyPageView } from "@/components/journey/JourneyPageView";
 import { DistanceGuideV2View } from "@/components/distance-v2/DistanceGuideV2View";
+import { JourneyGuideV2View } from "@/components/journey-v2/JourneyGuideV2View";
 import { routeHero } from "@/lib/hero";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -22,10 +24,13 @@ import { getArPathForEnPath } from "@/data/translations/ar";
  * matching /routes/{slug} commercial page. See data/distance-pages.ts for
  * the content model and sourcing notes.
  *
- * A small batch of routes (data/journey-pages.ts) use a deliberately
- * different, richer visual design instead — see JourneyPageView. Those
- * slugs are checked first below; every other slug falls through to the
- * original render path completely unchanged.
+ * Three further collections are checked ahead of the plain V1 fallback,
+ * each with its own visual identity: distanceGuideV2Pages (short/medium
+ * domestic and cross-border legs, see DistanceGuideV2View), then
+ * journeyGuideV2Pages (the long-distance Gulf-crossing journeys, see
+ * JourneyGuideV2View — replaces the old journeyPages/JourneyPageView design,
+ * now unused and empty, kept only for structural safety), then the old
+ * journeyPages array as a final structural fallback before plain V1.
  */
 
 type Params = { slug: string };
@@ -35,6 +40,7 @@ export function generateStaticParams() {
     ...distancePages.map((p) => ({ slug: p.slug })),
     ...journeyPages.map((p) => ({ slug: p.slug })),
     ...distanceGuideV2Pages.map((p) => ({ slug: p.slug })),
+    ...journeyGuideV2Pages.map((p) => ({ slug: p.slug })),
   ];
 }
 
@@ -52,6 +58,18 @@ export async function generateMetadata({
     return buildMetadata({
       title: v2Page.metaTitle,
       description: v2Page.metaDescription,
+      path: enPath,
+      ...(arPath ? { alternateLanguages: { en: enPath, ar: arPath } } : {}),
+    });
+  }
+
+  const journeyV2Page = getJourneyGuideV2Page(slug);
+  if (journeyV2Page) {
+    const enPath = `/distance/${journeyV2Page.slug}`;
+    const arPath = getArPathForEnPath(enPath);
+    return buildMetadata({
+      title: journeyV2Page.metaTitle,
+      description: journeyV2Page.metaDescription,
       path: enPath,
       ...(arPath ? { alternateLanguages: { en: enPath, ar: arPath } } : {}),
     });
@@ -123,6 +141,30 @@ export default async function DistancePage({
           crumbs={v2Crumbs}
           labels={{
             faqHeading: "Common Questions About This Route",
+            sourcesHeading: "Sources",
+            sourceFootnote:
+              "Distances and travel times are approximate and can vary by exact starting point, route taken, border conditions, and traffic. Last checked",
+          }}
+        />
+      </>
+    );
+  }
+
+  const journeyV2Page = getJourneyGuideV2Page(slug);
+  if (journeyV2Page) {
+    const journeyV2Path = `/distance/${journeyV2Page.slug}`;
+    const journeyV2Crumbs = [
+      { name: "Home", path: "/" },
+      { name: `${journeyV2Page.from} to ${journeyV2Page.to} Distance`, path: journeyV2Path },
+    ];
+    return (
+      <>
+        <SchemaScript schema={[breadcrumbSchema(journeyV2Crumbs), faqSchema(journeyV2Page.faqs)]} />
+        <JourneyGuideV2View
+          {...journeyV2Page}
+          crumbs={journeyV2Crumbs}
+          labels={{
+            faqHeading: "Common Questions About This Journey",
             sourcesHeading: "Sources",
             sourceFootnote:
               "Distances and travel times are approximate and can vary by exact starting point, route taken, border conditions, and traffic. Last checked",

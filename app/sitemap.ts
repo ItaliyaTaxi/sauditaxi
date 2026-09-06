@@ -7,11 +7,13 @@ import { borders } from "@/data/borders";
 import { services } from "@/data/services";
 import { hotelCities } from "@/lib/hotel-transfers";
 import { pointTransfers } from "@/lib/point-transfers";
+import { pointTransfersV2 } from "@/lib/point-transfers-v2";
 import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath, getArPathForEnPath } from "@/data/translations/ar";
 import { distancePages } from "@/data/distance-pages";
 import { journeyPages } from "@/data/journey-pages";
 import { distanceGuideV2Pages } from "@/data/distance-guide-v2";
+import { journeyGuideV2Pages } from "@/data/journey-guide-v2";
 
 // Regenerate hourly so newly published blogs/pages enter the sitemap without a
 // full redeploy (the sitemap pulls published posts live from the database).
@@ -82,12 +84,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // carries the same content now. Point transfers (attractions, ports,
   // railways, services) are unaffected and still listed below.
 
-  // Attraction / landmark transfer pages (point transfers).
-  const pointTransferPaths = pointTransfers.map((t) => ({
-    path: `/${t.citySlug}/${t.slug}`,
-    priority: 0.7,
-    changeFrequency: "monthly" as const,
-  }));
+  // Attraction / landmark transfer pages (point transfers). Migrating one
+  // city at a time to pointTransfersV2 (see PointTransferV2View) — a slug
+  // lives in exactly one of the two arrays at a time, so v2Keys prevents a
+  // duplicate <url> entry mid-migration.
+  const v2Keys = new Set(pointTransfersV2.map((t) => `${t.citySlug}/${t.slug}`));
+  const pointTransferPaths = [
+    ...pointTransfersV2.map((t) => ({
+      path: `/${t.citySlug}/${t.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
+    ...pointTransfers
+      .filter((t) => !v2Keys.has(`${t.citySlug}/${t.slug}`))
+      .map((t) => ({
+        path: `/${t.citySlug}/${t.slug}`,
+        priority: 0.7,
+        changeFrequency: "monthly" as const,
+      })),
+  ];
 
   // Informational distance/travel-time pages — separate intent from the
   // commercial route pages above, see data/distance-pages.ts.
@@ -113,6 +128,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly" as const,
   }));
 
+  // "Journey V2" pages — same /distance/{slug} prefix, the premium
+  // long-distance planning-guide design replacing journeyPages/journeyPagePaths
+  // above (see data/journey-guide-v2.ts).
+  const journeyGuideV2Paths = journeyGuideV2Pages.map((p) => ({
+    path: `/distance/${p.slug}`,
+    priority: 0.6,
+    changeFrequency: "monthly" as const,
+  }));
+
   const base = [
     ...staticPaths,
     ...servicePaths,
@@ -124,6 +148,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...distancePagePaths,
     ...journeyPagePaths,
     ...distanceGuideV2Paths,
+    ...journeyGuideV2Paths,
     ...pointTransferPaths,
   ].map((entry) => {
     // Cross-link to the Arabic version, when one exists, for hreflang in the sitemap.

@@ -83,7 +83,7 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
   return (
     <div className="space-y-6">
       {/* Booking CTA card */}
-      <div className="rounded-2xl bg-navy p-6 text-white shadow-sm">
+      <div className="rounded-2xl bg-midnight p-6 text-white">
         <h3 className="text-lg font-bold">Book Your Transfer</h3>
         <p className="mt-1 text-sm text-white/75">
           Fixed prices, professional drivers, fast reply.
@@ -98,15 +98,15 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
         </a>
         <Link
           href="/get-quote"
-          className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-gold text-sm font-semibold text-navy transition-colors hover:bg-gold-soft"
+          className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brass text-sm font-semibold text-midnight transition-colors hover:bg-brass-soft"
         >
           <Send className="size-4" /> Get a Quote
         </Link>
       </div>
 
       {/* Quick service links */}
-      <div className="rounded-2xl border border-border bg-white p-5 shadow-sm">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Popular Services</h3>
+      <div className="rounded-2xl border border-hairline bg-white p-5">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-ink">Popular Services</h3>
         <ul className="mt-3 space-y-1">
           {quickLinks.map((l) => {
             const Icon = l.icon;
@@ -114,9 +114,9 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm text-navy/80 transition-colors hover:bg-gold/10 hover:text-navy"
+                  className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm text-ink-soft transition-colors hover:bg-sand/50 hover:text-ink"
                 >
-                  <Icon className="size-4 text-gold" /> {l.label}
+                  <Icon className="size-4 text-brass" /> {l.label}
                 </Link>
               </li>
             );
@@ -125,17 +125,17 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
       </div>
 
       {/* Popular routes */}
-      <div className="rounded-2xl border border-border bg-white p-5 shadow-sm">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Popular Routes</h3>
+      <div className="rounded-2xl border border-hairline bg-white p-5">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-ink">Popular Routes</h3>
         <ul className="mt-3 space-y-1">
           {popularRoutes.map((r) => (
             <li key={r.slug}>
               <Link
                 href={`/routes/${r.slug}`}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm text-navy/80 transition-colors hover:bg-gold/10 hover:text-navy"
+                className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm text-ink-soft transition-colors hover:bg-sand/50 hover:text-ink"
               >
                 <span>{r.from}</span>
-                <ArrowRight className="size-3.5 text-gold" />
+                <ArrowRight className="size-3.5 text-brass rtl:rotate-180" />
                 <span>{r.to}</span>
               </Link>
             </li>
@@ -145,16 +145,16 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
 
       {/* Latest blogs */}
       {latest.length > 0 && (
-        <div className="rounded-2xl border border-border bg-white p-5 shadow-sm">
-          <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Latest Guides</h3>
+        <div className="rounded-2xl border border-hairline bg-white p-5">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-ink">Latest Guides</h3>
           <ul className="mt-3 space-y-3">
             {latest.map((b) => (
               <li key={b.id}>
                 <Link href={`/blog/${b.slug}`} className="group block">
-                  <span className="block text-sm font-semibold leading-snug text-navy group-hover:text-gold">
+                  <span className="block text-sm font-semibold leading-snug text-ink group-hover:text-brass">
                     {b.title}
                   </span>
-                  <span className="mt-0.5 block text-xs text-muted-foreground">
+                  <span className="mt-0.5 block text-xs text-ink-muted">
                     {formatBlogDate(b.publishedAt ?? b.createdAt)} · {b.readingTime} min read
                   </span>
                 </Link>
@@ -165,22 +165,22 @@ export async function BlogSidebar({ currentSlug }: { currentSlug: string }) {
       )}
 
       {/* Contact card */}
-      <div className="rounded-2xl border border-border bg-muted/40 p-5 shadow-sm">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Need Help?</h3>
-        <p className="mt-2 text-sm text-muted-foreground">
+      <div className="rounded-2xl border border-hairline bg-sand/30 p-5">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-ink">Need Help?</h3>
+        <p className="mt-2 text-sm text-ink-soft">
           Our team replies quickly with a fixed quote for your journey.
         </p>
         <a
           href={`mailto:${siteConfig.email}`}
-          className="mt-3 flex items-center gap-2 text-sm font-medium text-navy hover:text-gold"
+          className="mt-3 flex items-center gap-2 text-sm font-medium text-ink hover:text-brass"
         >
-          <Mail className="size-4 text-gold" /> {siteConfig.email}
+          <Mail className="size-4 text-brass" /> {siteConfig.email}
         </a>
         <Link
           href="/contact"
-          className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-navy hover:text-gold"
+          className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-ink hover:text-brass"
         >
-          Contact us <ArrowRight className="size-4" />
+          Contact us <ArrowRight className="size-4 rtl:rotate-180" />
         </Link>
       </div>
     </div>

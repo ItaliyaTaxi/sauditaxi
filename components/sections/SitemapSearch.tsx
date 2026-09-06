@@ -48,20 +48,20 @@ export function SitemapSearch() {
   }, [query]);
 
   return (
-    <div className="sticky top-16 z-10 -mx-4 border-b border-border bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-4">
+    <div className="sticky top-16 z-10 -mx-4 border-b border-hairline bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-4">
       <div className="relative mx-auto max-w-md">
-        <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+        <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-ink-muted" />
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search the sitemap…"
           aria-label="Search the sitemap"
-          className="w-full rounded-lg border border-border bg-muted/40 py-2 ps-9 pe-3 text-sm text-navy placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+          className="w-full rounded-lg border border-hairline bg-sand/30 py-2 ps-9 pe-3 text-sm text-ink placeholder:text-ink-muted focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass"
         />
       </div>
       {matchCount !== null && (
-        <p className="mx-auto mt-2 max-w-md text-xs text-muted-foreground">
+        <p className="mx-auto mt-2 max-w-md text-xs text-ink-muted">
           {matchCount} of {totalRef.current} pages match
         </p>
       )}

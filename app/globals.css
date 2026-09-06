@@ -188,9 +188,9 @@ body {
   .tilt:hover, .lift:hover { transform: none; }
 }
 
-/* Blog article typography (rendered from stored HTML). */
+/* Blog article typography (rendered from stored HTML) — Midnight/Sand/Brass theme. */
 .blog-prose {
-  color: #334155;
+  color: var(--ink-soft);
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -198,7 +198,7 @@ body {
   margin-top: 1.15rem;
 }
 .blog-prose h2 {
-  color: #0b1220;
+  color: var(--ink);
   font-size: 1.6rem;
   font-weight: 800;
   line-height: 1.25;
@@ -207,7 +207,7 @@ body {
   scroll-margin-top: 6rem;
 }
 .blog-prose h3 {
-  color: #0b1220;
+  color: var(--ink);
   font-size: 1.25rem;
   font-weight: 700;
   margin-top: 1.75rem;
@@ -215,26 +215,26 @@ body {
 }
 .blog-prose p { margin-top: 1.15rem; }
 .blog-prose a {
-  color: #b8860b;
+  color: var(--brass);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.blog-prose a:hover { color: #0b1220; }
+.blog-prose a:hover { color: var(--ink); }
 .blog-prose ul,
 .blog-prose ol { margin-top: 1.15rem; padding-inline-start: 1.4rem; }
 .blog-prose ul { list-style: disc; }
 .blog-prose ol { list-style: decimal; }
 .blog-prose li { margin-top: 0.4rem; }
-.blog-prose li::marker { color: #f5b820; }
-.blog-prose strong { color: #0b1220; font-weight: 700; }
+.blog-prose li::marker { color: var(--brass); }
+.blog-prose strong { color: var(--ink); font-weight: 700; }
 .blog-prose blockquote {
-  border-inline-start: 4px solid #f5b820;
-  background: #faf7ef;
+  border-inline-start: 4px solid var(--brass);
+  background: var(--sand);
   padding: 0.75rem 1.1rem;
   border-start-end-radius: 0.5rem;
   border-end-end-radius: 0.5rem;
-  color: #475569;
+  color: var(--ink-soft);
   font-style: italic;
 }
 .blog-prose table {
@@ -245,17 +245,17 @@ body {
 }
 .blog-prose th,
 .blog-prose td {
-  border: 1px solid #e7e5e4;
+  border: 1px solid var(--hairline);
   padding: 0.6rem 0.8rem;
   text-align: start;
   vertical-align: top;
 }
 .blog-prose thead th {
-  background: #0b1220;
+  background: var(--midnight);
   color: #fff;
   font-weight: 700;
 }
-.blog-prose tbody tr:nth-child(even) { background: #faf9f7; }
+.blog-prose tbody tr:nth-child(even) { background: var(--sand); }
 .blog-prose h2 + p { margin-top: 0.5rem; }
 
 /* ── RTL (Arabic) support ────────────────────────────────────────────────

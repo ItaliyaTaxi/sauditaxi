@@ -77,7 +77,7 @@ export function BlogInlineCta({ slug = "" }: BlogInlineCtaProps) {
   const links = getContextualLinks(slug);
 
   return (
-    <div className="my-8 rounded-2xl bg-navy p-5 text-white lg:hidden">
+    <div className="my-8 rounded-2xl border border-hairline bg-midnight p-5 text-white lg:hidden">
       <p className="font-bold">Need a private transfer in Saudi Arabia?</p>
       <p className="mt-1 text-sm text-white/75">Fixed prices, professional drivers, fast reply.</p>
       <div className="mt-3 flex flex-wrap gap-2">
@@ -91,15 +91,15 @@ export function BlogInlineCta({ slug = "" }: BlogInlineCtaProps) {
         </a>
         <Link
           href="/get-quote"
-          className="inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-navy"
+          className="inline-flex items-center gap-1.5 rounded-full bg-brass px-4 py-2 text-sm font-semibold text-midnight"
         >
           <Send className="size-4" /> Get a Quote
         </Link>
       </div>
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/80">
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="inline-flex items-center gap-1 hover:text-gold">
-            <ArrowRight className="size-3" /> {l.label}
+          <Link key={l.href} href={l.href} className="inline-flex items-center gap-1 hover:text-brass">
+            <ArrowRight className="size-3 rtl:rotate-180" /> {l.label}
           </Link>
         ))}
       </div>

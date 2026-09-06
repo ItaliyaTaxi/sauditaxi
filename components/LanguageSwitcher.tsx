@@ -43,7 +43,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           aria-current={locale === "en" ? "page" : undefined}
           className={cn(
             "px-2.5 py-1 transition-colors",
-            locale === "en" ? "bg-gold text-navy" : "text-white/80 hover:text-gold"
+            locale === "en" ? "bg-brass text-midnight" : "text-white/80 hover:text-brass"
           )}
         >
           {dict.languageSwitcher.en}
@@ -54,7 +54,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           aria-current={locale === "ar" ? "page" : undefined}
           className={cn(
             "px-2.5 py-1 transition-colors",
-            locale === "ar" ? "bg-gold text-navy" : "text-white/80 hover:text-gold"
+            locale === "ar" ? "bg-brass text-midnight" : "text-white/80 hover:text-brass"
           )}
         >
           {dict.languageSwitcher.ar}

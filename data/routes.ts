@@ -8540,28 +8540,47 @@ const baseRoutes: Route[] = [
     distance: "300 km",
     duration: "3 hours",
     intro:
-      "Private cross-border transfer from Dammam, Khobar, and Eastern Province cities directly to the Salwa / Abu Samra Qatar border crossing.",
+      "This page is specifically for travellers who need a private car to the Salwa border crossing itself — not a taxi that continues on into Qatar, since Salwa is a land border with its own separate immigration, customs, and vehicle checks on each side.",
     about:
-      "Need a comfortable, reliable transfer from Dammam to the Saudi–Qatar border? Our private border transfer service picks you up from your hotel, residence, or airport in Dammam or Khobar and drives you directly to the Salwa border crossing with guidance on border procedures.",
+      "Our private Dammam to Qatar border transfer collects you from your hotel, residence, or King Fahd Airport in the Eastern Province and drives you directly to the Salwa border crossing (Abu Samra on the Qatari side). We're upfront that the service ends at the crossing — onward transport into Qatar is a separate arrangement.",
     notes: [
       "Door-to-door pickup across Dammam, Khobar, Dhahran, and King Fahd Airport",
-      "Direct transfer to the Salwa (Saudi) / Abu Samra (Qatar) border crossing",
-      "Assistance with luggage and border terminal drop-off points",
-      "Available 24/7 with fixed pricing and advance booking",
+      "Drop-off at the Saudi-side Salwa crossing point only",
+      "The crossing operates 24 hours a day, seven days a week",
+      "Onward Qatar transport arranged separately — this transfer ends at the crossing",
     ],
     relatedCitySlugs: ["dammam", "khobar", "hofuf"],
     lastUpdated: "2026-08-16",
     sections: [
       {
-        heading: "Direct Eastern Province transfer to the Qatar Border",
+        heading: "A border-only transfer from the Eastern Province",
         paragraphs: [
-          "The 300 km highway drive south via Hofuf to the Salwa border crossing takes approximately 3 hours, offering a smooth cross-border travel experience.",
+          "It's worth being precise about what this route covers: this is a private transfer from Dammam to the Salwa crossing itself, not a through-service into Doha. Land border crossings between Saudi Arabia and Qatar involve separate immigration and vehicle checks on each side, so this transfer brings you to the crossing and stops there, with a Qatar-side vehicle needed for the onward journey.",
+          "The drive covers about 300 kilometres south via Hofuf and takes roughly three hours in free-flowing traffic. There are no tolls on Saudi highways, so the fixed price you agree before travelling covers the full journey to the crossing.",
+        ],
+      },
+      {
+        heading: "What to expect at the Salwa crossing",
+        paragraphs: [
+          "Salwa is Saudi Arabia's only land border with Qatar, and it operates 24 hours a day, seven days a week. Crossing typically involves biometric checks (fingerprints, an eye scan, and a photo) at the Saudi immigration building, followed by a separate vehicle-documentation and insurance check.",
+          "For full detail on passports, visas, and current entry requirements on the Qatari side, see our <a href='/border-transfers/qatar-border'>Qatar border transfer guide</a> before you travel — requirements at land borders can change.",
+        ],
+      },
+      {
+        heading: "Vehicle options and pickup across the Eastern Province",
+        paragraphs: [
+          "We collect from any hotel, residence, or office in Dammam, Khobar, or Dhahran, and can also start from King Fahd International Airport if you're arriving by air first. A comfortable sedan suits solo or paired travellers; an SUV or van suits families or groups with more luggage for the drive.",
+          "If you have a specific Doha meeting time, build in a realistic buffer for the border process itself beyond the three-hour drive — biometric and vehicle checks add time, and it varies by how busy the crossing is when you arrive.",
         ],
       },
     ],
     faqs: [
-      { question: "How far is the Qatar border from Dammam?", answer: "The Salwa border crossing is approximately 300 km from Dammam, taking around 3 hours by private car." },
-      { question: "Do you pick up from Khobar and Dhahran for the Qatar border?", answer: "Yes, we provide door-to-door collection across all Eastern Province cities including Khobar, Dhahran, and Dammam." },
+      { question: "Does this service continue into Doha?", answer: "No — this transfer takes you to the Salwa crossing itself; onward travel into Qatar needs a separate Qatar-side arrangement, since land border crossings require a vehicle change on each side." },
+      { question: "How far is the Qatar border from Dammam?", answer: "The Salwa border crossing is approximately 300 km from Dammam via Hofuf, taking around 3 hours by private car in free-flowing conditions." },
+      { question: "Do you pick up from Khobar and Dhahran for the Qatar border?", answer: "Yes, we provide door-to-door collection across all Eastern Province cities including Khobar, Dhahran, and Dammam, and can also start from King Fahd Airport." },
+      { question: "What happens after drop-off at Salwa?", answer: "You'll go through Saudi exit immigration and vehicle/customs checks at the crossing, then continue on the Qatari side (Abu Samra) into Qatar — tell us your onward plans when booking and we can advise on arranging that connection." },
+      { question: "Is the Salwa crossing open 24 hours?", answer: "Yes, it operates 24 hours a day, seven days a week, so there's no fixed window you need to arrive within." },
+      { question: "What documents do I need to cross to Qatar?", answer: "A valid passport and the appropriate Qatar entry permission; the crossing process also includes biometric checks on the Saudi side. See our Qatar border transfer guide for full current requirements before you travel." },
     ],
     keywords: ["dammam to qatar border taxi", "dammam to salwa border transfer", "dammam to abu samra taxi"],
   },
@@ -8615,7 +8634,7 @@ const baseRoutes: Route[] = [
     duration: "30-45 min",
     lastUpdated: "2026-08-19",
     intro: "Book a private Riyadh to King Khalid International Airport (RUH) transfer for punctual, comfortable door-to-door hotel and office pickup.",
-    about: "Our private Riyadh to RUH Airport transfer ensures you reach your departure terminal with complete peace of mind. Your driver arrives early at your hotel, home, or office across Riyadh, handles your luggage, and takes the optimal route to Terminals 1, 2, 3, 4, or 5 at a guaranteed fixed rate.",
+    about: "Our private Riyadh to RUH Airport transfer collects you from your hotel, home, or office across Riyadh, handles your luggage, and drives you directly to Terminals 1, 2, 3, 4, or 5 at a fixed price agreed before you travel.",
     notes: [
       "Punctual pickup from all Riyadh hotels, compounds, and business towers",
       "Drop-off directly at your specific departure terminal at King Khalid Airport",
@@ -8680,7 +8699,7 @@ const baseRoutes: Route[] = [
     about: "Ensure an effortless departure with our private transfer from anywhere in Jeddah to King Abdulaziz International Airport (JED). We provide prompt pickups, luggage assistance, and drop-off directly curbside at your departure terminal.",
     notes: [
       "Door-to-door collection from all Jeddah districts and waterfront resorts",
-      "Guaranteed on-time arrival for Terminal 1 and North Terminal flights",
+      "Pickup timed with a buffer for Terminal 1 and North Terminal check-in",
       "Fixed pricing with zero luggage surcharges"
     ],
     relatedCitySlugs: ["jeddah"],
@@ -8858,13 +8877,13 @@ const baseRoutes: Route[] = [
     distance: "70 km",
     duration: "1 hr 15 min + border",
     lastUpdated: "2026-08-19",
-    intro: "Cross-border private transfer from Al Khobar across the King Fahd Causeway directly to Bahrain International Airport (BAH).",
-    about: "Our private Khobar to Bahrain Airport transfer provides seamless door-to-door transit over the King Fahd Causeway. Your driver picks you up from your hotel or home in Al Khobar, assists with customs and passport control, and drops you curbside at Bahrain International Airport (BAH) in Muharraq.",
+    intro: "A private transfer from Al Khobar across the King Fahd Causeway directly to Bahrain International Airport (BAH) departures, timed to your flight rather than a fixed schedule.",
+    about: "Khobar sits closer to the King Fahd Causeway than any other Eastern Province city, which keeps this one of our shorter Bahrain-bound drives. Your driver collects you from your hotel or home in Al Khobar, manages the causeway crossing at Passport Island, and drops you at Bahrain International Airport (BAH) departures in Muharraq.",
     notes: [
-      "Door-to-door transfer from Khobar across King Fahd Causeway to BAH departures",
-      "Experienced drivers familiar with Saudi & Bahrain border formalities",
-      "Valid passport and Bahrain visa/entry permit required",
-      "Fixed pricing inclusive of causeway toll fees"
+      "Shortest Causeway approach of any Eastern Province city, about 70 km",
+      "Pickup timed backward from your flight, allowing a buffer for the border",
+      "Valid passport and Bahrain visa/entry permit required for most nationalities",
+      "Fixed price agreed before you travel, including the causeway toll"
     ],
     relatedCitySlugs: ["khobar","dammam"],
     metaTitle: "Khobar to Bahrain Airport Private Transfer – Book Your Taxi",
@@ -8872,7 +8891,27 @@ const baseRoutes: Route[] = [
     faqs: [
       {
             "question": "How much time should I allow for the Causeway crossing to Bahrain Airport?",
-            "answer": "We recommend allowing 3 to 4 hours before your flight departure to account for potential border queue times during peak weekend or evening hours."
+            "answer": "Border processing genuinely varies with immigration volume on the day — weekend evenings and public holidays typically see the longest queues at Passport Island, while weekday mornings are usually quickest. We plan pickup with a generous buffer before an international check-in rather than promising an exact crossing time."
+      },
+      {
+            "question": "Will the causeway toll and border paperwork be handled for me?",
+            "answer": "Yes. The causeway toll and cross-border vehicle documentation are arranged as part of the fixed price, so there's nothing extra to settle at the border yourself."
+      },
+      {
+            "question": "What documents do I need for this crossing?",
+            "answer": "A valid passport and, for most non-GCC travellers, a Bahrain visa. Requirements differ by nationality and change from time to time, so confirm current rules with official Bahraini sources before you travel."
+      },
+      {
+            "question": "Can you drop me directly at Bahrain Airport departures?",
+            "answer": "Yes — this transfer goes all the way across the causeway to BAH departures in Muharraq, with no vehicle change at the border."
+      },
+      {
+            "question": "Is the price fixed even if the border queue is long?",
+            "answer": "Yes, we agree a fixed price before you travel; immigration queues at Passport Island don't change your fare."
+      },
+      {
+            "question": "What vehicle suits a family flying out from BAH?",
+            "answer": "An SUV or van suits families or groups with more luggage for an international flight; a standard sedan is comfortable for solo or paired travellers."
       }
     ],
     keywords: ["khobar to bahrain airport taxi","causeway transfer to bahrain airport","khobar to bah airport"]
@@ -8885,20 +8924,64 @@ const baseRoutes: Route[] = [
     distance: "70 km",
     duration: "1 hr 15 min + border",
     lastUpdated: "2026-08-19",
-    intro: "Private cross-border arrival transfer from Bahrain International Airport (BAH) across the King Fahd Causeway to Al Khobar.",
-    about: "Landing at Bahrain Airport and heading to the Eastern Province? Our chauffeur meets you at Bahrain Airport arrivals, assists with baggage, and drives you across the King Fahd Causeway directly to your hotel or residence in Al Khobar.",
+    intro: "Landing at Bahrain International Airport with Al Khobar as your final stop? Your driver waits inside Muharraq arrivals and drives you across the King Fahd Causeway directly to your hotel or address, door to door.",
+    about: "Bahrain International Airport sits on Muharraq Island, connected to Manama by its own bridges rather than sitting inside the capital, so a transfer that begins at the airport heads toward the causeway directly rather than routing through the city first. We track your flight, meet you inside the terminal, help with your luggage, and drive the whole way to your Al Khobar address at a fixed price agreed before you travel.",
     notes: [
-      "Meet & greet at Bahrain International Airport (Muharraq) arrivals hall",
-      "Direct transit into Al Khobar hotels, Corniche, and residential districts",
-      "Flight monitoring and complimentary arrival waiting time included"
+      "Meet-and-greet inside Bahrain International Airport (Muharraq) arrivals",
+      "Flight tracked so pickup adjusts to your actual landing time",
+      "Direct route to the causeway, no detour through central Manama",
+      "One continuous journey across the King Fahd Causeway, no vehicle change"
     ],
     relatedCitySlugs: ["khobar","dammam"],
     metaTitle: "Bahrain Airport to Khobar Private Transfer – Book Your Taxi",
     metaDescription: "Reserve a private Bahrain Airport to Khobar taxi (70 km, 1 hr 15 min). Comfortable vehicle for the long-distance drive toward Bahrain, fixed price.",
+    sections: [
+      {
+        heading: "Starting from Muharraq, not from Manama",
+        paragraphs: [
+          "Bahrain International Airport sits on Muharraq Island, a separate area connected to Manama by its own bridges, so a transfer that begins at the airport is a genuinely different starting point from one that begins at a Manama hotel. Your driver waits inside the arrivals hall itself, tracking your flight, and the route from there heads toward the King Fahd Causeway without first routing through the city.",
+          "Because this is an international arrival, expect the usual sequence of immigration and baggage claim before you reach the exit — normal for any airport, and one more reason a driver who's waiting inside rather than circling outside makes the start of the journey easier.",
+        ],
+      },
+      {
+        heading: "Crossing the King Fahd Causeway into Saudi Arabia",
+        paragraphs: [
+          "The causeway covers 25 kilometres between Al Jasra on the Bahraini side and Al Khobar on the Saudi side, with the border facility on Passport Island roughly midway across — a one-stop process since 2017, combining Bahraini exit formalities, Saudi entry formalities, vehicle clearance and customs at a single stop.",
+          "You'll need a valid passport and any Saudi visa or entry permit that applies to your nationality — requirements vary considerably depending on where you're travelling from. Crossing volume tends to build at weekends and around public holidays; we can't promise an exact processing time, but your driver handles the crossing itself.",
+        ],
+      },
+      {
+        heading: "Arriving in Al Khobar",
+        paragraphs: [
+          "Because Khobar sits right at the causeway's Saudi end, this is one of the shorter Bahrain-Saudi crossings — once across, your driver continues directly to your hotel, the Corniche, or a specific residential address.",
+          "If your actual destination is further inland — Dammam, or King Fahd International Airport for an onward flight — that's a different, longer leg, and we cover it too; tell us your real endpoint when you book.",
+        ],
+      },
+    ],
     faqs: [
       {
             "question": "Will the driver meet me inside Bahrain Airport?",
-            "answer": "Yes, our chauffeur waits inside the arrivals hall holding a personalized name sign."
+            "answer": "Yes, your driver waits inside the arrivals hall at Bahrain International Airport on Muharraq Island holding a name board, and tracks your flight so pickup adjusts to your actual landing time."
+      },
+      {
+            "question": "Is Muharraq the same as central Manama?",
+            "answer": "No. Bahrain International Airport sits on Muharraq Island, a separate area connected to Manama by its own bridges, so a transfer starting at the airport begins from a different point than one starting at a Manama hotel."
+      },
+      {
+            "question": "What documents do I need to enter Saudi Arabia at the causeway?",
+            "answer": "A valid passport and any Saudi visa or entry permit for your nationality. Requirements vary considerably by nationality, so check the current rules for your passport before you travel."
+      },
+      {
+            "question": "How is the border crossing handled?",
+            "answer": "Since 2017, the King Fahd Causeway has operated as a one-stop crossing at Passport Island, combining Bahraini exit and Saudi entry formalities, vehicle clearance and customs in a single stop. Crossing time varies with how busy the border is when you travel."
+      },
+      {
+            "question": "Can you continue on to Dammam instead of stopping in Khobar?",
+            "answer": "Yes, but that's a different, longer route than this one. Tell us your real final destination when booking — Khobar, Dammam, or King Fahd Airport — so the fixed price matches the actual journey."
+      },
+      {
+            "question": "Is the fare fixed even if my flight is delayed?",
+            "answer": "Yes. We track your flight and adjust pickup automatically, with free waiting time included, and the fixed price you agree doesn't change because of a delayed landing or a busy border."
       }
     ],
     keywords: ["bahrain airport to khobar taxi","bah airport to khobar transfer","bahrain to khobar private car"]
@@ -8911,12 +8994,13 @@ const baseRoutes: Route[] = [
     distance: "85 km",
     duration: "1 hr 30 min + border",
     lastUpdated: "2026-08-19",
-    intro: "Private cross-border transfer from Dammam city to Bahrain International Airport (BAH) via the King Fahd Causeway.",
-    about: "Travel directly from Dammam city or hotel to Bahrain International Airport (BAH) in complete comfort. Avoid the hassle of changing cars at the border — our private transfer takes you all the way across the Causeway to your departure gate.",
+    intro: "A private transfer from Dammam city to Bahrain International Airport (BAH) via the King Fahd Causeway, in one vehicle the whole way.",
+    about: "Dammam sits further from the causeway than Khobar, so this is a slightly longer approach — about 85 km and around an hour thirty of driving before the border itself. Your driver collects you from your hotel, business tower, or home in Dammam, manages the crossing at Passport Island, and continues straight to Bahrain International Airport (BAH) departures.",
     notes: [
-      "Direct pickup from all Dammam hotels, Corniche, and residential addresses",
-      "Full Causeway border crossing assistance to Bahrain Airport (BAH)",
-      "Fixed all-inclusive price with no hidden border fees"
+      "Pickup from any Dammam hotel, business tower, or residential address",
+      "Longer approach to the Causeway than from Khobar, about 85 km",
+      "Valid passport and Bahrain visa/entry permit required for most nationalities",
+      "Fixed price agreed before you travel, including the causeway toll"
     ],
     relatedCitySlugs: ["dammam","khobar"],
     metaTitle: "Dammam to Bahrain Airport Transfer – Private Cross-Border Taxi",
@@ -8924,7 +9008,27 @@ const baseRoutes: Route[] = [
     faqs: [
       {
             "question": "Can you pick up from anywhere in Dammam for Bahrain Airport?",
-            "answer": "Yes, we pick up from all hotels, business towers, and homes across Dammam."
+            "answer": "Yes, we pick up from hotels, business towers, and homes across Dammam and drive the whole way to BAH departures without a vehicle change at the border."
+      },
+      {
+            "question": "How much time should I allow for the Causeway crossing?",
+            "answer": "Border processing genuinely varies with immigration volume on the day — weekends and holidays typically run longer than a weekday morning. We plan pickup with a buffer before an international check-in rather than promising an exact crossing time."
+      },
+      {
+            "question": "Is the causeway toll included in the price?",
+            "answer": "Yes. The causeway toll and cross-border vehicle documentation are arranged as part of the fixed price, so there's nothing extra to settle at the border."
+      },
+      {
+            "question": "What documents do I need for this crossing?",
+            "answer": "A valid passport and, for most non-GCC travellers, a Bahrain visa. Requirements differ by nationality and change from time to time, so confirm current rules with official Bahraini sources before you travel."
+      },
+      {
+            "question": "Is the price fixed even if the border queue is long?",
+            "answer": "Yes, we agree a fixed price before you travel; immigration queues at Passport Island don't change your fare."
+      },
+      {
+            "question": "What vehicle suits a family flying out from BAH?",
+            "answer": "An SUV or van suits families or groups with more luggage for an international flight; a standard sedan is comfortable for solo or paired travellers."
       }
     ],
     keywords: ["dammam to bahrain airport taxi","dammam to bah airport transfer","causeway taxi to bahrain airport"]

@@ -43,7 +43,10 @@ import {
   hotelTransfersLastUpdated,
 } from "@/lib/hotel-transfers";
 import { pointTransfers, getPointTransfer } from "@/lib/point-transfers";
+import { pointTransfersV2, getPointTransferV2 } from "@/lib/point-transfers-v2";
+import { getCity } from "@/data/cities";
 import { PointTransferView } from "@/components/templates/PointTransferView";
+import { PointTransferV2View } from "@/components/point-transfer-v2/PointTransferV2View";
 import type { Hotel } from "@/data/hotels";
 
 type Params = { city: string; route: string };
@@ -61,7 +64,18 @@ export function generateStaticParams() {
   // consequently unreachable for real traffic; left in place rather than
   // removed since data/hotels.ts and lib/hotel-transfers.ts stay live for the
   // city-hub hotel table. Point transfers are unaffected.
-  return pointTransfers.map((t) => ({ city: t.citySlug, route: t.slug }));
+  //
+  // Point transfers are being migrated one city at a time to pointTransfersV2
+  // (new design, see PointTransferV2View) — a slug appears in exactly one of
+  // pointTransfersV2 / pointTransfers at a time, so the v2Keys filter below
+  // prevents ever emitting the same {city, route} pair twice mid-migration.
+  const v2Keys = new Set(pointTransfersV2.map((t) => `${t.citySlug}/${t.slug}`));
+  return [
+    ...pointTransfersV2.map((t) => ({ city: t.citySlug, route: t.slug })),
+    ...pointTransfers
+      .filter((t) => !v2Keys.has(`${t.citySlug}/${t.slug}`))
+      .map((t) => ({ city: t.citySlug, route: t.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -70,6 +84,19 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { city, route } = await params;
+
+  const v2 = getPointTransferV2(city, route);
+  if (v2) {
+    const v2Path = `/${v2.citySlug}/${v2.slug}`;
+    const v2ArPath = getArPathForEnPath(v2Path);
+    return buildMetadata({
+      title: v2.metaTitle,
+      description: v2.metaDescription,
+      path: v2Path,
+      ...(v2ArPath ? { alternateLanguages: { en: v2Path, ar: v2ArPath } } : {}),
+    });
+  }
+
   const t = getHotelTransfer(city, route);
   if (!t) {
     const pt = getPointTransfer(city, route);
@@ -148,6 +175,54 @@ export default async function HotelTransferPage({
   params: Promise<Params>;
 }) {
   const { city, route } = await params;
+
+  const v2 = getPointTransferV2(city, route);
+  if (v2) {
+    const cityObj = getCity(v2.citySlug);
+    const cityName = cityObj?.name ?? v2.citySlug;
+    const cityPath = `/taxi-service/${v2.citySlug}`;
+    const v2Path = `/${v2.citySlug}/${v2.slug}`;
+    const label = v2.isPointToPoint === false ? v2.to : `${v2.from} → ${v2.to}`;
+    const crumbs = [
+      { name: "Home", path: "/" },
+      { name: `${cityName} Taxi Service`, path: cityPath },
+      { name: label, path: v2Path },
+    ];
+    const serviceTypeLabel =
+      v2.content.category === "port"
+        ? "Port Transfer"
+        : v2.content.category === "railway"
+          ? "Railway Station Transfer"
+          : v2.content.category === "service"
+            ? "Chauffeur Service"
+            : "Private Transfer";
+    return (
+      <PointTransferV2View
+        h1={v2.h1}
+        from={v2.from}
+        to={v2.to}
+        isPointToPoint={v2.isPointToPoint}
+        crumbs={crumbs}
+        cityName={cityName}
+        serviceType={serviceTypeLabel}
+        areaServed={`${cityName}, Saudi Arabia`}
+        quoteServiceType={`${cityName} ${serviceTypeLabel.toLowerCase()}`}
+        whatsappMessage={
+          v2.isPointToPoint === false
+            ? `Hello! I'd like a quote for ${v2.to} in ${cityName}.`
+            : `Hello! I'd like a quote for a ${v2.from} to ${v2.to} transfer.`
+        }
+        latestGuidesKey={`${v2.citySlug}/${v2.slug}`}
+        content={v2.content}
+        labels={{
+          faqHeading: "Frequently Asked Questions",
+          quoteHeading: `${label} Quote`,
+          quoteSubheading: "Fixed price for your private transfer on WhatsApp.",
+        }}
+      />
+    );
+  }
+
   const t = getHotelTransfer(city, route);
   if (!t) {
     const pt = getPointTransfer(city, route);

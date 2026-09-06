@@ -111,12 +111,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       <SchemaScript schema={schemas} />
 
       {/* Hero */}
-      <section className="border-b border-border bg-black text-white">
+      <section className="bg-midnight text-white">
         <div className="mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 lg:px-8 lg:pb-16 lg:pt-36">
           <Breadcrumbs items={crumbs} onDark />
           <Link
             href={`/blog?category=${encodeURIComponent(blog.category)}`}
-            className="mt-6 inline-block rounded-full bg-gold px-3 py-1 text-xs font-semibold text-navy"
+            className="mt-6 inline-block rounded-full bg-brass px-3 py-1 text-xs font-semibold text-midnight"
           >
             {blog.category}
           </Link>
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               <Clock className="size-4" /> {blog.readingTime} min read
             </span>
             {blog.updatedAt.slice(0, 10) !== (blog.publishedAt ?? blog.createdAt).slice(0, 10) && (
-              <span className="inline-flex items-center gap-1.5 text-gold">
+              <span className="inline-flex items-center gap-1.5 text-brass">
                 <CalendarDays className="size-4" /> Updated {formatBlogDate(blog.updatedAt)}
               </span>
             )}
@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             <article className="min-w-0">
               {/* Featured image */}
               {blog.featuredImage && (
-                <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-muted">
+                <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-sand/40">
                   <Image
                     src={blog.featuredImage}
                     alt={blog.featuredImageAlt ?? blog.title}
@@ -163,14 +163,14 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
               {/* Table of contents */}
               {toc.length > 1 && (
-                <nav className="mb-8 rounded-2xl border border-border bg-muted/40 p-5" aria-label="Table of contents">
-                  <p className="flex items-center gap-2 text-sm font-bold text-navy">
-                    <ListTree className="size-4 text-gold" /> In this guide
+                <nav className="mb-8 rounded-2xl border border-hairline bg-sand/30 p-5" aria-label="Table of contents">
+                  <p className="flex items-center gap-2 text-sm font-bold text-ink">
+                    <ListTree className="size-4 text-brass" /> In this guide
                   </p>
                   <ol className="mt-3 space-y-1.5 text-sm">
                     {toc.map((h) => (
                       <li key={h.id}>
-                        <a href={`#${h.id}`} className="text-navy/80 hover:text-gold">
+                        <a href={`#${h.id}`} className="text-ink-soft hover:text-brass">
                           {h.text}
                         </a>
                       </li>
@@ -191,16 +191,16 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               {/* FAQ (only when the post defines FAQs) */}
               {blog.faqs.length > 0 && (
                 <section className="mt-14" aria-labelledby="faq-heading">
-                  <h2 id="faq-heading" className="text-2xl font-bold text-navy">
+                  <h2 id="faq-heading" className="text-2xl font-bold text-ink">
                     Frequently Asked Questions
                   </h2>
-                  <div className="mt-6 divide-y divide-border rounded-2xl border border-border">
+                  <div className="mt-6 divide-y divide-hairline rounded-2xl border border-hairline">
                     {blog.faqs.map((f, i) => (
                       <details key={i} className="group p-5" {...(i === 0 ? { open: true } : {})}>
-                        <summary className="cursor-pointer list-none font-semibold text-navy marker:hidden">
+                        <summary className="cursor-pointer list-none font-semibold text-ink marker:hidden">
                           {f.question}
                         </summary>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.answer}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-soft">{f.answer}</p>
                       </details>
                     ))}
                   </div>
@@ -210,9 +210,9 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               {/* Tags */}
               {blog.tags.length > 0 && (
                 <div className="mt-10 flex flex-wrap items-center gap-2">
-                  <Tag className="size-4 text-muted-foreground" />
+                  <Tag className="size-4 text-ink-muted" />
                   {blog.tags.map((t) => (
-                    <span key={t} className="rounded-full bg-muted px-3 py-1 text-xs text-navy">
+                    <span key={t} className="rounded-full bg-sand/50 px-3 py-1 text-xs text-ink">
                       {t}
                     </span>
                   ))}
@@ -223,7 +223,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               <AuthorBox author={blog.author} />
 
               {/* Share */}
-              <div className="mt-8 border-t border-border pt-6">
+              <div className="mt-8 border-t border-hairline pt-6">
                 <ShareButtons url={url} title={blog.title} />
               </div>
 
@@ -233,12 +233,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                   {prev ? (
                     <Link
                       href={`/blog/${prev.slug}`}
-                      className="group rounded-xl border border-border p-4 transition-colors hover:border-gold"
+                      className="group rounded-xl border border-hairline p-4 transition-colors hover:border-brass"
                     >
-                      <span className="flex items-center gap-1 text-xs font-semibold text-muted-foreground">
-                        <ArrowLeft className="size-3.5" /> Previous Article
+                      <span className="flex items-center gap-1 text-xs font-semibold text-ink-muted">
+                        <ArrowLeft className="size-3.5 rtl:rotate-180" /> Previous Article
                       </span>
-                      <span className="mt-1 block font-semibold text-navy group-hover:text-gold">
+                      <span className="mt-1 block font-semibold text-ink group-hover:text-brass">
                         {prev.title}
                       </span>
                     </Link>
@@ -248,12 +248,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
                   {next ? (
                     <Link
                       href={`/blog/${next.slug}`}
-                      className="group rounded-xl border border-border p-4 text-right transition-colors hover:border-gold sm:col-start-2"
+                      className="group rounded-xl border border-hairline p-4 text-right transition-colors hover:border-brass sm:col-start-2"
                     >
-                      <span className="flex items-center justify-end gap-1 text-xs font-semibold text-muted-foreground">
-                        Next Article <ArrowRight className="size-3.5" />
+                      <span className="flex items-center justify-end gap-1 text-xs font-semibold text-ink-muted">
+                        Next Article <ArrowRight className="size-3.5 rtl:rotate-180" />
                       </span>
-                      <span className="mt-1 block font-semibold text-navy group-hover:text-gold">
+                      <span className="mt-1 block font-semibold text-ink group-hover:text-brass">
                         {next.title}
                       </span>
                     </Link>
@@ -264,7 +264,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               {/* Related (bottom of content / mobile bottom) */}
               {related.length > 0 && (
                 <section className="mt-12">
-                  <h2 className="text-2xl font-bold text-navy">Related guides</h2>
+                  <h2 className="text-2xl font-bold text-ink">Related guides</h2>
                   <div className="mt-6 grid gap-6 sm:grid-cols-2">
                     {related.map((b) => (
                       <BlogCard key={b.id} blog={b} />

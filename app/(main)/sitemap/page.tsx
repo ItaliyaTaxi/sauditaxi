@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { PageHeader } from "@/components/sections/PageHeader";
 import { SitemapSearch } from "@/components/sections/SitemapSearch";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
-import { heroImages } from "@/lib/hero";
 import { cities } from "@/data/cities";
 import { airports } from "@/data/airports";
 import { routes, type RouteCategory } from "@/data/routes";
@@ -14,8 +12,11 @@ import { borders } from "@/data/borders";
 import { services } from "@/data/services";
 import { hotelCities } from "@/lib/hotel-transfers";
 import { pointTransfers } from "@/lib/point-transfers";
+import { pointTransfersV2 } from "@/lib/point-transfers-v2";
 import { distancePages } from "@/data/distance-pages";
 import { journeyPages } from "@/data/journey-pages";
+import { distanceGuideV2Pages } from "@/data/distance-guide-v2";
+import { journeyGuideV2Pages } from "@/data/journey-guide-v2";
 import { listPublishedBlogs } from "@/lib/blogs";
 import { arPages, arPath } from "@/data/translations/ar";
 
@@ -60,10 +61,10 @@ function LinkGrid({ items }: { items: Item[] }) {
           key={item.href}
           href={item.href}
           data-sitemap-item={searchKey(item)}
-          className="group flex items-center justify-between gap-2 rounded-lg border border-border bg-white px-3.5 py-2.5 text-sm text-navy transition-colors hover:border-gold hover:bg-gold/5"
+          className="group flex items-center justify-between gap-2 rounded-lg border border-hairline bg-white px-3.5 py-2.5 text-sm text-ink transition-colors hover:border-brass hover:bg-brass/5"
         >
           <span className="truncate">{item.label}</span>
-          <ArrowRight className="size-3.5 shrink-0 text-gold opacity-0 transition-opacity rtl:rotate-180 group-hover:opacity-100" />
+          <ArrowRight className="size-3.5 shrink-0 text-brass opacity-0 transition-opacity rtl:rotate-180 group-hover:opacity-100" />
         </Link>
       ))}
     </div>
@@ -87,25 +88,25 @@ function LinkGroup({
   rtl?: boolean;
 }) {
   return (
-    <details className="group/details rounded-xl border border-border bg-white" data-sitemap-group open={defaultOpen}>
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-semibold text-navy [&::-webkit-details-marker]:hidden">
+    <details className="group/details rounded-xl border border-hairline bg-white" data-sitemap-group open={defaultOpen}>
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-semibold text-ink [&::-webkit-details-marker]:hidden">
         <span>{heading}</span>
         <span className="flex items-center gap-2">
-          <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+          <span className="rounded-full bg-sand/50 px-2.5 py-0.5 text-xs font-medium text-ink-muted">
             {count}
           </span>
-          <ArrowRight className="size-4 text-gold transition-transform group-open/details:rotate-90 rtl:rotate-180 rtl:group-open/details:-rotate-90" />
+          <ArrowRight className="size-4 text-brass transition-transform group-open/details:rotate-90 rtl:rotate-180 rtl:group-open/details:-rotate-90" />
         </span>
       </summary>
       <ul
         dir={rtl ? "rtl" : undefined}
-        className="grid grid-cols-1 gap-1 border-t border-border p-3 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-1 border-t border-hairline p-3 sm:grid-cols-2 lg:grid-cols-3"
       >
         {items.map((item) => (
           <li key={item.href} data-sitemap-item={searchKey(item)}>
             <Link
               href={item.href}
-              className="block truncate rounded-md px-2.5 py-1.5 text-sm text-navy/90 hover:bg-gold/10 hover:text-navy"
+              className="block truncate rounded-md px-2.5 py-1.5 text-sm text-ink/90 hover:bg-brass/10 hover:text-ink"
               title={item.label}
             >
               {item.label}
@@ -129,9 +130,9 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 border-t border-border py-10 first:border-t-0 first:pt-0">
-      <h2 className="text-xl font-bold text-navy sm:text-2xl">{title}</h2>
-      {subtitle && <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">{subtitle}</p>}
+    <section id={id} className="scroll-mt-24 border-t border-hairline py-10 first:border-t-0 first:pt-0">
+      <h2 className="text-xl font-bold text-ink sm:text-2xl">{title}</h2>
+      {subtitle && <p className="mt-1.5 max-w-2xl text-sm text-ink-soft">{subtitle}</p>}
       <div className="mt-5 space-y-3">{children}</div>
     </section>
   );
@@ -210,14 +211,31 @@ export default async function SitemapPage() {
   // ── Borders ──────────────────────────────────────────────────────────
   const borderPages: Item[] = borders.map((b) => ({ label: b.name, href: `/border-transfers/${b.slug}` }));
 
+  // ── Point transfers (attraction/port/railway/service) ───────────────
+  // Migrating one city at a time to pointTransfersV2 (see PointTransferV2View)
+  // — a slug lives in exactly one of the two arrays, so v2Keys prevents a
+  // duplicate row mid-migration.
+  const v2Keys = new Set(pointTransfersV2.map((t) => `${t.citySlug}/${t.slug}`));
+  const allPointTransfers: { citySlug: string; slug: string; h1: string; category: string }[] = [
+    ...pointTransfersV2.map((t) => ({
+      citySlug: t.citySlug,
+      slug: t.slug,
+      h1: t.h1,
+      category: t.content.category,
+    })),
+    ...pointTransfers
+      .filter((t) => !v2Keys.has(`${t.citySlug}/${t.slug}`))
+      .map((t) => ({ citySlug: t.citySlug, slug: t.slug, h1: t.h1, category: t.category })),
+  ];
+
   // ── Ziyarat / historic-site attraction pages ───────────────────────
-  const ziyaratPages: Item[] = pointTransfers
+  const ziyaratPages: Item[] = allPointTransfers
     .filter((t) => t.category === "attraction")
     .map((t) => ({ label: t.h1, href: `/${t.citySlug}/${t.slug}` }));
 
   // ── Local / destination transfers (port, railway, service point-transfers) ─
   const localTransfersByCity = new Map<string, Item[]>();
-  for (const t of pointTransfers) {
+  for (const t of allPointTransfers) {
     if (t.category === "attraction") continue;
     const item: Item = { label: t.h1, href: `/${t.citySlug}/${t.slug}` };
     const list = localTransfersByCity.get(t.citySlug) ?? [];
@@ -229,6 +247,8 @@ export default async function SitemapPage() {
   const distanceGuidePages: Item[] = [
     ...distancePages.map((p) => ({ label: `${p.from} to ${p.to} Distance`, href: `/distance/${p.slug}` })),
     ...journeyPages.map((p) => ({ label: `${p.from} to ${p.to} Distance`, href: `/distance/${p.slug}` })),
+    ...distanceGuideV2Pages.map((p) => ({ label: `${p.from} to ${p.to} Distance`, href: `/distance/${p.slug}` })),
+    ...journeyGuideV2Pages.map((p) => ({ label: `${p.from} to ${p.to} Distance`, href: `/distance/${p.slug}` })),
   ];
 
   // ── Blog articles ────────────────────────────────────────────────────
@@ -255,7 +275,7 @@ export default async function SitemapPage() {
     hotelHubPages.length +
     routes.length +
     borderPages.length +
-    pointTransfers.length +
+    allPointTransfers.length +
     distanceGuidePages.length +
     blogPages.length +
     arTotal;
@@ -264,19 +284,36 @@ export default async function SitemapPage() {
     <>
       <SchemaScript schema={breadcrumbSchema(crumbs)} />
 
-      <PageHeader
-        title="Saudi Arabia Transfer Sitemap"
-        subtitle="Explore our airport transfers, city transfers, private routes, pilgrimage services and travel guides — every page on the site, in one place."
-        crumbs={crumbs}
-        backgroundImage={heroImages.default}
-        backgroundAlt="Overview map of Saudi Private Transfers' airport, city, intercity and pilgrimage transfer network"
-        showCtas={false}
-      />
+      <section className="bg-midnight text-white">
+        <div className="mx-auto max-w-5xl px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/60">
+            {crumbs.map((c, i) => (
+              <span key={c.path} className="flex items-center gap-2">
+                {i > 0 && <span aria-hidden="true">/</span>}
+                {i === crumbs.length - 1 ? (
+                  <span className="text-white/85">{c.name}</span>
+                ) : (
+                  <Link href={c.path} className="hover:text-white">
+                    {c.name}
+                  </Link>
+                )}
+              </span>
+            ))}
+          </nav>
+          <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            Saudi Arabia Transfer Sitemap
+          </h1>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/75">
+            Explore our airport transfers, city transfers, private routes, pilgrimage services and travel guides —
+            every page on the site, in one place.
+          </p>
+        </div>
+      </section>
 
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <SitemapSearch />
 
-        <p className="mt-6 text-sm text-muted-foreground">
+        <p className="mt-6 text-sm text-ink-soft">
           {totalCount}+ pages, organized below by category. Use the search box above to jump straight to a page.
         </p>
 
@@ -301,7 +338,7 @@ export default async function SitemapPage() {
             <LinkGrid items={cityPages} />
             {hotelHubPages.length > 0 && (
               <div className="pt-1">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">
                   Hotel Transfer Hubs
                 </p>
                 <LinkGrid items={hotelHubPages} />
@@ -378,10 +415,10 @@ export default async function SitemapPage() {
                 <Link
                   href={arHomeItem.href}
                   data-sitemap-item={searchKey(arHomeItem)}
-                  className="group flex items-center justify-between gap-2 rounded-lg border border-border bg-white px-3.5 py-2.5 text-sm text-navy transition-colors hover:border-gold hover:bg-gold/5"
+                  className="group flex items-center justify-between gap-2 rounded-lg border border-hairline bg-white px-3.5 py-2.5 text-sm text-ink transition-colors hover:border-brass hover:bg-brass/5"
                 >
                   <span className="truncate">{arHomeItem.label}</span>
-                  <ArrowRight className="size-3.5 shrink-0 rotate-180 text-gold opacity-0 transition-opacity group-hover:opacity-100" />
+                  <ArrowRight className="size-3.5 shrink-0 rotate-180 text-brass opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
               </div>
               {[...arByType.entries()].map(([type, items]) => (
