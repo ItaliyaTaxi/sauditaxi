@@ -6,8 +6,8 @@ intent, target audience, URL slug, internal-linking suggestions, and priority �
 against the full published inventory (queried live from Supabase, not from memory) to
 avoid keyword cannibalization with existing posts or commercial pages.
 
-**Status:** 3 of 50 published (Batch 1, 2026-09-11). See §"Execution
-log" at the bottom, updated after every batch.
+**Status:** 5 of 50 published (Batch 1: 3 EN-only; Batch 2: 2 EN+AR, 2026-09-11). See
+§"Execution log" at the bottom, updated after every batch.
 
 Methodology matches `italytaxi`'s proven pipeline
 (`docs/seo-audit-2026.md` → `seo-content-gap-50.md` → `seo-topic-clusters-plan.md`),
@@ -37,15 +37,15 @@ mechanism is a keyword array, not a data-driven field, per `docs/seo-audit-2026.
 ---
 
 ## 1. Airport Arrival Guides
-**Status: 2/10 published.** The single biggest gap on the site — 10 of 13 airports
+**Status: 4/10 published.** The single biggest gap on the site — 10 of 13 airports
 have a live `/airport-transfer/{slug}` commercial page and zero supporting blog
 content. Highest priority block.
 
 | # | Topic | Slug | Priority | Status |
 |---|---|---|---|---|
 | 1 | Madinah Airport driver-pickup guide | `madinah-airport-driver-pickup-guide` | High | **Published 2026-09-11** |
-| 2 | Abha Airport arrival guide | `abha-airport-arrival-guide` | High | Not started |
-| 3 | Taif Regional Airport arrival guide | `taif-regional-airport-arrival-guide` | High | Not started |
+| 2 | Abha Airport arrival guide | `abha-airport-arrival-guide` | High | **Published 2026-09-11 (EN+AR)** |
+| 3 | Taif Regional Airport arrival guide | `taif-regional-airport-arrival-guide` | High | **Published 2026-09-11 (EN+AR)** |
 | 4 | AlUla Airport arrival guide | `alula-airport-arrival-guide` | High | **Published 2026-09-11** |
 | 5 | Yanbu Airport arrival guide | `yanbu-airport-arrival-guide` | Medium | Not started |
 | 6 | Tabuk Regional Airport arrival guide | `tabuk-regional-airport-arrival-guide` | Medium | Not started |
@@ -205,6 +205,16 @@ the existing Ramadan/Riyadh Season/Jeddah Season posts.
 ## Execution log
 *(updated after every batch — most recent first)*
 
+- **2026-09-11 — Batch 2 published (2 posts, English + Arabic).**
+  `abha-airport-arrival-guide` and `taif-regional-airport-arrival-guide` — both in
+  Supabase `blogs` as `published`, verified live (HTTP 200). Arabic counterparts
+  written as natural adaptations (not machine translation) in
+  `data/translations/ar.ts` (`دليل-مطار-أبها-الدولي`, `دليل-مطار-الطائف-الإقليمي`),
+  each with a mandatory `enPath` back to its English slug so hreflang resolves
+  automatically. Added exact-slug reciprocal links to both `BlogSidebar.tsx` and
+  `BlogInlineCta.tsx`. Checked all 5 posts published this session (this batch + batch
+  1) for exact-sentence duplication — zero found. Committed `eeb56ec`, pushed;
+  submitted to Bing (English + Arabic URLs).
 - **2026-09-11 — Batch 1 published (3 posts).** `madinah-airport-driver-pickup-guide`,
   `alula-airport-arrival-guide`, `jeddah-to-riyadh-transfer-guide` — all in Supabase
   `blogs` as `published`, all verified live (HTTP 200) at their `/blog/{slug}` URLs.
