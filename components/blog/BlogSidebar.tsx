@@ -14,6 +14,31 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["madinah-airport-driver-pickup-guide"],
+    links: [
+      { label: "Madinah Airport Transfer", href: "/airport-transfer/madinah-airport", icon: Plane },
+      { label: "Madinah Taxi Service", href: "/taxi-service/madinah", icon: RouteIcon },
+      { label: "Madinah → Makkah Route", href: "/routes/madinah-to-makkah", icon: RouteIcon },
+      { label: "AlUla Airport Transfer", href: "/airport-transfer/alula-airport", icon: Plane },
+    ],
+  },
+  {
+    match: ["alula-airport-arrival-guide"],
+    links: [
+      { label: "AlUla Airport Transfer", href: "/airport-transfer/alula-airport", icon: Plane },
+      { label: "AlUla Taxi Service", href: "/taxi-service/alula", icon: RouteIcon },
+      { label: "AlUla Airport → Resorts Transfer", href: "/alula/alula-airport-to-habitas-and-banyan-tree", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["jeddah-to-riyadh-transfer-guide"],
+    links: [
+      { label: "Jeddah → Riyadh Route", href: "/routes/jeddah-to-riyadh", icon: RouteIcon },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah", icon: RouteIcon },
+      { label: "Riyadh Taxi Service", href: "/taxi-service/riyadh", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["umrah", "miqat", "ihram"],
     links: [
       { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
