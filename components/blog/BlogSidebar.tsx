@@ -14,6 +14,22 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["abha-airport-arrival-guide"],
+    links: [
+      { label: "Abha Airport Transfer", href: "/airport-transfer/abha-airport", icon: Plane },
+      { label: "Abha Taxi Service", href: "/taxi-service/abha", icon: RouteIcon },
+      { label: "Khamis Mushait Taxi Service", href: "/taxi-service/khamis-mushait", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["taif-regional-airport-arrival-guide"],
+    links: [
+      { label: "Taif Airport Transfer", href: "/airport-transfer/taif-airport", icon: Plane },
+      { label: "Taif Airport → Makkah Route", href: "/routes/taif-airport-to-makkah", icon: RouteIcon },
+      { label: "Taif Taxi Service", href: "/taxi-service/taif", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["madinah-airport-driver-pickup-guide"],
     links: [
       { label: "Madinah Airport Transfer", href: "/airport-transfer/madinah-airport", icon: Plane },
