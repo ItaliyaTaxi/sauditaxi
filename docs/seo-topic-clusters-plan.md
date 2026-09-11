@@ -6,7 +6,7 @@ intent, target audience, URL slug, internal-linking suggestions, and priority �
 against the full published inventory (queried live from Supabase, not from memory) to
 avoid keyword cannibalization with existing posts or commercial pages.
 
-**Status:** 0 of 50 published. Batch 1 (3 posts) is the pipeline proof — see §"Execution
+**Status:** 3 of 50 published (Batch 1, 2026-09-11). See §"Execution
 log" at the bottom, updated after every batch.
 
 Methodology matches `italytaxi`'s proven pipeline
@@ -37,16 +37,16 @@ mechanism is a keyword array, not a data-driven field, per `docs/seo-audit-2026.
 ---
 
 ## 1. Airport Arrival Guides
-**Status: 0/10 published.** The single biggest gap on the site — 10 of 13 airports
+**Status: 2/10 published.** The single biggest gap on the site — 10 of 13 airports
 have a live `/airport-transfer/{slug}` commercial page and zero supporting blog
 content. Highest priority block.
 
 | # | Topic | Slug | Priority | Status |
 |---|---|---|---|---|
-| 1 | Madinah Airport driver-pickup guide | `madinah-airport-driver-pickup-guide` | High | Not started |
+| 1 | Madinah Airport driver-pickup guide | `madinah-airport-driver-pickup-guide` | High | **Published 2026-09-11** |
 | 2 | Abha Airport arrival guide | `abha-airport-arrival-guide` | High | Not started |
 | 3 | Taif Regional Airport arrival guide | `taif-regional-airport-arrival-guide` | High | Not started |
-| 4 | AlUla Airport arrival guide | `alula-airport-arrival-guide` | High | Not started |
+| 4 | AlUla Airport arrival guide | `alula-airport-arrival-guide` | High | **Published 2026-09-11** |
 | 5 | Yanbu Airport arrival guide | `yanbu-airport-arrival-guide` | Medium | Not started |
 | 6 | Tabuk Regional Airport arrival guide | `tabuk-regional-airport-arrival-guide` | Medium | Not started |
 | 7 | Jazan Airport arrival guide | `jazan-airport-arrival-guide` | Medium | Not started |
@@ -55,13 +55,13 @@ content. Highest priority block.
 | 10 | NEOM Bay Airport arrival guide | `neom-bay-airport-arrival-guide` | Low | Not started |
 
 ## 2. Route Cost & Comparison Guides
-**Status: 0/10 published.** Major domestic routes with a live `/routes/{slug}` page
+**Status: 1/10 published.** Major domestic routes with a live `/routes/{slug}` page
 and zero blog support — led by Jeddah↔Riyadh, the highest-volume domestic route with
 no guide at all today.
 
 | # | Topic | Slug | Priority | Status |
 |---|---|---|---|---|
-| 11 | Jeddah to Riyadh transfer guide | `jeddah-to-riyadh-transfer-guide` | High | Not started |
+| 11 | Jeddah to Riyadh transfer guide | `jeddah-to-riyadh-transfer-guide` | High | **Published 2026-09-11** |
 | 12 | Riyadh to Abha transfer guide | `riyadh-to-abha-transfer-guide` | High | Not started |
 | 13 | Riyadh to Hail transfer guide | `riyadh-to-hail-transfer-guide` | Medium | Not started |
 | 14 | Riyadh to Qassim (Buraidah) transfer guide | `riyadh-to-qassim-transfer-guide` | Medium | Not started |
@@ -205,4 +205,17 @@ the existing Ramadan/Riyadh Season/Jeddah Season posts.
 ## Execution log
 *(updated after every batch — most recent first)*
 
-- No batches published yet as of 2026-09-11 (plan just created).
+- **2026-09-11 — Batch 1 published (3 posts).** `madinah-airport-driver-pickup-guide`,
+  `alula-airport-arrival-guide`, `jeddah-to-riyadh-transfer-guide` — all in Supabase
+  `blogs` as `published`, all verified live (HTTP 200) at their `/blog/{slug}` URLs.
+  Added exact-slug reciprocal-link entries to `BlogSidebar.tsx`/`BlogInlineCta.tsx` for
+  all 3 (committed `22560b1`, deployed via the existing Vercel/GitHub pipeline).
+  Submitted to Bing (`docs/bing-submitted-urls.json`, batch 11). Block statuses updated
+  above (#1, #4, #11 → Published).
+  - **Known gap surfaced, not fixed in this batch:** `/airport-transfer/{airport}`
+    pages have **no** commercial→blog linking mechanism at all (no `LatestGuides`,
+    no `relatedLinks`-equivalent field) — confirmed by code search, applies to all 13
+    airport pages, not specific to this batch. `/routes/{slug}` pages do have
+    `LatestGuides` (topic-blind rotation), so `jeddah-to-riyadh-transfer-guide` has a
+    *chance* of surfacing there over time but no guaranteed placement. Flagging for a
+    future, separate task rather than hand-patching the airport template mid-batch.
