@@ -6,8 +6,8 @@ intent, target audience, URL slug, internal-linking suggestions, and priority �
 against the full published inventory (queried live from Supabase, not from memory) to
 avoid keyword cannibalization with existing posts or commercial pages.
 
-**Status:** 5 of 50 published (Batch 1: 3 EN-only; Batch 2: 2 EN+AR, 2026-09-11). See
-§"Execution log" at the bottom, updated after every batch.
+**Status:** 8 of 50 published (Batch 1: 3 EN-only; Batch 2: 2 EN+AR; Batch 3: 3 EN+AR,
+2026-09-13). See §"Execution log" at the bottom, updated after every batch.
 
 Methodology matches `italytaxi`'s proven pipeline
 (`docs/seo-audit-2026.md` → `seo-content-gap-50.md` → `seo-topic-clusters-plan.md`),
@@ -37,7 +37,7 @@ mechanism is a keyword array, not a data-driven field, per `docs/seo-audit-2026.
 ---
 
 ## 1. Airport Arrival Guides
-**Status: 4/10 published.** The single biggest gap on the site — 10 of 13 airports
+**Status: 5/10 published.** The single biggest gap on the site — 10 of 13 airports
 have a live `/airport-transfer/{slug}` commercial page and zero supporting blog
 content. Highest priority block.
 
@@ -47,7 +47,7 @@ content. Highest priority block.
 | 2 | Abha Airport arrival guide | `abha-airport-arrival-guide` | High | **Published 2026-09-11 (EN+AR)** |
 | 3 | Taif Regional Airport arrival guide | `taif-regional-airport-arrival-guide` | High | **Published 2026-09-11 (EN+AR)** |
 | 4 | AlUla Airport arrival guide | `alula-airport-arrival-guide` | High | **Published 2026-09-11** |
-| 5 | Yanbu Airport arrival guide | `yanbu-airport-arrival-guide` | Medium | Not started |
+| 5 | Yanbu Airport arrival guide | `yanbu-airport-arrival-guide` | Medium | **Published 2026-09-13 (EN+AR)** |
 | 6 | Tabuk Regional Airport arrival guide | `tabuk-regional-airport-arrival-guide` | Medium | Not started |
 | 7 | Jazan Airport arrival guide | `jazan-airport-arrival-guide` | Medium | Not started |
 | 8 | Hail Regional Airport arrival guide | `hail-regional-airport-arrival-guide` | Low | Not started |
@@ -55,14 +55,14 @@ content. Highest priority block.
 | 10 | NEOM Bay Airport arrival guide | `neom-bay-airport-arrival-guide` | Low | Not started |
 
 ## 2. Route Cost & Comparison Guides
-**Status: 1/10 published.** Major domestic routes with a live `/routes/{slug}` page
+**Status: 2/10 published.** Major domestic routes with a live `/routes/{slug}` page
 and zero blog support — led by Jeddah↔Riyadh, the highest-volume domestic route with
 no guide at all today.
 
 | # | Topic | Slug | Priority | Status |
 |---|---|---|---|---|
 | 11 | Jeddah to Riyadh transfer guide | `jeddah-to-riyadh-transfer-guide` | High | **Published 2026-09-11** |
-| 12 | Riyadh to Abha transfer guide | `riyadh-to-abha-transfer-guide` | High | Not started |
+| 12 | Riyadh to Abha transfer guide | `riyadh-to-abha-transfer-guide` | High | **Published 2026-09-13 (EN+AR)** |
 | 13 | Riyadh to Hail transfer guide | `riyadh-to-hail-transfer-guide` | Medium | Not started |
 | 14 | Riyadh to Qassim (Buraidah) transfer guide | `riyadh-to-qassim-transfer-guide` | Medium | Not started |
 | 15 | Jeddah to Madinah transfer guide | `jeddah-to-madinah-transfer-guide` | High | Not started |
@@ -85,7 +85,7 @@ AlUla, Dammam, and Taif don't, despite live commercial hubs.
 | 25 | First time in Taif guide | `first-time-in-taif-guide` | Low | Not started |
 
 ## 4. Arrival & Meet-and-Greet Guides
-**Status: 0/5 published.** The general version exists (`saudi-airport-pickup-guide`,
+**Status: 1/5 published.** The general version exists (`saudi-airport-pickup-guide`,
 `what-happens-if-flight-to-saudi-arabia-delayed`) — these make it airport-specific,
 which converts harder.
 
@@ -93,7 +93,7 @@ which converts harder.
 |---|---|---|---|---|
 | 26 | Jeddah Airport driver meeting point | `jeddah-airport-driver-meeting-point` | High | Not started |
 | 27 | Riyadh Airport driver meeting point | `riyadh-airport-driver-meeting-point` | High | Not started |
-| 28 | Meet-and-greet airport service explained | `meet-and-greet-airport-service-saudi-arabia` | Medium | Not started |
+| 28 | Meet-and-greet airport service explained | `meet-and-greet-airport-service-saudi-arabia` | Medium | **Published 2026-09-13 (EN+AR)** |
 | 29 | Late-night/early-morning airport transfers | `late-night-airport-transfers-saudi-arabia` | Medium | Not started |
 | 30 | Jeddah Airport layover transfer guide | `jeddah-airport-layover-transfer-guide` | Low | Not started |
 
@@ -205,6 +205,28 @@ the existing Ramadan/Riyadh Season/Jeddah Season posts.
 ## Execution log
 *(updated after every batch — most recent first)*
 
+- **2026-09-13 — Batch 3 published (3 posts, English + Arabic).**
+  `yanbu-airport-arrival-guide` (#5), `riyadh-to-abha-transfer-guide` (#12), and
+  `meet-and-greet-airport-service-saudi-arabia` (#28) — all in Supabase `blogs` as
+  `published`, verified live (HTTP 200) at their `/blog/{slug}` URLs. Arabic
+  counterparts written as natural adaptations in `data/translations/ar.ts`
+  (`دليل-مطار-ينبع`, `الرياض-الى-أبها-دليل-النقل`, `خدمة-الاستقبال-في-مطارات-السعودية`),
+  each with a mandatory `enPath` back to its English slug. Topics deliberately chosen
+  from 3 different blocks (Tier 1 airport-arrival, Tier 2 route-comparison, Tier 4
+  meet-and-greet) rather than 3 narrow variants of the same subtopic, per the
+  re-confirmed "2 most-recently-added topics" check (Abha + Taif, both 2026-09-11,
+  both excluded from this batch). Added exact-slug reciprocal links to both
+  `BlogSidebar.tsx` and `BlogInlineCta.tsx` for all 3 new posts. Also backfilled
+  reciprocal back-links **into 5 existing posts** so linking runs both directions:
+  `abha-airport-arrival-guide`, `alula-airport-arrival-guide`,
+  `madinah-airport-driver-pickup-guide`, `taif-regional-airport-arrival-guide` (English
+  content updated via Supabase; Arabic counterparts updated in `ar.ts` where one
+  exists — Abha and Taif only, since AlUla and the original Madinah pickup guide are
+  EN-only), and `madinah-to-yanbu-transfer-guide` (a pre-existing original-97 post,
+  English + Arabic both updated to link forward to the new Yanbu Airport guide).
+  Checked all 8 posts published this session (batches 1–3) for exact-sentence
+  duplication — zero found. Committed `8c180df`, pushed; submitted to Bing (English +
+  Arabic URLs). Block statuses updated above (#5, #12, #28 → Published).
 - **2026-09-11 — Batch 2 published (2 posts, English + Arabic).**
   `abha-airport-arrival-guide` and `taif-regional-airport-arrival-guide` — both in
   Supabase `blogs` as `published`, verified live (HTTP 200). Arabic counterparts
