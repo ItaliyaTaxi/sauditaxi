@@ -137,9 +137,9 @@ function shell(title: string, bodyHtml: string): string {
         <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e2d8">
           <tr>
             <td style="background:#0b1726;padding:20px 24px" align="center">
-              <img src="${esc(siteConfig.url)}/images/logo.webp" width="184" height="32" alt="${esc(
+              <img src="${esc(siteConfig.url)}/images/logo-email.png" width="210" height="37" alt="${esc(
                 siteConfig.shortName
-              )}" style="display:block;width:184px;height:32px" />
+              )}" style="display:block;width:210px;height:37px" />
             </td>
           </tr>
           <tr>
@@ -506,9 +506,9 @@ export function bookingConfirmationEmail(
           <!-- Header -->
           <tr>
             <td class="email-padding" style="background:#0b1726;padding:32px 24px;text-align:center">
-              <img src="${esc(siteConfig.url)}/images/logo.webp" width="200" height="35" alt="${esc(
+              <img src="${esc(siteConfig.url)}/images/logo-email.png" width="230" height="40" alt="${esc(
                 siteConfig.shortName
-              )}" style="display:block;width:200px;height:35px;margin:0 auto 20px" />
+              )}" style="display:block;width:230px;height:40px;margin:0 auto 20px" />
               <span style="display:inline-block;background:#c8a96b;color:#0b1726;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:6px 16px;border-radius:9999px">
                 &#10003; Booking Confirmed
               </span>

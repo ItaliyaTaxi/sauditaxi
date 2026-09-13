@@ -166,7 +166,7 @@ export const journeyGuideV2Pages: JourneyGuideV2Page[] = [
     ],
     sources: [
       { label: "Highway 95 (Saudi Arabia) — Wikipedia", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-      { label: "Al-Khafji — Wikipedia", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+      { label: "Al-Khafji — Wikipedia", url: "https://en.wikipedia.org/wiki/Khafji" },
       { label: "Al-Nuwaiseeb — Wikipedia", url: "https://en.wikipedia.org/wiki/Al-Nuwaiseeb" },
     ],
   },
@@ -482,7 +482,7 @@ export const journeyGuideV2Pages: JourneyGuideV2Page[] = [
     sources: [
       { label: "Kuwait International Airport — Wikipedia", url: "https://en.wikipedia.org/wiki/Kuwait_International_Airport" },
       { label: "Highway 95 (Saudi Arabia) — Wikipedia", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-      { label: "Al-Khafji — Wikipedia", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+      { label: "Al-Khafji — Wikipedia", url: "https://en.wikipedia.org/wiki/Khafji" },
     ],
   },
 

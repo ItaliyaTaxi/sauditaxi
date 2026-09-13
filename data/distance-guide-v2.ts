@@ -3112,7 +3112,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     ],
     sources: [
       { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Khafji" },
     ],
   },
 
@@ -3199,7 +3199,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     ],
     sources: [
       { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Khafji" },
     ],
   },
 
@@ -3290,7 +3290,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     sources: [
       { label: "Highway 40 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_40_(Saudi_Arabia)" },
       { label: "Highway 95 (Saudi Arabia) (Wikipedia)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+      { label: "Al-Khafji (Wikipedia)", url: "https://en.wikipedia.org/wiki/Khafji" },
     ],
   },
 

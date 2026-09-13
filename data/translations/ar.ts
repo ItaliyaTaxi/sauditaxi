@@ -15738,7 +15738,7 @@ export const arPages: ArPage[] = [
       ],
       sources: [
         { label: "الطريق السريع رقم 95 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Khafji" },
       ],
     },
   },
@@ -15838,7 +15838,7 @@ export const arPages: ArPage[] = [
       ],
       sources: [
         { label: "الطريق السريع رقم 95 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Khafji" },
       ],
     },
   },
@@ -15942,7 +15942,7 @@ export const arPages: ArPage[] = [
       sources: [
         { label: "الطريق السريع رقم 40 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_40_(Saudi_Arabia)" },
         { label: "الطريق السريع رقم 95 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Khafji" },
       ],
     },
   },
@@ -16090,7 +16090,7 @@ export const arPages: ArPage[] = [
       ],
       sources: [
         { label: "الطريق السريع رقم 95 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Khafji" },
         { label: "النويصيب (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Nuwaiseeb" },
       ],
     },
@@ -16440,7 +16440,7 @@ export const arPages: ArPage[] = [
       sources: [
         { label: "مطار الكويت الدولي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Kuwait_International_Airport" },
         { label: "الطريق السريع رقم 95 (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Highway_95_(Saudi_Arabia)" },
-        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Al-Khafji" },
+        { label: "الخفجي (ويكيبيديا)", url: "https://en.wikipedia.org/wiki/Khafji" },
       ],
     },
   },
@@ -21811,7 +21811,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى البلد", path: "/ar/نقل-من-مطار-جدة-الى-البلد" },
     ],
     distance: "~35 كم",
@@ -21891,7 +21891,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "البلد إلى مطار جدة", path: "/ar/نقل-من-البلد-الى-مطار-جدة" },
     ],
     distance: "~35 كم",
@@ -21965,7 +21965,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى البلد", path: "/ar/نقل-من-فنادق-جدة-الى-البلد" },
     ],
     distance: "5-15 كم",
@@ -22047,7 +22047,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى الكورنيش", path: "/ar/نقل-من-مطار-جدة-الى-كورنيش-جدة" },
     ],
     distance: "~25 كم",
@@ -22117,7 +22117,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى الكورنيش", path: "/ar/نقل-من-فنادق-جدة-الى-كورنيش-جدة" },
     ],
     distance: "5-12 كم",
@@ -22192,7 +22192,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى نافورة الملك فهد", path: "/ar/نقل-من-مطار-جدة-الى-نافورة-الملك-فهد" },
     ],
     distance: "~28 كم",
@@ -22261,7 +22261,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى نافورة الملك فهد", path: "/ar/نقل-من-فنادق-جدة-الى-نافورة-الملك-فهد" },
     ],
     distance: "6-12 كم",
@@ -22330,7 +22330,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى ريد سي مول", path: "/ar/نقل-من-مطار-جدة-الى-ريد-سي-مول" },
     ],
     distance: "~12 كم",
@@ -22399,7 +22399,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى ريد سي مول", path: "/ar/نقل-من-فنادق-جدة-الى-ريد-سي-مول" },
     ],
     distance: "8-18 كم",
@@ -22468,7 +22468,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى مول العرب", path: "/ar/نقل-من-مطار-جدة-الى-مول-العرب" },
     ],
     distance: "~8 كم",
@@ -22530,7 +22530,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى مول العرب", path: "/ar/نقل-من-فنادق-جدة-الى-مول-العرب" },
     ],
     distance: "10-20 كم",
@@ -22591,7 +22591,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى جدة بارك", path: "/ar/نقل-من-مطار-جدة-الى-جدة-بارك" },
     ],
     distance: "~12 كم",
@@ -22658,7 +22658,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى جدة بارك", path: "/ar/نقل-من-فنادق-جدة-الى-جدة-بارك" },
     ],
     distance: "10-18 كم",
@@ -22718,7 +22718,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى ميناء جدة الإسلامي", path: "/ar/نقل-من-مطار-جدة-الى-ميناء-جدة-الاسلامي" },
     ],
     distance: "~40 كم",
@@ -22780,7 +22780,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "ميناء جدة الإسلامي إلى مطار جدة", path: "/ar/نقل-من-ميناء-جدة-الاسلامي-الى-مطار-جدة" },
     ],
     distance: "~40 كم",
@@ -22842,7 +22842,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى ميناء جدة الإسلامي", path: "/ar/نقل-من-فنادق-جدة-الى-ميناء-جدة-الاسلامي" },
     ],
     distance: "10-25 كم",
@@ -22902,7 +22902,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "ميناء جدة الإسلامي إلى فنادق جدة", path: "/ar/نقل-من-ميناء-جدة-الاسلامي-الى-فنادق-جدة" },
     ],
     distance: "10-25 كم",
@@ -22963,7 +22963,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "مطار جدة إلى محطة قطار السليمانية", path: "/ar/نقل-من-مطار-جدة-الى-محطة-قطار-السليمانية" },
     ],
     distance: "~18 كم",
@@ -23031,7 +23031,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "محطة قطار السليمانية إلى مطار جدة", path: "/ar/نقل-من-محطة-قطار-السليمانية-الى-مطار-جدة" },
     ],
     distance: "~18 كم",
@@ -23090,7 +23090,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "فنادق جدة إلى محطة قطار السليمانية", path: "/ar/نقل-من-فنادق-جدة-الى-محطة-قطار-السليمانية" },
     ],
     distance: "5-20 كم",
@@ -23150,7 +23150,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "محطة قطار السليمانية إلى فنادق جدة", path: "/ar/نقل-من-محطة-قطار-السليمانية-الى-فنادق-جدة" },
     ],
     distance: "5-20 كم",
@@ -23211,7 +23211,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "خدمة سائق خاص في جدة", path: "/ar/نقل-سائق-خاص-في-جدة" },
     ],
     duration: "يوم كامل / عدة أيام",
@@ -23281,7 +23281,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "استئجار سائق بالساعة في جدة", path: "/ar/استئجار-سائق-بالساعة-جدة" },
     ],
     duration: "من 3 ساعات",
@@ -23351,7 +23351,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "خدمة سيارة تنفيذية في جدة", path: "/ar/خدمة-سيارة-تنفيذية-جدة" },
     ],
     pointTransferV2From: "جدة",
@@ -23412,7 +23412,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "نقل أعمال في جدة", path: "/ar/نقل-أعمال-جدة" },
     ],
     pointTransferV2From: "جدة",
@@ -23473,7 +23473,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "جولة جدة السياحية", path: "/ar/جولة-جدة-السياحية" },
     ],
     duration: "مرنة",
@@ -23542,7 +23542,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "جولة جدة نصف اليوم", path: "/ar/جولة-جدة-نصف-اليوم" },
     ],
     duration: "نحو 4 ساعات",
@@ -23604,7 +23604,7 @@ export const arPages: ArPage[] = [
     faqs: [],
     breadcrumbs: [
       { name: "الرئيسية", path: "/ar" },
-      { name: "تاكسي جدة", path: "/ar/تاكسي-جدة" },
+      { name: "تاكسي جدة", path: "/ar/تنقلات-جدة" },
       { name: "جولة جدة ليوم كامل", path: "/ar/جولة-جدة-ليوم-كامل" },
     ],
     duration: "نحو 8 ساعات",
