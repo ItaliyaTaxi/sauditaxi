@@ -42,14 +42,14 @@ export default async function LeadDetailPage({
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/leads" className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-gold">
+      <Link href="/admin/leads" className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-brass">
         <ArrowLeft className="size-4" /> Back to leads
       </Link>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">{lead.fullName || "Lead"}</h1>
-          <p className="text-sm text-neutral-500">Submitted {submitted}</p>
+          <h1 className="text-2xl font-bold text-ink">{lead.fullName || "Lead"}</h1>
+          <p className="text-sm text-ink-muted">Submitted {submitted}</p>
         </div>
         <div className="flex items-center gap-3">
           <StatusBadge status={lead.status} />
@@ -106,7 +106,7 @@ export default async function LeadDetailPage({
       <Panel title="Contact the client">
         <div className="space-y-5">
           <WhatsAppLeadButtons lead={lead} />
-          <div className="border-t border-neutral-200 pt-5">
+          <div className="border-t border-hairline pt-5">
             <EmailClientForm leadId={lead.id} defaultEmail={lead.email} />
           </div>
         </div>

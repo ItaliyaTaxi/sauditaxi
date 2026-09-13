@@ -36,13 +36,13 @@ export default async function InvoiceDetailPage({
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/invoices" className="print:hidden inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-gold">
+      <Link href="/admin/invoices" className="print:hidden inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-brass">
         <ArrowLeft className="size-4" /> Back to invoices
       </Link>
 
       <div className="print:hidden">
-        <h1 className="text-2xl font-bold text-neutral-900">{invoice.invoiceNumber}</h1>
-        <p className="text-sm text-neutral-500">Created {new Date(invoice.createdAt).toLocaleString("en-GB")}</p>
+        <h1 className="text-2xl font-bold text-ink">{invoice.invoiceNumber}</h1>
+        <p className="text-sm text-ink-muted">Created {new Date(invoice.createdAt).toLocaleString("en-GB")}</p>
       </div>
 
       <InvoiceReview invoice={invoice} publicUrl={publicUrl} />

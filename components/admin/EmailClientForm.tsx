@@ -47,7 +47,7 @@ export function EmailClientForm({
 
   if (!defaultEmail) {
     return (
-      <p className="text-sm text-neutral-500">
+      <p className="text-sm text-ink-muted">
         No email address on file for this lead — ask the client for their email to send a message.
       </p>
     );
@@ -55,8 +55,8 @@ export function EmailClientForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <p className="text-sm text-neutral-600">
-        Sending to <span className="font-semibold text-neutral-900">{defaultEmail}</span>
+      <p className="text-sm text-ink-soft">
+        Sending to <span className="font-semibold text-ink">{defaultEmail}</span>
       </p>
       <div>
         <Label htmlFor="email-subject">Subject</Label>

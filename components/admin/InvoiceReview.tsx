@@ -46,7 +46,7 @@ export function InvoiceReview({ invoice, publicUrl }: { invoice: Invoice; public
 
   return (
     <div className="space-y-6">
-      <div className="print:hidden flex flex-wrap items-center gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+      <div className="print:hidden flex flex-wrap items-center gap-3 rounded-xl border border-hairline bg-white p-4">
         <Button type="button" variant="outline" size="sm" onClick={() => setEditing(true)}>
           <Pencil className="size-4" /> Edit
         </Button>
@@ -58,7 +58,7 @@ export function InvoiceReview({ invoice, publicUrl }: { invoice: Invoice; public
         </div>
       </div>
 
-      <div className="print:hidden rounded-xl border border-neutral-200 bg-white p-4">
+      <div className="print:hidden rounded-xl border border-hairline bg-white p-4">
         <SendInvoiceEmailButton invoiceId={invoice.id} clientEmail={invoice.clientEmail} />
       </div>
 

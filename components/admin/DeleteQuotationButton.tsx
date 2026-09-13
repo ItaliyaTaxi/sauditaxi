@@ -51,7 +51,7 @@ export function DeleteQuotationButton({
       </Button>
 
       <Dialog open={open} onClose={() => !busy && setOpen(false)} title="Delete this quotation?">
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-ink-soft">
           Are you sure you want to delete this quotation? This action cannot be undone.
         </p>
         {error && <p className="mt-3 text-sm text-red-600">{error}</p>}

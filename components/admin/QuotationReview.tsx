@@ -59,7 +59,7 @@ export function QuotationReview({
 
   return (
     <div className="space-y-6">
-      <div className="print:hidden flex flex-wrap items-center gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+      <div className="print:hidden flex flex-wrap items-center gap-3 rounded-xl border border-hairline bg-white p-4">
         <Button type="button" variant="outline" size="sm" onClick={() => setEditing(true)}>
           <Pencil className="size-4" /> Edit
         </Button>
@@ -71,7 +71,7 @@ export function QuotationReview({
         </div>
       </div>
 
-      <div className="print:hidden flex flex-wrap gap-6 rounded-xl border border-neutral-200 bg-white p-4">
+      <div className="print:hidden flex flex-wrap gap-6 rounded-xl border border-hairline bg-white p-4">
         <SendQuotationEmailButton quotationId={quotation.id} clientEmail={quotation.clientEmail} />
         <SendBookingConfirmationButton quotationId={quotation.id} clientEmail={quotation.clientEmail} />
       </div>

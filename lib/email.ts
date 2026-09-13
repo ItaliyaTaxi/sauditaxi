@@ -130,13 +130,13 @@ function shell(title: string, bodyHtml: string): string {
   }
 </style>
 </head>
-<body style="margin:0;padding:0;background:#f5f5f4;font-family:Arial,Helvetica,sans-serif">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f4;padding:24px 0">
+<body style="margin:0;padding:0;background:#f3ede3;font-family:Arial,Helvetica,sans-serif">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3ede3;padding:24px 0">
     <tr>
       <td align="center">
-        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e5e4">
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e2d8">
           <tr>
-            <td style="background:#0a0a0a;padding:16px 24px">
+            <td style="background:#0b1726;padding:16px 24px">
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:10px">
@@ -147,7 +147,7 @@ function shell(title: string, bodyHtml: string): string {
                   <td style="vertical-align:middle">
                     <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
                       siteConfig.shortName
-                    )}<span style="color:#f5b820">.</span></span>
+                    )}<span style="color:#c8a96b">.</span></span>
                   </td>
                 </tr>
               </table>
@@ -155,12 +155,12 @@ function shell(title: string, bodyHtml: string): string {
           </tr>
           <tr>
             <td class="email-padding" style="padding:24px">
-              <h1 style="margin:0 0 12px;font-size:20px;color:#0a0a0a">${esc(title)}</h1>
+              <h1 style="margin:0 0 12px;font-size:20px;color:#0b1726">${esc(title)}</h1>
               ${bodyHtml}
             </td>
           </tr>
           <tr>
-            <td style="padding:16px 24px;background:#f5f5f4;color:#777;font-size:12px">
+            <td style="padding:16px 24px;background:#f3ede3;color:#777;font-size:12px">
               ${esc(siteConfig.name)} · Taxi &amp; transfer service across Saudi Arabia
             </td>
           </tr>
@@ -215,7 +215,7 @@ export function invoiceReadyEmail(
      </p>
      <div style="text-align:center;margin:24px 0">
        <a href="${esc(viewUrl)}"
-          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;
+          style="display:inline-block;background:#c8a96b;color:#0b1726;font-weight:700;
                  padding:12px 28px;border-radius:9999px;text-decoration:none">
          View Invoice
        </a>
@@ -264,7 +264,7 @@ export function quotationReadyEmail(
        Thank you for your interest in <strong>${esc(siteConfig.name)}</strong>. We have prepared a customized private transfer quotation for your journey. Please find the summary below:
      </p>
 
-     <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f5b820;border-radius:8px;padding:18px 20px;margin:0 0 24px;font-size:14px">
+     <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #c8a96b;border-radius:8px;padding:18px 20px;margin:0 0 24px;font-size:14px">
        <div style="display:flex;justify-content:space-between;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #e2e8f0">
          <span style="color:#64748b">Quotation Number:</span>
          <strong style="color:#0f172a">${esc(quotation.quoteNumber)}</strong>
@@ -305,7 +305,7 @@ export function quotationReadyEmail(
 
      <div style="text-align:center;margin:24px 0">
        <a href="${esc(viewUrl)}"
-          style="display:inline-block;background:#f5b820;color:#0a0a0a;font-weight:700;font-size:15px;
+          style="display:inline-block;background:#c8a96b;color:#0b1726;font-weight:700;font-size:15px;
                  padding:14px 34px;border-radius:8px;text-decoration:none;box-shadow:0 2px 4px rgba(0,0,0,0.1)">
          Review &amp; Accept Quotation &rarr;
        </a>

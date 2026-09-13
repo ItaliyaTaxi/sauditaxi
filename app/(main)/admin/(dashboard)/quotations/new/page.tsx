@@ -33,13 +33,13 @@ export default async function NewQuotationPage({
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/quotations" className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-gold">
+      <Link href="/admin/quotations" className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-brass">
         <ArrowLeft className="size-4" /> Back to quotations
       </Link>
 
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900">New quotation</h1>
-        <p className="text-sm text-neutral-500">
+        <h1 className="text-2xl font-bold text-ink">New quotation</h1>
+        <p className="text-sm text-ink-muted">
           {leadId
             ? "Fields are pre-filled from the lead — review and add pricing before saving."
             : "Fill in the client, journey, and pricing details. No lead is required — this can be a fully standalone quotation."}

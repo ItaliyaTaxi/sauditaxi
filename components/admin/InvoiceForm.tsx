@@ -135,8 +135,8 @@ export function InvoiceForm({
         </p>
       )}
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-neutral-900">Client details</h2>
+      <div className="rounded-xl border border-hairline bg-white p-5">
+        <h2 className="text-sm font-semibold text-ink">Client details</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div>
             <Label htmlFor="clientName">Full name</Label>
@@ -157,8 +157,8 @@ export function InvoiceForm({
         </div>
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-neutral-900">Trip details</h2>
+      <div className="rounded-xl border border-hairline bg-white p-5">
+        <h2 className="text-sm font-semibold text-ink">Trip details</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div>
             <Label htmlFor="pickupLocation">Pickup</Label>
@@ -179,16 +179,16 @@ export function InvoiceForm({
         </div>
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
+      <div className="rounded-xl border border-hairline bg-white p-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-neutral-900">Line items</h2>
+          <h2 className="text-sm font-semibold text-ink">Line items</h2>
           <Button type="button" variant="ghost" size="sm" onClick={addLineItem}>
             <Plus className="size-4" /> Add row
           </Button>
         </div>
         <div className="mt-4 space-y-4">
           {lineItems.map((item, i) => (
-            <div key={i} className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+            <div key={i} className="rounded-lg border border-hairline bg-sand/30 p-4">
               <div className="grid gap-3 sm:grid-cols-5">
                 <div className="sm:col-span-2">
                   <Label htmlFor={`li-description-${i}`}>Description</Label>
@@ -252,13 +252,13 @@ export function InvoiceForm({
             </div>
           ))}
         </div>
-        <p className="mt-4 text-right text-sm text-neutral-600">
-          Total: <span className="text-base font-bold text-neutral-900">{total.toFixed(2)} {currency}</span>
+        <p className="mt-4 text-right text-sm text-ink-soft">
+          Total: <span className="text-base font-bold text-ink">{total.toFixed(2)} {currency}</span>
         </p>
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-neutral-900">Invoice details</h2>
+      <div className="rounded-xl border border-hairline bg-white p-5">
+        <h2 className="text-sm font-semibold text-ink">Invoice details</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           <div>
             <Label htmlFor="invoiceDate">Invoice date</Label>

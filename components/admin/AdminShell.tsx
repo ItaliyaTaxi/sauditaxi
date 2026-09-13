@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -16,7 +17,6 @@ import {
   LogOut,
   Menu,
   X,
-  Car,
   Receipt,
   FileSignature,
 } from "lucide-react";
@@ -57,7 +57,7 @@ function NavLink({
       onClick={onNavigate}
       className={cn(
         "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-        active ? "bg-gold text-black" : "text-white/75 hover:bg-white/5 hover:text-gold"
+        active ? "bg-brass text-midnight" : "text-white/75 hover:bg-white/5 hover:text-brass"
       )}
     >
       <Icon className="size-4 shrink-0" />
@@ -88,11 +88,11 @@ export function AdminShell({
   const sidebar = (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 px-4 py-5">
-        <span className="flex size-9 items-center justify-center rounded-lg bg-gold text-black">
-          <Car className="size-5" />
+        <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white">
+          <Image src="/images/logo.webp" alt="Saudi Private Transfers" width={36} height={36} className="size-full object-contain" />
         </span>
         <span className="text-base font-bold text-white">
-          Saudi Private Transfers <span className="text-gold">CRM</span>
+          Saudi Private Transfers <span className="text-brass">CRM</span>
         </span>
       </div>
 
@@ -119,7 +119,7 @@ export function AdminShell({
         <button
           type="button"
           onClick={logout}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/5 hover:text-gold"
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/5 hover:text-brass"
         >
           <LogOut className="size-4 shrink-0" />
           Logout
@@ -137,7 +137,7 @@ export function AdminShell({
   return (
     <div className="flex min-h-screen">
       {/* Desktop sidebar */}
-      <aside className="print:hidden hidden w-64 shrink-0 bg-neutral-950 lg:block">
+      <aside className="print:hidden hidden w-64 shrink-0 bg-midnight lg:block">
         <div className="sticky top-0 h-screen">{sidebar}</div>
       </aside>
 
@@ -145,15 +145,15 @@ export function AdminShell({
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-          <div className="absolute left-0 top-0 h-full w-64 bg-neutral-950 shadow-xl">{sidebar}</div>
+          <div className="absolute left-0 top-0 h-full w-64 bg-midnight shadow-xl">{sidebar}</div>
         </div>
       )}
 
       {/* Main */}
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="print:hidden flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3 lg:hidden">
-          <span className="font-bold text-neutral-900">
-            Saudi Private Transfers <span className="text-gold">CRM</span>
+        <header className="print:hidden flex items-center justify-between border-b border-hairline bg-white px-4 py-3 lg:hidden">
+          <span className="font-bold text-ink">
+            Saudi Private Transfers <span className="text-brass">CRM</span>
           </span>
           <button
             type="button"

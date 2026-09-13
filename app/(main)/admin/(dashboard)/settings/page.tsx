@@ -6,10 +6,10 @@ export const dynamic = "force-dynamic";
 
 function StatusRow({ label, ok, hint }: { label: string; ok: boolean; hint: string }) {
   return (
-    <div className="flex items-center justify-between border-b border-neutral-100 py-3 last:border-0">
+    <div className="flex items-center justify-between border-b border-hairline py-3 last:border-0">
       <div>
-        <p className="text-sm font-medium text-neutral-900">{label}</p>
-        <p className="text-xs text-neutral-500">{hint}</p>
+        <p className="text-sm font-medium text-ink">{label}</p>
+        <p className="text-xs text-ink-muted">{hint}</p>
       </div>
       <span
         className={`rounded-full px-3 py-1 text-xs font-semibold ${
@@ -28,23 +28,23 @@ export default async function AdminSettingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900">Settings</h1>
-        <p className="text-sm text-neutral-500">Account and integration status.</p>
+        <h1 className="text-2xl font-bold text-ink">Settings</h1>
+        <p className="text-sm text-ink-muted">Account and integration status.</p>
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-neutral-900">Account</h2>
-        <p className="mt-2 text-sm text-neutral-600">
-          Signed in as <span className="font-semibold text-neutral-900">{session?.email}</span>
+      <div className="rounded-xl border border-hairline bg-white p-5">
+        <h2 className="text-sm font-semibold text-ink">Account</h2>
+        <p className="mt-2 text-sm text-ink-soft">
+          Signed in as <span className="font-semibold text-ink">{session?.email}</span>
         </p>
-        <p className="mt-1 text-xs text-neutral-500">
+        <p className="mt-1 text-xs text-ink-muted">
           Credentials are configured via the <code>ADMIN_LOGIN_EMAIL</code> and{" "}
           <code>ADMIN_PASSWORD</code> environment variables.
         </p>
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-5">
-        <h2 className="text-sm font-semibold text-neutral-900">Integrations</h2>
+      <div className="rounded-xl border border-hairline bg-white p-5">
+        <h2 className="text-sm font-semibold text-ink">Integrations</h2>
         <div className="mt-2">
           <StatusRow
             label="Supabase database"

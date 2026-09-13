@@ -33,13 +33,13 @@ export default async function NewInvoicePage({
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/invoices" className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-gold">
+      <Link href="/admin/invoices" className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-brass">
         <ArrowLeft className="size-4" /> Back to invoices
       </Link>
 
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900">New invoice</h1>
-        <p className="text-sm text-neutral-500">
+        <h1 className="text-2xl font-bold text-ink">New invoice</h1>
+        <p className="text-sm text-ink-muted">
           {leadId ? "Fields are pre-filled from the lead — review and add pricing before saving." : "Fill in the client, trip, and line-item details."}
         </p>
       </div>

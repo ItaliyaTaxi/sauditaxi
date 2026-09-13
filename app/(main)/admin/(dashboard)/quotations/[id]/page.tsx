@@ -36,13 +36,13 @@ export default async function QuotationDetailPage({
 
   return (
     <div className="space-y-6">
-      <Link href="/admin/quotations" className="print:hidden inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-600 hover:text-gold">
+      <Link href="/admin/quotations" className="print:hidden inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-brass">
         <ArrowLeft className="size-4" /> Back to quotations
       </Link>
 
       <div className="print:hidden">
-        <h1 className="text-2xl font-bold text-neutral-900">{quotation.quoteNumber}</h1>
-        <p className="text-sm text-neutral-500">Created {new Date(quotation.createdAt).toLocaleString("en-GB")}</p>
+        <h1 className="text-2xl font-bold text-ink">{quotation.quoteNumber}</h1>
+        <p className="text-sm text-ink-muted">Created {new Date(quotation.createdAt).toLocaleString("en-GB")}</p>
       </div>
 
       <QuotationReview quotation={quotation} publicUrl={publicUrl} />

@@ -2,7 +2,7 @@ import type { LeadStatus } from "@/lib/leads";
 import { cn } from "@/lib/utils";
 
 const styles: Record<LeadStatus, string> = {
-  New: "bg-gold/20 text-neutral-900 ring-gold/40",
+  New: "bg-brass/20 text-ink ring-brass/40",
   Contacted: "bg-neutral-200 text-neutral-800 ring-neutral-300",
   Quoted: "bg-amber-100 text-amber-800 ring-amber-200",
   Confirmed: "bg-green-100 text-green-800 ring-green-200",

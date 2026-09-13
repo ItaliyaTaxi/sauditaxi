@@ -48,8 +48,8 @@ export default async function AdminDashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900">Dashboard</h1>
-        <p className="text-sm text-neutral-500">Overview of your taxi leads.</p>
+        <h1 className="text-2xl font-bold text-ink">Dashboard</h1>
+        <p className="text-sm text-ink-muted">Overview of your taxi leads.</p>
       </div>
 
       {!configured && (
@@ -64,31 +64,31 @@ export default async function AdminDashboardPage() {
         {cards.map((c) => {
           const Icon = c.icon;
           return (
-            <div key={c.label} className="rounded-xl border border-neutral-200 bg-white p-5">
+            <div key={c.label} className="rounded-xl border border-hairline bg-white p-5">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-neutral-500">{c.label}</span>
-                <Icon className="size-4 text-gold" />
+                <span className="text-sm text-ink-muted">{c.label}</span>
+                <Icon className="size-4 text-brass" />
               </div>
-              <p className="mt-2 text-3xl font-bold text-neutral-900">{c.value}</p>
+              <p className="mt-2 text-3xl font-bold text-ink">{c.value}</p>
             </div>
           );
         })}
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white">
-        <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-4">
-          <h2 className="font-semibold text-neutral-900">Recent leads</h2>
-          <Link href="/admin/leads" className="text-sm font-semibold text-neutral-700 hover:text-gold">
+      <div className="rounded-xl border border-hairline bg-white">
+        <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
+          <h2 className="font-semibold text-ink">Recent leads</h2>
+          <Link href="/admin/leads" className="text-sm font-semibold text-ink-soft hover:text-brass">
             View all →
           </Link>
         </div>
         {recent.length === 0 ? (
-          <p className="px-5 py-10 text-center text-sm text-neutral-500">No leads yet.</p>
+          <p className="px-5 py-10 text-center text-sm text-ink-muted">No leads yet.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-neutral-200 text-left text-neutral-500">
+                <tr className="border-b border-hairline text-left text-ink-muted">
                   <th className="px-5 py-3 font-medium">Client</th>
                   <th className="px-5 py-3 font-medium">Trip</th>
                   <th className="px-5 py-3 font-medium">Date</th>
@@ -98,21 +98,21 @@ export default async function AdminDashboardPage() {
               </thead>
               <tbody>
                 {recent.map((lead) => (
-                  <tr key={lead.id} className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50">
+                  <tr key={lead.id} className="border-b border-hairline last:border-0 hover:bg-sand/30">
                     <td className="px-5 py-3">
-                      <Link href={`/admin/leads/${lead.id}`} className="font-semibold text-neutral-900 hover:text-gold">
+                      <Link href={`/admin/leads/${lead.id}`} className="font-semibold text-ink hover:text-brass">
                         {lead.fullName || "—"}
                       </Link>
-                      <div className="text-xs text-neutral-500">{lead.phone}</div>
+                      <div className="text-xs text-ink-muted">{lead.phone}</div>
                     </td>
-                    <td className="px-5 py-3 text-neutral-700">
+                    <td className="px-5 py-3 text-ink-soft">
                       {lead.pickupLocation || "—"} → {lead.dropoffLocation || "—"}
                     </td>
-                    <td className="px-5 py-3 text-neutral-700">
+                    <td className="px-5 py-3 text-ink-soft">
                       {lead.date || "—"} {lead.time || ""}
                     </td>
                     <td className="px-5 py-3"><StatusBadge status={lead.status} /></td>
-                    <td className="px-5 py-3 text-neutral-500">
+                    <td className="px-5 py-3 text-ink-muted">
                       {new Date(lead.createdAt).toLocaleDateString("en-GB")}
                     </td>
                   </tr>
