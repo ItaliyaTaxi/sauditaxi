@@ -14,6 +14,30 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["yanbu-airport-arrival-guide"],
+    links: [
+      { label: "Yanbu Airport Transfer", href: "/airport-transfer/yanbu-airport", icon: Plane },
+      { label: "Yanbu Taxi Service", href: "/taxi-service/yanbu", icon: RouteIcon },
+      { label: "Yanbu → Riyadh Route", href: "/routes/yanbu-to-riyadh", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["riyadh-to-abha-transfer-guide"],
+    links: [
+      { label: "Riyadh → Abha Route", href: "/routes/riyadh-to-abha", icon: RouteIcon },
+      { label: "Riyadh Taxi Service", href: "/taxi-service/riyadh", icon: RouteIcon },
+      { label: "Abha Airport Transfer", href: "/airport-transfer/abha-airport", icon: Plane },
+    ],
+  },
+  {
+    match: ["meet-and-greet-airport-service-saudi-arabia"],
+    links: [
+      { label: "Airport Transfers", href: "/airport-transfers", icon: Plane },
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Riyadh Airport Transfer", href: "/airport-transfer/riyadh-airport", icon: Plane },
+    ],
+  },
+  {
     match: ["abha-airport-arrival-guide"],
     links: [
       { label: "Abha Airport Transfer", href: "/airport-transfer/abha-airport", icon: Plane },

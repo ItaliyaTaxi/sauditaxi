@@ -9,6 +9,27 @@ import { whatsappLink } from "@/lib/site";
  */
 const topicLinks: { match: string[]; links: { label: string; href: string }[] }[] = [
   {
+    match: ["yanbu-airport-arrival-guide"],
+    links: [
+      { label: "Yanbu Airport Transfer", href: "/airport-transfer/yanbu-airport" },
+      { label: "Yanbu Taxi Service", href: "/taxi-service/yanbu" },
+    ],
+  },
+  {
+    match: ["riyadh-to-abha-transfer-guide"],
+    links: [
+      { label: "Riyadh → Abha Route", href: "/routes/riyadh-to-abha" },
+      { label: "Abha Airport Transfer", href: "/airport-transfer/abha-airport" },
+    ],
+  },
+  {
+    match: ["meet-and-greet-airport-service-saudi-arabia"],
+    links: [
+      { label: "Airport Transfers", href: "/airport-transfers" },
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport" },
+    ],
+  },
+  {
     match: ["abha-airport-arrival-guide"],
     links: [
       { label: "Abha Airport Transfer", href: "/airport-transfer/abha-airport" },
