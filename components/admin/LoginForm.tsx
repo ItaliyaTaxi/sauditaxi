@@ -48,12 +48,8 @@ export function LoginForm() {
     <div className="flex min-h-screen items-center justify-center bg-midnight px-4">
       <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-midnight-soft p-8 shadow-2xl">
         <div className="flex items-center gap-2">
-          <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white">
-            <Image src="/images/logo.webp" alt="Saudi Private Transfers" width={36} height={36} className="size-full object-contain" />
-          </span>
-          <span className="text-lg font-bold text-white">
-            Saudi Private Transfers <span className="text-brass">CRM</span>
-          </span>
+          <Image src="/images/logo.webp" alt="Saudi Private Transfers" width={798} height={139} className="h-9 w-auto" />
+          <span className="text-lg font-bold text-brass">CRM</span>
         </div>
         <h1 className="mt-6 text-xl font-bold text-white">Admin sign in</h1>
         <p className="mt-1 text-sm text-white/60">

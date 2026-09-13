@@ -88,12 +88,8 @@ export function AdminShell({
   const sidebar = (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 px-4 py-5">
-        <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white">
-          <Image src="/images/logo.webp" alt="Saudi Private Transfers" width={36} height={36} className="size-full object-contain" />
-        </span>
-        <span className="text-base font-bold text-white">
-          Saudi Private Transfers <span className="text-brass">CRM</span>
-        </span>
+        <Image src="/images/logo.webp" alt="Saudi Private Transfers" width={798} height={139} className="h-8 w-auto" />
+        <span className="text-sm font-bold text-brass">CRM</span>
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto px-3 pb-4">

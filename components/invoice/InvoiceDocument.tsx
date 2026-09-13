@@ -48,14 +48,16 @@ export const InvoiceDocument = forwardRef<HTMLDivElement, { invoice: Invoice }>(
     >
       {/* Header */}
       <div className="flex flex-wrap items-start justify-between gap-6 bg-midnight px-6 py-6 sm:px-8 sm:py-8 print:gap-3 print:px-6 print:py-4">
-        <div className="flex items-center gap-4 print:gap-3">
-          <span className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-brass print:size-10">
-            <Image src="/images/logo.webp" alt={`${siteConfig.name} logo`} width={112} height={112} className="size-14 object-cover print:size-10" />
-          </span>
+        <div className="flex flex-col gap-2 print:gap-1">
+          <h1 className="sr-only">{siteConfig.name}</h1>
+          <Image
+            src="/images/logo.webp"
+            alt={`${siteConfig.name} logo`}
+            width={798}
+            height={139}
+            className="h-9 w-auto sm:h-10 print:h-7"
+          />
           <div>
-            <h1 className="text-lg font-extrabold uppercase tracking-wide text-white sm:text-xl print:text-base">
-              {siteConfig.name}
-            </h1>
             <p className="text-sm text-white/70 print:text-xs">Private Taxi &amp; Transfer Services</p>
             <p className="text-sm text-white/70 print:text-xs">{siteConfig.email}</p>
           </div>

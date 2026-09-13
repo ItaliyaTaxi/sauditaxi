@@ -136,21 +136,10 @@ function shell(title: string, bodyHtml: string): string {
       <td align="center">
         <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e2d8">
           <tr>
-            <td style="background:#0b1726;padding:16px 24px">
-              <table role="presentation" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="padding-right:10px">
-                    <img src="${esc(siteConfig.url)}/images/logo.webp" width="36" height="36" alt="${esc(
-                      siteConfig.shortName
-                    )}" style="display:block;width:36px;height:36px;border-radius:50%" />
-                  </td>
-                  <td style="vertical-align:middle">
-                    <span style="color:#ffffff;font-size:18px;font-weight:800">${esc(
-                      siteConfig.shortName
-                    )}<span style="color:#c8a96b">.</span></span>
-                  </td>
-                </tr>
-              </table>
+            <td style="background:#0b1726;padding:20px 24px" align="center">
+              <img src="${esc(siteConfig.url)}/images/logo.webp" width="184" height="32" alt="${esc(
+                siteConfig.shortName
+              )}" style="display:block;width:184px;height:32px" />
             </td>
           </tr>
           <tr>
@@ -421,53 +410,177 @@ export function quotationDeclinedAdminEmail(
  * Sent manually by the admin once a booking is confirmed (e.g. the client
  * already confirmed over WhatsApp) — a written, branded record of exactly
  * what was booked, separate from the WhatsApp conversation itself.
+ *
+ * Bespoke layout (not the shared `shell()`) so it can match the richer,
+ * card-based confirmation design: badge + reference, a bordered detail
+ * card, a numbered "what happens next" list, and a help box.
  */
 export function bookingConfirmationEmail(
   quotation: Quotation
 ): { subject: string; html: string } {
-  const vehicle = quotation.lineItems.find((li) => li.vehicleType)?.vehicleType ?? null;
-  const rows: [string, string | null][] = [
-    ["Booking reference", quotation.bookingReference || quotation.quoteNumber],
-    ["Passenger", quotation.clientName],
-    ["Phone / WhatsApp", quotation.clientPhone],
-    ["Vehicle", vehicle],
+  const reference = quotation.bookingReference || quotation.quoteNumber;
+  const matchedLine = quotation.lineItems.find((li) => li.vehicleType) ?? null;
+  const vehicle = matchedLine?.vehicleType ?? null;
+  const passengers = matchedLine?.passengers ?? null;
+
+  const dateTime =
+    quotation.date && quotation.time
+      ? `${quotation.date} · ${quotation.time}`
+      : quotation.date || quotation.time || null;
+
+  const detailFields: [string, string | null][] = [
     ["Pickup", quotation.pickupLocation],
     ["Drop-off", quotation.dropoffLocation],
-    ["Date", quotation.date],
-    ["Time", quotation.time],
+    ["Date & time", dateTime],
+    ["Vehicle", vehicle],
+    ["Passengers", passengers],
     ["Flight number", quotation.flightNumber],
   ];
-  const detailRows = rows
+
+  const detailCardRows = detailFields
     .filter(([, v]) => v)
     .map(
-      ([k, v]) =>
-        `<tr><td class="detail-label" style="padding:6px 12px;color:#666;vertical-align:top;width:38%">${esc(
-          k
-        )}</td><td style="padding:6px 12px;color:#111;font-weight:600;word-break:break-word">${esc(v)}</td></tr>`
+      ([label, value]) => `
+       <div style="border-left:3px solid #c8a96b;padding:0 0 0 14px;margin-bottom:16px">
+         <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#8a929c">${esc(
+           label
+         )}</p>
+         <p style="margin:2px 0 0;font-size:15px;font-weight:700;color:#17202b">${esc(value)}</p>
+       </div>`
     )
     .join("");
 
-  const whatsappUrl = whatsappLink(
-    `Hi, I have a question about my booking ${quotation.bookingReference || quotation.quoteNumber}.`
-  );
+  const whatsappUrl = whatsappLink(`Hi, I have a question about my booking ${reference}.`);
+  const greeting = quotation.clientName ? `, ${esc(quotation.clientName)}` : "";
 
-  const subject = `Booking Confirmed — ${quotation.bookingReference || quotation.quoteNumber} — ${siteConfig.name}`;
-  const html = shell(
-    "Your Booking Is Confirmed",
-    `<p style="color:#444;margin:0 0 16px">
-       Thank you — your booking with ${esc(siteConfig.name)} is confirmed. Here are your trip details:
-     </p>
-     <table class="detail-table" style="width:100%;border-collapse:collapse;font-size:14px">${detailRows}</table>
-     <p style="color:#444;margin:20px 0 0">
-       If you have any questions, just message us on WhatsApp — we're happy to help.
-     </p>
-     <div style="text-align:center;margin:20px 0 0">
-       <a href="${esc(whatsappUrl)}"
-          style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;
-                 padding:12px 28px;border-radius:9999px;text-decoration:none">
-         Message Us on WhatsApp
-       </a>
-     </div>`
-  );
+  const steps: [string, string][] = [
+    ["Driver Assignment", "Your professional driver is assigned ahead of your journey."],
+    [
+      "Driver Details",
+      "We'll message you on WhatsApp with your driver's name and contact number before pickup.",
+    ],
+    [
+      "Enjoy Your Journey",
+      "Your driver will be waiting at the agreed pickup location, ready when you are.",
+    ],
+  ];
+  const stepsHtml = steps
+    .map(
+      ([title, body], i) => `
+       <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;margin-bottom:16px">
+         <tr>
+           <td style="width:32px;vertical-align:top">
+             <span style="display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:#0b1726;color:#ffffff;font-weight:700;font-size:12px">${
+               i + 1
+             }</span>
+           </td>
+           <td style="vertical-align:top">
+             <p style="margin:0;font-size:14px;font-weight:700;color:#17202b">${esc(title)}</p>
+             <p style="margin:2px 0 0;font-size:13px;color:#5f6873;line-height:1.5">${esc(body)}</p>
+           </td>
+         </tr>
+       </table>`
+    )
+    .join("");
+
+  const subject = `Booking Confirmed — ${reference} — ${siteConfig.name}`;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(subject)}</title>
+<style>
+  @media only screen and (max-width: 600px) {
+    .email-container { width: 100% !important; border-radius: 0 !important; }
+    .email-padding { padding: 20px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#f3ede3;font-family:Arial,Helvetica,sans-serif">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3ede3;padding:24px 0">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e7e2d8">
+
+          <!-- Header -->
+          <tr>
+            <td class="email-padding" style="background:#0b1726;padding:32px 24px;text-align:center">
+              <img src="${esc(siteConfig.url)}/images/logo.webp" width="200" height="35" alt="${esc(
+                siteConfig.shortName
+              )}" style="display:block;width:200px;height:35px;margin:0 auto 20px" />
+              <span style="display:inline-block;background:#c8a96b;color:#0b1726;font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:6px 16px;border-radius:9999px">
+                &#10003; Booking Confirmed
+              </span>
+              <h1 style="margin:16px 0 8px;font-size:24px;color:#ffffff">Your Transfer Is Confirmed</h1>
+              <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.7);line-height:1.5">
+                Thank you for choosing ${esc(siteConfig.name)}${greeting}. Your transfer has been successfully confirmed.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Reference -->
+          <tr>
+            <td style="padding:24px 24px 0;text-align:center">
+              <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#8a929c">Booking Reference</p>
+              <p style="margin:4px 0 0;font-size:18px;font-weight:800;color:#17202b;letter-spacing:0.03em">${esc(
+                reference
+              )}</p>
+            </td>
+          </tr>
+
+          <!-- Detail card -->
+          <tr>
+            <td class="email-padding" style="padding:24px">
+              <div style="border:1px solid #e7e2d8;border-radius:12px;padding:20px 20px 4px">
+                ${detailCardRows}
+              </div>
+            </td>
+          </tr>
+
+          <!-- What happens next -->
+          <tr>
+            <td class="email-padding" style="padding:0 24px 24px">
+              <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#8a929c">What Happens Next?</p>
+              ${stepsHtml}
+            </td>
+          </tr>
+
+          <!-- Need help -->
+          <tr>
+            <td class="email-padding" style="padding:0 24px 24px">
+              <div style="background:#f3ede3;border-radius:12px;padding:18px 20px">
+                <p style="margin:0 0 10px;font-size:14px;font-weight:700;color:#17202b">Need Help?</p>
+                <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#8a929c">Email</p>
+                <p style="margin:2px 0 12px;font-size:14px;font-weight:700;color:#17202b">${esc(siteConfig.email)}</p>
+                <a href="${esc(whatsappUrl)}"
+                   style="display:inline-block;background:#25d366;color:#ffffff;font-weight:700;font-size:13px;
+                          padding:10px 22px;border-radius:9999px;text-decoration:none">
+                  Chat on WhatsApp
+                </a>
+                <p style="margin:12px 0 0;font-size:12px;color:#8a929c">Available 24/7 for assistance with your journey.</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#0b1726;padding:24px;text-align:center">
+              <p style="margin:0 0 2px;font-size:14px;font-weight:700;color:#ffffff">${esc(siteConfig.name)}</p>
+              <p style="margin:0 0 12px;font-size:12px;color:rgba(255,255,255,0.55)">Private Transfers Across Saudi Arabia</p>
+              <p style="margin:0;font-size:12px">
+                <a href="${esc(siteConfig.url)}" style="color:#c8a96b;text-decoration:none">Website</a>
+                <span style="color:rgba(255,255,255,0.3)">&nbsp;&middot;&nbsp;</span>
+                <a href="${esc(siteConfig.url)}/contact" style="color:#c8a96b;text-decoration:none">Contact Us</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
   return { subject, html };
 }
