@@ -6,8 +6,9 @@ intent, target audience, URL slug, internal-linking suggestions, and priority �
 against the full published inventory (queried live from Supabase, not from memory) to
 avoid keyword cannibalization with existing posts or commercial pages.
 
-**Status:** 8 of 50 published (Batch 1: 3 EN-only; Batch 2: 2 EN+AR; Batch 3: 3 EN+AR,
-2026-09-13). See §"Execution log" at the bottom, updated after every batch.
+**Status:** 10 of 50 published (Batch 1: 3 EN-only; Batch 2: 2 EN+AR; Batch 3: 3 EN+AR;
+Batch 4: 2 EN+AR, 2026-09-14). See §"Execution log" at the bottom, updated after every
+batch.
 
 Methodology matches `italytaxi`'s proven pipeline
 (`docs/seo-audit-2026.md` → `seo-content-gap-50.md` → `seo-topic-clusters-plan.md`),
@@ -37,7 +38,7 @@ mechanism is a keyword array, not a data-driven field, per `docs/seo-audit-2026.
 ---
 
 ## 1. Airport Arrival Guides
-**Status: 5/10 published.** The single biggest gap on the site — 10 of 13 airports
+**Status: 6/10 published.** The single biggest gap on the site — 10 of 13 airports
 have a live `/airport-transfer/{slug}` commercial page and zero supporting blog
 content. Highest priority block.
 
@@ -48,10 +49,10 @@ content. Highest priority block.
 | 3 | Taif Regional Airport arrival guide | `taif-regional-airport-arrival-guide` | High | **Published 2026-09-11 (EN+AR)** |
 | 4 | AlUla Airport arrival guide | `alula-airport-arrival-guide` | High | **Published 2026-09-11** |
 | 5 | Yanbu Airport arrival guide | `yanbu-airport-arrival-guide` | Medium | **Published 2026-09-13 (EN+AR)** |
-| 6 | Tabuk Regional Airport arrival guide | `tabuk-regional-airport-arrival-guide` | Medium | Not started |
+| 6 | Tabuk Regional Airport arrival guide | `tabuk-regional-airport-arrival-guide` | Medium | **Published 2026-09-14 (EN+AR)** |
 | 7 | Jazan Airport arrival guide | `jazan-airport-arrival-guide` | Medium | Not started |
 | 8 | Hail Regional Airport arrival guide | `hail-regional-airport-arrival-guide` | Low | Not started |
-| 9 | Red Sea International Airport arrival guide | `red-sea-international-airport-arrival-guide` | Medium | Not started |
+| 9 | Red Sea International Airport arrival guide | `red-sea-international-airport-arrival-guide` | Medium | **Reconsider** — its commercial page (`data/airport-guides.ts`) already carries dense, specific guide content (named resorts, jetty transfers, FAQs); a blog post would largely restate it. See execution log 2026-09-14. |
 | 10 | NEOM Bay Airport arrival guide | `neom-bay-airport-arrival-guide` | Low | Not started |
 
 ## 2. Route Cost & Comparison Guides
@@ -98,16 +99,16 @@ which converts harder.
 | 30 | Jeddah Airport layover transfer guide | `jeddah-airport-layover-transfer-guide` | Low | Not started |
 
 ## 5. Point-Transfer Supporting Content
-**Status: 0/5 published.** Live commercial point-transfer pages (Hegra, Al-Balad,
+**Status: 1/5 published.** Live commercial point-transfer pages (Hegra, Al-Balad,
 Corniche, Jabal Thawr/Noor, Jeddah Islamic Port) with no supporting blog funnel.
 
 | # | Topic | Slug | Priority | Status |
 |---|---|---|---|---|
-| 31 | Visiting Hegra from AlUla | `visiting-hegra-alula-guide` | Medium | Not started |
+| 31 | Visiting Hegra from AlUla | `visiting-hegra-alula-guide` | Medium | **Rejected** — `alula-airport-arrival-guide` already covers "Getting to Hegra, the Resorts & Old Town" in its own dedicated section; a separate post would be a near-duplicate. See execution log 2026-09-14. |
 | 32 | Al-Balad Jeddah visitor guide | `al-balad-jeddah-visitor-guide` | Medium | Not started |
 | 33 | Jeddah Corniche visitor guide | `jeddah-corniche-visitor-guide` | Medium | Not started |
 | 34 | Jabal Thawr & Jabal al-Noor Ziyarat guide | `jabal-thawr-jabal-noor-ziyarat-guide` | Low | Not started |
-| 35 | Jeddah Islamic Port passenger guide | `jeddah-islamic-port-passenger-guide` | Low | Not started |
+| 35 | Jeddah Islamic Port passenger guide | `jeddah-islamic-port-passenger-guide` | Low | **Published 2026-09-14 (EN+AR)** |
 
 ## 6. Service & Booking Comparison Guides
 **Status: 0/5 published.** Commercial/comparison angles supporting the service pillar
@@ -205,6 +206,45 @@ the existing Ramadan/Riyadh Season/Jeddah Season posts.
 ## Execution log
 *(updated after every batch — most recent first)*
 
+- **2026-09-14 — Batch 4 published (2 posts, English + Arabic), under an explicit
+  recovery-period brief.** The site is recovering from a redesign/indexing slowdown
+  (sitemap healthy, all URLs 200, hreflang sound, but indexed-page growth hasn't
+  recovered since ~5 September), so this batch prioritized topical authority and
+  commercial-page support over volume. Full audit before topic selection (Phase 1-16
+  of the brief) surfaced two corrections to this plan, applied above:
+  - **`red-sea-international-airport-arrival-guide` (#9) reconsidered, not published.**
+    Word-count/depth comparison across all 13 `data/airport-guides.ts` entries showed
+    Red Sea's on-page content (515 words) is already dense and specific — named
+    resorts, marine jetty transfers, dedicated FAQs — unlike Tabuk/Jazan (~750 words,
+    comparably thin to the airports that already justified a post). A blog post there
+    would mostly restate the commercial page rather than add anything.
+  - **`visiting-hegra-alula-guide` (#31) rejected outright.** `alula-airport-arrival-guide`
+    already has a dedicated "Getting to Hegra, the Resorts & Old Town" section — a
+    separate Hegra post would be a near-duplicate.
+  Published instead: `tabuk-regional-airport-arrival-guide` (#6 — continues the single
+  largest cluster gap, using the exact format proven 5 times already, with real
+  verified distances: Tabuk→NEOM 180 km/~2 hr, Tabuk→AlUla 330 km/~3.5 hr, both pulled
+  from live `data/routes.ts` entries) and `jeddah-islamic-port-passenger-guide` (#35 —
+  the site's first sea-arrival content, chosen over Al-Balad/Corniche for having a
+  concrete traveler question and 4 live supporting commercial pages rather than risking
+  a generic tourism-listicle angle; verified distances from
+  `data/point-transfer-v2/jeddah.ts`: port↔airport ~40 km/40-55 min, port↔hotels
+  10-25 km/20-40 min). Unlike prior batches, both posts include genuine in-content
+  contextual links (4-6 each) directly in the article body, not just sidebar/CTA
+  links — matching the original 97-post convention that batches 1-3 had drifted from.
+  Both EN posts in Supabase as `published`, verified live (HTTP 200); both AR
+  counterparts added to `data/translations/ar.ts` (`دليل-مطار-تبوك`,
+  `دليل-ميناء-جدة-الإسلامي`), verified live post-deploy with bidirectional hreflang
+  confirmed both directions. Added exact-slug reciprocal links to `BlogSidebar.tsx`/
+  `BlogInlineCta.tsx`. Backlinks added from 3 existing pieces: `alula-airport-arrival-guide`
+  → Tabuk post, `what-to-do-after-landing-at-jeddah-airport` and
+  `jeddah-airport-to-makkah-taxi-service-guide` → Jeddah Port post, plus a forward-link
+  from the Tabuk commercial page's own on-page content (`data/airport-guides.ts`).
+  Site-wide duplicate-sentence check (all 107 published posts) found zero duplicates
+  involving either new post — the ~234 duplicates found elsewhere are pre-existing
+  boilerplate CTAs among the original 97 posts, unrelated to this batch, flagged but
+  out of scope. Committed `22e688b`, pushed; submitted to Bing (English + Arabic URLs,
+  batch 14). Block statuses updated above (#6, #35 → Published; #9, #31 annotated).
 - **2026-09-13 — Batch 3 published (3 posts, English + Arabic).**
   `yanbu-airport-arrival-guide` (#5), `riyadh-to-abha-transfer-guide` (#12), and
   `meet-and-greet-airport-service-saudi-arabia` (#28) — all in Supabase `blogs` as
