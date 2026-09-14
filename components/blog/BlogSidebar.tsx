@@ -14,6 +14,24 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["tabuk-regional-airport-arrival-guide"],
+    links: [
+      { label: "Tabuk Airport Transfer", href: "/airport-transfer/tabuk-airport", icon: Plane },
+      { label: "Tabuk → NEOM Route", href: "/routes/tabuk-to-neom", icon: RouteIcon },
+      { label: "Tabuk → AlUla Route", href: "/routes/tabuk-to-alula", icon: RouteIcon },
+      { label: "Tabuk Taxi Service", href: "/taxi-service/tabuk", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["jeddah-islamic-port-passenger-guide"],
+    links: [
+      { label: "Jeddah Islamic Port → Airport", href: "/jeddah/jeddah-islamic-port-to-jeddah-airport", icon: RouteIcon },
+      { label: "Jeddah Islamic Port → Hotels", href: "/jeddah/jeddah-islamic-port-to-hotels", icon: RouteIcon },
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["yanbu-airport-arrival-guide"],
     links: [
       { label: "Yanbu Airport Transfer", href: "/airport-transfer/yanbu-airport", icon: Plane },

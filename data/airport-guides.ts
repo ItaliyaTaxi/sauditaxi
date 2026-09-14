@@ -694,7 +694,7 @@ export const airportGuides: Record<string, AirportGuide> = {
         heading: "NEOM, Tabuk city and the northwest",
         paragraphs: [
           "From the airport we transfer to Tabuk hotels, NEOM project areas, and landmarks such as Tabuk Castle and the historic Hejaz Railway station. The region's long distances suit private travel, with comfortable vehicles and planned rest stops.",
-          "Explore our full <a href='/taxi-service/tabuk'>Tabuk taxi service</a> for local trips, or continue to <a href='/airport-transfer/alula-airport'>AlUla</a> for heritage sightseeing at Hegra and the Old Town.",
+          "Explore our full <a href='/taxi-service/tabuk'>Tabuk taxi service</a> for local trips, or continue to <a href='/airport-transfer/alula-airport'>AlUla</a> for heritage sightseeing at Hegra and the Old Town. For a fuller look at planning this trip — including NEOM community access and the AlUla drive — see our <a href='/blog/tabuk-regional-airport-arrival-guide'>Tabuk Airport arrival guide</a>.",
         ],
       },
       {
