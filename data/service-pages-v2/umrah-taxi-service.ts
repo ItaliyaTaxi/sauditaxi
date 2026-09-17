@@ -1,142 +1,269 @@
-import type { ServiceV2Content } from "@/components/services/ServiceV2View";
+import type { UmrahTransfersHubContent } from "@/components/services/UmrahTransfersHub";
 
 /**
- * "A Journey Built Around Umrah" — calm, practical, transportation-only
- * tone. No religious rulings, no visa/eligibility claims, no official
- * authorisation claims — the service is transportation, not religious
- * guidance, and the copy says so plainly.
+ * Umrah Transfers page — 2026 heading-structure update.
+ *
+ * Verified facts only: real route distances/durations (data/routes.ts,
+ * matching the figures already published on each route's own page), real
+ * airports (data/airports.ts), real cities (data/cities.ts), real vehicle
+ * categories (data/vehicles.ts). No religious rulings, no visa/eligibility
+ * claims, no official pilgrimage-authorisation claims — this is a
+ * transportation service and says so plainly, matching the tone already
+ * established on this page before this update.
+ *
+ * Scope note: does not compete with the homepage (broad "Private Transfers
+ * Across Saudi Arabia"), Airport Transfers ("Private Airport Transfers
+ * Across Saudi Arabia"), or Intercity Transfers ("Private City-to-City
+ * Transfers Across Saudi Arabia") — this page owns "private transportation
+ * for Umrah travellers" specifically and links out to those broader hubs
+ * and to individual airport/city/route pages rather than duplicating them.
+ *
+ * Previously rendered via ServiceV2View (shared with 6 other service
+ * pages). Now rendered via the page-specific UmrahTransfersHub component
+ * instead, mirroring the Airport Transfers and Intercity Transfers
+ * restructuring, so this change doesn't touch any other page.
  */
-export const umrahTaxiServiceContent: ServiceV2Content = {
+export const umrahTaxiServiceContent: UmrahTransfersHubContent = {
   eyebrow: "Umrah Transportation",
-  h1: "Private Transfers for Umrah Journeys",
-  dek: "Transportation for the practical stages of an Umrah journey — airport to Makkah, Makkah to Madinah, and the hotel transfers in between — arranged calmly and in advance.",
+  h1: "Private Umrah Transfers in Saudi Arabia",
+  dek: "Pre-booked private transportation for the practical stages of an Umrah journey — airport pickup, the drive to Makkah or Madinah, transfers between the two holy cities, and hotel-to-hotel moves in between. A specific driver is waiting when you land, and the price is agreed before you travel, not negotiated on arrival.",
   heroImage: "/images/heroes/madina.webp",
   heroAlt: "A street in Madinah near the Prophet's Mosque",
   primaryCtaLabel: "Get a Quote",
   secondaryCtaLabel: "See Umrah Routes",
   secondaryCtaHref: "/umrah-taxi-service#routes",
-  blocks: [
+
+  coreServiceHeading: "Private Umrah Transportation in Saudi Arabia",
+  coreServiceParagraphs: [
+    "We provide private, pre-arranged transportation for Umrah travellers — meet-and-greet airport pickup, a direct drive to Makkah or Madinah, transfers between the two holy cities, and hotel transfers in between. Each trip is a single private vehicle for your group, not a shared ride.",
+    "This is a transportation service, not religious guidance — we don't offer rulings on Umrah practice and don't claim any official pilgrimage authorisation. What we arrange is the practical part: a driver and vehicle for the journeys an Umrah trip typically involves, booked and priced before you travel.",
+  ],
+
+  routesHeading: "Popular Umrah Transfer Routes",
+  routesIntro:
+    "The most-travelled legs of an Umrah journey, with the same distances and times already published on each route's own page, so you can plan realistic timing before you book.",
+  routeCards: [
     {
-      type: "prose",
-      heading: "Transportation During an Umrah Journey",
-      narrow: true,
-      paragraphs: [
-        "This is a transportation service, not religious guidance — we don't offer rulings on Umrah practice and don't claim any official pilgrimage authorisation. What we arrange is the practical part: a private vehicle and driver for the journeys an Umrah trip typically involves — between the airport, Makkah, Madinah, and hotels — so that part of the trip is one less thing to plan on the day.",
-        "Many travellers arrive tired after a long flight, sometimes already in ihram, and want the journey from the airport to feel calm rather than rushed. A private vehicle — agreed in advance, with a driver who knows where you're going — is built around that.",
-      ],
+      title: "Jeddah Airport to Makkah",
+      body: "The most-travelled leg of an Umrah journey — around 85 km, roughly 1 hour 15 minutes, timed around your flight from Jeddah's airport direct to your Makkah hotel.",
+      href: "/routes/jeddah-to-makkah",
+      linkLabel: "Jeddah to Makkah route",
     },
     {
-      type: "checklist",
-      heading: "Common Umrah Transfer Journeys",
-      items: [
-        "Jeddah Airport to a hotel in Makkah",
-        "Madinah Airport to a hotel near the Prophet's Mosque",
-        "Makkah to Madinah, or Madinah to Makkah",
-        "Hotel to hotel within Makkah or Madinah",
-        "A final transfer back to the airport at the end of the trip",
-      ],
+      title: "Jeddah Airport to Madinah",
+      body: "For travellers beginning their visit in Madinah before continuing to Makkah — around 420 km, roughly 4 hours, direct to a hotel near the Prophet's Mosque.",
+      href: "/routes/jeddah-to-madinah",
+      linkLabel: "Jeddah to Madinah route",
     },
     {
-      type: "prose",
-      heading: "Airport Arrival for Umrah Travellers",
-      narrow: true,
-      paragraphs: [
-        "The same practical considerations that apply to any airport transfer apply here, with a few specific to Umrah: many travellers are carrying less hand luggage than usual (having checked most of it) and may already be in ihram, which affects what feels comfortable at the point of pickup. Share your flight details, group size, and hotel name when booking, and mention if you'll be arriving in ihram so the handover can be kept simple and unhurried.",
-      ],
+      title: "Makkah to Madinah Transfers",
+      body: "A long drive between the two holy cities, around 450 km, roughly 4.5 hours, with a rest stop planned in for travellers who are tired or elderly.",
+      href: "/routes/makkah-to-madinah",
+      linkLabel: "Makkah to Madinah route",
     },
     {
-      type: "routeCards",
-      heading: "Makkah and Madinah Transfer Routes",
-      routes: [
-        { from: "Jeddah Airport", to: "Makkah", distance: "~85 km", duration: "~1h 15m", href: "/routes/jeddah-to-makkah", note: "The most-travelled leg of an Umrah journey, timed around your flight." },
-        { from: "Makkah", to: "Madinah", distance: "~450 km", duration: "~4.5 hours", href: "/routes/makkah-to-madinah", note: "A long drive, planned with a rest stop for travellers who are tired or elderly." },
-        { from: "Jeddah Airport", to: "Madinah", distance: "~420 km", duration: "~4 hours", href: "/routes/jeddah-to-madinah", note: "For travellers beginning their visit in Madinah before continuing to Makkah." },
-      ],
-    },
-    {
-      type: "prose",
-      heading: "Makkah and Madinah Transfers: Planning the Difference",
-      narrow: true,
-      paragraphs: [
-        "Most Umrah itineraries follow one of two patterns: fly into Jeddah, go straight to Makkah, then travel on to Madinah before flying home — or fly into Madinah first, visit the Prophet's Mosque, then continue to Makkah and fly out of Jeddah. Either order works from a transportation standpoint; which one suits you is a personal and religious decision, not something we advise on. What we can help with practically is planning the Makkah–Madinah leg itself, which is a genuinely long drive (around 450 km) best taken with a rest stop rather than straight through, particularly for elderly or tired travellers.",
-      ],
-    },
-    {
-      type: "imageBand",
-      heading: "Family and Group Umrah Travel",
-      image: "/images/heroes/makkah.webp",
-      alt: "A view of Makkah",
-      imageSide: "start",
-      paragraphs: [
-        "Umrah is frequently a family or group trip — parents travelling with children, adult children accompanying elderly parents, or a group travelling together. A single larger vehicle keeps everyone together rather than splitting across separate cars, and avoids the logistics of coordinating multiple pickups. Tell us your total numbers, including children, when you book.",
-        "Luggage tends to be heavier on the return leg — travellers commonly bring back Zamzam water, gifts and additional bags. Mention this when booking your return transfer so the right vehicle is arranged, rather than discovering at the hotel that the boot doesn't have room.",
-      ],
-    },
-    {
-      type: "prose",
-      heading: "Hotel Transfers During Your Umrah Trip",
-      narrow: true,
-      paragraphs: [
-        "Beyond the airport legs, many Umrah travellers also need a hotel-to-hotel transfer — for instance, moving accommodation between the Makkah and Madinah stages of the trip, or relocating hotels partway through a longer stay. These work the same way as any hotel transfer: pickup from your hotel's entrance, direct to the next one, at a time that suits your schedule rather than a flight.",
-      ],
-    },
-    {
-      type: "checklist",
-      heading: "Preparing for the Journey",
-      intro: "A practical checklist before you travel.",
-      items: [
-        "Share your flight details for the airport leg",
-        "Tell us your hotel name or address in Makkah/Madinah",
-        "Flag if you're travelling in a larger family or group",
-        "Mention any known luggage increase for the return journey",
-        "Confirm whether you'll be arriving already in ihram",
-      ],
-    },
-    {
-      type: "cta",
-      text: "Arranging transport for an upcoming Umrah trip?",
-      linkLabel: "Get a Quote",
-      linkPath: "/get-quote",
-    },
-    {
-      type: "authorityNote",
-      heading: "Transportation vs. Religious and Official Requirements",
-      weHandle: {
-        heading: "This service covers",
-        items: [
-          "Airport, hotel and inter-city transportation for your Umrah trip",
-          "A driver and vehicle matched to your group",
-          "Journey planning between Makkah and Madinah",
-        ],
-      },
-      authoritiesControl: {
-        heading: "Determined by religious and official authorities",
-        items: [
-          "Umrah visa issuance and eligibility",
-          "Religious rulings and requirements for performing Umrah",
-          "Official pilgrimage regulations and any seasonal restrictions",
-        ],
-      },
-      note: "We provide transportation only. For religious guidance and current official Umrah requirements, consult the relevant religious and government authorities directly — this page does not state current regulations, which can change.",
-    },
-    {
-      type: "relatedInfo",
-      heading: "Related Reading",
-      paragraph:
-        "Arriving by air first? See our <a href='/airport-transfers'>airport transfers</a> service. Continuing to visit historic sites in Makkah or Madinah? See <a href='/ziyarat-taxi-service'>Ziyarat transportation</a>. For the road distance between the two holy cities, see the <a href='/distance/riyadh-to-jeddah-distance'>Riyadh to Jeddah distance guide</a> if your trip starts from the capital.",
+      title: "Madinah to Makkah Transfers",
+      body: "The reverse leg for itineraries that begin in Madinah — the same 450 km, roughly 4.5 hours, for travellers continuing on to Makkah.",
+      href: "/routes/madinah-to-makkah",
+      linkLabel: "Madinah to Makkah route",
     },
   ],
+
+  airportHeading: "Airport Transfers for Umrah Travellers",
+  airportIntro:
+    "Many travellers arrive tired after a long flight, sometimes already in ihram, and want the journey from the airport to feel calm rather than rushed.",
+  airportCards: [
+    {
+      title: "Jeddah Airport Transfers",
+      body: "Meet-and-greet at King Abdulaziz International Airport, including the Hajj Terminal and Terminal 1, with a direct drive to your Makkah or Madinah hotel.",
+      href: "/airport-transfer/jeddah-airport",
+      linkLabel: "Jeddah Airport transfers",
+    },
+    {
+      title: "Madinah Airport Transfers",
+      body: "Meet-and-greet at Prince Mohammad bin Abdulaziz International Airport, with hotel transfers near the Prophet's Mosque for travellers starting their trip in Madinah.",
+      href: "/airport-transfer/madinah-airport",
+      linkLabel: "Madinah Airport transfers",
+    },
+    {
+      title: "Airport Pickup to Your Hotel",
+      body: "Share your flight details, group size, and hotel name when booking, and mention if you'll be arriving in ihram so the handover stays simple and unhurried.",
+      href: "/airport-transfers",
+      linkLabel: "How airport pickup works",
+    },
+  ],
+
+  citiesHeading: "Makkah and Madinah Transfers",
+  citiesIntro:
+    "Most Umrah itineraries follow one of two patterns — Jeddah into Makkah first, or Madinah first before continuing to Makkah. Either order works from a transportation standpoint; which one suits you is a personal decision we don't advise on.",
+  cityCards: [
+    {
+      title: "Transfers to Makkah",
+      body: "Hotel transfers around the Haram, arriving either directly from Jeddah Airport or after the Makkah-Madinah drive, depending on your itinerary.",
+      href: "/taxi-service/makkah",
+      linkLabel: "Makkah taxi service",
+    },
+    {
+      title: "Transfers to Madinah",
+      body: "Hotel transfers near the Prophet's Mosque, whether Madinah is your first stop from the airport or the second stage after Makkah.",
+      href: "/taxi-service/madinah",
+      linkLabel: "Madinah taxi service",
+    },
+    {
+      title: "Makkah to Madinah Private Transfers",
+      body: "The genuinely long leg of the trip, around 450 km — best planned with a rest stop rather than driven straight through, particularly for elderly or tired travellers.",
+      href: "/routes/makkah-to-madinah",
+      linkLabel: "Makkah to Madinah route",
+    },
+  ],
+
+  hotelHeading: "Hotel Transfers During Your Umrah Trip",
+  hotelIntro:
+    "Beyond the airport legs, many Umrah travellers also need a hotel-to-hotel transfer — moving accommodation between the Makkah and Madinah stages, or relocating partway through a longer stay.",
+  hotelCards: [
+    {
+      title: "Airport to Hotel Transfers",
+      body: "Direct pickup from arrivals to your hotel entrance in Makkah or Madinah, at a time built around your actual flight rather than a fixed schedule.",
+    },
+    {
+      title: "Hotel to Hotel Transfers",
+      body: "Pickup from your current hotel and drop-off at the next one, at a time that suits your schedule rather than a flight — the same approach as any hotel transfer.",
+    },
+    {
+      title: "Private Hotel Pickup and Drop-Off",
+      body: "Collected from your hotel's entrance and taken directly to your destination — not a designated pickup point you have to find and walk to.",
+    },
+  ],
+
+  familyHeading: "Umrah Transfers for Families and Groups",
+  familyIntro:
+    "Umrah is frequently a family or group trip — parents travelling with children, adult children accompanying elderly parents, or a group travelling together.",
+  familyCards: [
+    {
+      title: "Family Umrah Transfers",
+      body: "A single larger vehicle keeps everyone together rather than splitting across separate cars. Tell us your total numbers, including children, when you book.",
+    },
+    {
+      title: "Group Umrah Transportation",
+      body: "Larger Umrah parties are usually better served by one or two bigger vehicles than several separate cars — share your group size so we can plan the combination.",
+    },
+    {
+      title: "Choosing the Right Vehicle",
+      body: "Luggage tends to be heavier on the return leg, with Zamzam water and gifts — mention this when booking so the right vehicle is arranged from the start.",
+    },
+  ],
+
+  vehiclesHeading: "Private Vehicles for Umrah Travel",
+  vehiclesIntro: "Vehicle choice comes down to passengers and luggage more than personal preference — tell us your numbers honestly when you book.",
+  vehicleCards: [
+    {
+      title: "Private Sedan Transfers",
+      body: "Economy and Comfort sedans — Hyundai Accent, Toyota Yaris, Toyota Camry, or Hyundai Sonata — for one to three passengers with two to three bags.",
+    },
+    {
+      title: "Premium Vehicles",
+      body: "Mercedes E-Class or Lexus ES for travellers who prefer a premium cabin, seating up to three passengers with three bags.",
+    },
+    {
+      title: "Family Vehicles",
+      body: "A Toyota Land Cruiser or GMC Yukon SUV for up to five passengers and four bags, with room for a family and extra luggage.",
+    },
+    {
+      title: "Minivan and Group Transfers",
+      body: "A Toyota Hiace or Hyundai Staria van for up to nine passengers with eight bags, or a Toyota Coaster minibus for larger Umrah groups.",
+    },
+  ],
+
+  howItWorksBlock: {
+    type: "timeline",
+    heading: "How to Book an Umrah Transfer",
+    orientation: "vertical",
+    steps: [
+      { label: "1. Share Your Journey Details", detail: "Flight number, arrival airport, hotel name, and passenger count — sent via WhatsApp or the quote form." },
+      { label: "2. Receive Your Quote", detail: "A fixed, all-in price and a vehicle recommendation, agreed before you travel." },
+      { label: "3. Confirm Your Transfer", detail: "Approve the quote and a specific driver is scheduled for your flight, no prepayment required." },
+      { label: "4. Meet Your Driver", detail: "Your driver waits in arrivals with a name board and takes you directly to your hotel." },
+    ],
+    note: "We track your flight number, so pickup timing is planned around your actual landing rather than the original schedule.",
+  },
+
+  bookingInfoHeading: "What Information Do I Need to Provide?",
+  bookingInfoIntro:
+    "Share as much of this as you can when you book. Flight number matters most of all — it's what lets us adjust your pickup automatically if your flight is early or delayed.",
+  bookingInfoItems: [
+    "Arrival airport and flight number",
+    "Travel date and approximate arrival time",
+    "Hotel name or address in Makkah or Madinah",
+    "Number of passengers",
+    "Luggage amount",
+    "Vehicle preference, if you have one",
+    "Whether you'll be arriving already in ihram",
+    "A WhatsApp number we can reach you on",
+  ],
+
+  planningHeading: "Planning Your Umrah Transportation",
+  planningIntro:
+    "A few things worth settling before you travel, so the transportation side of your Umrah trip is one less thing to plan once you land.",
+  planningItems: [
+    "Book your transportation in advance, especially during busy Umrah periods",
+    "Confirm your arrival airport and flight details",
+    "Confirm your hotel name or address in Makkah and Madinah",
+    "Check your passenger and luggage requirements",
+    "Allow extra time for immigration and baggage during peak season",
+    "Keep your booking confirmation and contact details available",
+  ],
+
+  requirementsHeading: "Transportation and Umrah Travel Requirements",
+  requirementsParagraphs: [
+    "We provide transportation — airport, hotel, and inter-city transfers for your Umrah trip. Umrah visa issuance and eligibility, religious rulings and requirements for performing Umrah, and official pilgrimage regulations are all determined by the relevant religious and government authorities, not by us.",
+    "Travellers remain responsible for their own required travel documents, and applicable Umrah, immigration, airport, and road regulations may apply. These requirements can change, so confirm current rules through the appropriate official sources rather than relying on this page.",
+  ],
+
+  faqHeading: "Frequently Asked Questions About Umrah Transfers",
   faqs: [
-    { question: "Can I arrange airport-to-Makkah transportation?", answer: "Yes — this is our most-requested route. A driver meets you after you land at Jeddah Airport and drives you directly to your hotel in Makkah, timed around your flight." },
-    { question: "Can families book a private vehicle?", answer: "Yes. Tell us your group size and luggage when booking and we'll match the vehicle — a larger SUV or van for a family or group travelling together." },
-    { question: "Can I travel between Makkah and Madinah privately?", answer: "Yes. It's a long drive (around 450 km, roughly 4.5 hours), and we build in a rest stop, which is often appreciated by elderly or tired travellers." },
-    { question: "Do you provide religious guidance or official Umrah authorisation?", answer: "No. This is a transportation service only — we don't offer religious rulings and don't claim any official pilgrimage authorisation. For requirements and guidance on performing Umrah itself, consult the appropriate religious and official sources." },
-    { question: "Is luggage handled for the return journey?", answer: "Yes, within the vehicle you've booked — tell us if you expect more luggage on the way back (a common pattern with Zamzam water and gifts) so we can match the vehicle size accordingly." },
-    { question: "Do I need to prepay for an Umrah transfer?", answer: "No. The price is agreed before you travel and paid to the driver directly, in cash or by card — no prepayment required." },
-    { question: "Should I fly into Jeddah or Madinah first?", answer: "Both are common — Jeddah first with Makkah as the initial stop, or Madinah first to visit the Prophet's Mosque before continuing to Makkah. Which suits you is a personal choice; we can arrange the transportation either way." },
-    { question: "Can you arrange a hotel-to-hotel transfer if I'm changing accommodation mid-trip?", answer: "Yes — this works the same as any hotel transfer, with pickup from your current hotel and drop-off at the next one at a time that suits your schedule." },
-    { question: "What should I tell you if I'm arriving already in ihram?", answer: "Mention it when booking so the pickup can be kept simple and unhurried — it doesn't change the practical arrangements, but it helps your driver understand what to expect at the handover." },
+    {
+      question: "How do I book a private Umrah transfer in Saudi Arabia?",
+      answer:
+        "Share your flight details, hotel name, and passenger count through WhatsApp or our quote form. We reply with a fixed price and vehicle recommendation — no prepayment required.",
+    },
+    {
+      question: "Can I book a transfer from Jeddah Airport to Makkah?",
+      answer:
+        "Yes — this is our most-requested route. A driver meets you after you land and drives you directly to your Makkah hotel, around 85 km and 1 hour 15 minutes.",
+    },
+    {
+      question: "Can I book a transfer from Jeddah Airport to Madinah?",
+      answer:
+        "Yes. It's a longer drive, around 420 km and 4 hours, direct to a hotel near the Prophet's Mosque, for itineraries that begin in Madinah.",
+    },
+    {
+      question: "Do you provide private transfers between Makkah and Madinah?",
+      answer:
+        "Yes, in both directions — around 450 km and 4.5 hours, with a rest stop built in, often appreciated by elderly or tired travellers.",
+    },
+    {
+      question: "Can I arrange an airport transfer for my Umrah trip?",
+      answer:
+        "Yes. We cover Jeddah and Madinah airports with meet-and-greet pickup, flight tracking, and a direct drive to your hotel in Makkah or Madinah.",
+    },
+    {
+      question: "Can families and groups book private Umrah transportation?",
+      answer:
+        "Yes. Tell us your group size and luggage when booking and we'll match the vehicle — a larger SUV, van, or minibus for a family or group travelling together.",
+    },
+    {
+      question: "What information do I need to provide when booking?",
+      answer:
+        "Your flight details, hotel name, and passenger and luggage count matter most — flight number especially, since it lets us adjust pickup automatically around any delay.",
+    },
+    {
+      question: "Can I choose a vehicle based on my group size and luggage?",
+      answer:
+        "Yes. Tell us your numbers and we'll recommend a sedan, SUV, van, or minibus to match, including extra space for Zamzam water or gifts on the return leg.",
+    },
   ],
-  finalCtaHeading: "Arrange Your Umrah Transportation",
-  finalCtaText: "Share your flight details and hotel information — we'll confirm a driver and a fixed price before you travel.",
+
+  finalCtaHeading: "Arrange Your Private Umrah Transfer",
+  finalCtaText:
+    "Share your pickup location, destination, date, time, passenger and luggage count, and flight details where applicable, and we'll confirm a specific driver and a fixed price before you travel — for the airport leg, the Makkah-Madinah drive, or a hotel transfer in between.",
 };

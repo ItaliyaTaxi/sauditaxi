@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { UmrahTransfersHub } from "@/components/services/UmrahTransfersHub";
 import { umrahTaxiServiceContent } from "@/data/service-pages-v2/umrah-taxi-service";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
@@ -37,7 +37,7 @@ export default function UmrahTaxiPage() {
           faqSchema(umrahTaxiServiceContent.faqs),
         ]}
       />
-      <ServiceV2View {...umrahTaxiServiceContent} crumbs={crumbs} labels={{ faqHeading: "Umrah Transportation Questions" }} />
+      <UmrahTransfersHub content={umrahTaxiServiceContent} crumbs={crumbs} />
     </>
   );
 }
