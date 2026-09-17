@@ -805,12 +805,12 @@ const baseRoutes: Route[] = [
   {
     slug: "riyadh-to-qatar-border",
     metaTitle: "Private Taxi: Riyadh to Qatar Border",
-    metaDescription: "Private taxi from Riyadh to Qatar Border (640 km, 6 hours (to Salwa border) via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
+    metaDescription: "Private taxi from Riyadh to Qatar Border (~460-500 km, 5-6 hours (to Salwa border) via the Salwa border crossing). Comfortable car, fixed price, WhatsApp booking.",
     from: "Riyadh",
     to: "Qatar Border",
     category: "border",
-    distance: "640 km",
-    duration: "6 hours (to Salwa border)",
+    distance: "~460-500 km",
+    duration: "5-6 hours (to Salwa border)",
     intro:
       "This page is specifically for travellers who need a private car to the Salwa border crossing itself — not a taxi that continues on into Qatar, since Salwa is a land border with its own separate immigration, customs, and vehicle checks on each side, and driving through generally means arranging a Qatar-side vehicle for the onward leg into Doha.",
     about:
@@ -828,7 +828,7 @@ const baseRoutes: Route[] = [
         heading: "A border-only transfer, not a Riyadh-to-Doha service",
         paragraphs: [
           "It's worth being precise about what this route covers: this is a private transfer from Riyadh to the Salwa crossing itself, not a through-service into Doha. Land border crossings between Saudi Arabia and Qatar involve separate immigration and vehicle checks on each side, so most private transfer operators — including us — bring you to the crossing and stop there, with a Qatar-side vehicle needed for the onward journey. If you need help arranging that connection, tell us when booking and we'll advise on the smoothest option.",
-          "The drive from Riyadh to Salwa covers about 640 kilometres across open desert and takes roughly six hours in free-flowing traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the full journey to the crossing.",
+          "The drive from Riyadh to Salwa covers roughly 460-500 kilometres across open desert via Al Hofuf and takes about five to six hours in free-flowing traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the full journey to the crossing.",
         ],
       },
       {
@@ -841,8 +841,8 @@ const baseRoutes: Route[] = [
       {
         heading: "Vehicle options and long-journey travel advice",
         paragraphs: [
-          "Given the six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage. We plan fuel and rest stops into the journey given the distance, and prepare the vehicle specifically for the long desert drive.",
-          "If you're a business traveller with a specific Doha meeting time, build in a realistic buffer for the border process itself, not just the six-hour drive — biometric and vehicle checks add time beyond the driving estimate, and it varies by how busy the crossing is when you arrive.",
+          "Given the five-to-six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage. We plan fuel and rest stops into the journey given the distance, and prepare the vehicle specifically for the long desert drive.",
+          "If you're a business traveller with a specific Doha meeting time, build in a realistic buffer for the border process itself, not just the driving time — biometric and vehicle checks add time beyond the driving estimate, and it varies by how busy the crossing is when you arrive.",
         ],
       },
     ],
@@ -853,7 +853,7 @@ const baseRoutes: Route[] = [
       { question: "Is the Salwa crossing open 24 hours?", answer: "Yes, it operates 24 hours a day, seven days a week, so there's no fixed window you need to arrive within." },
       { question: "What documents do I need to cross to Qatar?", answer: "A valid passport and the appropriate Qatar entry permission; the crossing process also includes biometric checks (fingerprints, eye scan, photo) on the Saudi side. See our Qatar border transfer guide for full current requirements before you travel." },
       { question: "Are there tolls on this route?", answer: "No, there are no toll roads anywhere on Saudi Arabia's highway network, so your fixed price covers the full journey to the crossing." },
-      { question: "What vehicle is recommended for this desert crossing?", answer: "We recommend a comfortable SUV or van given the six-hour distance, particularly for families or groups with luggage." },
+      { question: "What vehicle is recommended for this desert crossing?", answer: "We recommend a comfortable SUV or van given the five-to-six-hour drive, particularly for families or groups with luggage." },
       { question: "Can you arrange a return transfer from the Qatar border?", answer: "Yes, we can arrange a pickup back from Salwa into Riyadh for your return journey — let us know your plans when booking." },
     ],
     keywords: ["riyadh to qatar border taxi", "riyadh salwa crossing transfer", "riyadh to qatar taxi", "riyadh qatar border private car", "salwa border taxi from riyadh"],

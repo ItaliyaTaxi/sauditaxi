@@ -35,7 +35,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     slug: "riyadh-to-abu-dhabi-distance",
     from: "Riyadh",
     to: "Abu Dhabi",
-    h1: "International Road Distance & Journey Guide",
+    h1: "Riyadh to Abu Dhabi Distance: How Far Is the Road Journey, and What Does the Al Batha Crossing Add?",
     metaTitle: "Riyadh to Abu Dhabi Road Distance & Journey Time",
     metaDescription:
       "How far is Riyadh from Abu Dhabi by road? Verified distance (~880-900 km), driving time, the Al Batha border, and what the journey involves.",
@@ -150,7 +150,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     slug: "abu-dhabi-to-riyadh-distance",
     from: "Abu Dhabi",
     to: "Riyadh",
-    h1: "Return Road Journey & Saudi Entry Guide",
+    h1: "Abu Dhabi to Riyadh Distance: How Far Is the Road Journey Back Into Saudi Arabia?",
     metaTitle: "Abu Dhabi to Riyadh Distance – Road Journey Guide",
     metaDescription:
       "Abu Dhabi to Riyadh by road: verified distance (~880-900 km), what changes when entering Saudi Arabia at Al Batha, and realistic journey timing.",
@@ -275,7 +275,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     slug: "riyadh-to-al-batha-border-distance",
     from: "Riyadh",
     to: "Al Batha Border",
-    h1: "Saudi-to-Border Distance Guide",
+    h1: "Riyadh to Al Batha Border Distance: How Far Is the Saudi-Side Leg?",
     metaTitle: "Riyadh to Al Batha Border – Road Distance Guide",
     metaDescription:
       "How far is the Al Batha border from Riyadh? Verified road distance (~530 km) and driving time (~7-7.5 hrs) for the Saudi-side leg of the journey.",
@@ -377,7 +377,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     slug: "al-batha-border-to-riyadh-distance",
     from: "Al Batha Border",
     to: "Riyadh",
-    h1: "Border-to-Riyadh Road Journey Guide",
+    h1: "Al Batha Border to Riyadh Distance: How Far Is the Drive Once You've Crossed?",
     metaTitle: "Al Batha Border to Riyadh – Road Distance Guide",
     metaDescription:
       "The road distance and driving time from the Al Batha border crossing to Riyadh (~530 km, ~7-7.5 hrs) — the Saudi-side leg after crossing.",
@@ -476,7 +476,7 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
     slug: "dammam-to-al-batha-border-distance",
     from: "Dammam",
     to: "Al Batha Border",
-    h1: "Eastern Province-to-Border Road Guide",
+    h1: "Dammam to Al Batha Border Distance: How Far Is It From the Eastern Province?",
     metaTitle: "Dammam to Al Batha Border – Road Distance Guide",
     metaDescription:
       "The road distance from Dammam to the Al Batha border (~400 km, ~4-4.5 hrs) — and why estimates for this Eastern Province route vary by source.",
@@ -1161,6 +1161,18 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         destination: "Jeddah, Saudi Arabia",
       },
       {
+        type: "stages",
+        heading: "Driving from Riyadh to Jeddah",
+        steps: [
+          { label: "Riyadh departure", detail: "Onto Highway 40 heading west, clearing the capital's outer districts before the road opens up." },
+          { label: "The central plateau", detail: "A long, largely flat stretch across the Najd plateau — the section where most of the uninterrupted driving happens." },
+          { label: "The Hijaz escarpment", detail: "The terrain changes noticeably as the highway descends toward the western mountains near the Taif turn-off, the most visually distinct part of the drive." },
+          { label: "Approaching Jeddah", detail: "The final stretch onto the coastal plain, with traffic building as the highway meets the city's outer roads." },
+          { label: "Jeddah arrival", detail: "Entering the city itself, where the exact destination — Corniche hotels, the airport, or onward to Makkah — determines the last leg." },
+        ],
+        note: "This is the standard Highway 40 routing; GPS providers occasionally suggest marginal variations but there's no meaningfully shorter alternative road.",
+      },
+      {
         type: "timeReality",
         heading: "How Long It Actually Takes",
         pureDriving: "~8.5 hours (theoretical, non-stop)",
@@ -1169,30 +1181,40 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
           "This is one of the longest single drives in the country by any regular domestic standard",
           "A direct flight takes around one hour fifty minutes, operated by four airlines",
           "Most realistic planning treats this as a nine-hour-plus journey once stops are included",
+          "Departure time affects how much Riyadh morning traffic you clear before the highway opens up, and how much Jeddah congestion you meet on arrival",
         ],
       },
       {
         type: "transportOptions",
-        heading: "Ways to Make the Journey",
+        heading: "Driving vs Flying from Riyadh to Jeddah",
         options: [
           { mode: "Direct flight", suitability: "Travellers prioritising time over the road-trip experience", duration: "About 1 hour 50 minutes", advantages: "By far the fastest option for a distance of this length, served by four airlines", limitations: "Not door-to-door; requires airport transfers and check-in time at both ends" },
           { mode: "Private car / taxi", suitability: "Families and groups with a full vehicle-load of luggage, or anyone continuing on to Makkah or Taif on arrival in the west", duration: "Around 9 hours, typically with rest stops", advantages: "Door-to-door, one vehicle for the whole group and its luggage, no repeated security/check-in process", limitations: "A genuinely long single day of driving, or a day split with an overnight stop" },
-          { mode: "SAPTCO intercity bus", suitability: "Budget travellers who don't need door-to-door service", duration: "Longer than a direct drive, fixed schedule", advantages: "Lower cost than flying or a private car", limitations: "A very long journey on a shared, fixed-schedule vehicle" },
+          { mode: "SAPTCO intercity bus", suitability: "Budget travellers who don't need door-to-door service", duration: "Longer than a direct drive, fixed schedule", advantages: "Lower cost than flying or a private car, part of the national SAPTCO network", limitations: "A very long journey on a shared, fixed-schedule vehicle, station-to-station rather than door-to-door" },
         ],
       },
       {
-        type: "prose",
-        heading: "Realistic Choices for an Unusually Long Route",
-        narrow: true,
+        type: "planningNotes",
+        heading: "Planning Stops on the Riyadh to Jeddah Drive",
+        items: [
+          { question: "Is a rest stop necessary on this route?", answer: "For most drivers, yes — 8.5 hours of continuous driving is demanding, and service stations along Highway 40 make at least one proper break practical rather than a luxury." },
+          { question: "How many stops do travellers typically plan?", answer: "This varies by driver and passengers rather than being fixed — some treat it as one long push with a single fuel-and-stretch stop, others split it into two shorter driving blocks with a longer midway break." },
+          { question: "Is an overnight stop common?", answer: "Some travellers departing later in the day choose to split the journey with an overnight stop rather than arriving very late; it's a personal-preference decision rather than an operational requirement." },
+          { question: "Does the route pass through any major towns?", answer: "The highway is largely a direct desert corridor rather than routing through major intermediate cities, so services are found at highway rest stops rather than town centres." },
+        ],
+      },
+      {
+        type: "contextCard",
+        heading: "Who Might Prefer Travelling by Road?",
         paragraphs: [
-          "At roughly 850-950 km depending on the exact route, this is one of the longest journeys anyone would reasonably make by road within Saudi Arabia rather than by air — most travellers weigh it explicitly against the roughly two-hour flight before deciding.",
-          "The road route matters to travellers with a specific reason not to fly: a family travelling with more luggage than checked baggage allowances comfortably cover, a group that wants to travel together in one vehicle, or someone planning to continue directly on to Makkah or Taif once they reach the west, avoiding a second airport transfer.",
+          "Objectively, most travellers without a specific reason to drive choose the roughly two-hour flight over a nine-hour road trip. The road makes sense for a narrower set of situations: a family or group travelling with more luggage than standard checked-baggage allowances comfortably cover, a party that wants to stay together in one vehicle rather than splitting across flights, or someone continuing directly on to Makkah or Taif once they reach the west — turning a single long drive into one journey rather than a flight plus a second overland transfer.",
+          "Door-to-door convenience is the other genuine advantage: no airport transfers, no check-in or security queues at either end, and a fixed departure time that isn't subject to flight schedules. Against that, it is a full day given over to travel, and realistically requires planning around rest breaks rather than treating the 8.5-hour estimate as the whole story.",
         ],
       },
       {
         type: "relatedInfo",
         heading: "Related Reading",
-        paragraph: "Continuing on to Makkah once you reach Jeddah? See <a href='/distance/jeddah-to-makkah-distance'>Jeddah to Makkah distance</a>. Comparing to the Eastern Province instead? See <a href='/distance/riyadh-to-dammam-distance'>Riyadh to Dammam distance</a>.",
+        paragraph: "Continuing on to Makkah once you reach Jeddah? See <a href='/distance/jeddah-to-makkah-distance'>Jeddah to Makkah distance</a>. Comparing to the Eastern Province instead? See <a href='/distance/riyadh-to-dammam-distance'>Riyadh to Dammam distance</a>. Considering AlUla instead of Jeddah? See <a href='/distance/riyadh-to-alula-distance'>Riyadh to AlUla distance</a>.",
       },
       {
         type: "cta",
@@ -1244,6 +1266,17 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         destination: "AlUla, Saudi Arabia",
       },
       {
+        type: "stages",
+        heading: "Driving from Riyadh to AlUla",
+        steps: [
+          { label: "Riyadh departure", detail: "North-west out of the capital, joining Highway 65 toward Qassim." },
+          { label: "Toward Qassim and Hail", detail: "A long stretch through central Najd — many road-trippers treat Buraidah or Hail as a natural overnight break roughly halfway." },
+          { label: "The northern desert", detail: "Open terrain continues toward Madinah Province, with services becoming sparser than on more heavily travelled corridors." },
+          { label: "Approaching AlUla", detail: "The landscape shifts to the sandstone valleys and rock formations AlUla is known for as the final stretch nears the town." },
+        ],
+        note: "This is one of the longer, less densely serviced domestic corridors — fuel and rest planning matter more here than on shorter coastal or central routes.",
+      },
+      {
         type: "profile",
         heading: "Route Profile",
         layout: "strip",
@@ -1281,9 +1314,19 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         ],
       },
       {
+        type: "planningNotes",
+        heading: "Planning a Road Trip to AlUla",
+        items: [
+          { question: "Is this drive usually done in one day?", answer: "It's a genuine full-day undertaking at 10-12 hours; many travellers who choose the road specifically want the trip itself, often splitting it with an overnight stop around Qassim or Hail rather than pushing straight through." },
+          { question: "Why would someone drive instead of taking the 1h45m flight?", answer: "Mainly travellers combining AlUla with other northern stops — Hail's heritage sites or a Madinah leg — who want one continuous road trip rather than separate flights to each destination." },
+          { question: "Does fuel and service availability matter on this route?", answer: "More than on shorter, busier corridors — this is one of the less densely serviced long-distance routes in the Kingdom, so planning fuel stops in advance is more relevant here than on the Riyadh-Jeddah or Riyadh-Dammam roads." },
+          { question: "Is the drive different from a typical desert highway trip?", answer: "The final approach to AlUla is genuinely distinctive — sandstone valleys and rock formations replace the open desert of the earlier stretch, a visible change most travellers notice as they near the town." },
+        ],
+      },
+      {
         type: "relatedInfo",
         heading: "Related Reading",
-        paragraph: "Approaching AlUla from Madinah instead? See <a href='/distance/madinah-to-alula-distance'>Madinah to AlUla distance</a>, a considerably shorter drive with no direct flight option currently available.",
+        paragraph: "Approaching AlUla from Madinah instead? See <a href='/distance/madinah-to-alula-distance'>Madinah to AlUla distance</a>, a considerably shorter drive with no direct flight option currently available. Comparing to the Riyadh-Jeddah route? See <a href='/distance/riyadh-to-jeddah-distance'>Riyadh to Jeddah distance</a>.",
       },
       {
         type: "cta",
@@ -2269,7 +2312,6 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         factors: [
           "The border facility at the midpoint — where both Saudi exit and Bahraini entry formalities are handled — is what actually determines total crossing time",
           "This can extend well beyond the base estimate on weekends and public holidays, when the causeway carries heavy passenger-vehicle volume",
-          "A recognised SAPTCO cross-border coach service operates on this corridor",
         ],
       },
       {
@@ -2277,7 +2319,6 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         heading: "Ways to Make the Journey",
         options: [
           { mode: "Private car / taxi", suitability: "Most travellers, especially those wanting door-to-door service without transferring vehicles at the border", duration: "1-2 hours total, more at peak weekend times", advantages: "No vehicle change at the border, flexible departure timing, direct to a specific Manama hotel or destination", limitations: "Subject to causeway queue length, which varies significantly by day and time" },
-          { mode: "SAPTCO intercity bus", suitability: "Budget travellers without a private vehicle", duration: "Scheduled service; check SAPTCO's current timetable for departure times and fares", advantages: "A recognised cross-border coach service operates on this corridor, connecting Saudi Eastern Province cities to Manama", limitations: "Fixed departure times, and still subject to the same border-processing queue as private vehicles" },
         ],
       },
       {
@@ -2297,9 +2338,9 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
       { question: "How long does the King Fahd Causeway crossing take?", answer: "The drive to the causeway is about 30-40 minutes; total trip time including border processing commonly runs 1 to 2 hours, and longer on weekends when passenger-vehicle volume is heaviest." },
       { question: "Is Khobar closer to the causeway than Dammam?", answer: "Yes — Khobar sits nearer the Saudi terminus of the causeway than Dammam does, so the driving portion from Khobar is somewhat shorter." },
       { question: "Does the distance change depending on where in Bahrain I'm going?", answer: "Yes — central Manama is roughly 20-25 km past the Bahraini border facility, so a trip to Manama is meaningfully longer than simply reaching the Bahraini side of the causeway." },
-      { question: "Is there a bus across the causeway?", answer: "Yes, SAPTCO operates a scheduled intercity coach service connecting Saudi Eastern Province cities to Manama; check SAPTCO's current timetable for departure times and fares." },
       { question: "What documents are typically needed at the border?", answer: "Requirements vary by nationality and change periodically — check current requirements with Saudi Arabia's passport authority and Bahraini immigration before travelling rather than relying on a fixed list here." },
       { question: "Is weekend crossing significantly slower?", answer: "Yes — weekends and public holidays are known for heavier passenger-vehicle volume at the causeway, which extends border-processing time beyond a typical weekday." },
+      { question: "Is there scheduled coach service across the causeway?", answer: "Cross-border coach service on this corridor has existed in the past, but availability changes; check directly with the operator for current status rather than assuming a fixed schedule. A private vehicle avoids the question entirely." },
     ],
     sources: [
       { label: "King Fahd Causeway (Wikipedia)", url: "https://en.wikipedia.org/wiki/King_Fahd_Causeway" },
@@ -2362,7 +2403,6 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         factors: [
           "Gulf Air is the most-used carrier on the roughly 45-minute Dammam-to-Bahrain hop, with about 19 flights a week across 6 airlines",
           "Border processing time varies independently of driving distance and tends to be higher at weekends",
-          "A recognised SAPTCO coach service connects Dammam, Khobar, and Manama on this corridor",
         ],
       },
       {
@@ -2371,7 +2411,6 @@ export const distanceGuideV2Pages: DistanceGuideV2Page[] = [
         options: [
           { mode: "Direct flight (DMM–BAH)", suitability: "Travellers prioritising speed and wanting to avoid the causeway border queue entirely", duration: "About 45 minutes in the air", advantages: "Bypasses road traffic and the causeway crossing entirely; a genuinely frequent route with roughly 19 flights a week across 6 airlines", limitations: "Airport check-in and security add time beyond the 45-minute flight; not door-to-door" },
           { mode: "Private car / taxi", suitability: "Travellers who want door-to-door service, are bringing more luggage than carry-on allowances, or prefer not to fly a short domestic-style hop", duration: "1.5-2.5 hours total, more at weekends", advantages: "No vehicle change at the border, direct to a specific Manama hotel or destination", limitations: "Subject to causeway queue length, which is the main source of unpredictability on this route" },
-          { mode: "SAPTCO intercity bus", suitability: "Budget travellers without a private vehicle", duration: "Scheduled service; check SAPTCO's current timetable for departure times and fares", advantages: "A recognised coach service connects Dammam, Khobar, and Manama on this corridor", limitations: "Fixed departure times, and still subject to the causeway border queue" },
         ],
       },
       {

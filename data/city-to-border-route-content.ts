@@ -175,7 +175,7 @@ export const cityToBorderRouteContent: Record<string, CityToBorderRouteContent> 
     roadJourneyHeading: "A Border-Only Transfer, Not a Riyadh-to-Doha Service",
     roadJourneyParagraphs: [
       "It's worth being precise about what this route covers: this is a private transfer from Riyadh to the Salwa crossing itself, not a through-service into Doha. Land border crossings between Saudi Arabia and Qatar involve separate immigration and vehicle checks on each side, so most private transfer operators — including us — bring you to the crossing and stop there, with a Qatar-side vehicle needed for the onward journey.",
-      "The drive from Riyadh to Salwa covers about 640 kilometres across open desert and takes roughly six hours in free-flowing traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the full journey to the crossing.",
+      "The drive from Riyadh to Salwa covers roughly 460-500 kilometres across open desert via Al Hofuf and takes about five to six hours in free-flowing traffic. There are no tolls on this route, so the fixed price you agree before travelling covers the full journey to the crossing.",
     ],
     timeline: [
       { label: "Riyadh pickup", detail: "Collected from your hotel, home, or office." },
@@ -184,9 +184,9 @@ export const cityToBorderRouteContent: Record<string, CityToBorderRouteContent> 
       { label: "Salwa border arrival", detail: "Drop-off at the Saudi-side crossing point." },
     ],
     departureIntro:
-      "Given the six-hour drive plus border processing, plan your Riyadh departure with a real buffer if you have an onward connection in Doha.",
+      "Given the five-to-six-hour drive plus border processing, plan your Riyadh departure with a real buffer if you have an onward connection in Doha.",
     departurePoints: [
-      "Six hours of pure driving before the crossing itself",
+      "Five to six hours of pure driving before the crossing itself",
       "Biometric and vehicle checks add time beyond the driving estimate",
       "Weekends and holidays tend to see busier crossings",
       "Share any Doha meeting time when booking so we can advise on timing",
@@ -196,7 +196,7 @@ export const cityToBorderRouteContent: Record<string, CityToBorderRouteContent> 
       "From the Saudi-side drop-off, you'll go through Saudi exit immigration and vehicle/customs checks, then continue independently on the Qatari side (Abu Samra) into Qatar. Tell us your onward plans when booking and we can advise on arranging that connection, though the connection itself is yours to arrange.",
     ],
     vehicleText:
-      "Given the six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage.",
+      "Given the five-to-six-hour desert crossing, we recommend a comfortable SUV or van over a standard sedan, particularly for families or groups with luggage.",
     whoSuits: [
       { title: "Travellers arranging their own Qatar-side connection", description: "You've already sorted onward transport at Abu Samra and just need a reliable Saudi-side ride." },
       { title: "Business travellers meeting a Doha contact at the crossing", description: "A single fixed-price ride to the border, with a buffer built in for the crossing itself." },
@@ -209,7 +209,7 @@ export const cityToBorderRouteContent: Record<string, CityToBorderRouteContent> 
       "Vehicle documentation and insurance, if driving your own car through",
       "Onward Qatar-side transport arranged or being arranged",
       "Passenger and luggage count",
-      "A realistic buffer for the border process, not just the six-hour drive",
+      "A realistic buffer for the border process, not just the driving time",
     ],
     bookingSteps: [
       { label: "Share pickup & travel date", detail: "Your Riyadh pickup point and preferred departure time." },

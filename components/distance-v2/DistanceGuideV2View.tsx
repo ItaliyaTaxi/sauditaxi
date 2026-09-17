@@ -479,13 +479,16 @@ export function DistanceGuideV2View({
       <section className="border-b border-border bg-white">
         <div className="mx-auto max-w-3xl px-4 pb-10 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-36">
           <Breadcrumbs items={crumbs} />
-          <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-gold">{eyebrow}</p>
-          <h1 className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
-            <span>{from}</span>
-            <ArrowRight className="size-6 shrink-0 text-muted-foreground rtl:rotate-180" aria-hidden="true" />
-            <span>{to}</span>
-          </h1>
-          <p className="mt-1.5 text-sm font-medium text-muted-foreground">{h1}</p>
+          <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-bold uppercase tracking-[0.18em] text-gold">
+            <span>{eyebrow}</span>
+            <span aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1.5 normal-case tracking-normal text-muted-foreground">
+              {from}
+              <ArrowRight className="size-3.5 shrink-0 rtl:rotate-180" aria-hidden="true" />
+              {to}
+            </span>
+          </p>
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">{h1}</h1>
           <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground">{dek}</p>
         </div>
       </section>
