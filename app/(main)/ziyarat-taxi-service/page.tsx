@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { ZiyaratTransfersHub } from "@/components/services/ZiyaratTransfersHub";
 import { ziyaratTaxiServiceContent } from "@/data/service-pages-v2/ziyarat-taxi-service";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
@@ -15,9 +15,9 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Ziyarat Transportation | Makkah & Madinah Private Transfers",
+  title: "Private Ziyarat Transfers | Makkah & Madinah",
   description:
-    "Private transportation for Ziyarat visits to historic sites around Makkah and Madinah — flexible multi-stop journeys with a driver who knows the route.",
+    "Private Ziyarat transportation in Makkah and Madinah — multi-stop journeys, hotel pickup, and a driver who waits between stops, priced before you travel.",
   path,
   ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
@@ -37,7 +37,7 @@ export default function ZiyaratTaxiPage() {
           faqSchema(ziyaratTaxiServiceContent.faqs),
         ]}
       />
-      <ServiceV2View {...ziyaratTaxiServiceContent} crumbs={crumbs} labels={{ faqHeading: "Ziyarat Transportation Questions" }} />
+      <ZiyaratTransfersHub content={ziyaratTaxiServiceContent} crumbs={crumbs} />
     </>
   );
 }

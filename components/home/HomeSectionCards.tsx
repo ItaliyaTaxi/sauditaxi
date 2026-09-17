@@ -9,6 +9,11 @@ export interface HomeSectionCard {
   linkLabel?: string;
 }
 
+export interface HomeSectionExtraLink {
+  label: string;
+  href: string;
+}
+
 /**
  * Shared "H2 + short intro + grid of H3 cards" pattern used across most of
  * the homepage's service/location sections (airport, Umrah & Hajj, day
@@ -23,6 +28,8 @@ export function HomeSectionCards({
   cards,
   columns = 2,
   tone = "white",
+  extraLinksLabel,
+  extraLinks,
 }: {
   eyebrow: string;
   heading: string;
@@ -30,6 +37,9 @@ export function HomeSectionCards({
   cards: HomeSectionCard[];
   columns?: 2 | 3 | 4;
   tone?: "white" | "sand" | "midnight";
+  /** Optional plain-text label before a row of supplementary links (no extra H3s). */
+  extraLinksLabel?: string;
+  extraLinks?: HomeSectionExtraLink[];
 }) {
   const isDark = tone === "midnight";
   const sectionBg = tone === "sand" ? "bg-sand" : tone === "midnight" ? "bg-midnight" : "bg-white";
@@ -93,6 +103,26 @@ export function HomeSectionCards({
             );
           })}
         </div>
+
+        {extraLinks && extraLinks.length > 0 && (
+          <p className={cn("mt-6 text-sm leading-relaxed", isDark ? "text-white/65" : "text-ink-soft")}>
+            {extraLinksLabel && <span className="me-1.5">{extraLinksLabel}</span>}
+            {extraLinks.map((link, i) => (
+              <span key={link.href}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "font-medium underline underline-offset-2",
+                    isDark ? "text-brass hover:text-brass-soft" : "text-midnight hover:text-brass"
+                  )}
+                >
+                  {link.label}
+                </Link>
+                {i < extraLinks.length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </p>
+        )}
       </div>
     </section>
   );
