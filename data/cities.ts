@@ -1,5 +1,6 @@
 import type { Faq } from "./faqs";
 import { cityGuides } from "./city-guides";
+import type { CitySection } from "@/components/city-transfer/CityTransferHub";
 
 export interface City {
   slug: string;
@@ -34,6 +35,10 @@ export interface City {
   localInsight?: string;
   faqs?: Faq[];
   hubFaqs?: Faq[];
+  /** H2 #1 "Private Transfers in [City]" intro paragraphs (~100-160 words), for the deep /taxi-service/{city} page. */
+  introParagraphs?: string[];
+  /** The flexible, per-city body sections for /taxi-service/{city} — count and kind vary by city. */
+  sections?: CitySection[];
 }
 
 const baseCities: City[] = [
