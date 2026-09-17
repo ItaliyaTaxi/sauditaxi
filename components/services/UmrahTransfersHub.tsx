@@ -216,10 +216,16 @@ export function UmrahTransfersHub({ content, crumbs }: { content: UmrahTransfers
       {/* H2 #12 — FAQ (H3 questions) */}
       <HomeFAQSection faqs={faqs} heading={faqHeading} />
 
-      {/* Final CTA (H2) */}
+      {/*
+        Final CTA — deliberately a styled <p>, not an <h2>: the brief
+        numbers its sections up to "H2 #12" for FAQ and states a hard cap
+        of "Maximum major H2 sections: 12", so this closing CTA (listed
+        separately, unnumbered, as its own "FINAL CTA" section) stays a
+        wrap-up rather than a 13th H2 — keeping the total at exactly 12.
+      */}
       <section className="bg-midnight py-16 text-white sm:py-20">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{finalCtaHeading}</h2>
+          <p className="text-3xl font-bold tracking-tight sm:text-4xl">{finalCtaHeading}</p>
           <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/70">{finalCtaText}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
