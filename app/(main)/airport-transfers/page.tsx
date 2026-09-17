@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { AirportTransfersHub } from "@/components/services/AirportTransfersHub";
 import { airportTransfersContent } from "@/data/service-pages-v2/airport-transfers";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
@@ -37,7 +37,7 @@ export default function AirportTransfersPage() {
           faqSchema(airportTransfersContent.faqs),
         ]}
       />
-      <ServiceV2View {...airportTransfersContent} crumbs={crumbs} labels={{ faqHeading: "Airport Transfer Questions" }} />
+      <AirportTransfersHub content={airportTransfersContent} crumbs={crumbs} />
     </>
   );
 }

@@ -1,167 +1,263 @@
-import type { ServiceV2Content } from "@/components/services/ServiceV2View";
+import type { AirportTransfersHubContent } from "@/components/services/AirportTransfersHub";
 
 /**
- * "The Arrival Experience" — airport transfers, designed around the
- * passenger's actual journey: Airport → Driver → Vehicle → Destination.
+ * Airport Transfers hub page — 2026 heading-structure update.
+ *
  * Verified facts only: real airport names/codes (data/airports.ts), real
- * route distances (data/routes.ts), and the site's actual booking model
- * (WhatsApp/quote form, pay the driver directly — no online payment
- * platform, no live-tracking claim, no specific "60-minute" wait-time
- * guarantee, none of which exist in the real system).
+ * route distances (data/routes.ts), real vehicle categories (data/vehicles.ts),
+ * and the site's actual booking model (WhatsApp/quote form, pay the driver
+ * directly — no online payment platform, no specific wait-time guarantee,
+ * none of which exist in the real system). No Hajj-permit, visa, or
+ * government-authorisation claims — see the Umrah/Hajj section note.
+ *
+ * Previously rendered via ServiceV2View (data/service-pages-v2/airport-transfers.ts
+ * + components/services/ServiceV2View.tsx, shared with 7 other service
+ * pages). Now rendered via the page-specific AirportTransfersHub component
+ * instead, so this restructuring doesn't touch the other 7 pages that still
+ * use ServiceV2View unchanged.
  */
-export const airportTransfersContent: ServiceV2Content = {
+export const airportTransfersContent: AirportTransfersHubContent = {
   eyebrow: "Airport Transfers",
   h1: "Private Airport Transfers Across Saudi Arabia",
-  dek: "A driver waiting for you after you land, and a direct drive to where you're actually going — arranged before you fly, not negotiated in the arrivals hall.",
+  dek: "Pre-booked private transportation between Saudi Arabia's airports and your actual destination — a hotel, a residence, a business meeting, or straight on to Makkah or Madinah. A specific driver is already waiting when you land, and the price is agreed before you fly, not negotiated in a busy arrivals hall.",
   heroImage: "/images/heroes/airport.webp",
   heroAlt: "An airport terminal in Saudi Arabia",
   primaryCtaLabel: "Get a Quote",
   secondaryCtaLabel: "See Airport Coverage",
   secondaryCtaHref: "/airport-transfers#coverage",
-  blocks: [
+
+  coreServiceHeading: "Private Airport Transfers in Saudi Arabia",
+  coreServiceParagraphs: [
+    "We provide private, pre-arranged airport transportation across Saudi Arabia — meet-and-greet pickup when you land, and a direct drop-off at your hotel, residence, or business address. The same service covers the return leg, taking you back to the airport for a departure flight.",
+    "Most journeys fall into a few common patterns: a hotel or business transfer within the arrival city, a longer drive on to Makkah or Madinah for Umrah or Hajj travel, or a connection to another Saudi city entirely. Each trip is a single private vehicle for your group, booked and priced before you travel, with a driver already assigned rather than found on the day.",
+  ],
+
+  airportsHeading: "Airports We Cover Across Saudi Arabia",
+  airportsIntro:
+    "Private airport transfers are available at the Kingdom's four busiest international gateways, each with its own dedicated coverage page covering local meeting points, terminal detail, and onward routes.",
+  airportCards: [
     {
-      type: "prose",
-      heading: "What Is a Private Airport Transfer?",
-      narrow: true,
-      paragraphs: [
-        "A private airport transfer is a pre-arranged, dedicated car and driver for the trip between an airport and your destination — booked before you fly, at a price agreed in advance. It's a different arrangement from three things it's often confused with: an airport-rank taxi (unmetered, negotiated on the spot, and the main reason unfamiliar arrivals overpay), a ride-hailing app booked from the terminal (which depends on driver availability at that specific moment and doesn't know your flight status), and a shared shuttle (which combines several bookings into one vehicle and stops at more than one destination).",
-        "The practical difference shows up at two points: before you travel, when the price and vehicle are already settled instead of being a live negotiation; and after you land, when a specific driver is already waiting for you rather than something you start arranging once you're through immigration.",
-      ],
+      title: "King Khalid International Airport (RUH)",
+      body: "Riyadh's airport, serving the capital's hotels and business districts across all five terminals, with corporate travel accounts available for regular bookings and onward transfers across the country.",
+      href: "/airport-transfer/riyadh-airport",
+      linkLabel: "Riyadh Airport transfers",
     },
     {
-      type: "timeline",
-      heading: "How Airport Pickup Works",
-      orientation: "vertical",
-      steps: [
-        { label: "You book and share flight details", detail: "Flight number, arrival airport, destination and passenger count — sent via WhatsApp or the quote form." },
-        { label: "We confirm a vehicle and a fixed price", detail: "Agreed before you travel, matched to your group size and luggage." },
-        { label: "You fly, and we track your flight number", detail: "Pickup timing is planned around your actual flight, not a fixed clock time." },
-        { label: "You clear immigration and collect your bags", detail: "No need to message us the moment you land — the plan already accounts for a normal immigration and baggage wait." },
-        { label: "You meet your driver in arrivals", detail: "At a meeting point agreed before you travelled, with a direct contact number if anything is unclear." },
-        { label: "Your luggage goes into the vehicle", detail: "A vehicle sized to your group and bags, chosen when you booked, not decided at the kerb." },
-        { label: "You're driven directly to your destination", detail: "Hotel, home address, business meeting, or onward to another city — one direct journey, no shared stops." },
-      ],
-      note: "Flight delays are common and expected — pickup timing is planned around your actual flight, not the original schedule.",
+      title: "King Abdulaziz International Airport (JED)",
+      body: "The busiest gateway for Umrah and Hajj arrivals, including the Hajj Terminal and Terminal 1, with direct transfers to Makkah, Corniche hotels, and onward travel to Madinah or Taif.",
+      href: "/airport-transfer/jeddah-airport",
+      linkLabel: "Jeddah Airport transfers",
     },
     {
-      type: "prose",
-      heading: "What Information Should I Provide?",
-      narrow: true,
-      paragraphs: [
-        "The more of this we have before you travel, the smoother the pickup: your flight number and arrival airport, your travel date, an idea of your arrival time, the number of passengers, how much luggage you're bringing, your destination address, and any special requirements — a child seat, for instance. Flight number matters most of anything on this list: it's what lets us adjust your pickup around a delay automatically rather than you having to notice and tell us.",
-      ],
+      title: "Prince Mohammad bin Abdulaziz International Airport (MED)",
+      body: "Madinah's airport, with hotel transfers near the Prophet's Mosque and private long-distance connections on to Makkah, timed around pilgrim schedules and prayer times.",
+      href: "/airport-transfer/madinah-airport",
+      linkLabel: "Madinah Airport transfers",
     },
     {
-      type: "prose",
-      heading: "Why Your Actual Arrival Time Can Differ From the Scheduled Landing",
-      narrow: true,
-      paragraphs: [
-        "The time printed on your ticket is when the aircraft is due to land, not when you'll walk out of arrivals. Immigration queues, baggage reclaim, and general terminal congestion — worse at peak hours and during Umrah or Hajj season — all add time after wheels-down. We don't state a fixed number of minutes this typically adds, because it genuinely varies by airport, time of day, and season; what matters practically is that your pickup is planned around your flight number rather than a clock time, so a slower-than-usual immigration queue doesn't turn into a missed transfer.",
-      ],
-    },
-    {
-      type: "comparisonTable",
-      heading: "Private Transfer vs. Other Airport Options",
-      intro: "Each option has a genuine place — this is about which fits your situation, not which is universally best.",
-      columns: ["Private Transfer", "Airport-Rank Taxi", "Ride-Hailing App", "Shared Shuttle"],
-      rows: [
-        { criterion: "Price certainty", values: ["Fixed, agreed before travel", "Negotiated on the spot", "Estimated, can vary with demand pricing", "Usually fixed per seat"] },
-        { criterion: "Wait after landing", values: ["Driver already assigned and waiting", "None — but a queue to find one", "Depends on nearby driver availability", "Fixed departure, may wait for other passengers"] },
-        { criterion: "Vehicle size", values: ["Chosen in advance for your group", "Whatever's available", "Whatever's available", "Shared, fixed capacity"] },
-        { criterion: "Route", values: ["Direct, one destination", "Direct", "Direct", "Multiple stops possible"] },
-        { criterion: "Flight-delay handling", values: ["Built into the plan", "Not applicable — arranged after you land", "Not applicable — arranged after you land", "Fixed schedule, may not adjust"] },
-      ],
-    },
-    {
-      type: "prose",
-      heading: "Choosing the Right Vehicle",
-      narrow: true,
-      paragraphs: [
-        "Vehicle choice comes down to passengers and luggage more than personal preference. A sedan is comfortable for one or two travellers with a normal amount of luggage. An SUV suits a family or a traveller with several large bags. A van or minibus fits a larger group travelling together — common for Umrah parties or business delegations. Tell us your numbers honestly when booking; it's far better to have a slightly larger vehicle than to arrive at the kerb and find the bags don't fit.",
-      ],
-    },
-    {
-      type: "audienceGrid",
-      heading: "Airport Transfers for Different Travellers",
-      items: [
-        { title: "Families", detail: "More luggage than a couple travelling alone, and often a child seat requirement — tell us both when booking so the right vehicle is waiting, not swapped for a larger one at the kerb." },
-        { title: "Business travellers", detail: "A fixed pickup time matters more than flexibility. We treat your requested time as firm and plan the route to a meeting or hotel accordingly." },
-        { title: "Groups", detail: "Umrah parties, tour groups and corporate delegations travelling together are usually better served by one or two larger vehicles than several separate cars — tell us your total numbers so we can plan the combination." },
-        { title: "Travellers with significant luggage", detail: "Equipment, samples, or simply a lot of bags — mention the volume, not just the passenger count, so the vehicle has the boot space to match." },
-        { title: "International arrivals", detail: "First-time visitors unfamiliar with the airport layout benefit most from having a specific, agreed meeting point rather than a general 'somewhere in arrivals' instruction." },
-        { title: "Solo travellers", detail: "A sedan is usually the most cost-effective choice for one traveller with normal luggage — no need to book a larger vehicle than the trip requires." },
-      ],
-    },
-    {
-      type: "linkGrid",
-      heading: "Airports We Cover",
-      items: [
-        { label: "Riyadh — King Khalid International (RUH)", href: "/airport-transfer/riyadh-airport" },
-        { label: "Jeddah — King Abdulaziz International (JED)", href: "/airport-transfer/jeddah-airport" },
-        { label: "Madinah — Prince Mohammad bin Abdulaziz (MED)", href: "/airport-transfer/madinah-airport" },
-        { label: "Dammam — King Fahd International (DMM)", href: "/airport-transfer/dammam-airport" },
-        { label: "Taif Regional (TIF)", href: "/airport-transfer/taif-airport" },
-        { label: "AlUla — Prince Abdul Majeed bin Abdulaziz (ULH)", href: "/airport-transfer/alula-airport" },
-      ],
-    },
-    {
-      type: "routeCards",
-      heading: "Common Airport Journeys",
-      intro: "The distances and times below are the same figures published on each route's own page.",
-      routes: [
-        { from: "Jeddah Airport", to: "Makkah", distance: "~85 km", duration: "~1h 15m", href: "/routes/jeddah-to-makkah", note: "The most-requested airport transfer in the network — most pilgrims travel this leg the same day they land." },
-        { from: "Jeddah Airport", to: "Madinah", distance: "~420 km", duration: "~4 hours", href: "/routes/jeddah-to-madinah", note: "A long transfer for travellers combining both holy cities in one Umrah itinerary." },
-        { from: "Dammam Airport", to: "Al Khobar", distance: "~35 km", duration: "~30 min", href: "/routes/dammam-airport-to-khobar", note: "A short, direct run for Eastern Province business travel." },
-        { from: "Jeddah Airport", to: "Taif", distance: "~170 km", duration: "~2 hours", href: "/routes/jeddah-to-taif", note: "For travellers continuing to Taif's cooler mountain climate after landing on the coast." },
-      ],
-    },
-    {
-      type: "checklist",
-      heading: "Airport Transfer Planning Checklist",
-      intro: "Have this ready when you book — it's the fastest way to a smooth pickup.",
-      items: [
-        "Flight number and arrival airport",
-        "Travel date and approximate arrival time",
-        "Number of passengers and bags",
-        "Destination address (hotel name, or the exact address)",
-        "Any child seat requirement",
-        "A WhatsApp number we can reach you on if plans change",
-      ],
-    },
-    {
-      type: "cta",
-      text: "Landing soon and want a driver arranged before you fly?",
-      linkLabel: "Get a Quote",
-      linkPath: "/get-quote",
-    },
-    {
-      type: "prose",
-      heading: "Common Airport-Transfer Situations",
-      paragraphs: [
-        "<strong>Flight changes.</strong> If your flight is delayed, rebooked, or cancelled, message us as soon as you know — we'll adjust the pickup rather than leave a driver waiting at the wrong time.",
-        "<strong>Groups and families.</strong> Larger parties with more luggage need a larger vehicle booked in advance rather than assumed on the day — tell us your numbers and bag count when you request a quote.",
-        "<strong>Going straight to a city outside the airport's own city.</strong> An airport pickup doesn't have to end at that airport's home city — for example, a Jeddah Airport pickup can continue directly to Makkah or Madinah in one journey, without a separate local transfer first.",
-        "<strong>Connecting onward by road.</strong> If your trip continues by intercity or cross-border road transfer after the airport leg, see our <a href='/intercity-transfers'>intercity transfers</a> or <a href='/border-transfers'>border transfers</a> pages — the airport pickup and the onward journey can be planned together.",
-      ],
-    },
-    {
-      type: "relatedInfo",
-      heading: "Related Reading",
-      paragraph:
-        "Continuing to a hotel after landing? See our <a href='/services/hotel-transfers'>hotel transfers</a> page for the door-to-door details. For the exact road distance and timing of your onward journey, see the <a href='/distance/jeddah-to-makkah-distance'>Jeddah to Makkah distance guide</a>.",
+      title: "King Fahd International Airport (DMM)",
+      body: "Dammam's airport, covering the Dammam, Khobar, and Dhahran metro area, plus cross-border transfers to Bahrain over the King Fahd Causeway for business travellers and families.",
+      href: "/airport-transfer/dammam-airport",
+      linkLabel: "Dammam Airport transfers",
     },
   ],
+  moreAirportsNote: {
+    text: "We also cover",
+    links: [
+      { label: "Taif Regional Airport (TIF)", href: "/airport-transfer/taif-airport" },
+      { label: "AlUla — Prince Abdul Majeed bin Abdulaziz Airport (ULH)", href: "/airport-transfer/alula-airport" },
+    ],
+  },
+
+  destinationsBlock: {
+    type: "routeCards",
+    heading: "Popular Airport Transfer Destinations",
+    intro:
+      "The distances and times below are the same figures published on each route's own page, so you can check the journey before you book. Airport-to-city transfers that stay within the arrival city itself — hotels, business districts, or residential addresses — are covered by the airport pages above rather than a separate route page.",
+    routes: [
+      { from: "Jeddah Airport", to: "Makkah", distance: "~85 km", duration: "~1h 15m", href: "/routes/jeddah-to-makkah", note: "The most-requested airport transfer in the network — most pilgrims travel this leg the same day they land, often still in ihram." },
+      { from: "Jeddah Airport", to: "Madinah", distance: "~420 km", duration: "~4 hours", href: "/routes/jeddah-to-madinah", note: "A long transfer for travellers combining both holy cities in one Umrah itinerary, with rest stops along the way." },
+      { from: "Riyadh Airport", to: "Riyadh", distance: "~35 km", duration: "~30-45 min", href: "/routes/riyadh-airport-to-riyadh", note: "Direct drop-off at hotels and business districts across Olaya, KAFD, and the Diplomatic Quarter, with flight tracking on arrival." },
+      { from: "Dammam Airport", to: "Al Khobar", distance: "~35 km", duration: "~30 min", href: "/routes/dammam-airport-to-khobar", note: "A short, direct run for Eastern Province business travel and Bahrain-bound connections." },
+      { from: "Jeddah Airport", to: "Taif", distance: "~170 km", duration: "~2 hours", href: "/routes/jeddah-to-taif", note: "For travellers continuing to Taif's cooler mountain climate after landing on the coast, a genuinely different pace of trip." },
+    ],
+  },
+
+  umrahHajjHeading: "Airport Transfers for Umrah and Hajj Travel",
+  umrahHajjIntro:
+    "Practical transportation for the airport legs of an Umrah or Hajj journey. We arrange the transfer itself — travellers remain responsible for their own visa, permit, and entry requirements.",
+  umrahHajjCards: [
+    {
+      title: "Jeddah Airport Transfers to Makkah",
+      body: "A direct drive from the Hajj Terminal or Terminal 1 to your Makkah hotel near the Haram, for travellers arriving tired after a long flight, sometimes already in ihram.",
+      href: "/routes/jeddah-to-makkah",
+      linkLabel: "Jeddah to Makkah route",
+    },
+    {
+      title: "Jeddah Airport Transfers to Madinah",
+      body: "A longer transfer from Jeddah's airport directly to Madinah, for itineraries that combine both holy cities, with hotel drop-off near the Prophet's Mosque.",
+      href: "/routes/jeddah-to-madinah",
+      linkLabel: "Jeddah to Madinah route",
+    },
+    {
+      title: "Madinah Airport Transfers",
+      body: "Meet-and-greet pickup at Madinah's own airport, with a direct drive to hotels around the Haram and onward private transfers to Makkah when your itinerary continues.",
+      href: "/airport-transfer/madinah-airport",
+      linkLabel: "Madinah Airport transfers",
+    },
+  ],
+
+  howItWorksBlock: {
+    type: "timeline",
+    heading: "How Our Airport Transfer Service Works",
+    orientation: "vertical",
+    steps: [
+      { label: "1. Share Your Flight Details", detail: "Flight number, arrival airport, destination, and passenger count — sent via WhatsApp or the quote form." },
+      { label: "2. Receive Your Transfer Quote", detail: "A fixed, all-in price and a vehicle recommendation, agreed before you travel." },
+      { label: "3. Confirm Your Booking", detail: "Approve the quote and a specific driver is scheduled for your flight, no prepayment required." },
+      { label: "4. Meet Your Driver", detail: "Your driver waits in arrivals with a name board and takes you directly to your destination." },
+    ],
+    note: "We track your flight number, so pickup timing is planned around your actual landing rather than the original schedule.",
+  },
+
+  bookingInfoHeading: "What Information Do I Need to Book an Airport Transfer?",
+  bookingInfoIntro:
+    "Share as much of this as you can when you request a quote. Flight number matters most of all — it's what lets us plan around a delay automatically, rather than you needing to notice and tell us.",
+  bookingInfoItems: [
+    "Arrival airport and flight number",
+    "Travel date and approximate arrival time",
+    "Pickup location (or arrival terminal)",
+    "Destination address — hotel name or exact address",
+    "Number of passengers",
+    "Luggage amount",
+    "Vehicle preference, if you have one",
+    "A WhatsApp number we can reach you on",
+  ],
+
+  vehiclesHeading: "Choose the Right Vehicle for Your Airport Transfer",
+  vehiclesIntro: "Vehicle choice comes down to passengers and luggage more than personal preference — tell us your numbers honestly when you book.",
+  vehicleCards: [
+    {
+      title: "Private Sedan Transfers",
+      body: "Economy and Comfort sedans — Hyundai Accent, Toyota Yaris, Toyota Camry, or Hyundai Sonata — for one to three passengers with two to three bags.",
+    },
+    {
+      title: "Premium and Executive Vehicles",
+      body: "Mercedes E-Class or Lexus ES for corporate travel and VIP arrivals, seating up to three passengers with three bags in a premium cabin.",
+    },
+    {
+      title: "Family and Group Transfers",
+      body: "A Toyota Land Cruiser or GMC Yukon SUV for up to five passengers and four bags, with room for a family or extra luggage.",
+    },
+    {
+      title: "Minivan Transfers",
+      body: "A Toyota Hiace or Hyundai Staria van for up to nine passengers with eight bags, or a Toyota Coaster minibus for larger Umrah and Hajj groups.",
+    },
+  ],
+
+  travellersHeading: "Airport Transfers for Every Type of Traveller",
+  travellersIntro: "Practical requirements differ by traveller — tell us yours when you book so the right vehicle is waiting.",
+  travellerCards: [
+    {
+      title: "Families and Groups",
+      body: "More luggage than a couple travelling alone, and often a child-seat requirement — tell us both so the right vehicle is confirmed in advance, not swapped at the kerb.",
+    },
+    {
+      title: "Umrah and Hajj Travellers",
+      body: "Direct transfers to Makkah or Madinah hotels near the Haram, with vehicles sized for group luggage and miqat stops for ihram where the route allows.",
+    },
+    {
+      title: "Business Travellers",
+      body: "A fixed pickup time matters more than flexibility. We treat your requested time as firm and plan the route to a meeting or hotel accordingly.",
+    },
+    {
+      title: "Couples and Solo Travellers",
+      body: "A sedan is usually the most cost-effective choice for one or two travellers with normal luggage — no need to book a larger vehicle than the trip requires.",
+    },
+  ],
+
+  benefitsHeading: "Why Book a Private Airport Transfer?",
+  benefitsIntro: "Practical reasons travellers choose a pre-booked private transfer over an airport-rank taxi or a ride-hailing app.",
+  benefitCards: [
+    {
+      title: "Door-to-Door Transportation",
+      body: "Collected from the arrivals hall and driven directly to your hotel, residence, or business address — not a shared shuttle with other stops along the way.",
+    },
+    {
+      title: "Pre-Booked Pickup",
+      body: "The price and vehicle are agreed before you fly, so there's no on-the-spot negotiation and no surge pricing in the arrivals hall.",
+    },
+    {
+      title: "Private Vehicle for Your Group",
+      body: "The car is yours for the whole trip, sized to your passengers and luggage — a sedan for one or two, or an SUV or van for a family or group.",
+    },
+    {
+      title: "Direct Transfer to Your Destination",
+      body: "One journey, no shared stops — whether you're headed to a hotel in the arrival city or straight on to Makkah or Madinah.",
+    },
+  ],
+
+  planningBlock: {
+    type: "checklist",
+    heading: "Planning Your Saudi Airport Transfer",
+    intro:
+      "A short checklist to work through before you fly — it's the fastest, most reliable way to a smooth pickup once you land, rather than sorting details out in the arrivals hall.",
+    items: [
+      "Confirm the correct arrival airport",
+      "Share accurate flight information",
+      "Confirm passenger count and luggage amount",
+      "Confirm pickup and destination details",
+      "Mention any child seat or accessibility requirement",
+      "Allow extra time for immigration and baggage during Umrah, Hajj, or peak season",
+      "Review your transfer confirmation before you fly",
+    ],
+  },
+
+  faqHeading: "Frequently Asked Questions About Saudi Airport Transfers",
   faqs: [
-    { question: "What information do you need for an airport pickup?", answer: "Your flight number, arrival airport, destination address, and passenger/luggage count. Flight number matters most — it's how we plan around delays." },
-    { question: "What happens if my flight changes?", answer: "Message us on WhatsApp as soon as you know. We plan pickup around your actual arrival, not the original scheduled time, so a delay doesn't mean a missed transfer — just tell us early." },
-    { question: "Can airport transfers accommodate a lot of luggage?", answer: "Yes. Tell us your passenger and bag count when booking and we'll match the vehicle — a sedan for light travel, an SUV or van for a family or group with more bags." },
-    { question: "Where exactly will I meet my driver?", answer: "We agree the meeting point with you before you travel and share your driver's contact number, so there's no ambiguity in the arrivals hall." },
-    { question: "Can I go directly from the airport to another city, like Makkah or Madinah?", answer: "Yes — an airport pickup can continue straight to another city in one journey rather than requiring a separate local transfer first. Jeddah Airport to Makkah or Madinah are common examples." },
-    { question: "Can airport pickup be arranged for a group?", answer: "Yes. Tell us your group size and luggage volume when booking so we can confirm the right vehicle, or multiple vehicles for larger parties." },
-    { question: "Do I need to pay in advance?", answer: "No. There's no prepayment — the price is agreed when you book, and you pay the driver directly, in cash or by card, on the day." },
-    { question: "How is a private transfer different from a ride-hailing app at the airport?", answer: "A ride-hailing app depends on whichever driver happens to be nearby when you land and doesn't know your flight status. A private transfer is a specific driver, already briefed on your flight, waiting for you — arranged before you fly rather than after you clear customs." },
-    { question: "Can I book a return airport transfer at the same time?", answer: "Yes — share both your arrival and departure flight details when you book and we can confirm both legs together." },
+    {
+      question: "How do I book a private airport transfer in Saudi Arabia?",
+      answer:
+        "Share your flight number, arrival airport, destination, and passenger count through WhatsApp or our quote form. We reply with a fixed price and vehicle recommendation — no prepayment required.",
+    },
+    {
+      question: "Which airports in Saudi Arabia do you cover?",
+      answer:
+        "Riyadh (RUH), Jeddah (JED), Madinah (MED), Dammam (DMM), Taif (TIF), and AlUla (ULH) — each with its own dedicated airport transfer page.",
+    },
+    {
+      question: "Can I book a transfer from Jeddah Airport to Makkah?",
+      answer:
+        "Yes — this is our most-requested route. We meet you at the Hajj Terminal or Terminal 1 and drive directly to your Makkah hotel near the Haram.",
+    },
+    {
+      question: "Can I book an airport transfer to Madinah?",
+      answer:
+        "Yes. From Jeddah Airport it's a longer transfer of around 420 km; from Madinah's own airport it's a short, direct drive to hotels near the Prophet's Mosque.",
+    },
+    {
+      question: "Can I arrange an airport transfer for Umrah?",
+      answer:
+        "Yes. We provide the transportation between the airport, Makkah, and Madinah — you remain responsible for your own visa and entry requirements, which we cannot confirm on your behalf.",
+    },
+    {
+      question: "What flight information do I need to provide?",
+      answer:
+        "Your flight number and arrival airport matter most — they let us track your actual landing time and adjust pickup automatically if your flight is early or delayed.",
+    },
+    {
+      question: "Can I choose a vehicle based on passenger and luggage requirements?",
+      answer:
+        "Yes. Tell us your passenger and bag count when booking and we'll match the vehicle — a sedan for light travel, an SUV or van for a family or group.",
+    },
+    {
+      question: "What happens if my flight schedule changes?",
+      answer:
+        "Message us on WhatsApp as soon as you know. Pickup is planned around your actual arrival rather than the original schedule, so a delay doesn't mean a missed transfer.",
+    },
   ],
-  finalCtaHeading: "Arrange Your Airport Pickup",
-  finalCtaText: "Share your flight number, arrival airport and destination — we'll confirm a driver and a fixed price before you fly.",
+
+  finalCtaHeading: "Arrange Your Private Airport Transfer",
+  finalCtaText:
+    "Share your arrival airport, flight number, travel date, destination, and passenger and luggage count, and we'll confirm a specific driver and a fixed price before you fly — whether you're headed to a hotel, a business meeting, or straight on to Makkah or Madinah.",
 };
