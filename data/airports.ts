@@ -36,9 +36,13 @@ export interface Airport {
   /** Optional hero image override + alt; falls back to a themed scene. */
   heroImage?: string;
   heroAlt?: string;
-  /** Rich long-form guide sections (paragraphs may contain inline <a> links). */
-  sections?: { heading: string; paragraphs: string[] }[];
-  /** Airport-specific FAQs (overrides the generated defaults; capped at 6). */
+  /** H2 "Private Transfers from [Airport]" paragraph — no H3s. */
+  coreServiceParagraph?: string;
+  /** H2 "Arriving at [Official Airport Name]" paragraphs — no H3s. */
+  arrivingParagraphs?: string[];
+  /** H2 "Transfers to Major Destinations" — the per-airport customization section (no H3s, prose cards). */
+  destinationClusters?: { title: string; body: string; href?: string; linkLabel?: string }[];
+  /** Airport-specific FAQs (overrides the generated defaults; capped at 8). */
   faqs?: Faq[];
   /** Target keywords for this page (documentation/reference only). */
   keywords?: string[];
@@ -66,6 +70,9 @@ const baseAirports: Airport[] = [
     popularDestinations: ["Riyadh city", "Diriyah", "Dammam", "Qassim", "AlUla"],
     popularRoutes: [
       "riyadh-airport-to-riyadh",
+      "riyadh-airport-to-jeddah",
+      "riyadh-airport-to-makkah",
+      "riyadh-airport-to-madinah",
       "riyadh-to-khobar",
       "riyadh-to-jubail",
       "riyadh-to-hofuf",
@@ -74,13 +81,10 @@ const baseAirports: Airport[] = [
       "riyadh-to-taif",
       "riyadh-to-tabuk",
       "riyadh-to-neom",
-      "riyadh-airport-to-jeddah",
-      "riyadh-airport-to-makkah",
-      "riyadh-airport-to-madinah",
     ],
-    metaTitle: "Riyadh Airport Transfer (RUH) – Private Taxi & Chauffeur",
+    metaTitle: "Private Riyadh Airport Transfer (RUH) | Saudi Private Transfers",
     metaDescription:
-      "Book a private Riyadh Airport (RUH) transfer with meet-and-greet, flight tracking, and fixed pricing. Comfortable rides to your hotel or across the city.",
+      "Private transfer from King Khalid Airport (RUH) to your Riyadh hotel or onward to Jeddah, Makkah, Madinah, and the Eastern Province. Fixed price, meet-and-greet.",
   },
   {
     slug: "jeddah-airport",
@@ -97,19 +101,16 @@ const baseAirports: Airport[] = [
     popularDestinations: ["Makkah", "Madinah", "Jeddah city", "Taif"],
     popularRoutes: [
       "jeddah-airport-to-jeddah",
-      "jeddah-port-to-makkah",
       "jeddah-to-makkah",
       "jeddah-to-madinah",
       "jeddah-to-taif",
       "jeddah-to-yanbu",
       "jeddah-to-kaec",
       "jeddah-airport-to-riyadh",
-      "jeddah-airport-to-taif",
-      "jeddah-airport-to-yanbu",
     ],
-    metaTitle: "Jeddah Airport Transfer (JED) – Private Car to Makkah",
+    metaTitle: "Private Jeddah Airport Transfer (JED) | Saudi Private Transfers",
     metaDescription:
-      "Private taxi from Jeddah Airport (JED) to Makkah, Madinah, or your Jeddah hotel. Meet-and-greet pickup, flight tracking, fixed price, 24/7 booking.",
+      "Private transfer from King Abdulaziz Airport (JED) to Makkah, Madinah, or your Jeddah hotel. Meet-and-greet pickup, flight tracking, fixed price.",
   },
   {
     slug: "madinah-airport",
@@ -130,9 +131,9 @@ const baseAirports: Airport[] = [
       "madinah-to-alula",
       "madinah-airport-to-riyadh",
     ],
-    metaTitle: "Madinah Airport Transfer (MED) – Private Taxi & Chauffeur",
+    metaTitle: "Private Madinah Airport Transfer (MED) | Saudi Private Transfers",
     metaDescription:
-      "Book a private Madinah Airport (MED) transfer with meet-and-greet pickup, hotel drop-off near the Haram, and onward rides to Makkah and AlUla.",
+      "Private transfer from Madinah Airport (MED) to hotels near the Haram, plus onward transfers to Makkah, Ziyarat sites, and AlUla. Fixed price, meet-and-greet.",
   },
   {
     slug: "dammam-airport",
@@ -148,18 +149,16 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal (international & domestic)"],
     popularDestinations: ["Dammam", "Khobar", "Jubail", "Bahrain", "Riyadh"],
     popularRoutes: [
-      "dammam-to-bahrain-airport",
-      "khobar-to-bahrain-airport",
       "dammam-airport-to-khobar",
       "dammam-airport-to-jubail",
       "dammam-airport-to-dhahran",
-      "dammam-airport-to-hofuf",
       "dammam-airport-to-bahrain",
       "dammam-airport-to-riyadh",
+      "dammam-airport-to-hofuf",
     ],
-    metaTitle: "Dammam Airport Transfer (DMM) – Book a Private Car",
+    metaTitle: "Private Dammam Airport Transfer (DMM) | Saudi Private Transfers",
     metaDescription:
-      "Private taxi from King Fahd International Airport (DMM) to Khobar, Jubail, Riyadh, or across the Bahrain Causeway. Fixed price, meet-and-greet.",
+      "Private transfer from King Fahd Airport (DMM) to Khobar, Jubail, Dhahran, Riyadh, or across the Bahrain Causeway. Fixed price, meet-and-greet pickup.",
   },
   {
     slug: "taif-airport",
@@ -179,9 +178,9 @@ const baseAirports: Airport[] = [
       "taif-to-makkah",
       "taif-to-jeddah",
     ],
-    metaTitle: "Taif Airport Transfer (TIF) – Private Car & Chauffeur",
+    metaTitle: "Private Taif Airport Transfer (TIF) | Saudi Private Transfers",
     metaDescription:
-      "Book a private Taif Airport (TIF) transfer, including the scenic Al Hada mountain drive to Makkah and rides to Taif resorts and Jeddah.",
+      "Private transfer from Taif Airport (TIF) down the Al Hada road to Makkah, or onward to Jeddah and Taif hotels. Fixed price, meet-and-greet pickup.",
   },
   {
     slug: "abha-airport",
@@ -197,13 +196,12 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal"],
     popularDestinations: ["Abha", "Khamis Mushait", "Al Soudah", "Najran"],
     popularRoutes: [
-      "abha-to-riyadh",
       "abha-airport-to-jeddah",
       "abha-airport-to-riyadh",
     ],
-    metaTitle: "Abha Airport Transfer (AHB) – Private Taxi & Chauffeur",
+    metaTitle: "Private Abha Airport Transfer (AHB) | Saudi Private Transfers",
     metaDescription:
-      "Private taxi from Abha International Airport (AHB) to Abha and Khamis Mushait hotels, the cable car, and Asir highland resorts. Fixed price.",
+      "Private transfer from Abha Airport (AHB) to Abha and Khamis Mushait hotels or the Al Soudah highland resorts. Fixed price, meet-and-greet pickup.",
   },
   {
     slug: "tabuk-airport",
@@ -223,9 +221,9 @@ const baseAirports: Airport[] = [
       "tabuk-to-alula",
       "tabuk-to-neom",
     ],
-    metaTitle: "Tabuk Airport Transfer (TUU) – Private Car Service",
+    metaTitle: "Private Tabuk Airport Transfer (TUU) | Saudi Private Transfers",
     metaDescription:
-      "Book a private Tabuk Airport (TUU) transfer to Tabuk city, NEOM project sites, and historic landmarks. Meet-and-greet, fixed pricing, 24/7.",
+      "Private transfer from Tabuk Airport (TUU) to Tabuk hotels, NEOM project areas, or onward to AlUla. Fixed price, meet-and-greet pickup.",
   },
   {
     slug: "yanbu-airport",
@@ -241,12 +239,13 @@ const baseAirports: Airport[] = [
     terminals: ["Main terminal"],
     popularDestinations: ["Yanbu", "Madinah", "Jeddah", "AlUla"],
     popularRoutes: [
-      "yanbu-to-riyadh",
+      "yanbu-to-madinah",
       "yanbu-to-jeddah",
+      "yanbu-to-riyadh",
     ],
-    metaTitle: "Yanbu Airport Transfer (YNB) – Private Taxi & Chauffeur",
+    metaTitle: "Private Yanbu Airport Transfer (YNB) | Saudi Private Transfers",
     metaDescription:
-      "Private taxi from Yanbu Airport (YNB) to Red Sea resorts, the Royal Commission waterfront, and intercity rides to Madinah and Jeddah.",
+      "Private transfer from Yanbu Airport (YNB) to Red Sea resorts, the Royal Commission waterfront, or onward to Madinah and Jeddah. Fixed price.",
   },
   {
     slug: "alula-airport",
@@ -268,9 +267,9 @@ const baseAirports: Airport[] = [
       "alula-airport-to-riyadh",
       "alula-airport-to-jeddah",
     ],
-    metaTitle: "AlUla Airport Transfer (ULH) – Private Car & Chauffeur",
+    metaTitle: "Private AlUla Airport Transfer (ULH) | Saudi Private Transfers",
     metaDescription:
-      "Book a private AlUla Airport (ULH) transfer to your resort, Hegra, and AlUla Old Town, plus onward rides to Madinah and Tabuk. Fixed price.",
+      "Private transfer from AlUla Airport (ULH) to your resort or the Old Town, plus onward rides to Tabuk, NEOM, Riyadh, and Jeddah. Fixed price.",
   },
   {
     slug: "jazan-airport",
@@ -285,9 +284,9 @@ const baseAirports: Airport[] = [
       "Our GIZ airport service offers meet-and-greet arrivals and transfers to Jazan hotels, the Farasan Islands ferry terminal, and the Fifa Mountains, plus intercity rides to Abha and Najran.",
     terminals: ["Main terminal"],
     popularDestinations: ["Jazan", "Farasan ferry", "Abha", "Najran"],
-    metaTitle: "Jazan Airport Transfer (GIZ) – Private Taxi Service",
+    metaTitle: "Private Jazan Airport Transfer (GIZ) | Saudi Private Transfers",
     metaDescription:
-      "Private taxi from Jazan Airport (GIZ) to the Farasan Islands ferry terminal, Jazan Corniche, and the Fifa Mountains. Fixed price, 24/7.",
+      "Private transfer from Jazan Airport (GIZ) to the Farasan Islands ferry terminal, Jazan hotels, or onward to Abha and Najran. Fixed price.",
   },
   {
     slug: "hail-airport",
@@ -304,10 +303,11 @@ const baseAirports: Airport[] = [
     popularDestinations: ["Hail", "Jubbah", "AlUla", "Buraidah"],
     popularRoutes: [
       "hail-to-riyadh",
+      "hail-to-madinah",
     ],
-    metaTitle: "Hail Airport Transfer (HAS) – Private Car Service",
+    metaTitle: "Private Hail Airport Transfer (HAS) | Saudi Private Transfers",
     metaDescription:
-      "Book a private Hail Airport (HAS) transfer to Hail city, the A'arif Fort, Jubbah rock-art sites, and onward rides toward AlUla.",
+      "Private transfer from Hail Airport (HAS) to Hail city hotels, or onward to AlUla and Madinah. Fixed price, meet-and-greet pickup.",
   },
   {
     slug: "red-sea-airport",
@@ -322,11 +322,11 @@ const baseAirports: Airport[] = [
     terminals: ["Main Passenger Terminal", "Private Aviation Terminal"],
     popularDestinations: ["St. Regis Red Sea Jetty", "Nujuma Ritz-Carlton Reserve", "Shebara Island Terminal", "Umluj", "Yanbu"],
     popularRoutes: [
-      "jeddah-to-yanbu",
+      "red-sea-airport-to-umluj",
     ],
-    metaTitle: "Red Sea Airport Transfer (RSI) – Luxury Private Car",
+    metaTitle: "Private Red Sea Airport Transfer (RSI) | Saudi Private Transfers",
     metaDescription:
-      "Private luxury transfer from Red Sea International Airport (RSI) to island jetties, resorts, and Umluj. Flight tracking, meet-and-greet.",
+      "Private transfer from Red Sea International Airport (RSI) to marine jetties, island resort connections, and onward to Umluj and Yanbu.",
   },
   {
     slug: "neom-bay-airport",
@@ -344,9 +344,9 @@ const baseAirports: Airport[] = [
       "tabuk-to-neom",
       "alula-to-neom",
     ],
-    metaTitle: "NEOM Bay Airport Transfer (NUM) – Private Executive Car",
+    metaTitle: "Private NEOM Airport Transfer (NUM) | Saudi Private Transfers",
     metaDescription:
-      "Book a private executive transfer from NEOM Bay Airport (NUM) to NEOM Community sectors, Sharma, and Sindalah boat connections.",
+      "Private transfer from NEOM Bay Airport (NUM) to NEOM community sectors, Sindalah boat connections, or onward to Tabuk. Fixed price.",
   },
 ];
 
