@@ -1,136 +1,249 @@
-import type { ServiceV2Content } from "@/components/services/ServiceV2View";
+import type { HajjTransfersHubContent } from "@/components/services/HajjTransfersHub";
 
 /**
- * "Planned Transportation for Hajj Travel" — deliberately NOT a duplicate of
- * the Umrah page: Hajj involves official permits, fixed group scheduling
- * and access rules that Umrah doesn't, and this page says clearly that
- * those rules come from the authorities, not from us. No specific current
- * restriction is stated as fact — official Hajj rules change and must be
- * checked against the current, authoritative source, not asserted here.
+ * Hajj Transfers page — 2026 heading-structure update.
+ *
+ * Verified facts only: real route distances/durations (data/routes.ts,
+ * matching the figures already published on each route's own page), real
+ * airports (data/airports.ts), real cities (data/cities.ts), real vehicle
+ * categories (data/vehicles.ts). Deliberately NOT a duplicate of the Umrah
+ * page: Hajj involves official permits, fixed group scheduling, and access
+ * rules that Umrah doesn't, and this page says clearly that those rules
+ * come from the authorities, not from us. No specific current restriction
+ * is stated as fact — official Hajj rules change and must be checked
+ * against the current, authoritative source, not asserted here. The old
+ * "Official Hajj Restrictions: What We Won't Tell You, and Why" heading
+ * (awkward, negative) is retired per the brief in favour of "Hajj
+ * Transportation and Official Requirements" — same honest content, a
+ * more professional framing.
+ *
+ * Scope note: does not compete with the homepage, Airport Transfers,
+ * Intercity Transfers, or the Umrah page — this page owns "private
+ * transportation for Hajj travel" specifically and links out to those
+ * broader hubs and to individual airport/city/route pages.
+ *
+ * Previously rendered via ServiceV2View (shared with other service
+ * pages). Now rendered via the page-specific HajjTransfersHub component
+ * instead, mirroring the Airport/Intercity/Umrah restructuring, so this
+ * change doesn't touch any other page.
  */
-export const hajjTransportServiceContent: ServiceV2Content = {
+export const hajjTransportServiceContent: HajjTransfersHubContent = {
   eyebrow: "Hajj Transportation",
-  h1: "Transportation Planning for Hajj Travel",
-  dek: "Private transportation for the parts of a Hajj journey we can actually arrange — airport, hotel and group transfers — planned around the access rules and permits that the authorities, not us, control.",
+  h1: "Private Hajj Transfers in Saudi Arabia",
+  dek: "Private transportation for eligible Hajj travellers, subject to applicable Saudi regulations, seasonal restrictions, and service availability — airport pickup, hotel transfers, and transportation between Makkah and Madinah, arranged around an already-confirmed Hajj trip, priced and confirmed before you travel.",
   heroImage: "/images/heroes/makkah.webp",
   heroAlt: "The city of Makkah",
   primaryCtaLabel: "Get a Quote",
   secondaryCtaLabel: "Plan Your Transfer",
   secondaryCtaHref: "/get-quote",
-  blocks: [
+
+  coreServiceHeading: "Private Hajj Transportation in Saudi Arabia",
+  coreServiceParagraphs: [
+    "We provide private transportation for the parts of a Hajj journey we can actually arrange — airport pickup, transfers to supported hotels, transportation between Makkah and Madinah, and coordinated vehicles for a family or group travelling together. Each trip is a private vehicle and driver, booked and priced before you travel.",
+    "We are not a Hajj operator, do not issue Hajj permits, and do not claim any official Hajj authorisation. What we arrange is the transportation layer around an already-confirmed Hajj trip, specifically where that transportation isn't already provided as part of an official Hajj package.",
+  ],
+
+  routesHeading: "Common Hajj Transfer Routes",
+  routesIntro:
+    "The most relevant legs of a Hajj journey, with the same distances and times already published on each route's own page — useful for planning around a package that only covers part of your transportation.",
+  routeCards: [
     {
-      type: "prose",
-      heading: "Why Hajj Transportation Requires Its Own Planning",
-      narrow: true,
-      paragraphs: [
-        "Hajj is different from an ordinary trip to Makkah in ways that directly affect transportation. It runs on a fixed set of dates shared by an enormous number of pilgrims at once, it involves official permits and group scheduling issued by the relevant authorities, and access to some areas during the Hajj period is restricted to registered pilgrims and organised groups. Road conditions, timing, and what's practically achievable on a given day can all differ substantially from a normal visit.",
-        "We provide private transportation — we are not a Hajj operator, do not issue Hajj permits, and do not claim any official Hajj authorisation. What we can help with is the transportation layer around an already-arranged Hajj trip: getting from the airport to accommodation, moving between hotels or group meeting points, and coordinating pickups for a family or group travelling together — specifically where that transportation isn't already provided as part of an official Hajj package.",
-      ],
+      title: "Jeddah Airport to Makkah",
+      body: "Around 85 km, roughly 1 hour 15 minutes, direct from Jeddah's airport to your accommodation in Makkah where this leg isn't already covered by your Hajj package.",
+      href: "/routes/jeddah-to-makkah",
+      linkLabel: "Jeddah to Makkah route",
     },
     {
-      type: "prose",
-      heading: "Common Hajj Transportation Scenarios",
-      narrow: true,
-      paragraphs: [
-        "Where it fits alongside your official Hajj arrangements, we can help with an airport-to-accommodation transfer on arrival, an accommodation-to-airport transfer on departure, city transfers for group logistics outside the restricted Hajj period itself, and coordinating vehicles for a family or group so everyone travels together rather than in separate bookings. We do not arrange or promise access to areas restricted during the Hajj period itself — that access is controlled entirely by the relevant Saudi authorities and tied to official Hajj permits, not to any transportation booking.",
-      ],
+      title: "Jeddah Airport to Madinah",
+      body: "Around 420 km, roughly 4 hours, for travellers whose itinerary begins in Madinah before continuing to Makkah.",
+      href: "/routes/jeddah-to-madinah",
+      linkLabel: "Jeddah to Madinah route",
     },
     {
-      type: "authorityNote",
-      heading: "Transportation Service vs. Official Hajj Requirements",
-      weHandle: {
-        heading: "We can help with",
-        items: [
-          "Airport-to-hotel transportation where not already covered by your Hajj package",
-          "Transfers between hotels or agreed group meeting points",
-          "Vehicle coordination for a family or group travelling together",
-          "Luggage-appropriate vehicle selection",
-        ],
-      },
-      authoritiesControl: {
-        heading: "Controlled by official Hajj authorities",
-        items: [
-          "Hajj visa issuance and eligibility",
-          "Permits and quotas",
-          "Access to restricted areas during the Hajj period",
-          "Official movement schedules for registered Hajj groups",
-        ],
-      },
-      note: "Hajj rules, permits and access restrictions can change from year to year. This page does not state current official requirements — check the current position with your Hajj operator or the relevant Saudi authority before you travel.",
+      title: "Madinah Airport to Madinah",
+      body: "A short transfer of around 20 km, roughly 20-25 minutes, from Madinah's airport direct to hotels near the Prophet's Mosque.",
+      href: "/routes/madinah-airport-to-madinah",
+      linkLabel: "Madinah Airport to Madinah route",
     },
     {
-      type: "prose",
-      heading: "Official Hajj Restrictions: What We Won't Tell You, and Why",
-      narrow: true,
-      paragraphs: [
-        "We're deliberately not listing specific current restrictions, permit requirements, or access rules on this page. Hajj regulations are set and updated by the relevant Saudi authorities, they can change from year to year and sometimes within a season, and a transportation company restating them — potentially out of date — creates more risk than it removes. If a rule matters to your trip, the reliable source is your Hajj operator or the official Saudi authority responsible for Hajj affairs, checked close to your actual travel dates, not a general information page like this one.",
-      ],
+      title: "Makkah to Madinah Transfers",
+      body: "A long drive of around 450 km, roughly 4.5 hours, with a rest stop planned in for travellers who are tired or elderly.",
+      href: "/routes/makkah-to-madinah",
+      linkLabel: "Makkah to Madinah route",
     },
     {
-      type: "checklist",
-      heading: "What to Arrange Before You Travel",
-      intro: "Settle these with your Hajj operator or the relevant authority first — we can't confirm them on your behalf.",
-      items: [
-        "Confirm your Hajj permit and official itinerary with your operator",
-        "Check current access rules for the specific dates you're travelling",
-        "Understand what transportation, if any, your Hajj package already includes",
-        "Identify the specific legs (if any) where you need transportation arranged separately",
-      ],
-    },
-    {
-      type: "timeline",
-      heading: "Journey Coordination",
-      orientation: "vertical",
-      steps: [
-        { label: "Before you travel", detail: "Confirm with us which specific legs you need — airport arrival, hotel transfers, or group coordination." },
-        { label: "Arrival", detail: "A driver meets your flight and takes you to your accommodation, timed around your actual landing." },
-        { label: "During your stay", detail: "Transfers between hotels or agreed meeting points, coordinated with your group's schedule." },
-        { label: "Departure", detail: "A final transfer back to the airport at the end of your trip." },
-      ],
-    },
-    {
-      type: "checklist",
-      heading: "Group Planning",
-      items: [
-        "Tell us your group size in advance so vehicles can be planned together",
-        "Luggage volume affects vehicle choice — mention it when booking",
-        "Coordinate one contact point for the whole group's transport",
-        "Confirm meeting points and timing clearly with everyone travelling",
-        "Share a single group contact number our driver can reach on the day",
-      ],
-    },
-    {
-      type: "prose",
-      heading: "Hajj Journey Checklist",
-      narrow: true,
-      paragraphs: [
-        "Before travelling: confirm your Hajj permit and full official itinerary with your operator; know exactly what transportation your package already provides so you're not duplicating it; identify any specific legs — typically airport arrival and departure — that genuinely need separate arrangement; and share your group's size and luggage with us early, since Hajj season is the busiest period of the year for vehicle availability.",
-      ],
-    },
-    {
-      type: "cta",
-      text: "Need transportation arranged around an already-confirmed Hajj trip?",
-      linkLabel: "Get a Quote",
-      linkPath: "/get-quote",
-    },
-    {
-      type: "relatedInfo",
-      heading: "Related Reading",
-      paragraph:
-        "For general airport pickup details, see <a href='/airport-transfers'>airport transfers</a>. For journeys outside the Hajj period, see our <a href='/umrah-taxi-service'>Umrah transportation</a> page instead. Moving between hotels as part of your trip? See <a href='/services/hotel-transfers'>hotel transfers</a>.",
+      title: "Madinah to Makkah Transfers",
+      body: "The reverse leg, the same 450 km and roughly 4.5 hours, for itineraries that begin in Madinah before continuing to Makkah.",
+      href: "/routes/madinah-to-makkah",
+      linkLabel: "Madinah to Makkah route",
     },
   ],
+
+  airportHeading: "Hajj Airport Transfers",
+  airportIntro:
+    "Airport-to-accommodation transportation where it isn't already covered by your Hajj package. Share your flight details and group size when booking, so the right vehicle is waiting rather than arranged on the day.",
+  airportCards: [
+    {
+      title: "Jeddah Airport Transfers",
+      body: "Meet-and-greet at King Abdulaziz International Airport, with a direct drive to your Makkah or Madinah accommodation where this leg needs arranging separately.",
+      href: "/airport-transfer/jeddah-airport",
+      linkLabel: "Jeddah Airport transfers",
+    },
+    {
+      title: "Madinah Airport Transfers",
+      body: "Meet-and-greet at Prince Mohammad bin Abdulaziz International Airport, with a short direct transfer to hotels near the Prophet's Mosque.",
+      href: "/airport-transfer/madinah-airport",
+      linkLabel: "Madinah Airport transfers",
+    },
+    {
+      title: "Airport to Hotel Transfers",
+      body: "Direct pickup from arrivals to your hotel entrance, timed around your actual flight rather than a fixed schedule, with a vehicle sized to your group and luggage.",
+      href: "/airport-transfers",
+      linkLabel: "How airport pickup works",
+    },
+  ],
+
+  citiesHeading: "Makkah and Madinah Hajj Transfers",
+  citiesIntro:
+    "Private transportation between the two holy cities, outside the areas and periods where movement is restricted to registered Hajj groups by the relevant authorities — the practical part of a trip that already has its official arrangements in place.",
+  cityCards: [
+    {
+      title: "Transfers to Makkah",
+      body: "Hotel and accommodation transfers in Makkah, arranged around your confirmed Hajj itinerary rather than assumed as part of it.",
+      href: "/taxi-service/makkah",
+      linkLabel: "Makkah taxi service",
+    },
+    {
+      title: "Transfers to Madinah",
+      body: "Hotel transfers near the Prophet's Mosque, whether Madinah is the first or second stage of your trip.",
+      href: "/taxi-service/madinah",
+      linkLabel: "Madinah taxi service",
+    },
+    {
+      title: "Makkah to Madinah Private Transfers",
+      body: "The genuinely long leg between the two cities, around 450 km — best planned with a rest stop, particularly for elderly or tired travellers.",
+      href: "/routes/makkah-to-madinah",
+      linkLabel: "Makkah to Madinah route",
+    },
+  ],
+
+  familyHeading: "Hajj Transfers for Families and Groups",
+  familyIntro:
+    "Hajj is typically a family or group trip. A single larger vehicle keeps everyone together rather than splitting across separate cars.",
+  familyCards: [
+    {
+      title: "Family Hajj Transportation",
+      body: "Tell us your family's total numbers, including children and elderly travellers, so the right vehicle is planned rather than assumed on the day.",
+    },
+    {
+      title: "Group Hajj Transfers",
+      body: "Larger Hajj groups are usually better served by one or two bigger vehicles than several separate cars — share your group size so we can plan the combination.",
+    },
+    {
+      title: "Choosing the Right Vehicle",
+      body: "Luggage volume affects vehicle choice as much as passenger count — mention both when booking, especially during the busiest weeks of the season.",
+    },
+  ],
+
+  vehiclesHeading: "Private Vehicles for Hajj Travel",
+  vehiclesIntro: "Vehicle choice comes down to passengers and luggage — tell us your numbers honestly when you book.",
+  vehicleCards: [
+    {
+      title: "Private Sedan Transfers",
+      body: "Economy and Comfort sedans — Hyundai Accent, Toyota Yaris, Toyota Camry, or Hyundai Sonata — for one to three passengers with two to three bags.",
+    },
+    {
+      title: "Premium Vehicles",
+      body: "Mercedes E-Class or Lexus ES for travellers who prefer a premium cabin, seating up to three passengers with three bags.",
+    },
+    {
+      title: "Family Vehicles",
+      body: "A Toyota Land Cruiser or GMC Yukon SUV for up to five passengers and four bags, with room for a family and extra luggage.",
+    },
+    {
+      title: "Minivan and Group Transfers",
+      body: "A Toyota Hiace or Hyundai Staria van for up to nine passengers with eight bags, or a Toyota Coaster minibus for larger Hajj groups.",
+    },
+  ],
+
+  howItWorksBlock: {
+    type: "timeline",
+    heading: "How to Arrange a Hajj Transfer",
+    orientation: "vertical",
+    steps: [
+      { label: "1. Share Your Journey Details", detail: "Flight details, accommodation, and passenger count for the specific legs you need — sent via WhatsApp or the quote form." },
+      { label: "2. Receive Your Quote", detail: "A fixed, all-in price and a vehicle recommendation, matched to your group and luggage, agreed before you travel." },
+      { label: "3. Confirm Your Transfer", detail: "Approve the quote and a specific driver is scheduled for your journey, no prepayment required." },
+      { label: "4. Meet Your Driver", detail: "Your driver waits at the agreed point and takes you directly to your accommodation or onward destination." },
+    ],
+    note: "Hajj season is the busiest period of the year for vehicle demand, so earlier booking gives more certainty for the legs you need.",
+  },
+
+  requirementsHeading: "Hajj Transportation and Official Requirements",
+  requirementsParagraphs: [
+    "We provide private transportation — airport transfers, hotel transfers, supported city-to-city transportation, and vehicle or driver coordination. Hajj visas and eligibility, permits and quotas, access to restricted areas during the Hajj period, and official movement schedules for registered Hajj groups are all controlled by the relevant Saudi authorities, not by us.",
+    "Booking a private transfer does not itself grant access to areas restricted during the Hajj period — that access is tied to official Hajj permits and registered group arrangements, not to any transportation booking. Hajj rules, permits, and access restrictions can change from year to year and sometimes within a season, so confirm the current position with your Hajj operator or the relevant Saudi authority close to your actual travel dates, rather than relying on this page.",
+  ],
+
+  planningHeading: "Preparing for Your Hajj Transfer",
+  planningIntro:
+    "A few things worth settling before you travel. We can't confirm your permit or official itinerary, but once those are settled with your operator, we can plan the transportation around them.",
+  planningItems: [
+    "Confirm your travel dates with your Hajj operator",
+    "Confirm your pickup and destination for each transfer leg",
+    "Provide accurate flight information",
+    "Confirm your hotel or accommodation details",
+    "Share your passenger and group size",
+    "Confirm luggage requirements",
+    "Check current Hajj travel restrictions with your operator or the relevant authority",
+    "Keep your booking confirmation available",
+  ],
+
+  faqHeading: "Frequently Asked Questions About Hajj Transfers",
   faqs: [
-    { question: "What should I arrange before a Hajj transfer?", answer: "Your Hajj permit, visa and official itinerary with your Hajj operator or the relevant authority — those aren't things we can arrange or confirm. Once your travel dates and locations are settled, we can help with the transportation legs around them." },
-    { question: "Are there official restrictions I need to check?", answer: "Yes, likely — access to some areas during the Hajj period is controlled by the Saudi authorities and can change from year to year. Check the current rules with your Hajj operator or the relevant official source before travelling; we don't state current restrictions on this page since they change." },
-    { question: "How should groups plan transportation?", answer: "Coordinate one contact point for the whole group, confirm numbers and luggage in advance, and tell us the specific legs you need (airport, hotel transfers, or both) so vehicles can be arranged together rather than piecemeal." },
-    { question: "Do you provide official Hajj permits or authorisation?", answer: "No. We are a transportation service, not a Hajj operator — we don't issue permits and don't claim official Hajj authorisation. Permit and eligibility questions go to your Hajj operator or the relevant Saudi authority." },
-    { question: "Is this the same as your Umrah service?", answer: "No. Hajj involves fixed dates, official permits and access restrictions that Umrah doesn't have, so it's treated as its own service rather than the same page with a different name." },
-    { question: "Can you handle a large group's transportation?", answer: "Yes, within a private-vehicle model — tell us your group size and we'll coordinate the right combination of vehicles rather than a single car for everyone." },
-    { question: "Can you provide transportation inside restricted areas during the Hajj period?", answer: "No — access to restricted areas during Hajj is controlled entirely by the relevant Saudi authorities and tied to official Hajj permits and group arrangements, not to a transportation booking. We don't arrange or promise access to those areas." },
-    { question: "What transportation does my Hajj package usually already include?", answer: "This varies by operator, so check your specific package rather than assuming. Where your package already covers transportation for a given leg, there's no need to book separately with us for that same leg." },
-    { question: "How early should Hajj transportation be arranged?", answer: "As early as practical — Hajj season is the busiest period of the year for transportation demand across the whole network, so earlier booking gives more certainty of vehicle availability for your specific legs." },
+    {
+      question: "How do I book a private Hajj transfer in Saudi Arabia?",
+      answer:
+        "Share your flight details, accommodation, and passenger count through WhatsApp or our quote form. We reply with a fixed price and vehicle recommendation — no prepayment required.",
+    },
+    {
+      question: "Can I book a Hajj transfer from Jeddah Airport to Makkah?",
+      answer:
+        "Yes, where this leg isn't already covered by your Hajj package — around 85 km and 1 hour 15 minutes, direct to your accommodation.",
+    },
+    {
+      question: "Can I arrange transportation from Madinah Airport?",
+      answer:
+        "Yes. It's a short transfer, around 20 km and 20-25 minutes, direct to hotels near the Prophet's Mosque.",
+    },
+    {
+      question: "Do you provide private transfers between Makkah and Madinah?",
+      answer:
+        "Yes, in both directions — around 450 km and 4.5 hours, with a rest stop built in, outside any areas or periods restricted to registered Hajj groups.",
+    },
+    {
+      question: "Can families and groups book private Hajj transportation?",
+      answer:
+        "Yes. Tell us your group size and luggage when booking and we'll coordinate the right combination of vehicles rather than a single car for everyone.",
+    },
+    {
+      question: "Which vehicle should I choose for my Hajj group?",
+      answer:
+        "It depends on passengers and luggage more than headcount alone — a sedan for one or two, an SUV for a family, or a van or minibus for a larger group.",
+    },
+    {
+      question: "What information do I need to provide when booking?",
+      answer:
+        "Your flight details, accommodation, and passenger and luggage count matter most — flight number especially, since it lets us adjust pickup around any delay.",
+    },
+    {
+      question: "Does booking a private transfer guarantee access to restricted Hajj areas?",
+      answer:
+        "No. Access to areas restricted during the Hajj period is controlled by the relevant Saudi authorities and tied to official permits and registered group arrangements, not to a transportation booking. Confirm current requirements with your Hajj operator or the relevant authority.",
+    },
   ],
-  finalCtaHeading: "Arrange Your Hajj Transportation",
-  finalCtaText: "Tell us which legs of your journey need arranging — we'll confirm the vehicles and a fixed price.",
+
+  finalCtaHeading: "Arrange Your Private Hajj Transfer",
+  finalCtaText:
+    "Share your pickup location, destination, travel date, time, passenger and luggage count, and flight details where applicable, and we'll confirm the right vehicles and a fixed price for the legs of your trip that need arranging.",
 };

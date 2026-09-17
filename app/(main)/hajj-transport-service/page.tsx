@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { HajjTransfersHub } from "@/components/services/HajjTransfersHub";
 import { hajjTransportServiceContent } from "@/data/service-pages-v2/hajj-transport-service";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
@@ -15,9 +15,9 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Hajj Transportation Planning | Saudi Private Transfers",
+  title: "Private Hajj Transfers Saudi Arabia | Airport & City Transport",
   description:
-    "Private transportation planning for Hajj travel — airport, hotel and group transfers, clearly separated from official Hajj permits and access rules.",
+    "Private Hajj transportation — airport, hotel, and Makkah-Madinah transfers, clearly separated from official Hajj permits and access rules.",
   path,
   ...(arPath ? { alternateLanguages: { en: path, ar: arPath } } : {}),
 });
@@ -29,7 +29,7 @@ export default function HajjTransportPage() {
         schema={[
           breadcrumbSchema(crumbs),
           serviceSchema({
-            name: "Hajj Transportation Planning",
+            name: "Hajj Transportation",
             description: hajjTransportServiceContent.dek,
             path,
             serviceType: "Hajj Transfer",
@@ -37,7 +37,7 @@ export default function HajjTransportPage() {
           faqSchema(hajjTransportServiceContent.faqs),
         ]}
       />
-      <ServiceV2View {...hajjTransportServiceContent} crumbs={crumbs} labels={{ faqHeading: "Hajj Transportation Questions" }} />
+      <HajjTransfersHub content={hajjTransportServiceContent} crumbs={crumbs} />
     </>
   );
 }
