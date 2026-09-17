@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceV2View } from "@/components/services/ServiceV2View";
+import { IntercityTransfersHub } from "@/components/services/IntercityTransfersHub";
 import { intercityTransfersContent } from "@/data/service-pages-v2/intercity-transfers";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
@@ -37,7 +37,7 @@ export default function IntercityTransfersPage() {
           faqSchema(intercityTransfersContent.faqs),
         ]}
       />
-      <ServiceV2View {...intercityTransfersContent} crumbs={crumbs} labels={{ faqHeading: "Intercity Transfer Questions" }} />
+      <IntercityTransfersHub content={intercityTransfersContent} crumbs={crumbs} />
     </>
   );
 }
