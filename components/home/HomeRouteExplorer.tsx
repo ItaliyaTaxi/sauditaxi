@@ -4,15 +4,14 @@ import { ArrowRight } from "lucide-react";
 import { getRoute } from "@/data/routes";
 
 const featured = [
-  { slug: "riyadh-to-jeddah", context: "Coast to capital, door to door — no connecting flight required." },
   { slug: "jeddah-to-makkah", context: "The most-travelled pilgrim route, timed around your flight." },
+  { slug: "jeddah-to-madinah", context: "A long-distance transfer connecting Jeddah directly to Madinah." },
+  { slug: "makkah-to-madinah", context: "A comfortable drive along the Hijra highway between the holy cities." },
+  { slug: "riyadh-to-jeddah", context: "Coast to capital, door to door — no connecting flight required." },
   { slug: "riyadh-to-dammam", context: "Business travel across the peninsula, on a single fixed fare." },
-  { slug: "riyadh-to-abu-dhabi", context: "A genuine cross-border road journey into the UAE." },
-  { slug: "dammam-to-bahrain", context: "Over the causeway from the Eastern Province to Manama." },
-  { slug: "riyadh-to-kuwait-city", context: "The long north-eastern drive, planned with proper rest stops." },
 ];
 
-/** Real route pages only (data/routes.ts) — an origin/destination visual, not a plain link list. */
+/** H2 #4 — City-to-City Transfers. Real domestic route pages only (data/routes.ts). */
 export function HomeRouteExplorer() {
   const routes = featured
     .map((f) => {
@@ -26,10 +25,15 @@ export function HomeRouteExplorer() {
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Popular Journeys</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">City-to-City</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Where our travellers are headed
+              City-to-City Transfers Across Saudi Arabia
             </h2>
+            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+              Private, direct journeys between Saudi cities — one vehicle, one departure, and no shared
+              stops along the way. Below are some of the routes travellers book most; our full route
+              directory covers many more city-to-city journeys across the Kingdom.
+            </p>
           </div>
           <div className="relative hidden h-24 w-40 shrink-0 overflow-hidden rounded-xl sm:block">
             <Image

@@ -1,15 +1,23 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-/** The closing CTA — one clear ask, no aggressive sales language. */
+/**
+ * The closing CTA — one clear ask, no aggressive sales language.
+ *
+ * Deliberately a styled <p>, not an <h2>: the heading-structure brief lists
+ * exactly 12 numbered H2 sections (Core Service Introduction through FAQ)
+ * and treats this closing CTA as the page's wrap-up, not a 13th topic
+ * section — keeping the total at the brief's stated "maximum 12" H2 cap.
+ */
 export function HomeFinalCTA() {
   return (
     <section className="bg-midnight py-16 text-white sm:py-20">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Plan Your Private Journey</h2>
+        <p className="text-3xl font-bold tracking-tight sm:text-4xl">Book a Private Transfer in Saudi Arabia</p>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/70">
-          Tell us where you&apos;re going and we&apos;ll help arrange the right transfer — a fixed
-          price, confirmed before you travel.
+          Tell us your pickup, destination, and travel date, and we&apos;ll confirm a fixed price and a
+          driver before you travel — whether it&apos;s an airport transfer, a city-to-city journey, an
+          Umrah or Hajj transfer, a day trip, or a cross-border trip into the GCC.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link

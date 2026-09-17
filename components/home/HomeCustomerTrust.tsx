@@ -16,6 +16,11 @@ const assurances = [
  * site (the live Trustpilot widget) with factual service assurances.
  * data/testimonials.ts is untouched and still used elsewhere (the About
  * page, and site-wide Review schema).
+ *
+ * Not one of the 2026 heading-structure update's 12 required H2 sections —
+ * its heading is deliberately a styled <p>, not an <h2>, so this proof
+ * strip doesn't count against that budget. The Trustpilot widget itself is
+ * untouched.
  */
 export function HomeCustomerTrust() {
   return (
@@ -24,7 +29,7 @@ export function HomeCustomerTrust() {
         <div className="grid gap-10 rounded-2xl border border-hairline bg-sand/50 p-8 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Verified by our customers</p>
-            <h2 className="mt-2 text-2xl font-bold tracking-tight text-ink sm:text-3xl">Reviewed on Trustpilot</h2>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-ink sm:text-3xl">Reviewed on Trustpilot</p>
             <ul className="mt-6 space-y-3">
               {assurances.map(({ icon: Icon, label }) => (
                 <li key={label} className="flex items-center gap-2.5 text-sm text-ink-soft">

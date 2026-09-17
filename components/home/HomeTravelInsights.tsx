@@ -30,7 +30,16 @@ const insights = [
   },
 ];
 
-/** Split layout — real journey photography left, genuine travel-planning links right. */
+/**
+ * Split layout — real journey photography left, genuine travel-planning links right.
+ *
+ * No longer rendered on the homepage as of the 2026 heading-structure
+ * update: its "Travel Guidance" H2 didn't map to any of the brief's 12
+ * required sections, and including it would have pushed the page over the
+ * stated H2 cap. Left in place (unused) rather than deleted — the
+ * /distance/{slug} pages it links to are still live and linked from
+ * elsewhere on the site.
+ */
 export function HomeTravelInsights() {
   return (
     <section className="bg-sand py-16 sm:py-24">

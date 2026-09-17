@@ -43,12 +43,14 @@ export function HomeHero() {
               Private Transfers · Saudi Arabia &amp; the GCC
             </p>
             <h1 className="mt-5 max-w-xl text-[2.25rem] font-bold leading-[1.08] tracking-tight drop-shadow-sm sm:text-5xl lg:text-[3.75rem]">
-              Private Transfers, Made Effortless
+              Private Transfers Across Saudi Arabia
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
-              A private chauffeur service for airport arrivals, city-to-city journeys, and
-              road transfers between Saudi Arabia and neighbouring GCC destinations —
-              door to door, on your schedule.
+              Book a private, pre-arranged vehicle for airport pickups, city-to-city journeys,
+              Umrah and Hajj transfers, day trips, and chauffeur-driven travel across Saudi
+              Arabia, plus selected transfers into the GCC. Every trip is door-to-door, in
+              your own vehicle, with a fixed price agreed before you travel. Request a quote
+              and we&apos;ll confirm your driver in advance.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

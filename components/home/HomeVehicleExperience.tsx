@@ -1,37 +1,38 @@
+import { HomeSectionCards } from "@/components/home/HomeSectionCards";
 import { vehicles } from "@/data/vehicles";
 
 /**
- * Real vehicle data only (data/vehicles.ts) — no invented models, capacities,
- * or pricing. No vehicle photography exists in the system (data/vehicles.ts
- * has no image field, and no vehicle photos live under public/images), so
- * this stays a data-led fleet showcase rather than using stock photography
- * of specific car models we can't verify are actually operated.
+ * H2 #10 — Vehicles. Real vehicle data only (data/vehicles.ts), grouped into
+ * 4 cards so the heading count stays reasonable — no invented models,
+ * capacities, or amenities.
  */
 export function HomeVehicleExperience() {
-  return (
-    <section className="bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">The Fleet</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            A vehicle matched to your journey
-          </h2>
-        </div>
+  const byId = Object.fromEntries(vehicles.map((v) => [v.id, v]));
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {vehicles.map((v) => (
-            <div key={v.id} className="rounded-2xl border border-hairline bg-sand/50 p-6">
-              <div className="flex items-baseline justify-between gap-2">
-                <p className="text-lg font-semibold text-ink">{v.name}</p>
-                <p className="text-xs font-medium uppercase tracking-wide text-brass">{v.passengers}</p>
-              </div>
-              <p className="mt-1 text-xs text-ink-muted">{v.examples}</p>
-              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{v.description}</p>
-              <p className="mt-4 border-t border-hairline pt-3 text-xs text-ink-muted">{v.luggage}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+  return (
+    <HomeSectionCards
+      eyebrow="The Fleet"
+      heading="Private Vehicles for Every Journey"
+      intro="Every vehicle is matched to your group size and luggage, from a single traveller to a full pilgrim or corporate group."
+      columns={4}
+      cards={[
+        {
+          title: "Sedan Transfers",
+          body: `From a ${byId.economy.examples} to a ${byId.comfort.examples} — for ${byId.comfort.passengers} with up to ${byId.comfort.luggage}, ideal for city and airport transfers.`,
+        },
+        {
+          title: "Executive and Premium Vehicles",
+          body: `${byId.business.examples} — for corporate travel and VIP arrivals, seating ${byId.business.passengers} with ${byId.business.luggage} in a premium cabin.`,
+        },
+        {
+          title: "Family and Group Transfers",
+          body: `${byId.suv.examples} — an SUV for ${byId.suv.passengers} and ${byId.suv.luggage}, spacious comfort for families and desert routes like AlUla.`,
+        },
+        {
+          title: "Minivan and Larger Vehicles",
+          body: `${byId.van.examples} for ${byId.van.passengers}, or a ${byId.minibus.examples} minibus for ${byId.minibus.passengers} — for larger Umrah, Hajj, and corporate groups.`,
+        },
+      ]}
+    />
   );
 }

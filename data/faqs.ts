@@ -3,7 +3,52 @@ export interface Faq {
   answer: string;
 }
 
-/** General FAQs used on the homepage and as a fallback elsewhere. */
+/**
+ * Homepage FAQ section (H2 #12 of the 2026 heading-structure update) —
+ * matches the primary services introduced on the page itself: booking,
+ * airport transfers, Umrah, Makkah-Madinah, city-to-city, cross-border, and
+ * day trips. Every answer restates a fact already established elsewhere on
+ * the site (see generalFaqs, aboutFaqs, and the relevant service pages).
+ */
+export const homeFaqs: Faq[] = [
+  {
+    question: "How do I book a private transfer in Saudi Arabia?",
+    answer:
+      "Share your pickup, drop-off, date, time, and passenger count through WhatsApp or our quote form. We reply with a fixed, all-in price and vehicle recommendation — no app, no account, and no prepayment required.",
+  },
+  {
+    question: "Can I book an airport transfer in Saudi Arabia?",
+    answer:
+      "Yes. We offer meet-and-greet airport pickup at major Saudi airports including Riyadh, Jeddah, Madinah, and Dammam, with flight tracking so an early or delayed landing never costs you the ride.",
+  },
+  {
+    question: "Do you provide transfers between Makkah and Madinah?",
+    answer:
+      "Yes. We provide private Makkah to Madinah transfers along the Hijra highway, with rest-stop flexibility for families and elders, and a vehicle sized to your group and luggage.",
+  },
+  {
+    question: "Do you provide Umrah transfers?",
+    answer:
+      "Yes. We specialise in Umrah transportation — Jeddah and Madinah airport pickups, hotel transfers near the Haram and the Prophet's Mosque, Makkah to Madinah rides, and miqat stops for ihram — arranged calmly and in advance.",
+  },
+  {
+    question: "Do you provide city-to-city transfers across Saudi Arabia?",
+    answer:
+      "Yes. Private, direct journeys between major Saudi cities — including Riyadh, Jeddah, Makkah, Madinah, and Dammam — in a single vehicle for the whole trip, with no shared stops along the way.",
+  },
+  {
+    question: "Do you offer cross-border transfers from Saudi Arabia to GCC countries?",
+    answer:
+      "Yes, for selected routes — including transfers to and from Bahrain, Kuwait, Qatar, and the UAE. These are planned as long-distance drives around the crossing itself, and requirements can vary, so check current border and visa rules before you travel.",
+  },
+  {
+    question: "Can I book a private car for a day trip in Saudi Arabia?",
+    answer:
+      "Yes. Popular day trips include Riyadh to Diriyah and Jeddah to Taif, with your driver waiting to bring you back the same day — just share your itinerary when you request a quote.",
+  },
+];
+
+/** General FAQs used on other pages and as a fallback elsewhere. */
 export const generalFaqs: Faq[] = [
   {
     question: "How can I book a taxi in Saudi Arabia?",

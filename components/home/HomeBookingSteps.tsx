@@ -1,11 +1,11 @@
 const steps = [
-  { n: "01", title: "Tell us your journey", detail: "Pickup, destination, date and passenger count — on WhatsApp or the quote form." },
-  { n: "02", title: "Receive a fixed quote", detail: "We reply with a clear, all-in price and vehicle recommendation, no meter and no surge." },
-  { n: "03", title: "Confirm your booking", detail: "Approve the quote and your driver is scheduled for the agreed pickup time." },
-  { n: "04", title: "Meet your driver", detail: "Your driver waits at the agreed point and takes you directly to your destination." },
+  { n: "01", title: "Request Your Transfer", detail: "Share your pickup, destination, date, and passenger count on WhatsApp or through our quote form — no account needed." },
+  { n: "02", title: "Receive Your Quote", detail: "We reply with a clear, all-in fixed price and a vehicle recommendation — no meter, no surge pricing." },
+  { n: "03", title: "Confirm Your Booking", detail: "Approve the quote and your driver is scheduled for the agreed pickup time and location, with no prepayment required." },
+  { n: "04", title: "Meet Your Driver", detail: "Your driver waits at the agreed pickup point and takes you directly to your destination." },
 ];
 
-/** A simple 4-step process on a subtle sand background, connected by a line. */
+/** H2 #9 — Booking Process. A simple 4-step process on a subtle sand background, connected by a line. */
 export function HomeBookingSteps() {
   return (
     <section className="bg-sand py-16 sm:py-24">
@@ -13,8 +13,12 @@ export function HomeBookingSteps() {
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">How It Works</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            From request to ride, in four steps
+            How to Book a Private Transfer
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-ink-soft">
+            A simple four-step process from first message to meeting your driver — no app, no account, and
+            no prepayment required in advance.
+          </p>
         </div>
 
         {/* Desktop: connected by a horizontal line running behind the step markers. */}

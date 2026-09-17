@@ -1,40 +1,32 @@
-import { Check } from "lucide-react";
+import { HomeSectionCards } from "@/components/home/HomeSectionCards";
 
-const benefits = [
-  { title: "No shared vehicle", detail: "The car is yours for the trip — no route detours to drop other passengers first." },
-  { title: "Door-to-door pickup", detail: "Collected from your exact address, hotel lobby, or arrivals hall — not a fixed pickup point." },
-  { title: "A predictable journey", detail: "One fixed price agreed before you travel, and a driver who's already planned the route." },
-  { title: "Room for luggage", detail: "Vehicles sized to your group and bags, from a sedan to a van for a full family or group." },
-  { title: "Flexible pickup locations", detail: "Airports, hotels, private addresses, or a border crossing — wherever the journey starts." },
-  { title: "Coordinated airport arrivals", detail: "Flight tracking means your driver adjusts to a delayed or early landing automatically." },
-];
-
-/** Practical, specific reasons to choose a private transfer — not generic superlatives. */
+/** H2 #11 — Why book a private transfer. Factual, specific benefits, not superlatives. */
 export function HomePrivateTravelBenefits() {
   return (
-    <section className="bg-midnight py-16 text-white sm:py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Why a Private Transfer</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            What actually changes when the car is yours
-          </h2>
-        </div>
-
-        <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((b) => (
-            <div key={b.title} className="flex items-start gap-3.5">
-              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brass/15">
-                <Check className="size-3.5 text-brass" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="font-semibold text-white">{b.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-white/60">{b.detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <HomeSectionCards
+      eyebrow="Why a Private Transfer"
+      heading="Why Book a Private Transfer in Saudi Arabia?"
+      intro="Practical reasons travellers choose a private transfer over shared or on-demand rides for journeys across Saudi Arabia."
+      tone="midnight"
+      columns={4}
+      cards={[
+        {
+          title: "Door-to-Door Transportation",
+          body: "Collected from your exact address, hotel lobby, or arrivals hall — not a fixed pickup point. Airports, hotels, private addresses, and border crossings are all valid starting points.",
+        },
+        {
+          title: "Pre-Booked Private Service",
+          body: "The vehicle is yours for the whole trip — no route detours to drop other passengers first — with one fixed price agreed before you travel.",
+        },
+        {
+          title: "Flexible Pickup and Drop-Off",
+          body: "Flight tracking means your driver adjusts automatically to an early or delayed landing, so airport pickup timing is never left to guesswork.",
+        },
+        {
+          title: "Travel for Families and Groups",
+          body: "Vehicles sized to your group and bags, from a sedan for one or two travellers to a van or minibus for a full family or pilgrim group.",
+        },
+      ]}
+    />
   );
 }

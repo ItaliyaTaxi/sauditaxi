@@ -2,30 +2,39 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeTrustStrip } from "@/components/home/HomeTrustStrip";
-import { HomeDestinationExplorer } from "@/components/home/HomeDestinationExplorer";
+import { HomeServiceIntro } from "@/components/home/HomeServiceIntro";
 import { HomeServiceExperience } from "@/components/home/HomeServiceExperience";
-import { HomePrivateTravelBenefits } from "@/components/home/HomePrivateTravelBenefits";
+import { HomeUmrahHajj } from "@/components/home/HomeUmrahHajj";
 import { HomeRouteExplorer } from "@/components/home/HomeRouteExplorer";
+import { HomeDayTrips } from "@/components/home/HomeDayTrips";
+import { HomeChauffeur } from "@/components/home/HomeChauffeur";
+import { HomeCrossBorder } from "@/components/home/HomeCrossBorder";
+import { HomeDestinationExplorer } from "@/components/home/HomeDestinationExplorer";
 import { HomeBookingSteps } from "@/components/home/HomeBookingSteps";
 import { HomeVehicleExperience } from "@/components/home/HomeVehicleExperience";
-import { HomeTravelInsights } from "@/components/home/HomeTravelInsights";
+import { HomePrivateTravelBenefits } from "@/components/home/HomePrivateTravelBenefits";
 import { HomeCustomerTrust } from "@/components/home/HomeCustomerTrust";
+import { HomeFAQSection } from "@/components/home/HomeFAQSection";
 import { HomeFinalCTA } from "@/components/home/HomeFinalCTA";
-import { FAQSection } from "@/components/sections/FAQSection";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { faqSchema } from "@/lib/schema";
-import { generalFaqs } from "@/data/faqs";
+import { homeFaqs } from "@/data/faqs";
 
 // 2026 homepage rebuild — see PRE_REDESIGN_AUDIT.md / DO_NOT_DELETE.md for
-// what this preserves (URL, SEO metadata, booking/quote functionality) and
-// the final report for what changed. app/ar/page.tsx (the Arabic homepage)
-// is intentionally out of scope for this task and untouched.
+// what this preserves (URL, booking/quote functionality) and the final
+// report for what changed. app/ar/page.tsx (the Arabic homepage) is
+// intentionally out of scope for this task and untouched.
+//
+// 2026 heading-structure update: content and H1-H3 hierarchy rewritten to
+// the brief's required 12-section IA (see the "H2 #N" comment on each
+// component). No form, API, routing, or interactive behaviour changed —
+// see the per-component comments for what each edit actually touched.
 
 // Refresh hourly — kept from the previous homepage (no freshness-dependent
 // content on the new page, but harmless to leave).
 export const revalidate = 3600;
 
-// Metadata preserved exactly as before — the redesign does not change SEO signals.
+// Metadata preserved exactly as before — the heading-structure update does not change SEO signals.
 export const metadata: Metadata = buildMetadata({
   title: "Private Transfers in Saudi Arabia | Airport, City & Border Taxi",
   description:
@@ -37,22 +46,27 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      {/* Homepage FAQ structured data (FAQPage). LocalBusiness, TaxiService,
-          Organization, WebSite, and Review/AggregateRating schema render
-          site-wide from the root layout — untouched by this redesign. */}
-      <SchemaScript schema={[faqSchema(generalFaqs.slice(0, 6))]} />
+      {/* Homepage FAQ structured data (FAQPage), matching the visible H2 #12
+          FAQ section exactly. LocalBusiness, TaxiService, Organization,
+          WebSite, and Review/AggregateRating schema render site-wide from
+          the root layout — untouched by this update. */}
+      <SchemaScript schema={[faqSchema(homeFaqs)]} />
 
       <HomeHero />
       <HomeTrustStrip />
-      <HomeDestinationExplorer />
+      <HomeServiceIntro />
       <HomeServiceExperience />
-      <HomePrivateTravelBenefits />
+      <HomeUmrahHajj />
       <HomeRouteExplorer />
+      <HomeDayTrips />
+      <HomeChauffeur />
+      <HomeCrossBorder />
+      <HomeDestinationExplorer />
       <HomeBookingSteps />
       <HomeVehicleExperience />
-      <HomeTravelInsights />
+      <HomePrivateTravelBenefits />
       <HomeCustomerTrust />
-      <FAQSection faqs={generalFaqs.slice(0, 6)} background="muted" />
+      <HomeFAQSection faqs={homeFaqs} heading="Frequently Asked Questions About Saudi Transfers" />
       <HomeFinalCTA />
     </>
   );

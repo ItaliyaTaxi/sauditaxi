@@ -35,7 +35,7 @@ export function HomeBookingPanel() {
   return (
     <div className="rounded-2xl border border-hairline bg-offwhite/95 p-6 shadow-[0_24px_60px_-24px_rgba(11,23,38,0.35)] backdrop-blur-sm sm:p-7">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brass">Plan your journey</p>
-      <h2 className="mt-1.5 text-xl font-bold text-ink">Request a private transfer</h2>
+      <p className="mt-1.5 text-xl font-bold text-ink">Request a private transfer</p>
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4" aria-label="Quick quote form">
         <div>
