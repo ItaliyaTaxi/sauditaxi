@@ -14,6 +14,22 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["first-time-in-jeddah-guide"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah", icon: RouteIcon },
+      { label: "Jeddah → Makkah Route", href: "/routes/jeddah-to-makkah", icon: RouteIcon },
+      { label: "Umrah Transport", href: "/umrah-taxi-service", icon: BookOpen },
+    ],
+  },
+  {
+    match: ["riyadh-airport-driver-meeting-point"],
+    links: [
+      { label: "Riyadh Airport Transfer", href: "/airport-transfer/riyadh-airport", icon: Plane },
+      { label: "Riyadh Taxi Service", href: "/taxi-service/riyadh", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["tabuk-regional-airport-arrival-guide"],
     links: [
       { label: "Tabuk Airport Transfer", href: "/airport-transfer/tabuk-airport", icon: Plane },
