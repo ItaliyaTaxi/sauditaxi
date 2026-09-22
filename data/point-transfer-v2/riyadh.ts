@@ -53,6 +53,7 @@ export const riyadhPointTransfersV2: PointTransferV2Page[] = [
           links: [
             { label: "Riyadh to Diriyah", href: "/riyadh/riyadh-to-diriyah-transfers" },
             { label: "King Khalid Airport to RICEC", href: "/riyadh/king-khalid-airport-to-ricec-exhibition-center" },
+            { label: "WWE Crown Jewel Transfer Guide", href: "/blog/wwe-crown-jewel-riyadh-transfer" },
           ],
         },
       ],
@@ -176,6 +177,7 @@ export const riyadhPointTransfersV2: PointTransferV2Page[] = [
           links: [
             { label: "King Khalid Airport to KAFD", href: "/riyadh/king-khalid-airport-to-kafd" },
             { label: "Riyadh to Diriyah", href: "/riyadh/riyadh-to-diriyah-transfers" },
+            { label: "Black Hat MEA Transfer Guide", href: "/blog/black-hat-mea-riyadh-transfer" },
           ],
         },
       ],

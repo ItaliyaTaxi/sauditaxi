@@ -9,6 +9,20 @@ import { whatsappLink } from "@/lib/site";
  */
 const topicLinks: { match: string[]; links: { label: string; href: string }[] }[] = [
   {
+    match: ["wwe-crown-jewel-riyadh-transfer"],
+    links: [
+      { label: "Riyadh Airport to KAFD Transfer", href: "/riyadh/king-khalid-airport-to-kafd" },
+      { label: "Riyadh Chauffeur Service", href: "/taxi-service/riyadh" },
+    ],
+  },
+  {
+    match: ["black-hat-mea-riyadh-transfer"],
+    links: [
+      { label: "Riyadh Airport to Exhibition Center", href: "/riyadh/king-khalid-airport-to-ricec-exhibition-center" },
+      { label: "Riyadh Chauffeur Service", href: "/taxi-service/riyadh" },
+    ],
+  },
+  {
     match: ["first-time-in-riyadh-guide"],
     links: [
       { label: "Riyadh Airport Transfer", href: "/airport-transfer/riyadh-airport" },
