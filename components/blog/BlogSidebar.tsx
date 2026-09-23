@@ -14,6 +14,14 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["wrc-rally-saudi-arabia-transfer"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Private Chauffeur Service in Jeddah", href: "/jeddah/private-chauffeur-service-jeddah", icon: RouteIcon },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["gulf-cup-27-jeddah-transfer"],
     links: [
       { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },

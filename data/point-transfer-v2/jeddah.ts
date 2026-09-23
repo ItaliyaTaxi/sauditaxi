@@ -1319,6 +1319,7 @@ export const jeddahPointTransfersV2: PointTransferV2Page[] = [
             { label: "Hourly Chauffeur Hire", href: "/jeddah/hourly-chauffeur-jeddah" },
             { label: "Jeddah City Tour", href: "/jeddah/jeddah-city-tour" },
             { label: "Gulf Cup 27 Transfer Guide", href: "/blog/gulf-cup-27-jeddah-transfer" },
+            { label: "WRC Rally Saudi Arabia Transfer Guide", href: "/blog/wrc-rally-saudi-arabia-transfer" },
           ],
         },
       ],
