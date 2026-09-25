@@ -9,6 +9,13 @@ import { whatsappLink } from "@/lib/site";
  */
 const topicLinks: { match: string[]; links: { label: string; href: string }[] }[] = [
   {
+    match: ["f1h2o-jeddah-grand-prix-transfer"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport" },
+      { label: "Private Chauffeur Service in Jeddah", href: "/jeddah/private-chauffeur-service-jeddah" },
+    ],
+  },
+  {
     match: ["wrc-rally-saudi-arabia-transfer"],
     links: [
       { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport" },

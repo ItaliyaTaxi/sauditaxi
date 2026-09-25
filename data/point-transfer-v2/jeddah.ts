@@ -1320,6 +1320,7 @@ export const jeddahPointTransfersV2: PointTransferV2Page[] = [
             { label: "Jeddah City Tour", href: "/jeddah/jeddah-city-tour" },
             { label: "Gulf Cup 27 Transfer Guide", href: "/blog/gulf-cup-27-jeddah-transfer" },
             { label: "WRC Rally Saudi Arabia Transfer Guide", href: "/blog/wrc-rally-saudi-arabia-transfer" },
+            { label: "F1H2O Jeddah Grand Prix Transfer Guide", href: "/blog/f1h2o-jeddah-grand-prix-transfer" },
           ],
         },
       ],
