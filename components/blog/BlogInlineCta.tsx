@@ -9,6 +9,20 @@ import { whatsappLink } from "@/lib/site";
  */
 const topicLinks: { match: string[]; links: { label: string; href: string }[] }[] = [
   {
+    match: ["jeddah-airport-driver-meeting-point"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport" },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah" },
+    ],
+  },
+  {
+    match: ["jeddah-to-yanbu-transfer-guide"],
+    links: [
+      { label: "Jeddah to Yanbu Route", href: "/routes/jeddah-to-yanbu" },
+      { label: "Yanbu Taxi Service", href: "/taxi-service/yanbu" },
+    ],
+  },
+  {
     match: ["f1h2o-jeddah-grand-prix-transfer"],
     links: [
       { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport" },

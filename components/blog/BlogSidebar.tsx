@@ -14,6 +14,20 @@ const defaultQuickLinks = [
 
 const topicServiceLinks: { match: string[]; links: { label: string; href: string; icon: typeof Plane }[] }[] = [
   {
+    match: ["jeddah-airport-driver-meeting-point"],
+    links: [
+      { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
+      { label: "Jeddah Taxi Service", href: "/taxi-service/jeddah", icon: RouteIcon },
+    ],
+  },
+  {
+    match: ["jeddah-to-yanbu-transfer-guide"],
+    links: [
+      { label: "Jeddah to Yanbu Route", href: "/routes/jeddah-to-yanbu", icon: RouteIcon },
+      { label: "Yanbu Taxi Service", href: "/taxi-service/yanbu", icon: RouteIcon },
+    ],
+  },
+  {
     match: ["f1h2o-jeddah-grand-prix-transfer"],
     links: [
       { label: "Jeddah Airport Transfer", href: "/airport-transfer/jeddah-airport", icon: Plane },
